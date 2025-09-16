@@ -186,6 +186,10 @@ document.addEventListener('DOMContentLoaded', function() {
     zoneSelect.addEventListener('change', function() {
         if (this.value) {
             loadZoneRequirements(this.value);
+            // Auto-load template defaults for better UX
+            setTimeout(() => {
+                loadProjectTemplate(this.value);
+            }, 500); // Small delay to let zone requirements load first
         }
     });
 
@@ -240,10 +244,15 @@ document.addEventListener('DOMContentLoaded', function() {
         fetch(`/api/zone-requirements/${zone}`)
             .then(response => response.json())
             .then(data => {
-                // Update form placeholders with zone requirements
-                document.getElementById('lotArea').placeholder = data.min_area;
-                document.getElementById('lotWidth').placeholder = data.min_width;
-                document.getElementById('lotDepth').placeholder = data.min_depth;
+                // Set actual default values, not just placeholders
+                document.getElementById('lotArea').value = data.min_area;
+                document.getElementById('lotWidth').value = data.min_width;
+                document.getElementById('lotDepth').value = data.min_depth;
+                
+                // Also update placeholders for reference
+                document.getElementById('lotArea').placeholder = `Default: ${data.min_area}`;
+                document.getElementById('lotWidth').placeholder = `Default: ${data.min_width}`;
+                document.getElementById('lotDepth').placeholder = `Default: ${data.min_depth}`;
                 
                 // Show zone info
                 showZoneInfo(zone, data);
@@ -304,7 +313,14 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function generatePlanningGuidance() {
-        // Collect form data
+        // Get zone requirements for fallback values
+        const zone = document.getElementById('zoneDistrict').value;
+        
+        // Collect form data with better fallback handling
+        const lotAreaValue = document.getElementById('lotArea').value.trim();
+        const lotWidthValue = document.getElementById('lotWidth').value.trim();
+        const lotDepthValue = document.getElementById('lotDepth').value.trim();
+        
         const projectData = {
             project_info: {
                 project_name: document.getElementById('projectName').value || 'Unnamed Project',
@@ -314,10 +330,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 submission_date: new Date().toISOString().split('T')[0]
             },
             site_data: {
-                zone_district: document.getElementById('zoneDistrict').value,
-                lot_area: parseFloat(document.getElementById('lotArea').value) || 0,
-                lot_width: parseFloat(document.getElementById('lotWidth').value) || 0,
-                lot_depth: parseFloat(document.getElementById('lotDepth').value) || 0,
+                zone_district: zone,
+                lot_area: lotAreaValue ? parseFloat(lotAreaValue) : 0,
+                lot_width: lotWidthValue ? parseFloat(lotWidthValue) : 0,
+                lot_depth: lotDepthValue ? parseFloat(lotDepthValue) : 0,
                 lot_shape: document.getElementById('lotShape').value || 'standard',
                 corner_lot: document.getElementById('lotShape').value === 'corner',
                 flag_lot: document.getElementById('lotShape').value === 'flag'
@@ -333,17 +349,17 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         if (projectData.site_data.lot_area <= 0) {
-            showError('Please enter a valid lot area');
+            showError('Please enter a valid lot area or use the "Load Template" button for zone defaults');
             return;
         }
         
         if (projectData.site_data.lot_width <= 0) {
-            showError('Please enter a valid lot width');
+            showError('Please enter a valid lot width or use the "Load Template" button for zone defaults');
             return;
         }
         
         if (projectData.site_data.lot_depth <= 0) {
-            showError('Please enter a valid lot depth');
+            showError('Please enter a valid lot depth or use the "Load Template" button for zone defaults');
             return;
         }
 
