@@ -48,6 +48,11 @@
     --radius-lg: 0.75rem;
     --radius-xl: 1rem;
     --radius-2xl: 1.5rem;
+    
+    /* RGB values for wave backgrounds */
+    --primary-rgb: 79, 70, 229;
+    --success-rgb: 16, 185, 129;
+    --info-rgb: 6, 182, 212;
 }
 
 /* Global Styles */
