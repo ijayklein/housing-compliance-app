@@ -317,8 +317,14 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             body: JSON.stringify(projectData)
         })
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
         .then(data => {
+            console.log('Planning response:', data); // Debug log
             if (data.error) {
                 showError(data.error);
             } else {
@@ -326,26 +332,28 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         })
         .catch(error => {
-            console.error('Error:', error);
-            showError('Failed to generate planning guidance');
+            console.error('Planning error details:', error);
+            showError(`Failed to generate planning guidance: ${error.message}`);
         });
     }
 
     function displayPlanningResults(data) {
-        const guidance = data.guidance;
-        const siteReqs = guidance.site_requirements || [];
-        
-        let html = `
-            <div class="guidance-results">
-                <div class="alert alert-primary">
-                    <h6><i class="fas fa-info-circle me-2"></i>Project: ${data.project_name}</h6>
-                    <p class="mb-0">Zone: ${data.zone_district} | Phase: ${data.workflow_phase}</p>
-                </div>
-        `;
+        try {
+            console.log('Displaying planning results:', data); // Debug log
+            const guidance = data.guidance;
+            const siteReqs = guidance.site_requirements || [];
+            
+            let html = `
+                <div class="guidance-results">
+                    <div class="alert alert-primary">
+                        <h6><i class="fas fa-info-circle me-2"></i>Project: ${data.project_name}</h6>
+                        <p class="mb-0">Zone: ${data.zone_district} | Phase: ${data.workflow_phase}</p>
+                    </div>
+            `;
 
         // Site requirements
         siteReqs.forEach(req => {
-            const status = req.compliance_status;
+            const status = req.compliance_status || { compliant: true, issues: [] };
             const statusClass = status.compliant ? 'success' : 'warning';
             const statusIcon = status.compliant ? 'check-circle' : 'exclamation-triangle';
             
@@ -443,6 +451,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
         html += '</div>';
         resultsDiv.innerHTML = html;
+        } catch (error) {
+            console.error('Error displaying planning results:', error);
+            showError(`Error displaying results: ${error.message}`);
+        }
     }
 
     function showSuccess(message) {
