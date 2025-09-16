@@ -273,7 +273,54 @@ document.addEventListener('DOMContentLoaded', function() {
     // Form submission
     form.addEventListener('submit', function(e) {
         e.preventDefault();
+        console.log('Form submitted');
+        
+        // Check if form is valid
+        if (!form.checkValidity()) {
+            form.classList.add('was-validated');
+            showError('Please fill in all required fields correctly');
+            return;
+        }
+        
         validateProject();
+    });
+
+    // Add input validation and formatting for numeric inputs
+    const numericInputs = ['lotArea', 'lotWidth', 'lotDepth', 'buildingHeight', 'grossFloorArea', 
+                          'frontSetback', 'rearSetback', 'sideSetbackLeft', 'sideSetbackRight', 
+                          'parkingSpaces', 'coveredSpaces'];
+    
+    numericInputs.forEach(inputId => {
+        const input = document.getElementById(inputId);
+        if (input) {
+            // Allow only numbers and decimal point
+            input.addEventListener('input', function(e) {
+                let value = e.target.value;
+                // Remove any non-numeric characters except decimal point
+                value = value.replace(/[^0-9.]/g, '');
+                // Ensure only one decimal point
+                const parts = value.split('.');
+                if (parts.length > 2) {
+                    value = parts[0] + '.' + parts.slice(1).join('');
+                }
+                e.target.value = value;
+                
+                // Remove validation classes on input
+                e.target.classList.remove('is-invalid', 'is-valid');
+            });
+            
+            // Validate on blur
+            input.addEventListener('blur', function(e) {
+                const value = parseFloat(e.target.value);
+                if (e.target.hasAttribute('required') && (isNaN(value) || value <= 0)) {
+                    e.target.classList.add('is-invalid');
+                    e.target.classList.remove('is-valid');
+                } else if (!isNaN(value) && value > 0) {
+                    e.target.classList.add('is-valid');
+                    e.target.classList.remove('is-invalid');
+                }
+            });
+        }
     });
 
     function loadZoneRequirements(zone) {
@@ -317,40 +364,97 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function validateProject() {
-        // Collect form data
+        // Collect form data with better parsing
+        const lotAreaValue = document.getElementById('lotArea').value.trim();
+        const lotWidthValue = document.getElementById('lotWidth').value.trim();
+        const lotDepthValue = document.getElementById('lotDepth').value.trim();
+        const buildingHeightValue = document.getElementById('buildingHeight').value.trim();
+        const grossFloorAreaValue = document.getElementById('grossFloorArea').value.trim();
+        const frontSetbackValue = document.getElementById('frontSetback').value.trim();
+        const rearSetbackValue = document.getElementById('rearSetback').value.trim();
+        const sideSetbackLeftValue = document.getElementById('sideSetbackLeft').value.trim();
+        const sideSetbackRightValue = document.getElementById('sideSetbackRight').value.trim();
+        const parkingSpacesValue = document.getElementById('parkingSpaces').value.trim();
+        const coveredSpacesValue = document.getElementById('coveredSpaces').value.trim();
+
+        // Validate required fields before proceeding
+        const requiredFields = [
+            { field: 'zoneDistrict', name: 'Zone District' },
+            { field: 'lotArea', name: 'Lot Area', value: lotAreaValue },
+            { field: 'lotWidth', name: 'Lot Width', value: lotWidthValue },
+            { field: 'lotDepth', name: 'Lot Depth', value: lotDepthValue },
+            { field: 'buildingHeight', name: 'Building Height', value: buildingHeightValue },
+            { field: 'grossFloorArea', name: 'Gross Floor Area', value: grossFloorAreaValue },
+            { field: 'frontSetback', name: 'Front Setback', value: frontSetbackValue },
+            { field: 'rearSetback', name: 'Rear Setback', value: rearSetbackValue },
+            { field: 'sideSetbackLeft', name: 'Side Left Setback', value: sideSetbackLeftValue },
+            { field: 'sideSetbackRight', name: 'Side Right Setback', value: sideSetbackRightValue }
+        ];
+
+        const missingFields = [];
+        const zoneDistrict = document.getElementById('zoneDistrict').value;
+        
+        if (!zoneDistrict) {
+            missingFields.push('Zone District');
+        }
+
+        requiredFields.forEach(field => {
+            if (field.field !== 'zoneDistrict' && (!field.value || field.value === '' || isNaN(parseFloat(field.value)))) {
+                missingFields.push(field.name);
+            }
+        });
+
+        if (missingFields.length > 0) {
+            showError(`Please fill in the following required fields: ${missingFields.join(', ')}`);
+            return;
+        }
+
         const projectData = {
             project_info: {
                 project_name: document.getElementById('projectName').value || 'Unnamed Project',
                 project_id: document.getElementById('projectId').value || 'UNKNOWN'
             },
             site_data: {
-                zone_district: document.getElementById('zoneDistrict').value,
-                lot_area: parseInt(document.getElementById('lotArea').value) || 0,
-                lot_width: parseInt(document.getElementById('lotWidth').value) || 0,
-                lot_depth: parseInt(document.getElementById('lotDepth').value) || 0,
+                zone_district: zoneDistrict,
+                lot_area: parseFloat(lotAreaValue) || 0,
+                lot_width: parseFloat(lotWidthValue) || 0,
+                lot_depth: parseFloat(lotDepthValue) || 0,
                 lot_shape: document.getElementById('lotShape').value || 'standard',
                 corner_lot: document.getElementById('lotShape').value === 'corner',
                 flag_lot: document.getElementById('lotShape').value === 'flag'
             },
             building_data: {
-                building_height: parseInt(document.getElementById('buildingHeight').value) || 0,
-                gross_floor_area: parseInt(document.getElementById('grossFloorArea').value) || 0,
+                building_height: parseFloat(buildingHeightValue) || 0,
+                gross_floor_area: parseFloat(grossFloorAreaValue) || 0,
                 setbacks: {
-                    front_setback: parseInt(document.getElementById('frontSetback').value) || 0,
-                    rear_setback: parseInt(document.getElementById('rearSetback').value) || 0,
-                    side_setback_left: parseInt(document.getElementById('sideSetbackLeft').value) || 0,
-                    side_setback_right: parseInt(document.getElementById('sideSetbackRight').value) || 0
+                    front_setback: parseFloat(frontSetbackValue) || 0,
+                    rear_setback: parseFloat(rearSetbackValue) || 0,
+                    side_setback_left: parseFloat(sideSetbackLeftValue) || 0,
+                    side_setback_right: parseFloat(sideSetbackRightValue) || 0
                 }
             },
             parking_data: {
-                parking_spaces: parseInt(document.getElementById('parkingSpaces').value) || 0,
-                covered_spaces: parseInt(document.getElementById('coveredSpaces').value) || 0
+                parking_spaces: parseFloat(parkingSpacesValue) || 0,
+                covered_spaces: parseFloat(coveredSpacesValue) || 0
             }
         };
 
-        // Validate required fields
-        if (!projectData.site_data.zone_district) {
-            showError('Please select a zone district');
+        // Debug logging
+        console.log('Validation Project Data:', projectData);
+        
+        // Additional validation
+        if (projectData.site_data.lot_area <= 0) {
+            showError('Lot area must be greater than 0');
+            return;
+        }
+        
+        if (projectData.site_data.lot_width <= 0) {
+            showError('Lot width must be greater than 0');
+            return;
+        }
+        
+        if (projectData.site_data.lot_depth <= 0) {
+            showError('Lot depth must be greater than 0');
             return;
         }
 
