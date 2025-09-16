@@ -72,7 +72,10 @@
                     <span class="badge bg-light text-dark me-2">Feasibility Study</span>
                 </div>
                 
-                <a href="{{ url_for('planning_mode') }}" class="btn btn-primary btn-lg mt-auto">
+                <a href="{{ url_for('planning_mode') }}" class="btn btn-primary btn-lg mt-auto"
+                   data-bs-toggle="tooltip" 
+                   data-bs-placement="bottom" 
+                   title="Begin a new project with step-by-step design guidance">
                     <i class="fas fa-play me-2"></i>Start Planning
                 </a>
             </div>
@@ -115,7 +118,10 @@
                     <span class="badge bg-light text-dark me-2">Final Check</span>
                 </div>
                 
-                <a href="{{ url_for('validation_mode') }}" class="btn btn-success btn-lg mt-auto">
+                <a href="{{ url_for('validation_mode') }}" class="btn btn-success btn-lg mt-auto"
+                   data-bs-toggle="tooltip" 
+                   data-bs-placement="bottom" 
+                   title="Check an existing design for compliance violations">
                     <i class="fas fa-search me-2"></i>Start Validation
                 </a>
             </div>
