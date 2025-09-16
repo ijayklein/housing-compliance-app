@@ -205,6 +205,37 @@ document.addEventListener('DOMContentLoaded', function() {
         generatePlanningGuidance();
     });
 
+    // Add input validation and formatting
+    const numericInputs = ['lotArea', 'lotWidth', 'lotDepth'];
+    numericInputs.forEach(inputId => {
+        const input = document.getElementById(inputId);
+        if (input) {
+            // Allow only numeric input
+            input.addEventListener('input', function(e) {
+                let value = e.target.value;
+                // Remove any non-numeric characters except decimal point
+                value = value.replace(/[^0-9.]/g, '');
+                // Ensure only one decimal point
+                const parts = value.split('.');
+                if (parts.length > 2) {
+                    value = parts[0] + '.' + parts.slice(1).join('');
+                }
+                e.target.value = value;
+            });
+            
+            // Validate on blur
+            input.addEventListener('blur', function(e) {
+                const value = parseFloat(e.target.value);
+                if (isNaN(value) || value <= 0) {
+                    e.target.classList.add('is-invalid');
+                } else {
+                    e.target.classList.remove('is-invalid');
+                    e.target.classList.add('is-valid');
+                }
+            });
+        }
+    });
+
     function loadZoneRequirements(zone) {
         fetch(`/api/zone-requirements/${zone}`)
             .then(response => response.json())
@@ -284,18 +315,35 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             site_data: {
                 zone_district: document.getElementById('zoneDistrict').value,
-                lot_area: parseInt(document.getElementById('lotArea').value) || 0,
-                lot_width: parseInt(document.getElementById('lotWidth').value) || 0,
-                lot_depth: parseInt(document.getElementById('lotDepth').value) || 0,
+                lot_area: parseFloat(document.getElementById('lotArea').value) || 0,
+                lot_width: parseFloat(document.getElementById('lotWidth').value) || 0,
+                lot_depth: parseFloat(document.getElementById('lotDepth').value) || 0,
                 lot_shape: document.getElementById('lotShape').value || 'standard',
                 corner_lot: document.getElementById('lotShape').value === 'corner',
                 flag_lot: document.getElementById('lotShape').value === 'flag'
             }
         };
 
-        // Validate required fields
+        // Enhanced validation
+        console.log('Form data collected:', projectData); // Debug log
+        
         if (!projectData.site_data.zone_district) {
             showError('Please select a zone district');
+            return;
+        }
+        
+        if (projectData.site_data.lot_area <= 0) {
+            showError('Please enter a valid lot area');
+            return;
+        }
+        
+        if (projectData.site_data.lot_width <= 0) {
+            showError('Please enter a valid lot width');
+            return;
+        }
+        
+        if (projectData.site_data.lot_depth <= 0) {
+            showError('Please enter a valid lot depth');
             return;
         }
 
@@ -377,16 +425,40 @@ document.addEventListener('DOMContentLoaded', function() {
             if (req.current_values) {
                 html += '<div class="row text-center mt-3">';
                 Object.entries(req.current_values).forEach(([key, value]) => {
+                    const displayValue = typeof value === 'number' ? value.toLocaleString() : value;
+                    const displayKey = key.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
                     html += `
                         <div class="col">
                             <div class="constraint-item">
-                                <strong>${value.toLocaleString()}</strong><br>
-                                <small class="text-muted">${key.replace('_', ' ')}</small>
+                                <strong>${displayValue}</strong><br>
+                                <small class="text-muted">${displayKey}</small>
                             </div>
                         </div>
                     `;
                 });
                 html += '</div>';
+            }
+            
+            // Display buildable area if available
+            if (req.buildable_area) {
+                html += '<div class="alert alert-info mt-3">';
+                html += '<h6><i class="fas fa-ruler-combined me-2"></i>Buildable Area</h6>';
+                html += '<div class="row text-center">';
+                html += `
+                    <div class="col-md-4">
+                        <strong>${req.buildable_area.width}</strong> ft<br>
+                        <small class="text-muted">Width</small>
+                    </div>
+                    <div class="col-md-4">
+                        <strong>${req.buildable_area.depth}</strong> ft<br>
+                        <small class="text-muted">Depth</small>
+                    </div>
+                    <div class="col-md-4">
+                        <strong>${req.buildable_area.area.toLocaleString()}</strong> sf<br>
+                        <small class="text-muted">Total Area</small>
+                    </div>
+                `;
+                html += '</div></div>';
             }
 
             if (!status.compliant && status.issues.length > 0) {
