@@ -396,60 +396,104 @@ body {
     border-radius: var(--radius-xl);
 }
 
-/* Workflow Steps */
-.workflow-steps {
-    padding: 2rem 0;
-    position: relative;
+/* Workflow Timeline */
+.workflow-container {
+    padding: 3rem 1rem;
+    overflow-x: auto;
 }
 
-.workflow-step {
-    padding: 1rem;
+.workflow-timeline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 800px;
+    padding: 0 2rem;
+}
+
+.workflow-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-width: 120px;
+    position: relative;
     transition: all 0.3s ease;
-    position: relative;
 }
 
-.workflow-step:hover {
-    transform: translateY(-5px);
+.workflow-item:hover {
+    transform: translateY(-8px);
 }
 
-.workflow-step:hover .step-icon {
-    transform: scale(1.1);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+.workflow-item:hover .step-icon {
+    transform: scale(1.15);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.2);
 }
 
 .step-icon {
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: bold;
-    font-size: 1.4rem;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    border: 3px solid rgba(255, 255, 255, 0.3);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    position: relative;
+    z-index: 2;
 }
 
-.workflow-step h6 {
+.step-content h6 {
     font-weight: 600;
-    margin-top: 1rem;
+    margin-bottom: 0.5rem;
     color: var(--gray-800);
+    font-size: 0.95rem;
 }
 
-.workflow-step p {
-    font-size: 0.85rem;
-    line-height: 1.4;
+.step-content p {
+    font-size: 0.8rem;
+    line-height: 1.3;
     color: var(--gray-600);
+    margin: 0;
+    max-width: 110px;
 }
 
-/* Workflow arrows */
-.workflow-steps .fas {
+.workflow-connector {
+    display: flex;
+    align-items: center;
+    margin: 0 1rem;
+    position: relative;
+    flex: 1;
+    max-width: 80px;
+}
+
+.connector-line {
+    height: 3px;
+    background: linear-gradient(90deg, var(--gray-300) 0%, var(--gray-400) 50%, var(--gray-300) 100%);
+    flex: 1;
+    border-radius: 2px;
+    position: relative;
+}
+
+.connector-arrow {
+    position: absolute;
+    right: -8px;
+    color: var(--gray-500);
+    font-size: 1.2rem;
+    background: white;
+    padding: 2px;
+    border-radius: 50%;
     transition: all 0.3s ease;
+    z-index: 1;
 }
 
-.workflow-steps .fas:hover {
+.workflow-item:hover + .workflow-connector .connector-arrow,
+.workflow-connector:hover .connector-arrow {
+    color: var(--primary);
     transform: scale(1.2);
-    color: var(--primary) !important;
 }
 
 /* Enhanced Stats */
@@ -765,20 +809,34 @@ body {
         font-size: 2rem;
     }
     
-    .workflow-steps .col-md-1 {
-        display: none;
+    .workflow-container {
+        padding: 2rem 0.5rem;
     }
     
-    .workflow-steps .row {
+    .workflow-timeline {
         flex-direction: column;
+        min-width: auto;
+        padding: 0;
     }
     
-    .workflow-step {
+    .workflow-item {
         margin-bottom: 2rem;
+        min-width: auto;
     }
     
-    .workflow-steps .offset-md-2 {
-        margin-left: 0 !important;
+    .workflow-connector {
+        transform: rotate(90deg);
+        margin: 1rem 0;
+        max-width: 40px;
+    }
+    
+    .connector-arrow {
+        transform: rotate(90deg);
+        right: -6px;
+    }
+    
+    .step-content p {
+        max-width: 200px;
     }
     
     .stats-row {
