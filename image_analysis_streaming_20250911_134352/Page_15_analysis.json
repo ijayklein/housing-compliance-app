@@ -1,0 +1,75 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_15.png",
+  "image_name": "Page_15.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Step 2: Determine which perimeter segments abut the house walls. These are closed segments, or sides.\n\nIn Fig 5 sides A, B, & C abut the house walls.\nThese are considered to be closed segments.\n\nStep 3: Determine the status (open/closed) of the remaining segments based on the design. If at least 50% of the facade area is open, then the segment or side is considered open.\n\nFor purposes of assessing the openess of the facade:\n\n\u2022 The height of the segment facades is measured from the top of the porch floor to the the point where the segment facade intersects with the top of the roof material.\n\n\u2022 The widths of the segment facades are measured from the same plane. Allowances may be made for structural supports that are not excessive.\n\nintersection\nfacade & top\nof roof material\n\nHeight = 8'\n\nPorch flr\n\nD\n7'\nOpen\n\nE\n14'\nClosed\n(because of decorative glass wall)\n\nF\n24'\nOpen\n\nG\n4'\nOpen\n\n9",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Floor plan showing a house with perimeter segments labeled A, B, and C abutting the house walls. Shows measurements including 8' for one dimension and labels for segments.",
+          "location": "upper right portion of page"
+        },
+        {
+          "type": "diagram",
+          "description": "Cross-sectional elevation views showing four different porch segments (D, E, F, G) with varying designs. Shows height measurement of 8' from porch floor to roof intersection, and width measurements of 7', 14', 24', and 4' respectively. Segment E shows decorative glass wall pattern.",
+          "location": "bottom half of page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Facade openness threshold",
+          "value": "50",
+          "unit": "percent"
+        },
+        {
+          "parameter": "Segment D width",
+          "value": "7",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Segment E width",
+          "value": "14",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Segment F width",
+          "value": "24",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Segment G width",
+          "value": "4",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Facade height",
+          "value": "8",
+          "unit": "feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "",
+        "subheadings": [
+          "Step 2:",
+          "Step 3:"
+        ],
+        "sections": [
+          "Step 2",
+          "Step 3"
+        ]
+      },
+      "additional_notes": [
+        "Page number 9 appears at bottom",
+        "Reference to 'Fig 5' in Step 2 text",
+        "Segments labeled with letters A, B, C, D, E, F, G",
+        "Decorative glass wall noted as reason for closed classification of segment E"
+      ],
+      "cross_references": [
+        "Fig 5"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-11 13:44:22",
+  "model_used": "anthropic/claude-sonnet-4"
+}

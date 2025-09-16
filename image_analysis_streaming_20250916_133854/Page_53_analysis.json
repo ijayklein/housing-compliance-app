@@ -1,0 +1,12 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_53.png",
+  "image_name": "Page_53.png",
+  "analysis": {
+    "raw_content": "Here's the extracted information from the images, focusing on crucial zoning rules, regulations, and technical specifications with absolute precision:\n\n**Table: Grade Definitions**\n\n| When measuring | Use | Which is defined as | Illus. |\n|---|---|---|---|\n| The height of a structure on land with natural slope \u2264 10% | Existing Grade | for each building or structure, the lowest point of adjacent ground elevation prior to grading or fill | Fig 44 on this page |\n| The height of a structure on land with natural slope > 10% | Grade | adjacent ground elevation of the finished or existing grade, whichever is lower--at any point of the structure | Fig 45 on this page |\n| A daylight plane | Average grade | average of the grade at the midpoint of the building and the grade at the closest point on the abutting site | Figs 20-21 pp. 26-27 |\n\n**Figure 44: Existing vs. Finished grade**\n*   **Image Description:** A cross-section view of a house on a sloped site.\n*   **Labels:**\n    *   \"Height: measured to top of roof material of the highest peak\"\n    *   \"Finished grade (after fill)\"\n    *   \"Existing grade (before fill)\"\n    *   \"Lowest point of ground elevation before fill (existing grade) adjacent to the structure\"\n\n**Figure 45: Height limits for structures on slopes greater than 10%**\n*   **Image Description:** A cross-section view of two structures on a sloped site with height limits indicated.\n*   **Labels:**\n    *   \"30' above existing grade\"\n    *   \"30' above finished\"\n    *   \"Existing grade (before fill)\"\n    *   \"Height\" (pointing to the vertical dimension of the structures)\n*   **Text:** \"The structure must comply with the lower of the two limits at all points along the slope\"\n\n**Figure 46: Comparison of different grades**\n*   **Image Description:** A graph with lines representing different slopes.\n*   **Labels on lines:**\n    *   \"10:10 100%\"\n    *   \"5:10 50%\"\n    *   \"3:10 33%\"\n    *   \"1:10 10%\"\n\n**Page Number:** 47",
+    "content_length": 1951,
+    "parse_error": false
+  },
+  "timestamp": "2025-09-16 13:39:12",
+  "model": "google/gemini-2.5-flash",
+  "success": true
+}

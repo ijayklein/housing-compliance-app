@@ -1,0 +1,272 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_51.md",
+  "file_name": "Page_51.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "rule": "Placement of Detached Garages",
+        "Qualifiers": {
+          "Scope": "Regulates the allowable placement of detached garages on a residential lot.",
+          "Applicability": "Applies to any detached garage, including those for main or second dwelling units. Illustrated in Scenarios A and C.",
+          "Exclusions": "Does not apply to attached garages."
+        },
+        "Variables": {
+          "Dimensional": "Distance of the detached garage from the front lot line.",
+          "Material": "",
+          "Environmental": "",
+          "Usage Parameters": "Location of the garage (e.g., rear yard, side yard, buildable area)."
+        },
+        "Constants": {
+          "Numerical Values": "75 feet (minimum distance from front lot line)",
+          "Specs": "",
+          "Standards": "",
+          "Procedures": ""
+        },
+        "Conditions": {
+          "Mandatory": "",
+          "Optional": "Placement in rear and side yards is optional ('may be located').",
+          "Conditional Logic": "IF a detached garage is located at least 75 feet from the front lot line, THEN it MAY be located in the rear and side yards.",
+          "Dependencies": ""
+        },
+        "Exceptions": {
+          "Explicit Deviations": "",
+          "Alternatives": "",
+          "Special Cases": "The text implies that if a detached garage is less than 75 feet from the front lot line, it must be located within the main buildable area, but this is not explicitly stated."
+        },
+        "Relationships": {
+          "Hierarchical": "",
+          "Cross-references": "This rule is demonstrated in 'Scenario A' and 'Scenario C' of the site planning examples.",
+          "Logical Dependencies": "This rule provides an alternative placement option compared to the rule for 'Placement of Attached Garages'."
+        }
+      },
+      {
+        "rule": "Placement of Attached Garages",
+        "Qualifiers": {
+          "Scope": "Regulates the allowable placement of attached garages on a residential lot.",
+          "Applicability": "Applies to any garage that is attached to a dwelling unit. Illustrated in Scenarios B and D.",
+          "Exclusions": "Does not apply to detached garages. Placement in rear or side yards is explicitly prohibited."
+        },
+        "Variables": {
+          "Dimensional": "",
+          "Material": "",
+          "Environmental": "",
+          "Usage Parameters": "Location of the garage (e.g., within the buildable area)."
+        },
+        "Constants": {
+          "Numerical Values": "",
+          "Specs": "",
+          "Standards": "",
+          "Procedures": ""
+        },
+        "Conditions": {
+          "Mandatory": "An attached garage MUST be located within the 'buildable area' of the lot.",
+          "Optional": "",
+          "Conditional Logic": "",
+          "Dependencies": ""
+        },
+        "Exceptions": {
+          "Explicit Deviations": "",
+          "Alternatives": "",
+          "Special Cases": ""
+        },
+        "Relationships": {
+          "Hierarchical": "",
+          "Cross-references": "This rule is demonstrated in 'Scenario B' and 'Scenario D' of the site planning examples.",
+          "Logical Dependencies": "This rule is the mandatory counterpart to the conditional rule for 'Placement of Detached Garages'."
+        }
+      },
+      {
+        "rule": "Maximum Size of Detached Second Dwelling Unit",
+        "Qualifiers": {
+          "Scope": "Establishes the maximum permissible floor area for a detached second dwelling unit.",
+          "Applicability": "Applies to all 'Detached 2nd dwelling units'.",
+          "Exclusions": "Does not apply to the main dwelling or other accessory structures."
+        },
+        "Variables": {
+          "Dimensional": "Gross floor area of the second dwelling unit.",
+          "Material": "",
+          "Environmental": "",
+          "Usage Parameters": ""
+        },
+        "Constants": {
+          "Numerical Values": "900 sf max",
+          "Specs": "",
+          "Standards": "",
+          "Procedures": ""
+        },
+        "Conditions": {
+          "Mandatory": "The area of the detached second dwelling unit must not exceed the maximum limit.",
+          "Optional": "",
+          "Conditional Logic": "",
+          "Dependencies": ""
+        },
+        "Exceptions": {
+          "Explicit Deviations": "",
+          "Alternatives": "",
+          "Special Cases": ""
+        },
+        "Relationships": {
+          "Hierarchical": "This is a primary constraint for the structure type 'Detached 2nd dwelling unit' which is the subject of all illustrated scenarios (A, B, C, D).",
+          "Cross-references": "",
+          "Logical Dependencies": ""
+        }
+      },
+      {
+        "rule": "Location of Required Uncovered Parking Spaces",
+        "Qualifiers": {
+          "Scope": "Defines the prohibited area for satisfying required uncovered parking spaces.",
+          "Applicability": "Applies to any required parking space that is not covered (e.g., not in a garage). The text indicates driveways are used for this purpose.",
+          "Exclusions": "Does not apply to covered/garaged parking spaces."
+        },
+        "Variables": {
+          "Dimensional": "",
+          "Material": "",
+          "Environmental": "",
+          "Usage Parameters": "Location of uncovered parking spaces relative to the front setback."
+        },
+        "Constants": {
+          "Numerical Values": "",
+          "Specs": "",
+          "Standards": "",
+          "Procedures": ""
+        },
+        "Conditions": {
+          "Mandatory": "Required uncovered parking spaces must be located 'beyond front setback'.",
+          "Optional": "",
+          "Conditional Logic": "The area within the front setback may not be used to satisfy required parking spaces (inferred from the key and the mandatory condition).",
+          "Dependencies": ""
+        },
+        "Exceptions": {
+          "Explicit Deviations": "",
+          "Alternatives": "",
+          "Special Cases": ""
+        },
+        "Relationships": {
+          "Hierarchical": "",
+          "Cross-references": "This rule is mentioned as a common element in all four scenarios (A, B, C, D). The 'Key (legend)' defines 'Area that may not be used to satisfy required parking spaces'.",
+          "Logical Dependencies": "Depends on the definition and dimension of the 'front setback' for a given lot."
+        }
+      },
+      {
+        "rule": "Minimum Required Parking Spaces per Dwelling (Inferred)",
+        "Qualifiers": {
+          "Scope": "Defines the minimum number of parking spaces required for each dwelling on a lot.",
+          "Applicability": "Applies to lots containing a main dwelling and a second dwelling unit.",
+          "Exclusions": "",
+          "Ambiguous Language": "This rule is not explicitly stated but is consistently inferred from all four scenarios (A, B, C, D), which each show a total of two parking spaces for two dwelling units."
+        },
+        "Variables": {
+          "Dimensional": "",
+          "Material": "",
+          "Environmental": "",
+          "Usage Parameters": "Number of dwelling units."
+        },
+        "Constants": {
+          "Numerical Values": "1 parking space per dwelling unit (Inferred)",
+          "Specs": "",
+          "Standards": "",
+          "Procedures": ""
+        },
+        "Conditions": {
+          "Mandatory": "Each dwelling unit (main and second) must be provided with the required number of parking spaces.",
+          "Optional": "",
+          "Conditional Logic": "",
+          "Dependencies": ""
+        },
+        "Exceptions": {
+          "Explicit Deviations": "",
+          "Alternatives": "The text provides alternatives for how these spaces can be provided (e.g., separate garages, shared garage).",
+          "Special Cases": ""
+        },
+        "Relationships": {
+          "Hierarchical": "This is a foundational requirement that necessitates the parking solutions detailed in Scenarios A, B, C, and D.",
+          "Cross-references": "",
+          "Logical Dependencies": "The total number of required spaces (2) is the basis for the 1-car + 1-car or 2-car garage solutions shown."
+        }
+      },
+      {
+        "rule": "Maximum Size of Single-Car Garage for Second Dwelling Unit (Ambiguous)",
+        "Qualifiers": {
+          "Scope": "Establishes a maximum permissible floor area for a single-car garage associated with a second dwelling unit.",
+          "Applicability": "Appears to apply to 1-car garages serving a second dwelling unit, whether attached or detached, as labels are noted in both Scenarios A and B.",
+          "Exclusions": "Unclear if it applies to larger garages or garages for the main dwelling.",
+          "Ambiguous Language": "The source text for this value is faint and its legibility cannot be confirmed with certainty. The applicability is also slightly ambiguous."
+        },
+        "Variables": {
+          "Dimensional": "Gross floor area of the garage.",
+          "Material": "",
+          "Environmental": "",
+          "Usage Parameters": ""
+        },
+        "Constants": {
+          "Numerical Values": "200 sf max (Value is faint and not confirmed with certainty)",
+          "Specs": "",
+          "Standards": "",
+          "Procedures": ""
+        },
+        "Conditions": {
+          "Mandatory": "If applicable, the garage area must not exceed the maximum limit.",
+          "Optional": "",
+          "Conditional Logic": "",
+          "Dependencies": ""
+        },
+        "Exceptions": {
+          "Explicit Deviations": "",
+          "Alternatives": "",
+          "Special Cases": ""
+        },
+        "Relationships": {
+          "Hierarchical": "",
+          "Cross-references": "This value is noted in the diagram labels for 'Scenario A' and 'Scenario B'.",
+          "Logical Dependencies": "This rule would act as a dimensional constraint on the garages described in Scenarios A and B."
+        }
+      },
+      {
+        "rule": "Minimum Rear Yard Setback for Second Dwelling Unit (Ambiguous)",
+        "Qualifiers": {
+          "Scope": "Defines a minimum setback dimension in the rear yard for a detached second dwelling unit.",
+          "Applicability": "Applies to detached second dwelling units located in the rear yard on an interior lot.",
+          "Exclusions": "Unclear if it applies to other structures or lot types.",
+          "Ambiguous Language": "The numerical value for the dimension is not legible in the source text."
+        },
+        "Variables": {
+          "Dimensional": "Minimum distance from the rear lot line.",
+          "Material": "",
+          "Environmental": "",
+          "Usage Parameters": ""
+        },
+        "Constants": {
+          "Numerical Values": "TBD feet (' min). (Value is not legible in the source text).",
+          "Specs": "",
+          "Standards": "",
+          "Procedures": ""
+        },
+        "Conditions": {
+          "Mandatory": "The detached second dwelling unit must be placed at or beyond this minimum setback from the rear lot line.",
+          "Optional": "",
+          "Conditional Logic": "",
+          "Dependencies": ""
+        },
+        "Exceptions": {
+          "Explicit Deviations": "",
+          "Alternatives": "",
+          "Special Cases": ""
+        },
+        "Relationships": {
+          "Hierarchical": "",
+          "Cross-references": "This requirement is indicated by a dimension arrow in the diagrams for all four scenarios (A, B, C, D).",
+          "Logical Dependencies": "This rule, along with side yard setbacks (not specified), would define the placement of the second dwelling unit within the rear yard."
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n  {\n    \"rule\": \"Placement of Detached Garages\",\n    \"Qualifiers\": {\n      \"Scope\": \"Regulates the allowable placement of detached garages on a residential lot.\",\n      \"Applicability\": \"Applies to any detached garage, including those for main or second dwelling units. Illustrated in Scenarios A and C.\",\n      \"Exclusions\": \"Does not apply to attached garages.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"Distance of the detached garage from the front lot line.\",\n      \"Material\": \"\",\n      \"Environmental\": \"\",\n      \"Usage Parameters\": \"Location of the garage (e.g., rear yard, side yard, buildable area).\"\n    },\n    \"Constants\": {\n      \"Numerical Values\": \"75 feet (minimum distance from front lot line)\",\n      \"Specs\": \"\",\n      \"Standards\": \"\",\n      \"Procedures\": \"\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"\",\n      \"Optional\": \"Placement in rear and side yards is optional ('may be located').\",\n      \"Conditional Logic\": \"IF a detached garage is located at least 75 feet from the front lot line, THEN it MAY be located in the rear and side yards.\",\n      \"Dependencies\": \"\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"\",\n      \"Alternatives\": \"\",\n      \"Special Cases\": \"The text implies that if a detached garage is less than 75 feet from the front lot line, it must be located within the main buildable area, but this is not explicitly stated.\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"\",\n      \"Cross-references\": \"This rule is demonstrated in 'Scenario A' and 'Scenario C' of the site planning examples.\",\n      \"Logical Dependencies\": \"This rule provides an alternative placement option compared to the rule for 'Placement of Attached Garages'.\"\n    }\n  },\n  {\n    \"rule\": \"Placement of Attached Garages\",\n    \"Qualifiers\": {\n      \"Scope\": \"Regulates the allowable placement of attached garages on a residential lot.\",\n      \"Applicability\": \"Applies to any garage that is attached to a dwelling unit. Illustrated in Scenarios B and D.\",\n      \"Exclusions\": \"Does not apply to detached garages. Placement in rear or side yards is explicitly prohibited.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"\",\n      \"Material\": \"\",\n      \"Environmental\": \"\",\n      \"Usage Parameters\": \"Location of the garage (e.g., within the buildable area).\"\n    },\n    \"Constants\": {\n      \"Numerical Values\": \"\",\n      \"Specs\": \"\",\n      \"Standards\": \"\",\n      \"Procedures\": \"\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"An attached garage MUST be located within the 'buildable area' of the lot.\",\n      \"Optional\": \"\",\n      \"Conditional Logic\": \"\",\n      \"Dependencies\": \"\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"\",\n      \"Alternatives\": \"\",\n      \"Special Cases\": \"\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"\",\n      \"Cross-references\": \"This rule is demonstrated in 'Scenario B' and 'Scenario D' of the site planning examples.\",\n      \"Logical Dependencies\": \"This rule is the mandatory counterpart to the conditional rule for 'Placement of Detached Garages'.\"\n    }\n  },\n  {\n    \"rule\": \"Maximum Size of Detached Second Dwelling Unit\",\n    \"Qualifiers\": {\n      \"Scope\": \"Establishes the maximum permissible floor area for a detached second dwelling unit.\",\n      \"Applicability\": \"Applies to all 'Detached 2nd dwelling units'.\",\n      \"Exclusions\": \"Does not apply to the main dwelling or other accessory structures.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"Gross floor area of the second dwelling unit.\",\n      \"Material\": \"\",\n      \"Environmental\": \"\",\n      \"Usage Parameters\": \"\"\n    },\n    \"Constants\": {\n      \"Numerical Values\": \"900 sf max\",\n      \"Specs\": \"\",\n      \"Standards\": \"\",\n      \"Procedures\": \"\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"The area of the detached second dwelling unit must not exceed the maximum limit.\",\n      \"Optional\": \"\",\n      \"Conditional Logic\": \"\",\n      \"Dependencies\": \"\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"\",\n      \"Alternatives\": \"\",\n      \"Special Cases\": \"\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"This is a primary constraint for the structure type 'Detached 2nd dwelling unit' which is the subject of all illustrated scenarios (A, B, C, D).\",\n      \"Cross-references\": \"\",\n      \"Logical Dependencies\": \"\"\n    }\n  },\n  {\n    \"rule\": \"Location of Required Uncovered Parking Spaces\",\n    \"Qualifiers\": {\n      \"Scope\": \"Defines the prohibited area for satisfying required uncovered parking spaces.\",\n      \"Applicability\": \"Applies to any required parking space that is not covered (e.g., not in a garage). The text indicates driveways are used for this purpose.\",\n      \"Exclusions\": \"Does not apply to covered/garaged parking spaces.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"\",\n      \"Material\": \"\",\n      \"Environmental\": \"\",\n      \"Usage Parameters\": \"Location of uncovered parking spaces relative to the front setback.\"\n    },\n    \"Constants\": {\n      \"Numerical Values\": \"\",\n      \"Specs\": \"\",\n      \"Standards\": \"\",\n      \"Procedures\": \"\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"Required uncovered parking spaces must be located 'beyond front setback'.\",\n      \"Optional\": \"\",\n      \"Conditional Logic\": \"The area within the front setback may not be used to satisfy required parking spaces (inferred from the key and the mandatory condition).\",\n      \"Dependencies\": \"\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"\",\n      \"Alternatives\": \"\",\n      \"Special Cases\": \"\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"\",\n      \"Cross-references\": \"This rule is mentioned as a common element in all four scenarios (A, B, C, D). The 'Key (legend)' defines 'Area that may not be used to satisfy required parking spaces'.\",\n      \"Logical Dependencies\": \"Depends on the definition and dimension of the 'front setback' for a given lot.\"\n    }\n  },\n  {\n    \"rule\": \"Minimum Required Parking Spaces per Dwelling (Inferred)\",\n    \"Qualifiers\": {\n      \"Scope\": \"Defines the minimum number of parking spaces required for each dwelling on a lot.\",\n      \"Applicability\": \"Applies to lots containing a main dwelling and a second dwelling unit.\",\n      \"Exclusions\": \"\",\n      \"Ambiguous Language\": \"This rule is not explicitly stated but is consistently inferred from all four scenarios (A, B, C, D), which each show a total of two parking spaces for two dwelling units.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"\",\n      \"Material\": \"\",\n      \"Environmental\": \"\",\n      \"Usage Parameters\": \"Number of dwelling units.\"\n    },\n    \"Constants\": {\n      \"Numerical Values\": \"1 parking space per dwelling unit (Inferred)\",\n      \"Specs\": \"\",\n      \"Standards\": \"\",\n      \"Procedures\": \"\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"Each dwelling unit (main and second) must be provided with the required number of parking spaces.\",\n      \"Optional\": \"\",\n      \"Conditional Logic\": \"\",\n      \"Dependencies\": \"\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"\",\n      \"Alternatives\": \"The text provides alternatives for how these spaces can be provided (e.g., separate garages, shared garage).\",\n      \"Special Cases\": \"\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"This is a foundational requirement that necessitates the parking solutions detailed in Scenarios A, B, C, and D.\",\n      \"Cross-references\": \"\",\n      \"Logical Dependencies\": \"The total number of required spaces (2) is the basis for the 1-car + 1-car or 2-car garage solutions shown.\"\n    }\n  },\n  {\n    \"rule\": \"Maximum Size of Single-Car Garage for Second Dwelling Unit (Ambiguous)\",\n    \"Qualifiers\": {\n      \"Scope\": \"Establishes a maximum permissible floor area for a single-car garage associated with a second dwelling unit.\",\n      \"Applicability\": \"Appears to apply to 1-car garages serving a second dwelling unit, whether attached or detached, as labels are noted in both Scenarios A and B.\",\n      \"Exclusions\": \"Unclear if it applies to larger garages or garages for the main dwelling.\",\n      \"Ambiguous Language\": \"The source text for this value is faint and its legibility cannot be confirmed with certainty. The applicability is also slightly ambiguous.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"Gross floor area of the garage.\",\n      \"Material\": \"\",\n      \"Environmental\": \"\",\n      \"Usage Parameters\": \"\"\n    },\n    \"Constants\": {\n      \"Numerical Values\": \"200 sf max (Value is faint and not confirmed with certainty)\",\n      \"Specs\": \"\",\n      \"Standards\": \"\",\n      \"Procedures\": \"\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"If applicable, the garage area must not exceed the maximum limit.\",\n      \"Optional\": \"\",\n      \"Conditional Logic\": \"\",\n      \"Dependencies\": \"\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"\",\n      \"Alternatives\": \"\",\n      \"Special Cases\": \"\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"\",\n      \"Cross-references\": \"This value is noted in the diagram labels for 'Scenario A' and 'Scenario B'.\",\n      \"Logical Dependencies\": \"This rule would act as a dimensional constraint on the garages described in Scenarios A and B.\"\n    }\n  },\n  {\n    \"rule\": \"Minimum Rear Yard Setback for Second Dwelling Unit (Ambiguous)\",\n    \"Qualifiers\": {\n      \"Scope\": \"Defines a minimum setback dimension in the rear yard for a detached second dwelling unit.\",\n      \"Applicability\": \"Applies to detached second dwelling units located in the rear yard on an interior lot.\",\n      \"Exclusions\": \"Unclear if it applies to other structures or lot types.\",\n      \"Ambiguous Language\": \"The numerical value for the dimension is not legible in the source text.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"Minimum distance from the rear lot line.\",\n      \"Material\": \"\",\n      \"Environmental\": \"\",\n      \"Usage Parameters\": \"\"\n    },\n    \"Constants\": {\n      \"Numerical Values\": \"TBD feet (' min). (Value is not legible in the source text).\",\n      \"Specs\": \"\",\n      \"Standards\": \"\",\n      \"Procedures\": \"\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"The detached second dwelling unit must be placed at or beyond this minimum setback from the rear lot line.\",\n      \"Optional\": \"\",\n      \"Conditional Logic\": \"\",\n      \"Dependencies\": \"\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"\",\n      \"Alternatives\": \"\",\n      \"Special Cases\": \"\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"\",\n      \"Cross-references\": \"This requirement is indicated by a dimension arrow in the diagrams for all four scenarios (A, B, C, D).\",\n      \"Logical Dependencies\": \"This rule, along with side yard setbacks (not specified), would define the placement of the second dwelling unit within the rear yard.\"\n    }\n  }\n]\n```",
+    "response_time": 68.2855851650238,
+    "input_tokens": 1535,
+    "output_tokens": 7802,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 16:15:15",
+  "model": "google/gemini-2.5-pro",
+  "success": true
+}

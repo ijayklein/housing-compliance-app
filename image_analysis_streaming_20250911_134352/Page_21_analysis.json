@@ -1,0 +1,51 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_21.png",
+  "image_name": "Page_21.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Balconies, decks, & outdoor areas on upper floors\n\nOutdoor areas on upper levels that are roofed DO count toward gross floor area regardless of the design (including whether or not the sides are open).\n\nAn outdoor area on an upper floor is considered to be roofed if the eave over that area is deeper than the eave over the rest of the building. This may be illustrated by comparing Roof Plans 1 & 2 of Fig 10.\n\nFig 10 Balconies\n\nRoof plan 1\nRoof plan 2\n\nNote: Pop-out balconies are subject to the same evaluation.\n\nRoof Plan 1 Area A: Counts because it is roofed\nArea B: Does not count because this arbor is substantially open\nArea C: Does not count because the overhang is the same size as the overhang around the rest of the house and is considered to be open\n\nWidth of overhang over the balcony\n\nWidth of overhang around the rest of the house\n\nRoof Plan 2 Area A: Counts because it is roofed\nArea B: Counts because the overhang here is greater than the overhang around the rest of the house, and considered to be roofed\nArea C: Does not count because it is open\n\nWidth of overhang over the balcony\n\nWidth of overhang around the rest of the house\n\n15",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "3D isometric drawing of a two-story building with balconies, showing roof plan 1 and roof plan 2 with arrows pointing to different areas. The building has windows, doors, and multiple outdoor areas including balconies and decks.",
+          "location": "Left side of page, center"
+        },
+        {
+          "type": "diagram",
+          "description": "Roof Plan 1 - Top-down view showing three areas labeled A, B, and C. Area A is shown with diagonal hatching, Area B has a grid pattern, and Area C is shown as an open area. Arrows indicate width measurements for overhangs.",
+          "location": "Right side of page, upper portion"
+        },
+        {
+          "type": "diagram",
+          "description": "Roof Plan 2 - Top-down view showing three areas labeled A, B, and C in different configuration than Plan 1. Area A is shown with diagonal hatching, Area B has diagonal hatching, and Area C is shown as an open area. Arrows indicate width measurements for overhangs.",
+          "location": "Right side of page, lower portion"
+        }
+      ],
+      "technical_specifications": [],
+      "structural_elements": {
+        "main_heading": "Balconies, decks, & outdoor areas on upper floors",
+        "subheadings": [
+          "Fig 10 Balconies",
+          "Roof Plan 1",
+          "Roof Plan 2"
+        ],
+        "sections": [
+          "Note"
+        ]
+      },
+      "additional_notes": [
+        "Gray highlighted text box contains key rule about roofed outdoor areas",
+        "Dark gray note box at bottom left emphasizes pop-out balcony evaluation",
+        "Page number 15 appears at bottom right",
+        "Areas A, B, and C are clearly labeled in both roof plan diagrams",
+        "Measurement arrows show comparative overhang widths"
+      ],
+      "cross_references": [
+        "Fig 10",
+        "Roof Plans 1 & 2 of Fig 10"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-11 13:44:21",
+  "model_used": "anthropic/claude-sonnet-4"
+}

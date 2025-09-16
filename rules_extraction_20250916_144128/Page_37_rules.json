@@ -1,0 +1,186 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_37.md",
+  "file_name": "Page_37.md",
+  "analysis": {
+    "extracted_rules": {
+      "rules": [
+        {
+          "title": "Accessory structures site planning - Section A: Combo garage / small pool cabana (side by side)",
+          "qualifiers": {
+            "scope": "Accessory structures located in rear yard",
+            "applicability": "Combo garage / small pool cabana",
+            "exclusions": "None specified"
+          },
+          "variables": {
+            "dimensional": {
+              "distance_from_front_lot_line": "75'",
+              "height": "12'"
+            },
+            "material": {
+              "fire_rating": "Required for wall and roof"
+            },
+            "environmental": {
+              "daylight_plane_compliance": "Required"
+            },
+            "usage_parameters": {
+              "plumbing_fixtures": 2
+            }
+          },
+          "constants": {
+            "numerical_values": {
+              "front_lot_line_distance": "75'",
+              "maximum_height": "12'"
+            },
+            "specs": {
+              "daylight_plane": "Figures 25 & 26 on p. 32"
+            }
+          },
+          "conditions": {
+            "mandatory": [
+              "Located in rear yard",
+              "Fire-rated wall and roof"
+            ],
+            "optional": [],
+            "conditional_logic": [],
+            "dependencies": []
+          },
+          "exceptions": {
+            "explicit_deviations": [],
+            "alternatives": [],
+            "special_cases": []
+          },
+          "relationships": {
+            "hierarchical": [],
+            "cross_references": [
+              "Figures 25 & 26 on p. 32"
+            ],
+            "logical_dependencies": []
+          }
+        },
+        {
+          "title": "Accessory structures site planning - Section B: Stand-alone pool cabana",
+          "qualifiers": {
+            "scope": "Accessory structures located in rear yard",
+            "applicability": "Stand-alone pool cabana",
+            "exclusions": "None specified"
+          },
+          "variables": {
+            "dimensional": {
+              "distance_from_front_lot_line": "75'",
+              "height": "12'",
+              "area": "greater than 200 sf"
+            },
+            "material": {
+              "fire_rating": "Required for wall and roof"
+            },
+            "environmental": {
+              "daylight_plane_compliance": "Required"
+            },
+            "usage_parameters": {
+              "plumbing_fixtures": 3,
+              "fixtures_details": [
+                "sink",
+                "toilet",
+                "shower"
+              ]
+            }
+          },
+          "constants": {
+            "numerical_values": {
+              "front_lot_line_distance": "75'",
+              "maximum_height": "12'",
+              "area_threshold": "200 sf"
+            },
+            "specs": {
+              "daylight_plane": "Figures 25 & 26 on p. 32"
+            },
+            "procedures": {
+              "CUP_requirement": "Required if greater than 200 sf"
+            }
+          },
+          "conditions": {
+            "mandatory": [
+              "Located in rear yard",
+              "Fire-rated wall and roof",
+              "CUP required if greater than 200 sf"
+            ],
+            "optional": [],
+            "conditional_logic": [],
+            "dependencies": []
+          },
+          "exceptions": {
+            "explicit_deviations": [],
+            "alternatives": [],
+            "special_cases": []
+          },
+          "relationships": {
+            "hierarchical": [],
+            "cross_references": [
+              "Figures 25 & 26 on p. 32"
+            ],
+            "logical_dependencies": []
+          }
+        },
+        {
+          "title": "Accessory structures site planning - Section C: Office above garage",
+          "qualifiers": {
+            "scope": "Accessory structures located within buildable area",
+            "applicability": "Office above garage",
+            "exclusions": "Structures in required yards"
+          },
+          "variables": {
+            "dimensional": {
+              "stories": 2
+            },
+            "material": {},
+            "environmental": {},
+            "usage_parameters": {
+              "plumbing_fixtures": 2
+            }
+          },
+          "constants": {
+            "numerical_values": {
+              "stories": 2
+            },
+            "specs": {},
+            "procedures": {
+              "IR_requirement": "Subject to Planning Department's Individual Review"
+            }
+          },
+          "conditions": {
+            "mandatory": [
+              "Located within buildable area",
+              "Subject to Individual Review"
+            ],
+            "optional": [],
+            "conditional_logic": [],
+            "dependencies": []
+          },
+          "exceptions": {
+            "explicit_deviations": [],
+            "alternatives": [],
+            "special_cases": []
+          },
+          "relationships": {
+            "hierarchical": [],
+            "cross_references": [],
+            "logical_dependencies": []
+          }
+        }
+      ],
+      "general_notes": [
+        {
+          "note": "Site planning for accessory buildings differs from that for parking structures in one way. A special allowance enables garages to be located in the rear/side yards even when the lot is not deep enough to maintain the 75' minimum distance from the front lot line. This does not apply to non-parking accessory structures."
+        },
+        {
+          "note": "Because this structure is 2 stories, it must be located within the buildable area regardless of the distances from the lot lines and is subject to Individual Review (IR)."
+        }
+      ]
+    },
+    "parse_error": false,
+    "raw_response": "```json\n{\n  \"rules\": [\n    {\n      \"title\": \"Accessory structures site planning - Section A: Combo garage / small pool cabana (side by side)\",\n      \"qualifiers\": {\n        \"scope\": \"Accessory structures located in rear yard\",\n        \"applicability\": \"Combo garage / small pool cabana\",\n        \"exclusions\": \"None specified\"\n      },\n      \"variables\": {\n        \"dimensional\": {\n          \"distance_from_front_lot_line\": \"75'\",\n          \"height\": \"12'\"\n        },\n        \"material\": {\n          \"fire_rating\": \"Required for wall and roof\"\n        },\n        \"environmental\": {\n          \"daylight_plane_compliance\": \"Required\"\n        },\n        \"usage_parameters\": {\n          \"plumbing_fixtures\": 2\n        }\n      },\n      \"constants\": {\n        \"numerical_values\": {\n          \"front_lot_line_distance\": \"75'\",\n          \"maximum_height\": \"12'\"\n        },\n        \"specs\": {\n          \"daylight_plane\": \"Figures 25 & 26 on p. 32\"\n        }\n      },\n      \"conditions\": {\n        \"mandatory\": [\n          \"Located in rear yard\",\n          \"Fire-rated wall and roof\"\n        ],\n        \"optional\": [],\n        \"conditional_logic\": [],\n        \"dependencies\": []\n      },\n      \"exceptions\": {\n        \"explicit_deviations\": [],\n        \"alternatives\": [],\n        \"special_cases\": []\n      },\n      \"relationships\": {\n        \"hierarchical\": [],\n        \"cross_references\": [\n          \"Figures 25 & 26 on p. 32\"\n        ],\n        \"logical_dependencies\": []\n      }\n    },\n    {\n      \"title\": \"Accessory structures site planning - Section B: Stand-alone pool cabana\",\n      \"qualifiers\": {\n        \"scope\": \"Accessory structures located in rear yard\",\n        \"applicability\": \"Stand-alone pool cabana\",\n        \"exclusions\": \"None specified\"\n      },\n      \"variables\": {\n        \"dimensional\": {\n          \"distance_from_front_lot_line\": \"75'\",\n          \"height\": \"12'\",\n          \"area\": \"greater than 200 sf\"\n        },\n        \"material\": {\n          \"fire_rating\": \"Required for wall and roof\"\n        },\n        \"environmental\": {\n          \"daylight_plane_compliance\": \"Required\"\n        },\n        \"usage_parameters\": {\n          \"plumbing_fixtures\": 3,\n          \"fixtures_details\": [\"sink\", \"toilet\", \"shower\"]\n        }\n      },\n      \"constants\": {\n        \"numerical_values\": {\n          \"front_lot_line_distance\": \"75'\",\n          \"maximum_height\": \"12'\",\n          \"area_threshold\": \"200 sf\"\n        },\n        \"specs\": {\n          \"daylight_plane\": \"Figures 25 & 26 on p. 32\"\n        },\n        \"procedures\": {\n          \"CUP_requirement\": \"Required if greater than 200 sf\"\n        }\n      },\n      \"conditions\": {\n        \"mandatory\": [\n          \"Located in rear yard\",\n          \"Fire-rated wall and roof\",\n          \"CUP required if greater than 200 sf\"\n        ],\n        \"optional\": [],\n        \"conditional_logic\": [],\n        \"dependencies\": []\n      },\n      \"exceptions\": {\n        \"explicit_deviations\": [],\n        \"alternatives\": [],\n        \"special_cases\": []\n      },\n      \"relationships\": {\n        \"hierarchical\": [],\n        \"cross_references\": [\n          \"Figures 25 & 26 on p. 32\"\n        ],\n        \"logical_dependencies\": []\n      }\n    },\n    {\n      \"title\": \"Accessory structures site planning - Section C: Office above garage\",\n      \"qualifiers\": {\n        \"scope\": \"Accessory structures located within buildable area\",\n        \"applicability\": \"Office above garage\",\n        \"exclusions\": \"Structures in required yards\"\n      },\n      \"variables\": {\n        \"dimensional\": {\n          \"stories\": 2\n        },\n        \"material\": {},\n        \"environmental\": {},\n        \"usage_parameters\": {\n          \"plumbing_fixtures\": 2\n        }\n      },\n      \"constants\": {\n        \"numerical_values\": {\n          \"stories\": 2\n        },\n        \"specs\": {},\n        \"procedures\": {\n          \"IR_requirement\": \"Subject to Planning Department's Individual Review\"\n        }\n      },\n      \"conditions\": {\n        \"mandatory\": [\n          \"Located within buildable area\",\n          \"Subject to Individual Review\"\n        ],\n        \"optional\": [],\n        \"conditional_logic\": [],\n        \"dependencies\": []\n      },\n      \"exceptions\": {\n        \"explicit_deviations\": [],\n        \"alternatives\": [],\n        \"special_cases\": []\n      },\n      \"relationships\": {\n        \"hierarchical\": [],\n        \"cross_references\": [],\n        \"logical_dependencies\": []\n      }\n    }\n  ],\n  \"general_notes\": [\n    {\n      \"note\": \"Site planning for accessory buildings differs from that for parking structures in one way. A special allowance enables garages to be located in the rear/side yards even when the lot is not deep enough to maintain the 75' minimum distance from the front lot line. This does not apply to non-parking accessory structures.\"\n    },\n    {\n      \"note\": \"Because this structure is 2 stories, it must be located within the buildable area regardless of the distances from the lot lines and is subject to Individual Review (IR).\"\n    }\n  ]\n}\n```"
+  },
+  "timestamp": "2025-09-16 14:43:10",
+  "model": "openai/gpt-4o",
+  "success": true
+}

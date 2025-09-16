@@ -1,0 +1,123 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_10.png",
+  "image_name": "Page_10.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Lot coverage & floor area\nThese terms are used to describe the amount of development on a lot.\nLot coverage describes how much of the lot is covered by structures but doesn\u2019t evaluate the mass of those structures.\nGross floor area describes the mass of the structures by reflecting the cumulative square footage of all visible levels.\nCode sections\nPage 4\u20135\n18.12.040 (a) Table 2\n18.12.040 (b) Table 3\n18.04.030 (a) (86)\n\nLot coverage\nMaximum allowable\nAllowable lot coverage is expressed by a ratio\u201435% of the lot size.\nExample calculation:\nFor a 7,000 sf lot, the allowable lot coverage would be:\n0.35 x 7,000 sf = 2,450 sf\n\nLot coverage includes:\n\u2022 footprints of all structures including main residence, covered parking, tool sheds, covered pool equipment units, etc.\n\u2022 projecting elements such as balconies, stairways, porches, patio covers, etc.\n\u2022 decking that exceeds 30\u201d above grade.\n\u2022 for roof overhangs or eaves that exceed 4\u2019, the portion that is beyond 4\u2019.\n\u2022 swimming pools and spas that exceed 30\u201d above grade.\n\nLot coverage excludes:\n\u2022 roof overhangs up to 4\u2019.\n\u2022 uncovered structures less than 30\u201d above grade.\n\nAn additional 5% coverage is permitted for covered patios, canopies and roof overhangs beyond 4 feet.\n\nNote: To qualify as a structure that is less than 30 inches above grade, a porch or deck may only have open railings above 30 inches\u2014no solid half walls.\n\nGross Floor area\nMaximum allowable\nAllowable gross floor area is expressed by a ratio\u2014the sum of 45% of the first 5,000 sf of lot area plus 30% of any portion of lot area in excess of 5,000 sf.\nExample calculation:\nFor a 7,000 sf lot, the allowable gross floor area would be:\n0.45 x 5,000 sf = 2,250 sf\n0.30 x 2,000 sf = 600 sf\n_________________________\nTotal = 2,850 sf\n\nGross floor area includes:\n\u2022 the sum of all the floors in a main structure measured to the outside of the exterior stud walls.\n\u2022 stairwells at all floors and all areas that are greater than 50% enclosed and covered.\n\u2022 covered parking and all accessory buildings which are greater than 120 square feet.\n\u2022 spaces that meet the criteria for second and third floor equivalents.\n\nNote: The main house may not exceed 6,000 sf, regardless of the size of the lot.",
+      "visual_elements": [
+        {
+          "type": "table",
+          "description": "Two example calculation tables showing allowable lot coverage and allowable gross floor area for a 7,000 sf lot. The lot coverage table shows calculation: 0.35 x 7,000 sf = 2,450 sf. The gross floor area table shows calculations: 0.45 x 5,000 sf = 2,250 sf and 0.30 x 2,000 sf = 600 sf, with a total of 2,850 sf.",
+          "location": "middle of the page, one under 'Lot coverage' and one under 'Gross Floor area'"
+        },
+        {
+          "type": "sidebar",
+          "description": "Vertical sidebar on the left side of the page with the heading 'Lot coverage & floor area' and explanatory text about the terms, plus code section references at the bottom.",
+          "location": "left side of the page"
+        },
+        {
+          "type": "highlight box",
+          "description": "Two grey highlight boxes containing example calculations and notes. One under 'Lot coverage' with the example calculation, and one under 'Gross Floor area' with the example calculation and a note about the main house size limit.",
+          "location": "middle right and bottom right of the page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Maximum allowable lot coverage ratio",
+          "value": "35",
+          "unit": "percent"
+        },
+        {
+          "parameter": "Example lot size for lot coverage calculation",
+          "value": "7,000",
+          "unit": "square feet"
+        },
+        {
+          "parameter": "Allowable lot coverage for 7,000 sf lot",
+          "value": "2,450",
+          "unit": "square feet"
+        },
+        {
+          "parameter": "Maximum allowable gross floor area ratio",
+          "value": "45% of first 5,000 sf plus 30% of excess",
+          "unit": "percent"
+        },
+        {
+          "parameter": "Example lot size for gross floor area calculation",
+          "value": "7,000",
+          "unit": "square feet"
+        },
+        {
+          "parameter": "Allowable gross floor area for 7,000 sf lot",
+          "value": "2,850",
+          "unit": "square feet"
+        },
+        {
+          "parameter": "Maximum main house size",
+          "value": "6,000",
+          "unit": "square feet"
+        },
+        {
+          "parameter": "Roof overhangs coverage exclusion",
+          "value": "up to 4",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Decking height inclusion threshold",
+          "value": "30",
+          "unit": "inches above grade"
+        },
+        {
+          "parameter": "Swimming pools and spas height inclusion threshold",
+          "value": "30",
+          "unit": "inches above grade"
+        },
+        {
+          "parameter": "Additional coverage permitted for covered patios, canopies, and roof overhangs beyond 4 feet",
+          "value": "5",
+          "unit": "percent"
+        },
+        {
+          "parameter": "Covered parking and accessory buildings inclusion threshold",
+          "value": "120",
+          "unit": "square feet"
+        },
+        {
+          "parameter": "Stairwells inclusion criteria",
+          "value": "greater than 50% enclosed and covered",
+          "unit": "percent enclosed"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Lot coverage & floor area",
+        "subheadings": [
+          "Lot coverage",
+          "Maximum allowable",
+          "Lot coverage includes:",
+          "Lot coverage excludes:",
+          "Gross Floor area",
+          "Maximum allowable",
+          "Gross floor area includes:"
+        ],
+        "sections": [
+          "Code sections",
+          "Lot coverage",
+          "Gross Floor area"
+        ]
+      },
+      "additional_notes": [
+        "No handwritten annotations or stamps present.",
+        "Page number '4' located at bottom left corner.",
+        "Text is clear and legible with no quality issues."
+      ],
+      "cross_references": [
+        "Code sections Page 4\u20135",
+        "18.12.040 (a) Table 2",
+        "18.12.040 (b) Table 3",
+        "18.04.030 (a) (86)"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-14 19:41:15",
+  "model_used": "openai/gpt-4.1-mini"
+}

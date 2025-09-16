@@ -1,0 +1,163 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_17.md",
+  "file_name": "Page_17.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "Qualifiers": {
+          "scope": "Entry features for buildings: definition of vaulted entry features and how their footprint contributes to gross floor area (GFA).",
+          "applicability": "All entry features where the measured height is evaluated to determine vaulted status; applies regardless of design, including whether the entry is open or enclosed.",
+          "exclusions": "None stated."
+        },
+        "Variables": [
+          {
+            "name": "entry_feature.height",
+            "description": "Vertical height of the entry feature used to determine vaulted status.",
+            "unit": "ft",
+            "source_or_measurement_method": "Per measurement procedures for entry features (see related rule on height measurement)."
+          },
+          {
+            "name": "entry_feature.footprint_area",
+            "description": "Horizontal footprint area of the entryway feature measured to the outside face of the entryway materials; includes any portion recessed beyond the house/front facade and roof.",
+            "unit": "sq ft",
+            "source_or_measurement_method": "Measured in plan to the outside material boundary of the entry feature; include recessed areas."
+          },
+          {
+            "name": "gross_floor_area",
+            "description": "Project gross floor area to which the entry feature footprint contribution is added.",
+            "unit": "sq ft"
+          }
+        ],
+        "Constants": [
+          {
+            "name": "vaulted_height_threshold",
+            "value": 12,
+            "unit": "ft",
+            "type": "numerical",
+            "description": "Threshold above which an entry feature is classified as a vaulted entry feature."
+          },
+          {
+            "name": "vaulted_gfa_multiplier",
+            "value": 2,
+            "unit": "dimensionless",
+            "type": "numerical",
+            "description": "Multiplier applied to the footprint area of vaulted entry features when counting toward gross floor area."
+          },
+          {
+            "name": "footprint_boundary_spec",
+            "value": "outside face of entryway material",
+            "unit": null,
+            "type": "specification",
+            "description": "The footprint is measured to the outside material of the entryway feature; any portion recessed beyond the house/front facade and roof is included."
+          }
+        ],
+        "Conditions": [
+          {
+            "type": "classification",
+            "logic": "IF entry_feature.height > vaulted_height_threshold THEN entry_feature.is_vaulted = true ELSE entry_feature.is_vaulted = false",
+            "mandatory": true,
+            "notes": "The phrase 'greater than 12' high' implies a strict inequality; height equal to 12 ft is not vaulted."
+          },
+          {
+            "type": "counting_rule",
+            "logic": "IF entry_feature.is_vaulted = true THEN gross_floor_area += vaulted_gfa_multiplier * entry_feature.footprint_area",
+            "mandatory": true,
+            "notes": "Applies regardless of entry design, including whether open or enclosed."
+          },
+          {
+            "type": "measurement_scope",
+            "logic": "entry_feature.footprint_area must include recessed portions beyond the house/front facade and roof and be bounded at the outside face of the entryway material",
+            "mandatory": true
+          }
+        ],
+        "Exceptions": [],
+        "Relationships": [
+          {
+            "type": "dependency",
+            "description": "Vaulted classification depends on the measured height of the entry feature.",
+            "depends_on": "Height measurement procedure for entry features (see related rule for shed roof measurement)."
+          },
+          {
+            "type": "override",
+            "description": "Design characteristics (including openness) do not affect vaulted counting; the 2x multiplier applies regardless of design.",
+            "overrides": "Any design-based exclusions for open vs. enclosed entries."
+          },
+          {
+            "type": "cross_reference",
+            "description": "Figures 6\u20138 are cited as measurement examples.",
+            "references": [
+              "Figure 6 (provided: shed roof)",
+              "Figure 7 (not provided)",
+              "Figure 8 (not provided)"
+            ]
+          }
+        ]
+      },
+      {
+        "Qualifiers": {
+          "scope": "Measurement procedure for determining the height of an entry feature with a shed roof (Figure 6) to assess vaulted status.",
+          "applicability": "Entry features having a shed roof configuration as illustrated in Figure 6.",
+          "exclusions": "Other roof configurations (e.g., gable, hip) not covered by Figure 6; see other figures (7\u20138) which are not provided here."
+        },
+        "Variables": [
+          {
+            "name": "grade",
+            "description": "Reference ground elevation at the entry feature used as the base point for height measurement.",
+            "unit": "ft",
+            "source_or_measurement_method": "As shown in isometric/side elevation; exact grade definition not specified (see ambiguities)."
+          },
+          {
+            "name": "front_facade_top_of_roof_intersection",
+            "description": "The line/point where the front facade plane intersects the top surface of the roof material of the entry feature.",
+            "unit": null
+          },
+          {
+            "name": "entry_feature.height",
+            "description": "Computed vertical distance used for vaulted determination.",
+            "unit": "ft",
+            "source_or_measurement_method": "Vertical distance from grade to the intersection of the front facade and the top of roof material."
+          }
+        ],
+        "Constants": [
+          {
+            "name": "height_measurement_procedure_shed_roof",
+            "type": "procedure",
+            "value": "Measure the entry feature height as the vertical distance from grade to the intersection of the front facade and the top of the roof material, as depicted in the side elevation for a shed roof entry feature.",
+            "unit": null,
+            "description": "Two vertical dashed lines flank the feature in diagrams; the exact use of both lines is not specified (see ambiguities)."
+          }
+        ],
+        "Conditions": [
+          {
+            "type": "evaluation",
+            "logic": "Use measured entry_feature.height to evaluate vaulted status per vaulted_height_threshold (> 12 ft).",
+            "mandatory": true,
+            "dependencies": "Vaulted classification and GFA counting rule."
+          }
+        ],
+        "Exceptions": [],
+        "Relationships": [
+          {
+            "type": "feeds",
+            "description": "Provides the input height for the vaulted classification and GFA counting rule.",
+            "targets": "Vaulted entry feature classification and footprint counting."
+          },
+          {
+            "type": "cross_reference",
+            "description": "Figure 6 (shed roof) provides the example diagrams: Isometric View, Side Elevation, Porch Floor Plan.",
+            "references": [
+              "Isometric View: height and grade labeled",
+              "Side Elevation: height labeled; callout at intersection of front facade and top of roof material",
+              "Porch Floor Plan: outlines roof and floor area that counts twice if vaulted"
+            ]
+          }
+        ]
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "[\n  {\n    \"Qualifiers\": {\n      \"scope\": \"Entry features for buildings: definition of vaulted entry features and how their footprint contributes to gross floor area (GFA).\",\n      \"applicability\": \"All entry features where the measured height is evaluated to determine vaulted status; applies regardless of design, including whether the entry is open or enclosed.\",\n      \"exclusions\": \"None stated.\"\n    },\n    \"Variables\": [\n      {\n        \"name\": \"entry_feature.height\",\n        \"description\": \"Vertical height of the entry feature used to determine vaulted status.\",\n        \"unit\": \"ft\",\n        \"source_or_measurement_method\": \"Per measurement procedures for entry features (see related rule on height measurement).\"\n      },\n      {\n        \"name\": \"entry_feature.footprint_area\",\n        \"description\": \"Horizontal footprint area of the entryway feature measured to the outside face of the entryway materials; includes any portion recessed beyond the house/front facade and roof.\",\n        \"unit\": \"sq ft\",\n        \"source_or_measurement_method\": \"Measured in plan to the outside material boundary of the entry feature; include recessed areas.\"\n      },\n      {\n        \"name\": \"gross_floor_area\",\n        \"description\": \"Project gross floor area to which the entry feature footprint contribution is added.\",\n        \"unit\": \"sq ft\"\n      }\n    ],\n    \"Constants\": [\n      {\n        \"name\": \"vaulted_height_threshold\",\n        \"value\": 12,\n        \"unit\": \"ft\",\n        \"type\": \"numerical\",\n        \"description\": \"Threshold above which an entry feature is classified as a vaulted entry feature.\"\n      },\n      {\n        \"name\": \"vaulted_gfa_multiplier\",\n        \"value\": 2,\n        \"unit\": \"dimensionless\",\n        \"type\": \"numerical\",\n        \"description\": \"Multiplier applied to the footprint area of vaulted entry features when counting toward gross floor area.\"\n      },\n      {\n        \"name\": \"footprint_boundary_spec\",\n        \"value\": \"outside face of entryway material\",\n        \"unit\": null,\n        \"type\": \"specification\",\n        \"description\": \"The footprint is measured to the outside material of the entryway feature; any portion recessed beyond the house/front facade and roof is included.\"\n      }\n    ],\n    \"Conditions\": [\n      {\n        \"type\": \"classification\",\n        \"logic\": \"IF entry_feature.height > vaulted_height_threshold THEN entry_feature.is_vaulted = true ELSE entry_feature.is_vaulted = false\",\n        \"mandatory\": true,\n        \"notes\": \"The phrase 'greater than 12' high' implies a strict inequality; height equal to 12 ft is not vaulted.\"\n      },\n      {\n        \"type\": \"counting_rule\",\n        \"logic\": \"IF entry_feature.is_vaulted = true THEN gross_floor_area += vaulted_gfa_multiplier * entry_feature.footprint_area\",\n        \"mandatory\": true,\n        \"notes\": \"Applies regardless of entry design, including whether open or enclosed.\"\n      },\n      {\n        \"type\": \"measurement_scope\",\n        \"logic\": \"entry_feature.footprint_area must include recessed portions beyond the house/front facade and roof and be bounded at the outside face of the entryway material\",\n        \"mandatory\": true\n      }\n    ],\n    \"Exceptions\": [],\n    \"Relationships\": [\n      {\n        \"type\": \"dependency\",\n        \"description\": \"Vaulted classification depends on the measured height of the entry feature.\",\n        \"depends_on\": \"Height measurement procedure for entry features (see related rule for shed roof measurement).\"\n      },\n      {\n        \"type\": \"override\",\n        \"description\": \"Design characteristics (including openness) do not affect vaulted counting; the 2x multiplier applies regardless of design.\",\n        \"overrides\": \"Any design-based exclusions for open vs. enclosed entries.\"\n      },\n      {\n        \"type\": \"cross_reference\",\n        \"description\": \"Figures 6\u20138 are cited as measurement examples.\",\n        \"references\": [\n          \"Figure 6 (provided: shed roof)\",\n          \"Figure 7 (not provided)\",\n          \"Figure 8 (not provided)\"\n        ]\n      }\n    ]\n  },\n  {\n    \"Qualifiers\": {\n      \"scope\": \"Measurement procedure for determining the height of an entry feature with a shed roof (Figure 6) to assess vaulted status.\",\n      \"applicability\": \"Entry features having a shed roof configuration as illustrated in Figure 6.\",\n      \"exclusions\": \"Other roof configurations (e.g., gable, hip) not covered by Figure 6; see other figures (7\u20138) which are not provided here.\"\n    },\n    \"Variables\": [\n      {\n        \"name\": \"grade\",\n        \"description\": \"Reference ground elevation at the entry feature used as the base point for height measurement.\",\n        \"unit\": \"ft\",\n        \"source_or_measurement_method\": \"As shown in isometric/side elevation; exact grade definition not specified (see ambiguities).\"\n      },\n      {\n        \"name\": \"front_facade_top_of_roof_intersection\",\n        \"description\": \"The line/point where the front facade plane intersects the top surface of the roof material of the entry feature.\",\n        \"unit\": null\n      },\n      {\n        \"name\": \"entry_feature.height\",\n        \"description\": \"Computed vertical distance used for vaulted determination.\",\n        \"unit\": \"ft\",\n        \"source_or_measurement_method\": \"Vertical distance from grade to the intersection of the front facade and the top of roof material.\"\n      }\n    ],\n    \"Constants\": [\n      {\n        \"name\": \"height_measurement_procedure_shed_roof\",\n        \"type\": \"procedure\",\n        \"value\": \"Measure the entry feature height as the vertical distance from grade to the intersection of the front facade and the top of the roof material, as depicted in the side elevation for a shed roof entry feature.\",\n        \"unit\": null,\n        \"description\": \"Two vertical dashed lines flank the feature in diagrams; the exact use of both lines is not specified (see ambiguities).\"\n      }\n    ],\n    \"Conditions\": [\n      {\n        \"type\": \"evaluation\",\n        \"logic\": \"Use measured entry_feature.height to evaluate vaulted status per vaulted_height_threshold (> 12 ft).\",\n        \"mandatory\": true,\n        \"dependencies\": \"Vaulted classification and GFA counting rule.\"\n      }\n    ],\n    \"Exceptions\": [],\n    \"Relationships\": [\n      {\n        \"type\": \"feeds\",\n        \"description\": \"Provides the input height for the vaulted classification and GFA counting rule.\",\n        \"targets\": \"Vaulted entry feature classification and footprint counting.\"\n      },\n      {\n        \"type\": \"cross_reference\",\n        \"description\": \"Figure 6 (shed roof) provides the example diagrams: Isometric View, Side Elevation, Porch Floor Plan.\",\n        \"references\": [\n          \"Isometric View: height and grade labeled\",\n          \"Side Elevation: height labeled; callout at intersection of front facade and top of roof material\",\n          \"Porch Floor Plan: outlines roof and floor area that counts twice if vaulted\"\n        ]\n      }\n    ]\n  }\n]"
+  },
+  "timestamp": "2025-09-16 14:57:58",
+  "model": "openai/gpt-5",
+  "success": true
+}

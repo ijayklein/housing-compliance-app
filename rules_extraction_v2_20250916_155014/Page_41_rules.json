@@ -1,0 +1,330 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_41.md",
+  "file_name": "Page_41.md",
+  "analysis": {
+    "extracted_rules": {
+      "rules": [
+        {
+          "id": "carport.plan_view",
+          "title": "Carport parking space dimensions - Plan View",
+          "Qualifiers": {
+            "scope": "Carport parking space dimensional standard in plan (top-down) view",
+            "applicability": "Applies to carports as depicted in Figure 29 (Parking space dimensions for carport in plan view)",
+            "exclusions": [],
+            "ambiguities": [
+              "The term 'open' is used without a formal definition; interpreted as unobstructed clear dimension free of structural or architectural elements.",
+              "Transverse entrance opening width is labeled 'open' with no numeric value provided.",
+              "Presence of 'One of 2 corner columns' is shown diagrammatically and not clearly stated as a requirement.",
+              "Footer shows page number 35 while header indicates Page 41; source pagination is inconsistent."
+            ],
+            "source": {
+              "page_header": "Carport standards",
+              "figure": "Figure 29",
+              "captions": [
+                "Parking space dimensions for carport in plan view"
+              ],
+              "labels": [
+                "20' min. open (longitudinal dimension alongside the parking space)",
+                "open (transverse dimension at the entrance; no numeric value shown)",
+                "One of 2 corner columns",
+                "Driveway/parking surface",
+                "Plan View"
+              ]
+            }
+          },
+          "Variables": [
+            {
+              "id": "longitudinal_open_length",
+              "name": "Longitudinal open length",
+              "type": "dimensional",
+              "unit": "ft",
+              "orientation": "longitudinal",
+              "context": "plan_view",
+              "description": "Clear, unobstructed length of the parking space along the vehicle axis within the carport.",
+              "measurement_reference": "Measured along the parking space from the entrance inward, free of obstructions."
+            },
+            {
+              "id": "entrance_transverse_open_width",
+              "name": "Entrance transverse open width",
+              "type": "dimensional",
+              "unit": "ft",
+              "orientation": "transverse",
+              "context": "plan_view",
+              "description": "Clear, unobstructed width at the entrance opening of the carport.",
+              "measurement_reference": "Measured between the inner faces of any supports/columns or edges defining the entrance opening.",
+              "status": "value_not_provided"
+            }
+          ],
+          "Constants": [
+            {
+              "id": "c_min_longitudinal_open_length",
+              "target_variable_id": "longitudinal_open_length",
+              "value": 20,
+              "unit": "ft",
+              "spec_type": "minimum",
+              "label": "20' min. open"
+            }
+          ],
+          "Conditions": [
+            {
+              "type": "mandatory",
+              "target_variable_id": "longitudinal_open_length",
+              "operator": ">=",
+              "value": 20,
+              "unit": "ft",
+              "notes": "Dimension must be open (unobstructed)."
+            },
+            {
+              "type": "mandatory",
+              "target_variable_id": "entrance_transverse_open_width",
+              "operator": "specified_numeric_required",
+              "value": null,
+              "unit": "ft",
+              "notes": "A clear, unobstructed transverse entrance opening is required, but no numeric minimum is provided in the source; this must be confirmed from other sections or figures."
+            }
+          ],
+          "Exceptions": [],
+          "Relationships": {
+            "hierarchical": [
+              {
+                "parent": "Carport standards",
+                "child": "Figure 29 - Plan View"
+              }
+            ],
+            "cross_references": [
+              {
+                "related_rule_id": "carport.left_elevation",
+                "relationship": "The 20 ft minimum opening appears consistent with side elevation horizontal opening width."
+              }
+            ],
+            "logical_dependencies": [
+              "Open (unobstructed) condition applies to all stated minimum dimensions."
+            ]
+          }
+        },
+        {
+          "id": "carport.left_elevation",
+          "title": "Carport opening and clearance - Left Side Elevation",
+          "Qualifiers": {
+            "scope": "Carport opening dimensions and vertical clearance in left side elevation",
+            "applicability": "Applies to carports as depicted in Figure 30 (Left Side Elevation of covered space)",
+            "exclusions": [],
+            "ambiguities": [
+              "Figure 30 caption refers to 'covered space' which may imply applicability beyond carports; scope assumed to include carports per page header.",
+              "The reference line for horizontal opening width is not explicitly defined; assumed to be clear width between supports or structural elements.",
+              "The label 'One of 2 corner columns' is illustrative; not clearly normative."
+            ],
+            "source": {
+              "page_header": "Carport standards",
+              "figure": "Figure 30",
+              "captions": [
+                "Parking space dimensions for covered space in elevation"
+              ],
+              "labels": [
+                "20' min. open (horizontal opening width)",
+                "7' min. open (vertical clearance)",
+                "Bottom roof system",
+                "One of 2 corner columns",
+                "Left Side Elevation"
+              ]
+            }
+          },
+          "Variables": [
+            {
+              "id": "side_horizontal_open_width",
+              "name": "Horizontal open width (side elevation)",
+              "type": "dimensional",
+              "unit": "ft",
+              "orientation": "horizontal",
+              "context": "left_side_elevation",
+              "description": "Clear, unobstructed horizontal opening width visible in side elevation.",
+              "measurement_reference": "Measured between inner faces of supports/columns or structural boundaries defining the side opening."
+            },
+            {
+              "id": "vertical_clearance_to_roof_bottom",
+              "name": "Vertical clearance to bottom of roof system",
+              "type": "dimensional",
+              "unit": "ft",
+              "orientation": "vertical",
+              "context": "left_side_elevation",
+              "description": "Clear, unobstructed vertical clearance from driveway/parking surface to the bottom of the roof system.",
+              "measurement_reference": "From finished driveway/parking surface to the lowest point of the bottom roof system."
+            }
+          ],
+          "Constants": [
+            {
+              "id": "c_min_side_horizontal_open_width",
+              "target_variable_id": "side_horizontal_open_width",
+              "value": 20,
+              "unit": "ft",
+              "spec_type": "minimum",
+              "label": "20' min. open"
+            },
+            {
+              "id": "c_min_vertical_clearance",
+              "target_variable_id": "vertical_clearance_to_roof_bottom",
+              "value": 7,
+              "unit": "ft",
+              "spec_type": "minimum",
+              "label": "7' min. open"
+            }
+          ],
+          "Conditions": [
+            {
+              "type": "mandatory",
+              "target_variable_id": "side_horizontal_open_width",
+              "operator": ">=",
+              "value": 20,
+              "unit": "ft",
+              "notes": "Dimension must be open (unobstructed)."
+            },
+            {
+              "type": "mandatory",
+              "target_variable_id": "vertical_clearance_to_roof_bottom",
+              "operator": ">=",
+              "value": 7,
+              "unit": "ft",
+              "notes": "Measured to the bottom of the roof system; must be unobstructed."
+            }
+          ],
+          "Exceptions": [],
+          "Relationships": {
+            "hierarchical": [
+              {
+                "parent": "Carport standards",
+                "child": "Figure 30 - Left Side Elevation"
+              }
+            ],
+            "cross_references": [
+              {
+                "related_rule_id": "carport.plan_view",
+                "relationship": "Horizontal opening width of 20 ft aligns with plan-view longitudinal minimum length."
+              },
+              {
+                "related_rule_id": "carport.front_elevation",
+                "relationship": "Shares the same vertical clearance minimum (7 ft)."
+              }
+            ],
+            "logical_dependencies": [
+              "Vertical clearance is constrained by the bottom of the roof system.",
+              "Open (unobstructed) condition applies to both horizontal and vertical dimensions."
+            ]
+          }
+        },
+        {
+          "id": "carport.front_elevation",
+          "title": "Carport opening and clearance - Front Elevation",
+          "Qualifiers": {
+            "scope": "Carport entrance opening width and vertical clearance in front elevation",
+            "applicability": "Applies to carports as depicted in Figure 30 (Front Elevation of covered space)",
+            "exclusions": [],
+            "ambiguities": [
+              "Figure 30 caption uses 'covered space'; assumed applicable to carports per page header.",
+              "The label uses 'min' without period ('10' min open'); interpreted consistently as 'minimum open'.",
+              "Exact measurement points for horizontal opening width are not explicitly defined; assumed between inner faces of corner columns or structural boundaries."
+            ],
+            "source": {
+              "page_header": "Carport standards",
+              "figure": "Figure 30",
+              "captions": [
+                "Parking space dimensions for covered space in elevation"
+              ],
+              "labels": [
+                "10' min open (horizontal opening width)",
+                "7' min. open (vertical clearance)",
+                "Bottom roof system",
+                "One of 2 corner columns",
+                "Front Elevation"
+              ]
+            }
+          },
+          "Variables": [
+            {
+              "id": "front_horizontal_open_width",
+              "name": "Horizontal open width (front elevation)",
+              "type": "dimensional",
+              "unit": "ft",
+              "orientation": "horizontal",
+              "context": "front_elevation",
+              "description": "Clear, unobstructed horizontal opening width at the carport entrance as viewed from the front.",
+              "measurement_reference": "Measured between inner faces of entrance supports/columns or structural boundaries defining the opening."
+            },
+            {
+              "id": "vertical_clearance_to_roof_bottom_front",
+              "name": "Vertical clearance to bottom of roof system (front elevation)",
+              "type": "dimensional",
+              "unit": "ft",
+              "orientation": "vertical",
+              "context": "front_elevation",
+              "description": "Clear, unobstructed vertical clearance from driveway/parking surface to the bottom of the roof system at the entrance.",
+              "measurement_reference": "From finished driveway/parking surface to the lowest point of the bottom roof system."
+            }
+          ],
+          "Constants": [
+            {
+              "id": "c_min_front_horizontal_open_width",
+              "target_variable_id": "front_horizontal_open_width",
+              "value": 10,
+              "unit": "ft",
+              "spec_type": "minimum",
+              "label": "10' min open"
+            },
+            {
+              "id": "c_min_vertical_clearance_front",
+              "target_variable_id": "vertical_clearance_to_roof_bottom_front",
+              "value": 7,
+              "unit": "ft",
+              "spec_type": "minimum",
+              "label": "7' min. open"
+            }
+          ],
+          "Conditions": [
+            {
+              "type": "mandatory",
+              "target_variable_id": "front_horizontal_open_width",
+              "operator": ">=",
+              "value": 10,
+              "unit": "ft",
+              "notes": "Dimension must be open (unobstructed)."
+            },
+            {
+              "type": "mandatory",
+              "target_variable_id": "vertical_clearance_to_roof_bottom_front",
+              "operator": ">=",
+              "value": 7,
+              "unit": "ft",
+              "notes": "Measured to the bottom of the roof system; must be unobstructed."
+            }
+          ],
+          "Exceptions": [],
+          "Relationships": {
+            "hierarchical": [
+              {
+                "parent": "Carport standards",
+                "child": "Figure 30 - Front Elevation"
+              }
+            ],
+            "cross_references": [
+              {
+                "related_rule_id": "carport.left_elevation",
+                "relationship": "Shares the same minimum vertical clearance (7 ft) requirement."
+              }
+            ],
+            "logical_dependencies": [
+              "Open (unobstructed) condition applies to both horizontal and vertical dimensions."
+            ]
+          }
+        }
+      ]
+    },
+    "parse_error": false,
+    "raw_response": "{\n  \"rules\": [\n    {\n      \"id\": \"carport.plan_view\",\n      \"title\": \"Carport parking space dimensions - Plan View\",\n      \"Qualifiers\": {\n        \"scope\": \"Carport parking space dimensional standard in plan (top-down) view\",\n        \"applicability\": \"Applies to carports as depicted in Figure 29 (Parking space dimensions for carport in plan view)\",\n        \"exclusions\": [],\n        \"ambiguities\": [\n          \"The term 'open' is used without a formal definition; interpreted as unobstructed clear dimension free of structural or architectural elements.\",\n          \"Transverse entrance opening width is labeled 'open' with no numeric value provided.\",\n          \"Presence of 'One of 2 corner columns' is shown diagrammatically and not clearly stated as a requirement.\",\n          \"Footer shows page number 35 while header indicates Page 41; source pagination is inconsistent.\"\n        ],\n        \"source\": {\n          \"page_header\": \"Carport standards\",\n          \"figure\": \"Figure 29\",\n          \"captions\": [\n            \"Parking space dimensions for carport in plan view\"\n          ],\n          \"labels\": [\n            \"20' min. open (longitudinal dimension alongside the parking space)\",\n            \"open (transverse dimension at the entrance; no numeric value shown)\",\n            \"One of 2 corner columns\",\n            \"Driveway/parking surface\",\n            \"Plan View\"\n          ]\n        }\n      },\n      \"Variables\": [\n        {\n          \"id\": \"longitudinal_open_length\",\n          \"name\": \"Longitudinal open length\",\n          \"type\": \"dimensional\",\n          \"unit\": \"ft\",\n          \"orientation\": \"longitudinal\",\n          \"context\": \"plan_view\",\n          \"description\": \"Clear, unobstructed length of the parking space along the vehicle axis within the carport.\",\n          \"measurement_reference\": \"Measured along the parking space from the entrance inward, free of obstructions.\"\n        },\n        {\n          \"id\": \"entrance_transverse_open_width\",\n          \"name\": \"Entrance transverse open width\",\n          \"type\": \"dimensional\",\n          \"unit\": \"ft\",\n          \"orientation\": \"transverse\",\n          \"context\": \"plan_view\",\n          \"description\": \"Clear, unobstructed width at the entrance opening of the carport.\",\n          \"measurement_reference\": \"Measured between the inner faces of any supports/columns or edges defining the entrance opening.\",\n          \"status\": \"value_not_provided\"\n        }\n      ],\n      \"Constants\": [\n        {\n          \"id\": \"c_min_longitudinal_open_length\",\n          \"target_variable_id\": \"longitudinal_open_length\",\n          \"value\": 20,\n          \"unit\": \"ft\",\n          \"spec_type\": \"minimum\",\n          \"label\": \"20' min. open\"\n        }\n      ],\n      \"Conditions\": [\n        {\n          \"type\": \"mandatory\",\n          \"target_variable_id\": \"longitudinal_open_length\",\n          \"operator\": \">=\",\n          \"value\": 20,\n          \"unit\": \"ft\",\n          \"notes\": \"Dimension must be open (unobstructed).\"\n        },\n        {\n          \"type\": \"mandatory\",\n          \"target_variable_id\": \"entrance_transverse_open_width\",\n          \"operator\": \"specified_numeric_required\",\n          \"value\": null,\n          \"unit\": \"ft\",\n          \"notes\": \"A clear, unobstructed transverse entrance opening is required, but no numeric minimum is provided in the source; this must be confirmed from other sections or figures.\"\n        }\n      ],\n      \"Exceptions\": [],\n      \"Relationships\": {\n        \"hierarchical\": [\n          {\n            \"parent\": \"Carport standards\",\n            \"child\": \"Figure 29 - Plan View\"\n          }\n        ],\n        \"cross_references\": [\n          {\n            \"related_rule_id\": \"carport.left_elevation\",\n            \"relationship\": \"The 20 ft minimum opening appears consistent with side elevation horizontal opening width.\"\n          }\n        ],\n        \"logical_dependencies\": [\n          \"Open (unobstructed) condition applies to all stated minimum dimensions.\"\n        ]\n      }\n    },\n    {\n      \"id\": \"carport.left_elevation\",\n      \"title\": \"Carport opening and clearance - Left Side Elevation\",\n      \"Qualifiers\": {\n        \"scope\": \"Carport opening dimensions and vertical clearance in left side elevation\",\n        \"applicability\": \"Applies to carports as depicted in Figure 30 (Left Side Elevation of covered space)\",\n        \"exclusions\": [],\n        \"ambiguities\": [\n          \"Figure 30 caption refers to 'covered space' which may imply applicability beyond carports; scope assumed to include carports per page header.\",\n          \"The reference line for horizontal opening width is not explicitly defined; assumed to be clear width between supports or structural elements.\",\n          \"The label 'One of 2 corner columns' is illustrative; not clearly normative.\"\n        ],\n        \"source\": {\n          \"page_header\": \"Carport standards\",\n          \"figure\": \"Figure 30\",\n          \"captions\": [\n            \"Parking space dimensions for covered space in elevation\"\n          ],\n          \"labels\": [\n            \"20' min. open (horizontal opening width)\",\n            \"7' min. open (vertical clearance)\",\n            \"Bottom roof system\",\n            \"One of 2 corner columns\",\n            \"Left Side Elevation\"\n          ]\n        }\n      },\n      \"Variables\": [\n        {\n          \"id\": \"side_horizontal_open_width\",\n          \"name\": \"Horizontal open width (side elevation)\",\n          \"type\": \"dimensional\",\n          \"unit\": \"ft\",\n          \"orientation\": \"horizontal\",\n          \"context\": \"left_side_elevation\",\n          \"description\": \"Clear, unobstructed horizontal opening width visible in side elevation.\",\n          \"measurement_reference\": \"Measured between inner faces of supports/columns or structural boundaries defining the side opening.\"\n        },\n        {\n          \"id\": \"vertical_clearance_to_roof_bottom\",\n          \"name\": \"Vertical clearance to bottom of roof system\",\n          \"type\": \"dimensional\",\n          \"unit\": \"ft\",\n          \"orientation\": \"vertical\",\n          \"context\": \"left_side_elevation\",\n          \"description\": \"Clear, unobstructed vertical clearance from driveway/parking surface to the bottom of the roof system.\",\n          \"measurement_reference\": \"From finished driveway/parking surface to the lowest point of the bottom roof system.\"\n        }\n      ],\n      \"Constants\": [\n        {\n          \"id\": \"c_min_side_horizontal_open_width\",\n          \"target_variable_id\": \"side_horizontal_open_width\",\n          \"value\": 20,\n          \"unit\": \"ft\",\n          \"spec_type\": \"minimum\",\n          \"label\": \"20' min. open\"\n        },\n        {\n          \"id\": \"c_min_vertical_clearance\",\n          \"target_variable_id\": \"vertical_clearance_to_roof_bottom\",\n          \"value\": 7,\n          \"unit\": \"ft\",\n          \"spec_type\": \"minimum\",\n          \"label\": \"7' min. open\"\n        }\n      ],\n      \"Conditions\": [\n        {\n          \"type\": \"mandatory\",\n          \"target_variable_id\": \"side_horizontal_open_width\",\n          \"operator\": \">=\",\n          \"value\": 20,\n          \"unit\": \"ft\",\n          \"notes\": \"Dimension must be open (unobstructed).\"\n        },\n        {\n          \"type\": \"mandatory\",\n          \"target_variable_id\": \"vertical_clearance_to_roof_bottom\",\n          \"operator\": \">=\",\n          \"value\": 7,\n          \"unit\": \"ft\",\n          \"notes\": \"Measured to the bottom of the roof system; must be unobstructed.\"\n        }\n      ],\n      \"Exceptions\": [],\n      \"Relationships\": {\n        \"hierarchical\": [\n          {\n            \"parent\": \"Carport standards\",\n            \"child\": \"Figure 30 - Left Side Elevation\"\n          }\n        ],\n        \"cross_references\": [\n          {\n            \"related_rule_id\": \"carport.plan_view\",\n            \"relationship\": \"Horizontal opening width of 20 ft aligns with plan-view longitudinal minimum length.\"\n          },\n          {\n            \"related_rule_id\": \"carport.front_elevation\",\n            \"relationship\": \"Shares the same vertical clearance minimum (7 ft).\"\n          }\n        ],\n        \"logical_dependencies\": [\n          \"Vertical clearance is constrained by the bottom of the roof system.\",\n          \"Open (unobstructed) condition applies to both horizontal and vertical dimensions.\"\n        ]\n      }\n    },\n    {\n      \"id\": \"carport.front_elevation\",\n      \"title\": \"Carport opening and clearance - Front Elevation\",\n      \"Qualifiers\": {\n        \"scope\": \"Carport entrance opening width and vertical clearance in front elevation\",\n        \"applicability\": \"Applies to carports as depicted in Figure 30 (Front Elevation of covered space)\",\n        \"exclusions\": [],\n        \"ambiguities\": [\n          \"Figure 30 caption uses 'covered space'; assumed applicable to carports per page header.\",\n          \"The label uses 'min' without period ('10' min open'); interpreted consistently as 'minimum open'.\",\n          \"Exact measurement points for horizontal opening width are not explicitly defined; assumed between inner faces of corner columns or structural boundaries.\"\n        ],\n        \"source\": {\n          \"page_header\": \"Carport standards\",\n          \"figure\": \"Figure 30\",\n          \"captions\": [\n            \"Parking space dimensions for covered space in elevation\"\n          ],\n          \"labels\": [\n            \"10' min open (horizontal opening width)\",\n            \"7' min. open (vertical clearance)\",\n            \"Bottom roof system\",\n            \"One of 2 corner columns\",\n            \"Front Elevation\"\n          ]\n        }\n      },\n      \"Variables\": [\n        {\n          \"id\": \"front_horizontal_open_width\",\n          \"name\": \"Horizontal open width (front elevation)\",\n          \"type\": \"dimensional\",\n          \"unit\": \"ft\",\n          \"orientation\": \"horizontal\",\n          \"context\": \"front_elevation\",\n          \"description\": \"Clear, unobstructed horizontal opening width at the carport entrance as viewed from the front.\",\n          \"measurement_reference\": \"Measured between inner faces of entrance supports/columns or structural boundaries defining the opening.\"\n        },\n        {\n          \"id\": \"vertical_clearance_to_roof_bottom_front\",\n          \"name\": \"Vertical clearance to bottom of roof system (front elevation)\",\n          \"type\": \"dimensional\",\n          \"unit\": \"ft\",\n          \"orientation\": \"vertical\",\n          \"context\": \"front_elevation\",\n          \"description\": \"Clear, unobstructed vertical clearance from driveway/parking surface to the bottom of the roof system at the entrance.\",\n          \"measurement_reference\": \"From finished driveway/parking surface to the lowest point of the bottom roof system.\"\n        }\n      ],\n      \"Constants\": [\n        {\n          \"id\": \"c_min_front_horizontal_open_width\",\n          \"target_variable_id\": \"front_horizontal_open_width\",\n          \"value\": 10,\n          \"unit\": \"ft\",\n          \"spec_type\": \"minimum\",\n          \"label\": \"10' min open\"\n        },\n        {\n          \"id\": \"c_min_vertical_clearance_front\",\n          \"target_variable_id\": \"vertical_clearance_to_roof_bottom_front\",\n          \"value\": 7,\n          \"unit\": \"ft\",\n          \"spec_type\": \"minimum\",\n          \"label\": \"7' min. open\"\n        }\n      ],\n      \"Conditions\": [\n        {\n          \"type\": \"mandatory\",\n          \"target_variable_id\": \"front_horizontal_open_width\",\n          \"operator\": \">=\",\n          \"value\": 10,\n          \"unit\": \"ft\",\n          \"notes\": \"Dimension must be open (unobstructed).\"\n        },\n        {\n          \"type\": \"mandatory\",\n          \"target_variable_id\": \"vertical_clearance_to_roof_bottom_front\",\n          \"operator\": \">=\",\n          \"value\": 7,\n          \"unit\": \"ft\",\n          \"notes\": \"Measured to the bottom of the roof system; must be unobstructed.\"\n        }\n      ],\n      \"Exceptions\": [],\n      \"Relationships\": {\n        \"hierarchical\": [\n          {\n            \"parent\": \"Carport standards\",\n            \"child\": \"Figure 30 - Front Elevation\"\n          }\n        ],\n        \"cross_references\": [\n          {\n            \"related_rule_id\": \"carport.left_elevation\",\n            \"relationship\": \"Shares the same minimum vertical clearance (7 ft) requirement.\"\n          }\n        ],\n        \"logical_dependencies\": [\n          \"Open (unobstructed) condition applies to both horizontal and vertical dimensions.\"\n        ]\n      }\n    }\n  ]\n}",
+    "response_time": 95.85275292396545,
+    "input_tokens": 639,
+    "output_tokens": 5527,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 15:54:42",
+  "model": "openai/gpt-5",
+  "success": true
+}

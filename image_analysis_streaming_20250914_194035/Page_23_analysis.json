@@ -1,0 +1,62 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_23.png",
+  "image_name": "Page_23.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "2nd & 3rd floor equivalency\n\nAreas higher than 17' and 26' above the first floor (that do not already count as floor area e.g., open atrium spaces and inaccessible attic spaces), count toward the gross floor area in the form of 2nd and 3rd floor equivalency regardless of the floor plan or usage of the space. Stairwells will be measured the same way that vaulted ceiling spaces are measured.\n\nIn the examples of Fig 12 below the highlighted areas count as follows:\n\nArea A\n\u2022 once as 1st floor,\n\u2022 again as 2nd floor, and\n\u2022 a third time as 3rd-floor equivalency\n\nArea B\n\u2022 once as 1st floor,\n\u2022 again as 2nd-floor equivalency\n\nNote: 200 sf of 3rd floor equivalency may be exempted where roof pitch is 4:12 or steeper (see \"Height\" section).\n\nFig 12 2nd & 3rd floor equivalency\n\nWidth of area that counts as 3rd-floor equivalency\nWidth of area that counts as 2nd-floor equivalency\nInaccessible attic (or vaulted ceiling)\nA\nB\nWidth of area that counts as 2nd floor\n\n26'\nTop of roof material (Typical)\n17'\nTop of roof material (Typical)\n1st flr\nTop of finished floor (Typical)\n\nWidth of area that counts as 3rd-floor equivalency\nWidth of area that counts as 2nd-floor equivalency\nInaccessible attic (or vaulted ceiling)\nA\nB\nVaulted ceiling space\nWidth of area that counts as 2nd-floor\n1st fl",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Two side-by-side cross-sectional diagrams of a building illustrating the concept of 2nd and 3rd floor equivalency. Each diagram shows a pitched roof with areas labeled 'A' and 'B'. Area A is shaded and marked as counting once as 1st floor, again as 2nd floor, and a third time as 3rd-floor equivalency. Area B is shaded differently and counts once as 1st floor and again as 2nd-floor equivalency. The diagrams include vertical measurements at 17' and 26' above the first floor, indicating the thresholds for counting floor equivalency. Labels indicate 'Inaccessible attic (or vaulted ceiling)', 'Vaulted ceiling space', 'Top of roof material (Typical)', and 'Top of finished floor (Typical)'. Horizontal arrows indicate widths of areas that count as 2nd-floor and 3rd-floor equivalency.",
+          "location": "Bottom half of the page"
+        },
+        {
+          "type": "text box",
+          "description": "A shaded rectangular note box containing the text: 'Note: 200 sf of 3rd floor equivalency may be exempted where roof pitch is 4:12 or steeper (see \"Height\" section).'",
+          "location": "Upper right quadrant of the page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Height threshold for floor equivalency",
+          "value": "17",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Height threshold for floor equivalency",
+          "value": "26",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Exemption for 3rd floor equivalency",
+          "value": "200",
+          "unit": "square feet"
+        },
+        {
+          "parameter": "Roof pitch for exemption",
+          "value": "4:12",
+          "unit": "pitch ratio"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "2nd & 3rd floor equivalency",
+        "subheadings": [
+          "Area A",
+          "Area B",
+          "Note"
+        ],
+        "sections": []
+      },
+      "additional_notes": [
+        "Page number 17 at bottom right corner.",
+        "No handwritten annotations or stamps visible.",
+        "Text is clear and legible with no quality issues."
+      ],
+      "cross_references": [
+        "See \"Height\" section for roof pitch exemption details."
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-14 19:41:02",
+  "model_used": "openai/gpt-4.1-mini"
+}

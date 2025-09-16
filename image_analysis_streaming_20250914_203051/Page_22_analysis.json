@@ -1,0 +1,179 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_22.png",
+  "image_name": "Page_22.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Attic space & equivalencies\n\nAttic, closet, & perimeter spaces\n\nOn all accessible floors, areas with at least 5' of head clearance count toward the gross floor area regardless of the floor plan or actual usage of the space.\n\nVoluminous spaces in a structure contribute to the mass even if these areas are not used or described in the floor plan. The 2nd & 3rd floor equivalency addresses how these areas count toward the gross floor area.\n\nIn Fig 11 below, the highlighted areas count as follows:\n\n\u2022 Area A of this 3rd floor (accessible via stairs), has 5' of head clearance and counts as 3rd floor area.\n\n\u2022 Area B of this 2nd floor (accessible via stairs), has 5' of head clearance and is included in the count of the, more obvious, 2nd floor area.\n\nFig 11 Attic, closet, & perimeter spaces\n\nNote: 500 sf of unusable attic space may be exempted for Category 1 & 2 historic homes.\n\nNote: Measurements are from top of floor to underside of the rafter\n\n(Underside of plcol)\n\noor\n\n1st floor\n\nCode sections\n18.04.030(a)(65)\n18.12.040(b)Table 3\n\n16",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Cross-sectional architectural diagram of a multi-story house showing attic, closet, and perimeter spaces. The diagram shows a house with basement, 1st floor, 2nd floor, and attic areas. Areas A and B are highlighted with diagonal hatching to indicate spaces with 5' head clearance. The diagram includes measurement indicators showing 5' clearance heights and labels for different floor levels. Stairs are shown connecting the floors.",
+          "location": "center of page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Head clearance minimum",
+          "value_type": "Measurement",
+          "value": "5",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Unusable attic space exemption",
+          "value_type": "Measurement",
+          "value": "500",
+          "unit": "square feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Attic space & equivalencies",
+        "subheadings": [
+          "Attic, closet, & perimeter spaces"
+        ],
+        "sections": [
+          "Code sections"
+        ]
+      },
+      "additional_notes": [
+        "Page number 16 appears at bottom left",
+        "Figure 11 is referenced and shown as architectural cross-section",
+        "Two note boxes appear on the right side of the diagram"
+      ],
+      "cross_references": [
+        "Fig 11 below",
+        "18.04.030(a)(65)",
+        "18.12.040(b)Table 3"
+      ],
+      "conditions_and_qualifiers": {
+        "qualifiers": [
+          {
+            "id": "q1",
+            "text": "On all accessible floors",
+            "applies_to_conditions": [
+              "c1"
+            ],
+            "scope": "Global"
+          },
+          {
+            "id": "q2",
+            "text": "regardless of the floor plan or actual usage of the space",
+            "applies_to_conditions": [
+              "c1"
+            ],
+            "scope": "Global"
+          },
+          {
+            "id": "q3",
+            "text": "accessible via stairs",
+            "applies_to_conditions": [
+              "c2",
+              "c3"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q4",
+            "text": "for Category 1 & 2 historic homes",
+            "applies_to_conditions": [
+              "c4"
+            ],
+            "scope": "Specific"
+          }
+        ],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "areas with at least 5' of head clearance count toward the gross floor area",
+            "value_type": "Measurement",
+            "operator": ">=",
+            "threshold_value": "5",
+            "unit": "feet"
+          },
+          {
+            "id": "c2",
+            "text": "Area A of this 3rd floor (accessible via stairs), has 5' of head clearance and counts as 3rd floor area",
+            "value_type": "Measurement",
+            "operator": "=",
+            "threshold_value": "5",
+            "unit": "feet"
+          },
+          {
+            "id": "c3",
+            "text": "Area B of this 2nd floor (accessible via stairs), has 5' of head clearance and is included in the count of the, more obvious, 2nd floor area",
+            "value_type": "Measurement",
+            "operator": "=",
+            "threshold_value": "5",
+            "unit": "feet"
+          },
+          {
+            "id": "c4",
+            "text": "500 sf of unusable attic space may be exempted",
+            "value_type": "Measurement",
+            "operator": "<=",
+            "threshold_value": "500",
+            "unit": "square feet"
+          }
+        ],
+        "logical_relationships": [
+          {
+            "operation": "AND",
+            "condition_ids": [
+              "c1"
+            ],
+            "expression": "On all accessible floors, areas with at least 5' of head clearance count toward the gross floor area regardless of the floor plan or actual usage of the space",
+            "evaluation_order": 1
+          },
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c4"
+            ],
+            "expression": "500 sf of unusable attic space may be exempted for Category 1 & 2 historic homes",
+            "evaluation_order": 2
+          }
+        ],
+        "execution_sequence": [
+          {
+            "step": 1,
+            "action": "Evaluate head clearance on all accessible floors",
+            "condition_ids": [
+              "c1"
+            ],
+            "qualifier_ids": [
+              "q1",
+              "q2"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 2,
+            "action": "Apply specific area calculations for highlighted areas",
+            "condition_ids": [
+              "c2",
+              "c3"
+            ],
+            "qualifier_ids": [
+              "q3"
+            ],
+            "dependencies": [
+              1
+            ]
+          },
+          {
+            "step": 3,
+            "action": "Consider exemption for historic homes",
+            "condition_ids": [
+              "c4"
+            ],
+            "qualifier_ids": [
+              "q4"
+            ],
+            "dependencies": []
+          }
+        ]
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:31:44",
+  "model_used": "anthropic/claude-sonnet-4"
+}

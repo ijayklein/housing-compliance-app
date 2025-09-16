@@ -1,0 +1,81 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_50.md",
+  "file_name": "Page_50.md",
+  "analysis": {
+    "extracted_rules": {
+      "rules": [
+        {
+          "title": "2nd-dwelling units standards & site planning",
+          "qualifiers": {
+            "scope": "Applicable to lots large enough to accommodate a 2nd dwelling unit while maintaining low density appropriate for single-family neighborhoods.",
+            "applicability": "2nd dwelling units",
+            "exclusions": "None specified"
+          },
+          "variables": {
+            "dimensional": {
+              "attached_unit_max_size": "450 sf",
+              "detached_unit_max_size": "900 sf",
+              "attached_unit_max_height": "17'",
+              "detached_unit_max_height": "17'",
+              "detached_unit_distance_from_main": "12'",
+              "covered_parking_max_size": "200 sf"
+            },
+            "material": "Must be architecturally compatible with main dwelling (for detached units)",
+            "environmental": "Must be located within the setbacks like the main dwelling",
+            "usage_parameters": {
+              "parking_spaces": "2 (one must be covered)",
+              "shared_driveway": "Required for detached units"
+            }
+          },
+          "constants": {
+            "numerical_values": {
+              "attached_unit_max_size": "450 sf",
+              "detached_unit_max_size": "900 sf",
+              "attached_unit_max_height": "17'",
+              "detached_unit_max_height": "17'",
+              "detached_unit_distance_from_main": "12'",
+              "covered_parking_max_size": "200 sf"
+            },
+            "specs": "Must comply with all regulations applying to the main dwelling except as specified",
+            "standards": "Counts towards total FAR for the lot",
+            "procedures": "Parking for 2nd dwelling units is treated the same as parking for the main residence"
+          },
+          "conditions": {
+            "mandatory": [
+              "Lot size must meet minimum for zone",
+              "Must have two parking spaces (one to be covered)",
+              "Must be located within the setbacks like the main dwelling"
+            ],
+            "optional": [],
+            "conditional_logic": [
+              "Except on corner lots, entrance way shall not face same lot line as entrance to main dwelling",
+              "Exterior staircases to 2nd floor units shall be located toward interior side or rear yard"
+            ],
+            "dependencies": [
+              "Parking for the 2nd dwelling unit may be combined with parking for the main residence"
+            ]
+          },
+          "exceptions": {
+            "explicit_deviations": "None specified",
+            "alternatives": "None specified",
+            "special_cases": "None specified"
+          },
+          "relationships": {
+            "hierarchical": "2nd dwelling units are subordinate to the main dwelling",
+            "cross_references": [
+              "See Table 5 for minimum lot size by zone",
+              "See Figure 41 on p. 45 for setback details",
+              "See Figure 23 C & D for parking details"
+            ],
+            "logical_dependencies": "Must be architecturally compatible with main dwelling (for detached units)"
+          }
+        }
+      ]
+    },
+    "parse_error": false,
+    "raw_response": "```json\n{\n  \"rules\": [\n    {\n      \"title\": \"2nd-dwelling units standards & site planning\",\n      \"qualifiers\": {\n        \"scope\": \"Applicable to lots large enough to accommodate a 2nd dwelling unit while maintaining low density appropriate for single-family neighborhoods.\",\n        \"applicability\": \"2nd dwelling units\",\n        \"exclusions\": \"None specified\"\n      },\n      \"variables\": {\n        \"dimensional\": {\n          \"attached_unit_max_size\": \"450 sf\",\n          \"detached_unit_max_size\": \"900 sf\",\n          \"attached_unit_max_height\": \"17'\",\n          \"detached_unit_max_height\": \"17'\",\n          \"detached_unit_distance_from_main\": \"12'\",\n          \"covered_parking_max_size\": \"200 sf\"\n        },\n        \"material\": \"Must be architecturally compatible with main dwelling (for detached units)\",\n        \"environmental\": \"Must be located within the setbacks like the main dwelling\",\n        \"usage_parameters\": {\n          \"parking_spaces\": \"2 (one must be covered)\",\n          \"shared_driveway\": \"Required for detached units\"\n        }\n      },\n      \"constants\": {\n        \"numerical_values\": {\n          \"attached_unit_max_size\": \"450 sf\",\n          \"detached_unit_max_size\": \"900 sf\",\n          \"attached_unit_max_height\": \"17'\",\n          \"detached_unit_max_height\": \"17'\",\n          \"detached_unit_distance_from_main\": \"12'\",\n          \"covered_parking_max_size\": \"200 sf\"\n        },\n        \"specs\": \"Must comply with all regulations applying to the main dwelling except as specified\",\n        \"standards\": \"Counts towards total FAR for the lot\",\n        \"procedures\": \"Parking for 2nd dwelling units is treated the same as parking for the main residence\"\n      },\n      \"conditions\": {\n        \"mandatory\": [\n          \"Lot size must meet minimum for zone\",\n          \"Must have two parking spaces (one to be covered)\",\n          \"Must be located within the setbacks like the main dwelling\"\n        ],\n        \"optional\": [],\n        \"conditional_logic\": [\n          \"Except on corner lots, entrance way shall not face same lot line as entrance to main dwelling\",\n          \"Exterior staircases to 2nd floor units shall be located toward interior side or rear yard\"\n        ],\n        \"dependencies\": [\n          \"Parking for the 2nd dwelling unit may be combined with parking for the main residence\"\n        ]\n      },\n      \"exceptions\": {\n        \"explicit_deviations\": \"None specified\",\n        \"alternatives\": \"None specified\",\n        \"special_cases\": \"None specified\"\n      },\n      \"relationships\": {\n        \"hierarchical\": \"2nd dwelling units are subordinate to the main dwelling\",\n        \"cross_references\": [\n          \"See Table 5 for minimum lot size by zone\",\n          \"See Figure 41 on p. 45 for setback details\",\n          \"See Figure 23 C & D for parking details\"\n        ],\n        \"logical_dependencies\": \"Must be architecturally compatible with main dwelling (for detached units)\"\n      }\n    }\n  ]\n}\n```"
+  },
+  "timestamp": "2025-09-16 14:43:38",
+  "model": "openai/gpt-4o",
+  "success": true
+}

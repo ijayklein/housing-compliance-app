@@ -1,0 +1,12 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_27.png",
+  "image_name": "Page_27.png",
+  "analysis": {
+    "raw_content": "# Contextual Front Setbacks\n\n## Key Rule\n**Contextual setbacks apply if, and only if, the average of the existing setbacks on the same side of the block is 30' or greater.**\n\n## How to Determine if a Contextual Setback Applies\n\nThe document provides a flowchart process using Fig 15 as an example:\n\n### Step 1: Initial Assessment\n- Question: \"Does block have more than 3 lots? (incl. project lot)\"\n- Note: If block is more than 600' long, consider only lots within 600' (max. 10 lots).\n\n### Step 2: Exclusion Criteria\nIf **Yes** to Step 1, exclude the following types of lots:\n- Flag lot (G)\n- Multifamily use w/ 3+ units (G)\n- Corner lot facing cross street (H)\n\n### Step 3: Lot Count Assessment\n- Question: \"Is the number of remaining lots more or less than 5 or more?\"\n\n### Step 4: Final Calculation\nIf **Yes** to Step 3, exclude the smallest and largest setbacks:\n- Smallest (D)\n- Largest (E)\n\nFind the average of the remaining lots (incl. subject lot). If greater than 30', it applies.\n\n### Example Calculation Shown\n30 (A) + 33 (B) + 35 (F) = 98 \u00f7 3 = **32.7**\n\n## Figure 15 Details\n**Fig 15: Example of a block with a contextual setback of 32.7'**\n\nThe diagram shows lots labeled A through H with the following setback measurements:\n- Lot A: 30'\n- Lot B: 33'\n- Lot C: 20' (Flag lot)\n- Lot D: Single Family\n- Lot E: 37'\n- Lot F: 35'\n- Lot G: Multifamily (3+ units)\n- Lot H: 10' (Corner lot facing cross street)\n\n### Key Legend\n- Required setbacks (dashed line)\n- Lot line (solid line)\n- Buildable area (dotted pattern)\n- Sidewalk (light gray)\n- Curb (line)\n- Existing house (black)\n\n**Page number: 21**",
+    "content_length": 1608,
+    "parse_error": false
+  },
+  "timestamp": "2025-09-16 13:36:34",
+  "model": "anthropic/claude-sonnet-4",
+  "success": true
+}

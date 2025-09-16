@@ -1,0 +1,63 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_33.png",
+  "image_name": "Page_33.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Fig 21 Plan view showing how to determine average grade\n\nWhen measuring daylight plane, height is measured from the average of the grade at the midpoint of the building and the grade of the closest point on the abutting site.\n\nFor this side of this structure, the average grade is the average of the grades at these two points\n\nRear yard\n\nRear yard\n\nRear yard\n\nFor this side of this structure, the average grade is the average of the grades at these two points\n\nInterior side yard\n\nInterior side yard\n\nBuildable area\n\nSubject House\n\nInterior side yard\n\nInterior side yard\n\nBuildable area\n\nNeighbor\n\nNeighbor\n\nFront yard\n\nFront yard\n\nFront yard\n\nKey\n- Lot line\n- - - Required setbacks\n[pattern] Sidewalk\n[pattern] Buildable area\n[solid gray] Existing house\n\nFig 22 Detail showing allowable eave protrusion\n\nwall plane\n\n2' max\n\nThe daylight plane must clear the point where the wall plane intersects the top of the roof material\n\nCertification of daylight plane compliance:\n\nUpon request by the building official any person building or making improvements to a structure shall provide a certification that the structure, as built, complies with the daylight plane provisions in Code Section 18.12.040(a). Such certification shall be prepared by a licensed engineer, architect, or surveyor, and shall be provided prior to frame inspection. (Sections 18.12.040(j)).",
+      "visual_elements": [
+        {
+          "type": "figure",
+          "description": "Plan view diagram showing three adjacent lots with labels for 'Neighbor', 'Subject House', 'Buildable area', 'Rear yard', 'Front yard', and 'Interior side yard'. Lines indicate lot lines and required setbacks. Dots mark points used to determine average grade on each side of the subject house. A key explains symbols for lot line, required setbacks, sidewalk, buildable area, and existing house.",
+          "location": "Left side, occupying approximately the left two-thirds of the page"
+        },
+        {
+          "type": "figure",
+          "description": "Detail side view diagram illustrating allowable eave protrusion. Shows a roof with an eave extending beyond the wall plane by a maximum of 2 feet. A dashed line represents the daylight plane intersecting the wall plane and roof. Annotation states that the daylight plane must clear the point where the wall plane intersects the top of the roof material.",
+          "location": "Top right corner of the page"
+        },
+        {
+          "type": "text box",
+          "description": "Boxed text titled 'Certification of daylight plane compliance' explaining that upon request by the building official, any person building or making improvements to a structure must provide certification that the structure complies with daylight plane provisions in Code Section 18.12.040(a). Certification must be prepared by a licensed engineer, architect, or surveyor and provided prior to frame inspection (Sections 18.12.040(j)).",
+          "location": "Bottom right corner of the page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Maximum allowable eave protrusion",
+          "value": "2",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Relevant code section for daylight plane compliance",
+          "value": "18.12.040(a)",
+          "unit": "Code Section"
+        },
+        {
+          "parameter": "Certification provision code section",
+          "value": "18.12.040(j)",
+          "unit": "Code Section"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": null,
+        "subheadings": [
+          "Fig 21 Plan view showing how to determine average grade",
+          "Fig 22 Detail showing allowable eave protrusion",
+          "Certification of daylight plane compliance:"
+        ],
+        "sections": []
+      },
+      "additional_notes": [
+        "Page number 27 at bottom right corner.",
+        "No handwritten annotations or stamps detected.",
+        "Text is clear and legible with no quality issues."
+      ],
+      "cross_references": [
+        "Code Section 18.12.040(a)",
+        "Sections 18.12.040(j)"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-14 19:41:24",
+  "model_used": "openai/gpt-4.1-mini"
+}

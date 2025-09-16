@@ -1,0 +1,205 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_20.png",
+  "image_name": "Page_20.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Recessed porches on the 1st floor\n\nRecessed porches on the ground floor do NOT count toward gross floor area if ALL the following criteria apply:\n\u2022 Depth of porch is less than 10' and,\n\u2022 Porch ceiling is below 2nd floor and,\n\u2022 Exterior side is substantially open.\n\nNote: It is the city\u2019s policy to consider one-story construction to be construction less than 17\u2019 above finished floor. If the porch space is higher, the area will count again as 2nd story equivalency.\n\nFig 9 Recessed porches on the 1st floor\n\nA This example complies with all three criteria and does NOT count toward gross floor area\n\nB This example violates two of the three criteria;\n\u2022 the porch depth is greater than 10\u2019 and\n\u2022 the porch ceiling is above the 2nd floor\nTherefore it DOES count toward gross floor area and if it is higher than 17\u2019 it will count twice (see note).",
+      "visual_elements": [
+        {
+          "type": "figure",
+          "description": "Two isometric architectural drawings of a house illustrating recessed porches on the 1st floor. The left drawing (labeled A) shows a porch with depth less than 10 feet, porch ceiling below the 2nd floor line, and substantially open exterior side, complying with all criteria and not counting toward gross floor area. The right drawing (labeled B) shows a porch with depth greater than 10 feet and porch ceiling above the 2nd floor line, violating two criteria and counting toward gross floor area. Both drawings have annotations marking '2nd floor line', 'Porch ceiling below 2nd floor' (left), 'Height extends past 2nd floor line' (right), and porch depth measurements ('Depth < 10\u2019' on left, 'Depth > 10\u2019' on right).",
+          "location": "Bottom half of the page, spanning left and right sides"
+        },
+        {
+          "type": "text box",
+          "description": "A shaded gray box containing a policy note stating the city\u2019s policy on one-story construction being less than 17 feet above finished floor, and that porch space higher than this counts as 2nd story equivalency.",
+          "location": "Upper right quadrant of the page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Depth of porch",
+          "value_type": "Measurement",
+          "value": "less than 10",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Porch ceiling height",
+          "value_type": "Measurement",
+          "value": "below 2nd floor",
+          "unit": "floor level"
+        },
+        {
+          "parameter": "One-story construction height",
+          "value_type": "Measurement",
+          "value": "less than 17",
+          "unit": "feet above finished floor"
+        },
+        {
+          "parameter": "Porch depth (example B)",
+          "value_type": "Measurement",
+          "value": "greater than 10",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Porch ceiling height (example B)",
+          "value_type": "Measurement",
+          "value": "above 2nd floor",
+          "unit": "floor level"
+        },
+        {
+          "parameter": "Porch height for double counting",
+          "value_type": "Measurement",
+          "value": "higher than 17",
+          "unit": "feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Recessed porches on the 1st floor",
+        "subheadings": [],
+        "sections": []
+      },
+      "additional_notes": [
+        "Page number 14 at bottom left corner.",
+        "No handwritten annotations or stamps detected.",
+        "Text and figures are clear and legible."
+      ],
+      "cross_references": [
+        "See note (policy note in gray box) referenced in text regarding 2nd story equivalency."
+      ],
+      "conditions_and_qualifiers": {
+        "qualifiers": [
+          {
+            "id": "q1",
+            "text": "Recessed porches on the ground floor do NOT count toward gross floor area if ALL the following criteria apply:",
+            "applies_to_conditions": [
+              "c1",
+              "c2",
+              "c3"
+            ],
+            "scope": "Specific"
+          }
+        ],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "Depth of porch is less than 10'",
+            "value_type": "Measurement",
+            "operator": "<",
+            "threshold_value": "10",
+            "unit": "feet"
+          },
+          {
+            "id": "c2",
+            "text": "Porch ceiling is below 2nd floor",
+            "value_type": "Text",
+            "operator": "matches",
+            "threshold_value": "below 2nd floor",
+            "unit": "floor level"
+          },
+          {
+            "id": "c3",
+            "text": "Exterior side is substantially open",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "true",
+            "unit": "None"
+          },
+          {
+            "id": "c4",
+            "text": "Porch depth is greater than 10'",
+            "value_type": "Measurement",
+            "operator": ">",
+            "threshold_value": "10",
+            "unit": "feet"
+          },
+          {
+            "id": "c5",
+            "text": "Porch ceiling is above the 2nd floor",
+            "value_type": "Text",
+            "operator": "matches",
+            "threshold_value": "above 2nd floor",
+            "unit": "floor level"
+          },
+          {
+            "id": "c6",
+            "text": "Porch space is higher than 17\u2019 above finished floor",
+            "value_type": "Measurement",
+            "operator": ">",
+            "threshold_value": "17",
+            "unit": "feet"
+          }
+        ],
+        "logical_relationships": [
+          {
+            "operation": "AND",
+            "condition_ids": [
+              "c1",
+              "c2",
+              "c3"
+            ],
+            "expression": "Depth of porch is less than 10' AND Porch ceiling is below 2nd floor AND Exterior side is substantially open",
+            "evaluation_order": 1
+          },
+          {
+            "operation": "OR",
+            "condition_ids": [
+              "c4",
+              "c5"
+            ],
+            "expression": "Porch depth is greater than 10' OR Porch ceiling is above the 2nd floor",
+            "evaluation_order": 2
+          },
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c6"
+            ],
+            "expression": "If porch space is higher than 17\u2019 above finished floor THEN it will count again as 2nd story equivalency",
+            "evaluation_order": 3
+          }
+        ],
+        "execution_sequence": [
+          {
+            "step": 1,
+            "action": "Evaluate if all three criteria (c1, c2, c3) are met to exclude recessed porch from gross floor area",
+            "condition_ids": [
+              "c1",
+              "c2",
+              "c3"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 2,
+            "action": "If any of the criteria c4 or c5 are true, count porch toward gross floor area",
+            "condition_ids": [
+              "c4",
+              "c5"
+            ],
+            "qualifier_ids": [],
+            "dependencies": [
+              1
+            ]
+          },
+          {
+            "step": 3,
+            "action": "If porch height exceeds 17 feet (c6), count porch area again as 2nd story equivalency",
+            "condition_ids": [
+              "c6"
+            ],
+            "qualifier_ids": [],
+            "dependencies": [
+              2
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:13:30",
+  "model_used": "openai/gpt-4.1-mini"
+}

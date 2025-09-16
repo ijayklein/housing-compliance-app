@@ -1,0 +1,46 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_20.png",
+  "image_name": "Page_20.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Recessed porches on the 1st floor\n\nRecessed porches on the ground floor do NOT count toward gross floor area if ALL the following criteria apply:\n\n\u2022 Depth of porch is less than 10' and,\n\u2022 Porch ceiling is below 2nd floor and,\n\u2022 Exterior side is substantially open.\n\nNote: It is the city's policy to consider one-story construction to be construction less than 17\" above finished floor. If the porch space is higher, the area will count again as 2nd story equivalency.\n\nFig 9 Recessed porches on the 1st floor\n\nA This example complies with all three criteria and does NOT count toward gross floor area.\n\nB This example violates two of the three criteria.\n\u2022 the porch depth is greater than 10' and\n\u2022 the porch ceiling is above the 2nd floor\nTherefore it DOES count toward gross floor area and if it is higher than 17\" it will count twice (see note).\n\n14",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Two isometric architectural drawings showing building examples. Left diagram (A) shows a building with recessed porch that complies with criteria, labeled with 'Porch ceiling below 2nd floor' and 'Depth < 10''. Right diagram (B) shows a building with recessed porch that violates criteria, labeled with 'Height considered 2nd floor line' and 'Depth > 10''. Both buildings are multi-story with windows, doors, and architectural details including turret-like features.",
+          "location": "Center of page, below the criteria text"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Maximum porch depth for exemption",
+          "value": "10",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Height threshold for second story equivalency",
+          "value": "17",
+          "unit": "inches above finished floor"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Recessed porches on the 1st floor",
+        "subheadings": [],
+        "sections": [
+          "Fig 9"
+        ]
+      },
+      "additional_notes": [
+        "Page number 14 appears at bottom left",
+        "Gray header bar spans width of page under main heading",
+        "Note section appears in gray box on right side of page",
+        "Diagram labels include dimensional callouts and compliance indicators"
+      ],
+      "cross_references": [
+        "Reference to 'see note' regarding double counting for heights above 17 inches"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-11 13:44:21",
+  "model_used": "anthropic/claude-sonnet-4"
+}

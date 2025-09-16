@@ -1,0 +1,71 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_27.png",
+  "image_name": "Page_27.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Contextual front setbacks\n\nContextual setbacks apply if, and only if, the average of the existing setbacks on the same side of the block is 30' or greater.\n\nHow to determine if a contextual setback applies using Fig 15 below, as an example.\n\nDoes block have more than 3 lots? (incl project lot)\n\nNote: If block is more than 600' long, consider only lots within 600' (max. 10 lots).\n\nYes Exclude the following types of lots:\n  \u2022 Flag lot (C)\n  \u2022 Multi-family use w/ 3+ units (G)\n  \u2022 Corner lot facing cross street (H)\n\nIs the number of remaining lots more or less than 5 or more?\n\nYes Exclude the smallest and largest setbacks:\n  \u2022 Smallest (D)\n  \u2022 Largest (E)\n\nFind the average of the remaining lots (incl. subject lot). If greater than 30', it applies.\n\n30 (A)\n33 (B)\n+ 35 (F)\n98 \u00f7 3 = 32.7\n\nFig 15 Example of a block with a contextual setback of 32.7'\n\nKey\n- - - Required setbacks\n\u2014 Lot line\nSidewalk\nCurb\nBuildable area\nExisting house\n\nSingle-Family\nSingle-Family\nFlag lot\nSingle-Family\nSingle-Family\nSingle-Family\nMultiple-Family (3+ units)\nLot fronts onto other street\nStreet sideyard\n\n30'\n33'\n20'\n37'\n35'\nno\nno\n\n21",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Flowchart showing decision steps to determine if a contextual setback applies. It starts with the question 'Does block have more than 3 lots? (incl project lot)'. If yes, exclude certain lot types (Flag lot (C), Multi-family use with 3+ units (G), Corner lot facing cross street (H)). Then check if the number of remaining lots is 5 or more. If yes, exclude the smallest (D) and largest (E) setbacks. Finally, find the average of the remaining lots including the subject lot. If the average is greater than 30', the contextual setback applies. The example calculation shows 30 (A) + 33 (B) + 35 (F) = 98 \u00f7 3 = 32.7.",
+          "location": "Top-middle of the page"
+        },
+        {
+          "type": "figure",
+          "description": "Fig 15 is a block diagram illustrating lots labeled A through H with various lot types and setbacks. Lots A, B, D, E, F are Single-Family; C is a Flag lot; G is Multi-family (3+ units); H is a corner lot facing another street. Setbacks are indicated with measurements: 30' (A), 33' (B), 20' (D), 37' (E), 35' (F), and 'no' for G and H. The diagram includes lot lines, sidewalks, curbs, buildable areas (dashed), existing houses (solid black), and required setbacks (dashed lines). The diagram visually excludes lots C, G, and H from the average setback calculation.",
+          "location": "Bottom half of the page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Minimum average existing setbacks on same side of block for contextual setbacks to apply",
+          "value": "30",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Maximum block length considered for lots in calculation",
+          "value": "600",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Maximum number of lots considered if block is longer than 600'",
+          "value": "10",
+          "unit": "lots"
+        },
+        {
+          "parameter": "Example setbacks for lots A, B, D, E, F",
+          "value": [
+            "30",
+            "33",
+            "20",
+            "37",
+            "35"
+          ],
+          "unit": "feet"
+        },
+        {
+          "parameter": "Calculated average contextual setback in example",
+          "value": "32.7",
+          "unit": "feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Contextual front setbacks",
+        "subheadings": [
+          "How to determine if a contextual setback applies using Fig 15 below, as an example."
+        ],
+        "sections": []
+      },
+      "additional_notes": [
+        "No handwritten annotations or stamps present.",
+        "Page number '21' located at bottom right corner.",
+        "Text and diagram are clear and legible with no quality issues."
+      ],
+      "cross_references": [
+        "Fig 15 referenced multiple times as example for determining contextual setbacks."
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-14 19:41:10",
+  "model_used": "openai/gpt-4.1-mini"
+}

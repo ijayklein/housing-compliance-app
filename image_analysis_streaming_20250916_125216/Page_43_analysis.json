@@ -1,0 +1,12 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_43.png",
+  "image_name": "Page_43.png",
+  "analysis": {
+    "raw_content": "Contextual garage placement applies if, and only if, there is a predominant neighborhood pattern.\n\n**How to determine if contextual garage placement applies (using Fig 32 below as an example)**\n\n**Note:**\n* If block is more than 600' long, consider only lots within 600' or the 10 lots closest to the subject lot.\n* If subject lot is a corner lot, consider the pattern on the street that the subject garage faces.\n\n**Exclude the following types of lots:**\n* Flag lot (C)\n* Multi-family use of 3+ units (G)\n* Corner lots (A & H)\n\nThe remaining lots, including the subject lot, contribute to the determination.\n\n**Divide the remaining lots, including the subject lot, into two categories:**\n\n**1. Front-half pattern lots**\n* lots with garage in front half of the lot (F)\n\n**2. Rear-half pattern lots**\n* lots with garage in the rear half of the lot (B & D) and\n* lots with no garage (E) (counts as a rear-pattern lot)\n\nDetermine which pattern category is predominant, i.e., into which category more than half of the lots fall.\n\n**If Rear-half pattern is predominant:**\nThe contextual-garage-placement regulation DOES apply. Projects on this block must place the garage in the rear half of the lot.\n\n**Fig 32 Example of a block on which the contextual garage placement regulation applies**\n\n**Visual Elements:**\nThe image displays a block layout with several lots labeled A through H.\n*   **Lot A:** Corner lot with a house and a garage. It is crossed out.\n*   **Lot B:** House with a garage in the rear half.\n*   **Lot C:** Flag lot with a house and a garage. It is crossed out.\n*   **Lot D:** House with a garage in the rear half.\n*   **Lot E:** House with no visible garage.\n*   **Lot F:** Subject House with a garage in the front half.\n*   **Lot G:** Multiple garages, likely indicating multi-family use. It is crossed out.\n*   **Lot H:** Corner lot with a house and a garage. It is crossed out.\n\n**Note:**\n* If block more than 600' long, consider only lots within 600' or 10 closest lots.\n* If subject lot is a corner lot, consider the pattern on the street that the garage faces.",
+    "content_length": 2082,
+    "parse_error": false
+  },
+  "timestamp": "2025-09-16 12:53:03",
+  "model": "google/gemini-2.5-flash",
+  "success": true
+}

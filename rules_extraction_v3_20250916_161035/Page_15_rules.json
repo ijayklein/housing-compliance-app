@@ -1,0 +1,57 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_15.md",
+  "file_name": "Page_15.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "rule": "Determination of Open/Closed Status for Perimeter Segments",
+        "Qualifiers": {
+          "Scope": "This rule defines the procedure for classifying perimeter segments of a structure (e.g., a porch) as either 'open' or 'closed'.",
+          "Applicability": "Applies to all perimeter segments of a structure's design plan.",
+          "Exclusions": "The calculation for openness percentage does not apply to segments that directly abut the main house walls."
+        },
+        "Variables": {
+          "facade_area": "The total area of a segment's facade, calculated from its height and width.",
+          "open_facade_area_percentage": "The percentage of the facade area that is open.",
+          "facade_height": "The height of the segment facade.",
+          "facade_width": "The width of the segment facade.",
+          "segment_status": "The resulting classification of a segment, either 'open' or 'closed'.",
+          "segment_location": "The location of the segment, specifically whether it abuts a house wall."
+        },
+        "Constants": {
+          "openness_threshold": "50%",
+          "closed_segment_definition": "Perimeter segments that abut the house walls are considered 'closed'.",
+          "facade_height_measurement_procedure": "Measure from the top of the porch floor to the point where the segment facade intersects with the top of the roof material.",
+          "facade_width_measurement_procedure": "Measure from the same plane as the height measurement."
+        },
+        "Conditions": {
+          "mandatory_classification": "All perimeter segments must be classified as either 'open' or 'closed'.",
+          "conditional_logic_1": "IF a perimeter segment abuts a house wall, THEN its status is 'closed'.",
+          "conditional_logic_2": "IF a perimeter segment does not abut a house wall AND its open facade area is at least 50% of the total facade area, THEN its status is 'open'.",
+          "conditional_logic_3": "IF a perimeter segment does not abut a house wall AND its open facade area is less than 50% of the total facade area, THEN its status is 'closed'.",
+          "dependency": "The determination of status for non-abutting segments (Step 3) is dependent on the initial identification of wall-abutting segments (Step 2)."
+        },
+        "Exceptions": {
+          "structural_support_allowance": "Allowances may be made for structural supports that are not excessive when measuring facade width and area.",
+          "ambiguity_flag_1": "The term 'not excessive' regarding structural supports is ambiguous and not quantitatively defined.",
+          "ambiguity_flag_2": "The text states segment E is 'Closed (because of decorative glass wall)'. It is ambiguous whether this is a material-specific rule or if the glass wall simply causes the open area to be less than the 50% threshold."
+        },
+        "Relationships": {
+          "hierarchical_structure": "The overall process is defined sequentially: Step 2 (identify wall-abutting segments) must be completed before Step 3 (determine status of remaining segments).",
+          "cross_reference_figure": "Refers to 'Figure 5' which provides plan view examples of closed segments (A, B, C).",
+          "cross_reference_diagram": "Refers to 'section/elevation diagrams' which provide facade view examples of both open and closed segments (D, E, F, G) with dimensions.",
+          "logical_dependency": "The final 'open' or 'closed' status of any given segment is logically dependent on its location (abutting a wall or not) and, if not abutting, the subsequent calculation of its open facade area percentage."
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n  {\n    \"rule\": \"Determination of Open/Closed Status for Perimeter Segments\",\n    \"Qualifiers\": {\n      \"Scope\": \"This rule defines the procedure for classifying perimeter segments of a structure (e.g., a porch) as either 'open' or 'closed'.\",\n      \"Applicability\": \"Applies to all perimeter segments of a structure's design plan.\",\n      \"Exclusions\": \"The calculation for openness percentage does not apply to segments that directly abut the main house walls.\"\n    },\n    \"Variables\": {\n      \"facade_area\": \"The total area of a segment's facade, calculated from its height and width.\",\n      \"open_facade_area_percentage\": \"The percentage of the facade area that is open.\",\n      \"facade_height\": \"The height of the segment facade.\",\n      \"facade_width\": \"The width of the segment facade.\",\n      \"segment_status\": \"The resulting classification of a segment, either 'open' or 'closed'.\",\n      \"segment_location\": \"The location of the segment, specifically whether it abuts a house wall.\"\n    },\n    \"Constants\": {\n      \"openness_threshold\": \"50%\",\n      \"closed_segment_definition\": \"Perimeter segments that abut the house walls are considered 'closed'.\",\n      \"facade_height_measurement_procedure\": \"Measure from the top of the porch floor to the point where the segment facade intersects with the top of the roof material.\",\n      \"facade_width_measurement_procedure\": \"Measure from the same plane as the height measurement.\"\n    },\n    \"Conditions\": {\n      \"mandatory_classification\": \"All perimeter segments must be classified as either 'open' or 'closed'.\",\n      \"conditional_logic_1\": \"IF a perimeter segment abuts a house wall, THEN its status is 'closed'.\",\n      \"conditional_logic_2\": \"IF a perimeter segment does not abut a house wall AND its open facade area is at least 50% of the total facade area, THEN its status is 'open'.\",\n      \"conditional_logic_3\": \"IF a perimeter segment does not abut a house wall AND its open facade area is less than 50% of the total facade area, THEN its status is 'closed'.\",\n      \"dependency\": \"The determination of status for non-abutting segments (Step 3) is dependent on the initial identification of wall-abutting segments (Step 2).\"\n    },\n    \"Exceptions\": {\n      \"structural_support_allowance\": \"Allowances may be made for structural supports that are not excessive when measuring facade width and area.\",\n      \"ambiguity_flag_1\": \"The term 'not excessive' regarding structural supports is ambiguous and not quantitatively defined.\",\n      \"ambiguity_flag_2\": \"The text states segment E is 'Closed (because of decorative glass wall)'. It is ambiguous whether this is a material-specific rule or if the glass wall simply causes the open area to be less than the 50% threshold.\"\n    },\n    \"Relationships\": {\n      \"hierarchical_structure\": \"The overall process is defined sequentially: Step 2 (identify wall-abutting segments) must be completed before Step 3 (determine status of remaining segments).\",\n      \"cross_reference_figure\": \"Refers to 'Figure 5' which provides plan view examples of closed segments (A, B, C).\",\n      \"cross_reference_diagram\": \"Refers to 'section/elevation diagrams' which provide facade view examples of both open and closed segments (D, E, F, G) with dimensions.\",\n      \"logical_dependency\": \"The final 'open' or 'closed' status of any given segment is logically dependent on its location (abutting a wall or not) and, if not abutting, the subsequent calculation of its open facade area percentage.\"\n    }\n  }\n]\n```",
+    "response_time": 28.436245918273926,
+    "input_tokens": 827,
+    "output_tokens": 2996,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 16:11:09",
+  "model": "google/gemini-2.5-pro",
+  "success": true
+}

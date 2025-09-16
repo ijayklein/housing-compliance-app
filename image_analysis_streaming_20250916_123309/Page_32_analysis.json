@@ -1,0 +1,19 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_32.png",
+  "image_name": "Page_32.png",
+  "analysis": {
+    "page_number": "unknown",
+    "main_heading": "PARSE_ERROR",
+    "text_content": "Failed to parse response: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)",
+    "tables": [],
+    "figures": [],
+    "zoning_rules": [],
+    "code_references": [],
+    "quality_notes": "JSON parsing failed: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)",
+    "raw_response": "```json\n{\n  \"page_number\": \"26\",\n  \"main_heading\": \"Primary daylight plane (sides)\",\n  \"text_content\": \"Daylight plane\\nThe daylight plane in conjunction with the setbacks & height limits, create an invisible tent\\nThe primary daylight plane regulates structures located within the buildable area. Structures located in the rear and/or side yards are regulated by the accessory-structure daylight plan described on the next page.\\nintended to contain development on the lot in a way that preserves privacy and exposure to natural light.\\nCode sections\\nPage 26\\n18.12.040 (a) Table 2\\nPage 27\\n18.04\\nPage 28\\n18.12.040 (c) Table 2\\nPage 29\\n18.12.050 (b) (2)\\n18.12.040 (j)\\nNotes:\\n\u2022 Daylight plane is measured from average grade.\\n\u2022 Average grade is established using existing grade\u2014before any grading or fill (See Fig 44 p. 42)\\n\u2022 Side daylight plane is measured (up) at lot line.\\n\u2022 Rear daylight plane is measured (up) at rear setback.\",\n  \"tables\": [],\n  \"figures\": [\n    {\n      \"figure_numbe",
+    "parse_error": true
+  },
+  "analysis_timestamp": "2025-09-16 12:33:31",
+  "model_used": "google/gemini-2.5-flash",
+  "success": false
+}

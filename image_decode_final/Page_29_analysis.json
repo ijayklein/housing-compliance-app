@@ -1,0 +1,102 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_29.png",
+  "image_name": "Page_29.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Determining setbacks on oddly shaped lots considerations\n\nFig 17 Setbacks for oddly shaped lots\n\nKey\n\u2014 Curb\n\u2014 \u2014 Lot line\nSidewalk\nRequired\nsetbacks\nBuildable\narea\n\nRear yard\n\nA\nFlag lot\n\nFront yard\n\nRear yard\n\nFront yard\n\nStreet\n\nInterior-side yard\n\nInterior-side yard\n\nInterior-side yard\n\nFront lot line\nis closest and\nmost parallel\nto street.\n\nFront\nsetback is\n10' instead\nof 20'\n\nStreet\n\nWedge shaped lots\ndon't have rear lot lines.\nThe rear yard is\ndetermined by a 20'\nradius from intersection\nof side lot lines.\n\nInterior-side yard\n\nInteriorside yard\n\nE\nWedge\nshaped lot\n\nFront yard\n\nStreet\n\nInterior-side yard\n\nInterior-side yard\n\nRear yard\n\n16'\n\nB\nCorner\nlot\n\nFront yard\n\nStreet\n\nRear yard\n\nF\nLot with\nmore than\n4 sides\n\nFront yard\n\nInterior-side yard\n\nInterior-side yard\n\nStreet\n\nStreet side\nsetback is 10'\ninstead of 16'\n\nFront lot line is\nshortest of the\ntwo frontages.\n\nInterior-side yard\n\nRear yard\n\nC\nSubstandard\nCorner lot\nw/frontage\n< 50\u2032\n\nFront yard\n\nStreet\n\nRear lot line is\nfarthest and\nmost parallel to\nstreet.\n\nRear yard\n\nInterior side yard\n\nG\nLot with\nmore than\n4 sides\n\nFront yard\n\nInterior-side yard\n\nStreet\n\n23",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "A key defining line types: solid line for Curb, dashed line for Lot line, hatched rectangle for Sidewalk, thin solid line for Required setbacks, and light gray shaded area for Buildable area.",
+          "location": "Middle left"
+        },
+        {
+          "type": "diagram",
+          "description": "Diagram A: 'Flag lot'. Shows a rectangular lot with a narrow access strip to the street. It has a 'Front yard', 'Rear yard', and 'Interior-side yard' on both sides. An annotation indicates 'Front lot line is closest and most parallel to street.' Another annotation points to a 'Front setback' of 10' instead of 20'.",
+          "location": "Top middle"
+        },
+        {
+          "type": "diagram",
+          "description": "Diagram B: 'Corner lot'. Shows a rectangular lot at a street corner. It has a 'Front yard', 'Rear yard', and 'Interior-side yard' on two sides, and a 'Street-side yard' on one side. A dimension of 16' is shown for the 'Street-side yard'.",
+          "location": "Top right"
+        },
+        {
+          "type": "diagram",
+          "description": "Diagram C: 'Substandard Corner lot w/frontage < 50''. Shows a rectangular lot at a street corner, similar to B but with a smaller frontage. It has a 'Front yard', 'Rear yard', 'Interior-side yard', and 'Street-side yard'. An annotation indicates 'Street side setback is 10' instead of 16''. Another annotation points to 'Front lot line is shortest of the two frontages.' A dimension of 10' is shown for the 'Street-side yard'.",
+          "location": "Top right"
+        },
+        {
+          "type": "diagram",
+          "description": "Diagram D: 'Through lot'. Shows a rectangular lot with frontages on two parallel streets. It has a 'Front yard', 'Rear yard', and 'Interior-side yard' on both sides.",
+          "location": "Bottom left"
+        },
+        {
+          "type": "diagram",
+          "description": "Diagram E: 'Wedge shaped lot'. Shows a pie-shaped lot with a curved frontage on a street. It has a 'Front yard' and 'Interior-side yard' on both radial sides. An annotation states: 'Wedge shaped lots don't have rear lot lines. The rear yard is determined by a 20' radius from intersection of side lot lines.'",
+          "location": "Bottom middle"
+        },
+        {
+          "type": "diagram",
+          "description": "Diagram F: 'Lot with more than 4 sides'. Shows an irregular polygon-shaped lot with a straight frontage on a street. It has a 'Front yard', 'Rear yard', and 'Interior-side yard' on multiple sides.",
+          "location": "Bottom right"
+        },
+        {
+          "type": "diagram",
+          "description": "Diagram G: 'Lot with more than 4 sides'. Shows an L-shaped lot with a straight frontage on a street. It has a 'Front yard', 'Rear yard', and 'Interior-side yard' on multiple sides. An annotation indicates 'Rear lot line is farthest and most parallel to street.'",
+          "location": "Bottom right"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Front setback (Flag lot)",
+          "value": "10",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Standard Front setback",
+          "value": "20",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Street-side yard (Corner lot B)",
+          "value": "16",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Street side setback (Substandard Corner lot C)",
+          "value": "10",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Standard Street side setback",
+          "value": "16",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Frontage (Substandard Corner lot C)",
+          "value": "50",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Rear yard determination radius (Wedge shaped lot E)",
+          "value": "20",
+          "unit": "feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Determining setbacks on oddly shaped lots considerations",
+        "subheadings": [],
+        "sections": [
+          "Fig 17 Setbacks for oddly shaped lots",
+          "Key"
+        ]
+      },
+      "additional_notes": [
+        "Page number '23' is present at the bottom right corner."
+      ],
+      "cross_references": []
+    }
+  },
+  "analysis_timestamp": "2025-09-11 14:59:18",
+  "model_used": "google/gemini-2.5-flash"
+}

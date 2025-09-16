@@ -1,0 +1,45 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_28.png",
+  "image_name": "Page_28.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Setback considerations\n\nEasements\nSome easements affect setbacks i.e., setbacks must be measured from the edge of the easement regardless of the lot line as illustrated in Fig 16 on this page. Easements that affect setbacks are:\n  \u2022 Creek easements\n  \u2022 Public street easements\n\nNote: most public utility easements do not affect setbacks.\n\nSidewalks\nThe sidewalk may not indicate the lot line. Often, the street easement or public right-of-way extends for several feet beyond the sidewalk. Fig 16 on this page illustrates this common circumstance and how the setbacks are affected i.e., they must be measured from the lot line regardless of the sidewalk.\n\nOddly shaped lots\nFor some lots, the setbacks and required yards may not be obvious.\nFig 17 on page 23 indicates the appropriate site plan for lot shapes about which questions often arise:\n  \u2022 flag lot (Fig 17 A)\n  \u2022 corner lot (Fig 17 B)\n  \u2022 through lot (Fig 17 D)\n  \u2022 wedge-shaped lot (Fig 17 E)\n  \u2022 lot with more than four sides (Fig 17 F & G)\n\nFlag & substandard lots\nFig 17 on page 23 also illustrates examples of setbacks that have been reduced for smaller or oddly shaped lots e.g.,\n  \u2022 the front setback of a flag lot (Fig 17 A)\n  \u2022 the street-side yard setback for substandard corner lots that are less than 50' wide (Fig 17 C)",
+      "visual_elements": [
+        {
+          "type": "figure",
+          "description": "Fig 16 Setbacks: easements and sidewalks. A diagram showing a rectangular lot with labeled areas: Rear yard, Buildable area, Front yard, and Interior-side yard on both sides. The diagram includes arrows and labels indicating 'Easement' at the top edge, 'Creek or public access easement e.g., street or alley' on the right side, and notes that setbacks are measured from easement regardless of lot lines and from lot lines regardless of sidewalk location. The bottom edge shows a sidewalk with a note about the space between sidewalk edge and lot line being part of the public right of way. A key explains symbols for Curb, Lot line, Sidewalk, Required setbacks, Buildable area, and Easement.",
+          "location": "Right side, middle to bottom"
+        },
+        {
+          "type": "text box",
+          "description": "Note: For information regarding creek easements, contact the Santa Clara Valley Water District.",
+          "location": "Bottom right corner"
+        }
+      ],
+      "technical_specifications": [],
+      "structural_elements": {
+        "main_heading": "Setback considerations",
+        "subheadings": [
+          "Easements",
+          "Sidewalks",
+          "Oddly shaped lots",
+          "Flag & substandard lots"
+        ],
+        "sections": []
+      },
+      "additional_notes": [
+        "Page number 22 at bottom left corner.",
+        "No handwritten annotations or stamps visible.",
+        "Text is clear and legible."
+      ],
+      "cross_references": [
+        "Fig 16 on this page",
+        "Fig 17 on page 23",
+        "See section on Lot Size for more information about creek easements",
+        "See section on Lot Size for more information about public street easements"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-14 19:41:05",
+  "model_used": "openai/gpt-4.1-mini"
+}

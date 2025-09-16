@@ -1,0 +1,192 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_25.md",
+  "file_name": "Page_25.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "rule": "Attached Fireplace, Chimney, and Buttress Gross Floor Area Calculation",
+        "Qualifiers": {
+          "Scope": "Calculation of gross floor area (GFA) for fireplaces, chimneys, and buttresses attached to a primary structure.",
+          "Applicability": "Applies to all configurations and designs of attached fireplaces, chimneys, and buttresses.",
+          "Exclusions": "Chimneys located on upper floors are excluded from the gross floor area calculation."
+        },
+        "Variables": {
+          "Dimensional": "Configuration, design, floor level.",
+          "Material": "",
+          "Environmental": "",
+          "Usage": "Fireplace, Chimney, Buttress."
+        },
+        "Constants": {
+          "Numerical values": "Counted one time.",
+          "Specs": "",
+          "Standards": "Gross Floor Area (GFA)."
+        },
+        "Conditions": {
+          "Mandatory": "Fireplaces, ground-floor chimneys, and buttresses must be counted towards GFA.",
+          "Optional": "",
+          "Conditional logic": "IF structure is a chimney AND is on an upper floor, THEN it does not count towards GFA. ELSE, if it is a fireplace, buttress, or ground-floor chimney, it counts once towards GFA.",
+          "Dependencies": ""
+        },
+        "Exceptions": {
+          "Explicit deviations": "Chimneys on upper floors do not count toward GFA.",
+          "Alternatives": "",
+          "Special cases": "Fireplaces not connected to the house are treated differently (as accessory structures)."
+        },
+        "Relationships": {
+          "Hierarchical": "This rule is a specific component of the overall Gross Floor Area calculation for a property.",
+          "Cross-references": "See rule for 'Detached Fireplace as Accessory Structure Calculation'.",
+          "Logical dependencies": "The GFA calculation for a chimney is dependent on its floor level."
+        }
+      },
+      {
+        "rule": "Projections and Appendages Gross Floor Area Calculation",
+        "Qualifiers": {
+          "Scope": "Calculation of gross floor area (GFA) for sheds, planters, tool sheds, equipment enclosures, play houses, and other similar projections/appendages.",
+          "Applicability": "Applies to miscellaneous appendages and projections regardless of configuration or design.",
+          "Exclusions": "Projections and appendages with a height of 5 feet or less."
+        },
+        "Variables": {
+          "Dimensional": "Height.",
+          "Material": "",
+          "Environmental": "",
+          "Usage": "Shed, planter, tool shed, equipment enclosure, play house, other projection/appendage."
+        },
+        "Constants": {
+          "Numerical values": "Height threshold: > 5 feet.",
+          "Specs": "",
+          "Standards": "Gross Floor Area (GFA)."
+        },
+        "Conditions": {
+          "Mandatory": "",
+          "Optional": "",
+          "Conditional logic": "IF appendage_height > 5 feet, THEN it counts toward gross floor area.",
+          "Dependencies": ""
+        },
+        "Exceptions": {
+          "Explicit deviations": "",
+          "Alternatives": "",
+          "Special cases": ""
+        },
+        "Relationships": {
+          "Hierarchical": "This rule is a specific component of the overall Gross Floor Area calculation for a property.",
+          "Cross-references": "See rule for 'Location Restriction for Appendages and Noise-Producing Equipment'.",
+          "Logical dependencies": "Inclusion in GFA is dependent on the height of the structure exceeding a specific threshold."
+        }
+      },
+      {
+        "rule": "Detached Fireplace as Accessory Structure Calculation",
+        "Qualifiers": {
+          "Scope": "Calculation of Floor Area Ratio (FAR) and lot coverage for fireplaces not physically connected to the main house.",
+          "Applicability": "Applies to fireplaces treated as accessory structures.",
+          "Exclusions": "Fireplaces that are connected to the house."
+        },
+        "Variables": {
+          "Dimensional": "Area (in square feet), size.",
+          "Material": "",
+          "Environmental": "",
+          "Usage": "Detached fireplace."
+        },
+        "Constants": {
+          "Numerical values": "FAR area threshold: > 120 s.f.",
+          "Specs": "",
+          "Standards": "Floor Area Ratio (FAR), Lot Coverage."
+        },
+        "Conditions": {
+          "Mandatory": "Detached fireplaces must always be counted towards lot coverage, regardless of size.",
+          "Optional": "",
+          "Conditional logic": "IF detached_fireplace_area > 120 s.f., THEN it counts towards FAR. A detached fireplace ALWAYS counts towards lot coverage.",
+          "Dependencies": ""
+        },
+        "Exceptions": {
+          "Explicit deviations": "",
+          "Alternatives": "",
+          "Special cases": "Detached fireplaces are treated as accessory structures, which have different calculation rules (FAR, lot coverage) than attached structures (GFA)."
+        },
+        "Relationships": {
+          "Hierarchical": "This rule defines a special case for fireplaces, distinguishing them from the GFA rules for attached structures.",
+          "Cross-references": "Contrasts with 'Attached Fireplace, Chimney, and Buttress Gross Floor Area Calculation'.",
+          "Logical dependencies": "The calculation method (FAR vs. GFA) depends on whether the fireplace is attached or detached."
+        }
+      },
+      {
+        "rule": "Prohibition on Construction of New Wood-Burning Fireplaces",
+        "Qualifiers": {
+          "Scope": "Prohibition of the construction of new wood-burning fireplaces.",
+          "Applicability": "City of Palo Alto. Applies to new construction.",
+          "Exclusions": "Possible exceptions are mentioned but not detailed in this text."
+        },
+        "Variables": {
+          "Dimensional": "",
+          "Material": "Wood-burning.",
+          "Environmental": "",
+          "Usage": "New construction of fireplaces."
+        },
+        "Constants": {
+          "Numerical values": "Ordinance passed in year 2000.",
+          "Specs": "",
+          "Standards": "Palo Alto city ordinance, Chapter 9.06.030."
+        },
+        "Conditions": {
+          "Mandatory": "Construction of new wood-burning fireplaces is prohibited.",
+          "Optional": "",
+          "Conditional logic": "",
+          "Dependencies": "Compliance is dependent on the referenced city ordinance."
+        },
+        "Exceptions": {
+          "Explicit deviations": "",
+          "Alternatives": "",
+          "Special cases": "Possible exceptions exist; details are in the referenced chapter."
+        },
+        "Relationships": {
+          "Hierarchical": "This is a high-level prohibition that may override other rules regarding fireplace construction.",
+          "Cross-references": "Chapter 9.06.030 of the city ordinance. Ambiguous Language Flag: The specific document name is noted as '[illegible]'.",
+          "Logical dependencies": "This rule is a prerequisite for any new fireplace construction; if the planned fireplace is wood-burning, it is likely prohibited."
+        }
+      },
+      {
+        "rule": "Location Restriction for Appendages and Noise-Producing Equipment",
+        "Qualifiers": {
+          "Scope": "Placement and location of miscellaneous appendages and noise-producing equipment.",
+          "Applicability": "Applies to appendages (e.g., tool sheds, equipment enclosures, play houses) and any noise-producing equipment.",
+          "Exclusions": ""
+        },
+        "Variables": {
+          "Dimensional": "",
+          "Material": "",
+          "Environmental": "Noise-producing.",
+          "Usage": "Appendages (tool sheds, equipment enclosures, play houses), noise-producing equipment."
+        },
+        "Constants": {
+          "Numerical values": "",
+          "Specs": "",
+          "Standards": "Required yards."
+        },
+        "Conditions": {
+          "Mandatory": "Prohibited from locating these items in required yards.",
+          "Optional": "",
+          "Conditional logic": "IF item is an appendage (e.g., tool shed) OR is noise-producing equipment, THEN its location must NOT be in a required yard.",
+          "Dependencies": "Depends on the definition and boundaries of 'required yards' for a given property."
+        },
+        "Exceptions": {
+          "Explicit deviations": "",
+          "Alternatives": "",
+          "Special cases": ""
+        },
+        "Relationships": {
+          "Hierarchical": "This is a zoning/placement rule that complements the GFA calculation rules for appendages.",
+          "Cross-references": "Related to the rule 'Projections and Appendages Gross Floor Area Calculation'.",
+          "Logical dependencies": "An appendage might be compliant with GFA rules but non-compliant with this location rule."
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n  {\n    \"rule\": \"Attached Fireplace, Chimney, and Buttress Gross Floor Area Calculation\",\n    \"Qualifiers\": {\n      \"Scope\": \"Calculation of gross floor area (GFA) for fireplaces, chimneys, and buttresses attached to a primary structure.\",\n      \"Applicability\": \"Applies to all configurations and designs of attached fireplaces, chimneys, and buttresses.\",\n      \"Exclusions\": \"Chimneys located on upper floors are excluded from the gross floor area calculation.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"Configuration, design, floor level.\",\n      \"Material\": \"\",\n      \"Environmental\": \"\",\n      \"Usage\": \"Fireplace, Chimney, Buttress.\"\n    },\n    \"Constants\": {\n      \"Numerical values\": \"Counted one time.\",\n      \"Specs\": \"\",\n      \"Standards\": \"Gross Floor Area (GFA).\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"Fireplaces, ground-floor chimneys, and buttresses must be counted towards GFA.\",\n      \"Optional\": \"\",\n      \"Conditional logic\": \"IF structure is a chimney AND is on an upper floor, THEN it does not count towards GFA. ELSE, if it is a fireplace, buttress, or ground-floor chimney, it counts once towards GFA.\",\n      \"Dependencies\": \"\"\n    },\n    \"Exceptions\": {\n      \"Explicit deviations\": \"Chimneys on upper floors do not count toward GFA.\",\n      \"Alternatives\": \"\",\n      \"Special cases\": \"Fireplaces not connected to the house are treated differently (as accessory structures).\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"This rule is a specific component of the overall Gross Floor Area calculation for a property.\",\n      \"Cross-references\": \"See rule for 'Detached Fireplace as Accessory Structure Calculation'.\",\n      \"Logical dependencies\": \"The GFA calculation for a chimney is dependent on its floor level.\"\n    }\n  },\n  {\n    \"rule\": \"Projections and Appendages Gross Floor Area Calculation\",\n    \"Qualifiers\": {\n      \"Scope\": \"Calculation of gross floor area (GFA) for sheds, planters, tool sheds, equipment enclosures, play houses, and other similar projections/appendages.\",\n      \"Applicability\": \"Applies to miscellaneous appendages and projections regardless of configuration or design.\",\n      \"Exclusions\": \"Projections and appendages with a height of 5 feet or less.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"Height.\",\n      \"Material\": \"\",\n      \"Environmental\": \"\",\n      \"Usage\": \"Shed, planter, tool shed, equipment enclosure, play house, other projection/appendage.\"\n    },\n    \"Constants\": {\n      \"Numerical values\": \"Height threshold: > 5 feet.\",\n      \"Specs\": \"\",\n      \"Standards\": \"Gross Floor Area (GFA).\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"\",\n      \"Optional\": \"\",\n      \"Conditional logic\": \"IF appendage_height > 5 feet, THEN it counts toward gross floor area.\",\n      \"Dependencies\": \"\"\n    },\n    \"Exceptions\": {\n      \"Explicit deviations\": \"\",\n      \"Alternatives\": \"\",\n      \"Special cases\": \"\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"This rule is a specific component of the overall Gross Floor Area calculation for a property.\",\n      \"Cross-references\": \"See rule for 'Location Restriction for Appendages and Noise-Producing Equipment'.\",\n      \"Logical dependencies\": \"Inclusion in GFA is dependent on the height of the structure exceeding a specific threshold.\"\n    }\n  },\n  {\n    \"rule\": \"Detached Fireplace as Accessory Structure Calculation\",\n    \"Qualifiers\": {\n      \"Scope\": \"Calculation of Floor Area Ratio (FAR) and lot coverage for fireplaces not physically connected to the main house.\",\n      \"Applicability\": \"Applies to fireplaces treated as accessory structures.\",\n      \"Exclusions\": \"Fireplaces that are connected to the house.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"Area (in square feet), size.\",\n      \"Material\": \"\",\n      \"Environmental\": \"\",\n      \"Usage\": \"Detached fireplace.\"\n    },\n    \"Constants\": {\n      \"Numerical values\": \"FAR area threshold: > 120 s.f.\",\n      \"Specs\": \"\",\n      \"Standards\": \"Floor Area Ratio (FAR), Lot Coverage.\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"Detached fireplaces must always be counted towards lot coverage, regardless of size.\",\n      \"Optional\": \"\",\n      \"Conditional logic\": \"IF detached_fireplace_area > 120 s.f., THEN it counts towards FAR. A detached fireplace ALWAYS counts towards lot coverage.\",\n      \"Dependencies\": \"\"\n    },\n    \"Exceptions\": {\n      \"Explicit deviations\": \"\",\n      \"Alternatives\": \"\",\n      \"Special cases\": \"Detached fireplaces are treated as accessory structures, which have different calculation rules (FAR, lot coverage) than attached structures (GFA).\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"This rule defines a special case for fireplaces, distinguishing them from the GFA rules for attached structures.\",\n      \"Cross-references\": \"Contrasts with 'Attached Fireplace, Chimney, and Buttress Gross Floor Area Calculation'.\",\n      \"Logical dependencies\": \"The calculation method (FAR vs. GFA) depends on whether the fireplace is attached or detached.\"\n    }\n  },\n  {\n    \"rule\": \"Prohibition on Construction of New Wood-Burning Fireplaces\",\n    \"Qualifiers\": {\n      \"Scope\": \"Prohibition of the construction of new wood-burning fireplaces.\",\n      \"Applicability\": \"City of Palo Alto. Applies to new construction.\",\n      \"Exclusions\": \"Possible exceptions are mentioned but not detailed in this text.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"\",\n      \"Material\": \"Wood-burning.\",\n      \"Environmental\": \"\",\n      \"Usage\": \"New construction of fireplaces.\"\n    },\n    \"Constants\": {\n      \"Numerical values\": \"Ordinance passed in year 2000.\",\n      \"Specs\": \"\",\n      \"Standards\": \"Palo Alto city ordinance, Chapter 9.06.030.\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"Construction of new wood-burning fireplaces is prohibited.\",\n      \"Optional\": \"\",\n      \"Conditional logic\": \"\",\n      \"Dependencies\": \"Compliance is dependent on the referenced city ordinance.\"\n    },\n    \"Exceptions\": {\n      \"Explicit deviations\": \"\",\n      \"Alternatives\": \"\",\n      \"Special cases\": \"Possible exceptions exist; details are in the referenced chapter.\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"This is a high-level prohibition that may override other rules regarding fireplace construction.\",\n      \"Cross-references\": \"Chapter 9.06.030 of the city ordinance. Ambiguous Language Flag: The specific document name is noted as '[illegible]'.\",\n      \"Logical dependencies\": \"This rule is a prerequisite for any new fireplace construction; if the planned fireplace is wood-burning, it is likely prohibited.\"\n    }\n  },\n  {\n    \"rule\": \"Location Restriction for Appendages and Noise-Producing Equipment\",\n    \"Qualifiers\": {\n      \"Scope\": \"Placement and location of miscellaneous appendages and noise-producing equipment.\",\n      \"Applicability\": \"Applies to appendages (e.g., tool sheds, equipment enclosures, play houses) and any noise-producing equipment.\",\n      \"Exclusions\": \"\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"\",\n      \"Material\": \"\",\n      \"Environmental\": \"Noise-producing.\",\n      \"Usage\": \"Appendages (tool sheds, equipment enclosures, play houses), noise-producing equipment.\"\n    },\n    \"Constants\": {\n      \"Numerical values\": \"\",\n      \"Specs\": \"\",\n      \"Standards\": \"Required yards.\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"Prohibited from locating these items in required yards.\",\n      \"Optional\": \"\",\n      \"Conditional logic\": \"IF item is an appendage (e.g., tool shed) OR is noise-producing equipment, THEN its location must NOT be in a required yard.\",\n      \"Dependencies\": \"Depends on the definition and boundaries of 'required yards' for a given property.\"\n    },\n    \"Exceptions\": {\n      \"Explicit deviations\": \"\",\n      \"Alternatives\": \"\",\n      \"Special cases\": \"\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"This is a zoning/placement rule that complements the GFA calculation rules for appendages.\",\n      \"Cross-references\": \"Related to the rule 'Projections and Appendages Gross Floor Area Calculation'.\",\n      \"Logical dependencies\": \"An appendage might be compliant with GFA rules but non-compliant with this location rule.\"\n    }\n  }\n]\n```",
+    "response_time": 43.879536867141724,
+    "input_tokens": 820,
+    "output_tokens": 5462,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 16:12:35",
+  "model": "google/gemini-2.5-pro",
+  "success": true
+}

@@ -1,0 +1,81 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_42.png",
+  "image_name": "Page_42.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Driveway standards\n\n\u2022 Driveway surfaces may have either\npermeable or impermeable paving.\nMaterials shall meet Public Works\nstandards.\n\n\u2022 Driveway surface within 10' of the\npublic right-of-way may not be of a\nloose material e.g., gravel.\n\n\u2022 2nd dwelling units must share com-\nmon driveway with main dwelling.\n\n\u2022 Minimum driveway clearance: 10'\n\u2022 Minimum driveway surface: 8'\n\u2022 Minimum 20' between curb cuts.\n\u2022 No more than 40% of required\nfront yard may be impermeable.\n\u2022 Street-work permit required for\nwork done within the public right-\nof-way.\n\nFor safety reasons, the city also encourages\nthat the following standard be met:\n\n\u2022 No more than one curb cut per single\nfrontage.\n\n\u2022 Minimum of 50' between curb cut and\nintersection curb face.\n\nFig 31 Driveway standards\n\nPavers without mortar\n(grass between) OK\n\n\"Hollywood strips\"\n(grass between) OK\n\nGravel OK\n\nTurns enroute to required\nparking spaces must be\ndeemed manueverable by\nthe Transportation Division.\n\n8' min. width for driveway\nsurface (typ. all)\n\n10' min. width for driveway\nclearance (typ. all)\n\nNo gravel or similar loose\nmaterials within 10' of the\npublic right-of-way (lot line)\n\nWork done within the public\nROW requires a street-work\npermit and must comply with\ncity standards.\n\n36",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "A diagram illustrating three types of driveway surfaces. The first shows 'Pavers without mortar (grass between) OK', depicting irregularly shaped pavers with grass in between, extending vertically from a base. The second shows '\"Hollywood strips\" (grass between) OK', depicting two parallel strips of rectangular pavers with grass in between, also extending vertically from a base. The third shows 'Gravel OK', depicting a cross-section of a gravel driveway with a curved edge, indicating a turn. This diagram includes various measurements and labels related to driveway specifications.",
+          "location": "Bottom half of the page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Driveway surface within public right-of-way",
+          "value": "10",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum driveway clearance",
+          "value": "10",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum driveway surface",
+          "value": "8",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum distance between curb cuts",
+          "value": "20",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Maximum impermeable front yard",
+          "value": "40",
+          "unit": "percent"
+        },
+        {
+          "parameter": "Maximum curb cuts per single frontage",
+          "value": "one",
+          "unit": null
+        },
+        {
+          "parameter": "Minimum distance between curb cut and intersection curb face",
+          "value": "50",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum width for driveway surface (typ. all)",
+          "value": "8",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum width for driveway clearance (typ. all)",
+          "value": "10",
+          "unit": "feet"
+        },
+        {
+          "parameter": "No gravel or similar loose materials within public right-of-way (lot line)",
+          "value": "10",
+          "unit": "feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Driveway standards",
+        "subheadings": [],
+        "sections": [
+          "Fig 31 Driveway standards"
+        ]
+      },
+      "additional_notes": [
+        "Page number '36' is present at the bottom left corner."
+      ],
+      "cross_references": []
+    }
+  },
+  "analysis_timestamp": "2025-09-14 19:32:32",
+  "model_used": "google/gemini-2.5-flash"
+}

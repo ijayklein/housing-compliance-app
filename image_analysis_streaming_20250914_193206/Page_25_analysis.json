@@ -1,0 +1,44 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_25.png",
+  "image_name": "Page_25.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Fireplaces, chimneys, sheds, planters, and other projections\n\n\u2022 Fireplaces shall be included in the gross floor area (counted one time) regardless of configura-\ntion or design.\n\u2022 Sheds, planters, and other projections that are higher than 5' count toward gross floor area\nregardless of configuration or design.\n\nFig 14 Fireplaces, chimneys, sheds, etc.\n\nChimneys on the\nupper floors DO\nNOT COUNT\n\nHeight\n\nNote: In 2000, the city of Palo Alto\npassed an ordinance prohibiting the\nconstruction of new wood-burning fire-\nplaces. For details about and possible\nhibition, see the\nter 9.06.030\n\nAll configurations of fireplaces, chimneys, and buttresses\nCOUNT ONCE towards the gross floor area.\nNote: Fireplaces not connected to the house are treated\nlike accessory structures, they and count towards FAR if\nthey are greater than 120 sf. They count towards lot\ncoverage always, regardless of size.\n\nMiscellaneous appendages e.g., tool\nsheds, equipment enclosures, play\nhouses, etc., that are greater than 5' in\nheight, DO COUNT toward gross floor\narea. (Note: Neither appendages like\nthis nor noise-producing equipment may\nbe located in the required yards).\n\n19",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "An isometric line drawing of a house with multiple chimneys and a small shed-like structure. The house has a pitched roof. There are three chimneys depicted: one on the upper floor, one on the ground floor, and another on the ground floor. The shed-like structure is separate from the house. Arrows and text labels point to specific elements: 'Chimneys on the upper floors DO NOT COUNT' points to the upper chimney. 'Height' is labeled next to the shed. A dashed line indicates the ground level. Callouts explain how different elements are counted towards gross floor area or FAR.",
+          "location": "Middle to bottom of the page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Projection height threshold for gross floor area count",
+          "value": "5",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Accessory structure area threshold for FAR count",
+          "value": "120",
+          "unit": "square feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Fireplaces, chimneys, sheds, planters, and other projections",
+        "subheadings": [],
+        "sections": [
+          "Fig 14 Fireplaces, chimneys, sheds, etc."
+        ]
+      },
+      "additional_notes": [
+        "The text 'hibition, see the ter 9.06.030' appears to be a truncated sentence, likely 'prohibition, see the Chapter 9.06.030' due to the layout of the text box.",
+        "The page number '19' is located at the bottom right corner of the page."
+      ],
+      "cross_references": [
+        "Chapter 9.06.030 (for details on wood-burning fireplace prohibition in Palo Alto)"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-14 19:32:25",
+  "model_used": "google/gemini-2.5-flash"
+}

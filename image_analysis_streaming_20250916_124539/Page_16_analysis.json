@@ -1,0 +1,22 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_16.png",
+  "image_name": "Page_16.png",
+  "analysis": {
+    "page": "10",
+    "heading": "Step 4: Finalize the determination of which segments are closed and which are open, total the linear feet in each category, and compare the totals.",
+    "content": "For the porch in Fig 5, the summary is as follows:\nClosed Segments: A (3'), B (8'), C (10'), E (14') - Total: 35'\nOpen Segments: D (7'), F (24'), G (4') - Total: 35'\nConclusion: The perimeter of the porch in Fig 5 is 50% open and so the porch would NOT count toward gross floor area",
+    "figures": [
+      "Architectural floor plan showing porch layout with labeled segments A-G and dimensions",
+      "Cross-section diagram showing two options for open porch railings"
+    ],
+    "tables": [
+      "Table showing closed segments (A,B,C,E) and open segments (D,F,G) with their respective measurements in feet"
+    ],
+    "codes": [
+      "Note: If a porch floor is more than 30\" above grade, the porch sides may need to be 36\" high for safety reasons. This may cause the porch facade to be considered closed. Solutions include: Railings (ballisters) instead of solid half walls, A single safety rail above lower, solid half walls."
+    ]
+  },
+  "timestamp": "2025-09-16 12:46:10",
+  "model": "anthropic/claude-3.5-sonnet",
+  "success": true
+}

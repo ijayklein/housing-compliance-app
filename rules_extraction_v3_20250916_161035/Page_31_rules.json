@@ -1,0 +1,115 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_31.md",
+  "file_name": "Page_31.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "rule": "Extension of existing side yard encroachment",
+        "Qualifiers": {
+          "Scope": "Allowable extensions to existing encroachments of walls into required yards.",
+          "Applicability": "Applies to existing walls that encroach into a required interior side yard. The extension is permitted on the ground floor only. This rule applies only to structures that were legally constructed without a variance or a home improvement exception (HIE). The extension may be performed only once in the life of the structure.",
+          "Exclusions": "Walls that do not meet the minimum setback of 5'-0\" from the property line may not be extended. Walls may not be stepped back and then extended. Multiple, non-contiguous protrusions are not permitted. If two existing walls are encroaching, only one of them may be extended."
+        },
+        "Variables": {
+          "existing_wall_setback": "The distance of the existing encroaching wall from the interior side property line.",
+          "existing_wall_length": "The length of the existing encroaching wall.",
+          "extension_length": "The length of the proposed extension."
+        },
+        "Constants": {
+          "min_setback_from_property_line": "5'-0\"",
+          "max_extension_length_absolute": "20'-0\"",
+          "applicable_floor_level": "Ground floor only",
+          "extension_direction_limit": "One direction only"
+        },
+        "Conditions": {
+          "Mandatory": "The existing wall must be at least 5'-0\" from the property line. The extension must be at the same setback as the existing wall. The extension must be contiguous with the existing protrusion. The original non-complying wall must be retained.",
+          "Optional": "",
+          "Conditional Logic": "The length of the extension must be equal to or less than the lesser of two values: the length of the existing wall OR 20'-0\"."
+        },
+        "Exceptions": {
+          "special_setbacks": "Exceptions apply to special setbacks as well. (Ambiguous Flag: The text does not define 'special setbacks' or the nature of the 'exceptions' that apply to them.)"
+        },
+        "Relationships": {
+          "Hierarchical": "This rule is a specific case (Section A) under the general regulation 'Allowable extensions to existing encroachments'.",
+          "Cross-references": "This rule is subject to the general conditions listed in the 'Note' section of the source text. It depends on the externally defined 'required interior side yard setback'.",
+          "Logical Dependencies": "If multiple side yard walls encroach, the choice to extend one precludes the extension of any others."
+        }
+      },
+      {
+        "rule": "Extension of existing front yard encroachment",
+        "Qualifiers": {
+          "Scope": "Allowable extensions to existing encroachments of walls into required yards.",
+          "Applicability": "Applies to existing walls that encroach into a required front yard. The extension is permitted on the ground floor only. This rule applies only to structures that were legally constructed without a variance or a home improvement exception (HIE). The extension may be performed only once in the life of the structure.",
+          "Exclusions": "Walls that do not meet the minimum setback of 14'-0\" from the property line may not be extended. Walls may not be stepped back and then extended. Multiple, non-contiguous protrusions are not permitted."
+        },
+        "Variables": {
+          "existing_wall_setback": "The distance of the existing encroaching wall from the front property line.",
+          "existing_encroaching_wall_length": "The length of the existing encroaching wall.",
+          "extension_length": "The length of the proposed extension.",
+          "combined_length": "The sum of the existing encroaching wall length and the extension length.",
+          "max_house_width": "The maximum width of the house. (Ambiguous Flag: The method for measuring 'maximum width' is not specified.)"
+        },
+        "Constants": {
+          "min_setback_from_property_line": "14'-0\"",
+          "max_combined_length_ratio": "0.5",
+          "applicable_floor_level": "Ground floor only",
+          "extension_direction_limit": "One direction only"
+        },
+        "Conditions": {
+          "Mandatory": "The existing wall must be at least 14'-0\" from the property line. The extension must be at the same setback as the existing wall. The extension must be contiguous with the existing protrusion. The original non-complying wall must be retained. Both of the following provisions must be met: 1) the length of the extension is no greater than that of the existing encroaching wall, AND 2) the combined length is no greater than one-half the maximum width of the house.",
+          "Optional": "",
+          "Conditional Logic": "An extension is permitted only if (extension_length <= existing_encroaching_wall_length) AND (combined_length <= 0.5 * max_house_width)."
+        },
+        "Exceptions": {
+          "special_setbacks": "Exceptions apply to special setbacks as well. (Ambiguous Flag: The text does not define 'special setbacks' or the nature of the 'exceptions' that apply to them.)"
+        },
+        "Relationships": {
+          "Hierarchical": "This rule is a specific case (Section B) under the general regulation 'Allowable extensions to existing encroachments'.",
+          "Cross-references": "This rule is subject to the general conditions listed in the 'Note' section of the source text. It depends on the externally defined 'required front yard setback'.",
+          "Logical Dependencies": "The two provisions for extension length and combined length are co-dependent and must both be satisfied (AND logic)."
+        }
+      },
+      {
+        "rule": "Extension of existing street-side yard encroachment",
+        "Qualifiers": {
+          "Scope": "Allowable extensions to existing encroachments of walls into required yards.",
+          "Applicability": "Applies to existing walls that encroach into a required street side yard. The extension is permitted on the ground floor only. This rule applies only to structures that were legally constructed without a variance or a home improvement exception (HIE). The extension may be performed only once in the life of the structure.",
+          "Exclusions": "Walls that do not meet the minimum setback of 10'-0\" from the property line may not be extended. Walls may not be stepped back and then extended. Multiple, non-contiguous protrusions are not permitted."
+        },
+        "Variables": {
+          "existing_wall_setback": "The distance of the existing encroaching wall from the street side property line.",
+          "existing_wall_length": "The length of the existing encroaching wall.",
+          "extension_length": "The length of the proposed extension."
+        },
+        "Constants": {
+          "min_setback_from_property_line": "10'-0\"",
+          "max_extension_length_absolute": "20'-0\"",
+          "applicable_floor_level": "Ground floor only",
+          "extension_direction_limit": "One direction only"
+        },
+        "Conditions": {
+          "Mandatory": "The existing wall must be at least 10'-0\" from the property line. The extension must be at the same setback as the existing wall. The extension must be contiguous with the existing protrusion. The original non-complying wall must be retained.",
+          "Optional": "",
+          "Conditional Logic": "The length of the extension must be equal to or less than the lesser of two values: the length of the existing wall OR 20'-0\"."
+        },
+        "Exceptions": {
+          "special_setbacks": "Exceptions apply to special setbacks as well. (Ambiguous Flag: The text does not define 'special setbacks' or the nature of the 'exceptions' that apply to them.)"
+        },
+        "Relationships": {
+          "Hierarchical": "This rule is a specific case (Section C) under the general regulation 'Allowable extensions to existing encroachments'.",
+          "Cross-references": "This rule is subject to the general conditions listed in the 'Note' section of the source text. It depends on the externally defined 'required street side yard setback'.",
+          "Logical Dependencies": ""
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n  {\n    \"rule\": \"Extension of existing side yard encroachment\",\n    \"Qualifiers\": {\n      \"Scope\": \"Allowable extensions to existing encroachments of walls into required yards.\",\n      \"Applicability\": \"Applies to existing walls that encroach into a required interior side yard. The extension is permitted on the ground floor only. This rule applies only to structures that were legally constructed without a variance or a home improvement exception (HIE). The extension may be performed only once in the life of the structure.\",\n      \"Exclusions\": \"Walls that do not meet the minimum setback of 5'-0\\\" from the property line may not be extended. Walls may not be stepped back and then extended. Multiple, non-contiguous protrusions are not permitted. If two existing walls are encroaching, only one of them may be extended.\"\n    },\n    \"Variables\": {\n      \"existing_wall_setback\": \"The distance of the existing encroaching wall from the interior side property line.\",\n      \"existing_wall_length\": \"The length of the existing encroaching wall.\",\n      \"extension_length\": \"The length of the proposed extension.\"\n    },\n    \"Constants\": {\n      \"min_setback_from_property_line\": \"5'-0\\\"\",\n      \"max_extension_length_absolute\": \"20'-0\\\"\",\n      \"applicable_floor_level\": \"Ground floor only\",\n      \"extension_direction_limit\": \"One direction only\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"The existing wall must be at least 5'-0\\\" from the property line. The extension must be at the same setback as the existing wall. The extension must be contiguous with the existing protrusion. The original non-complying wall must be retained.\",\n      \"Optional\": \"\",\n      \"Conditional Logic\": \"The length of the extension must be equal to or less than the lesser of two values: the length of the existing wall OR 20'-0\\\".\"\n    },\n    \"Exceptions\": {\n      \"special_setbacks\": \"Exceptions apply to special setbacks as well. (Ambiguous Flag: The text does not define 'special setbacks' or the nature of the 'exceptions' that apply to them.)\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"This rule is a specific case (Section A) under the general regulation 'Allowable extensions to existing encroachments'.\",\n      \"Cross-references\": \"This rule is subject to the general conditions listed in the 'Note' section of the source text. It depends on the externally defined 'required interior side yard setback'.\",\n      \"Logical Dependencies\": \"If multiple side yard walls encroach, the choice to extend one precludes the extension of any others.\"\n    }\n  },\n  {\n    \"rule\": \"Extension of existing front yard encroachment\",\n    \"Qualifiers\": {\n      \"Scope\": \"Allowable extensions to existing encroachments of walls into required yards.\",\n      \"Applicability\": \"Applies to existing walls that encroach into a required front yard. The extension is permitted on the ground floor only. This rule applies only to structures that were legally constructed without a variance or a home improvement exception (HIE). The extension may be performed only once in the life of the structure.\",\n      \"Exclusions\": \"Walls that do not meet the minimum setback of 14'-0\\\" from the property line may not be extended. Walls may not be stepped back and then extended. Multiple, non-contiguous protrusions are not permitted.\"\n    },\n    \"Variables\": {\n      \"existing_wall_setback\": \"The distance of the existing encroaching wall from the front property line.\",\n      \"existing_encroaching_wall_length\": \"The length of the existing encroaching wall.\",\n      \"extension_length\": \"The length of the proposed extension.\",\n      \"combined_length\": \"The sum of the existing encroaching wall length and the extension length.\",\n      \"max_house_width\": \"The maximum width of the house. (Ambiguous Flag: The method for measuring 'maximum width' is not specified.)\"\n    },\n    \"Constants\": {\n      \"min_setback_from_property_line\": \"14'-0\\\"\",\n      \"max_combined_length_ratio\": \"0.5\",\n      \"applicable_floor_level\": \"Ground floor only\",\n      \"extension_direction_limit\": \"One direction only\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"The existing wall must be at least 14'-0\\\" from the property line. The extension must be at the same setback as the existing wall. The extension must be contiguous with the existing protrusion. The original non-complying wall must be retained. Both of the following provisions must be met: 1) the length of the extension is no greater than that of the existing encroaching wall, AND 2) the combined length is no greater than one-half the maximum width of the house.\",\n      \"Optional\": \"\",\n      \"Conditional Logic\": \"An extension is permitted only if (extension_length <= existing_encroaching_wall_length) AND (combined_length <= 0.5 * max_house_width).\"\n    },\n    \"Exceptions\": {\n      \"special_setbacks\": \"Exceptions apply to special setbacks as well. (Ambiguous Flag: The text does not define 'special setbacks' or the nature of the 'exceptions' that apply to them.)\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"This rule is a specific case (Section B) under the general regulation 'Allowable extensions to existing encroachments'.\",\n      \"Cross-references\": \"This rule is subject to the general conditions listed in the 'Note' section of the source text. It depends on the externally defined 'required front yard setback'.\",\n      \"Logical Dependencies\": \"The two provisions for extension length and combined length are co-dependent and must both be satisfied (AND logic).\"\n    }\n  },\n  {\n    \"rule\": \"Extension of existing street-side yard encroachment\",\n    \"Qualifiers\": {\n      \"Scope\": \"Allowable extensions to existing encroachments of walls into required yards.\",\n      \"Applicability\": \"Applies to existing walls that encroach into a required street side yard. The extension is permitted on the ground floor only. This rule applies only to structures that were legally constructed without a variance or a home improvement exception (HIE). The extension may be performed only once in the life of the structure.\",\n      \"Exclusions\": \"Walls that do not meet the minimum setback of 10'-0\\\" from the property line may not be extended. Walls may not be stepped back and then extended. Multiple, non-contiguous protrusions are not permitted.\"\n    },\n    \"Variables\": {\n      \"existing_wall_setback\": \"The distance of the existing encroaching wall from the street side property line.\",\n      \"existing_wall_length\": \"The length of the existing encroaching wall.\",\n      \"extension_length\": \"The length of the proposed extension.\"\n    },\n    \"Constants\": {\n      \"min_setback_from_property_line\": \"10'-0\\\"\",\n      \"max_extension_length_absolute\": \"20'-0\\\"\",\n      \"applicable_floor_level\": \"Ground floor only\",\n      \"extension_direction_limit\": \"One direction only\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"The existing wall must be at least 10'-0\\\" from the property line. The extension must be at the same setback as the existing wall. The extension must be contiguous with the existing protrusion. The original non-complying wall must be retained.\",\n      \"Optional\": \"\",\n      \"Conditional Logic\": \"The length of the extension must be equal to or less than the lesser of two values: the length of the existing wall OR 20'-0\\\".\"\n    },\n    \"Exceptions\": {\n      \"special_setbacks\": \"Exceptions apply to special setbacks as well. (Ambiguous Flag: The text does not define 'special setbacks' or the nature of the 'exceptions' that apply to them.)\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"This rule is a specific case (Section C) under the general regulation 'Allowable extensions to existing encroachments'.\",\n      \"Cross-references\": \"This rule is subject to the general conditions listed in the 'Note' section of the source text. It depends on the externally defined 'required street side yard setback'.\",\n      \"Logical Dependencies\": \"\"\n    }\n  }\n]\n```",
+    "response_time": 47.40082144737244,
+    "input_tokens": 1180,
+    "output_tokens": 5802,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 16:13:03",
+  "model": "google/gemini-2.5-pro",
+  "success": true
+}

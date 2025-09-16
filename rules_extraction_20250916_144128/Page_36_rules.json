@@ -1,0 +1,136 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_36.md",
+  "file_name": "Page_36.md",
+  "analysis": {
+    "extracted_rules": {
+      "rules": [
+        {
+          "title": "Accessory structure standards (non-dwelling)",
+          "qualifiers": {
+            "scope": "Non-dwelling accessory structures",
+            "applicability": "All accessory structures",
+            "exclusions": "Second-dwelling units"
+          },
+          "variables": {
+            "dimensional": [
+              {
+                "name": "distance from main dwelling",
+                "value": "3",
+                "unit": "feet"
+              },
+              {
+                "name": "total lot coverage",
+                "description": "Accessory structures count toward this"
+              },
+              {
+                "name": "total gross floor area",
+                "description": "Accessory structures over 120 sf count toward this"
+              }
+            ],
+            "usage": [
+              {
+                "name": "use",
+                "description": "Must be incidental to main dwelling"
+              }
+            ]
+          },
+          "constants": {
+            "numerical_values": [
+              {
+                "name": "minimum lot size",
+                "value": "none"
+              },
+              {
+                "name": "building permit requirement threshold",
+                "value": "120",
+                "unit": "square feet"
+              },
+              {
+                "name": "plumbing fixtures limit",
+                "value": "2",
+                "condition": "if over 200 sf"
+              }
+            ],
+            "specs": [
+              {
+                "name": "kitchen",
+                "value": "not allowed"
+              }
+            ],
+            "standards": [
+              {
+                "name": "height and daylight plane regulations",
+                "reference": "same as main dwelling"
+              },
+              {
+                "name": "accessory-structure height and daylight plane regulations",
+                "reference": "see Figs 25-26 on p. 32"
+              }
+            ]
+          },
+          "conditions": {
+            "mandatory": [
+              "Must have a use that is incidental to main dwelling",
+              "Must be detached and at least 3' from main dwelling",
+              "May NOT have a kitchen",
+              "Count toward the total lot coverage"
+            ],
+            "conditional_logic": [
+              {
+                "condition": "If over 120 sf",
+                "requirements": [
+                  "Require a building permit",
+                  "Count towards total gross floor area"
+                ]
+              },
+              {
+                "condition": "If over 200 sf",
+                "requirements": [
+                  "May have no more than two plumbing fixtures"
+                ]
+              }
+            ]
+          },
+          "exceptions": {
+            "explicit_deviations": [
+              {
+                "condition": "Accessory structures less than 120 sf",
+                "deviation": "Do not require a building permit but must still comply with all zoning regulations"
+              }
+            ]
+          },
+          "relationships": {
+            "hierarchical": [
+              {
+                "parent": "Accessory structures located in the buildable area",
+                "child": [
+                  "Are subject to the same height and daylight plane regulations as the main dwelling"
+                ]
+              },
+              {
+                "parent": "Accessory structures located in the required setback",
+                "child": [
+                  "May not be located in the front yard",
+                  "May not be located in the street-side yard",
+                  "May not be located in the rear yard of a through lot",
+                  "May not cover more than 50% of the rear yard",
+                  "May not be used for sleeping or living",
+                  "Are subject to the accessory-structure height and daylight plane regulations",
+                  "May NOT have a kitchen",
+                  "Count toward the total lot coverage",
+                  "If over 120 sf, require a building permit and count towards total gross floor area",
+                  "If over 200 sf, may have no more than two plumbing fixtures"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "parse_error": false,
+    "raw_response": "```json\n{\n  \"rules\": [\n    {\n      \"title\": \"Accessory structure standards (non-dwelling)\",\n      \"qualifiers\": {\n        \"scope\": \"Non-dwelling accessory structures\",\n        \"applicability\": \"All accessory structures\",\n        \"exclusions\": \"Second-dwelling units\"\n      },\n      \"variables\": {\n        \"dimensional\": [\n          {\n            \"name\": \"distance from main dwelling\",\n            \"value\": \"3\",\n            \"unit\": \"feet\"\n          },\n          {\n            \"name\": \"total lot coverage\",\n            \"description\": \"Accessory structures count toward this\"\n          },\n          {\n            \"name\": \"total gross floor area\",\n            \"description\": \"Accessory structures over 120 sf count toward this\"\n          }\n        ],\n        \"usage\": [\n          {\n            \"name\": \"use\",\n            \"description\": \"Must be incidental to main dwelling\"\n          }\n        ]\n      },\n      \"constants\": {\n        \"numerical_values\": [\n          {\n            \"name\": \"minimum lot size\",\n            \"value\": \"none\"\n          },\n          {\n            \"name\": \"building permit requirement threshold\",\n            \"value\": \"120\",\n            \"unit\": \"square feet\"\n          },\n          {\n            \"name\": \"plumbing fixtures limit\",\n            \"value\": \"2\",\n            \"condition\": \"if over 200 sf\"\n          }\n        ],\n        \"specs\": [\n          {\n            \"name\": \"kitchen\",\n            \"value\": \"not allowed\"\n          }\n        ],\n        \"standards\": [\n          {\n            \"name\": \"height and daylight plane regulations\",\n            \"reference\": \"same as main dwelling\"\n          },\n          {\n            \"name\": \"accessory-structure height and daylight plane regulations\",\n            \"reference\": \"see Figs 25-26 on p. 32\"\n          }\n        ]\n      },\n      \"conditions\": {\n        \"mandatory\": [\n          \"Must have a use that is incidental to main dwelling\",\n          \"Must be detached and at least 3' from main dwelling\",\n          \"May NOT have a kitchen\",\n          \"Count toward the total lot coverage\"\n        ],\n        \"conditional_logic\": [\n          {\n            \"condition\": \"If over 120 sf\",\n            \"requirements\": [\n              \"Require a building permit\",\n              \"Count towards total gross floor area\"\n            ]\n          },\n          {\n            \"condition\": \"If over 200 sf\",\n            \"requirements\": [\n              \"May have no more than two plumbing fixtures\"\n            ]\n          }\n        ]\n      },\n      \"exceptions\": {\n        \"explicit_deviations\": [\n          {\n            \"condition\": \"Accessory structures less than 120 sf\",\n            \"deviation\": \"Do not require a building permit but must still comply with all zoning regulations\"\n          }\n        ]\n      },\n      \"relationships\": {\n        \"hierarchical\": [\n          {\n            \"parent\": \"Accessory structures located in the buildable area\",\n            \"child\": [\n              \"Are subject to the same height and daylight plane regulations as the main dwelling\"\n            ]\n          },\n          {\n            \"parent\": \"Accessory structures located in the required setback\",\n            \"child\": [\n              \"May not be located in the front yard\",\n              \"May not be located in the street-side yard\",\n              \"May not be located in the rear yard of a through lot\",\n              \"May not cover more than 50% of the rear yard\",\n              \"May not be used for sleeping or living\",\n              \"Are subject to the accessory-structure height and daylight plane regulations\",\n              \"May NOT have a kitchen\",\n              \"Count toward the total lot coverage\",\n              \"If over 120 sf, require a building permit and count towards total gross floor area\",\n              \"If over 200 sf, may have no more than two plumbing fixtures\"\n            ]\n          }\n        ]\n      }\n    }\n  ]\n}\n```"
+  },
+  "timestamp": "2025-09-16 14:43:02",
+  "model": "openai/gpt-4o",
+  "success": true
+}

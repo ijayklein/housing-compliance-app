@@ -1,0 +1,89 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_47.md",
+  "file_name": "Page_47.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "rule": "Guard Rail Architectural Compatibility and Landscape Screening",
+        "Qualifiers": {
+          "Scope": "Design of guard rails and installation of landscape screening related to excavation.",
+          "Applicability": "Applies to any project where an excavation requires a guard rail, or where the Planning Dept. deems landscape screening necessary.",
+          "Exclusions": "None specified."
+        },
+        "Variables": {
+          "Dimensional": "",
+          "Material": "Implied by the term 'architecturally compatible', but not specified.",
+          "Environmental": "Type and density of landscape screening.",
+          "Usage": "Guard rail for safety, landscape screening for visual mitigation."
+        },
+        "Constants": {
+          "Numerical values": "",
+          "Specs": "Guard rail must be 'architecturally compatible with the residence'. (Flag: Ambiguous language, requires definition of 'compatible').",
+          "Standards": "",
+          "Procedures": "Landscape screening requirement is determined by the Planning Dept."
+        },
+        "Conditions": {
+          "Mandatory": "If a guard rail is required, it MUST be designed to be architecturally compatible with the residence.",
+          "Optional": "Landscape screening MAY be required by the Planning Dept.",
+          "Conditional logic": "The architectural compatibility requirement for a guard rail is triggered only IF a guard rail is required.",
+          "Dependencies": "The requirement for landscape screening is dependent on a discretionary decision by the Planning Dept."
+        },
+        "Exceptions": {
+          "Explicit deviations": "None specified.",
+          "Alternatives": "None specified.",
+          "Special cases": "None specified."
+        },
+        "Relationships": {
+          "Hierarchical": "This rule is a sub-section under 'Other excavation considerations'.",
+          "Cross-references": "None specified.",
+          "Logical dependencies": "The design of the guard rail is logically dependent on the architectural style of the main residence."
+        }
+      },
+      {
+        "rule": "Tree Protection During Excavation",
+        "Qualifiers": {
+          "Scope": "Protection of tree root systems during any excavation activity.",
+          "Applicability": "Applies to all excavation. Protects trees of any species located on the subject property or on abutting lots.",
+          "Exclusions": "None specified."
+        },
+        "Variables": {
+          "Dimensional": "Typical root depth ('first 18\u201d below grade'), excavation slope (e.g., '1:1 slope').",
+          "Material": "",
+          "Environmental": "Tree species, tree location (subject or abutting lot), soil grade.",
+          "Usage": "Excavation, basement construction."
+        },
+        "Constants": {
+          "Numerical values": "18 inches (typical root depth), 1:1 (example excavation slope ratio for safety).",
+          "Specs": "Excavation must be planned in a 'manner that does not harm tree roots'. (Flag: Ambiguous language, requires definition of 'harm').",
+          "Standards": "city\u2019s Tree Technical Manual.",
+          "Procedures": "Prior to issuance of a building permit, the owner must provide evidence that features will not harm trees."
+        },
+        "Conditions": {
+          "Mandatory": "It is mandatory to plan excavation to not harm tree roots. It is mandatory for the owner to provide evidence of tree protection.",
+          "Optional": "",
+          "Conditional logic": "Issuance of a building permit is conditional upon the owner providing sufficient evidence of tree protection.",
+          "Dependencies": "The required extent of excavation (e.g., for a basement) and the chosen excavation technique (e.g., one requiring a 1:1 slope) directly affect the potential impact on tree roots."
+        },
+        "Exceptions": {
+          "Explicit deviations": "None specified.",
+          "Alternatives": "None specified.",
+          "Special cases": "The '1:1 slope' is presented as an example ('e.g.') of a requirement for specific excavation techniques needed for safety, not as a universal requirement."
+        },
+        "Relationships": {
+          "Hierarchical": "This rule is a sub-section under 'Other excavation considerations'.",
+          "Cross-references": "Mandatory consultation of the 'city\u2019s Tree Technical Manual' for other aspects of tree protection.",
+          "Logical dependencies": "Compliance with this rule is a prerequisite for obtaining a building permit."
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n  {\n    \"rule\": \"Guard Rail Architectural Compatibility and Landscape Screening\",\n    \"Qualifiers\": {\n      \"Scope\": \"Design of guard rails and installation of landscape screening related to excavation.\",\n      \"Applicability\": \"Applies to any project where an excavation requires a guard rail, or where the Planning Dept. deems landscape screening necessary.\",\n      \"Exclusions\": \"None specified.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"\",\n      \"Material\": \"Implied by the term 'architecturally compatible', but not specified.\",\n      \"Environmental\": \"Type and density of landscape screening.\",\n      \"Usage\": \"Guard rail for safety, landscape screening for visual mitigation.\"\n    },\n    \"Constants\": {\n      \"Numerical values\": \"\",\n      \"Specs\": \"Guard rail must be 'architecturally compatible with the residence'. (Flag: Ambiguous language, requires definition of 'compatible').\",\n      \"Standards\": \"\",\n      \"Procedures\": \"Landscape screening requirement is determined by the Planning Dept.\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"If a guard rail is required, it MUST be designed to be architecturally compatible with the residence.\",\n      \"Optional\": \"Landscape screening MAY be required by the Planning Dept.\",\n      \"Conditional logic\": \"The architectural compatibility requirement for a guard rail is triggered only IF a guard rail is required.\",\n      \"Dependencies\": \"The requirement for landscape screening is dependent on a discretionary decision by the Planning Dept.\"\n    },\n    \"Exceptions\": {\n      \"Explicit deviations\": \"None specified.\",\n      \"Alternatives\": \"None specified.\",\n      \"Special cases\": \"None specified.\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"This rule is a sub-section under 'Other excavation considerations'.\",\n      \"Cross-references\": \"None specified.\",\n      \"Logical dependencies\": \"The design of the guard rail is logically dependent on the architectural style of the main residence.\"\n    }\n  },\n  {\n    \"rule\": \"Tree Protection During Excavation\",\n    \"Qualifiers\": {\n      \"Scope\": \"Protection of tree root systems during any excavation activity.\",\n      \"Applicability\": \"Applies to all excavation. Protects trees of any species located on the subject property or on abutting lots.\",\n      \"Exclusions\": \"None specified.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"Typical root depth ('first 18\u201d below grade'), excavation slope (e.g., '1:1 slope').\",\n      \"Material\": \"\",\n      \"Environmental\": \"Tree species, tree location (subject or abutting lot), soil grade.\",\n      \"Usage\": \"Excavation, basement construction.\"\n    },\n    \"Constants\": {\n      \"Numerical values\": \"18 inches (typical root depth), 1:1 (example excavation slope ratio for safety).\",\n      \"Specs\": \"Excavation must be planned in a 'manner that does not harm tree roots'. (Flag: Ambiguous language, requires definition of 'harm').\",\n      \"Standards\": \"city\u2019s Tree Technical Manual.\",\n      \"Procedures\": \"Prior to issuance of a building permit, the owner must provide evidence that features will not harm trees.\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"It is mandatory to plan excavation to not harm tree roots. It is mandatory for the owner to provide evidence of tree protection.\",\n      \"Optional\": \"\",\n      \"Conditional logic\": \"Issuance of a building permit is conditional upon the owner providing sufficient evidence of tree protection.\",\n      \"Dependencies\": \"The required extent of excavation (e.g., for a basement) and the chosen excavation technique (e.g., one requiring a 1:1 slope) directly affect the potential impact on tree roots.\"\n    },\n    \"Exceptions\": {\n      \"Explicit deviations\": \"None specified.\",\n      \"Alternatives\": \"None specified.\",\n      \"Special cases\": \"The '1:1 slope' is presented as an example ('e.g.') of a requirement for specific excavation techniques needed for safety, not as a universal requirement.\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"This rule is a sub-section under 'Other excavation considerations'.\",\n      \"Cross-references\": \"Mandatory consultation of the 'city\u2019s Tree Technical Manual' for other aspects of tree protection.\",\n      \"Logical dependencies\": \"Compliance with this rule is a prerequisite for obtaining a building permit.\"\n    }\n  }\n]\n```",
+    "response_time": 28.775425910949707,
+    "input_tokens": 808,
+    "output_tokens": 3307,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 16:14:22",
+  "model": "google/gemini-2.5-pro",
+  "success": true
+}

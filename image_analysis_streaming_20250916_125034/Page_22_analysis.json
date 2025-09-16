@@ -1,0 +1,12 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_22.png",
+  "image_name": "Page_22.png",
+  "analysis": {
+    "parse_error": true,
+    "error": "JSON parse failed: Expecting value: line 1 column 1 (char 0)",
+    "raw_response": "Attic space & equivalencies\n\n**Attic, closet, & perimeter spaces**\nOn all accessible floors, areas with at least 5' of head clearance count toward the gross floor area regardless of the floor plan or actual usage of the space.\n\nVoluminous spaces in a structure contribute to the mass even if these areas are not used or described in the floor plan. The 2nd & 3rd floor equivalency addresses how these areas count toward the gross floor area.\n\nIn Fig 11 below, the highlighted areas count as follows:\n"
+  },
+  "timestamp": "2025-09-16 12:50:54",
+  "model": "google/gemini-2.5-flash",
+  "success": false
+}

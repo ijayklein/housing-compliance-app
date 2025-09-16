@@ -1,0 +1,12 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_25.png",
+  "image_name": "Page_25.png",
+  "analysis": {
+    "parse_error": true,
+    "error": "JSON parse failed: Expecting value: line 1 column 1 (char 0)",
+    "raw_response": "Here's the extracted information from the image, maintaining absolute precision:\n\n**Title:** Fireplaces, chimneys, sheds, planters, and other projections\n\n**Rules/Regulations:**\n*   Fireplaces shall be included in the gross floor area (counted one time) regardless of configuration or design.\n*   Sheds, planters, and other projections that are higher than 5' count toward gross floor area regardless of configuration or design.\n\n**Figure Caption:**\n*   Fig 14 Fireplaces, chimneys, sheds, etc.\n\n**No"
+  },
+  "timestamp": "2025-09-16 12:50:58",
+  "model": "google/gemini-2.5-flash",
+  "success": false
+}

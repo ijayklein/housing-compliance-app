@@ -1,0 +1,71 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_48.png",
+  "image_name": "Page_48.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Light well & stairwell standards & site planning\n\n\u2022 Such features may not be located on the side of the structure that faces the front yard.\n\n\u2022 Maximum width (interior dimension) is 3'.\n\n\u2022 The combined length (interior dimensions of the opening excluding encasing structure) of all the excavated features may not exceed 30% of basement perimeter.\n\n\u2022 Allowable encroachment into required side yard is 3' max (however feature must be a minimum of 3' from side lot line).\n\n\u2022 Allowable encroachment into required rear yard is 4'.\n\n\u2022 The combined length (interior dimensions of the opening excluding encasing structure) of all the excavated features or portions of features that encroach into the required yards, on all sides of the structure, may not exceed 15'.\n\n\u2022 Excavated features shall not be harmful to neighboring trees.\n\n\u2022 Public Works Department must approve drainage system.\n\nFig 39 Examples of site plan w/light wells & stairwells\n\nInterior lot example\n\nRear yard\n\nBuildable area\n\n3' max width\n\nMain dwelling\n\n3' max. width\n\n3' min. from lot line (Typ.)\n\n3' max. into side yard (Typ.)\n\nFront yard\n\nLightwells & stairwells\n\u2022 a + b (encroaching features) may not exceed 15'\n\u2022 a + b + c + d (all features) may not exceed 30% of the perimeter of the basement\n\nNote: measurements are based on interior dimension of opening and exclude encasing structure.",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Site plan diagram illustrating an interior lot example with labeled areas: Rear yard, Front yard, Interior side yard. The diagram shows a 'Buildable area' shaded in light gray, with a 'Main dwelling' shaded in darker gray. Various dimensions are marked including '3' max width' for light wells and stairwells, '3' min. from lot line (Typ.)', and '3' max. into side yard (Typ.)'. The diagram includes arrows and labels for dimensions a, b, c, and d representing different encroaching features. A key explains line types and shading: solid line for curb, dashed line for lot line, shaded blocks for sidewalk, dashed area for required setbacks, light gray for buildable area, dark gray for dwelling, and white for lightwells & stairwells that encroach into required yards.",
+          "location": "Right side, occupying approximately the middle to bottom half of the page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Maximum width (interior dimension)",
+          "value": "3",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Combined length of all excavated features (interior dimensions of the opening excluding encasing structure)",
+          "value": "30",
+          "unit": "percent of basement perimeter"
+        },
+        {
+          "parameter": "Allowable encroachment into required side yard",
+          "value": "3",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum distance from side lot line for encroachment",
+          "value": "3",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Allowable encroachment into required rear yard",
+          "value": "4",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Combined length of all excavated features or portions encroaching into required yards",
+          "value": "15",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Encroaching features (a + b) maximum length",
+          "value": "15",
+          "unit": "feet"
+        },
+        {
+          "parameter": "All features (a + b + c + d) maximum length",
+          "value": "30",
+          "unit": "percent of basement perimeter"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Light well & stairwell standards & site planning",
+        "subheadings": [],
+        "sections": []
+      },
+      "additional_notes": [
+        "No handwritten annotations or stamps present.",
+        "Page number 42 located at bottom left corner.",
+        "Text is clear and legible with no quality issues."
+      ],
+      "cross_references": []
+    }
+  },
+  "analysis_timestamp": "2025-09-14 19:41:35",
+  "model_used": "openai/gpt-4.1-mini"
+}

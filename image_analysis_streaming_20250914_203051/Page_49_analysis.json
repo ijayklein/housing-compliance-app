@@ -1,0 +1,351 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_49.png",
+  "image_name": "Page_49.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Below-grade patios standards\n& site planning\n\n\u2022 Such features may not be located on the side of the structure that faces the front yard.\n\n\u2022 Combined area of all such areas not to exceed 2% of the area of the lot or 200 sf, whichever is greater and no single area may exceed 200 sf. Note area devoted to required stairway egress shall not be included in the 200 sf limitation.\n\n\u2022 Each such area is separated from another by at least 10'.\n\n\u2022 Allowable encroachment into required side yard is 2' max.\n\n\u2022 Allowable encroachment into required rear yard is 4'.\n\n\u2022 The combined length of all the excavated features or portions of features that encroach into the required yards, on all sides of the structure, may not exceed 15'.\n\n\u2022 Excavated features shall not be harmful to neighboring trees.\n\n\u2022 Public Works Department must approve drainage system.\n\n\u2022 Overhangs or canopies installed to shelter such area shall count towards lot coverage.\n\n\u2022 Such areas to be architecturally compatible with residence.\n\n\u2022 Such areas to be screened to off site views by means of landscaping and/or fencing as determined appropriate by Planning Dept.\n\nFig 40 Examples of site plan w/below-grade patios\n\nKey\n_____ Curb\n_____ lot line\n[hatched pattern] Sidewalk\n[hatched pattern] Required\n[hatched pattern] setbacks\n[dashed line] Buildable\n[dashed line] area\n[solid black] Dwelling\n[solid black] Lightwells\n[solid black] & stairwells\n[white box] Lightwells\n[white box] & stairwells\n[white box] that encroach\n[white box] into required\n[white box] yards\n[wavy line] Landscaping\n[wavy line] screening\n\nBelow-grade patios\n\u2022 If [encroaching features] may not exceed 15'\n\u2022 No single below-grade patio may not exceed 200 sf\n\u2022 Combined areas of all below-grade patio areas may not exceed 2% of the lot area or 200 sf, which ever is greater\nNote: measurements are based on interior dimension of opening and exclude encasing structure.\n\n43",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Site plan showing examples of below-grade patios with two dwelling units (Main dwelling and 2nd dwelling), landscaping screening, required setbacks, and various measurements including 10' min. separation, 2' max. encroachment, and 4' max. encroachment. Shows front yard, rear yard, and interior lot example with curb, lot lines, and buildable areas marked.",
+          "location": "Right side of page, taking up approximately 60% of the page width"
+        },
+        {
+          "type": "figure",
+          "description": "Key/legend showing different line types and patterns used in the site plan diagram, including curb, lot line, sidewalk, required setbacks, buildable area, dwelling, lightwells & stairwells, and landscaping screening",
+          "location": "Lower left portion of the diagram area"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Combined area limit percentage",
+          "value_type": "Percentage",
+          "value": "2",
+          "unit": "% of lot area"
+        },
+        {
+          "parameter": "Combined area limit absolute",
+          "value_type": "Measurement",
+          "value": "200",
+          "unit": "sf"
+        },
+        {
+          "parameter": "Single area maximum",
+          "value_type": "Measurement",
+          "value": "200",
+          "unit": "sf"
+        },
+        {
+          "parameter": "Minimum separation distance",
+          "value_type": "Measurement",
+          "value": "10",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Side yard encroachment maximum",
+          "value_type": "Measurement",
+          "value": "2",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Rear yard encroachment maximum",
+          "value_type": "Measurement",
+          "value": "4",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Combined encroachment length maximum",
+          "value_type": "Measurement",
+          "value": "15",
+          "unit": "feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Below-grade patios standards & site planning",
+        "subheadings": [
+          "Key",
+          "Below-grade patios"
+        ],
+        "sections": [
+          "Fig 40 Examples of site plan w/below-grade patios"
+        ]
+      },
+      "additional_notes": [
+        "Page number 43 appears at bottom right",
+        "Diagram includes hatched patterns, solid fills, dashed lines, and wavy lines to represent different elements",
+        "Note about measurements being based on interior dimension of opening and excluding encasing structure"
+      ],
+      "cross_references": [
+        "Reference to Planning Dept. for screening determination",
+        "Reference to Public Works Department for drainage system approval"
+      ],
+      "conditions_and_qualifiers": {
+        "qualifiers": [
+          {
+            "id": "q1",
+            "text": "Such features may not be located on the side of the structure that faces the front yard",
+            "applies_to_conditions": [
+              "c1"
+            ],
+            "scope": "Global"
+          },
+          {
+            "id": "q2",
+            "text": "Note area devoted to required stairway egress shall not be included in the 200 sf limitation",
+            "applies_to_conditions": [
+              "c2",
+              "c3"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q3",
+            "text": "on all sides of the structure",
+            "applies_to_conditions": [
+              "c6"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q4",
+            "text": "as determined appropriate by Planning Dept.",
+            "applies_to_conditions": [
+              "c11"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q5",
+            "text": "measurements are based on interior dimension of opening and exclude encasing structure",
+            "applies_to_conditions": [
+              "c2",
+              "c3",
+              "c6"
+            ],
+            "scope": "Global"
+          }
+        ],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "Such features may not be located on the side of the structure that faces the front yard",
+            "value_type": "Boolean",
+            "operator": "!=",
+            "threshold_value": "front yard side",
+            "unit": "None"
+          },
+          {
+            "id": "c2",
+            "text": "Combined area of all such areas not to exceed 2% of the area of the lot or 200 sf, whichever is greater",
+            "value_type": "Range",
+            "operator": "<=",
+            "threshold_value": "2% of lot area OR 200 sf (whichever is greater)",
+            "unit": "sf or percentage"
+          },
+          {
+            "id": "c3",
+            "text": "no single area may exceed 200 sf",
+            "value_type": "Numerical",
+            "operator": "<=",
+            "threshold_value": "200",
+            "unit": "sf"
+          },
+          {
+            "id": "c4",
+            "text": "Each such area is separated from another by at least 10'",
+            "value_type": "Numerical",
+            "operator": ">=",
+            "threshold_value": "10",
+            "unit": "feet"
+          },
+          {
+            "id": "c5",
+            "text": "Allowable encroachment into required side yard is 2' max",
+            "value_type": "Numerical",
+            "operator": "<=",
+            "threshold_value": "2",
+            "unit": "feet"
+          },
+          {
+            "id": "c6",
+            "text": "The combined length of all the excavated features or portions of features that encroach into the required yards may not exceed 15'",
+            "value_type": "Numerical",
+            "operator": "<=",
+            "threshold_value": "15",
+            "unit": "feet"
+          },
+          {
+            "id": "c7",
+            "text": "Allowable encroachment into required rear yard is 4'",
+            "value_type": "Numerical",
+            "operator": "<=",
+            "threshold_value": "4",
+            "unit": "feet"
+          },
+          {
+            "id": "c8",
+            "text": "Excavated features shall not be harmful to neighboring trees",
+            "value_type": "Boolean",
+            "operator": "!=",
+            "threshold_value": "harmful to neighboring trees",
+            "unit": "None"
+          },
+          {
+            "id": "c9",
+            "text": "Public Works Department must approve drainage system",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "approved by Public Works Department",
+            "unit": "None"
+          },
+          {
+            "id": "c10",
+            "text": "Such areas to be architecturally compatible with residence",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "architecturally compatible with residence",
+            "unit": "None"
+          },
+          {
+            "id": "c11",
+            "text": "Such areas to be screened to off site views by means of landscaping and/or fencing",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "screened to off site views",
+            "unit": "None"
+          }
+        ],
+        "logical_relationships": [
+          {
+            "operation": "AND",
+            "condition_ids": [
+              "c2",
+              "c3"
+            ],
+            "expression": "Combined area limits AND single area limits must both be met",
+            "evaluation_order": 1
+          },
+          {
+            "operation": "AND",
+            "condition_ids": [
+              "c5",
+              "c7",
+              "c6"
+            ],
+            "expression": "Individual encroachment limits AND combined encroachment length limit must all be met",
+            "evaluation_order": 2
+          },
+          {
+            "operation": "AND",
+            "condition_ids": [
+              "c1",
+              "c2",
+              "c3",
+              "c4",
+              "c5",
+              "c6",
+              "c7",
+              "c8",
+              "c9",
+              "c10",
+              "c11"
+            ],
+            "expression": "All conditions must be satisfied simultaneously",
+            "evaluation_order": 3
+          }
+        ],
+        "execution_sequence": [
+          {
+            "step": 1,
+            "action": "Verify location is not on front yard side of structure",
+            "condition_ids": [
+              "c1"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 2,
+            "action": "Calculate and verify area limitations",
+            "condition_ids": [
+              "c2",
+              "c3"
+            ],
+            "qualifier_ids": [
+              "q2",
+              "q5"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 3,
+            "action": "Verify separation distances between areas",
+            "condition_ids": [
+              "c4"
+            ],
+            "qualifier_ids": [],
+            "dependencies": [
+              2
+            ]
+          },
+          {
+            "step": 4,
+            "action": "Verify encroachment limitations",
+            "condition_ids": [
+              "c5",
+              "c6",
+              "c7"
+            ],
+            "qualifier_ids": [
+              "q3",
+              "q5"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 5,
+            "action": "Assess impact on neighboring trees",
+            "condition_ids": [
+              "c8"
+            ],
+            "qualifier_ids": [],
+            "dependencies": []
+          },
+          {
+            "step": 6,
+            "action": "Obtain Public Works Department approval for drainage",
+            "condition_ids": [
+              "c9"
+            ],
+            "qualifier_ids": [],
+            "dependencies": []
+          },
+          {
+            "step": 7,
+            "action": "Verify architectural compatibility",
+            "condition_ids": [
+              "c10"
+            ],
+            "qualifier_ids": [],
+            "dependencies": []
+          },
+          {
+            "step": 8,
+            "action": "Implement screening as determined by Planning Department",
+            "condition_ids": [
+              "c11"
+            ],
+            "qualifier_ids": [
+              "q4"
+            ],
+            "dependencies": []
+          }
+        ]
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:33:06",
+  "model_used": "anthropic/claude-sonnet-4"
+}

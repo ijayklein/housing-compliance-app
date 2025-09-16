@@ -1,0 +1,203 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_31.md",
+  "file_name": "Page_31.md",
+  "analysis": {
+    "extracted_rules": {
+      "rules": [
+        {
+          "title": "Allowable extensions to existing encroachments",
+          "sections": [
+            {
+              "section": "A",
+              "description": "Extension of existing side yard encroachment",
+              "qualifiers": {
+                "scope": "Existing walls encroaching into required interior side yard setback",
+                "applicability": "Ground floor only",
+                "exclusions": null
+              },
+              "variables": {
+                "dimensional": {
+                  "minimum_distance_from_property_line": "5'-0\"",
+                  "extension_distance": "Length of the existing wall or 20', whichever is less"
+                },
+                "material": null,
+                "environmental": null,
+                "usage_parameters": "One direction only"
+              },
+              "constants": {
+                "numerical_values": [
+                  {
+                    "value": "5'-0\"",
+                    "description": "Minimum distance from property line"
+                  },
+                  {
+                    "value": "20'",
+                    "description": "Maximum extension distance"
+                  }
+                ],
+                "specs": null,
+                "standards": null,
+                "procedures": null
+              },
+              "conditions": {
+                "mandatory": [
+                  "Existing wall must be at least 5'-0\" from the property line"
+                ],
+                "optional": null,
+                "conditional_logic": null,
+                "dependencies": null
+              },
+              "exceptions": {
+                "explicit_deviations": null,
+                "alternatives": null,
+                "special_cases": "Only one of the two encroaching walls may be extended"
+              },
+              "relationships": {
+                "hierarchical": null,
+                "cross_references": null,
+                "logical_dependencies": null
+              }
+            },
+            {
+              "section": "B",
+              "description": "Extension of existing front yard encroachment",
+              "qualifiers": {
+                "scope": "Existing walls encroaching into required front yard setback",
+                "applicability": "Ground floor only",
+                "exclusions": null
+              },
+              "variables": {
+                "dimensional": {
+                  "minimum_distance_from_property_line": "14'-0\"",
+                  "extension_distance": "No greater than the length of the existing encroaching wall"
+                },
+                "material": null,
+                "environmental": null,
+                "usage_parameters": "One direction only"
+              },
+              "constants": {
+                "numerical_values": [
+                  {
+                    "value": "14'-0\"",
+                    "description": "Minimum distance from property line"
+                  }
+                ],
+                "specs": null,
+                "standards": null,
+                "procedures": null
+              },
+              "conditions": {
+                "mandatory": [
+                  "Existing wall must be at least 14'-0\" from the property line",
+                  "Combined length is no greater than one-half the maximum width of the house"
+                ],
+                "optional": null,
+                "conditional_logic": null,
+                "dependencies": null
+              },
+              "exceptions": {
+                "explicit_deviations": null,
+                "alternatives": null,
+                "special_cases": null
+              },
+              "relationships": {
+                "hierarchical": null,
+                "cross_references": null,
+                "logical_dependencies": null
+              }
+            },
+            {
+              "section": "C",
+              "description": "Extension of existing street-side yard encroachment",
+              "qualifiers": {
+                "scope": "Existing walls encroaching into required street side yard setback",
+                "applicability": "Ground floor only",
+                "exclusions": null
+              },
+              "variables": {
+                "dimensional": {
+                  "minimum_distance_from_property_line": "10'-0\"",
+                  "extension_distance": "Length of the existing wall or 20', whichever is less"
+                },
+                "material": null,
+                "environmental": null,
+                "usage_parameters": "One direction only"
+              },
+              "constants": {
+                "numerical_values": [
+                  {
+                    "value": "10'-0\"",
+                    "description": "Minimum distance from property line"
+                  },
+                  {
+                    "value": "20'",
+                    "description": "Maximum extension distance"
+                  }
+                ],
+                "specs": null,
+                "standards": null,
+                "procedures": null
+              },
+              "conditions": {
+                "mandatory": [
+                  "Existing wall must be at least 10'-0\" from the property line"
+                ],
+                "optional": null,
+                "conditional_logic": null,
+                "dependencies": null
+              },
+              "exceptions": {
+                "explicit_deviations": null,
+                "alternatives": null,
+                "special_cases": null
+              },
+              "relationships": {
+                "hierarchical": null,
+                "cross_references": null,
+                "logical_dependencies": null
+              }
+            }
+          ],
+          "notes": [
+            "Encroaching walls that don\u2019t meet the minimum setback given for each case i.e., 5\u2019, 14\u2019, and 10\u2019, may not be extended nor may they be stepped back and then extended.",
+            "Multiple protrusions are not permitted; addition must be contiguous with existing protrusion.",
+            "Only for structures that were legally constructed, without a variance or a home improvement exception (HIE).",
+            "Only once in the life of the structure.",
+            "Requires retention of the non-complying wall.",
+            "Exceptions apply to special setbacks as well."
+          ],
+          "key": [
+            "Lot line",
+            "Required setback",
+            "Buildable area",
+            "Sidewalk",
+            "Existing house",
+            "Addition"
+          ],
+          "diagram_labels_and_dimensions": {
+            "rear_yard": "Top of each lot diagram",
+            "front_yard": "Bottom of each lot diagram",
+            "interior_side_yard": "Side labels on A and B diagrams",
+            "street_side_yard": "Side label on C diagram",
+            "dimension_callouts": {
+              "A": "5' min.",
+              "B": "14'-0\"",
+              "C": "10'-0\" min."
+            },
+            "text_callouts_within_diagrams": {
+              "A": "Only one of the two encroaching walls may be extended",
+              "B": "Length of existing encroaching wall max. and Half the width of the building max.",
+              "C": "Sidewalk"
+            }
+          }
+        }
+      ],
+      "page_number": 25
+    },
+    "parse_error": false,
+    "raw_response": "```json\n{\n  \"rules\": [\n    {\n      \"title\": \"Allowable extensions to existing encroachments\",\n      \"sections\": [\n        {\n          \"section\": \"A\",\n          \"description\": \"Extension of existing side yard encroachment\",\n          \"qualifiers\": {\n            \"scope\": \"Existing walls encroaching into required interior side yard setback\",\n            \"applicability\": \"Ground floor only\",\n            \"exclusions\": null\n          },\n          \"variables\": {\n            \"dimensional\": {\n              \"minimum_distance_from_property_line\": \"5'-0\\\"\",\n              \"extension_distance\": \"Length of the existing wall or 20', whichever is less\"\n            },\n            \"material\": null,\n            \"environmental\": null,\n            \"usage_parameters\": \"One direction only\"\n          },\n          \"constants\": {\n            \"numerical_values\": [\n              {\n                \"value\": \"5'-0\\\"\",\n                \"description\": \"Minimum distance from property line\"\n              },\n              {\n                \"value\": \"20'\",\n                \"description\": \"Maximum extension distance\"\n              }\n            ],\n            \"specs\": null,\n            \"standards\": null,\n            \"procedures\": null\n          },\n          \"conditions\": {\n            \"mandatory\": [\n              \"Existing wall must be at least 5'-0\\\" from the property line\"\n            ],\n            \"optional\": null,\n            \"conditional_logic\": null,\n            \"dependencies\": null\n          },\n          \"exceptions\": {\n            \"explicit_deviations\": null,\n            \"alternatives\": null,\n            \"special_cases\": \"Only one of the two encroaching walls may be extended\"\n          },\n          \"relationships\": {\n            \"hierarchical\": null,\n            \"cross_references\": null,\n            \"logical_dependencies\": null\n          }\n        },\n        {\n          \"section\": \"B\",\n          \"description\": \"Extension of existing front yard encroachment\",\n          \"qualifiers\": {\n            \"scope\": \"Existing walls encroaching into required front yard setback\",\n            \"applicability\": \"Ground floor only\",\n            \"exclusions\": null\n          },\n          \"variables\": {\n            \"dimensional\": {\n              \"minimum_distance_from_property_line\": \"14'-0\\\"\",\n              \"extension_distance\": \"No greater than the length of the existing encroaching wall\"\n            },\n            \"material\": null,\n            \"environmental\": null,\n            \"usage_parameters\": \"One direction only\"\n          },\n          \"constants\": {\n            \"numerical_values\": [\n              {\n                \"value\": \"14'-0\\\"\",\n                \"description\": \"Minimum distance from property line\"\n              }\n            ],\n            \"specs\": null,\n            \"standards\": null,\n            \"procedures\": null\n          },\n          \"conditions\": {\n            \"mandatory\": [\n              \"Existing wall must be at least 14'-0\\\" from the property line\",\n              \"Combined length is no greater than one-half the maximum width of the house\"\n            ],\n            \"optional\": null,\n            \"conditional_logic\": null,\n            \"dependencies\": null\n          },\n          \"exceptions\": {\n            \"explicit_deviations\": null,\n            \"alternatives\": null,\n            \"special_cases\": null\n          },\n          \"relationships\": {\n            \"hierarchical\": null,\n            \"cross_references\": null,\n            \"logical_dependencies\": null\n          }\n        },\n        {\n          \"section\": \"C\",\n          \"description\": \"Extension of existing street-side yard encroachment\",\n          \"qualifiers\": {\n            \"scope\": \"Existing walls encroaching into required street side yard setback\",\n            \"applicability\": \"Ground floor only\",\n            \"exclusions\": null\n          },\n          \"variables\": {\n            \"dimensional\": {\n              \"minimum_distance_from_property_line\": \"10'-0\\\"\",\n              \"extension_distance\": \"Length of the existing wall or 20', whichever is less\"\n            },\n            \"material\": null,\n            \"environmental\": null,\n            \"usage_parameters\": \"One direction only\"\n          },\n          \"constants\": {\n            \"numerical_values\": [\n              {\n                \"value\": \"10'-0\\\"\",\n                \"description\": \"Minimum distance from property line\"\n              },\n              {\n                \"value\": \"20'\",\n                \"description\": \"Maximum extension distance\"\n              }\n            ],\n            \"specs\": null,\n            \"standards\": null,\n            \"procedures\": null\n          },\n          \"conditions\": {\n            \"mandatory\": [\n              \"Existing wall must be at least 10'-0\\\" from the property line\"\n            ],\n            \"optional\": null,\n            \"conditional_logic\": null,\n            \"dependencies\": null\n          },\n          \"exceptions\": {\n            \"explicit_deviations\": null,\n            \"alternatives\": null,\n            \"special_cases\": null\n          },\n          \"relationships\": {\n            \"hierarchical\": null,\n            \"cross_references\": null,\n            \"logical_dependencies\": null\n          }\n        }\n      ],\n      \"notes\": [\n        \"Encroaching walls that don\u2019t meet the minimum setback given for each case i.e., 5\u2019, 14\u2019, and 10\u2019, may not be extended nor may they be stepped back and then extended.\",\n        \"Multiple protrusions are not permitted; addition must be contiguous with existing protrusion.\",\n        \"Only for structures that were legally constructed, without a variance or a home improvement exception (HIE).\",\n        \"Only once in the life of the structure.\",\n        \"Requires retention of the non-complying wall.\",\n        \"Exceptions apply to special setbacks as well.\"\n      ],\n      \"key\": [\n        \"Lot line\",\n        \"Required setback\",\n        \"Buildable area\",\n        \"Sidewalk\",\n        \"Existing house\",\n        \"Addition\"\n      ],\n      \"diagram_labels_and_dimensions\": {\n        \"rear_yard\": \"Top of each lot diagram\",\n        \"front_yard\": \"Bottom of each lot diagram\",\n        \"interior_side_yard\": \"Side labels on A and B diagrams\",\n        \"street_side_yard\": \"Side label on C diagram\",\n        \"dimension_callouts\": {\n          \"A\": \"5' min.\",\n          \"B\": \"14'-0\\\"\",\n          \"C\": \"10'-0\\\" min.\"\n        },\n        \"text_callouts_within_diagrams\": {\n          \"A\": \"Only one of the two encroaching walls may be extended\",\n          \"B\": \"Length of existing encroaching wall max. and Half the width of the building max.\",\n          \"C\": \"Sidewalk\"\n        }\n      }\n    }\n  ],\n  \"page_number\": 25\n}\n```"
+  },
+  "timestamp": "2025-09-16 14:42:48",
+  "model": "openai/gpt-4o",
+  "success": true
+}

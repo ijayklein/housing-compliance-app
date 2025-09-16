@@ -1,0 +1,252 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_34.md",
+  "file_name": "Page_34.md",
+  "analysis": {
+    "extracted_rules": {
+      "source": {
+        "document": "City Planning Regulations",
+        "page": "34",
+        "page_number_as_written": "28"
+      },
+      "regulations": [
+        {
+          "rule_id": "RDP-01",
+          "rule_name": "Rear Primary Daylight Plane",
+          "qualifiers": {
+            "scope": "Defines a sloping plane at the rear of a property that a building cannot penetrate.",
+            "applicability": "Applies to the rear elevation of structures.",
+            "exclusions": [
+              "There is no front daylight plane."
+            ]
+          },
+          "variables": [
+            {
+              "name": "rear_setback_line",
+              "type": "Dimensional",
+              "description": "The line from which the daylight plane is measured vertically."
+            }
+          ],
+          "constants": [
+            {
+              "name": "plane_angle",
+              "value": 60,
+              "unit": "degrees",
+              "description": "The angle of the daylight plane, measured from the horizontal."
+            },
+            {
+              "name": "plane_start_height",
+              "value": 16,
+              "unit": "feet",
+              "description": "The vertical height at the rear setback line where the 60-degree plane begins."
+            },
+            {
+              "name": "measurement_origin_point",
+              "value": "Rear setback line",
+              "description": "The plane is measured 'up' from the rear setback line."
+            }
+          ],
+          "conditions": [
+            {
+              "type": "mandatory",
+              "statement": "The building envelope must not extend beyond the rear primary daylight plane."
+            }
+          ],
+          "exceptions": [
+            {
+              "case": "Building Protrusions",
+              "description": "Protrusions are permitted to penetrate the daylight plane if they comply with specific dimensional constraints.",
+              "reference_rule_id": "PRO-01"
+            }
+          ],
+          "relationships": [
+            {
+              "type": "logical_dependency",
+              "description": "This rule is modified by the 'Building Protrusions' rule (PRO-01), which defines allowable exceptions.",
+              "related_rule_id": "PRO-01"
+            },
+            {
+              "type": "cross_reference",
+              "description": "Visualized in 'Figure 23: Side elevation showing Rear primary daylight plane'."
+            },
+            {
+              "type": "informational",
+              "description": "A parallel rule for 'Side daylight plane' exists, which is measured from the lot line, not the setback."
+            }
+          ]
+        },
+        {
+          "rule_id": "BH-01",
+          "rule_name": "Maximum Building Height",
+          "qualifiers": {
+            "scope": "Establishes the maximum allowable height for structures.",
+            "applicability": "Applies to all structures, with specific criteria based on lot type, location, and roof slope."
+          },
+          "variables": [
+            {
+              "name": "roof_slope",
+              "type": "Dimensional",
+              "description": "The slope of the roof, expressed as a ratio (e.g., 12:12)."
+            },
+            {
+              "name": "lot_designation",
+              "type": "Usage",
+              "description": "The type of lot, such as 'standard', 'substandard', or 'flag'."
+            },
+            {
+              "name": "flood_zone_status",
+              "type": "Environmental",
+              "description": "Indicates if the structure is located within a designated flood zone."
+            }
+          ],
+          "constants": [],
+          "conditions": [
+            {
+              "type": "conditional_logic",
+              "description": "The maximum height is determined by a hierarchy of conditions.",
+              "logic_tree": {
+                "if": [
+                  {
+                    "condition": "lot_designation IS 'substandard' OR lot_designation IS 'flag'",
+                    "then": {
+                      "parameter": "max_building_height",
+                      "value": 17,
+                      "unit": "feet"
+                    },
+                    "note": "This condition overrides all others, including flood plane status."
+                  }
+                ],
+                "else_if": [
+                  {
+                    "condition": "flood_zone_status IS 'in flood zone'",
+                    "then": {
+                      "parameter": "max_building_height",
+                      "value": "variable, up to 33",
+                      "unit": "feet"
+                    },
+                    "ambiguous_language": "The term 'variable' is not defined. It is unclear how the specific height up to 33' is determined."
+                  },
+                  {
+                    "condition": "roof_slope >= 12:12",
+                    "then": {
+                      "parameter": "max_building_height",
+                      "value": 33,
+                      "unit": "feet"
+                    }
+                  }
+                ],
+                "else": {
+                  "condition": "roof_slope < 12:12",
+                  "then": {
+                    "parameter": "max_building_height",
+                    "value": 30,
+                    "unit": "feet"
+                  }
+                }
+              }
+            }
+          ],
+          "exceptions": [
+            {
+              "case": "Substandard or Flag Lots",
+              "description": "Structures on these lots have a fixed maximum height of 17 feet, regardless of roof slope or flood zone status."
+            },
+            {
+              "case": "Flood Zone Locations",
+              "description": "For structures in flood zones (that are not on substandard or flag lots), the height is variable up to 33 feet, deviating from the standard slope-based calculation."
+            }
+          ],
+          "relationships": [
+            {
+              "type": "hierarchical",
+              "description": "The condition for 'substandard or flag lots' has the highest precedence, followed by 'flood zones', and finally the general 'roof slope' conditions."
+            },
+            {
+              "type": "logical_dependency",
+              "description": "The output of this rule, 'Max. bldg. height', is a constraint referenced in the diagram for the 'Rear Primary Daylight Plane' rule (RDP-01)."
+            }
+          ]
+        },
+        {
+          "rule_id": "PRO-01",
+          "rule_name": "Building Protrusions",
+          "qualifiers": {
+            "scope": "Defines the dimensional limits for building elements that protrude into required open spaces (e.g., beyond a daylight plane).",
+            "applicability": "Applies to both rear and side protrusions."
+          },
+          "variables": [
+            {
+              "name": "individual_protrusion_length",
+              "type": "Dimensional",
+              "description": "The length of a single protrusion."
+            },
+            {
+              "name": "cumulative_protrusion_length_per_side",
+              "type": "Dimensional",
+              "description": "The sum of the lengths of all protrusions on any one side of the building."
+            },
+            {
+              "name": "protrusion_separation",
+              "type": "Dimensional",
+              "description": "The minimum required distance between adjacent protrusions."
+            },
+            {
+              "name": "protrusion_height",
+              "type": "Dimensional",
+              "description": "The maximum vertical dimension of the protrusions."
+            }
+          ],
+          "constants": [
+            {
+              "name": "max_individual_protrusion_length",
+              "value": 7.5,
+              "unit": "feet"
+            },
+            {
+              "name": "min_separation_between_protrusions",
+              "value": 5,
+              "unit": "feet"
+            },
+            {
+              "name": "max_cumulative_protrusion_length",
+              "value": 15,
+              "unit": "feet",
+              "scope": "per side"
+            },
+            {
+              "name": "max_protrusion_height",
+              "value": 24,
+              "unit": "feet"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "mandatory",
+              "statement": "Protrusions must meet all specified dimensional constraints to be compliant."
+            }
+          ],
+          "exceptions": [],
+          "relationships": [
+            {
+              "type": "cross_reference",
+              "description": "The rules for rear protrusions are explicitly stated to be the same as for side protrusions.",
+              "ambiguous_language": "The full context and rules for 'side protrusions' are not provided in this text, making the reference incomplete."
+            },
+            {
+              "type": "logical_dependency",
+              "description": "This rule set functions as an exception to the 'Rear Primary Daylight Plane' rule (RDP-01), defining the conditions under which the plane can be penetrated."
+            }
+          ]
+        }
+      ]
+    },
+    "parse_error": false,
+    "raw_response": "```json\n{\n  \"source\": {\n    \"document\": \"City Planning Regulations\",\n    \"page\": \"34\",\n    \"page_number_as_written\": \"28\"\n  },\n  \"regulations\": [\n    {\n      \"rule_id\": \"RDP-01\",\n      \"rule_name\": \"Rear Primary Daylight Plane\",\n      \"qualifiers\": {\n        \"scope\": \"Defines a sloping plane at the rear of a property that a building cannot penetrate.\",\n        \"applicability\": \"Applies to the rear elevation of structures.\",\n        \"exclusions\": [\n          \"There is no front daylight plane.\"\n        ]\n      },\n      \"variables\": [\n        {\n          \"name\": \"rear_setback_line\",\n          \"type\": \"Dimensional\",\n          \"description\": \"The line from which the daylight plane is measured vertically.\"\n        }\n      ],\n      \"constants\": [\n        {\n          \"name\": \"plane_angle\",\n          \"value\": 60,\n          \"unit\": \"degrees\",\n          \"description\": \"The angle of the daylight plane, measured from the horizontal.\"\n        },\n        {\n          \"name\": \"plane_start_height\",\n          \"value\": 16,\n          \"unit\": \"feet\",\n          \"description\": \"The vertical height at the rear setback line where the 60-degree plane begins.\"\n        },\n        {\n          \"name\": \"measurement_origin_point\",\n          \"value\": \"Rear setback line\",\n          \"description\": \"The plane is measured 'up' from the rear setback line.\"\n        }\n      ],\n      \"conditions\": [\n        {\n          \"type\": \"mandatory\",\n          \"statement\": \"The building envelope must not extend beyond the rear primary daylight plane.\"\n        }\n      ],\n      \"exceptions\": [\n        {\n          \"case\": \"Building Protrusions\",\n          \"description\": \"Protrusions are permitted to penetrate the daylight plane if they comply with specific dimensional constraints.\",\n          \"reference_rule_id\": \"PRO-01\"\n        }\n      ],\n      \"relationships\": [\n        {\n          \"type\": \"logical_dependency\",\n          \"description\": \"This rule is modified by the 'Building Protrusions' rule (PRO-01), which defines allowable exceptions.\",\n          \"related_rule_id\": \"PRO-01\"\n        },\n        {\n          \"type\": \"cross_reference\",\n          \"description\": \"Visualized in 'Figure 23: Side elevation showing Rear primary daylight plane'.\"\n        },\n        {\n          \"type\": \"informational\",\n          \"description\": \"A parallel rule for 'Side daylight plane' exists, which is measured from the lot line, not the setback.\"\n        }\n      ]\n    },\n    {\n      \"rule_id\": \"BH-01\",\n      \"rule_name\": \"Maximum Building Height\",\n      \"qualifiers\": {\n        \"scope\": \"Establishes the maximum allowable height for structures.\",\n        \"applicability\": \"Applies to all structures, with specific criteria based on lot type, location, and roof slope.\"\n      },\n      \"variables\": [\n        {\n          \"name\": \"roof_slope\",\n          \"type\": \"Dimensional\",\n          \"description\": \"The slope of the roof, expressed as a ratio (e.g., 12:12).\"\n        },\n        {\n          \"name\": \"lot_designation\",\n          \"type\": \"Usage\",\n          \"description\": \"The type of lot, such as 'standard', 'substandard', or 'flag'.\"\n        },\n        {\n          \"name\": \"flood_zone_status\",\n          \"type\": \"Environmental\",\n          \"description\": \"Indicates if the structure is located within a designated flood zone.\"\n        }\n      ],\n      \"constants\": [],\n      \"conditions\": [\n        {\n          \"type\": \"conditional_logic\",\n          \"description\": \"The maximum height is determined by a hierarchy of conditions.\",\n          \"logic_tree\": {\n            \"if\": [\n              {\n                \"condition\": \"lot_designation IS 'substandard' OR lot_designation IS 'flag'\",\n                \"then\": {\n                  \"parameter\": \"max_building_height\",\n                  \"value\": 17,\n                  \"unit\": \"feet\"\n                },\n                \"note\": \"This condition overrides all others, including flood plane status.\"\n              }\n            ],\n            \"else_if\": [\n              {\n                \"condition\": \"flood_zone_status IS 'in flood zone'\",\n                \"then\": {\n                  \"parameter\": \"max_building_height\",\n                  \"value\": \"variable, up to 33\",\n                  \"unit\": \"feet\"\n                },\n                \"ambiguous_language\": \"The term 'variable' is not defined. It is unclear how the specific height up to 33' is determined.\"\n              },\n              {\n                \"condition\": \"roof_slope >= 12:12\",\n                \"then\": {\n                  \"parameter\": \"max_building_height\",\n                  \"value\": 33,\n                  \"unit\": \"feet\"\n                }\n              }\n            ],\n            \"else\": {\n              \"condition\": \"roof_slope < 12:12\",\n              \"then\": {\n                \"parameter\": \"max_building_height\",\n                \"value\": 30,\n                \"unit\": \"feet\"\n              }\n            }\n          }\n        }\n      ],\n      \"exceptions\": [\n        {\n          \"case\": \"Substandard or Flag Lots\",\n          \"description\": \"Structures on these lots have a fixed maximum height of 17 feet, regardless of roof slope or flood zone status.\"\n        },\n        {\n          \"case\": \"Flood Zone Locations\",\n          \"description\": \"For structures in flood zones (that are not on substandard or flag lots), the height is variable up to 33 feet, deviating from the standard slope-based calculation.\"\n        }\n      ],\n      \"relationships\": [\n        {\n          \"type\": \"hierarchical\",\n          \"description\": \"The condition for 'substandard or flag lots' has the highest precedence, followed by 'flood zones', and finally the general 'roof slope' conditions.\"\n        },\n        {\n          \"type\": \"logical_dependency\",\n          \"description\": \"The output of this rule, 'Max. bldg. height', is a constraint referenced in the diagram for the 'Rear Primary Daylight Plane' rule (RDP-01).\"\n        }\n      ]\n    },\n    {\n      \"rule_id\": \"PRO-01\",\n      \"rule_name\": \"Building Protrusions\",\n      \"qualifiers\": {\n        \"scope\": \"Defines the dimensional limits for building elements that protrude into required open spaces (e.g., beyond a daylight plane).\",\n        \"applicability\": \"Applies to both rear and side protrusions.\"\n      },\n      \"variables\": [\n        {\n          \"name\": \"individual_protrusion_length\",\n          \"type\": \"Dimensional\",\n          \"description\": \"The length of a single protrusion.\"\n        },\n        {\n          \"name\": \"cumulative_protrusion_length_per_side\",\n          \"type\": \"Dimensional\",\n          \"description\": \"The sum of the lengths of all protrusions on any one side of the building.\"\n        },\n        {\n          \"name\": \"protrusion_separation\",\n          \"type\": \"Dimensional\",\n          \"description\": \"The minimum required distance between adjacent protrusions.\"\n        },\n        {\n          \"name\": \"protrusion_height\",\n          \"type\": \"Dimensional\",\n          \"description\": \"The maximum vertical dimension of the protrusions.\"\n        }\n      ],\n      \"constants\": [\n        {\n          \"name\": \"max_individual_protrusion_length\",\n          \"value\": 7.5,\n          \"unit\": \"feet\"\n        },\n        {\n          \"name\": \"min_separation_between_protrusions\",\n          \"value\": 5,\n          \"unit\": \"feet\"\n        },\n        {\n          \"name\": \"max_cumulative_protrusion_length\",\n          \"value\": 15,\n          \"unit\": \"feet\",\n          \"scope\": \"per side\"\n        },\n        {\n          \"name\": \"max_protrusion_height\",\n          \"value\": 24,\n          \"unit\": \"feet\"\n        }\n      ],\n      \"conditions\": [\n        {\n          \"type\": \"mandatory\",\n          \"statement\": \"Protrusions must meet all specified dimensional constraints to be compliant.\"\n        }\n      ],\n      \"exceptions\": [],\n      \"relationships\": [\n        {\n          \"type\": \"cross_reference\",\n          \"description\": \"The rules for rear protrusions are explicitly stated to be the same as for side protrusions.\",\n          \"ambiguous_language\": \"The full context and rules for 'side protrusions' are not provided in this text, making the reference incomplete.\"\n        },\n        {\n          \"type\": \"logical_dependency\",\n          \"description\": \"This rule set functions as an exception to the 'Rear Primary Daylight Plane' rule (RDP-01), defining the conditions under which the plane can be penetrated.\"\n        }\n      ]\n    }\n  ]\n}\n```",
+    "response_time": 54.764262199401855,
+    "input_tokens": 717,
+    "output_tokens": 6961,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 16:02:48",
+  "model": "google/gemini-2.5-pro",
+  "success": true
+}

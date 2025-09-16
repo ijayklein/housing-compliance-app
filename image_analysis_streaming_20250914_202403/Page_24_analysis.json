@@ -1,0 +1,233 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_24.png",
+  "image_name": "Page_24.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Projections\nArchitectural relief\nfeatures such as bay\nwindows are pleasant\nadditions to a house\ndesign and are\nencouraged. If they\nmeet certain design\ncriteria they do not\ncount toward gross\nfloor area.\nBay windows\nBay windows that meet the design criteria below are considered to be decorative\narchitectural features and do NOT count toward gross floor area.\nDesign criteria for bay windows that do not count:\n\u2022 Bottom of teature must be at least 18\" above the floor joists\n\u2022 Exterior supports must be teatures like corbels and/or brackets\nrather than solid walls\n\u2022 At least 50% of the surface is glass\nFig 13 Bay windows\n2' max. from bay window\nsurface to facade surface\n(Typical all)\nNote: Bay windows that ex-\ntend higher than the struc-\nture's roof are considered\nto be dormers and count to-\nward gross floor area.\n18\nCode sections\n18.04.030(a)(65)\n18.12.040(b)Table 3\nA\nDoes NOT count\nB\nCounts because floor\njoists continue into the\nbay window\nC & D\nCount because of exterior skirt wall\n(angled or straight)\nE\nCounts because the\nsurface is not at least\n50% glass",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Figure 13: Bay windows. This figure illustrates five different bay window configurations (labeled A through E) and indicates whether they count towards gross floor area based on specific design criteria. Each illustration shows a cross-section of a bay window attached to a building facade. \n- Illustration A: Shows a bay window with its bottom at least 18 inches above the floor joists and supported by corbels. It has a dimension line indicating '2' max. from bay window surface to facade surface (Typical all)' and another indicating '18\" min. from top of floor to bottom of baywindow structure'. This configuration 'Does NOT count'.\n- Illustration B: Shows a bay window where the floor joists extend into the bay window structure. This configuration 'Counts because floor joists continue into the bay window'.\n- Illustration C & D: Shows two bay windows, one with an angled exterior skirt wall and another with a straight exterior skirt wall. Both are labeled together as 'C & D' and 'Count because of exterior skirt wall (angled or straight)'.\n- Illustration E: Shows a bay window where the glass surface appears to be less than 50% of the total surface area. This configuration 'Counts because the surface is not at least 50% glass'.",
+          "location": "Middle to bottom of page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Maximum projection from facade surface",
+          "value_type": "Measurement",
+          "value": "2",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum height of bay window bottom above floor joists",
+          "value_type": "Measurement",
+          "value": "18",
+          "unit": "inches"
+        },
+        {
+          "parameter": "Minimum glass surface percentage for non-counting bay windows",
+          "value_type": "Percentage",
+          "value": "50",
+          "unit": "%"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Bay windows",
+        "subheadings": [
+          "Design criteria for bay windows that do not count:",
+          "Fig 13 Bay windows"
+        ],
+        "sections": [
+          "Projections",
+          "Code sections"
+        ]
+      },
+      "additional_notes": [
+        "The term 'teature' appears to be a typo and should likely be 'feature' in the bullet points under 'Design criteria for bay windows that do not count'."
+      ],
+      "cross_references": [
+        "18.04.030(a)(65)",
+        "18.12.040(b)Table 3"
+      ],
+      "conditions_and_qualifiers": {
+        "qualifiers": [
+          {
+            "id": "q1",
+            "text": "Bay windows that meet the design criteria below",
+            "applies_to_conditions": [
+              "c1",
+              "c2",
+              "c3"
+            ],
+            "scope": "Global"
+          },
+          {
+            "id": "q2",
+            "text": "Bay windows that extend higher than the structure's roof",
+            "applies_to_conditions": [
+              "c4"
+            ],
+            "scope": "Global"
+          }
+        ],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "Bottom of feature must be at least 18\" above the floor joists",
+            "value_type": "Measurement",
+            "operator": ">=",
+            "threshold_value": "18",
+            "unit": "inches"
+          },
+          {
+            "id": "c2",
+            "text": "Exterior supports must be features like corbels and/or brackets rather than solid walls",
+            "value_type": "Text",
+            "operator": "matches",
+            "threshold_value": "corbels and/or brackets",
+            "unit": "None"
+          },
+          {
+            "id": "c3",
+            "text": "At least 50% of the surface is glass",
+            "value_type": "Percentage",
+            "operator": ">=",
+            "threshold_value": "50",
+            "unit": "%"
+          },
+          {
+            "id": "c4",
+            "text": "Bay windows that extend higher than the structure's roof",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "true",
+            "unit": "None"
+          },
+          {
+            "id": "c5",
+            "text": "floor joists continue into the bay window",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "true",
+            "unit": "None"
+          },
+          {
+            "id": "c6",
+            "text": "exterior skirt wall (angled or straight)",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "true",
+            "unit": "None"
+          },
+          {
+            "id": "c7",
+            "text": "the surface is not at least 50% glass",
+            "value_type": "Percentage",
+            "operator": "<",
+            "threshold_value": "50",
+            "unit": "%"
+          }
+        ],
+        "logical_relationships": [
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c1",
+              "c2",
+              "c3"
+            ],
+            "expression": "IF (c1 AND c2 AND c3) THEN Bay windows do NOT count toward gross floor area.",
+            "evaluation_order": 1
+          },
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c4"
+            ],
+            "expression": "IF (c4) THEN Bay windows are considered to be dormers AND count toward gross floor area.",
+            "evaluation_order": 2
+          },
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c5"
+            ],
+            "expression": "IF (c5) THEN Bay window Counts toward gross floor area (as per illustration B).",
+            "evaluation_order": 3
+          },
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c6"
+            ],
+            "expression": "IF (c6) THEN Bay window Counts toward gross floor area (as per illustration C & D).",
+            "evaluation_order": 4
+          },
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c7"
+            ],
+            "expression": "IF (c7) THEN Bay window Counts toward gross floor area (as per illustration E).",
+            "evaluation_order": 5
+          }
+        ],
+        "execution_sequence": [
+          {
+            "step": 1,
+            "action": "Evaluate if bay window meets all criteria for not counting towards gross floor area.",
+            "condition_ids": [
+              "c1",
+              "c2",
+              "c3"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 2,
+            "action": "Evaluate if bay window extends higher than the structure's roof.",
+            "condition_ids": [
+              "c4"
+            ],
+            "qualifier_ids": [
+              "q2"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 3,
+            "action": "Evaluate if floor joists continue into the bay window.",
+            "condition_ids": [
+              "c5"
+            ],
+            "qualifier_ids": [],
+            "dependencies": []
+          },
+          {
+            "step": 4,
+            "action": "Evaluate if the bay window has an exterior skirt wall (angled or straight).",
+            "condition_ids": [
+              "c6"
+            ],
+            "qualifier_ids": [],
+            "dependencies": []
+          },
+          {
+            "step": 5,
+            "action": "Evaluate if the bay window surface is not at least 50% glass.",
+            "condition_ids": [
+              "c7"
+            ],
+            "qualifier_ids": [],
+            "dependencies": []
+          }
+        ]
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:24:21",
+  "model_used": "google/gemini-2.5-flash"
+}

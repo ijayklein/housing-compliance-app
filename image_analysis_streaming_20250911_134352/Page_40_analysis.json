@@ -1,0 +1,88 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_40.png",
+  "image_name": "Page_40.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Parking\n\nParking space standards\n\nParking regulations affect the appearance of the streetscapes in our residential neighborhoods by minimizing the number of cars parked on the street and in the front yards by requiring that there are parking spaces available deeper into the lot.\n\nCode sections\nPage 34\n18.12.060, 18.83.090\nPage 35\n18.83.090, 18.83.110(a)\nPage 36\n18.12.060\nPage 37\n18.12.040 (f)\nPage 38\n18.12.060\nPage 39\n18.12.080 (b)\n\n34\n\n\u2022 Two spaces are required on the lot (per dwelling).\n\n\u2022 They may NOT be located in the required front yard or, first 10 ft of, required street side yard.\n\n\u2022 2nd dwelling units have same requirements.\n\n\u2022 No underground parking garages except by variance.\n\n\u2022 One of the two spaces must be covered.\n\n\u2022 To be considered detached, a covered-parking structure must be a minimum of 3' from the main dwelling.\n\n\u2022 Minimum size for an uncovered space is 8.5' x 18'.\n\n\u2022 Minimum clearance inside a covered parking structure to be 10' x 20' for each space. Therefore, a two-car garage or carport to be 20' x 20' clear inside.\n\n\u2022 Minimum vertical clearance: 7'.\n\n* Clear area for parking space must be free of other uses e.g., water heaters, clothes washers or dryer, bicycle parking facilities, etc.\n\nFig 28 Parking space dimensions for garage and uncovered space in plan view",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Technical diagram showing parking space dimensions in plan view. Shows two parking spaces - one covered (garage) and one uncovered. Includes measurements: 10' min inside clearance width, 20' min inside clearance length for covered space, 18' min length for uncovered space, 8.5' min width for uncovered space. Shows cars positioned in both spaces with proper clearances marked. Includes north arrow indicator at bottom.",
+          "location": "Right side of page, middle to bottom"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Required parking spaces per dwelling",
+          "value": "2",
+          "unit": "spaces"
+        },
+        {
+          "parameter": "Minimum distance from main dwelling for detached covered structure",
+          "value": "3",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum uncovered space width",
+          "value": "8.5",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum uncovered space length",
+          "value": "18",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum covered space width (clear inside)",
+          "value": "10",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum covered space length (clear inside)",
+          "value": "20",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Two-car garage/carport dimensions (clear inside)",
+          "value": "20 x 20",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum vertical clearance",
+          "value": "7",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Setback restriction from front yard",
+          "value": "10",
+          "unit": "feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Parking",
+        "subheadings": [
+          "Parking space standards"
+        ],
+        "sections": [
+          "Code sections"
+        ]
+      },
+      "additional_notes": [
+        "Page number 34 appears at bottom left",
+        "Asterisk symbols (*) are used to mark important notes throughout the text",
+        "Figure 28 caption appears in italics"
+      ],
+      "cross_references": [
+        "Page 34: 18.12.060, 18.83.090",
+        "Page 35: 18.83.090, 18.83.110(a)",
+        "Page 36: 18.12.060",
+        "Page 37: 18.12.040 (f)",
+        "Page 38: 18.12.060",
+        "Page 39: 18.12.080 (b)",
+        "Fig 28"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-11 13:45:04",
+  "model_used": "anthropic/claude-sonnet-4"
+}

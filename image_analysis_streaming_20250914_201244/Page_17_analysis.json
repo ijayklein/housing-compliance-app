@@ -1,0 +1,113 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_17.png",
+  "image_name": "Page_17.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Vaulted entry features\n\nEntry features that are greater than 12' high are called \u201cvaulted entry features\u201d. The footprint of such features count twice toward gross floor area regardless of the design (including whether or not they are open).\n\nHow to measure the height of an entry feature in order to determine whether or not it is considered to be a vaulted entry feature (using Fig 6 - 8 as examples)\n\nFig 6 Entry feature with shed roof\n\nNote: If the entryway is considered to be a vaulted entryway the area will be counted as follows:\n\u2022 In this example, a portion of the entryway is recessed beyond the house facade and roof. It is included in the area that counts.\n\u2022 The area is measured to the outside material of the entryway feature.\n\u2022 The area counts TWICE toward gross floor area.",
+      "visual_elements": [
+        {
+          "type": "figure",
+          "description": "Isometric View of an entry feature with a shed roof showing height measurement from grade to the top of the roof. The figure includes dashed lines indicating the height measurement and the intersection of the front facade and top of roof material.",
+          "location": "bottom left"
+        },
+        {
+          "type": "figure",
+          "description": "Side Elevation view of the entry feature showing height measurement from grade to the intersection of front facade and top of roof material.",
+          "location": "bottom center"
+        },
+        {
+          "type": "figure",
+          "description": "Porch Floor Plan showing the outline of the entryway roof and the outline of the entryway floor area that counts TWICE if the entryway is vaulted.",
+          "location": "bottom right"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Height threshold for vaulted entry features",
+          "value_type": "Measurement",
+          "value": "12",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Gross floor area counting multiplier for vaulted entry features",
+          "value_type": "Numerical",
+          "value": "2",
+          "unit": "times"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Vaulted entry features",
+        "subheadings": [],
+        "sections": []
+      },
+      "additional_notes": [
+        "Page number 11 at bottom right corner.",
+        "No handwritten annotations or stamps detected.",
+        "Text is clear and legible."
+      ],
+      "cross_references": [
+        "References to Fig 6 - 8 for examples on measuring height of entry features."
+      ],
+      "conditions_and_qualifiers": {
+        "qualifiers": [
+          {
+            "id": "q1",
+            "text": "Entry features that are greater than 12' high are called \u201cvaulted entry features\u201d.",
+            "applies_to_conditions": [
+              "c1"
+            ],
+            "scope": "Global"
+          }
+        ],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "The footprint of such features count twice toward gross floor area regardless of the design (including whether or not they are open).",
+            "value_type": "Boolean",
+            "operator": "contains",
+            "threshold_value": "vaulted entry features",
+            "unit": "None"
+          }
+        ],
+        "logical_relationships": [
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c1"
+            ],
+            "expression": "If entry feature height > 12' (q1), then footprint counts twice toward gross floor area (c1).",
+            "evaluation_order": 1
+          }
+        ],
+        "execution_sequence": [
+          {
+            "step": 1,
+            "action": "Measure height of entry feature from grade to top of roof material to determine if height > 12'.",
+            "condition_ids": [
+              "c1"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 2,
+            "action": "If height > 12', count footprint area twice toward gross floor area regardless of design or openness.",
+            "condition_ids": [
+              "c1"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": [
+              1
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:13:09",
+  "model_used": "openai/gpt-4.1-mini"
+}

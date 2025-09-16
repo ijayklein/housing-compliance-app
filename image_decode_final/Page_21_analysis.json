@@ -1,0 +1,56 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_21.png",
+  "image_name": "Page_21.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Balconies, decks, & outdoor areas on upper floors\n\nOutdoor areas on upper levels that are roofed DO count toward gross floor area regardless of the design\n(including whether or not the sides are open).\n\nAn outdoor area on an upper floor is considered to be\nroofed if the eave over that area is deeper than the eave\nover the rest of the building. This may be illustrated by\ncomparing Roof Plans 1 & 2 of Fig 10.\n\nFig 10 Balconies\n\nRoof plan 1\nRoof plan 2\n\nNote: Pop-out balconies are\nsubject to the same evaluation.\n\nRoof Plan 1 Area A: Counts because it is roofed\nArea B: Does not count because this arbor is substantially open\nArea C: Does not count because the overhang is the same size as the over-\nhang around the rest of the house and is considered to be open\n\nWidth of overhang\nover the balcony\n\nWidth of overhang around\nthe rest of the house\n\nC\nB\nA\n\nRoof Plan 2 Area A: Counts because it is roofed\nArea B: Counts because the overhang here is greater than the overhang\naround the rest of the house, and considered to be roofed\nArea C: Does not count because it is open\n\nWidth of overhang\nover the balcony\n\nWidth of overhang around\nthe rest of the house\n\nB\nC\nA\n\n15",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "An isometric view of a building section showing two roof plans. Roof plan 1 shows a roof extending over a balcony with an arbor. Roof plan 2 shows a roof extending over a balcony with a solid roof. Arrows point from 'Roof plan 1' and 'Roof plan 2' labels to the respective roof structures on the building.",
+          "location": "Middle left"
+        },
+        {
+          "type": "diagram",
+          "description": "A top-down plan view labeled 'Roof Plan 1' showing three distinct areas (A, B, C) on a roof/balcony. Area A is hatched with diagonal lines, Area B is cross-hatched, and Area C is solid. Dimensions are indicated for 'Width of overhang over the balcony' and 'Width of overhang around the rest of the house'.",
+          "location": "Top right"
+        },
+        {
+          "type": "diagram",
+          "description": "A top-down plan view labeled 'Roof Plan 2' showing three distinct areas (A, B, C) on a roof/balcony. Area A is hatched with diagonal lines, Area B is solid, and Area C is solid. Dimensions are indicated for 'Width of overhang over the balcony' and 'Width of overhang around the rest of the house'.",
+          "location": "Bottom right"
+        }
+      ],
+      "technical_specifications": [],
+      "structural_elements": {
+        "main_heading": "Balconies, decks, & outdoor areas on upper floors",
+        "subheadings": [
+          "Outdoor areas on upper levels that are roofed DO count toward gross floor area regardless of the design",
+          "Fig 10 Balconies",
+          "Roof Plan 1",
+          "Roof Plan 2"
+        ],
+        "sections": [
+          "An outdoor area on an upper floor is considered to be roofed if the eave over that area is deeper than the eave over the rest of the building. This may be illustrated by comparing Roof Plans 1 & 2 of Fig 10.",
+          "Area A: Counts because it is roofed",
+          "Area B: Does not count because this arbor is substantially open",
+          "Area C: Does not count because the overhang is the same size as the over-hang around the rest of the house and is considered to be open",
+          "Area A: Counts because it is roofed",
+          "Area B: Counts because the overhang here is greater than the overhang around the rest of the house, and considered to be roofed",
+          "Area C: Does not count because it is open"
+        ]
+      },
+      "additional_notes": [
+        "The page number '15' is present at the bottom right corner.",
+        "A grey highlighted box contains the main heading.",
+        "A grey highlighted box contains a 'Note' at the bottom left."
+      ],
+      "cross_references": [
+        "Fig 10",
+        "Roof Plans 1 & 2"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-11 14:59:08",
+  "model_used": "google/gemini-2.5-flash"
+}

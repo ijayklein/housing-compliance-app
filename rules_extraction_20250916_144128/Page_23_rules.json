@@ -1,0 +1,92 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_23.md",
+  "file_name": "Page_23.md",
+  "analysis": {
+    "extracted_rules": {
+      "rules": [
+        {
+          "title": "2nd & 3rd floor equivalency",
+          "primary_rule": {
+            "text": "Areas higher than 17' and 26' above the first floor (that do not already count as floor area e.g., open atrium spaces and inaccessible attic spaces), count toward the gross floor area in the form of 2nd and 3rd floor equivalency regardless of the floor plan or usage of the space. Stairwells will be measured the same way that vaulted ceiling spaces are measured."
+          },
+          "qualifiers": {
+            "scope": "Areas higher than 17' and 26' above the first floor",
+            "applicability": "Spaces that do not already count as floor area",
+            "exclusions": "Open atrium spaces and inaccessible attic spaces"
+          },
+          "variables": {
+            "dimensional": [
+              {
+                "name": "height",
+                "value": "17'",
+                "unit": "feet"
+              },
+              {
+                "name": "height",
+                "value": "26'",
+                "unit": "feet"
+              }
+            ],
+            "usage_parameters": "Regardless of the floor plan or usage of the space"
+          },
+          "constants": {
+            "specs": "Stairwells measured the same way as vaulted ceiling spaces"
+          },
+          "conditions": {
+            "mandatory": "Areas higher than 17' and 26' count toward gross floor area"
+          },
+          "exceptions": {
+            "text": "200 sf of 3rd floor equivalency may be exempted where roof pitch is 4:12 or steeper"
+          },
+          "relationships": {
+            "cross_references": "See 'Height' section for exemptions"
+          }
+        },
+        {
+          "title": "Examples statement",
+          "examples": [
+            {
+              "area": "A",
+              "counts_as": [
+                "1st floor",
+                "2nd floor",
+                "3rd floor equivalency"
+              ]
+            },
+            {
+              "area": "B",
+              "counts_as": [
+                "1st floor",
+                "2nd floor equivalency"
+              ]
+            }
+          ]
+        }
+      ],
+      "figure": {
+        "caption": "Figure 12 2nd & 3rd floor equivalency",
+        "callouts_and_labels": [
+          "26'",
+          "17'",
+          "Top of roof material (Typical)",
+          "Top of finished floor (Typical)",
+          "1st flr (left figure label at first floor)",
+          "1st fl (right figure label at first floor)",
+          "Inaccessible attic (or vaulted ceiling)",
+          "Vaulted ceiling space (appears over Area B in right figure)",
+          "A (shaded area label)",
+          "B (shaded area label)",
+          "Width of area that counts as 3rd floor equivalency",
+          "Width of area that counts as 2nd floor equivalency",
+          "Width of area that counts as 2nd floor (baseline width noted along the first level)"
+        ]
+      },
+      "page_number": 17
+    },
+    "parse_error": false,
+    "raw_response": "```json\n{\n  \"rules\": [\n    {\n      \"title\": \"2nd & 3rd floor equivalency\",\n      \"primary_rule\": {\n        \"text\": \"Areas higher than 17' and 26' above the first floor (that do not already count as floor area e.g., open atrium spaces and inaccessible attic spaces), count toward the gross floor area in the form of 2nd and 3rd floor equivalency regardless of the floor plan or usage of the space. Stairwells will be measured the same way that vaulted ceiling spaces are measured.\"\n      },\n      \"qualifiers\": {\n        \"scope\": \"Areas higher than 17' and 26' above the first floor\",\n        \"applicability\": \"Spaces that do not already count as floor area\",\n        \"exclusions\": \"Open atrium spaces and inaccessible attic spaces\"\n      },\n      \"variables\": {\n        \"dimensional\": [\n          {\n            \"name\": \"height\",\n            \"value\": \"17'\",\n            \"unit\": \"feet\"\n          },\n          {\n            \"name\": \"height\",\n            \"value\": \"26'\",\n            \"unit\": \"feet\"\n          }\n        ],\n        \"usage_parameters\": \"Regardless of the floor plan or usage of the space\"\n      },\n      \"constants\": {\n        \"specs\": \"Stairwells measured the same way as vaulted ceiling spaces\"\n      },\n      \"conditions\": {\n        \"mandatory\": \"Areas higher than 17' and 26' count toward gross floor area\"\n      },\n      \"exceptions\": {\n        \"text\": \"200 sf of 3rd floor equivalency may be exempted where roof pitch is 4:12 or steeper\"\n      },\n      \"relationships\": {\n        \"cross_references\": \"See 'Height' section for exemptions\"\n      }\n    },\n    {\n      \"title\": \"Examples statement\",\n      \"examples\": [\n        {\n          \"area\": \"A\",\n          \"counts_as\": [\n            \"1st floor\",\n            \"2nd floor\",\n            \"3rd floor equivalency\"\n          ]\n        },\n        {\n          \"area\": \"B\",\n          \"counts_as\": [\n            \"1st floor\",\n            \"2nd floor equivalency\"\n          ]\n        }\n      ]\n    }\n  ],\n  \"figure\": {\n    \"caption\": \"Figure 12 2nd & 3rd floor equivalency\",\n    \"callouts_and_labels\": [\n      \"26'\",\n      \"17'\",\n      \"Top of roof material (Typical)\",\n      \"Top of finished floor (Typical)\",\n      \"1st flr (left figure label at first floor)\",\n      \"1st fl (right figure label at first floor)\",\n      \"Inaccessible attic (or vaulted ceiling)\",\n      \"Vaulted ceiling space (appears over Area B in right figure)\",\n      \"A (shaded area label)\",\n      \"B (shaded area label)\",\n      \"Width of area that counts as 3rd floor equivalency\",\n      \"Width of area that counts as 2nd floor equivalency\",\n      \"Width of area that counts as 2nd floor (baseline width noted along the first level)\"\n    ]\n  },\n  \"page_number\": 17\n}\n```"
+  },
+  "timestamp": "2025-09-16 14:42:26",
+  "model": "openai/gpt-4o",
+  "success": true
+}

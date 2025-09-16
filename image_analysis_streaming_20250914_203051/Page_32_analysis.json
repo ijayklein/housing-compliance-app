@@ -1,0 +1,213 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_32.png",
+  "image_name": "Page_32.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Daylight plane\n\nThe daylight plane in conjunction with the setbacks & height limits, create an invisible tent\n\nintended to contain development on the lot in a way that preserves privacy and exposure to natural light.\n\nCode sections\nPage 26\n18.12.040 (a) Table 2\nPage 27\n18.04\nPage 28\n18.12.040 (c) Table 2\nPage 29\n18.12.050 (b) (2)\n18.12.040 (i)\n\n26\n\nPrimary daylight plane (sides)\n\nThe primary daylight plane regulates structures located within the buildable area. Structures located in the rear and/or side yards are regulated by the accessory-structure daylight plane described on the next page.\n\nFig 20 Front elevation showing side primary daylight plane\n\nNotes:\n\u2022 Daylight plane is measured from average grade.\n\u2022 Average grade is established using existing grade\u2014before any grading or fill (See Fig 44 p. 42)\n\u2022 Side daylight plane is measured (up) at lot line.\n\u2022 Rear daylight plane is measured (up) at rear setback.\n\nMax above-grade\nMin. height 8'\n\n45\u00b0\n\n10' from average grade\n\nSide lot line\n\nAverage grade\n\nGrade at the nearest point on the adjacent lot\n\nExisting grade of the structure lot (midpoint of wall)\n\n24' max. for accessory\n\nSide lot line\n\nMax. building height",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "3D isometric drawing of a rectangular building structure showing the invisible tent concept created by daylight planes",
+          "location": "Left side, middle section"
+        },
+        {
+          "type": "diagram",
+          "description": "Front elevation technical drawing showing a two-story house with detailed measurements and daylight plane angles. Shows 45-degree angle from 10' above average grade, side lot lines, maximum building height of 24' for accessory structures, and various grade measurements. Includes chimney and detailed architectural features.",
+          "location": "Right side, center of page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Daylight plane angle",
+          "value_type": "Numerical",
+          "value": "45",
+          "unit": "degrees"
+        },
+        {
+          "parameter": "Minimum height above average grade",
+          "value_type": "Measurement",
+          "value": "10",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum height",
+          "value_type": "Measurement",
+          "value": "8",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Maximum height for accessory structures",
+          "value_type": "Measurement",
+          "value": "24",
+          "unit": "feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Daylight plane",
+        "subheadings": [
+          "Primary daylight plane (sides)"
+        ],
+        "sections": [
+          "Code sections",
+          "Notes"
+        ]
+      },
+      "additional_notes": [
+        "Page number 26 appears at bottom left",
+        "Figure 20 caption included in main content area"
+      ],
+      "cross_references": [
+        "Page 26 - 18.12.040 (a) Table 2",
+        "Page 27 - 18.04",
+        "Page 28 - 18.12.040 (c) Table 2",
+        "Page 29 - 18.12.050 (b) (2)",
+        "Page 29 - 18.12.040 (i)",
+        "accessory-structure daylight plane described on the next page",
+        "See Fig 44 p. 42"
+      ],
+      "conditions_and_qualifiers": {
+        "qualifiers": [
+          {
+            "id": "q1",
+            "text": "within the buildable area",
+            "applies_to_conditions": [
+              "c1"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q2",
+            "text": "in the rear and/or side yards",
+            "applies_to_conditions": [
+              "c2"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q3",
+            "text": "using existing grade\u2014before any grading or fill",
+            "applies_to_conditions": [
+              "c3"
+            ],
+            "scope": "Specific"
+          }
+        ],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "structures located within the buildable area",
+            "value_type": "Boolean",
+            "operator": "contains",
+            "threshold_value": "buildable area",
+            "unit": "None"
+          },
+          {
+            "id": "c2",
+            "text": "Structures located in the rear and/or side yards",
+            "value_type": "Boolean",
+            "operator": "contains",
+            "threshold_value": "rear and/or side yards",
+            "unit": "None"
+          },
+          {
+            "id": "c3",
+            "text": "Average grade is established using existing grade",
+            "value_type": "Text",
+            "operator": "=",
+            "threshold_value": "existing grade before any grading or fill",
+            "unit": "None"
+          },
+          {
+            "id": "c4",
+            "text": "Side daylight plane is measured (up) at lot line",
+            "value_type": "Text",
+            "operator": "=",
+            "threshold_value": "lot line",
+            "unit": "None"
+          },
+          {
+            "id": "c5",
+            "text": "Rear daylight plane is measured (up) at rear setback",
+            "value_type": "Text",
+            "operator": "=",
+            "threshold_value": "rear setback",
+            "unit": "None"
+          }
+        ],
+        "logical_relationships": [
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c1"
+            ],
+            "expression": "The primary daylight plane regulates structures located within the buildable area",
+            "evaluation_order": 1
+          },
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c2"
+            ],
+            "expression": "Structures located in the rear and/or side yards are regulated by the accessory-structure daylight plane",
+            "evaluation_order": 2
+          }
+        ],
+        "execution_sequence": [
+          {
+            "step": 1,
+            "action": "Determine if structure is located within buildable area or in rear/side yards",
+            "condition_ids": [
+              "c1",
+              "c2"
+            ],
+            "qualifier_ids": [
+              "q1",
+              "q2"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 2,
+            "action": "Apply appropriate daylight plane regulation based on structure location",
+            "condition_ids": [
+              "c1",
+              "c2"
+            ],
+            "qualifier_ids": [
+              "q1",
+              "q2"
+            ],
+            "dependencies": [
+              "1"
+            ]
+          },
+          {
+            "step": 3,
+            "action": "Establish average grade using existing grade before any modifications",
+            "condition_ids": [
+              "c3"
+            ],
+            "qualifier_ids": [
+              "q3"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 4,
+            "action": "Measure daylight plane from appropriate reference point",
+            "condition_ids": [
+              "c4",
+              "c5"
+            ],
+            "qualifier_ids": [],
+            "dependencies": [
+              "3"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:32:04",
+  "model_used": "anthropic/claude-sonnet-4"
+}

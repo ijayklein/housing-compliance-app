@@ -1,0 +1,89 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_39.png",
+  "image_name": "Page_39.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Noise-producing equipment site planning\n\n\u2022 May not be located in front, rear, or interior-side yards.\n\u2022 May encroach into street-side yard up to 6' (Fig 27 C below)\n\u2022 All service equip. must meet the City's Noise Ordinance in Chapter 9.10 of\n  the Municipal Code.\n\u2022 Replacement of equipment shall conform to this section where feasible.\n\u2022 Must be insulated and housed, however, Planning Dept. can waive this\n  requirement if equipment is located in buildable area and a combination\n  of noise specifications, location, and/or other screening or buffering will\n  assure compliance with the City's Noise Ordinance at the nearest lot line.\n\nFig 27 Examples of site planning solutions for noise-producing equipment\n\nA Pool equipment\n\u2022 Pool equip. is within buildable area even though\n  there is room for it behind the\n  garage/poolhouse in the required rear yard.\n\u2022 Air conditioning equip. is located in an out-of-\n  theway niche maintaining the required 10' min.\n  clearance for the driveway\n\nB Pool equipment & AC unit\n\u2022 Pool equip. is located within buildable area even\n  though there is room for it next to the poolhouse\n  in the required rear yard.\n\u2022 Air conditioning equip. is located within build-\n  able area behind the house. There is not enough\n  room along the interior side of the house.\n\nC Generator & AC unit\n\u2022 Air conditioning equip. is located in street\n  side yard in compliance with the regula-\n  tions. Note that it may not encroach into\n  the front or rear yards.\n\u2022 Generator is located within buildable area.\n\nKey\nCurb\nLot line\nSidewalk\nRequired\nsetbacks\nBuildable\narea\nDwelling/\nparking\nP   Pool equip.\nAC  Air condition-\n    ing equip.\nG   Generator\n\n33",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Figure 27 contains three site plan diagrams labeled A, B, and C, illustrating placement rules for noise-producing equipment, along with a key. The diagrams show property layouts with lot lines, setbacks, dwellings, and various types of equipment.",
+          "location": "Middle and bottom of the page"
+        },
+        {
+          "type": "diagram",
+          "description": "Diagram A, titled 'Pool equipment', shows a lot with a 'Main dwelling' and a 'Combo garage / small poolhouse' in the rear yard. Pool equipment ('P') is in the buildable area near the poolhouse. An AC unit ('AC') is in a niche in the interior-side yard, with a labeled '10' min. clear.' distance from the driveway.",
+          "location": "Middle-left of the page"
+        },
+        {
+          "type": "diagram",
+          "description": "Diagram B, titled 'Pool equipment & AC unit', shows a lot with a 'Main dwelling' and a '2-car attached garage'. A 'Larger poolhouse' is in the rear yard. Pool equipment ('P') is in the buildable area next to the pool. An AC unit ('AC') is located in the buildable area behind the main house.",
+          "location": "Middle-center of the page"
+        },
+        {
+          "type": "diagram",
+          "description": "Diagram C, titled 'Generator & AC unit', shows a corner lot with a 'Main dwelling' and 'Garage'. A generator ('G') is in the buildable area in the rear yard. An AC unit ('AC') is in the 'Street-side yard', with a labeled '6' max.' encroachment from the dwelling. The diagram shows a curb and sidewalk along the front and street-side yards.",
+          "location": "Middle-right of the page"
+        },
+        {
+          "type": "table",
+          "description": "A 'Key' or legend on the right side of the page defines the symbols used in the diagrams. It includes: Curb (solid line), Lot line (short dashed line), Sidewalk (tiled rectangle), Required setbacks (long dashed line), Buildable area (dashed outline with light gray fill), Dwelling/parking (solid dark gray fill), 'P' for Pool equip., 'AC' for Air conditioning equip., and 'G' for Generator.",
+          "location": "Right side of the page, aligned with the diagrams"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Maximum street-side yard encroachment",
+          "value": "6",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum driveway clearance",
+          "value": "10",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Maximum encroachment from dwelling in street-side yard",
+          "value": "6",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Garage capacity",
+          "value": "2",
+          "unit": "car"
+        },
+        {
+          "parameter": "Page Number",
+          "value": "33",
+          "unit": null
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Noise-producing equipment site planning",
+        "subheadings": [
+          "Fig 27 Examples of site planning solutions for noise-producing equipment",
+          "A Pool equipment",
+          "B Pool equipment & AC unit",
+          "C Generator & AC unit",
+          "Key"
+        ],
+        "sections": [
+          "A",
+          "B",
+          "C"
+        ]
+      },
+      "additional_notes": [
+        "The page number '33' is located at the bottom right corner.",
+        "The document is a clean, high-quality digital image or photocopy with no handwritten annotations, stamps, or significant quality degradation."
+      ],
+      "cross_references": [
+        "Fig 27 C below",
+        "Chapter 9.10 of the Municipal Code",
+        "this section"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-11 14:36:29",
+  "model_used": "google/gemini-2.5-pro"
+}

@@ -1,0 +1,110 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_16.png",
+  "image_name": "Page_16.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Step 4: Finalize the determination of which segments are closed and which are open, total the linear feet in each category, and compare the totals.\n\nFor the porch in Fig 5, the summary is as follows:\n\nClosed                    Open\nSegment  Feet            Segment  Feet\nA        3'              D        7'\nB        8'              F        24'\nC        10'             G        4'\nE        14'\n         35'                     35'\n\nConclusion: The perimeter of the porch in Fig 5 is 50% open and so the porch would NOT count toward gross floor area\n\nNote: If a porch floor is more than 30\" above grade, the porch sides may need to be 36\" high for safety reasons. This may cause the porch facade to be considered closed. Possible solutions to make sure the porch sides are considered open are illustrated to the right:\n\n\u2022 Railings (ballisters) instead of solid half walls.\n\u2022 A single safety rail above lower, solid half walls.\n\nOpen                     Open\n\n10",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Floor plan diagram of a porch showing segments labeled A through G with measurements. Shows closed segments (black) and open segments (gray). Includes dimensional annotations: D=7', B=8', C=10', E=14', F=24', G=4', with overall dimensions shown.",
+          "location": "upper right portion of page"
+        },
+        {
+          "type": "diagram",
+          "description": "Two side-by-side cross-sectional diagrams showing porch railing solutions. Left diagram shows railings/ballisters, right diagram shows safety rail above solid half wall. Both labeled 'Open' at bottom. Shows measurements of 36\" and 30\" heights, with 'Safety rail', 'Porch flr', and 'Grade' labels.",
+          "location": "bottom right portion of page"
+        },
+        {
+          "type": "legend",
+          "description": "Legend showing black squares for 'Closed segments' and gray squares for 'Open segments'",
+          "location": "upper right, above the floor plan diagram"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Segment A length",
+          "value": "3",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Segment B length",
+          "value": "8",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Segment C length",
+          "value": "10",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Segment D length",
+          "value": "7",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Segment E length",
+          "value": "14",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Segment F length",
+          "value": "24",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Segment G length",
+          "value": "4",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Total closed segments",
+          "value": "35",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Total open segments",
+          "value": "35",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Percentage open",
+          "value": "50",
+          "unit": "percent"
+        },
+        {
+          "parameter": "Porch floor height threshold",
+          "value": "30",
+          "unit": "inches"
+        },
+        {
+          "parameter": "Required porch side height for safety",
+          "value": "36",
+          "unit": "inches"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Step 4:",
+        "subheadings": [
+          "Closed",
+          "Open",
+          "Conclusion:",
+          "Note:"
+        ],
+        "sections": [
+          "Step 4"
+        ]
+      },
+      "additional_notes": [
+        "Page number '10' appears at bottom left",
+        "Gray shaded text box contains the Note section with arrow pointing to diagrams"
+      ],
+      "cross_references": [
+        "Fig 5",
+        "Fig 5"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-11 13:44:26",
+  "model_used": "anthropic/claude-sonnet-4"
+}

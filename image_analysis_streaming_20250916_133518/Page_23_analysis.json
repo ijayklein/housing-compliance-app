@@ -1,0 +1,11 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_23.png",
+  "image_name": "Page_23.png",
+  "analysis": {
+    "parse_error": true,
+    "error": "API_ERROR: 400 - {\"error\":{\"message\":\"Provider returned error\",\"code\":400,\"metadata\":{\"raw\":\"{\\\"message\\\":\\\"messages.0.content.1.image.source.base64.data: At least one of the image dimensions exceed max allowed size: 8000 pixels\\\"}\",\"provider_name\":\"Amazon Bedrock\"}},\"user_id\":\"user_2w7iHcpOx7ok6ut9XTSiBGMgDVF\"}"
+  },
+  "timestamp": "2025-09-16 13:36:17",
+  "model": "anthropic/claude-sonnet-4",
+  "success": false
+}

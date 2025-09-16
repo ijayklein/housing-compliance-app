@@ -1,0 +1,19 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_12.png",
+  "image_name": "Page_12.png",
+  "analysis": {
+    "page_number": "unknown",
+    "main_heading": "PARSE_ERROR",
+    "text_content": "Failed to parse response: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)",
+    "tables": [],
+    "figures": [],
+    "zoning_rules": [],
+    "code_references": [],
+    "quality_notes": "JSON parsing failed: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)",
+    "raw_response": "```json\n{\n  \"page_number\": \"6\",\n  \"main_heading\": \"Porches & entry features\",\n  \"text_content\": \"Porches & entry features\\n\\nPorch types\\n\\nFor purposes of assessing gross floor area, porches, entryways, and balconies fall into one of these categories:\\n\\n1. Non-roofed porches, entryways, balconies etc.\\n\u2022 Non-roofed features generally do not count\\n\\n2. Roofed porches on the 1st floor (Fig 4 A & D on p. 7, Fig 5 on p. 8)\\n\u2022 Openess of the sides determines whether or not these count regardless of the height.\\n\u2022 If they do count, they count only once.\\n\\n3. Roofed entry features on the 1st floor that are less than 12' high (from grade) (Fig 4 B on p. 7)\\n\u2022 These count once regardless of the design including openess.\\n\\n4. Roofed entry features on the 1st floor that are more than 12' high from grade\u2014\\\"vaulted entry feature\\\" (Fig 4 C & D on p. 7, Fig 6, 7, & 8 on pp. 11-13)\\n\u2022 These count twice regardless of the design including openess.\\n\\n5. Recessed porches on the 1st floor (Fig 9 on ",
+    "parse_error": true
+  },
+  "analysis_timestamp": "2025-09-16 12:39:01",
+  "model_used": "anthropic/claude-sonnet-4",
+  "success": false
+}

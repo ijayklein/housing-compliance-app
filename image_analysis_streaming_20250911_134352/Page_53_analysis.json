@@ -1,0 +1,73 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_53.png",
+  "image_name": "Page_53.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Grade\n\nFig 45 Height limits for structures on slopes greater than 10%\n\nWhen measuring    Use    Which is defined as    Illus.\n\nThe height of a structure on land with natural slope \u2264 10%    Existing Grade    for each building or structure, the lowest point of adjacent ground elevation prior to grading or fill    Fig 44 on this page\n\nThe height of a structure on land with natural slope > 10%    Grade    adjacent ground elevation of the finished or existing grade, whichever is lower--at any point of the structure    Fig 45 on this page\n\nA daylight plane    Average grade    average of the grade at the midpoint of the building and the grade at the closest point on the abutting site    Figs 20-21 pp. 26-27\n\nFig 44 Existing vs. Finished grade\n\n[Diagram shows a two-story house with basement, indicating height measurement from lowest point of ground elevation before fill (existing grade) to top of structure, with labels for \"Finished grade (after fill)\" and \"Existing grade (before fill)\" and \"Lowest point of ground elevation before fill (existing grade) adjacent to the structure\"]\n\n30' above existing grade\n30' above finished\n\nThe structure must comply with the lower of the two limits at all points along the slope\n\nHeight\nHeight\n\nExisting grade (before fill)\n\nFig 46 Comparison of different grades\n\n[Diagram shows angular measurements: 10%, 20%, 30%, with lines radiating from a point]\n\n47",
+      "visual_elements": [
+        {
+          "type": "table",
+          "description": "A four-column table defining grade measurements with columns for 'When measuring', 'Use', 'Which is defined as', and 'Illus.' Contains three rows covering different slope conditions and daylight plane measurements",
+          "location": "top portion of page"
+        },
+        {
+          "type": "diagram",
+          "description": "Fig 44 - Cross-section illustration of a two-story house with basement showing the difference between existing grade (before fill) and finished grade (after fill), with height measurement indicated from lowest point of existing grade",
+          "location": "lower left portion of page"
+        },
+        {
+          "type": "diagram",
+          "description": "Fig 45 - Illustration showing height limits for structures on slopes greater than 10%, depicting buildings on a slope with 30' height limits measured from both existing and finished grade, with note about compliance with lower limits",
+          "location": "upper right and center right portion of page"
+        },
+        {
+          "type": "diagram",
+          "description": "Fig 46 - Angular diagram showing comparison of different grade percentages (10%, 20%, 30%) represented as radiating lines from a central point",
+          "location": "lower right portion of page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Natural slope threshold",
+          "value": "10",
+          "unit": "%"
+        },
+        {
+          "parameter": "Height limit above existing grade",
+          "value": "30",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Height limit above finished grade",
+          "value": "30",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Grade comparison percentages",
+          "value": "10, 20, 30",
+          "unit": "%"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Grade",
+        "subheadings": [],
+        "sections": [
+          "Grade measurement definitions",
+          "Figure illustrations"
+        ]
+      },
+      "additional_notes": [
+        "Page number 47 appears at bottom right",
+        "All diagrams are technical architectural cross-sections and angular measurements",
+        "Text quality is clear and legible throughout"
+      ],
+      "cross_references": [
+        "Fig 44 on this page",
+        "Fig 45 on this page",
+        "Figs 20-21 pp. 26-27"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-11 13:45:22",
+  "model_used": "anthropic/claude-sonnet-4"
+}

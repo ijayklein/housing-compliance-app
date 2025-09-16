@@ -1,0 +1,372 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_08.md",
+  "file_name": "Page_08.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "rule_name": "Minimum and Maximum Lot Sizes for New Lots",
+        "rule_id": "P08-S1-R1",
+        "Qualifiers": {
+          "scope": "Creation of new lots under the subdivision ordinance.",
+          "applicability": "Applies to five R-1 zone districts: R-1, R-1(7000), R-1(8000), R-1(10000), R-1(20000).",
+          "exclusions": [
+            "Does not apply to existing lots, only new lots created via subdivision."
+          ]
+        },
+        "Variables": [
+          {
+            "name": "lot.width",
+            "type": "dimensional",
+            "unit": "feet"
+          },
+          {
+            "name": "lot.depth",
+            "type": "dimensional",
+            "unit": "feet"
+          },
+          {
+            "name": "lot.area",
+            "type": "dimensional",
+            "unit": "square feet"
+          },
+          {
+            "name": "zone.district",
+            "type": "usage parameter",
+            "values": [
+              "R-1",
+              "R-1(7000)",
+              "R-1(8000)",
+              "R-1(10000)",
+              "R-1(20000)"
+            ]
+          }
+        ],
+        "Constants": [
+          {
+            "name": "minimum_width",
+            "value": 60,
+            "unit": "feet"
+          },
+          {
+            "name": "minimum_depth",
+            "value": 100,
+            "unit": "feet"
+          },
+          {
+            "name": "lot_area_by_zone",
+            "value": [
+              {
+                "zone": "R-1",
+                "minimum": 6000,
+                "maximum": 9999,
+                "unit": "square feet"
+              },
+              {
+                "zone": "R-1(7000)",
+                "minimum": 7000,
+                "maximum": 13999,
+                "unit": "square feet"
+              },
+              {
+                "zone": "R-1(8000)",
+                "minimum": 8000,
+                "maximum": 15999,
+                "unit": "square feet"
+              },
+              {
+                "zone": "R-1(10000)",
+                "minimum": 10000,
+                "maximum": 19999,
+                "unit": "square feet"
+              },
+              {
+                "zone": "R-1(20000)",
+                "minimum": 20000,
+                "maximum": 39999,
+                "unit": "square feet"
+              }
+            ]
+          }
+        ],
+        "Conditions": {
+          "type": "Mandatory",
+          "description": "A new lot must satisfy all of the following dimensional requirements.",
+          "logic": "AND",
+          "clauses": [
+            {
+              "variable": "lot.width",
+              "operator": ">=",
+              "value": 60
+            },
+            {
+              "variable": "lot.depth",
+              "operator": ">=",
+              "value": 100
+            },
+            {
+              "variable": "lot.area",
+              "operator": "BETWEEN",
+              "value": "min/max for the given zone.district"
+            }
+          ]
+        },
+        "Exceptions": {
+          "applies_to": "Maximum lot size",
+          "description": "The maximum lot size may be exceeded under the following conditions.",
+          "cases": [
+            {
+              "case_id": "E1",
+              "condition": "Removal of underlying lot lines to eliminate non-conformities AND results in no net loss of housing."
+            },
+            {
+              "case_id": "E2",
+              "condition": "An adjacent substandard lot (width < 25') is combined with another lot AND results in no net loss of housing."
+            },
+            {
+              "case_id": "E3",
+              "condition": "The resultant number of lots increases or stays the same AND results in no net loss of housing."
+            }
+          ]
+        },
+        "Relationships": {
+          "hierarchical": "This rule is a primary regulation under the 'subdivision ordinance'.",
+          "cross_references": [
+            "subdivision ordinance",
+            "18.12.040 (a) Table 2",
+            "18.12.040 (d)",
+            "18.12.040 (c)",
+            "18.04.030 (a) (85)"
+          ],
+          "logical_dependencies": "Defines the standard lot sizes which are the basis for identifying 'substandard lots' in rule P08-S2-R1."
+        }
+      },
+      {
+        "rule_name": "Substandard Lot Definition",
+        "rule_id": "P08-S2-R1",
+        "Qualifiers": {
+          "scope": "Defines the criteria for a lot to be considered 'substandard'.",
+          "applicability": "Applies to existing lots within the five R-1 zone districts.",
+          "exclusions": []
+        },
+        "Variables": [
+          {
+            "name": "lot.width",
+            "type": "dimensional",
+            "unit": "feet"
+          },
+          {
+            "name": "lot.depth",
+            "type": "dimensional",
+            "unit": "feet"
+          },
+          {
+            "name": "lot.area",
+            "type": "dimensional",
+            "unit": "square feet"
+          },
+          {
+            "name": "lot.type",
+            "type": "usage parameter",
+            "values": [
+              "Typical lot",
+              "Flag lot"
+            ]
+          },
+          {
+            "name": "zone.district",
+            "type": "usage parameter",
+            "values": [
+              "R-1",
+              "R-1(7000)",
+              "R-1(8000)",
+              "R-1(10000)",
+              "R-1(20000)"
+            ]
+          }
+        ],
+        "Constants": [
+          {
+            "name": "area_thresholds_by_zone_and_type",
+            "description": "Area is less than or equal to 83% of the minimum lot size for the zone.",
+            "value": [
+              {
+                "zone": "R-1",
+                "Typical lot": 4980,
+                "Flag lot": 5976,
+                "unit": "square feet"
+              },
+              {
+                "zone": "R-1(7000)",
+                "Typical lot": 5810,
+                "Flag lot": 6972,
+                "unit": "square feet"
+              },
+              {
+                "zone": "R-1(8000)",
+                "Typical lot": 6640,
+                "Flag lot": 7968,
+                "unit": "square feet"
+              },
+              {
+                "zone": "R-1(10000)",
+                "Typical lot": 8300,
+                "Flag lot": 9960,
+                "unit": "square feet"
+              },
+              {
+                "zone": "R-1(20000)",
+                "Typical lot": 16600,
+                "Flag lot": 19920,
+                "unit": "square feet"
+              }
+            ]
+          }
+        ],
+        "Conditions": {
+          "type": "Definitional",
+          "description": "A lot is defined as substandard if it meets the dimensional criteria AND the area criteria.",
+          "logic": "((lot.width < 50') OR (lot.depth < 83')) AND (lot.area <= area_threshold)",
+          "clauses": [
+            {
+              "logic": "AND",
+              "sub_clauses": [
+                {
+                  "logic": "OR",
+                  "sub_clauses": [
+                    {
+                      "variable": "lot.width",
+                      "operator": "<",
+                      "value": 50
+                    },
+                    {
+                      "variable": "lot.depth",
+                      "operator": "<",
+                      "value": 83
+                    }
+                  ]
+                },
+                {
+                  "variable": "lot.area",
+                  "operator": "<=",
+                  "value": "threshold based on zone.district and lot.type"
+                }
+              ]
+            }
+          ]
+        },
+        "Exceptions": {},
+        "Relationships": {
+          "hierarchical": null,
+          "cross_references": [],
+          "logical_dependencies": "This definition is a prerequisite for applying the special regulations in rule P08-S3-R1. The area thresholds are derived from the minimum lot sizes in rule P08-S1-R1."
+        }
+      },
+      {
+        "rule_name": "Special Regulations for Substandard Lots",
+        "rule_id": "P08-S3-R1",
+        "Qualifiers": {
+          "scope": "Specifies alternative development regulations that override standard rules for height, yards, and garage location.",
+          "applicability": "Applies only to lots that meet the definition of 'substandard' per rule P08-S2-R1.",
+          "exclusions": []
+        },
+        "Variables": [
+          {
+            "name": "building.height.maximum",
+            "type": "dimensional",
+            "unit": "feet"
+          },
+          {
+            "name": "building.stories.maximum",
+            "type": "dimensional",
+            "unit": "stories"
+          },
+          {
+            "name": "yard.street-side.required",
+            "type": "dimensional",
+            "unit": "feet"
+          },
+          {
+            "name": "garage.location.requirement",
+            "type": "usage parameter"
+          }
+        ],
+        "Constants": [
+          {
+            "name": "standard_max_height_comparison",
+            "value": 30,
+            "unit": "feet"
+          },
+          {
+            "name": "standard_street_side_yard_comparison",
+            "value": 16,
+            "unit": "feet"
+          },
+          {
+            "name": "standard_garage_location_comparison",
+            "value": "75' back from the front lot line"
+          }
+        ],
+        "Conditions": {
+          "type": "Conditional Override",
+          "description": "If a lot is substandard, the following specific regulations apply, some with additional conditions.",
+          "clauses": [
+            {
+              "if": "lot is substandard",
+              "then": [
+                {
+                  "variable": "building.height.maximum",
+                  "set_value": 17
+                },
+                {
+                  "variable": "building.stories.maximum",
+                  "set_value": 1
+                }
+              ]
+            },
+            {
+              "if": "lot is substandard AND lot.width < 50",
+              "then": [
+                {
+                  "variable": "yard.street-side.required",
+                  "set_value": 10
+                }
+              ]
+            },
+            {
+              "if": "lot is substandard AND lot.depth < 95",
+              "then": [
+                {
+                  "variable": "garage.location.requirement",
+                  "set_value": "in the rear half of the lot"
+                }
+              ]
+            }
+          ]
+        },
+        "Exceptions": {},
+        "Relationships": {
+          "hierarchical": null,
+          "cross_references": [
+            "Figure 15 C on p. 23"
+          ],
+          "logical_dependencies": "This entire rule is conditional upon a lot meeting the criteria defined in rule P08-S2-R1."
+        },
+        "Ambiguous_Language": [
+          {
+            "term": "in the rear half of the lot",
+            "reason": "Lacks a precise mathematical definition for automated validation. It could mean the rear 50% of the lot's depth, or the area behind the midpoint of the main building. Requires clarification."
+          }
+        ]
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n  {\n    \"rule_name\": \"Minimum and Maximum Lot Sizes for New Lots\",\n    \"rule_id\": \"P08-S1-R1\",\n    \"Qualifiers\": {\n      \"scope\": \"Creation of new lots under the subdivision ordinance.\",\n      \"applicability\": \"Applies to five R-1 zone districts: R-1, R-1(7000), R-1(8000), R-1(10000), R-1(20000).\",\n      \"exclusions\": [\n        \"Does not apply to existing lots, only new lots created via subdivision.\"\n      ]\n    },\n    \"Variables\": [\n      {\n        \"name\": \"lot.width\",\n        \"type\": \"dimensional\",\n        \"unit\": \"feet\"\n      },\n      {\n        \"name\": \"lot.depth\",\n        \"type\": \"dimensional\",\n        \"unit\": \"feet\"\n      },\n      {\n        \"name\": \"lot.area\",\n        \"type\": \"dimensional\",\n        \"unit\": \"square feet\"\n      },\n      {\n        \"name\": \"zone.district\",\n        \"type\": \"usage parameter\",\n        \"values\": [\n          \"R-1\",\n          \"R-1(7000)\",\n          \"R-1(8000)\",\n          \"R-1(10000)\",\n          \"R-1(20000)\"\n        ]\n      }\n    ],\n    \"Constants\": [\n      {\n        \"name\": \"minimum_width\",\n        \"value\": 60,\n        \"unit\": \"feet\"\n      },\n      {\n        \"name\": \"minimum_depth\",\n        \"value\": 100,\n        \"unit\": \"feet\"\n      },\n      {\n        \"name\": \"lot_area_by_zone\",\n        \"value\": [\n          {\n            \"zone\": \"R-1\",\n            \"minimum\": 6000,\n            \"maximum\": 9999,\n            \"unit\": \"square feet\"\n          },\n          {\n            \"zone\": \"R-1(7000)\",\n            \"minimum\": 7000,\n            \"maximum\": 13999,\n            \"unit\": \"square feet\"\n          },\n          {\n            \"zone\": \"R-1(8000)\",\n            \"minimum\": 8000,\n            \"maximum\": 15999,\n            \"unit\": \"square feet\"\n          },\n          {\n            \"zone\": \"R-1(10000)\",\n            \"minimum\": 10000,\n            \"maximum\": 19999,\n            \"unit\": \"square feet\"\n          },\n          {\n            \"zone\": \"R-1(20000)\",\n            \"minimum\": 20000,\n            \"maximum\": 39999,\n            \"unit\": \"square feet\"\n          }\n        ]\n      }\n    ],\n    \"Conditions\": {\n      \"type\": \"Mandatory\",\n      \"description\": \"A new lot must satisfy all of the following dimensional requirements.\",\n      \"logic\": \"AND\",\n      \"clauses\": [\n        {\n          \"variable\": \"lot.width\",\n          \"operator\": \">=\",\n          \"value\": 60\n        },\n        {\n          \"variable\": \"lot.depth\",\n          \"operator\": \">=\",\n          \"value\": 100\n        },\n        {\n          \"variable\": \"lot.area\",\n          \"operator\": \"BETWEEN\",\n          \"value\": \"min/max for the given zone.district\"\n        }\n      ]\n    },\n    \"Exceptions\": {\n      \"applies_to\": \"Maximum lot size\",\n      \"description\": \"The maximum lot size may be exceeded under the following conditions.\",\n      \"cases\": [\n        {\n          \"case_id\": \"E1\",\n          \"condition\": \"Removal of underlying lot lines to eliminate non-conformities AND results in no net loss of housing.\"\n        },\n        {\n          \"case_id\": \"E2\",\n          \"condition\": \"An adjacent substandard lot (width < 25') is combined with another lot AND results in no net loss of housing.\"\n        },\n        {\n          \"case_id\": \"E3\",\n          \"condition\": \"The resultant number of lots increases or stays the same AND results in no net loss of housing.\"\n        }\n      ]\n    },\n    \"Relationships\": {\n      \"hierarchical\": \"This rule is a primary regulation under the 'subdivision ordinance'.\",\n      \"cross_references\": [\n        \"subdivision ordinance\",\n        \"18.12.040 (a) Table 2\",\n        \"18.12.040 (d)\",\n        \"18.12.040 (c)\",\n        \"18.04.030 (a) (85)\"\n      ],\n      \"logical_dependencies\": \"Defines the standard lot sizes which are the basis for identifying 'substandard lots' in rule P08-S2-R1.\"\n    }\n  },\n  {\n    \"rule_name\": \"Substandard Lot Definition\",\n    \"rule_id\": \"P08-S2-R1\",\n    \"Qualifiers\": {\n      \"scope\": \"Defines the criteria for a lot to be considered 'substandard'.\",\n      \"applicability\": \"Applies to existing lots within the five R-1 zone districts.\",\n      \"exclusions\": []\n    },\n    \"Variables\": [\n      {\n        \"name\": \"lot.width\",\n        \"type\": \"dimensional\",\n        \"unit\": \"feet\"\n      },\n      {\n        \"name\": \"lot.depth\",\n        \"type\": \"dimensional\",\n        \"unit\": \"feet\"\n      },\n      {\n        \"name\": \"lot.area\",\n        \"type\": \"dimensional\",\n        \"unit\": \"square feet\"\n      },\n      {\n        \"name\": \"lot.type\",\n        \"type\": \"usage parameter\",\n        \"values\": [\n          \"Typical lot\",\n          \"Flag lot\"\n        ]\n      },\n      {\n        \"name\": \"zone.district\",\n        \"type\": \"usage parameter\",\n        \"values\": [\n          \"R-1\",\n          \"R-1(7000)\",\n          \"R-1(8000)\",\n          \"R-1(10000)\",\n          \"R-1(20000)\"\n        ]\n      }\n    ],\n    \"Constants\": [\n      {\n        \"name\": \"area_thresholds_by_zone_and_type\",\n        \"description\": \"Area is less than or equal to 83% of the minimum lot size for the zone.\",\n        \"value\": [\n          {\n            \"zone\": \"R-1\",\n            \"Typical lot\": 4980,\n            \"Flag lot\": 5976,\n            \"unit\": \"square feet\"\n          },\n          {\n            \"zone\": \"R-1(7000)\",\n            \"Typical lot\": 5810,\n            \"Flag lot\": 6972,\n            \"unit\": \"square feet\"\n          },\n          {\n            \"zone\": \"R-1(8000)\",\n            \"Typical lot\": 6640,\n            \"Flag lot\": 7968,\n            \"unit\": \"square feet\"\n          },\n          {\n            \"zone\": \"R-1(10000)\",\n            \"Typical lot\": 8300,\n            \"Flag lot\": 9960,\n            \"unit\": \"square feet\"\n          },\n          {\n            \"zone\": \"R-1(20000)\",\n            \"Typical lot\": 16600,\n            \"Flag lot\": 19920,\n            \"unit\": \"square feet\"\n          }\n        ]\n      }\n    ],\n    \"Conditions\": {\n      \"type\": \"Definitional\",\n      \"description\": \"A lot is defined as substandard if it meets the dimensional criteria AND the area criteria.\",\n      \"logic\": \"((lot.width < 50') OR (lot.depth < 83')) AND (lot.area <= area_threshold)\",\n      \"clauses\": [\n        {\n          \"logic\": \"AND\",\n          \"sub_clauses\": [\n            {\n              \"logic\": \"OR\",\n              \"sub_clauses\": [\n                {\n                  \"variable\": \"lot.width\",\n                  \"operator\": \"<\",\n                  \"value\": 50\n                },\n                {\n                  \"variable\": \"lot.depth\",\n                  \"operator\": \"<\",\n                  \"value\": 83\n                }\n              ]\n            },\n            {\n              \"variable\": \"lot.area\",\n              \"operator\": \"<=\",\n              \"value\": \"threshold based on zone.district and lot.type\"\n            }\n          ]\n        }\n      ]\n    },\n    \"Exceptions\": {},\n    \"Relationships\": {\n      \"hierarchical\": null,\n      \"cross_references\": [],\n      \"logical_dependencies\": \"This definition is a prerequisite for applying the special regulations in rule P08-S3-R1. The area thresholds are derived from the minimum lot sizes in rule P08-S1-R1.\"\n    }\n  },\n  {\n    \"rule_name\": \"Special Regulations for Substandard Lots\",\n    \"rule_id\": \"P08-S3-R1\",\n    \"Qualifiers\": {\n      \"scope\": \"Specifies alternative development regulations that override standard rules for height, yards, and garage location.\",\n      \"applicability\": \"Applies only to lots that meet the definition of 'substandard' per rule P08-S2-R1.\",\n      \"exclusions\": []\n    },\n    \"Variables\": [\n      {\n        \"name\": \"building.height.maximum\",\n        \"type\": \"dimensional\",\n        \"unit\": \"feet\"\n      },\n      {\n        \"name\": \"building.stories.maximum\",\n        \"type\": \"dimensional\",\n        \"unit\": \"stories\"\n      },\n      {\n        \"name\": \"yard.street-side.required\",\n        \"type\": \"dimensional\",\n        \"unit\": \"feet\"\n      },\n      {\n        \"name\": \"garage.location.requirement\",\n        \"type\": \"usage parameter\"\n      }\n    ],\n    \"Constants\": [\n      {\n        \"name\": \"standard_max_height_comparison\",\n        \"value\": 30,\n        \"unit\": \"feet\"\n      },\n      {\n        \"name\": \"standard_street_side_yard_comparison\",\n        \"value\": 16,\n        \"unit\": \"feet\"\n      },\n      {\n        \"name\": \"standard_garage_location_comparison\",\n        \"value\": \"75' back from the front lot line\"\n      }\n    ],\n    \"Conditions\": {\n      \"type\": \"Conditional Override\",\n      \"description\": \"If a lot is substandard, the following specific regulations apply, some with additional conditions.\",\n      \"clauses\": [\n        {\n          \"if\": \"lot is substandard\",\n          \"then\": [\n            {\n              \"variable\": \"building.height.maximum\",\n              \"set_value\": 17\n            },\n            {\n              \"variable\": \"building.stories.maximum\",\n              \"set_value\": 1\n            }\n          ]\n        },\n        {\n          \"if\": \"lot is substandard AND lot.width < 50\",\n          \"then\": [\n            {\n              \"variable\": \"yard.street-side.required\",\n              \"set_value\": 10\n            }\n          ]\n        },\n        {\n          \"if\": \"lot is substandard AND lot.depth < 95\",\n          \"then\": [\n            {\n              \"variable\": \"garage.location.requirement\",\n              \"set_value\": \"in the rear half of the lot\"\n            }\n          ]\n        }\n      ]\n    },\n    \"Exceptions\": {},\n    \"Relationships\": {\n      \"hierarchical\": null,\n      \"cross_references\": [\n        \"Figure 15 C on p. 23\"\n      ],\n      \"logical_dependencies\": \"This entire rule is conditional upon a lot meeting the criteria defined in rule P08-S2-R1.\"\n    },\n    \"Ambiguous_Language\": [\n      {\n        \"term\": \"in the rear half of the lot\",\n        \"reason\": \"Lacks a precise mathematical definition for automated validation. It could mean the rear 50% of the lot's depth, or the area behind the midpoint of the main building. Requires clarification.\"\n      }\n    ]\n  }\n]\n```",
+    "response_time": 54.83364915847778,
+    "input_tokens": 1248,
+    "output_tokens": 6846,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 16:00:25",
+  "model": "google/gemini-2.5-pro",
+  "success": true
+}

@@ -1,0 +1,332 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_35.md",
+  "file_name": "Page_35.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "Qualifiers": {
+          "scope": "Allowable daylight plane protrusions summary",
+          "applicability": [
+            "Television antennas",
+            "Radio antennas"
+          ],
+          "exclusions": []
+        },
+        "Variables": [
+          {
+            "name": "max_building_height",
+            "description": "Jurisdictionally defined maximum permitted building height for the site",
+            "unit": "ft",
+            "source": "external/zoning"
+          },
+          {
+            "name": "protrusion_above_max_height",
+            "description": "Vertical distance the antenna extends above the maximum building height",
+            "unit": "ft"
+          }
+        ],
+        "Constants": [
+          {
+            "name": "max_antenna_protrusion",
+            "value": 15,
+            "unit": "ft"
+          }
+        ],
+        "Conditions": [
+          {
+            "type": "mandatory",
+            "text": "Television and radio antennas may extend above the maximum building height by no more than 15 ft.",
+            "operator": "<=",
+            "left": "protrusion_above_max_height",
+            "right": {
+              "ref": "max_antenna_protrusion",
+              "value": 15,
+              "unit": "ft"
+            }
+          }
+        ],
+        "Exceptions": [],
+        "Relationships": [
+          {
+            "type": "context",
+            "text": "Listed under 'Allowable daylight plane protrusions summary'; this row measures allowance relative to maximum building height, not explicitly to the daylight plane."
+          }
+        ]
+      },
+      {
+        "Qualifiers": {
+          "scope": "Allowable daylight plane protrusions summary",
+          "applicability": [
+            "Chimneys",
+            "Flues"
+          ],
+          "exclusions": [
+            "Chimneys or flues with width >= 5 ft"
+          ]
+        },
+        "Variables": [
+          {
+            "name": "width",
+            "description": "Maximum cross-sectional width of the chimney or flue",
+            "unit": "ft"
+          },
+          {
+            "name": "required_clearance_per_code",
+            "description": "Minimum required clearance as specified by Building Code Chapter 16.04",
+            "unit": "ft",
+            "source": "Building Code Chapter 16.04"
+          },
+          {
+            "name": "protrusion_beyond_daylight_plane",
+            "description": "Extent of feature extending beyond the daylight plane",
+            "unit": "ft"
+          }
+        ],
+        "Constants": [
+          {
+            "name": "width_threshold",
+            "value": 5,
+            "unit": "ft"
+          },
+          {
+            "name": "applicable_standard",
+            "value": "Building Code Chapter 16.04",
+            "unit": null
+          }
+        ],
+        "Conditions": [
+          {
+            "type": "conditional",
+            "if": [
+              {
+                "left": "width",
+                "operator": "<",
+                "right": {
+                  "value": 5,
+                  "unit": "ft"
+                }
+              }
+            ],
+            "then": [
+              {
+                "text": "Feature may extend beyond the daylight plane only as necessary to meet the minimum required clearance of Building Code (Chapter 16.04).",
+                "operator": "<= (by necessity)",
+                "left": "protrusion_beyond_daylight_plane",
+                "right": {
+                  "ref": "required_clearance_per_code",
+                  "unit": "ft"
+                },
+                "dependency": "Building Code Chapter 16.04"
+              }
+            ]
+          }
+        ],
+        "Exceptions": [
+          {
+            "condition": "width >= 5 ft",
+            "effect": "This allowance does not apply; no protrusion beyond daylight plane authorized by this rule."
+          }
+        ],
+        "Relationships": [
+          {
+            "type": "illustration",
+            "figure": "Figure 20",
+            "page": 26
+          },
+          {
+            "type": "dependency",
+            "reference": "Building Code Chapter 16.04",
+            "dependency_detail": "Minimum clearances defined therein determine permissible extent of protrusion."
+          }
+        ]
+      },
+      {
+        "Qualifiers": {
+          "scope": "Allowable daylight plane protrusions summary",
+          "applicability": [
+            "Dormers",
+            "Roof decks",
+            "Gables",
+            "Similar architectural features"
+          ],
+          "exclusions": []
+        },
+        "Variables": [
+          {
+            "name": "feature_length",
+            "description": "Length of an individual feature measured along the plane/facade/roof line",
+            "unit": "ft"
+          },
+          {
+            "name": "cumulative_length_all_features",
+            "description": "Sum of lengths of all applicable features",
+            "unit": "ft"
+          },
+          {
+            "name": "separation_between_features_each_side",
+            "description": "Clear distance between adjacent features on each side",
+            "unit": "ft"
+          },
+          {
+            "name": "feature_height",
+            "description": "Height of the feature (datum unclear in source text)",
+            "unit": "ft"
+          }
+        ],
+        "Constants": [
+          {
+            "name": "max_individual_feature_length",
+            "value": 7.5,
+            "unit": "ft"
+          },
+          {
+            "name": "max_cumulative_length",
+            "value": 15,
+            "unit": "ft"
+          },
+          {
+            "name": "min_separation_each_side",
+            "value": 5,
+            "unit": "ft"
+          },
+          {
+            "name": "max_feature_height",
+            "value": 24,
+            "unit": "ft",
+            "note": "The string 'height \u2264 24'' appears exactly; datum for height measurement is unclear."
+          }
+        ],
+        "Conditions": [
+          {
+            "type": "mandatory",
+            "text": "Each feature length shall be less than or equal to 7.5 ft.",
+            "operator": "<=",
+            "left": "feature_length",
+            "right": {
+              "ref": "max_individual_feature_length",
+              "value": 7.5,
+              "unit": "ft"
+            }
+          },
+          {
+            "type": "mandatory",
+            "text": "The cumulative length of all features shall be less than or equal to 15 ft.",
+            "operator": "<=",
+            "left": "cumulative_length_all_features",
+            "right": {
+              "ref": "max_cumulative_length",
+              "value": 15,
+              "unit": "ft"
+            }
+          },
+          {
+            "type": "mandatory",
+            "text": "Minimum separation between features on each side shall be at least 5 ft.",
+            "operator": ">=",
+            "left": "separation_between_features_each_side",
+            "right": {
+              "ref": "min_separation_each_side",
+              "value": 5,
+              "unit": "ft"
+            },
+            "ambiguous": true,
+            "ambiguity_note": "Phrase 'on each side' is unclear; it may refer to separation from adjacent features in both directions along the facade/roof or to other elements. Clarify measurement axis and reference points."
+          },
+          {
+            "type": "mandatory",
+            "text": "Feature height shall be less than or equal to 24 ft.",
+            "operator": "<=",
+            "left": "feature_height",
+            "right": {
+              "ref": "max_feature_height",
+              "value": 24,
+              "unit": "ft"
+            },
+            "ambiguous": true,
+            "ambiguity_note": "Source states 'height \u2264 24'' without specifying datum (grade, roof, daylight plane). Clarification required."
+          }
+        ],
+        "Exceptions": [],
+        "Relationships": [
+          {
+            "type": "illustration",
+            "figure": "Figure 20",
+            "page": 26
+          },
+          {
+            "type": "illustration",
+            "figure": "Figure 23",
+            "page": 28
+          },
+          {
+            "type": "aggregation",
+            "text": "Cumulative length constraint applies across all features listed in applicability within the same context/plane."
+          }
+        ]
+      },
+      {
+        "Qualifiers": {
+          "scope": "Allowable daylight plane protrusions summary",
+          "applicability": [
+            "Cornices",
+            "Eaves",
+            "Similar architectural features"
+          ],
+          "exclusions": [
+            "Flat or continuous walls",
+            "Enclosures usable for interior space"
+          ]
+        },
+        "Variables": [
+          {
+            "name": "protrusion_beyond_daylight_plane",
+            "description": "Perpendicular distance the feature extends beyond the daylight plane",
+            "unit": "ft"
+          }
+        ],
+        "Constants": [
+          {
+            "name": "max_protrusion",
+            "value": 2,
+            "unit": "ft"
+          }
+        ],
+        "Conditions": [
+          {
+            "type": "mandatory",
+            "text": "Cornices, eaves, and similar architectural features may protrude beyond the daylight plane by no more than 2 ft.",
+            "operator": "<=",
+            "left": "protrusion_beyond_daylight_plane",
+            "right": {
+              "ref": "max_protrusion",
+              "value": 2,
+              "unit": "ft"
+            }
+          }
+        ],
+        "Exceptions": [
+          {
+            "condition": "Feature is a flat or continuous wall or an enclosure usable for interior space",
+            "effect": "This allowance does not apply; no protrusion authorized by this rule."
+          }
+        ],
+        "Relationships": [
+          {
+            "type": "illustration",
+            "figure": "Figure 22",
+            "page": 27
+          }
+        ]
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "[\n  {\n    \"Qualifiers\": {\n      \"scope\": \"Allowable daylight plane protrusions summary\",\n      \"applicability\": [\n        \"Television antennas\",\n        \"Radio antennas\"\n      ],\n      \"exclusions\": []\n    },\n    \"Variables\": [\n      {\n        \"name\": \"max_building_height\",\n        \"description\": \"Jurisdictionally defined maximum permitted building height for the site\",\n        \"unit\": \"ft\",\n        \"source\": \"external/zoning\"\n      },\n      {\n        \"name\": \"protrusion_above_max_height\",\n        \"description\": \"Vertical distance the antenna extends above the maximum building height\",\n        \"unit\": \"ft\"\n      }\n    ],\n    \"Constants\": [\n      {\n        \"name\": \"max_antenna_protrusion\",\n        \"value\": 15,\n        \"unit\": \"ft\"\n      }\n    ],\n    \"Conditions\": [\n      {\n        \"type\": \"mandatory\",\n        \"text\": \"Television and radio antennas may extend above the maximum building height by no more than 15 ft.\",\n        \"operator\": \"<=\",\n        \"left\": \"protrusion_above_max_height\",\n        \"right\": {\n          \"ref\": \"max_antenna_protrusion\",\n          \"value\": 15,\n          \"unit\": \"ft\"\n        }\n      }\n    ],\n    \"Exceptions\": [],\n    \"Relationships\": [\n      {\n        \"type\": \"context\",\n        \"text\": \"Listed under 'Allowable daylight plane protrusions summary'; this row measures allowance relative to maximum building height, not explicitly to the daylight plane.\"\n      }\n    ]\n  },\n  {\n    \"Qualifiers\": {\n      \"scope\": \"Allowable daylight plane protrusions summary\",\n      \"applicability\": [\n        \"Chimneys\",\n        \"Flues\"\n      ],\n      \"exclusions\": [\n        \"Chimneys or flues with width >= 5 ft\"\n      ]\n    },\n    \"Variables\": [\n      {\n        \"name\": \"width\",\n        \"description\": \"Maximum cross-sectional width of the chimney or flue\",\n        \"unit\": \"ft\"\n      },\n      {\n        \"name\": \"required_clearance_per_code\",\n        \"description\": \"Minimum required clearance as specified by Building Code Chapter 16.04\",\n        \"unit\": \"ft\",\n        \"source\": \"Building Code Chapter 16.04\"\n      },\n      {\n        \"name\": \"protrusion_beyond_daylight_plane\",\n        \"description\": \"Extent of feature extending beyond the daylight plane\",\n        \"unit\": \"ft\"\n      }\n    ],\n    \"Constants\": [\n      {\n        \"name\": \"width_threshold\",\n        \"value\": 5,\n        \"unit\": \"ft\"\n      },\n      {\n        \"name\": \"applicable_standard\",\n        \"value\": \"Building Code Chapter 16.04\",\n        \"unit\": null\n      }\n    ],\n    \"Conditions\": [\n      {\n        \"type\": \"conditional\",\n        \"if\": [\n          {\n            \"left\": \"width\",\n            \"operator\": \"<\",\n            \"right\": {\n              \"value\": 5,\n              \"unit\": \"ft\"\n            }\n          }\n        ],\n        \"then\": [\n          {\n            \"text\": \"Feature may extend beyond the daylight plane only as necessary to meet the minimum required clearance of Building Code (Chapter 16.04).\",\n            \"operator\": \"<= (by necessity)\",\n            \"left\": \"protrusion_beyond_daylight_plane\",\n            \"right\": {\n              \"ref\": \"required_clearance_per_code\",\n              \"unit\": \"ft\"\n            },\n            \"dependency\": \"Building Code Chapter 16.04\"\n          }\n        ]\n      }\n    ],\n    \"Exceptions\": [\n      {\n        \"condition\": \"width >= 5 ft\",\n        \"effect\": \"This allowance does not apply; no protrusion beyond daylight plane authorized by this rule.\"\n      }\n    ],\n    \"Relationships\": [\n      {\n        \"type\": \"illustration\",\n        \"figure\": \"Figure 20\",\n        \"page\": 26\n      },\n      {\n        \"type\": \"dependency\",\n        \"reference\": \"Building Code Chapter 16.04\",\n        \"dependency_detail\": \"Minimum clearances defined therein determine permissible extent of protrusion.\"\n      }\n    ]\n  },\n  {\n    \"Qualifiers\": {\n      \"scope\": \"Allowable daylight plane protrusions summary\",\n      \"applicability\": [\n        \"Dormers\",\n        \"Roof decks\",\n        \"Gables\",\n        \"Similar architectural features\"\n      ],\n      \"exclusions\": []\n    },\n    \"Variables\": [\n      {\n        \"name\": \"feature_length\",\n        \"description\": \"Length of an individual feature measured along the plane/facade/roof line\",\n        \"unit\": \"ft\"\n      },\n      {\n        \"name\": \"cumulative_length_all_features\",\n        \"description\": \"Sum of lengths of all applicable features\",\n        \"unit\": \"ft\"\n      },\n      {\n        \"name\": \"separation_between_features_each_side\",\n        \"description\": \"Clear distance between adjacent features on each side\",\n        \"unit\": \"ft\"\n      },\n      {\n        \"name\": \"feature_height\",\n        \"description\": \"Height of the feature (datum unclear in source text)\",\n        \"unit\": \"ft\"\n      }\n    ],\n    \"Constants\": [\n      {\n        \"name\": \"max_individual_feature_length\",\n        \"value\": 7.5,\n        \"unit\": \"ft\"\n      },\n      {\n        \"name\": \"max_cumulative_length\",\n        \"value\": 15,\n        \"unit\": \"ft\"\n      },\n      {\n        \"name\": \"min_separation_each_side\",\n        \"value\": 5,\n        \"unit\": \"ft\"\n      },\n      {\n        \"name\": \"max_feature_height\",\n        \"value\": 24,\n        \"unit\": \"ft\",\n        \"note\": \"The string 'height \u2264 24'' appears exactly; datum for height measurement is unclear.\"\n      }\n    ],\n    \"Conditions\": [\n      {\n        \"type\": \"mandatory\",\n        \"text\": \"Each feature length shall be less than or equal to 7.5 ft.\",\n        \"operator\": \"<=\",\n        \"left\": \"feature_length\",\n        \"right\": {\n          \"ref\": \"max_individual_feature_length\",\n          \"value\": 7.5,\n          \"unit\": \"ft\"\n        }\n      },\n      {\n        \"type\": \"mandatory\",\n        \"text\": \"The cumulative length of all features shall be less than or equal to 15 ft.\",\n        \"operator\": \"<=\",\n        \"left\": \"cumulative_length_all_features\",\n        \"right\": {\n          \"ref\": \"max_cumulative_length\",\n          \"value\": 15,\n          \"unit\": \"ft\"\n        }\n      },\n      {\n        \"type\": \"mandatory\",\n        \"text\": \"Minimum separation between features on each side shall be at least 5 ft.\",\n        \"operator\": \">=\",\n        \"left\": \"separation_between_features_each_side\",\n        \"right\": {\n          \"ref\": \"min_separation_each_side\",\n          \"value\": 5,\n          \"unit\": \"ft\"\n        },\n        \"ambiguous\": true,\n        \"ambiguity_note\": \"Phrase 'on each side' is unclear; it may refer to separation from adjacent features in both directions along the facade/roof or to other elements. Clarify measurement axis and reference points.\"\n      },\n      {\n        \"type\": \"mandatory\",\n        \"text\": \"Feature height shall be less than or equal to 24 ft.\",\n        \"operator\": \"<=\",\n        \"left\": \"feature_height\",\n        \"right\": {\n          \"ref\": \"max_feature_height\",\n          \"value\": 24,\n          \"unit\": \"ft\"\n        },\n        \"ambiguous\": true,\n        \"ambiguity_note\": \"Source states 'height \u2264 24'' without specifying datum (grade, roof, daylight plane). Clarification required.\"\n      }\n    ],\n    \"Exceptions\": [],\n    \"Relationships\": [\n      {\n        \"type\": \"illustration\",\n        \"figure\": \"Figure 20\",\n        \"page\": 26\n      },\n      {\n        \"type\": \"illustration\",\n        \"figure\": \"Figure 23\",\n        \"page\": 28\n      },\n      {\n        \"type\": \"aggregation\",\n        \"text\": \"Cumulative length constraint applies across all features listed in applicability within the same context/plane.\"\n      }\n    ]\n  },\n  {\n    \"Qualifiers\": {\n      \"scope\": \"Allowable daylight plane protrusions summary\",\n      \"applicability\": [\n        \"Cornices\",\n        \"Eaves\",\n        \"Similar architectural features\"\n      ],\n      \"exclusions\": [\n        \"Flat or continuous walls\",\n        \"Enclosures usable for interior space\"\n      ]\n    },\n    \"Variables\": [\n      {\n        \"name\": \"protrusion_beyond_daylight_plane\",\n        \"description\": \"Perpendicular distance the feature extends beyond the daylight plane\",\n        \"unit\": \"ft\"\n      }\n    ],\n    \"Constants\": [\n      {\n        \"name\": \"max_protrusion\",\n        \"value\": 2,\n        \"unit\": \"ft\"\n      }\n    ],\n    \"Conditions\": [\n      {\n        \"type\": \"mandatory\",\n        \"text\": \"Cornices, eaves, and similar architectural features may protrude beyond the daylight plane by no more than 2 ft.\",\n        \"operator\": \"<=\",\n        \"left\": \"protrusion_beyond_daylight_plane\",\n        \"right\": {\n          \"ref\": \"max_protrusion\",\n          \"value\": 2,\n          \"unit\": \"ft\"\n        }\n      }\n    ],\n    \"Exceptions\": [\n      {\n        \"condition\": \"Feature is a flat or continuous wall or an enclosure usable for interior space\",\n        \"effect\": \"This allowance does not apply; no protrusion authorized by this rule.\"\n      }\n    ],\n    \"Relationships\": [\n      {\n        \"type\": \"illustration\",\n        \"figure\": \"Figure 22\",\n        \"page\": 27\n      }\n    ]\n  }\n]",
+    "response_time": 113.20380687713623,
+    "input_tokens": 677,
+    "output_tokens": 6343,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 15:54:08",
+  "model": "openai/gpt-5",
+  "success": true
+}

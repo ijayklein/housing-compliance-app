@@ -1,0 +1,12 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_20.png",
+  "image_name": "Page_20.png",
+  "analysis": {
+    "raw_content": "Exact extraction from the provided page image:\n\nPage title:\n- Recessed porches on the 1st floor\n\nMain rule block:\n- Recessed porches on the ground floor do NOT count toward gross floor area if ALL the following criteria apply:\n  - Depth of porch is less than 10' and,\n  - Porch ceiling is below 2nd floor and,\n  - Exterior side is substantially open.\n\nNote (boxed on right side):\n- Note: It is the city's policy to consider one-story construction to be construction less than 17' above finished floor. If the porch space is higher, the area will count again as 2nd story equivalency.\n\nFigure caption:\n- Fig 9 Recessed porches on the 1st floor\n\nLeft diagram (Example A) labels and caption:\n- 2nd floor line\n- Porch ceiling below 2nd floor\n- Depth < 10'\n- Caption: A This example complies with all three criteria and does NOT count toward gross floor area\n\nRight diagram (Example B) labels and caption:\n- 2nd floor line\n- Height extends past 2nd floor line\n- Depth > 10'\n- Caption:\n  - B This example violates two of the three criteria:\n    - the porch depth is greater than 10' and\n    - the porch ceiling is above the 2nd floor\n  - Therefore it DOES count toward gross floor area and if it is higher than 17' it will count twice (see note).\n\nPage number:\n- 14",
+    "content_length": 1259,
+    "parse_error": false
+  },
+  "timestamp": "2025-09-16 14:07:24",
+  "model": "openai/gpt-5",
+  "success": true
+}

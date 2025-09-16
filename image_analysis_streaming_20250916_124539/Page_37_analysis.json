@@ -1,0 +1,12 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_37.png",
+  "image_name": "Page_37.png",
+  "analysis": {
+    "parse_error": true,
+    "error": "JSON parse failed: Unterminated string starting at: line 10 column 9 (char 733)",
+    "raw_response": "{\n    \"page\": \"31\",\n    \"heading\": \"Accessory structures site planning\",\n    \"content\": \"Note: Site planning for accessory buildings differs from that for parking structures in one way. A special allowance enables garages to be located in the rear/side yards even when the lot is not deep enough to maintain the 75' minimum distance from the front lot line. This does not apply to non-parking accessory structures.\",\n    \"figures\": [\n        \"Fig 24 Examples of site planning solutions for accessory "
+  },
+  "timestamp": "2025-09-16 12:47:07",
+  "model": "anthropic/claude-3.5-sonnet",
+  "success": false
+}

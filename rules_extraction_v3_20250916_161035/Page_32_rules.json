@@ -1,0 +1,52 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_32.md",
+  "file_name": "Page_32.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "rule": "Primary Daylight Plane (Sides)",
+        "Qualifiers": {
+          "Scope": "An invisible tent-like plane intended to contain development on a lot in a way that preserves privacy and exposure to natural light for adjacent properties. It works in conjunction with setbacks and height limits.",
+          "Applicability": "Regulates structures located within the buildable area.",
+          "Exclusions": "Does not apply to structures located in the rear and/or side yards. These are regulated by the 'accessory-structure daylight plan'."
+        },
+        "Variables": {
+          "Dimensional": "Average grade; Existing grade of the structure (at midpoint of wall); Grade at the nearest point on the adjacent lot; Max. building height.",
+          "Material": "",
+          "Environmental": "",
+          "Usage": ""
+        },
+        "Constants": {
+          "Numerical values": "Angle of plane: 45\u00b0; Starting height of plane: 10 feet from average grade; Maximum height for specific portions: 24 feet. (Note: The condition for applying the 24' max is ambiguous due to unclear text: '24' max. for portions [unclear remainder of this note]').",
+          "Specs": "The side daylight plane is measured vertically up from the side lot line.",
+          "Procedures": "The daylight plane is measured from 'average grade'. 'Average grade' is established using 'existing grade' before any grading or fill occurs."
+        },
+        "Conditions": {
+          "Mandatory": "Structures within the buildable area must be contained within the primary daylight plane.",
+          "Optional": "",
+          "Conditional logic": "If a structure is within the buildable area, its profile must not penetrate the 45-degree plane that starts 10 feet above average grade at the side lot line.",
+          "Dependencies": "The final maximum allowed building height is dependent on this daylight plane rule AND the Building Code. (Note: Ambiguous language in source: 'Max. allowed is [regulated] by Building Code')."
+        },
+        "Exceptions": {
+          "Explicit deviations": "",
+          "Alternatives": "",
+          "Special cases": "A maximum height of 24 feet applies to certain portions of a structure, but the specific conditions for this case are not fully legible in the source text."
+        },
+        "Relationships": {
+          "Hierarchical": "This rule is a component of a larger regulatory framework that includes setbacks and height limits to control the overall building envelope.",
+          "Cross-references": "Code Section 18.12.040 (a) Table 2 (p. 26, 28); Code Section 18.04 (p. 27); Code Section 18.12.050 (b) (2) (p. 29); Code Section 18.12.040 (i) (p. 29); Figure 44 (p. 42) for definition of 'Average grade'; Building Code for overall maximum height.",
+          "Logical dependencies": "This rule for 'Primary' structures is distinct from the 'accessory-structure daylight plan' which applies to structures in rear/side yards. The 'Side' daylight plane (measured at lot line) is distinct from the 'Rear' daylight plane (measured at rear setback)."
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n  {\n    \"rule\": \"Primary Daylight Plane (Sides)\",\n    \"Qualifiers\": {\n      \"Scope\": \"An invisible tent-like plane intended to contain development on a lot in a way that preserves privacy and exposure to natural light for adjacent properties. It works in conjunction with setbacks and height limits.\",\n      \"Applicability\": \"Regulates structures located within the buildable area.\",\n      \"Exclusions\": \"Does not apply to structures located in the rear and/or side yards. These are regulated by the 'accessory-structure daylight plan'.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"Average grade; Existing grade of the structure (at midpoint of wall); Grade at the nearest point on the adjacent lot; Max. building height.\",\n      \"Material\": \"\",\n      \"Environmental\": \"\",\n      \"Usage\": \"\"\n    },\n    \"Constants\": {\n      \"Numerical values\": \"Angle of plane: 45\u00b0; Starting height of plane: 10 feet from average grade; Maximum height for specific portions: 24 feet. (Note: The condition for applying the 24' max is ambiguous due to unclear text: '24' max. for portions [unclear remainder of this note]').\",\n      \"Specs\": \"The side daylight plane is measured vertically up from the side lot line.\",\n      \"Procedures\": \"The daylight plane is measured from 'average grade'. 'Average grade' is established using 'existing grade' before any grading or fill occurs.\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"Structures within the buildable area must be contained within the primary daylight plane.\",\n      \"Optional\": \"\",\n      \"Conditional logic\": \"If a structure is within the buildable area, its profile must not penetrate the 45-degree plane that starts 10 feet above average grade at the side lot line.\",\n      \"Dependencies\": \"The final maximum allowed building height is dependent on this daylight plane rule AND the Building Code. (Note: Ambiguous language in source: 'Max. allowed is [regulated] by Building Code').\"\n    },\n    \"Exceptions\": {\n      \"Explicit deviations\": \"\",\n      \"Alternatives\": \"\",\n      \"Special cases\": \"A maximum height of 24 feet applies to certain portions of a structure, but the specific conditions for this case are not fully legible in the source text.\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"This rule is a component of a larger regulatory framework that includes setbacks and height limits to control the overall building envelope.\",\n      \"Cross-references\": \"Code Section 18.12.040 (a) Table 2 (p. 26, 28); Code Section 18.04 (p. 27); Code Section 18.12.050 (b) (2) (p. 29); Code Section 18.12.040 (i) (p. 29); Figure 44 (p. 42) for definition of 'Average grade'; Building Code for overall maximum height.\",\n      \"Logical dependencies\": \"This rule for 'Primary' structures is distinct from the 'accessory-structure daylight plan' which applies to structures in rear/side yards. The 'Side' daylight plane (measured at lot line) is distinct from the 'Rear' daylight plane (measured at rear setback).\"\n    }\n  }\n]\n```",
+    "response_time": 26.103688955307007,
+    "input_tokens": 1043,
+    "output_tokens": 2816,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 16:12:47",
+  "model": "google/gemini-2.5-pro",
+  "success": true
+}

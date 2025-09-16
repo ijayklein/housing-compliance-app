@@ -1,0 +1,171 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_19.png",
+  "image_name": "Page_19.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Fig 8 Entry feature with 2nd floor above\n\nNote: The 2nd floor over a vaulted entry will count as usual. Therefore, the area will count three times toward gross floor area.\n\nNote: If the entryway is considered to be a vaulted entryway the area will be counted as follows:\n\u2022 In this example, a portion of the entryway is recessed beyond the house facade and roof. It is included in the area that counts.\n\u2022 The area is measured to the outside material of the entryway feature.\n\u2022 The area counts TWICE toward gross floor area.\n\nIsometric View\nSide Elevation\nPorch Floor Plan",
+      "visual_elements": [
+        {
+          "type": "figure",
+          "description": "Isometric View of a building corner showing an entry feature with a 2nd floor above. The height from grade to the bottom of the 2nd floor is indicated with a vertical dimension line labeled 'Height'. The entryway includes an arched opening. Dashed lines indicate the intersection of the front facade and underside or bottom of the 2nd floor.",
+          "location": "Left side of page"
+        },
+        {
+          "type": "figure",
+          "description": "Side Elevation view of the same entry feature showing the vertical height dimension from grade to the bottom of the 2nd floor and the top of the 2nd floor. The intersection of the front facade and underside or bottom of the 2nd floor is marked with a horizontal dimension line.",
+          "location": "Center of page"
+        },
+        {
+          "type": "figure",
+          "description": "Porch Floor Plan showing the outline of the entryway floor area that counts TWICE if the entryway is vaulted. The outline is marked with a thick black line. A door swing is shown at the top of the plan.",
+          "location": "Right side of page"
+        },
+        {
+          "type": "note box",
+          "description": "Gray shaded box containing the note: 'Note: The 2nd floor over a vaulted entry will count as usual. Therefore, the area will count three times toward gross floor area.'",
+          "location": "Top right corner of page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Gross floor area count multiplier for 2nd floor over vaulted entry",
+          "value_type": "Numerical",
+          "value": "3",
+          "unit": "times"
+        },
+        {
+          "parameter": "Gross floor area count multiplier for vaulted entryway floor area",
+          "value_type": "Numerical",
+          "value": "2",
+          "unit": "times"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": null,
+        "subheadings": [],
+        "sections": []
+      },
+      "additional_notes": [
+        "Page number 13 at bottom right corner.",
+        "No handwritten annotations or stamps detected.",
+        "Text and figures are clear and legible."
+      ],
+      "cross_references": [],
+      "conditions_and_qualifiers": {
+        "qualifiers": [
+          {
+            "id": "q1",
+            "text": "If the entryway is considered to be a vaulted entryway",
+            "applies_to_conditions": [
+              "c1",
+              "c2",
+              "c3"
+            ],
+            "scope": "Specific"
+          }
+        ],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "A portion of the entryway is recessed beyond the house facade and roof. It is included in the area that counts.",
+            "value_type": "Boolean",
+            "operator": "contains",
+            "threshold_value": "recessed portion included",
+            "unit": null
+          },
+          {
+            "id": "c2",
+            "text": "The area is measured to the outside material of the entryway feature.",
+            "value_type": "Text",
+            "operator": "matches",
+            "threshold_value": "outside material measurement",
+            "unit": null
+          },
+          {
+            "id": "c3",
+            "text": "The area counts TWICE toward gross floor area.",
+            "value_type": "Numerical",
+            "operator": "=",
+            "threshold_value": "2",
+            "unit": "times"
+          }
+        ],
+        "logical_relationships": [
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c1",
+              "c2",
+              "c3"
+            ],
+            "expression": "If the entryway is considered to be a vaulted entryway (q1), then conditions c1, c2, and c3 apply.",
+            "evaluation_order": 1
+          }
+        ],
+        "execution_sequence": [
+          {
+            "step": 1,
+            "action": "Determine if the entryway is considered vaulted (qualifier q1).",
+            "condition_ids": [],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 2,
+            "action": "If vaulted, verify that the recessed portion beyond facade and roof is included (condition c1).",
+            "condition_ids": [
+              "c1"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": [
+              1
+            ]
+          },
+          {
+            "step": 3,
+            "action": "Measure the area to the outside material of the entryway feature (condition c2).",
+            "condition_ids": [
+              "c2"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": [
+              1
+            ]
+          },
+          {
+            "step": 4,
+            "action": "Count the area twice toward gross floor area (condition c3).",
+            "condition_ids": [
+              "c3"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": [
+              1,
+              2,
+              3
+            ]
+          },
+          {
+            "step": 5,
+            "action": "Count the 2nd floor over the vaulted entry as usual, counting three times toward gross floor area.",
+            "condition_ids": [],
+            "qualifier_ids": [],
+            "dependencies": [
+              4
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:13:16",
+  "model_used": "openai/gpt-4.1-mini"
+}

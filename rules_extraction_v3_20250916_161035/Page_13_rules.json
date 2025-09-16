@@ -1,0 +1,161 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_13.md",
+  "file_name": "Page_13.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "rule": "Roofed Porch Definition",
+        "Qualifiers": {
+          "Scope": "Defines a type of structure, the 'Roofed porch', as illustrated in Figure 4.",
+          "Applicability": "Structures classified as 'A Roofed porch'.",
+          "Exclusions": "Roofed entry way (vaulted or not), Combination porch & vaulted entry way."
+        },
+        "Variables": {
+          "Dimensional": "Height",
+          "Material": "",
+          "Environmental": "",
+          "Usage": "Porch"
+        },
+        "Constants": {
+          "Numerical values": "",
+          "Specs": "",
+          "Standards": "",
+          "Procedures": "The method for measuring the height of porches is specified elsewhere."
+        },
+        "Conditions": {
+          "Mandatory": "No specific constraints are listed on this page for this type.",
+          "Optional": "",
+          "Conditional logic": "",
+          "Dependencies": ""
+        },
+        "Exceptions": {
+          "Explicit deviations": "",
+          "Alternatives": "",
+          "Special cases": ""
+        },
+        "Relationships": {
+          "Hierarchical": "This is type 'A' within the classification 'Types of porches and entry ways' (Figure 4).",
+          "Cross-references": "See how to measure height of porches & entry features in Figs 6-8 on pp. 11-13.",
+          "Logical dependencies": ""
+        }
+      },
+      {
+        "rule": "Roofed Entry Way (not vaulted) Height Regulation",
+        "Qualifiers": {
+          "Scope": "Regulates the maximum height of non-vaulted roofed entryways.",
+          "Applicability": "Structures classified as 'B Roofed entry way (not vaulted)'.",
+          "Exclusions": "Vaulted entryways, Combination porch & vaulted entry way."
+        },
+        "Variables": {
+          "Dimensional": "Height",
+          "Material": "",
+          "Environmental": "",
+          "Usage": "Entry way"
+        },
+        "Constants": {
+          "Numerical values": "12'",
+          "Specs": "Measurement is 'above grade'.",
+          "Standards": "",
+          "Procedures": "The method for measuring height is specified elsewhere."
+        },
+        "Conditions": {
+          "Mandatory": "The height of the structure must be less than 12 feet above grade.",
+          "Optional": "",
+          "Conditional logic": "Height < 12'",
+          "Dependencies": "Applies only if the structure is a 'Roofed entry way (not vaulted)'."
+        },
+        "Exceptions": {
+          "Explicit deviations": "",
+          "Alternatives": "",
+          "Special cases": ""
+        },
+        "Relationships": {
+          "Hierarchical": "This is type 'B' within the classification 'Types of porches and entry ways' (Figure 4).",
+          "Cross-references": "See how to measure height of porches & entry features in Figs 6-8 on pp. 11-13.",
+          "Logical dependencies": "This rule is mutually exclusive with rules for structures where height must be greater than 12'."
+        }
+      },
+      {
+        "rule": "Vaulted Entry Way Height Regulation",
+        "Qualifiers": {
+          "Scope": "Regulates the minimum height of vaulted entryways.",
+          "Applicability": "Structures classified as 'C Vaulted entry way'.",
+          "Exclusions": "Roofed entry way (not vaulted)."
+        },
+        "Variables": {
+          "Dimensional": "Height",
+          "Material": "",
+          "Environmental": "",
+          "Usage": "Entry way"
+        },
+        "Constants": {
+          "Numerical values": "12'",
+          "Specs": "Measurement is 'above grade'.",
+          "Standards": "",
+          "Procedures": "The method for measuring height is specified elsewhere."
+        },
+        "Conditions": {
+          "Mandatory": "The height of the structure must be greater than 12 feet above grade.",
+          "Optional": "",
+          "Conditional logic": "Height > 12'",
+          "Dependencies": "Applies only if the structure is a 'Vaulted entry way'."
+        },
+        "Exceptions": {
+          "Explicit deviations": "",
+          "Alternatives": "",
+          "Special cases": ""
+        },
+        "Relationships": {
+          "Hierarchical": "This is type 'C' within the classification 'Types of porches and entry ways' (Figure 4).",
+          "Cross-references": "See how to measure height of porches & entry features in Figs 6-8 on pp. 11-13.",
+          "Logical dependencies": "This rule is mutually exclusive with rules for structures where height must be less than 12'."
+        }
+      },
+      {
+        "rule": "Combination Porch & Vaulted Entry Way Height Regulation",
+        "Qualifiers": {
+          "Scope": "Regulates the minimum height of combination porch and vaulted entryway structures.",
+          "Applicability": "Structures classified as 'D Combination porch & vaulted entry way'.",
+          "Exclusions": "Structures that are not a combination of a porch and a vaulted entryway."
+        },
+        "Variables": {
+          "Dimensional": "Height",
+          "Material": "",
+          "Environmental": "",
+          "Usage": "Porch and Entry way"
+        },
+        "Constants": {
+          "Numerical values": "12'",
+          "Specs": "Measurement is 'above grade'.",
+          "Standards": "",
+          "Procedures": "The method for measuring height is specified elsewhere."
+        },
+        "Conditions": {
+          "Mandatory": "The height of the structure must be greater than 12 feet above grade.",
+          "Optional": "",
+          "Conditional logic": "Height > 12'",
+          "Dependencies": "Applies only if the structure is a 'Combination porch & vaulted entry way'."
+        },
+        "Exceptions": {
+          "Explicit deviations": "",
+          "Alternatives": "",
+          "Special cases": ""
+        },
+        "Relationships": {
+          "Hierarchical": "This is type 'D' within the classification 'Types of porches and entry ways' (Figure 4).",
+          "Cross-references": "See how to measure height of porches & entry features in Figs 6-8 on pp. 11-13.",
+          "Logical dependencies": "Shares the same height condition as the 'Vaulted entry way' rule (Type C)."
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n  {\n    \"rule\": \"Roofed Porch Definition\",\n    \"Qualifiers\": {\n      \"Scope\": \"Defines a type of structure, the 'Roofed porch', as illustrated in Figure 4.\",\n      \"Applicability\": \"Structures classified as 'A Roofed porch'.\",\n      \"Exclusions\": \"Roofed entry way (vaulted or not), Combination porch & vaulted entry way.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"Height\",\n      \"Material\": \"\",\n      \"Environmental\": \"\",\n      \"Usage\": \"Porch\"\n    },\n    \"Constants\": {\n      \"Numerical values\": \"\",\n      \"Specs\": \"\",\n      \"Standards\": \"\",\n      \"Procedures\": \"The method for measuring the height of porches is specified elsewhere.\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"No specific constraints are listed on this page for this type.\",\n      \"Optional\": \"\",\n      \"Conditional logic\": \"\",\n      \"Dependencies\": \"\"\n    },\n    \"Exceptions\": {\n      \"Explicit deviations\": \"\",\n      \"Alternatives\": \"\",\n      \"Special cases\": \"\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"This is type 'A' within the classification 'Types of porches and entry ways' (Figure 4).\",\n      \"Cross-references\": \"See how to measure height of porches & entry features in Figs 6-8 on pp. 11-13.\",\n      \"Logical dependencies\": \"\"\n    }\n  },\n  {\n    \"rule\": \"Roofed Entry Way (not vaulted) Height Regulation\",\n    \"Qualifiers\": {\n      \"Scope\": \"Regulates the maximum height of non-vaulted roofed entryways.\",\n      \"Applicability\": \"Structures classified as 'B Roofed entry way (not vaulted)'.\",\n      \"Exclusions\": \"Vaulted entryways, Combination porch & vaulted entry way.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"Height\",\n      \"Material\": \"\",\n      \"Environmental\": \"\",\n      \"Usage\": \"Entry way\"\n    },\n    \"Constants\": {\n      \"Numerical values\": \"12'\",\n      \"Specs\": \"Measurement is 'above grade'.\",\n      \"Standards\": \"\",\n      \"Procedures\": \"The method for measuring height is specified elsewhere.\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"The height of the structure must be less than 12 feet above grade.\",\n      \"Optional\": \"\",\n      \"Conditional logic\": \"Height < 12'\",\n      \"Dependencies\": \"Applies only if the structure is a 'Roofed entry way (not vaulted)'.\"\n    },\n    \"Exceptions\": {\n      \"Explicit deviations\": \"\",\n      \"Alternatives\": \"\",\n      \"Special cases\": \"\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"This is type 'B' within the classification 'Types of porches and entry ways' (Figure 4).\",\n      \"Cross-references\": \"See how to measure height of porches & entry features in Figs 6-8 on pp. 11-13.\",\n      \"Logical dependencies\": \"This rule is mutually exclusive with rules for structures where height must be greater than 12'.\"\n    }\n  },\n  {\n    \"rule\": \"Vaulted Entry Way Height Regulation\",\n    \"Qualifiers\": {\n      \"Scope\": \"Regulates the minimum height of vaulted entryways.\",\n      \"Applicability\": \"Structures classified as 'C Vaulted entry way'.\",\n      \"Exclusions\": \"Roofed entry way (not vaulted).\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"Height\",\n      \"Material\": \"\",\n      \"Environmental\": \"\",\n      \"Usage\": \"Entry way\"\n    },\n    \"Constants\": {\n      \"Numerical values\": \"12'\",\n      \"Specs\": \"Measurement is 'above grade'.\",\n      \"Standards\": \"\",\n      \"Procedures\": \"The method for measuring height is specified elsewhere.\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"The height of the structure must be greater than 12 feet above grade.\",\n      \"Optional\": \"\",\n      \"Conditional logic\": \"Height > 12'\",\n      \"Dependencies\": \"Applies only if the structure is a 'Vaulted entry way'.\"\n    },\n    \"Exceptions\": {\n      \"Explicit deviations\": \"\",\n      \"Alternatives\": \"\",\n      \"Special cases\": \"\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"This is type 'C' within the classification 'Types of porches and entry ways' (Figure 4).\",\n      \"Cross-references\": \"See how to measure height of porches & entry features in Figs 6-8 on pp. 11-13.\",\n      \"Logical dependencies\": \"This rule is mutually exclusive with rules for structures where height must be less than 12'.\"\n    }\n  },\n  {\n    \"rule\": \"Combination Porch & Vaulted Entry Way Height Regulation\",\n    \"Qualifiers\": {\n      \"Scope\": \"Regulates the minimum height of combination porch and vaulted entryway structures.\",\n      \"Applicability\": \"Structures classified as 'D Combination porch & vaulted entry way'.\",\n      \"Exclusions\": \"Structures that are not a combination of a porch and a vaulted entryway.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"Height\",\n      \"Material\": \"\",\n      \"Environmental\": \"\",\n      \"Usage\": \"Porch and Entry way\"\n    },\n    \"Constants\": {\n      \"Numerical values\": \"12'\",\n      \"Specs\": \"Measurement is 'above grade'.\",\n      \"Standards\": \"\",\n      \"Procedures\": \"The method for measuring height is specified elsewhere.\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"The height of the structure must be greater than 12 feet above grade.\",\n      \"Optional\": \"\",\n      \"Conditional logic\": \"Height > 12'\",\n      \"Dependencies\": \"Applies only if the structure is a 'Combination porch & vaulted entry way'.\"\n    },\n    \"Exceptions\": {\n      \"Explicit deviations\": \"\",\n      \"Alternatives\": \"\",\n      \"Special cases\": \"\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"This is type 'D' within the classification 'Types of porches and entry ways' (Figure 4).\",\n      \"Cross-references\": \"See how to measure height of porches & entry features in Figs 6-8 on pp. 11-13.\",\n      \"Logical dependencies\": \"Shares the same height condition as the 'Vaulted entry way' rule (Type C).\"\n    }\n  }\n]\n```",
+    "response_time": 43.41330695152283,
+    "input_tokens": 677,
+    "output_tokens": 5204,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 16:11:24",
+  "model": "google/gemini-2.5-pro",
+  "success": true
+}

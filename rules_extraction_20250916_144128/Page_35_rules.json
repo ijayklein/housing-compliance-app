@@ -1,0 +1,145 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_35.md",
+  "file_name": "Page_35.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "Rule": 1,
+        "Qualifiers": {
+          "Scope": "Allowable daylight plane protrusions",
+          "Applicability": "Television and radio antennas",
+          "Exclusions": null
+        },
+        "Variables": {
+          "Dimensional": "up to 15' above maximum building height",
+          "Material": null,
+          "Environmental": null,
+          "Usage": null
+        },
+        "Constants": {
+          "Numerical values": "15'",
+          "Specs": "maximum building height",
+          "Standards": null,
+          "Procedures": null
+        },
+        "Conditions": {
+          "Mandatory": null,
+          "Optional": null,
+          "Conditional logic": null,
+          "Dependencies": null
+        },
+        "Exceptions": null,
+        "Relationships": {
+          "Hierarchical": null,
+          "Cross-references": null,
+          "Logical dependencies": null
+        }
+      },
+      {
+        "Rule": 2,
+        "Qualifiers": {
+          "Scope": "Allowable daylight plane protrusions",
+          "Applicability": "Chimneys and flues < 5' wide",
+          "Exclusions": null
+        },
+        "Variables": {
+          "Dimensional": "may extend beyond the daylight plane",
+          "Material": null,
+          "Environmental": null,
+          "Usage": null
+        },
+        "Constants": {
+          "Numerical values": "5'",
+          "Specs": "minimum required clearance of Building Code (Chapter 16.04)",
+          "Standards": "Building Code (Chapter 16.04)",
+          "Procedures": null
+        },
+        "Conditions": {
+          "Mandatory": null,
+          "Optional": null,
+          "Conditional logic": null,
+          "Dependencies": null
+        },
+        "Exceptions": null,
+        "Relationships": {
+          "Hierarchical": null,
+          "Cross-references": "Figure 20 on p. 26",
+          "Logical dependencies": null
+        }
+      },
+      {
+        "Rule": 3,
+        "Qualifiers": {
+          "Scope": "Allowable daylight plane protrusions",
+          "Applicability": "Dormers, roof decks, gables, or similar architectural features",
+          "Exclusions": null
+        },
+        "Variables": {
+          "Dimensional": "each feature \u2264 7.5' long and cumulative length of all features \u2264 15' with min 5' separation between features (on each side); height \u2264 24'",
+          "Material": null,
+          "Environmental": null,
+          "Usage": null
+        },
+        "Constants": {
+          "Numerical values": "7.5', 15', 5', 24'",
+          "Specs": null,
+          "Standards": null,
+          "Procedures": null
+        },
+        "Conditions": {
+          "Mandatory": null,
+          "Optional": null,
+          "Conditional logic": null,
+          "Dependencies": null
+        },
+        "Exceptions": {
+          "Explicit deviations": "The string \u201cheight \u2264 24'\u201d is unclear; it appears exactly as shown in the image.",
+          "Alternatives": null,
+          "Special cases": null
+        },
+        "Relationships": {
+          "Hierarchical": null,
+          "Cross-references": "Figure 20 on p. 26 & Figure 23 on p. 28",
+          "Logical dependencies": null
+        }
+      },
+      {
+        "Rule": 4,
+        "Qualifiers": {
+          "Scope": "Allowable daylight plane protrusions",
+          "Applicability": "Cornices, eaves, and similar architectural features",
+          "Exclusions": "excluding flat or continuous walls or enclosures usable for interior space"
+        },
+        "Variables": {
+          "Dimensional": "max 2'",
+          "Material": null,
+          "Environmental": null,
+          "Usage": null
+        },
+        "Constants": {
+          "Numerical values": "2'",
+          "Specs": null,
+          "Standards": null,
+          "Procedures": null
+        },
+        "Conditions": {
+          "Mandatory": null,
+          "Optional": null,
+          "Conditional logic": null,
+          "Dependencies": null
+        },
+        "Exceptions": null,
+        "Relationships": {
+          "Hierarchical": null,
+          "Cross-references": "Figure 22 on p. 27",
+          "Logical dependencies": null
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n    {\n        \"Rule\": 1,\n        \"Qualifiers\": {\n            \"Scope\": \"Allowable daylight plane protrusions\",\n            \"Applicability\": \"Television and radio antennas\",\n            \"Exclusions\": null\n        },\n        \"Variables\": {\n            \"Dimensional\": \"up to 15' above maximum building height\",\n            \"Material\": null,\n            \"Environmental\": null,\n            \"Usage\": null\n        },\n        \"Constants\": {\n            \"Numerical values\": \"15'\",\n            \"Specs\": \"maximum building height\",\n            \"Standards\": null,\n            \"Procedures\": null\n        },\n        \"Conditions\": {\n            \"Mandatory\": null,\n            \"Optional\": null,\n            \"Conditional logic\": null,\n            \"Dependencies\": null\n        },\n        \"Exceptions\": null,\n        \"Relationships\": {\n            \"Hierarchical\": null,\n            \"Cross-references\": null,\n            \"Logical dependencies\": null\n        }\n    },\n    {\n        \"Rule\": 2,\n        \"Qualifiers\": {\n            \"Scope\": \"Allowable daylight plane protrusions\",\n            \"Applicability\": \"Chimneys and flues < 5' wide\",\n            \"Exclusions\": null\n        },\n        \"Variables\": {\n            \"Dimensional\": \"may extend beyond the daylight plane\",\n            \"Material\": null,\n            \"Environmental\": null,\n            \"Usage\": null\n        },\n        \"Constants\": {\n            \"Numerical values\": \"5'\",\n            \"Specs\": \"minimum required clearance of Building Code (Chapter 16.04)\",\n            \"Standards\": \"Building Code (Chapter 16.04)\",\n            \"Procedures\": null\n        },\n        \"Conditions\": {\n            \"Mandatory\": null,\n            \"Optional\": null,\n            \"Conditional logic\": null,\n            \"Dependencies\": null\n        },\n        \"Exceptions\": null,\n        \"Relationships\": {\n            \"Hierarchical\": null,\n            \"Cross-references\": \"Figure 20 on p. 26\",\n            \"Logical dependencies\": null\n        }\n    },\n    {\n        \"Rule\": 3,\n        \"Qualifiers\": {\n            \"Scope\": \"Allowable daylight plane protrusions\",\n            \"Applicability\": \"Dormers, roof decks, gables, or similar architectural features\",\n            \"Exclusions\": null\n        },\n        \"Variables\": {\n            \"Dimensional\": \"each feature \u2264 7.5' long and cumulative length of all features \u2264 15' with min 5' separation between features (on each side); height \u2264 24'\",\n            \"Material\": null,\n            \"Environmental\": null,\n            \"Usage\": null\n        },\n        \"Constants\": {\n            \"Numerical values\": \"7.5', 15', 5', 24'\",\n            \"Specs\": null,\n            \"Standards\": null,\n            \"Procedures\": null\n        },\n        \"Conditions\": {\n            \"Mandatory\": null,\n            \"Optional\": null,\n            \"Conditional logic\": null,\n            \"Dependencies\": null\n        },\n        \"Exceptions\": {\n            \"Explicit deviations\": \"The string \u201cheight \u2264 24'\u201d is unclear; it appears exactly as shown in the image.\",\n            \"Alternatives\": null,\n            \"Special cases\": null\n        },\n        \"Relationships\": {\n            \"Hierarchical\": null,\n            \"Cross-references\": \"Figure 20 on p. 26 & Figure 23 on p. 28\",\n            \"Logical dependencies\": null\n        }\n    },\n    {\n        \"Rule\": 4,\n        \"Qualifiers\": {\n            \"Scope\": \"Allowable daylight plane protrusions\",\n            \"Applicability\": \"Cornices, eaves, and similar architectural features\",\n            \"Exclusions\": \"excluding flat or continuous walls or enclosures usable for interior space\"\n        },\n        \"Variables\": {\n            \"Dimensional\": \"max 2'\",\n            \"Material\": null,\n            \"Environmental\": null,\n            \"Usage\": null\n        },\n        \"Constants\": {\n            \"Numerical values\": \"2'\",\n            \"Specs\": null,\n            \"Standards\": null,\n            \"Procedures\": null\n        },\n        \"Conditions\": {\n            \"Mandatory\": null,\n            \"Optional\": null,\n            \"Conditional logic\": null,\n            \"Dependencies\": null\n        },\n        \"Exceptions\": null,\n        \"Relationships\": {\n            \"Hierarchical\": null,\n            \"Cross-references\": \"Figure 22 on p. 27\",\n            \"Logical dependencies\": null\n        }\n    }\n]\n```"
+  },
+  "timestamp": "2025-09-16 14:42:59",
+  "model": "openai/gpt-4o",
+  "success": true
+}

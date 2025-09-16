@@ -1,0 +1,173 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_51.png",
+  "image_name": "Page_51.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Detached 2nd-dwelling units & associated parking site planning\n\nFig 41 Examples of site planning solutions for detached 2nd dwelling units and associated required parking\n\nA Detached & separate from main-dwelling parking\n\u2022 Main dwelling has a 1-car attached garage.\n\u2022 2nd dwelling has a 1-car detached garage. (Because it is detached and at least 75' from the front lot line, it may be located in the rear and side yards.)\n\u2022 Both dwellings use driveway for their uncovered spaces (beyond front setback)\n\nB Attached & separate from main-dwelling parking\n\u2022 Main dwelling has 1-car attached garage.\n\u2022 2nd dwelling has a 1-car attached garage. (Because attached, it must be located with the building area rather than in the rear or side yards).\n\u2022 Both dwellings use driveway for their uncovered spaces (beyond front setback)\n\nC Detached & combined with main-dwelling parking\n\u2022 Both dwellings share a 2-car detached garage. (Because it is detached and at least 75' from the front lot line, it may be located in the rear and side yards.)\n\u2022 Both dwellings use the driveway for their respective uncovered spaces (beyond front setback)\n\nD Combined w/ main-dwelling parking that is attached to main dwelling\n\u2022 Both dwellings share a 2-car attached garage.\n\u2022 Both dwellings use the driveway for their respective uncovered spaces (beyond front setback)\n\nInterior lot example\n\nKey\nCurb\nLot line\nSidewalk\nRequired setbacks\nDwelling\nBuildable area\n2nd-dwelling unit & associated pkg\nArea that may not be used to satisfy required parking spaces\nUncovered space",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Four side-by-side interior lot examples illustrating different site planning solutions for detached 2nd dwelling units and associated parking. Each diagram shows a lot with labeled areas including 'Rear yard', 'Front yard', 'Interior side yard', 'Buildable area', 'Main dwelling', and 'Detached 2nd dwelling unit 900 sf max'. Parking garages are shown as black boxes labeled with car capacity (1-car detached, 1-car attached, 2-car detached, 2-car attached). Driveways and sidewalks are depicted with lines and shading. Minimum 12' spacing between buildings is indicated. Each diagram corresponds to one of the four parking scenarios (A, B, C, D) described in the text. The diagrams include labels for curb, lot line, sidewalk, required setbacks, dwelling, buildable area, 2nd-dwelling unit & associated parking, area that may not be used to satisfy required parking spaces, and uncovered space.",
+          "location": "Middle to bottom of the page, spanning full width"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Detached 2nd dwelling unit maximum size",
+          "value_type": "Measurement",
+          "value": "900",
+          "unit": "sf"
+        },
+        {
+          "parameter": "Minimum distance from front lot line for detached garages",
+          "value_type": "Measurement",
+          "value": "75",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum spacing between main dwelling and 2nd dwelling",
+          "value_type": "Measurement",
+          "value": "12",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Garage car capacity (varies by scenario)",
+          "value_type": "Numerical",
+          "value": "1 or 2",
+          "unit": "cars"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Detached 2nd-dwelling units & associated parking site planning",
+        "subheadings": [
+          "A Detached & separate from main-dwelling parking",
+          "B Attached & separate from main-dwelling parking",
+          "C Detached & combined with main-dwelling parking",
+          "D Combined w/ main-dwelling parking that is attached to main dwelling"
+        ],
+        "sections": []
+      },
+      "additional_notes": [
+        "Page number 45 in bottom right corner",
+        "No handwritten annotations or stamps detected",
+        "Text and diagrams are clear and legible"
+      ],
+      "cross_references": [
+        "Fig 41 referenced in heading as example figure"
+      ],
+      "conditions_and_qualifiers": {
+        "qualifiers": [
+          {
+            "id": "q1",
+            "text": "Because it is detached and at least 75' from the front lot line, it may be located in the rear and side yards.",
+            "applies_to_conditions": [
+              "c1"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q2",
+            "text": "Because attached, it must be located with the building area rather than in the rear or side yards.",
+            "applies_to_conditions": [
+              "c2"
+            ],
+            "scope": "Specific"
+          }
+        ],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "2nd dwelling has a 1-car detached garage. (Because it is detached and at least 75' from the front lot line, it may be located in the rear and side yards.)",
+            "value_type": "Measurement",
+            "operator": ">=",
+            "threshold_value": "75",
+            "unit": "feet"
+          },
+          {
+            "id": "c2",
+            "text": "2nd dwelling has a 1-car attached garage. (Because attached, it must be located with the building area rather than in the rear or side yards).",
+            "value_type": "Text",
+            "operator": "contains",
+            "threshold_value": "located with the building area",
+            "unit": "None"
+          },
+          {
+            "id": "c3",
+            "text": "Both dwellings share a 2-car detached garage. (Because it is detached and at least 75' from the front lot line, it may be located in the rear and side yards.)",
+            "value_type": "Measurement",
+            "operator": ">=",
+            "threshold_value": "75",
+            "unit": "feet"
+          }
+        ],
+        "logical_relationships": [
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c1"
+            ],
+            "expression": "If the 2nd dwelling garage is detached and at least 75' from the front lot line, then it may be located in the rear and side yards.",
+            "evaluation_order": 1
+          },
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c2"
+            ],
+            "expression": "If the 2nd dwelling garage is attached, then it must be located with the building area rather than in the rear or side yards.",
+            "evaluation_order": 2
+          },
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c3"
+            ],
+            "expression": "If both dwellings share a 2-car detached garage and it is at least 75' from the front lot line, then it may be located in the rear and side yards.",
+            "evaluation_order": 3
+          }
+        ],
+        "execution_sequence": [
+          {
+            "step": 1,
+            "action": "Determine if 2nd dwelling garage is detached and its distance from front lot line",
+            "condition_ids": [
+              "c1"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 2,
+            "action": "If garage is attached, verify it is located within building area",
+            "condition_ids": [
+              "c2"
+            ],
+            "qualifier_ids": [
+              "q2"
+            ],
+            "dependencies": [
+              "1"
+            ]
+          },
+          {
+            "step": 3,
+            "action": "If both dwellings share a 2-car detached garage, verify distance from front lot line",
+            "condition_ids": [
+              "c3"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": [
+              "1"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:28:03",
+  "model_used": "openai/gpt-4.1-mini"
+}

@@ -1,0 +1,256 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_45.png",
+  "image_name": "Page_45.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Detached garages/carports site planning\n\n\u2022 Detached garages and carports may be located in the rear or interior side yard if at least 75' from the front lot line and at least 20' from the street-side lot line.\n\n\u2022 Additionally, on lots less than 95' deep, they may be located in rear or interior side yards if placed in rear half of the lot.\n\n\u2022 Garages and carports that take advantage of this setback exception are subject to a stricter daylight plane. See Figs 25-26 p. 32.\n\nFig 34 Examples of site planning solutions for detached garages/carports\n\nGarages at the lot line must comply with Uniform Building Code (UBC) requirements for fire-rated walls & roof materials.\n\nCarports with open sides must be at least 3' from any lot line.\n\n3' min.\n\nInterior lot example\n\n2-car Garage w/rated walls\n\nRear yard\n\n2-car Carport w/open sides\n\nRear yard\n\nInterior lot example\n\n2-car Garage w/rated walls\n\nRear yard\n\nBuildable area\n\nMain dwelling\n\nBuildable area\n\nMain dwelling\n\nBuildable area\n\nMain dwelling\n\n20' min\n\nCorner lot example\n\n10'\n\nRear yard\n\nKey:\nCurb\nLot line\nSidewalk\nRequired setbacks\nBuildable area\nDwelling\nParking structure\nNo parking area\nUncovered space\n\nA 2-car garage w/uncovered spaces in driveway (tandem OK)\nB 2-car carport w/uncovered spaces in driveway (tandem OK)\nC 2-car garage w/uncovered spaces in driveway (tandem OK)\n\nNote: Uncovered spaces must be located beyond the required front yard and beyond the first 10' of the street-side yard.\n\nNote: In all the examples on this page, a 1-car garage could be substituted for a 2-car garage because there is room for uncovered parking in the driveway.\n\n39",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Three site planning examples (A, B, C) showing different configurations of detached garages and carports on lots. Each example shows a main dwelling, buildable area, parking structures, and various yard setbacks. Example A shows a 2-car garage with rated walls, Example B shows a 2-car carport with open sides, and Example C shows a corner lot configuration with a 2-car garage. All examples include measurements and setback requirements.",
+          "location": "Center and bottom portion of page"
+        },
+        {
+          "type": "figure",
+          "description": "Key/legend showing different symbols and patterns used in the diagrams including curb, lot line, sidewalk, required setbacks, buildable area, dwelling, parking structure, no parking area, and uncovered space",
+          "location": "Bottom right of page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Distance from front lot line for rear/interior side yard placement",
+          "value_type": "Measurement",
+          "value": "75",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Distance from street-side lot line",
+          "value_type": "Measurement",
+          "value": "20",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Lot depth threshold for alternative placement",
+          "value_type": "Measurement",
+          "value": "95",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum distance for carports with open sides from lot line",
+          "value_type": "Measurement",
+          "value": "3",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum distance for corner lot street-side setback",
+          "value_type": "Measurement",
+          "value": "20",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Street-side yard restriction distance",
+          "value_type": "Measurement",
+          "value": "10",
+          "unit": "feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Detached garages/carports site planning",
+        "subheadings": [
+          "Fig 34 Examples of site planning solutions for detached garages/carports"
+        ],
+        "sections": [
+          "39"
+        ]
+      },
+      "additional_notes": [
+        "Page number 39 appears at bottom right",
+        "Two gray note boxes appear on the right side of the page with additional clarifications",
+        "Diagram uses various patterns and shadings to distinguish different areas and structures"
+      ],
+      "cross_references": [
+        "See Figs 25-26 p. 32"
+      ],
+      "conditions_and_qualifiers": {
+        "qualifiers": [
+          {
+            "id": "q1",
+            "text": "if at least 75' from the front lot line and at least 20' from the street-side lot line",
+            "applies_to_conditions": [
+              "c1"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q2",
+            "text": "on lots less than 95' deep",
+            "applies_to_conditions": [
+              "c2"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q3",
+            "text": "if placed in rear half of the lot",
+            "applies_to_conditions": [
+              "c2"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q4",
+            "text": "that take advantage of this setback exception",
+            "applies_to_conditions": [
+              "c3"
+            ],
+            "scope": "Specific"
+          }
+        ],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "Detached garages and carports may be located in the rear or interior side yard",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "true",
+            "unit": "None"
+          },
+          {
+            "id": "c2",
+            "text": "they may be located in rear or interior side yards",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "true",
+            "unit": "None"
+          },
+          {
+            "id": "c3",
+            "text": "Garages and carports are subject to a stricter daylight plane",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "true",
+            "unit": "None"
+          },
+          {
+            "id": "c4",
+            "text": "Garages at the lot line must comply with Uniform Building Code (UBC) requirements for fire-rated walls & roof materials",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "true",
+            "unit": "None"
+          },
+          {
+            "id": "c5",
+            "text": "Carports with open sides must be at least 3' from any lot line",
+            "value_type": "Measurement",
+            "operator": ">=",
+            "threshold_value": "3",
+            "unit": "feet"
+          },
+          {
+            "id": "c6",
+            "text": "Uncovered spaces must be located beyond the required front yard and beyond the first 10' of the street-side yard",
+            "value_type": "Measurement",
+            "operator": ">",
+            "threshold_value": "10",
+            "unit": "feet"
+          }
+        ],
+        "logical_relationships": [
+          {
+            "operation": "AND",
+            "condition_ids": [
+              "c1"
+            ],
+            "expression": "at least 75' from the front lot line and at least 20' from the street-side lot line",
+            "evaluation_order": 1
+          },
+          {
+            "operation": "AND",
+            "condition_ids": [
+              "c2"
+            ],
+            "expression": "on lots less than 95' deep, they may be located in rear or interior side yards if placed in rear half of the lot",
+            "evaluation_order": 2
+          },
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c3"
+            ],
+            "expression": "Garages and carports that take advantage of this setback exception are subject to a stricter daylight plane",
+            "evaluation_order": 3
+          }
+        ],
+        "execution_sequence": [
+          {
+            "step": 1,
+            "action": "Evaluate if garage/carport can be located in rear or interior side yard based on distance requirements",
+            "condition_ids": [
+              "c1"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 2,
+            "action": "For lots less than 95' deep, evaluate alternative placement option",
+            "condition_ids": [
+              "c2"
+            ],
+            "qualifier_ids": [
+              "q2",
+              "q3"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 3,
+            "action": "Apply stricter daylight plane requirements if setback exception is used",
+            "condition_ids": [
+              "c3"
+            ],
+            "qualifier_ids": [
+              "q4"
+            ],
+            "dependencies": [
+              1,
+              2
+            ]
+          },
+          {
+            "step": 4,
+            "action": "Apply UBC fire-rating requirements for garages at lot line",
+            "condition_ids": [
+              "c4"
+            ],
+            "qualifier_ids": [],
+            "dependencies": []
+          },
+          {
+            "step": 5,
+            "action": "Ensure minimum 3' setback for carports with open sides",
+            "condition_ids": [
+              "c5"
+            ],
+            "qualifier_ids": [],
+            "dependencies": []
+          },
+          {
+            "step": 6,
+            "action": "Verify uncovered spaces are properly located beyond required setbacks",
+            "condition_ids": [
+              "c6"
+            ],
+            "qualifier_ids": [],
+            "dependencies": []
+          }
+        ]
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:32:50",
+  "model_used": "anthropic/claude-sonnet-4"
+}

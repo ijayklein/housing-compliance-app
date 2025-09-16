@@ -1,0 +1,235 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_21.png",
+  "image_name": "Page_21.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Balconies, decks, & outdoor areas on upper floors\n\nOutdoor areas on upper levels that are roofed DO count toward gross floor area regardless of the design (including whether or not the sides are open).\n\nAn outdoor area on an upper floor is considered to be roofed if the eave over that area is deeper than the eave over the rest of the building. This may be illustrated by comparing Roof Plans 1 & 2 of Fig 10.\n\nFig 10 Balconies\n\nRoof Plan 1\nArea A: Counts because it is roofed\nArea B: Does not count because this arbor is substantially open\nArea C: Does not count because the overhang is the same size as the overhang around the rest of the house and is considered to be open\n\nWidth of overhang over the balcony\nWidth of overhang around the rest of the house\n\nRoof Plan 2\nArea A: Counts because it is roofed\nArea B: Counts because the overhang here is greater than the overhang around the rest of the house, and considered to be roofed\nArea C: Does not count because it is open\n\nWidth of overhang over the balcony\nWidth of overhang around the rest of the house\n\nNote: Pop-out balconies are subject to the same evaluation.\n\n15",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "3D isometric drawing labeled 'Fig 10 Balconies' showing a two-story building with balconies and outdoor areas. The diagram shows roof plan 1 and roof plan 2 with arrows pointing to different areas.",
+          "location": "Left side of page, middle section"
+        },
+        {
+          "type": "diagram",
+          "description": "Roof Plan 1 - Top-down view showing three areas labeled A, B, and C with different hatching patterns. Area A has diagonal hatching, Area B has grid pattern, Area C has no hatching. Arrows indicate width measurements for overhang comparisons.",
+          "location": "Right side of page, upper middle"
+        },
+        {
+          "type": "diagram",
+          "description": "Roof Plan 2 - Top-down view showing three areas labeled A, B, and C with different hatching patterns. Area A has diagonal hatching, Area B has diagonal hatching, Area C has no hatching. Arrows indicate width measurements for overhang comparisons.",
+          "location": "Right side of page, lower middle"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Page number",
+          "value_type": "Numerical",
+          "value": "15",
+          "unit": "None"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Balconies, decks, & outdoor areas on upper floors",
+        "subheadings": [
+          "Fig 10 Balconies",
+          "Roof Plan 1",
+          "Roof Plan 2"
+        ],
+        "sections": [
+          "Main rule statement",
+          "Roofed area definition",
+          "Roof Plan 1 explanations",
+          "Roof Plan 2 explanations",
+          "Note about pop-out balconies"
+        ]
+      },
+      "additional_notes": [
+        "Gray shaded box contains the main rule about roofed outdoor areas",
+        "Dark gray box at bottom contains note about pop-out balconies",
+        "Page appears to be from a technical manual with clear diagrams and explanations",
+        "Areas in diagrams are labeled with letters A, B, C and have different hatching patterns to distinguish them"
+      ],
+      "cross_references": [
+        "Fig 10",
+        "Roof Plans 1 & 2 of Fig 10"
+      ],
+      "conditions_and_qualifiers": {
+        "qualifiers": [
+          {
+            "id": "q1",
+            "text": "on upper levels",
+            "applies_to_conditions": [
+              "c1"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q2",
+            "text": "that are roofed",
+            "applies_to_conditions": [
+              "c1"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q3",
+            "text": "regardless of the design (including whether or not the sides are open)",
+            "applies_to_conditions": [
+              "c1"
+            ],
+            "scope": "Global"
+          },
+          {
+            "id": "q4",
+            "text": "on an upper floor",
+            "applies_to_conditions": [
+              "c2"
+            ],
+            "scope": "Specific"
+          }
+        ],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "Outdoor areas on upper levels that are roofed DO count toward gross floor area",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "true",
+            "unit": "None"
+          },
+          {
+            "id": "c2",
+            "text": "An outdoor area on an upper floor is considered to be roofed if the eave over that area is deeper than the eave over the rest of the building",
+            "value_type": "Measurement",
+            "operator": ">",
+            "threshold_value": "eave depth over rest of building",
+            "unit": "depth measurement"
+          },
+          {
+            "id": "c3",
+            "text": "Area A: Counts because it is roofed",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "true",
+            "unit": "None"
+          },
+          {
+            "id": "c4",
+            "text": "Area B: Does not count because this arbor is substantially open",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "false",
+            "unit": "None"
+          },
+          {
+            "id": "c5",
+            "text": "Area C: Does not count because the overhang is the same size as the overhang around the rest of the house and is considered to be open",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "false",
+            "unit": "None"
+          },
+          {
+            "id": "c6",
+            "text": "Area B: Counts because the overhang here is greater than the overhang around the rest of the house, and considered to be roofed",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "true",
+            "unit": "None"
+          },
+          {
+            "id": "c7",
+            "text": "Area C: Does not count because it is open",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "false",
+            "unit": "None"
+          },
+          {
+            "id": "c8",
+            "text": "Pop-out balconies are subject to the same evaluation",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "true",
+            "unit": "None"
+          }
+        ],
+        "logical_relationships": [
+          {
+            "operation": "AND",
+            "condition_ids": [
+              "c1"
+            ],
+            "expression": "Outdoor areas on upper levels that are roofed DO count toward gross floor area regardless of the design",
+            "evaluation_order": 1
+          },
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c2"
+            ],
+            "expression": "if the eave over that area is deeper than the eave over the rest of the building, then the outdoor area is considered to be roofed",
+            "evaluation_order": 2
+          }
+        ],
+        "execution_sequence": [
+          {
+            "step": 1,
+            "action": "Determine if outdoor area is on upper level",
+            "condition_ids": [
+              "c1"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 2,
+            "action": "Evaluate if area is roofed by comparing eave depths",
+            "condition_ids": [
+              "c2"
+            ],
+            "qualifier_ids": [
+              "q2",
+              "q4"
+            ],
+            "dependencies": [
+              1
+            ]
+          },
+          {
+            "step": 3,
+            "action": "Apply counting rule regardless of side openings",
+            "condition_ids": [
+              "c1"
+            ],
+            "qualifier_ids": [
+              "q3"
+            ],
+            "dependencies": [
+              1,
+              2
+            ]
+          },
+          {
+            "step": 4,
+            "action": "Apply same evaluation to pop-out balconies",
+            "condition_ids": [
+              "c8"
+            ],
+            "qualifier_ids": [],
+            "dependencies": [
+              1,
+              2,
+              3
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:31:39",
+  "model_used": "anthropic/claude-sonnet-4"
+}

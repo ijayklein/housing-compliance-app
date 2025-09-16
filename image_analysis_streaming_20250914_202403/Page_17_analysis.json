@@ -1,0 +1,221 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_17.png",
+  "image_name": "Page_17.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Vaulted entry features\nEntry features that are greater than 12' high are called \"vaulted entry features\". The footprint of such features\ncount twice toward gross floor area regardless of the design (including whether or not they are open).\nHow to measure the height of an entry feature in order to determine whether or not\nit is considered to be a vaulted entry feature (using Fig 6 - 8 as examples)\nFig 6 Entry feature with shed roof\nNote: If the entryway is considered to be a vaulted entryway\nthe area will be counted as follows:\n\u2022 In this example, a portion of the entryway is recessed\nbeyond the house facade and roof. It is included in the\narea that counts.\n\u2022 The area is measured to the outside material of the entry-\nway feature.\n\u2022 The area counts TWICE toward gross floor area.\nIntersection of front\nfacade and top of\nroof material\nHeight\nHeight\nOutline of entry-\nway roof\nOutline of entryway\nfloor area that counts\nTWICE if entryway is\nvaulted\nIsometric View\nSide Elevation\nPorch Floor Plan\n||",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "An isometric view of an entry feature with a shed roof, attached to a building facade. It shows a measurement labeled 'Height' from the 'Grade' to the top of the entry feature's roof. Dashed lines indicate the extent of the feature.",
+          "location": "Bottom left"
+        },
+        {
+          "type": "diagram",
+          "description": "A side elevation view of the same entry feature. It illustrates the 'Height' measurement from the ground level to the intersection of the front facade and the top of the roof material. Dashed lines indicate the vertical extent.",
+          "location": "Bottom middle"
+        },
+        {
+          "type": "diagram",
+          "description": "A porch floor plan showing the outline of the entryway roof and the outline of the entryway floor area. The floor area is explicitly noted to count 'TWICE if entryway is vaulted'. Dashed lines indicate the roof outline and solid lines indicate the floor area.",
+          "location": "Bottom right"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Minimum height for vaulted entry feature",
+          "value_type": "Measurement",
+          "value": "12",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Gross floor area counting multiplier for vaulted entry features",
+          "value_type": "Numerical",
+          "value": "2",
+          "unit": "None"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Vaulted entry features",
+        "subheadings": [],
+        "sections": [
+          "Entry features that are greater than 12' high are called \"vaulted entry features\". The footprint of such features count twice toward gross floor area regardless of the design (including whether or not they are open).",
+          "How to measure the height of an entry feature in order to determine whether or not it is considered to be a vaulted entry feature (using Fig 6 - 8 as examples)",
+          "Note: If the entryway is considered to be a vaulted entryway the area will be counted as follows:"
+        ]
+      },
+      "additional_notes": [
+        "Page number '||' is present at the bottom right corner."
+      ],
+      "cross_references": [
+        "Fig 6 - 8 as examples"
+      ],
+      "conditions_and_qualifiers": {
+        "qualifiers": [
+          {
+            "id": "q1",
+            "text": "Entry features that are greater than 12' high",
+            "applies_to_conditions": [
+              "c1"
+            ],
+            "scope": "Global"
+          },
+          {
+            "id": "q2",
+            "text": "regardless of the design (including whether or not they are open)",
+            "applies_to_conditions": [
+              "c1"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q3",
+            "text": "If the entryway is considered to be a vaulted entryway",
+            "applies_to_conditions": [
+              "c2",
+              "c3",
+              "c4"
+            ],
+            "scope": "Global"
+          },
+          {
+            "id": "q4",
+            "text": "In this example, a portion of the entryway is recessed beyond the house facade and roof.",
+            "applies_to_conditions": [
+              "c2"
+            ],
+            "scope": "Specific"
+          }
+        ],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "The footprint of such features count twice toward gross floor area",
+            "value_type": "Numerical",
+            "operator": "=",
+            "threshold_value": "2",
+            "unit": "multiplier"
+          },
+          {
+            "id": "c2",
+            "text": "It is included in the area that counts.",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "true",
+            "unit": "None"
+          },
+          {
+            "id": "c3",
+            "text": "The area is measured to the outside material of the entry-way feature.",
+            "value_type": "Text",
+            "operator": "matches",
+            "threshold_value": "outside material",
+            "unit": "None"
+          },
+          {
+            "id": "c4",
+            "text": "The area counts TWICE toward gross floor area.",
+            "value_type": "Numerical",
+            "operator": "=",
+            "threshold_value": "2",
+            "unit": "multiplier"
+          }
+        ],
+        "logical_relationships": [
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "q1"
+            ],
+            "expression": "IF (Entry features are greater than 12' high) THEN (they are called \"vaulted entry features\")",
+            "evaluation_order": 1
+          },
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "q1",
+              "q2"
+            ],
+            "expression": "IF (Entry features are greater than 12' high) AND (regardless of the design (including whether or not they are open)) THEN (c1: The footprint of such features count twice toward gross floor area)",
+            "evaluation_order": 2
+          },
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "q3"
+            ],
+            "expression": "IF (the entryway is considered to be a vaulted entryway) THEN (the area will be counted as follows: c2, c3, c4)",
+            "evaluation_order": 3
+          },
+          {
+            "operation": "AND",
+            "condition_ids": [
+              "q3",
+              "q4"
+            ],
+            "expression": "IF (the entryway is considered to be a vaulted entryway) AND (a portion of the entryway is recessed beyond the house facade and roof) THEN (c2: It is included in the area that counts.)",
+            "evaluation_order": 4
+          },
+          {
+            "operation": "AND",
+            "condition_ids": [
+              "q3"
+            ],
+            "expression": "IF (the entryway is considered to be a vaulted entryway) THEN (c3: The area is measured to the outside material of the entry-way feature.)",
+            "evaluation_order": 5
+          },
+          {
+            "operation": "AND",
+            "condition_ids": [
+              "q3"
+            ],
+            "expression": "IF (the entryway is considered to be a vaulted entryway) THEN (c4: The area counts TWICE toward gross floor area.)",
+            "evaluation_order": 6
+          }
+        ],
+        "execution_sequence": [
+          {
+            "step": 1,
+            "action": "Determine if an entry feature is 'vaulted'",
+            "condition_ids": [],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 2,
+            "action": "If vaulted, apply gross floor area counting rule",
+            "condition_ids": [
+              "c1"
+            ],
+            "qualifier_ids": [
+              "q1",
+              "q2"
+            ],
+            "dependencies": [
+              1
+            ]
+          },
+          {
+            "step": 3,
+            "action": "If considered a vaulted entryway, apply specific area counting rules",
+            "condition_ids": [
+              "c2",
+              "c3",
+              "c4"
+            ],
+            "qualifier_ids": [
+              "q3"
+            ],
+            "dependencies": [
+              1
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:24:14",
+  "model_used": "google/gemini-2.5-flash"
+}

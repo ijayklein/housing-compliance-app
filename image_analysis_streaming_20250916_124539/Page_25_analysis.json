@@ -1,0 +1,24 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_25.png",
+  "image_name": "Page_25.png",
+  "analysis": {
+    "page": "19",
+    "heading": "Fireplaces, chimneys, sheds, planters, and other projections",
+    "content": "Fireplaces shall be included in the gross floor area (counted one time) regardless of configuration or design. Sheds, planters, and other projections that are higher than 5' count toward gross floor area regardless of configuration or design.",
+    "figures": [
+      "Fig 14 Fireplaces, chimneys, sheds, etc. - Diagram showing chimneys on upper floors that DO NOT COUNT, and miscellaneous appendages over 5' in height that DO COUNT toward gross floor area"
+    ],
+    "tables": [],
+    "codes": [
+      "9.06.030"
+    ],
+    "notes": [
+      "In 2000, the city of Palo Alto passed an ordinance prohibiting the construction of new wood-burning fireplaces.",
+      "Neither appendages like this nor noise-producing equipment may be located in the required yards.",
+      "Fireplaces not connected to the house are treated like accessory structures, they and count towards FAR if they are greater than 120 sf. They count towards lot coverage always, regardless of size."
+    ]
+  },
+  "timestamp": "2025-09-16 12:46:29",
+  "model": "anthropic/claude-3.5-sonnet",
+  "success": true
+}

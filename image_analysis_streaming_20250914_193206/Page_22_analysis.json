@@ -1,0 +1,54 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_22.png",
+  "image_name": "Page_22.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Attic\nspace &\nequivalen-\ncies\n\nVoluminous spaces in a\nstructure contribute to\nthe mass even if these\nareas are not used\nor described in the\nfloor plan. The 2nd &\n3rd floor equivalency\naddresses how these\nareas count toward the\ngross floor area.\n\nCode sections\n18.04.030(a)(65)\n18.12.040(b)Table 3\n\n16\n\nAttic, closet, & perimeter spaces\n\nOn all accessible floors, areas with at least 5' of head clearance count toward the gross\nfloor area regardless of the floor plan or actual usage of the space.\n\nIn Fig 11 below, the highlighted areas count as follows:\n\n\u2022 Area A of this 3rd floor (accessible via stairs), has 5' of head\nclearance and counts as 3rd floor area.\n\u2022 Area B of this 2rd floor (accessible via stairs), has 5' of head\nclearance and is included in the count of the, more obvious, 2nd\nfloor area.\n\nFig 11 Attic, closet, & perimeter spaces\n\nNote: 500 sf of unusable attic\nspace may be exempted for\nCategory 1 & 2 historic homes.\n\nNote:\nMeasurements are\nfrom top of floor to\nunderside of the rafter\n\nUnderside of\npical)\n\noor\n\n1st floor",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "A cross-section diagram of a house showing two stories and an attic space. The diagram illustrates different floor levels and head clearance. Key areas are labeled 'A' (in the attic) and 'B' (on the second floor, under a sloped roof section). A vertical measurement of 5' is indicated for head clearance. Stairs are shown leading to the second floor and potentially to the attic. The ground floor is labeled '1st floor'. There are also labels 'CC' and 'oor' which appear to be part of the diagram's internal labeling or possibly truncated text. Arrows point from the top of the floor to the underside of the rafter, illustrating the measurement method.",
+          "location": "Middle to bottom right of the page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Minimum head clearance for counting towards gross floor area",
+          "value": "5",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Exempted unusable attic space for historic homes",
+          "value": "500",
+          "unit": "square feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Attic, closet, & perimeter spaces",
+        "subheadings": [],
+        "sections": [
+          "Attic space & equivalencies",
+          "On all accessible floors, areas with at least 5' of head clearance count toward the gross floor area regardless of the floor plan or actual usage of the space.",
+          "Voluminous spaces in a structure contribute to the mass even if these areas are not used or described in the floor plan. The 2nd & 3rd floor equivalency addresses how these areas count toward the gross floor area.",
+          "In Fig 11 below, the highlighted areas count as follows:",
+          "Note: 500 sf of unusable attic space may be exempted for Category 1 & 2 historic homes.",
+          "Note: Measurements are from top of floor to underside of the rafter",
+          "Code sections"
+        ]
+      },
+      "additional_notes": [
+        "The page number '16' is located at the bottom left.",
+        "The text 'Underside of pical)' appears to be a truncated label related to the diagram, likely 'Underside of rafter (typical)'.",
+        "The text 'oor' near the diagram is likely a truncated label for 'floor'.",
+        "The text 'CC' near the stairs in the diagram is unclear in its specific meaning without further context."
+      ],
+      "cross_references": [
+        "Fig 11",
+        "Code sections 18.04.030(a)(65)",
+        "Code sections 18.12.040(b)Table 3"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-14 19:32:21",
+  "model_used": "google/gemini-2.5-flash"
+}

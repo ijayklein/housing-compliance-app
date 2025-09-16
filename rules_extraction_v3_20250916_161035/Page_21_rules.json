@@ -1,0 +1,53 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_21.md",
+  "file_name": "Page_21.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "rule": "Gross Floor Area Calculation for Upper Floor Outdoor Areas",
+        "Qualifiers": {
+          "Scope": "Determination of which outdoor areas on upper floors are counted towards the Gross Floor Area (GFA).",
+          "Applicability": "Applies to all balconies, decks, and other outdoor areas located on upper floors of a building. The rule also explicitly applies to 'pop-out balconies'.",
+          "Exclusions": "1. Areas under an arbor that is 'substantially open'. 2. Areas under an overhang that is the same size as the overhang around the rest of the house."
+        },
+        "Variables": {
+          "Dimensional": "eave_depth_over_area, eave_depth_over_rest_of_building, overhang_width_over_balcony, overhang_width_around_rest_of_house",
+          "Material": "arbor",
+          "Environmental": "",
+          "Usage": "outdoor_area, balcony, deck"
+        },
+        "Constants": {
+          "Numerical values": "None specified. The rule is based on a relative comparison of dimensions, not fixed values.",
+          "Specs": "'substantially open' (Ambiguous Language Flag: The specific criteria for what constitutes 'substantially open' are not defined).",
+          "Standards": "The standard for determining if an area is 'roofed' is by comparing its eave/overhang depth to the eave/overhang depth of the rest of the building.",
+          "Procedures": "1. Identify all outdoor areas on upper floors. 2. For each area, measure the depth/width of its overhead eave/overhang. 3. Measure the depth/width of the standard eave/overhang around the rest of the building. 4. Compare the two measurements to determine if the area is 'roofed'."
+        },
+        "Conditions": {
+          "Mandatory": "Outdoor areas on upper levels that are determined to be 'roofed' MUST be counted toward the gross floor area.",
+          "Optional": "",
+          "Conditional logic": "IF (eave_depth_over_area > eave_depth_over_rest_of_building) THEN the area is considered 'roofed'. IF an area is 'roofed' THEN it counts toward GFA. IF (overhang_width_over_balcony == overhang_width_around_rest_of_house) THEN the area is considered 'open' and does NOT count toward GFA.",
+          "Dependencies": "The inclusion of an outdoor area in the GFA calculation is dependent on the area's classification as 'roofed'. This classification is dependent on a dimensional comparison of its overhead covering to the rest of the building's eaves."
+        },
+        "Exceptions": {
+          "Explicit deviations": "An area under an arbor that is 'substantially open' does not count toward GFA, regardless of its overhang dimensions (as per Roof Plan 1, Area B).",
+          "Alternatives": "An outdoor area is considered 'open' (and thus does not count toward GFA) if its overhang is the same size as the standard overhang around the rest of the house. This is an alternative to being classified as 'roofed' (as per Roof Plan 1, Area C).",
+          "Special cases": "The evaluation methodology described applies equally to 'pop-out balconies'."
+        },
+        "Relationships": {
+          "Hierarchical": "Primary Rule: GFA calculation for upper floor outdoor areas. Sub-Rule/Definition: An area is 'roofed' if its eave is deeper than the building's standard eave.",
+          "Cross-references": "The rule is illustrated by comparing Roof Plan 1 and Roof Plan 2 in 'Figure 10'.",
+          "Logical dependencies": "GFA_Inclusion = f(Is_Roofed). Is_Roofed = f(eave_depth_over_area > eave_depth_over_rest_of_building). This logic is overridden by the 'substantially open arbor' exception."
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n  {\n    \"rule\": \"Gross Floor Area Calculation for Upper Floor Outdoor Areas\",\n    \"Qualifiers\": {\n      \"Scope\": \"Determination of which outdoor areas on upper floors are counted towards the Gross Floor Area (GFA).\",\n      \"Applicability\": \"Applies to all balconies, decks, and other outdoor areas located on upper floors of a building. The rule also explicitly applies to 'pop-out balconies'.\",\n      \"Exclusions\": \"1. Areas under an arbor that is 'substantially open'. 2. Areas under an overhang that is the same size as the overhang around the rest of the house.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"eave_depth_over_area, eave_depth_over_rest_of_building, overhang_width_over_balcony, overhang_width_around_rest_of_house\",\n      \"Material\": \"arbor\",\n      \"Environmental\": \"\",\n      \"Usage\": \"outdoor_area, balcony, deck\"\n    },\n    \"Constants\": {\n      \"Numerical values\": \"None specified. The rule is based on a relative comparison of dimensions, not fixed values.\",\n      \"Specs\": \"'substantially open' (Ambiguous Language Flag: The specific criteria for what constitutes 'substantially open' are not defined).\",\n      \"Standards\": \"The standard for determining if an area is 'roofed' is by comparing its eave/overhang depth to the eave/overhang depth of the rest of the building.\",\n      \"Procedures\": \"1. Identify all outdoor areas on upper floors. 2. For each area, measure the depth/width of its overhead eave/overhang. 3. Measure the depth/width of the standard eave/overhang around the rest of the building. 4. Compare the two measurements to determine if the area is 'roofed'.\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"Outdoor areas on upper levels that are determined to be 'roofed' MUST be counted toward the gross floor area.\",\n      \"Optional\": \"\",\n      \"Conditional logic\": \"IF (eave_depth_over_area > eave_depth_over_rest_of_building) THEN the area is considered 'roofed'. IF an area is 'roofed' THEN it counts toward GFA. IF (overhang_width_over_balcony == overhang_width_around_rest_of_house) THEN the area is considered 'open' and does NOT count toward GFA.\",\n      \"Dependencies\": \"The inclusion of an outdoor area in the GFA calculation is dependent on the area's classification as 'roofed'. This classification is dependent on a dimensional comparison of its overhead covering to the rest of the building's eaves.\"\n    },\n    \"Exceptions\": {\n      \"Explicit deviations\": \"An area under an arbor that is 'substantially open' does not count toward GFA, regardless of its overhang dimensions (as per Roof Plan 1, Area B).\",\n      \"Alternatives\": \"An outdoor area is considered 'open' (and thus does not count toward GFA) if its overhang is the same size as the standard overhang around the rest of the house. This is an alternative to being classified as 'roofed' (as per Roof Plan 1, Area C).\",\n      \"Special cases\": \"The evaluation methodology described applies equally to 'pop-out balconies'.\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"Primary Rule: GFA calculation for upper floor outdoor areas. Sub-Rule/Definition: An area is 'roofed' if its eave is deeper than the building's standard eave.\",\n      \"Cross-references\": \"The rule is illustrated by comparing Roof Plan 1 and Roof Plan 2 in 'Figure 10'.\",\n      \"Logical dependencies\": \"GFA_Inclusion = f(Is_Roofed). Is_Roofed = f(eave_depth_over_area > eave_depth_over_rest_of_building). This logic is overridden by the 'substantially open arbor' exception.\"\n    }\n  }\n]\n```",
+    "response_time": 30.619896173477173,
+    "input_tokens": 850,
+    "output_tokens": 3687,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 16:11:55",
+  "model": "google/gemini-2.5-pro",
+  "success": true
+}

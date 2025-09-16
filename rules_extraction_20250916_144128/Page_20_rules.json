@@ -1,0 +1,83 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_20.md",
+  "file_name": "Page_20.md",
+  "analysis": {
+    "extracted_rules": {
+      "rules": [
+        {
+          "title": "Recessed porches on the 1st floor",
+          "qualifiers": {
+            "scope": "Recessed porches on the ground floor",
+            "applicability": "Porches that meet all specified criteria",
+            "exclusions": "Porches that do not meet all specified criteria"
+          },
+          "variables": {
+            "dimensional": {
+              "porch_depth": "< 10'",
+              "porch_ceiling_height": "below 2nd floor"
+            },
+            "material": "substantially open exterior side",
+            "environmental": null,
+            "usage_parameters": null
+          },
+          "constants": {
+            "numerical_values": {
+              "one_story_construction_height": "17'"
+            },
+            "specs": null,
+            "standards": null,
+            "procedures": null
+          },
+          "conditions": {
+            "mandatory": [
+              "Depth of porch is less than 10'",
+              "Porch ceiling is below 2nd floor",
+              "Exterior side is substantially open"
+            ],
+            "optional": null,
+            "conditional_logic": null,
+            "dependencies": null
+          },
+          "exceptions": {
+            "explicit_deviations": null,
+            "alternatives": null,
+            "special_cases": "If porch space is higher than 17', it counts as 2nd story equivalency"
+          },
+          "relationships": {
+            "hierarchical": null,
+            "cross_references": "See note regarding one-story construction",
+            "logical_dependencies": "All criteria must be met for exclusion from gross floor area"
+          }
+        }
+      ],
+      "examples": [
+        {
+          "example_id": "A",
+          "description": "This example complies with all three criteria and does NOT count toward gross floor area",
+          "criteria_met": [
+            "Depth < 10'",
+            "Porch ceiling below 2nd floor",
+            "Exterior side is substantially open"
+          ],
+          "gross_floor_area_inclusion": false
+        },
+        {
+          "example_id": "B",
+          "description": "This example violates two of the three criteria and DOES count toward gross floor area",
+          "criteria_violated": [
+            "Depth > 10'",
+            "Porch ceiling above 2nd floor"
+          ],
+          "gross_floor_area_inclusion": true,
+          "additional_note": "If it is higher than 17', it will count twice"
+        }
+      ],
+      "page_number": 14
+    },
+    "parse_error": false,
+    "raw_response": "```json\n{\n  \"rules\": [\n    {\n      \"title\": \"Recessed porches on the 1st floor\",\n      \"qualifiers\": {\n        \"scope\": \"Recessed porches on the ground floor\",\n        \"applicability\": \"Porches that meet all specified criteria\",\n        \"exclusions\": \"Porches that do not meet all specified criteria\"\n      },\n      \"variables\": {\n        \"dimensional\": {\n          \"porch_depth\": \"< 10'\",\n          \"porch_ceiling_height\": \"below 2nd floor\"\n        },\n        \"material\": \"substantially open exterior side\",\n        \"environmental\": null,\n        \"usage_parameters\": null\n      },\n      \"constants\": {\n        \"numerical_values\": {\n          \"one_story_construction_height\": \"17'\"\n        },\n        \"specs\": null,\n        \"standards\": null,\n        \"procedures\": null\n      },\n      \"conditions\": {\n        \"mandatory\": [\n          \"Depth of porch is less than 10'\",\n          \"Porch ceiling is below 2nd floor\",\n          \"Exterior side is substantially open\"\n        ],\n        \"optional\": null,\n        \"conditional_logic\": null,\n        \"dependencies\": null\n      },\n      \"exceptions\": {\n        \"explicit_deviations\": null,\n        \"alternatives\": null,\n        \"special_cases\": \"If porch space is higher than 17', it counts as 2nd story equivalency\"\n      },\n      \"relationships\": {\n        \"hierarchical\": null,\n        \"cross_references\": \"See note regarding one-story construction\",\n        \"logical_dependencies\": \"All criteria must be met for exclusion from gross floor area\"\n      }\n    }\n  ],\n  \"examples\": [\n    {\n      \"example_id\": \"A\",\n      \"description\": \"This example complies with all three criteria and does NOT count toward gross floor area\",\n      \"criteria_met\": [\n        \"Depth < 10'\",\n        \"Porch ceiling below 2nd floor\",\n        \"Exterior side is substantially open\"\n      ],\n      \"gross_floor_area_inclusion\": false\n    },\n    {\n      \"example_id\": \"B\",\n      \"description\": \"This example violates two of the three criteria and DOES count toward gross floor area\",\n      \"criteria_violated\": [\n        \"Depth > 10'\",\n        \"Porch ceiling above 2nd floor\"\n      ],\n      \"gross_floor_area_inclusion\": true,\n      \"additional_note\": \"If it is higher than 17', it will count twice\"\n    }\n  ],\n  \"page_number\": 14\n}\n```"
+  },
+  "timestamp": "2025-09-16 14:42:20",
+  "model": "openai/gpt-4o",
+  "success": true
+}

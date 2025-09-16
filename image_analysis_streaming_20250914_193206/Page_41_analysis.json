@@ -1,0 +1,68 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_41.png",
+  "image_name": "Page_41.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Carport standards\n\nFig 29 Parking space dimensions for carport in plan view\n\nOne of\n2 corner\ncolumns\n\nopen\n\n20' min. open\n\nDriveway/\nparking\nsurface\n\nPlan View\n\nFig 30 Parking space dimensions for covered space in elevation\n\nOne of 2 corner\ncolumns\n\nBottom roof\nsystem\n\n20' min. open\n\n7' min.\nopen\n\nLeft Side Elevation\n\nOne of 2 corner\ncolumns\n\nBottom roof\nsystem\n\n10' min\nopen\n\n7' min.\nopen\n\nFront Elevation\n\n35",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Figure 29: A plan view diagram illustrating the dimensions for a carport parking space. It shows a car parked within a rectangular space. The space is defined by two corner columns on one side and a solid wall or boundary on the other. A 'Driveway/parking surface' is indicated leading to the space. Dimensions include a '20' min. open' length along the side of the car and an 'open' width for entry/exit. An arrow points from 'One of 2 corner columns' to one of the columns.",
+          "location": "Middle left"
+        },
+        {
+          "type": "diagram",
+          "description": "Figure 30 (Top): A left side elevation diagram illustrating dimensions for a covered parking space. It shows a car parked under a sloped roof supported by columns. Dimensions include a '20' min. open' horizontal length for the covered area and a '7' min. open' vertical clearance from the ground to the bottom of the roof system. Arrows point from 'One of 2 corner columns' to a column and from 'Bottom roof system' to the underside of the roof.",
+          "location": "Middle right"
+        },
+        {
+          "type": "diagram",
+          "description": "Figure 30 (Bottom): A front elevation diagram illustrating dimensions for a covered parking space. It shows a car parked under a sloped roof supported by columns. Dimensions include a '10' min open' horizontal width for the covered area and a '7' min. open' vertical clearance from the ground to the bottom of the roof system. Arrows point from 'One of 2 corner columns' to a column and from 'Bottom roof system' to the underside of the roof.",
+          "location": "Bottom right"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Minimum open length for carport (plan view)",
+          "value": "20",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum open length for covered space (left side elevation)",
+          "value": "20",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum vertical clearance for covered space (left side elevation)",
+          "value": "7",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum open width for covered space (front elevation)",
+          "value": "10",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum vertical clearance for covered space (front elevation)",
+          "value": "7",
+          "unit": "feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Carport standards",
+        "subheadings": [
+          "Fig 29 Parking space dimensions for carport in plan view",
+          "Fig 30 Parking space dimensions for covered space in elevation"
+        ],
+        "sections": []
+      },
+      "additional_notes": [
+        "A grey rectangular bar is present below the main heading 'Carport standards', possibly indicating a section divider or design element.",
+        "Page number '35' is located at the bottom right corner."
+      ],
+      "cross_references": []
+    }
+  },
+  "analysis_timestamp": "2025-09-14 19:32:31",
+  "model_used": "google/gemini-2.5-flash"
+}

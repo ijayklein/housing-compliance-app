@@ -1,0 +1,19 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_38.png",
+  "image_name": "Page_38.png",
+  "analysis": {
+    "page_number": "unknown",
+    "main_heading": "PARSE_ERROR",
+    "text_content": "Failed to parse response: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)",
+    "tables": [],
+    "figures": [],
+    "zoning_rules": [],
+    "code_references": [],
+    "quality_notes": "JSON parsing failed: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)",
+    "raw_response": "```json\n{\n  \"page_number\": \"32\",\n  \"main_heading\": \"Accessory structure daylight plane (sides & rear)\",\n  \"text_content\": \"Note: For accessory buildings near the rear & side lot lines, a hipped-gable roof is often the best solution for complying with the accesory-structure daylight plane.\",\n  \"tables\": [],\n  \"figures\": [\n    {\n      \"figure_number\": \"Fig 25\",\n      \"caption\": \"Front elevation showing accessory-structure daylight plane at the side of the lot\",\n      \"description\": \"Diagram showing a garage-like accessory structure with a daylight plane setback from the side lot line. The daylight plane starts 8' from average grade and extends upwards at a 3:1 slope. The maximum height of the building is 12'.\"\n    },\n    {\n      \"figure_number\": \"Fig 26\",\n      \"caption\": \"Side elevation showing accessory-structure daylight plane at the rear of the lot\",\n      \"description\": \"Diagram showing a garage-like accessory structure with a daylight plane setback from the rear lot line. The dayli",
+    "parse_error": true
+  },
+  "analysis_timestamp": "2025-09-16 12:33:37",
+  "model_used": "google/gemini-2.5-flash",
+  "success": false
+}

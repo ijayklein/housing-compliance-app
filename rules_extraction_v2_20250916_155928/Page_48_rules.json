@@ -1,0 +1,244 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_48.md",
+  "file_name": "Page_48.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "rule_id": "LWS-01",
+        "rule_name": "Light Well & Stairwell Standards",
+        "source_page": 42,
+        "source_figure": "Figure 39",
+        "qualifiers": {
+          "scope": "Applies to excavated features such as light wells and stairwells associated with a structure.",
+          "applicability": "Site planning for properties with structures, particularly those with basements (implied by 'basement perimeter').",
+          "exclusions": [
+            {
+              "type": "locational",
+              "description": "Features are not permitted on the side of the structure that faces the front yard."
+            }
+          ],
+          "measurement_standard": "All length and width measurements are based on the 'interior dimension of the opening' and 'exclude encasing structure'."
+        },
+        "variables": [
+          {
+            "name": "feature_location_face",
+            "type": "locational",
+            "description": "The side of the structure a feature is located on, relative to the yards (e.g., 'front_facing', 'side_facing', 'rear_facing')."
+          },
+          {
+            "name": "feature_width",
+            "type": "dimensional",
+            "description": "Interior dimension of the width of a single light well or stairwell.",
+            "unit": "feet"
+          },
+          {
+            "name": "combined_length_all_features",
+            "type": "dimensional",
+            "description": "The sum of the interior lengths of all excavated features (light wells, stairwells) on the site. Formula from text: a + b + c + d.",
+            "unit": "feet"
+          },
+          {
+            "name": "basement_perimeter",
+            "type": "dimensional",
+            "description": "The perimeter of the basement of the main structure.",
+            "unit": "feet"
+          },
+          {
+            "name": "side_yard_encroachment",
+            "type": "dimensional",
+            "description": "The distance a feature encroaches into a required side yard.",
+            "unit": "feet"
+          },
+          {
+            "name": "distance_from_side_lot_line",
+            "type": "dimensional",
+            "description": "The minimum distance from any part of the feature to the side lot line.",
+            "unit": "feet"
+          },
+          {
+            "name": "rear_yard_encroachment",
+            "type": "dimensional",
+            "description": "The distance a feature encroaches into a required rear yard.",
+            "unit": "feet"
+          },
+          {
+            "name": "combined_length_encroaching_features",
+            "type": "dimensional",
+            "description": "The sum of the interior lengths of all features or portions of features that encroach into any required yard (side or rear). Formula from text: a + b.",
+            "unit": "feet"
+          },
+          {
+            "name": "tree_impact",
+            "type": "environmental",
+            "description": "The effect of the excavated feature on neighboring trees."
+          },
+          {
+            "name": "drainage_system_approval_status",
+            "type": "procedural",
+            "description": "Approval status of the drainage system from the Public Works Department."
+          }
+        ],
+        "constants": [
+          {
+            "name": "prohibited_location_face",
+            "value": "front_yard_facing_side",
+            "type": "locational"
+          },
+          {
+            "name": "max_feature_width",
+            "value": 3,
+            "unit": "feet",
+            "type": "dimensional"
+          },
+          {
+            "name": "max_total_length_ratio",
+            "value": 0.3,
+            "unit": "percentage",
+            "type": "ratio",
+            "description": "30% of basement perimeter"
+          },
+          {
+            "name": "max_side_yard_encroachment",
+            "value": 3,
+            "unit": "feet",
+            "type": "dimensional"
+          },
+          {
+            "name": "min_distance_from_side_lot_line",
+            "value": 3,
+            "unit": "feet",
+            "type": "dimensional"
+          },
+          {
+            "name": "max_rear_yard_encroachment",
+            "value": 4,
+            "unit": "feet",
+            "type": "dimensional"
+          },
+          {
+            "name": "max_total_encroaching_length",
+            "value": 15,
+            "unit": "feet",
+            "type": "dimensional"
+          }
+        ],
+        "conditions": [
+          {
+            "condition_id": "LWS-C1",
+            "type": "mandatory",
+            "description": "Features may not be located on the side of the structure that faces the front yard.",
+            "logic": "feature_location_face != prohibited_location_face"
+          },
+          {
+            "condition_id": "LWS-C2",
+            "type": "mandatory",
+            "description": "The maximum interior width of any single feature is 3 feet.",
+            "logic": "feature_width <= max_feature_width"
+          },
+          {
+            "condition_id": "LWS-C3",
+            "type": "mandatory",
+            "description": "The combined interior length of all excavated features may not exceed 30% of the basement perimeter.",
+            "logic": "combined_length_all_features <= (basement_perimeter * max_total_length_ratio)"
+          },
+          {
+            "condition_id": "LWS-C4",
+            "type": "mandatory",
+            "description": "Allowable encroachment into a required side yard is a maximum of 3 feet.",
+            "logic": "side_yard_encroachment <= max_side_yard_encroachment"
+          },
+          {
+            "condition_id": "LWS-C5",
+            "type": "mandatory",
+            "description": "A feature must be a minimum of 3 feet from the side lot line.",
+            "logic": "distance_from_side_lot_line >= min_distance_from_side_lot_line"
+          },
+          {
+            "condition_id": "LWS-C6",
+            "type": "mandatory",
+            "description": "Allowable encroachment into a required rear yard is a maximum of 4 feet.",
+            "logic": "rear_yard_encroachment <= max_rear_yard_encroachment"
+          },
+          {
+            "condition_id": "LWS-C7",
+            "type": "mandatory",
+            "description": "The combined interior length of all features that encroach into required yards may not exceed 15 feet.",
+            "logic": "combined_length_encroaching_features <= max_total_encroaching_length"
+          },
+          {
+            "condition_id": "LWS-C8",
+            "type": "mandatory",
+            "description": "Excavated features shall not be harmful to neighboring trees.",
+            "logic": "tree_impact != 'harmful'",
+            "ambiguous_language": [
+              {
+                "term": "harmful",
+                "comment": "The term 'harmful' is subjective and not defined with specific metrics. It may require expert assessment (e.g., by an arborist) to determine compliance."
+              }
+            ]
+          },
+          {
+            "condition_id": "LWS-C9",
+            "type": "mandatory",
+            "description": "The drainage system for the features must be approved by the Public Works Department.",
+            "logic": "drainage_system_approval_status == 'approved'"
+          }
+        ],
+        "exceptions": [],
+        "relationships": {
+          "hierarchical": "All conditions (LWS-C1 to LWS-C9) are sub-rules of the main 'Light Well & Stairwell Standards' (LWS-01).",
+          "dependencies": [
+            {
+              "type": "conditional_dependency",
+              "source_condition": "LWS-C4",
+              "target_condition": "LWS-C5",
+              "description": "The rule for maximum side yard encroachment (LWS-C4) is coupled with the rule for minimum distance from the side lot line (LWS-C5). A feature can encroach up to 3 feet, but must also maintain a 3-foot distance from the lot line. This implies the required side yard must be at least 6 feet wide for maximum encroachment to be possible."
+            },
+            {
+              "type": "calculation_dependency",
+              "target_condition": "LWS-C3",
+              "dependent_variables": [
+                "combined_length_all_features",
+                "basement_perimeter"
+              ],
+              "description": "Condition LWS-C3 requires calculating the sum of all feature lengths and comparing it to the basement perimeter."
+            },
+            {
+              "type": "calculation_dependency",
+              "target_condition": "LWS-C7",
+              "dependent_variables": [
+                "combined_length_encroaching_features"
+              ],
+              "description": "Condition LWS-C7 requires identifying all encroaching features, summing their lengths, and comparing to a constant."
+            },
+            {
+              "type": "procedural_dependency",
+              "source_condition": "LWS-C9",
+              "external_entity": "Public Works Department",
+              "description": "Compliance with LWS-C9 is dependent on an approval from an external department."
+            }
+          ],
+          "cross_references": [
+            {
+              "reference": "Figure 39",
+              "description": "Provides visual examples and reiterates several dimensional constraints (max width, side yard encroachment, distance from lot line). It also provides formulas clarifying the calculation for total length (a+b+c+d) and total encroaching length (a+b)."
+            },
+            {
+              "reference": "Note beneath formulas",
+              "description": "Defines the measurement standard for all dimensional calculations ('interior dimension of opening and exclude encasing structure'), which applies to conditions LWS-C2, LWS-C3, and LWS-C7."
+            }
+          ]
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n  {\n    \"rule_id\": \"LWS-01\",\n    \"rule_name\": \"Light Well & Stairwell Standards\",\n    \"source_page\": 42,\n    \"source_figure\": \"Figure 39\",\n    \"qualifiers\": {\n      \"scope\": \"Applies to excavated features such as light wells and stairwells associated with a structure.\",\n      \"applicability\": \"Site planning for properties with structures, particularly those with basements (implied by 'basement perimeter').\",\n      \"exclusions\": [\n        {\n          \"type\": \"locational\",\n          \"description\": \"Features are not permitted on the side of the structure that faces the front yard.\"\n        }\n      ],\n      \"measurement_standard\": \"All length and width measurements are based on the 'interior dimension of the opening' and 'exclude encasing structure'.\"\n    },\n    \"variables\": [\n      {\n        \"name\": \"feature_location_face\",\n        \"type\": \"locational\",\n        \"description\": \"The side of the structure a feature is located on, relative to the yards (e.g., 'front_facing', 'side_facing', 'rear_facing').\"\n      },\n      {\n        \"name\": \"feature_width\",\n        \"type\": \"dimensional\",\n        \"description\": \"Interior dimension of the width of a single light well or stairwell.\",\n        \"unit\": \"feet\"\n      },\n      {\n        \"name\": \"combined_length_all_features\",\n        \"type\": \"dimensional\",\n        \"description\": \"The sum of the interior lengths of all excavated features (light wells, stairwells) on the site. Formula from text: a + b + c + d.\",\n        \"unit\": \"feet\"\n      },\n      {\n        \"name\": \"basement_perimeter\",\n        \"type\": \"dimensional\",\n        \"description\": \"The perimeter of the basement of the main structure.\",\n        \"unit\": \"feet\"\n      },\n      {\n        \"name\": \"side_yard_encroachment\",\n        \"type\": \"dimensional\",\n        \"description\": \"The distance a feature encroaches into a required side yard.\",\n        \"unit\": \"feet\"\n      },\n      {\n        \"name\": \"distance_from_side_lot_line\",\n        \"type\": \"dimensional\",\n        \"description\": \"The minimum distance from any part of the feature to the side lot line.\",\n        \"unit\": \"feet\"\n      },\n      {\n        \"name\": \"rear_yard_encroachment\",\n        \"type\": \"dimensional\",\n        \"description\": \"The distance a feature encroaches into a required rear yard.\",\n        \"unit\": \"feet\"\n      },\n      {\n        \"name\": \"combined_length_encroaching_features\",\n        \"type\": \"dimensional\",\n        \"description\": \"The sum of the interior lengths of all features or portions of features that encroach into any required yard (side or rear). Formula from text: a + b.\",\n        \"unit\": \"feet\"\n      },\n      {\n        \"name\": \"tree_impact\",\n        \"type\": \"environmental\",\n        \"description\": \"The effect of the excavated feature on neighboring trees.\"\n      },\n      {\n        \"name\": \"drainage_system_approval_status\",\n        \"type\": \"procedural\",\n        \"description\": \"Approval status of the drainage system from the Public Works Department.\"\n      }\n    ],\n    \"constants\": [\n      {\n        \"name\": \"prohibited_location_face\",\n        \"value\": \"front_yard_facing_side\",\n        \"type\": \"locational\"\n      },\n      {\n        \"name\": \"max_feature_width\",\n        \"value\": 3,\n        \"unit\": \"feet\",\n        \"type\": \"dimensional\"\n      },\n      {\n        \"name\": \"max_total_length_ratio\",\n        \"value\": 0.30,\n        \"unit\": \"percentage\",\n        \"type\": \"ratio\",\n        \"description\": \"30% of basement perimeter\"\n      },\n      {\n        \"name\": \"max_side_yard_encroachment\",\n        \"value\": 3,\n        \"unit\": \"feet\",\n        \"type\": \"dimensional\"\n      },\n      {\n        \"name\": \"min_distance_from_side_lot_line\",\n        \"value\": 3,\n        \"unit\": \"feet\",\n        \"type\": \"dimensional\"\n      },\n      {\n        \"name\": \"max_rear_yard_encroachment\",\n        \"value\": 4,\n        \"unit\": \"feet\",\n        \"type\": \"dimensional\"\n      },\n      {\n        \"name\": \"max_total_encroaching_length\",\n        \"value\": 15,\n        \"unit\": \"feet\",\n        \"type\": \"dimensional\"\n      }\n    ],\n    \"conditions\": [\n      {\n        \"condition_id\": \"LWS-C1\",\n        \"type\": \"mandatory\",\n        \"description\": \"Features may not be located on the side of the structure that faces the front yard.\",\n        \"logic\": \"feature_location_face != prohibited_location_face\"\n      },\n      {\n        \"condition_id\": \"LWS-C2\",\n        \"type\": \"mandatory\",\n        \"description\": \"The maximum interior width of any single feature is 3 feet.\",\n        \"logic\": \"feature_width <= max_feature_width\"\n      },\n      {\n        \"condition_id\": \"LWS-C3\",\n        \"type\": \"mandatory\",\n        \"description\": \"The combined interior length of all excavated features may not exceed 30% of the basement perimeter.\",\n        \"logic\": \"combined_length_all_features <= (basement_perimeter * max_total_length_ratio)\"\n      },\n      {\n        \"condition_id\": \"LWS-C4\",\n        \"type\": \"mandatory\",\n        \"description\": \"Allowable encroachment into a required side yard is a maximum of 3 feet.\",\n        \"logic\": \"side_yard_encroachment <= max_side_yard_encroachment\"\n      },\n      {\n        \"condition_id\": \"LWS-C5\",\n        \"type\": \"mandatory\",\n        \"description\": \"A feature must be a minimum of 3 feet from the side lot line.\",\n        \"logic\": \"distance_from_side_lot_line >= min_distance_from_side_lot_line\"\n      },\n      {\n        \"condition_id\": \"LWS-C6\",\n        \"type\": \"mandatory\",\n        \"description\": \"Allowable encroachment into a required rear yard is a maximum of 4 feet.\",\n        \"logic\": \"rear_yard_encroachment <= max_rear_yard_encroachment\"\n      },\n      {\n        \"condition_id\": \"LWS-C7\",\n        \"type\": \"mandatory\",\n        \"description\": \"The combined interior length of all features that encroach into required yards may not exceed 15 feet.\",\n        \"logic\": \"combined_length_encroaching_features <= max_total_encroaching_length\"\n      },\n      {\n        \"condition_id\": \"LWS-C8\",\n        \"type\": \"mandatory\",\n        \"description\": \"Excavated features shall not be harmful to neighboring trees.\",\n        \"logic\": \"tree_impact != 'harmful'\",\n        \"ambiguous_language\": [\n          {\n            \"term\": \"harmful\",\n            \"comment\": \"The term 'harmful' is subjective and not defined with specific metrics. It may require expert assessment (e.g., by an arborist) to determine compliance.\"\n          }\n        ]\n      },\n      {\n        \"condition_id\": \"LWS-C9\",\n        \"type\": \"mandatory\",\n        \"description\": \"The drainage system for the features must be approved by the Public Works Department.\",\n        \"logic\": \"drainage_system_approval_status == 'approved'\"\n      }\n    ],\n    \"exceptions\": [],\n    \"relationships\": {\n      \"hierarchical\": \"All conditions (LWS-C1 to LWS-C9) are sub-rules of the main 'Light Well & Stairwell Standards' (LWS-01).\",\n      \"dependencies\": [\n        {\n          \"type\": \"conditional_dependency\",\n          \"source_condition\": \"LWS-C4\",\n          \"target_condition\": \"LWS-C5\",\n          \"description\": \"The rule for maximum side yard encroachment (LWS-C4) is coupled with the rule for minimum distance from the side lot line (LWS-C5). A feature can encroach up to 3 feet, but must also maintain a 3-foot distance from the lot line. This implies the required side yard must be at least 6 feet wide for maximum encroachment to be possible.\"\n        },\n        {\n          \"type\": \"calculation_dependency\",\n          \"target_condition\": \"LWS-C3\",\n          \"dependent_variables\": [\n            \"combined_length_all_features\",\n            \"basement_perimeter\"\n          ],\n          \"description\": \"Condition LWS-C3 requires calculating the sum of all feature lengths and comparing it to the basement perimeter.\"\n        },\n        {\n          \"type\": \"calculation_dependency\",\n          \"target_condition\": \"LWS-C7\",\n          \"dependent_variables\": [\n            \"combined_length_encroaching_features\"\n          ],\n          \"description\": \"Condition LWS-C7 requires identifying all encroaching features, summing their lengths, and comparing to a constant.\"\n        },\n        {\n          \"type\": \"procedural_dependency\",\n          \"source_condition\": \"LWS-C9\",\n          \"external_entity\": \"Public Works Department\",\n          \"description\": \"Compliance with LWS-C9 is dependent on an approval from an external department.\"\n        }\n      ],\n      \"cross_references\": [\n        {\n          \"reference\": \"Figure 39\",\n          \"description\": \"Provides visual examples and reiterates several dimensional constraints (max width, side yard encroachment, distance from lot line). It also provides formulas clarifying the calculation for total length (a+b+c+d) and total encroaching length (a+b).\"\n        },\n        {\n          \"reference\": \"Note beneath formulas\",\n          \"description\": \"Defines the measurement standard for all dimensional calculations ('interior dimension of opening and exclude encasing structure'), which applies to conditions LWS-C2, LWS-C3, and LWS-C7.\"\n        }\n      ]\n    }\n  }\n]\n```",
+    "response_time": 59.18826198577881,
+    "input_tokens": 877,
+    "output_tokens": 7490,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 16:04:38",
+  "model": "google/gemini-2.5-pro",
+  "success": true
+}

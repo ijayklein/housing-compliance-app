@@ -1,0 +1,184 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_13.md",
+  "file_name": "Page_13.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "rule_id": "FIG4_PANEL_B_ROOFED_ENTRY_WAY",
+        "rule_name": "Roofed entry way (not vaulted)",
+        "source": "Page 13, Figure 4, Panel B",
+        "Qualifiers": {
+          "scope": "Classification of entry way structures based on height.",
+          "applicability": [
+            "Applies to roofed entry ways."
+          ],
+          "exclusions": [
+            "Excludes structures classified as 'Vaulted entry way' (Panel C) or 'Combination porch & vaulted entry way' (Panel D)."
+          ]
+        },
+        "Variables": [
+          {
+            "name": "Height",
+            "type": "Dimensional",
+            "description": "Height of the roofed entry way, measured from grade.",
+            "unit": "feet"
+          }
+        ],
+        "Constants": [
+          {
+            "name": "Height Threshold",
+            "value": 12,
+            "unit": "feet",
+            "description": "The threshold height used to classify the entry way."
+          }
+        ],
+        "Conditions": [
+          {
+            "type": "Mandatory",
+            "description": "To be classified as a 'Roofed entry way (not vaulted)', the structure's height must be less than 12 feet above grade.",
+            "logic": "Height < 12'"
+          }
+        ],
+        "Exceptions": [],
+        "Relationships": {
+          "hierarchical": "This rule defines one of the types of porches and entry ways illustrated in Figure 4.",
+          "cross_references": [
+            {
+              "reference": "Figs 6-8 on pp. 11-13",
+              "description": "Specifies the mandatory procedure for 'how to measure height of porches & entry features'."
+            }
+          ],
+          "logical_dependencies": [
+            "This classification is mutually exclusive with the classifications in Panel C and Panel D, which require a height greater than 12'."
+          ]
+        },
+        "ambiguous_language": [
+          {
+            "term": "not vaulted",
+            "reason": "The text uses a height condition (< 12') as the sole determinant for a structure being 'not vaulted'. The term itself implies a lack of a specific architectural form (e.g., an arched ceiling), but the rule is based purely on dimension, not form. This could lead to ambiguity if a structure's form and height classification conflict."
+          }
+        ]
+      },
+      {
+        "rule_id": "FIG4_PANEL_C_VAULTED_ENTRY_WAY",
+        "rule_name": "Vaulted entry way",
+        "source": "Page 13, Figure 4, Panel C",
+        "Qualifiers": {
+          "scope": "Classification of entry way structures based on height.",
+          "applicability": [
+            "Applies to entry ways."
+          ],
+          "exclusions": [
+            "Excludes structures classified as 'Roofed entry way (not vaulted)' (Panel B)."
+          ]
+        },
+        "Variables": [
+          {
+            "name": "Height",
+            "type": "Dimensional",
+            "description": "Height of the vaulted entry way, measured from grade.",
+            "unit": "feet"
+          }
+        ],
+        "Constants": [
+          {
+            "name": "Height Threshold",
+            "value": 12,
+            "unit": "feet",
+            "description": "The threshold height used to classify the entry way."
+          }
+        ],
+        "Conditions": [
+          {
+            "type": "Mandatory",
+            "description": "To be classified as a 'Vaulted entry way', the structure's height must be greater than 12 feet above grade.",
+            "logic": "Height > 12'"
+          }
+        ],
+        "Exceptions": [],
+        "Relationships": {
+          "hierarchical": "This rule defines one of the types of porches and entry ways illustrated in Figure 4.",
+          "cross_references": [
+            {
+              "reference": "Figs 6-8 on pp. 11-13",
+              "description": "Specifies the mandatory procedure for 'how to measure height of porches & entry features'."
+            }
+          ],
+          "logical_dependencies": [
+            "This classification is mutually exclusive with the classification in Panel B, which requires a height less than 12'."
+          ]
+        },
+        "ambiguous_language": [
+          {
+            "term": "Vaulted",
+            "reason": "The text uses a height condition (> 12') as the sole determinant for a structure being 'vaulted'. The term itself implies a specific architectural form (e.g., an arched ceiling), which is not defined or required by the text. This could lead to ambiguity if a structure's form and height classification conflict (e.g., a flat-roofed entryway that is greater than 12' high)."
+          }
+        ]
+      },
+      {
+        "rule_id": "FIG4_PANEL_D_COMBINATION_ENTRY_WAY",
+        "rule_name": "Combination porch & vaulted entry way",
+        "source": "Page 13, Figure 4, Panel D",
+        "Qualifiers": {
+          "scope": "Classification of combined porch and entry way structures based on height.",
+          "applicability": [
+            "Applies to structures that are a combination of a porch and an entry way."
+          ],
+          "exclusions": []
+        },
+        "Variables": [
+          {
+            "name": "Height",
+            "type": "Dimensional",
+            "description": "Height of the combination structure, measured from grade.",
+            "unit": "feet"
+          }
+        ],
+        "Constants": [
+          {
+            "name": "Height Threshold",
+            "value": 12,
+            "unit": "feet",
+            "description": "The threshold height used to classify the structure."
+          }
+        ],
+        "Conditions": [
+          {
+            "type": "Mandatory",
+            "description": "To be classified as a 'Combination porch & vaulted entry way', the structure's height must be greater than 12 feet above grade.",
+            "logic": "Height > 12'"
+          }
+        ],
+        "Exceptions": [],
+        "Relationships": {
+          "hierarchical": "This rule defines one of the types of porches and entry ways illustrated in Figure 4.",
+          "cross_references": [
+            {
+              "reference": "Figs 6-8 on pp. 11-13",
+              "description": "Specifies the mandatory procedure for 'how to measure height of porches & entry features'."
+            }
+          ],
+          "logical_dependencies": [
+            "Shares the same height condition as 'Vaulted entry way' (Panel C).",
+            "This classification is mutually exclusive with the classification in Panel B, which requires a height less than 12'."
+          ]
+        },
+        "ambiguous_language": [
+          {
+            "term": "vaulted",
+            "reason": "The text uses a height condition (> 12') as the sole determinant for the 'vaulted' component of this structure type. The term 'vaulted' implies a specific architectural form, which is not defined. The distinction between this type and a 'Vaulted entry way' (Panel C) is also not clear from the text, other than the name 'Combination porch'."
+          }
+        ]
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n  {\n    \"rule_id\": \"FIG4_PANEL_B_ROOFED_ENTRY_WAY\",\n    \"rule_name\": \"Roofed entry way (not vaulted)\",\n    \"source\": \"Page 13, Figure 4, Panel B\",\n    \"Qualifiers\": {\n      \"scope\": \"Classification of entry way structures based on height.\",\n      \"applicability\": [\n        \"Applies to roofed entry ways.\"\n      ],\n      \"exclusions\": [\n        \"Excludes structures classified as 'Vaulted entry way' (Panel C) or 'Combination porch & vaulted entry way' (Panel D).\"\n      ]\n    },\n    \"Variables\": [\n      {\n        \"name\": \"Height\",\n        \"type\": \"Dimensional\",\n        \"description\": \"Height of the roofed entry way, measured from grade.\",\n        \"unit\": \"feet\"\n      }\n    ],\n    \"Constants\": [\n      {\n        \"name\": \"Height Threshold\",\n        \"value\": 12,\n        \"unit\": \"feet\",\n        \"description\": \"The threshold height used to classify the entry way.\"\n      }\n    ],\n    \"Conditions\": [\n      {\n        \"type\": \"Mandatory\",\n        \"description\": \"To be classified as a 'Roofed entry way (not vaulted)', the structure's height must be less than 12 feet above grade.\",\n        \"logic\": \"Height < 12'\"\n      }\n    ],\n    \"Exceptions\": [],\n    \"Relationships\": {\n      \"hierarchical\": \"This rule defines one of the types of porches and entry ways illustrated in Figure 4.\",\n      \"cross_references\": [\n        {\n          \"reference\": \"Figs 6-8 on pp. 11-13\",\n          \"description\": \"Specifies the mandatory procedure for 'how to measure height of porches & entry features'.\"\n        }\n      ],\n      \"logical_dependencies\": [\n        \"This classification is mutually exclusive with the classifications in Panel C and Panel D, which require a height greater than 12'.\"\n      ]\n    },\n    \"ambiguous_language\": [\n      {\n        \"term\": \"not vaulted\",\n        \"reason\": \"The text uses a height condition (< 12') as the sole determinant for a structure being 'not vaulted'. The term itself implies a lack of a specific architectural form (e.g., an arched ceiling), but the rule is based purely on dimension, not form. This could lead to ambiguity if a structure's form and height classification conflict.\"\n      }\n    ]\n  },\n  {\n    \"rule_id\": \"FIG4_PANEL_C_VAULTED_ENTRY_WAY\",\n    \"rule_name\": \"Vaulted entry way\",\n    \"source\": \"Page 13, Figure 4, Panel C\",\n    \"Qualifiers\": {\n      \"scope\": \"Classification of entry way structures based on height.\",\n      \"applicability\": [\n        \"Applies to entry ways.\"\n      ],\n      \"exclusions\": [\n        \"Excludes structures classified as 'Roofed entry way (not vaulted)' (Panel B).\"\n      ]\n    },\n    \"Variables\": [\n      {\n        \"name\": \"Height\",\n        \"type\": \"Dimensional\",\n        \"description\": \"Height of the vaulted entry way, measured from grade.\",\n        \"unit\": \"feet\"\n      }\n    ],\n    \"Constants\": [\n      {\n        \"name\": \"Height Threshold\",\n        \"value\": 12,\n        \"unit\": \"feet\",\n        \"description\": \"The threshold height used to classify the entry way.\"\n      }\n    ],\n    \"Conditions\": [\n      {\n        \"type\": \"Mandatory\",\n        \"description\": \"To be classified as a 'Vaulted entry way', the structure's height must be greater than 12 feet above grade.\",\n        \"logic\": \"Height > 12'\"\n      }\n    ],\n    \"Exceptions\": [],\n    \"Relationships\": {\n      \"hierarchical\": \"This rule defines one of the types of porches and entry ways illustrated in Figure 4.\",\n      \"cross_references\": [\n        {\n          \"reference\": \"Figs 6-8 on pp. 11-13\",\n          \"description\": \"Specifies the mandatory procedure for 'how to measure height of porches & entry features'.\"\n        }\n      ],\n      \"logical_dependencies\": [\n        \"This classification is mutually exclusive with the classification in Panel B, which requires a height less than 12'.\"\n      ]\n    },\n    \"ambiguous_language\": [\n      {\n        \"term\": \"Vaulted\",\n        \"reason\": \"The text uses a height condition (> 12') as the sole determinant for a structure being 'vaulted'. The term itself implies a specific architectural form (e.g., an arched ceiling), which is not defined or required by the text. This could lead to ambiguity if a structure's form and height classification conflict (e.g., a flat-roofed entryway that is greater than 12' high).\"\n      }\n    ]\n  },\n  {\n    \"rule_id\": \"FIG4_PANEL_D_COMBINATION_ENTRY_WAY\",\n    \"rule_name\": \"Combination porch & vaulted entry way\",\n    \"source\": \"Page 13, Figure 4, Panel D\",\n    \"Qualifiers\": {\n      \"scope\": \"Classification of combined porch and entry way structures based on height.\",\n      \"applicability\": [\n        \"Applies to structures that are a combination of a porch and an entry way.\"\n      ],\n      \"exclusions\": []\n    },\n    \"Variables\": [\n      {\n        \"name\": \"Height\",\n        \"type\": \"Dimensional\",\n        \"description\": \"Height of the combination structure, measured from grade.\",\n        \"unit\": \"feet\"\n      }\n    ],\n    \"Constants\": [\n      {\n        \"name\": \"Height Threshold\",\n        \"value\": 12,\n        \"unit\": \"feet\",\n        \"description\": \"The threshold height used to classify the structure.\"\n      }\n    ],\n    \"Conditions\": [\n      {\n        \"type\": \"Mandatory\",\n        \"description\": \"To be classified as a 'Combination porch & vaulted entry way', the structure's height must be greater than 12 feet above grade.\",\n        \"logic\": \"Height > 12'\"\n      }\n    ],\n    \"Exceptions\": [],\n    \"Relationships\": {\n      \"hierarchical\": \"This rule defines one of the types of porches and entry ways illustrated in Figure 4.\",\n      \"cross_references\": [\n        {\n          \"reference\": \"Figs 6-8 on pp. 11-13\",\n          \"description\": \"Specifies the mandatory procedure for 'how to measure height of porches & entry features'.\"\n        }\n      ],\n      \"logical_dependencies\": [\n        \"Shares the same height condition as 'Vaulted entry way' (Panel C).\",\n        \"This classification is mutually exclusive with the classification in Panel B, which requires a height less than 12'.\"\n      ]\n    },\n    \"ambiguous_language\": [\n      {\n        \"term\": \"vaulted\",\n        \"reason\": \"The text uses a height condition (> 12') as the sole determinant for the 'vaulted' component of this structure type. The term 'vaulted' implies a specific architectural form, which is not defined. The distinction between this type and a 'Vaulted entry way' (Panel C) is also not clear from the text, other than the name 'Combination porch'.\"\n      }\n    ]\n  }\n]\n```",
+    "response_time": 53.83662009239197,
+    "input_tokens": 551,
+    "output_tokens": 6716,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 16:00:24",
+  "model": "google/gemini-2.5-pro",
+  "success": true
+}

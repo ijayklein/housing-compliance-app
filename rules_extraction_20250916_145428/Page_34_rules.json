@@ -1,0 +1,331 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_34.md",
+  "file_name": "Page_34.md",
+  "analysis": {
+    "extracted_rules": {
+      "regulations": [
+        {
+          "Qualifiers": {
+            "scope": "Rear primary daylight plane (geometry and measurement)",
+            "applicability": [
+              "Applies to rear-facing building massing subject to the rear primary daylight plane.",
+              "Measurement reference for the rear daylight plane is the rear setback line."
+            ],
+            "exclusions": [
+              "There is no front daylight plane."
+            ]
+          },
+          "Variables": [
+            {
+              "name": "daylight_plane_reference_line",
+              "description": "Fixed line from which the rear daylight plane is measured upward",
+              "units": "n/a",
+              "domain": "rear setback line",
+              "notes": "Rear daylight plane is measured up at the rear setback line."
+            },
+            {
+              "name": "daylight_plane_angle_basis",
+              "description": "Basis for the 60\u00b0 angle",
+              "units": "degrees",
+              "domain": "angle relative to horizontal (assumed) or vertical (unspecified)",
+              "notes": "Diagram labels 60\u00b0 adjacent to the sloping daylight plane line, but does not explicitly state whether measured from horizontal or vertical.",
+              "ambiguous": true
+            },
+            {
+              "name": "side_daylight_plane_reference_line",
+              "description": "Reference for side daylight plane (for cross-reference only)",
+              "units": "n/a",
+              "domain": "side lot line",
+              "notes": "Side daylight plane is measured up at lot line; provided for reference to ensure correct application by plane type."
+            }
+          ],
+          "Constants": [
+            {
+              "name": "daylight_plane_angle",
+              "value": 60,
+              "units": "degrees",
+              "source": "diagram label adjacent to the sloping daylight plane line",
+              "notes": "Exact angular value given; orientation basis is not explicitly stated."
+            }
+          ],
+          "Conditions": [
+            {
+              "type": "mandatory",
+              "if": "Evaluating rear primary daylight plane compliance",
+              "then": "Measure the daylight plane upward starting from the rear setback line",
+              "dependencies": [
+                "Correct identification of the rear setback line on the site plan"
+              ]
+            },
+            {
+              "type": "mandatory",
+              "if": "Constructing or evaluating building mass within the rear yard subject to daylight plane controls",
+              "then": "Enforce a sloping plane at 60\u00b0 from the reference line (orientation basis as adopted by the jurisdiction\u2019s standard for daylight plane angles)"
+            }
+          ],
+          "Exceptions": [],
+          "Relationships": [
+            {
+              "type": "cross-reference",
+              "description": "Side daylight plane is measured up at the lot line, not the rear setback line",
+              "logical_dependency": "Use correct reference line based on which daylight plane (side vs rear) is being applied."
+            },
+            {
+              "type": "hierarchical",
+              "description": "Rear daylight plane is one of multiple daylight planes; front daylight plane is explicitly excluded."
+            }
+          ]
+        },
+        {
+          "Qualifiers": {
+            "scope": "Protrusions into daylight planes (rear and side)",
+            "applicability": [
+              "Protrusions that penetrate into daylight plane envelopes on side and rear planes.",
+              "Rear protrusions are subject to the same rules as side protrusions."
+            ],
+            "exclusions": []
+          },
+          "Variables": [
+            {
+              "name": "protrusion_length_each",
+              "description": "Length of an individual protrusion subject to maximum limit",
+              "units": "ft",
+              "domain": "0\u20137.5",
+              "notes": "Diagram label: 7.5' max each protrusion."
+            },
+            {
+              "name": "protrusion_separation",
+              "description": "Clear spacing between adjacent protrusions",
+              "units": "ft",
+              "domain": ">= 5",
+              "notes": "Diagram label: 5' min separation."
+            },
+            {
+              "name": "protrusion_vertical_extent",
+              "description": "Maximum vertical extent attributable to a protrusion",
+              "units": "ft",
+              "domain": "0\u201324",
+              "notes": "Diagram label: 24' max (for protrusions). Vertical basis is implied by vertical dimension arrow.",
+              "ambiguous": true
+            },
+            {
+              "name": "cumulative_protrusion_length_per_side",
+              "description": "Sum of protrusion lengths counted along any one side",
+              "units": "ft",
+              "domain": "0\u201315",
+              "notes": "Bullet text: Cumulative length of protrusions must not exceed 15' on any one side.",
+              "ambiguous": true
+            },
+            {
+              "name": "protrusion_measurement_axis",
+              "description": "Axis along which protrusion length is measured",
+              "units": "n/a",
+              "domain": "along building elevation; along daylight plane intersection; or horizontal projection",
+              "notes": "Not specified whether the 7.5' limit is measured along facade, plan projection, or along the daylight plane edge.",
+              "ambiguous": true
+            }
+          ],
+          "Constants": [
+            {
+              "name": "protrusion_length_each_max",
+              "value": 7.5,
+              "units": "ft",
+              "source": "diagram label",
+              "notes": "Applies to each protrusion individually."
+            },
+            {
+              "name": "protrusion_separation_min",
+              "value": 5,
+              "units": "ft",
+              "source": "diagram label",
+              "notes": "Minimum clear distance between adjacent protrusions."
+            },
+            {
+              "name": "protrusion_vertical_extent_max",
+              "value": 24,
+              "units": "ft",
+              "source": "diagram label",
+              "notes": "Appears twice on vertical dimensions; interpretation as vertical extent is inferred.",
+              "ambiguous": true
+            },
+            {
+              "name": "cumulative_protrusion_length_limit_per_side",
+              "value": 15,
+              "units": "ft",
+              "source": "bullet rule",
+              "notes": "Cumulative cap applies on any one side.",
+              "ambiguous": true
+            }
+          ],
+          "Conditions": [
+            {
+              "type": "mandatory",
+              "if": "Design includes protrusions into side or rear daylight planes",
+              "then": "Each protrusion length must be <= 7.5 ft"
+            },
+            {
+              "type": "mandatory",
+              "if": "Multiple protrusions are used on a given side",
+              "then": "Maintain a minimum separation of 5 ft between protrusions"
+            },
+            {
+              "type": "mandatory",
+              "if": "Counting all protrusions on any one side",
+              "then": "Cumulative length must not exceed 15 ft",
+              "notes": "Unclear whether 'side' refers to a building elevation, a property side, or a segment of facade; clarify for automated checks.",
+              "dependencies": [
+                "Definition of 'side' measurement basis"
+              ]
+            },
+            {
+              "type": "mandatory",
+              "if": "Applying protrusion rules to rear daylight plane",
+              "then": "Use the same protrusion rules as for side daylight planes"
+            },
+            {
+              "type": "conditional",
+              "if": "Applying the 24' max (for protrusions)",
+              "then": "Limit vertical extent attributable to a protrusion to 24 ft",
+              "notes": "Exact datum (from grade, floor, or daylight plane intersection) is not specified; requires clarification.",
+              "dependencies": [
+                "Jurisdiction\u2019s definition of how protrusion height is measured"
+              ],
+              "ambiguous": true
+            }
+          ],
+          "Exceptions": [],
+          "Relationships": [
+            {
+              "type": "cross-reference",
+              "description": "Rear protrusions must follow the same standards as side protrusions."
+            },
+            {
+              "type": "logical dependency",
+              "description": "Compliance requires the daylight plane geometry from the relevant plane (rear or side) to determine if and where a protrusion penetrates."
+            }
+          ]
+        },
+        {
+          "Qualifiers": {
+            "scope": "Maximum building height limits",
+            "applicability": [
+              "All structures, subject to specific conditions for roof slope, lot type, and flood zone."
+            ],
+            "exclusions": []
+          },
+          "Variables": [
+            {
+              "name": "roof_slope",
+              "description": "Slope of roof expressed as rise:run",
+              "units": "ratio",
+              "domain": "<12:12 or >=12:12",
+              "notes": "Threshold at 12:12 determines base height limit outside special lot/flood conditions."
+            },
+            {
+              "name": "lot_type",
+              "description": "Classification of lot",
+              "units": "categorical",
+              "domain": [
+                "standard",
+                "substandard",
+                "flag"
+              ]
+            },
+            {
+              "name": "in_flood_zone",
+              "description": "Whether structure is located in a flood zone",
+              "units": "boolean",
+              "domain": [
+                true,
+                false
+              ]
+            },
+            {
+              "name": "max_building_height",
+              "description": "Permitted overall building height limit subject to conditions",
+              "units": "ft",
+              "domain": "17\u201333",
+              "notes": "Varies per conditions below."
+            }
+          ],
+          "Constants": [
+            {
+              "name": "max_height_low_slope",
+              "value": 30,
+              "units": "ft",
+              "source": "bullet rule",
+              "notes": "Applies to structures with roof slope < 12:12 outside special conditions."
+            },
+            {
+              "name": "max_height_steep_slope",
+              "value": 33,
+              "units": "ft",
+              "source": "bullet rule",
+              "notes": "Applies to structures with roof slope >= 12:12 outside special conditions."
+            },
+            {
+              "name": "max_height_substandard_or_flag",
+              "value": 17,
+              "units": "ft",
+              "source": "bullet rule",
+              "notes": "Applies regardless of flood zone."
+            },
+            {
+              "name": "max_height_flood_zone_cap",
+              "value": 33,
+              "units": "ft",
+              "source": "bullet rule",
+              "notes": "Structures located in flood zones (except on substandard and flag lots) have a variable maximum up to 33 ft."
+            }
+          ],
+          "Conditions": [
+            {
+              "type": "mandatory",
+              "if": "Lot type is substandard or flag (any roof slope; any flood status)",
+              "then": "Set max_building_height = 17 ft",
+              "dependencies": [
+                "Accurate lot type classification"
+              ]
+            },
+            {
+              "type": "conditional",
+              "if": "Structure is in a flood zone AND lot is NOT substandard or flag",
+              "then": "max_building_height is variable up to 33 ft",
+              "notes": "Procedure or criteria to determine the exact allowed height within the 0\u201333 ft range are not provided; only the upper cap (33 ft) is specified.",
+              "ambiguous": true,
+              "dependencies": [
+                "Jurisdictional flood elevation and adjustment rules (not provided here)"
+              ]
+            },
+            {
+              "type": "mandatory",
+              "if": "Not in flood zone AND lot is standard",
+              "then": "Apply roof-slope-based limits: <12:12 => 30 ft; >=12:12 => 33 ft"
+            }
+          ],
+          "Exceptions": [
+            {
+              "case": "Substandard or flag lots within flood zones",
+              "outcome": "Max building height remains 17 ft (no increase for flood conditions)."
+            }
+          ],
+          "Relationships": [
+            {
+              "type": "logical dependency",
+              "description": "Building must satisfy both the maximum building height regulation and daylight plane regulations independently."
+            },
+            {
+              "type": "hierarchical",
+              "description": "Roof slope condition applies after excluding substandard/flag lot cases and before flood zone variability for standard lots."
+            }
+          ]
+        }
+      ]
+    },
+    "parse_error": false,
+    "raw_response": "{\n  \"regulations\": [\n    {\n      \"Qualifiers\": {\n        \"scope\": \"Rear primary daylight plane (geometry and measurement)\",\n        \"applicability\": [\n          \"Applies to rear-facing building massing subject to the rear primary daylight plane.\",\n          \"Measurement reference for the rear daylight plane is the rear setback line.\"\n        ],\n        \"exclusions\": [\n          \"There is no front daylight plane.\"\n        ]\n      },\n      \"Variables\": [\n        {\n          \"name\": \"daylight_plane_reference_line\",\n          \"description\": \"Fixed line from which the rear daylight plane is measured upward\",\n          \"units\": \"n/a\",\n          \"domain\": \"rear setback line\",\n          \"notes\": \"Rear daylight plane is measured up at the rear setback line.\"\n        },\n        {\n          \"name\": \"daylight_plane_angle_basis\",\n          \"description\": \"Basis for the 60\u00b0 angle\",\n          \"units\": \"degrees\",\n          \"domain\": \"angle relative to horizontal (assumed) or vertical (unspecified)\",\n          \"notes\": \"Diagram labels 60\u00b0 adjacent to the sloping daylight plane line, but does not explicitly state whether measured from horizontal or vertical.\",\n          \"ambiguous\": true\n        },\n        {\n          \"name\": \"side_daylight_plane_reference_line\",\n          \"description\": \"Reference for side daylight plane (for cross-reference only)\",\n          \"units\": \"n/a\",\n          \"domain\": \"side lot line\",\n          \"notes\": \"Side daylight plane is measured up at lot line; provided for reference to ensure correct application by plane type.\"\n        }\n      ],\n      \"Constants\": [\n        {\n          \"name\": \"daylight_plane_angle\",\n          \"value\": 60,\n          \"units\": \"degrees\",\n          \"source\": \"diagram label adjacent to the sloping daylight plane line\",\n          \"notes\": \"Exact angular value given; orientation basis is not explicitly stated.\"\n        }\n      ],\n      \"Conditions\": [\n        {\n          \"type\": \"mandatory\",\n          \"if\": \"Evaluating rear primary daylight plane compliance\",\n          \"then\": \"Measure the daylight plane upward starting from the rear setback line\",\n          \"dependencies\": [\n            \"Correct identification of the rear setback line on the site plan\"\n          ]\n        },\n        {\n          \"type\": \"mandatory\",\n          \"if\": \"Constructing or evaluating building mass within the rear yard subject to daylight plane controls\",\n          \"then\": \"Enforce a sloping plane at 60\u00b0 from the reference line (orientation basis as adopted by the jurisdiction\u2019s standard for daylight plane angles)\"\n        }\n      ],\n      \"Exceptions\": [],\n      \"Relationships\": [\n        {\n          \"type\": \"cross-reference\",\n          \"description\": \"Side daylight plane is measured up at the lot line, not the rear setback line\",\n          \"logical_dependency\": \"Use correct reference line based on which daylight plane (side vs rear) is being applied.\"\n        },\n        {\n          \"type\": \"hierarchical\",\n          \"description\": \"Rear daylight plane is one of multiple daylight planes; front daylight plane is explicitly excluded.\"\n        }\n      ]\n    },\n    {\n      \"Qualifiers\": {\n        \"scope\": \"Protrusions into daylight planes (rear and side)\",\n        \"applicability\": [\n          \"Protrusions that penetrate into daylight plane envelopes on side and rear planes.\",\n          \"Rear protrusions are subject to the same rules as side protrusions.\"\n        ],\n        \"exclusions\": []\n      },\n      \"Variables\": [\n        {\n          \"name\": \"protrusion_length_each\",\n          \"description\": \"Length of an individual protrusion subject to maximum limit\",\n          \"units\": \"ft\",\n          \"domain\": \"0\u20137.5\",\n          \"notes\": \"Diagram label: 7.5' max each protrusion.\"\n        },\n        {\n          \"name\": \"protrusion_separation\",\n          \"description\": \"Clear spacing between adjacent protrusions\",\n          \"units\": \"ft\",\n          \"domain\": \">= 5\",\n          \"notes\": \"Diagram label: 5' min separation.\"\n        },\n        {\n          \"name\": \"protrusion_vertical_extent\",\n          \"description\": \"Maximum vertical extent attributable to a protrusion\",\n          \"units\": \"ft\",\n          \"domain\": \"0\u201324\",\n          \"notes\": \"Diagram label: 24' max (for protrusions). Vertical basis is implied by vertical dimension arrow.\",\n          \"ambiguous\": true\n        },\n        {\n          \"name\": \"cumulative_protrusion_length_per_side\",\n          \"description\": \"Sum of protrusion lengths counted along any one side\",\n          \"units\": \"ft\",\n          \"domain\": \"0\u201315\",\n          \"notes\": \"Bullet text: Cumulative length of protrusions must not exceed 15' on any one side.\",\n          \"ambiguous\": true\n        },\n        {\n          \"name\": \"protrusion_measurement_axis\",\n          \"description\": \"Axis along which protrusion length is measured\",\n          \"units\": \"n/a\",\n          \"domain\": \"along building elevation; along daylight plane intersection; or horizontal projection\",\n          \"notes\": \"Not specified whether the 7.5' limit is measured along facade, plan projection, or along the daylight plane edge.\",\n          \"ambiguous\": true\n        }\n      ],\n      \"Constants\": [\n        {\n          \"name\": \"protrusion_length_each_max\",\n          \"value\": 7.5,\n          \"units\": \"ft\",\n          \"source\": \"diagram label\",\n          \"notes\": \"Applies to each protrusion individually.\"\n        },\n        {\n          \"name\": \"protrusion_separation_min\",\n          \"value\": 5,\n          \"units\": \"ft\",\n          \"source\": \"diagram label\",\n          \"notes\": \"Minimum clear distance between adjacent protrusions.\"\n        },\n        {\n          \"name\": \"protrusion_vertical_extent_max\",\n          \"value\": 24,\n          \"units\": \"ft\",\n          \"source\": \"diagram label\",\n          \"notes\": \"Appears twice on vertical dimensions; interpretation as vertical extent is inferred.\",\n          \"ambiguous\": true\n        },\n        {\n          \"name\": \"cumulative_protrusion_length_limit_per_side\",\n          \"value\": 15,\n          \"units\": \"ft\",\n          \"source\": \"bullet rule\",\n          \"notes\": \"Cumulative cap applies on any one side.\",\n          \"ambiguous\": true\n        }\n      ],\n      \"Conditions\": [\n        {\n          \"type\": \"mandatory\",\n          \"if\": \"Design includes protrusions into side or rear daylight planes\",\n          \"then\": \"Each protrusion length must be <= 7.5 ft\"\n        },\n        {\n          \"type\": \"mandatory\",\n          \"if\": \"Multiple protrusions are used on a given side\",\n          \"then\": \"Maintain a minimum separation of 5 ft between protrusions\"\n        },\n        {\n          \"type\": \"mandatory\",\n          \"if\": \"Counting all protrusions on any one side\",\n          \"then\": \"Cumulative length must not exceed 15 ft\",\n          \"notes\": \"Unclear whether 'side' refers to a building elevation, a property side, or a segment of facade; clarify for automated checks.\",\n          \"dependencies\": [\n            \"Definition of 'side' measurement basis\"\n          ]\n        },\n        {\n          \"type\": \"mandatory\",\n          \"if\": \"Applying protrusion rules to rear daylight plane\",\n          \"then\": \"Use the same protrusion rules as for side daylight planes\"\n        },\n        {\n          \"type\": \"conditional\",\n          \"if\": \"Applying the 24' max (for protrusions)\",\n          \"then\": \"Limit vertical extent attributable to a protrusion to 24 ft\",\n          \"notes\": \"Exact datum (from grade, floor, or daylight plane intersection) is not specified; requires clarification.\",\n          \"dependencies\": [\n            \"Jurisdiction\u2019s definition of how protrusion height is measured\"\n          ],\n          \"ambiguous\": true\n        }\n      ],\n      \"Exceptions\": [],\n      \"Relationships\": [\n        {\n          \"type\": \"cross-reference\",\n          \"description\": \"Rear protrusions must follow the same standards as side protrusions.\"\n        },\n        {\n          \"type\": \"logical dependency\",\n          \"description\": \"Compliance requires the daylight plane geometry from the relevant plane (rear or side) to determine if and where a protrusion penetrates.\"\n        }\n      ]\n    },\n    {\n      \"Qualifiers\": {\n        \"scope\": \"Maximum building height limits\",\n        \"applicability\": [\n          \"All structures, subject to specific conditions for roof slope, lot type, and flood zone.\"\n        ],\n        \"exclusions\": []\n      },\n      \"Variables\": [\n        {\n          \"name\": \"roof_slope\",\n          \"description\": \"Slope of roof expressed as rise:run\",\n          \"units\": \"ratio\",\n          \"domain\": \"<12:12 or >=12:12\",\n          \"notes\": \"Threshold at 12:12 determines base height limit outside special lot/flood conditions.\"\n        },\n        {\n          \"name\": \"lot_type\",\n          \"description\": \"Classification of lot\",\n          \"units\": \"categorical\",\n          \"domain\": [\n            \"standard\",\n            \"substandard\",\n            \"flag\"\n          ]\n        },\n        {\n          \"name\": \"in_flood_zone\",\n          \"description\": \"Whether structure is located in a flood zone\",\n          \"units\": \"boolean\",\n          \"domain\": [\n            true,\n            false\n          ]\n        },\n        {\n          \"name\": \"max_building_height\",\n          \"description\": \"Permitted overall building height limit subject to conditions\",\n          \"units\": \"ft\",\n          \"domain\": \"17\u201333\",\n          \"notes\": \"Varies per conditions below.\"\n        }\n      ],\n      \"Constants\": [\n        {\n          \"name\": \"max_height_low_slope\",\n          \"value\": 30,\n          \"units\": \"ft\",\n          \"source\": \"bullet rule\",\n          \"notes\": \"Applies to structures with roof slope < 12:12 outside special conditions.\"\n        },\n        {\n          \"name\": \"max_height_steep_slope\",\n          \"value\": 33,\n          \"units\": \"ft\",\n          \"source\": \"bullet rule\",\n          \"notes\": \"Applies to structures with roof slope >= 12:12 outside special conditions.\"\n        },\n        {\n          \"name\": \"max_height_substandard_or_flag\",\n          \"value\": 17,\n          \"units\": \"ft\",\n          \"source\": \"bullet rule\",\n          \"notes\": \"Applies regardless of flood zone.\"\n        },\n        {\n          \"name\": \"max_height_flood_zone_cap\",\n          \"value\": 33,\n          \"units\": \"ft\",\n          \"source\": \"bullet rule\",\n          \"notes\": \"Structures located in flood zones (except on substandard and flag lots) have a variable maximum up to 33 ft.\"\n        }\n      ],\n      \"Conditions\": [\n        {\n          \"type\": \"mandatory\",\n          \"if\": \"Lot type is substandard or flag (any roof slope; any flood status)\",\n          \"then\": \"Set max_building_height = 17 ft\",\n          \"dependencies\": [\n            \"Accurate lot type classification\"\n          ]\n        },\n        {\n          \"type\": \"conditional\",\n          \"if\": \"Structure is in a flood zone AND lot is NOT substandard or flag\",\n          \"then\": \"max_building_height is variable up to 33 ft\",\n          \"notes\": \"Procedure or criteria to determine the exact allowed height within the 0\u201333 ft range are not provided; only the upper cap (33 ft) is specified.\",\n          \"ambiguous\": true,\n          \"dependencies\": [\n            \"Jurisdictional flood elevation and adjustment rules (not provided here)\"\n          ]\n        },\n        {\n          \"type\": \"mandatory\",\n          \"if\": \"Not in flood zone AND lot is standard\",\n          \"then\": \"Apply roof-slope-based limits: <12:12 => 30 ft; >=12:12 => 33 ft\"\n        }\n      ],\n      \"Exceptions\": [\n        {\n          \"case\": \"Substandard or flag lots within flood zones\",\n          \"outcome\": \"Max building height remains 17 ft (no increase for flood conditions).\"\n        }\n      ],\n      \"Relationships\": [\n        {\n          \"type\": \"logical dependency\",\n          \"description\": \"Building must satisfy both the maximum building height regulation and daylight plane regulations independently.\"\n        },\n        {\n          \"type\": \"hierarchical\",\n          \"description\": \"Roof slope condition applies after excluding substandard/flag lot cases and before flood zone variability for standard lots.\"\n        }\n      ]\n    }\n  ]\n}"
+  },
+  "timestamp": "2025-09-16 15:05:23",
+  "model": "openai/gpt-5",
+  "success": true
+}

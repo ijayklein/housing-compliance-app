@@ -1,0 +1,12 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_53.png",
+  "image_name": "Page_53.png",
+  "analysis": {
+    "raw_content": "Extracted content (verbatim where legible)\n\nPage title\n- Grade\n\nTable\n- Column headers: When measuring | Use | Which is defined as | Illus.\n\nRow 1\n- When measuring: The height of a structure on land with natural slope \u2264 10%\n- Use: Existing Grade\n- Which is defined as: for each building or structure, the lowest point of adjacent ground elevation prior to grading or fill\n- Illus.: Fig 44 on this page\n\nRow 2\n- When measuring: The height of a structure on land with natural slope > 10%\n- Use: Grade\n- Which is defined as: adjacent ground elevation of the finished or existing grade, whichever is lower\u2014at any point of the structure\n- Illus.: Fig 45 on this page\n\nRow 3\n- When measuring: A daylight plane\n- Use: Average grade\n- Which is defined as: average of the grade at the midpoint of the building and the grade at the closest point on the abutting site\n- Illus.: Figs 20\u201321 pp. 26\u201327\n\nFigures and callouts\n\nFig 44 caption\n- Existing vs. Finished grade\n\nFig 44 labels (legible)\n- Finished grade (after fill)\n- Existing grade (before fill)\n- Lowest point of ground elevation before fill (existing grade) adjacent to the structure\n- Height measured to [illegible] highest point\n\nFig 45 caption\n- Height limits for structures on slopes greater than 10%\n\nFig 45 labels (legible)\n- 30' above existing grade\n- 30' above finished\n- Existing grade (before fill)\n- The structure must comply with the lower of the two limits at all points along the slope\n- Height (appears next to each structure)\n\nFig 46 caption\n- Comparison of different grades\n- Interior numeric/ratio labels on the diagram are not fully legible in the provided image.\n\nFooter\n- Page number: 47",
+    "content_length": 1656,
+    "parse_error": false
+  },
+  "timestamp": "2025-09-16 14:09:35",
+  "model": "openai/gpt-5",
+  "success": true
+}

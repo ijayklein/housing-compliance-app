@@ -1,0 +1,63 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_19.png",
+  "image_name": "Page_19.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Fig 8 Entry feature with 2nd floor above\n\nNote: The 2nd floor over a vaulted entry will count as usual. Therefore, the area will count three times toward gross floor area.\n\nNote: If the entryway is considered to be a vaulted entryway the area will be counted as follows:\n\u2022   In this example, a portion of the entryway is recessed beyond the house facade and roof. It is included in the area that counts.\n\u2022   The area is measured to the outside material of the entryway feature.\n\u2022   The area counts TWICE toward gross floor area.\n\nIsometric View\nHeight\nGrade\n\nSide Elevation\nIntersection of front\nfacade and under-\nside or bottom of\n2nd floor\nHeight\nTop of 2nd floor\nBottom of 2nd floor\n\nPorch Floor Plan\nOutline of entryway\nfloor area that counts\nTWICE if entryway is\nvaulted\n\n13",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "An isometric view of a two-story building's entrance feature. The entrance on the ground floor is an arched opening. Directly above it on the second floor is a window. A vertical dashed line runs along the front plane of the entrance. A measurement labeled 'Height' is indicated with a vertical arrow from 'Grade' (ground level) to the underside of the second-floor structure.",
+          "location": "Left side of the page, labeled 'Isometric View'."
+        },
+        {
+          "type": "diagram",
+          "description": "A side elevation view of the entrance feature. It shows the profile of the ground floor entrance and the second floor above it. A vertical measurement for 'Height' is shown from the ground to a point marked with a plus sign, which is labeled 'Intersection of front facade and underside or bottom of 2nd floor'. Horizontal dashed lines indicate the 'Top of 2nd floor' and 'Bottom of 2nd floor'.",
+          "location": "Middle of the page, labeled 'Side Elevation'."
+        },
+        {
+          "type": "diagram",
+          "description": "A floor plan view of the porch/entryway. The walls are shown with thin lines. A thick black line outlines the floor area of the entryway. A label points to this area, reading 'Outline of entryway floor area that counts TWICE if entryway is vaulted'. An arc indicates the swing of a door.",
+          "location": "Right side of the page, labeled 'Porch Floor Plan'."
+        },
+        {
+          "type": "figure",
+          "description": "A dark grey text box with white text containing a note about gross floor area calculation.",
+          "location": "Top right corner of the page."
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Vaulted entryway area multiplier",
+          "value": "TWICE",
+          "unit": "multiplier"
+        },
+        {
+          "parameter": "Total area multiplier for vaulted entry with 2nd floor above",
+          "value": "three times",
+          "unit": "multiplier"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": null,
+        "subheadings": [
+          "Fig 8 Entry feature with 2nd floor above",
+          "Isometric View",
+          "Side Elevation",
+          "Porch Floor Plan"
+        ],
+        "sections": [
+          "Fig 8"
+        ]
+      },
+      "additional_notes": [
+        "The page number '13' is located in the bottom right corner.",
+        "The page layout consists of a main figure title ('Fig 8') at the top left, followed by three diagrams ('Isometric View', 'Side Elevation', 'Porch Floor Plan') arranged horizontally across the page. Explanatory notes are located on the right side of the page, with one note in a distinct grey box at the top right and another set of bulleted notes below it.",
+        "The text 'TWICE' is bolded in the notes and diagram labels to emphasize the calculation rule."
+      ],
+      "cross_references": []
+    }
+  },
+  "analysis_timestamp": "2025-09-11 14:35:43",
+  "model_used": "google/gemini-2.5-pro"
+}

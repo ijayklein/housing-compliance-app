@@ -1,0 +1,23 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_53.png",
+  "image_name": "Page_53.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "PARSE_ERROR",
+      "visual_elements": [],
+      "technical_specifications": [],
+      "structural_elements": {
+        "main_heading": "",
+        "subheadings": [],
+        "sections": []
+      },
+      "additional_notes": [
+        "Failed to parse LLM response: Expecting value: line 1 column 1 (char 0)"
+      ],
+      "cross_references": []
+    },
+    "raw_response": "The following information is extracted from the provided images:\n\n**Table: Grade Definitions**\n\n| When measuring | Use | Which is defined as | Illus. |\n|---|---|---|---|\n| The height of a structure on land with natural slope \u2264 10% | Existing Grade | for each building or structure, the lowest point of adjacent ground elevation prior to grading or fill | Fig 44 on this page |\n| The height of a structure on land with natural slope > 10% | Grade | adjacent ground elevation of the finished or existing grade, whichever is lower--at any point of the structure | Fig 45 on this page |\n| A daylight plane | Average grade | average of the grade at the midpoint of the building and the grade at the closest point on the abutting site | Figs 20-21 pp. 26-27 |\n\n**Figure 45: Height limits for structures on slopes greater than 10%**\n*   Indicates two height limits: \"30' above existing grade\" and \"30' above finished\".\n*   Text states: \"The structure must comply with the lower of the two limits at all points along the slope\".\n*   Illustrates two structures on a slope with \"Height\" indicated for each, relative to the ground.\n*   Shows \"Existing grade (before fill)\".\n\n**Figure 44: Existing vs. Finished grade**\n*   Illustrates a house.\n*   \"Height: measured to top of roof material of the highest peak\".\n*   Shows \"Finished grade (after fill)\".\n*   Shows \"Existing grade (before fill)\".\n*   Indicates \"Lowest point of ground elevation before fill (existing grade) adjacent to the structure\".\n\n**Figure 46: Comparison of different grades**\n*   A graph with lines labeled:\n    *   10:10, 100%\n    *   5:10, 50%\n    *   3:10, 33%\n    *   1:10, 10%\n\n**Page Number:** 47"
+  },
+  "analysis_timestamp": "2025-09-16 12:26:02",
+  "model_used": "google/gemini-2.5-flash"
+}

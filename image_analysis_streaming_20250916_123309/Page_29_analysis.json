@@ -1,0 +1,19 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_29.png",
+  "image_name": "Page_29.png",
+  "analysis": {
+    "page_number": "unknown",
+    "main_heading": "PARSE_ERROR",
+    "text_content": "Failed to parse response: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)",
+    "tables": [],
+    "figures": [],
+    "zoning_rules": [],
+    "code_references": [],
+    "quality_notes": "JSON parsing failed: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)",
+    "raw_response": "```json\n{\n  \"page_number\": \"23\",\n  \"main_heading\": \"Determining setbacks on oddly shaped lots considerations\",\n  \"text_content\": \"Determining setbacks on oddly shaped lots considerations\\nFig 17 Setbacks for oddly shaped lots\\nKey\\nCurb\\nLot line\\nSidewalk\\nRequired\\nsetbacks\\nBuildable\\narea\\nFront lot line\\nis closest and\\nmost parallel\\nto street.\\nFront\\nsetback is\\n10' instead\\nof 20'\\nStreet side\\nsetback is 10'\\ninstead of 16'\\nFront lot line is\\nshortest of the\\ntwo frontages.\\nWedge shaped lots\\ndon't have rear lot lines.\\nThe rear yard is\\ndetermined by a 20'\\nradius from intersection\\nof side lot lines.\\nRear lot line is\\nfarthest and\\nmost parallel to\\nstreet.\",\n  \"tables\": [],\n  \"figures\": [\n    {\n      \"figure_number\": \"Fig 17\",\n      \"caption\": \"Setbacks for oddly shaped lots\",\n      \"description\": \"A series of seven diagrams (A-G) illustrating different types of oddly shaped lots and their corresponding setback considerations. Each diagram shows a lot with designated fr",
+    "parse_error": true
+  },
+  "analysis_timestamp": "2025-09-16 12:33:29",
+  "model_used": "google/gemini-2.5-flash",
+  "success": false
+}

@@ -1,0 +1,23 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_10.png",
+  "image_name": "Page_10.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "PARSE_ERROR",
+      "visual_elements": [],
+      "technical_specifications": [],
+      "structural_elements": {
+        "main_heading": "",
+        "subheadings": [],
+        "sections": []
+      },
+      "additional_notes": [
+        "Failed to parse LLM response: Expecting value: line 1 column 1 (char 0)"
+      ],
+      "cross_references": []
+    },
+    "raw_response": "**Lot coverage & floor area**\n\nThese terms are used to describe the amount of development on a lot.\n\n**Lot coverage** describes how much of the lot is covered by structures but doesn't evaluate the mass of those structures.\n\n**Gross floor area** describes the mass of the structures by reflecting the cumulative square footage of all visible levels.\n\n**Lot coverage**\n\n**Maximum allowable**\nAllowable lot coverage is expressed by a ratio\u201435% of the lot size.\n\n**Example calculation:**\nFor a 7,000 sf lot, the allowable lot coverage would be:\n0.35 x 7,000 sf = 2,450 sf\n\n**Lot coverage includes:**\n*   footprints of all structures including main residence, covered parking, tool sheds, covered pool equipment units, etc.\n*   projecting elements such as balconies, stairways, porches, patio covers, etc.\n*   decking that exceeds 30\" above grade.\n*   for roof overhangs or eaves that exceed 4', the portion that is beyond 4'.\n*   swimming pools and spas that exceed 30\" above grade.\n\n**Lot coverage excludes:**\n*   roof overhangs up to 4'.\n*   uncovered structures less than 30\" above grade.\n\nAn additional 5% coverage is permitted for covered patios, canopies and roof overhangs beyond 4 feet.\n\n**Note:** To qualify as a structure that is less than 30 inches above grade, a porch or deck may only have open railings above 30 inches\u2014no solid half walls.\n\n**Gross Floor area**\n\n**Maximum allowable**\nAllowable gross floor area is expressed by a ratio\u2014the sum of 45% of the first 5,000 sf of lot area plus 30% of any portion of lot area in excess of 5,000 sf.\n\n**Example calculation:**\nFor a 7,000 sf lot, the allowable gross floor area would be:\n0.45 x 5,000 sf = 2,250 sf\n0.30 x 2,000 sf = 600 sf\nTotal = 2,850 sf\n\n**Gross floor area includes:**\n*   the sum of all the floors in a main structure measured to the outside of the exterior stud walls.\n*   stairwells at all floors and all areas that are greater than 50% enclosed and covered.\n*   covered parking and all accessory buildings which are greater than 120 square feet.\n*   spaces that meet the criteria for second and third floor equivalents.\n\n**Note:** The main house may not exceed 6,000 sf, regardless of the size of the lot.\n\n**Code sections**\nPage 4-5\n18.12.040 (a) Table 2\n18.12.040 (b) Table 3\n18.04.030 (a) (86)"
+  },
+  "analysis_timestamp": "2025-09-16 12:25:52",
+  "model_used": "google/gemini-2.5-flash"
+}

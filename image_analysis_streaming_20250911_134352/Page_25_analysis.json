@@ -1,0 +1,46 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_25.png",
+  "image_name": "Page_25.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Fireplaces, chimneys, sheds, planters, and other projections\n\n\u2022 Fireplaces shall be included in the gross floor area (counted one time) regardless of configuration or design.\n\n\u2022 Sheds, planters, and other projections that are higher than 5' count toward gross floor area regardless of configuration or design.\n\nFig 14 Fireplaces, chimneys, sheds, etc.\n\nChimneys on the upper floors DO NOT COUNT\n\nAll configurations of fireplaces, chimneys, and buttresses COUNT ONCE towards the gross floor area.\nNote: Fireplaces not connected to the house are treated like accessory structures; they and count towards FAR if they are greater than 120 sf. They count towards lot coverage always, regardless of size.\n\nMiscellaneous appendages e.g., tool sheds, equipment enclosures, play houses, etc., that are greater than 5' in height, DO COUNT toward gross floor area. (Note: Neither appendages like this nor noise-producing equipment may be located in the required yards.)\n\nNote: In 2000, the city of Palo Alto passed an ordinance prohibiting the construction of new wood-burning fireplaces. For details about and possible prohibition, see the chapter 9.06.030\n\n19",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Isometric architectural drawing showing a house with various projections including chimneys, fireplaces, and a small shed. The diagram illustrates which elements count toward gross floor area calculations. Arrows point to different features with explanatory text. Shows chimneys on upper floors, fireplaces at ground level, and a separate small structure with height measurement indicator.",
+          "location": "Center of page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Height threshold for projections",
+          "value": "5",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Fireplace size threshold for FAR calculation",
+          "value": "120",
+          "unit": "square feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Fireplaces, chimneys, sheds, planters, and other projections",
+        "subheadings": [],
+        "sections": [
+          "Fig 14"
+        ]
+      },
+      "additional_notes": [
+        "Gray shaded box contains the main bullet point rules",
+        "Dark gray box on right contains note about Palo Alto ordinance",
+        "Page number 19 appears at bottom right",
+        "Diagram includes detailed annotations and measurement indicators"
+      ],
+      "cross_references": [
+        "chapter 9.06.030"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-11 13:44:37",
+  "model_used": "anthropic/claude-sonnet-4"
+}

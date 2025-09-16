@@ -1,0 +1,88 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_15.png",
+  "image_name": "Page_15.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Step 2: Determine which perimeter segments abut the house walls. These are closed segments, or sides.\n\nIn Fig 5 sides A, B, & C abut the house walls.\nThese are considered to be closed segments.\n\nStep 3: Determine the status (open/closed) of the remaining segments based on the design. If at least 50% of the facade area is\nopen, then the segment or side is considered open.\n\nFor purposes of assessing the openess of the facade:\n\u2022 The height of the segment facades is measured from the top of the porch floor to the the point where the\nsegment facade intersects with the top of the roof material.\n\u2022 The widths of the segment facades are measured from the same plane. Allowances may be made for\nstructural supports that are not excessive.\n\nIntersection\nfacade & top\nof roof material\n\nPorch flr\n\nD\n7'\nOpen\n\nE\n14'\nClosed\n(because of decorative glass wall)\n\nF\n24'\nOpen\n\nG\n4'\nOpen\n\n9",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "An overhead view diagram of a structure with three segments labeled A, B, and C. Segment A is 3' long, segment B is 8' long, and segment C is 10' long. Segment C also shows a door opening. These segments are shown abutting house walls.",
+          "location": "Top right"
+        },
+        {
+          "type": "diagram",
+          "description": "A series of four cross-section diagrams (D, E, F, G) illustrating different facade types and their 'open' or 'closed' status. Each diagram shows a segment with a base, vertical supports, and a roof structure. A dashed line indicates the 'Porch flr' (porch floor) and another dashed line with text 'Intersection facade & top of roof material' indicates the height measurement. The height is labeled 'Height = 8'' in diagram E. The widths of the segments are indicated below each diagram.",
+          "location": "Bottom half"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Segment A length",
+          "value": "3",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Segment B length",
+          "value": "8",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Segment C length",
+          "value": "10",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum facade area for 'open' status",
+          "value": "50",
+          "unit": "percent"
+        },
+        {
+          "parameter": "Segment D width",
+          "value": "7",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Segment E width",
+          "value": "14",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Segment E height",
+          "value": "8",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Segment F width",
+          "value": "24",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Segment G width",
+          "value": "4",
+          "unit": "feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": null,
+        "subheadings": [
+          "Step 2:",
+          "Step 3:",
+          "For purposes of assessing the openess of the facade:"
+        ],
+        "sections": []
+      },
+      "additional_notes": [
+        "Page number '9' is present at the bottom right corner.",
+        "The text '8'' and '10'' in the top right diagram are slightly rotated to align with the segments.",
+        "The text 'Height = 8''' in diagram E is vertically oriented.",
+        "The text '(because of decorative glass wall)' is a parenthetical explanation for why segment E is 'Closed'."
+      ],
+      "cross_references": [
+        "Fig 5"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-14 19:32:21",
+  "model_used": "google/gemini-2.5-flash"
+}

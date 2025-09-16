@@ -1,0 +1,19 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_46.png",
+  "image_name": "Page_46.png",
+  "analysis": {
+    "page_number": "unknown",
+    "main_heading": "PARSE_ERROR",
+    "text_content": "Failed to parse response: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)",
+    "tables": [],
+    "figures": [],
+    "zoning_rules": [],
+    "code_references": [],
+    "quality_notes": "JSON parsing failed: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)",
+    "raw_response": "```json\n{\n  \"page_number\": \"40\",\n  \"main_heading\": \"Basements & Excavated features\",\n  \"text_content\": \"Basements\\n&\\nExcavated\\nfeatures\\nFloor area regulations\\nare intended to address\\nthe building mass and\\nthe appearance of the\\nstreetscape. Therefore,\\nif basement area is\\nbelow grade and does\\nnot contribute to the\\napparent mass of a\\nbuilding, that area,\\neven if it is habitable,\\nneed not be included in\\nthe total floor area.\\nBasement standards\\n\u2022 May not be located in special flood hazard areas.\\n\u2022 May not extend beyond building footprint.\\n\u2022 May not encroach into required yards, except where\\nmain dwelling is permitted to extend into rear yard.\\nFAR\\nBasements (even habitable ones) do\\nnot count as floor area if first floor\\nis no more than 3' above grade.\\nFig 35 Basement & grade\\nExcavated features\\nThere are two types of excavated features:\\n\u2022 Light wells and stairwells\\n\u2022 Below-grade patios\\nFAR\\nExcavation will not affect grade or\\nmeasurement of floor area if stan-\\n",
+    "parse_error": true
+  },
+  "analysis_timestamp": "2025-09-16 12:33:42",
+  "model_used": "google/gemini-2.5-flash",
+  "success": false
+}

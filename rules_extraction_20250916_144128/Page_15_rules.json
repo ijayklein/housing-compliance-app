@@ -1,0 +1,91 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_15.md",
+  "file_name": "Page_15.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "Rule": "Determine perimeter segments abutting house walls",
+        "Qualifiers": {
+          "Scope": "Perimeter segments of a house",
+          "Applicability": "Segments that abut house walls",
+          "Exclusions": "Segments not abutting house walls"
+        },
+        "Variables": {
+          "Dimensional": {
+            "B": "8'",
+            "C": "10'",
+            "A": "Unclear"
+          }
+        },
+        "Constants": {},
+        "Conditions": {
+          "Mandatory": "Segments abutting house walls are considered closed"
+        },
+        "Exceptions": {},
+        "Relationships": {
+          "Hierarchical": "Segments A, B, C are closed segments"
+        }
+      },
+      {
+        "Rule": "Determine status of remaining segments",
+        "Qualifiers": {
+          "Scope": "Remaining perimeter segments",
+          "Applicability": "Segments not abutting house walls",
+          "Exclusions": "Segments abutting house walls"
+        },
+        "Variables": {
+          "Dimensional": {
+            "Height": "Measured from top of porch floor to intersection with top of roof material",
+            "Width": "Measured from the same plane"
+          }
+        },
+        "Constants": {
+          "Height": "8'"
+        },
+        "Conditions": {
+          "Conditional logic": "If at least 50% of the facade area is open, then the segment is considered open"
+        },
+        "Exceptions": {
+          "Allowances": "Allowances may be made for structural supports that are not excessive"
+        },
+        "Relationships": {
+          "Logical dependencies": "Open/closed status depends on facade openness"
+        }
+      },
+      {
+        "Rule": "Section/elevation diagrams for facade segments",
+        "Qualifiers": {
+          "Scope": "Facade segments D, E, F, G",
+          "Applicability": "Segments with specified widths",
+          "Exclusions": "Segments without specified widths"
+        },
+        "Variables": {
+          "Dimensional": {
+            "D": "7'",
+            "E": "14'",
+            "F": "24'",
+            "G": "4'"
+          }
+        },
+        "Constants": {},
+        "Conditions": {
+          "Mandatory": {
+            "D": "Open",
+            "E": "Closed (because of decorative glass wall)",
+            "F": "Open",
+            "G": "Open"
+          }
+        },
+        "Exceptions": {},
+        "Relationships": {
+          "Cross-references": "Status of segments based on width and additional conditions"
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n    {\n        \"Rule\": \"Determine perimeter segments abutting house walls\",\n        \"Qualifiers\": {\n            \"Scope\": \"Perimeter segments of a house\",\n            \"Applicability\": \"Segments that abut house walls\",\n            \"Exclusions\": \"Segments not abutting house walls\"\n        },\n        \"Variables\": {\n            \"Dimensional\": {\n                \"B\": \"8'\",\n                \"C\": \"10'\",\n                \"A\": \"Unclear\"\n            }\n        },\n        \"Constants\": {},\n        \"Conditions\": {\n            \"Mandatory\": \"Segments abutting house walls are considered closed\"\n        },\n        \"Exceptions\": {},\n        \"Relationships\": {\n            \"Hierarchical\": \"Segments A, B, C are closed segments\"\n        }\n    },\n    {\n        \"Rule\": \"Determine status of remaining segments\",\n        \"Qualifiers\": {\n            \"Scope\": \"Remaining perimeter segments\",\n            \"Applicability\": \"Segments not abutting house walls\",\n            \"Exclusions\": \"Segments abutting house walls\"\n        },\n        \"Variables\": {\n            \"Dimensional\": {\n                \"Height\": \"Measured from top of porch floor to intersection with top of roof material\",\n                \"Width\": \"Measured from the same plane\"\n            }\n        },\n        \"Constants\": {\n            \"Height\": \"8'\"\n        },\n        \"Conditions\": {\n            \"Conditional logic\": \"If at least 50% of the facade area is open, then the segment is considered open\"\n        },\n        \"Exceptions\": {\n            \"Allowances\": \"Allowances may be made for structural supports that are not excessive\"\n        },\n        \"Relationships\": {\n            \"Logical dependencies\": \"Open/closed status depends on facade openness\"\n        }\n    },\n    {\n        \"Rule\": \"Section/elevation diagrams for facade segments\",\n        \"Qualifiers\": {\n            \"Scope\": \"Facade segments D, E, F, G\",\n            \"Applicability\": \"Segments with specified widths\",\n            \"Exclusions\": \"Segments without specified widths\"\n        },\n        \"Variables\": {\n            \"Dimensional\": {\n                \"D\": \"7'\",\n                \"E\": \"14'\",\n                \"F\": \"24'\",\n                \"G\": \"4'\"\n            }\n        },\n        \"Constants\": {},\n        \"Conditions\": {\n            \"Mandatory\": {\n                \"D\": \"Open\",\n                \"E\": \"Closed (because of decorative glass wall)\",\n                \"F\": \"Open\",\n                \"G\": \"Open\"\n            }\n        },\n        \"Exceptions\": {},\n        \"Relationships\": {\n            \"Cross-references\": \"Status of segments based on width and additional conditions\"\n        }\n    }\n]\n```"
+  },
+  "timestamp": "2025-09-16 14:42:12",
+  "model": "openai/gpt-4o",
+  "success": true
+}

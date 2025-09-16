@@ -1,0 +1,214 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_18.md",
+  "file_name": "Page_18.md",
+  "analysis": {
+    "extracted_rules": {
+      "rules": [
+        {
+          "id": "entryway_area_counting_vaulted_gabled_roof",
+          "title": "Entryway area counting for vaulted entryway (gabled roof entry feature)",
+          "Qualifiers": {
+            "scope": "Area counting rules for an entry feature with a gabled roof as depicted in Figure 7.",
+            "applicability": [
+              "When determining how an entryway\u2019s area contributes to gross floor area (GFA).",
+              "When the entryway is considered a vaulted entryway."
+            ],
+            "exclusions": []
+          },
+          "Variables": {
+            "entryway_vaulted": {
+              "type": "boolean",
+              "allowed_values": [
+                true,
+                false
+              ],
+              "description": "Whether the entryway is considered to be a vaulted entryway.",
+              "source_text": "If the entryway is considered to be a vaulted entryway"
+            },
+            "entryway_area_measured": {
+              "type": "area",
+              "unit": "unspecified",
+              "description": "Plan area of the entryway measured to the outside material of the entryway feature, including recessed portions beyond the house facade and roof.",
+              "measurement_boundary": "Outside face of the entryway feature material",
+              "includes": [
+                "Any portion of the entryway recessed beyond the house facade and roof"
+              ],
+              "source_text": [
+                "The area is measured to the outside material of the entryway feature.",
+                "In this example, a portion of the entryway is recessed beyond the house facade and roof. It is included in the area that counts."
+              ]
+            },
+            "counted_entryway_area": {
+              "type": "area",
+              "unit": "unspecified",
+              "description": "The entryway area as it counts toward GFA after applying any multiplier based on vaulted status."
+            },
+            "gross_floor_area": {
+              "type": "area",
+              "unit": "unspecified",
+              "description": "Gross floor area to which the counted entryway area contributes."
+            }
+          },
+          "Constants": {
+            "vaulted_entryway_count_multiplier": {
+              "value": 2,
+              "unit": "x",
+              "description": "Multiplier applied to the entryway area if the entryway is vaulted.",
+              "source_text": "The area counts TWICE toward gross floor area."
+            }
+          },
+          "Conditions": [
+            {
+              "type": "mandatory",
+              "rule": "Measure the entryway area to the outside material of the entryway feature.",
+              "target": "entryway_area_measured",
+              "source_text": "The area is measured to the outside material of the entryway feature."
+            },
+            {
+              "type": "mandatory",
+              "rule": "Include in the measured entryway area any portion recessed beyond the house facade and roof.",
+              "target": "entryway_area_measured",
+              "source_text": "In this example, a portion of the entryway is recessed beyond the house facade and roof. It is included in the area that counts."
+            },
+            {
+              "type": "conditional",
+              "if": "entryway_vaulted == true",
+              "then": "counted_entryway_area = entryway_area_measured * vaulted_entryway_count_multiplier",
+              "else": "counted_entryway_area = entryway_area_measured (treatment for non-vaulted is not explicitly stated in the text)",
+              "mandatory": true,
+              "source_text": [
+                "If the entryway is considered to be a vaulted entryway the area will be counted as follows:",
+                "The area counts TWICE toward gross floor area."
+              ]
+            }
+          ],
+          "Exceptions": [],
+          "Relationships": {
+            "hierarchical": {
+              "figure": "Figure 7 Entry feature with gabled roof",
+              "views": [
+                "Isometric View",
+                "Side Elevation",
+                "Porch Floor Plan"
+              ],
+              "plan_annotations": [
+                "Outline of entryway roof",
+                "Outline of entryway floor area that counts TWICE if entryway is vaulted"
+              ]
+            },
+            "dependencies": [
+              {
+                "from": "entryway_area_measured",
+                "to": "counted_entryway_area",
+                "logic": "counted_entryway_area equals measured area multiplied by 2 if vaulted; otherwise equal to measured area (non-vaulted treatment not explicitly stated)."
+              },
+              {
+                "from": "counted_entryway_area",
+                "to": "gross_floor_area",
+                "logic": "counted_entryway_area is added to GFA."
+              }
+            ],
+            "cross_references": [
+              {
+                "reference": "Porch Floor Plan outline showing the counted area when vaulted",
+                "purpose": "Defines the plan extent for entryway_area_measured."
+              }
+            ],
+            "ambiguity_flags": [
+              "Criteria for what qualifies as a 'vaulted entryway' are not provided.",
+              "Units for area are not specified.",
+              "Treatment of entryway area when NOT vaulted is not explicitly stated beyond figure note context."
+            ]
+          }
+        },
+        {
+          "id": "entry_feature_height_measurement_gabled_roof",
+          "title": "Height measurement reference for entry feature with gabled roof",
+          "Qualifiers": {
+            "scope": "Determination of the height of an entry feature with a gabled roof relative to grade as depicted in Figure 7.",
+            "applicability": [
+              "When measuring 'Height' for the entry feature in isometric and side elevation views."
+            ],
+            "exclusions": []
+          },
+          "Variables": {
+            "grade_reference": {
+              "type": "elevation",
+              "unit": "unspecified",
+              "description": "Grade at the base of the entry feature where height measurement originates.",
+              "source_text": "Grade"
+            },
+            "ridge_intersection_point": {
+              "type": "geometric_point",
+              "unit": "unspecified",
+              "description": "Intersection of the front facade plane and the top of roof material at the ridge.",
+              "source_text": "Intersection of front facade and top of roof material at ridge"
+            },
+            "height_entry_feature": {
+              "type": "length",
+              "unit": "unspecified",
+              "description": "Vertical height of the entry feature measured between grade and the ridge intersection point.",
+              "source_text": "Height"
+            }
+          },
+          "Constants": {},
+          "Conditions": [
+            {
+              "type": "mandatory",
+              "rule": "Measure height vertically along the indicated axis (vertical dashed line) from the grade reference to the intersection of the front facade and the top of roof material at the ridge.",
+              "target": "height_entry_feature",
+              "source_text": [
+                "Height",
+                "Grade",
+                "Intersection of front facade and top of roof material at ridge",
+                "A vertical dashed line is shown"
+              ]
+            }
+          ],
+          "Exceptions": [],
+          "Relationships": {
+            "hierarchical": {
+              "figure": "Figure 7 Entry feature with gabled roof",
+              "views": [
+                "Isometric View",
+                "Side Elevation"
+              ]
+            },
+            "dependencies": [
+              {
+                "from": "grade_reference",
+                "to": "height_entry_feature",
+                "logic": "Provides lower datum for height."
+              },
+              {
+                "from": "ridge_intersection_point",
+                "to": "height_entry_feature",
+                "logic": "Provides upper datum for height."
+              }
+            ],
+            "cross_references": [
+              {
+                "reference": "Vertical dashed line in isometric and side elevation",
+                "purpose": "Indicates the measurement axis for height."
+              }
+            ],
+            "ambiguity_flags": [
+              "Units for height are not specified.",
+              "Exact definition of the grade reference location is not detailed.",
+              "Whether height should be taken to the top of roof material exactly at the ridge or another averaged/derived metric is not fully explicit (inferred from labels)."
+            ]
+          }
+        }
+      ]
+    },
+    "parse_error": false,
+    "raw_response": "{\n  \"rules\": [\n    {\n      \"id\": \"entryway_area_counting_vaulted_gabled_roof\",\n      \"title\": \"Entryway area counting for vaulted entryway (gabled roof entry feature)\",\n      \"Qualifiers\": {\n        \"scope\": \"Area counting rules for an entry feature with a gabled roof as depicted in Figure 7.\",\n        \"applicability\": [\n          \"When determining how an entryway\u2019s area contributes to gross floor area (GFA).\",\n          \"When the entryway is considered a vaulted entryway.\"\n        ],\n        \"exclusions\": []\n      },\n      \"Variables\": {\n        \"entryway_vaulted\": {\n          \"type\": \"boolean\",\n          \"allowed_values\": [\n            true,\n            false\n          ],\n          \"description\": \"Whether the entryway is considered to be a vaulted entryway.\",\n          \"source_text\": \"If the entryway is considered to be a vaulted entryway\"\n        },\n        \"entryway_area_measured\": {\n          \"type\": \"area\",\n          \"unit\": \"unspecified\",\n          \"description\": \"Plan area of the entryway measured to the outside material of the entryway feature, including recessed portions beyond the house facade and roof.\",\n          \"measurement_boundary\": \"Outside face of the entryway feature material\",\n          \"includes\": [\n            \"Any portion of the entryway recessed beyond the house facade and roof\"\n          ],\n          \"source_text\": [\n            \"The area is measured to the outside material of the entryway feature.\",\n            \"In this example, a portion of the entryway is recessed beyond the house facade and roof. It is included in the area that counts.\"\n          ]\n        },\n        \"counted_entryway_area\": {\n          \"type\": \"area\",\n          \"unit\": \"unspecified\",\n          \"description\": \"The entryway area as it counts toward GFA after applying any multiplier based on vaulted status.\"\n        },\n        \"gross_floor_area\": {\n          \"type\": \"area\",\n          \"unit\": \"unspecified\",\n          \"description\": \"Gross floor area to which the counted entryway area contributes.\"\n        }\n      },\n      \"Constants\": {\n        \"vaulted_entryway_count_multiplier\": {\n          \"value\": 2,\n          \"unit\": \"x\",\n          \"description\": \"Multiplier applied to the entryway area if the entryway is vaulted.\",\n          \"source_text\": \"The area counts TWICE toward gross floor area.\"\n        }\n      },\n      \"Conditions\": [\n        {\n          \"type\": \"mandatory\",\n          \"rule\": \"Measure the entryway area to the outside material of the entryway feature.\",\n          \"target\": \"entryway_area_measured\",\n          \"source_text\": \"The area is measured to the outside material of the entryway feature.\"\n        },\n        {\n          \"type\": \"mandatory\",\n          \"rule\": \"Include in the measured entryway area any portion recessed beyond the house facade and roof.\",\n          \"target\": \"entryway_area_measured\",\n          \"source_text\": \"In this example, a portion of the entryway is recessed beyond the house facade and roof. It is included in the area that counts.\"\n        },\n        {\n          \"type\": \"conditional\",\n          \"if\": \"entryway_vaulted == true\",\n          \"then\": \"counted_entryway_area = entryway_area_measured * vaulted_entryway_count_multiplier\",\n          \"else\": \"counted_entryway_area = entryway_area_measured (treatment for non-vaulted is not explicitly stated in the text)\",\n          \"mandatory\": true,\n          \"source_text\": [\n            \"If the entryway is considered to be a vaulted entryway the area will be counted as follows:\",\n            \"The area counts TWICE toward gross floor area.\"\n          ]\n        }\n      ],\n      \"Exceptions\": [],\n      \"Relationships\": {\n        \"hierarchical\": {\n          \"figure\": \"Figure 7 Entry feature with gabled roof\",\n          \"views\": [\n            \"Isometric View\",\n            \"Side Elevation\",\n            \"Porch Floor Plan\"\n          ],\n          \"plan_annotations\": [\n            \"Outline of entryway roof\",\n            \"Outline of entryway floor area that counts TWICE if entryway is vaulted\"\n          ]\n        },\n        \"dependencies\": [\n          {\n            \"from\": \"entryway_area_measured\",\n            \"to\": \"counted_entryway_area\",\n            \"logic\": \"counted_entryway_area equals measured area multiplied by 2 if vaulted; otherwise equal to measured area (non-vaulted treatment not explicitly stated).\"\n          },\n          {\n            \"from\": \"counted_entryway_area\",\n            \"to\": \"gross_floor_area\",\n            \"logic\": \"counted_entryway_area is added to GFA.\"\n          }\n        ],\n        \"cross_references\": [\n          {\n            \"reference\": \"Porch Floor Plan outline showing the counted area when vaulted\",\n            \"purpose\": \"Defines the plan extent for entryway_area_measured.\"\n          }\n        ],\n        \"ambiguity_flags\": [\n          \"Criteria for what qualifies as a 'vaulted entryway' are not provided.\",\n          \"Units for area are not specified.\",\n          \"Treatment of entryway area when NOT vaulted is not explicitly stated beyond figure note context.\"\n        ]\n      }\n    },\n    {\n      \"id\": \"entry_feature_height_measurement_gabled_roof\",\n      \"title\": \"Height measurement reference for entry feature with gabled roof\",\n      \"Qualifiers\": {\n        \"scope\": \"Determination of the height of an entry feature with a gabled roof relative to grade as depicted in Figure 7.\",\n        \"applicability\": [\n          \"When measuring 'Height' for the entry feature in isometric and side elevation views.\"\n        ],\n        \"exclusions\": []\n      },\n      \"Variables\": {\n        \"grade_reference\": {\n          \"type\": \"elevation\",\n          \"unit\": \"unspecified\",\n          \"description\": \"Grade at the base of the entry feature where height measurement originates.\",\n          \"source_text\": \"Grade\"\n        },\n        \"ridge_intersection_point\": {\n          \"type\": \"geometric_point\",\n          \"unit\": \"unspecified\",\n          \"description\": \"Intersection of the front facade plane and the top of roof material at the ridge.\",\n          \"source_text\": \"Intersection of front facade and top of roof material at ridge\"\n        },\n        \"height_entry_feature\": {\n          \"type\": \"length\",\n          \"unit\": \"unspecified\",\n          \"description\": \"Vertical height of the entry feature measured between grade and the ridge intersection point.\",\n          \"source_text\": \"Height\"\n        }\n      },\n      \"Constants\": {},\n      \"Conditions\": [\n        {\n          \"type\": \"mandatory\",\n          \"rule\": \"Measure height vertically along the indicated axis (vertical dashed line) from the grade reference to the intersection of the front facade and the top of roof material at the ridge.\",\n          \"target\": \"height_entry_feature\",\n          \"source_text\": [\n            \"Height\",\n            \"Grade\",\n            \"Intersection of front facade and top of roof material at ridge\",\n            \"A vertical dashed line is shown\"\n          ]\n        }\n      ],\n      \"Exceptions\": [],\n      \"Relationships\": {\n        \"hierarchical\": {\n          \"figure\": \"Figure 7 Entry feature with gabled roof\",\n          \"views\": [\n            \"Isometric View\",\n            \"Side Elevation\"\n          ]\n        },\n        \"dependencies\": [\n          {\n            \"from\": \"grade_reference\",\n            \"to\": \"height_entry_feature\",\n            \"logic\": \"Provides lower datum for height.\"\n          },\n          {\n            \"from\": \"ridge_intersection_point\",\n            \"to\": \"height_entry_feature\",\n            \"logic\": \"Provides upper datum for height.\"\n          }\n        ],\n        \"cross_references\": [\n          {\n            \"reference\": \"Vertical dashed line in isometric and side elevation\",\n            \"purpose\": \"Indicates the measurement axis for height.\"\n          }\n        ],\n        \"ambiguity_flags\": [\n          \"Units for height are not specified.\",\n          \"Exact definition of the grade reference location is not detailed.\",\n          \"Whether height should be taken to the top of roof material exactly at the ridge or another averaged/derived metric is not fully explicit (inferred from labels).\"\n        ]\n      }\n    }\n  ]\n}",
+    "response_time": 62.072195053100586,
+    "input_tokens": 597,
+    "output_tokens": 4988,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 15:51:20",
+  "model": "openai/gpt-5",
+  "success": true
+}

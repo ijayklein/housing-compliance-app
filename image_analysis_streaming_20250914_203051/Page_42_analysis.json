@@ -1,0 +1,348 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_42.png",
+  "image_name": "Page_42.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Driveway standards\n\n\u2022 Driveway surfaces may have either permeable or impermeable paving. Materials shall meet Public Works standards.\n\n\u2022 Driveway surface within 10' of the public right-of-way may not be of a loose material e.g., gravel.\n\n\u2022 2nd dwelling units must share common driveway with main dwelling.\n\n\u2022 Minimum driveway clearance: 10'\n\n\u2022 Minimum driveway surface: 8'\n\n\u2022 Minimum 20' between curb cuts.\n\n\u2022 No more than 40% of required front yard may be impermeable.\n\n\u2022 Street-work permit required for work done within the public right-of-way.\n\nFor safety reasons, the city also encourages that the following standard be met:\n\n\u2022 No more than one curb cut per single frontage.\n\n\u2022 Minimum of 50' between curb cut and intersection curb face.\n\nFig 31 Driveway standards\n\nPavers without mortar (grass between) OK\n\n\"Hollywood strips\" (grass between) OK\n\nGravel OK\n\nTurns enroute to required parking spaces must be deemed maneuverable by the Transportation Division.\n\n8' min. width for driveway surface (typ. all)\n\n10' min. width for driveway clearance (typ. all)\n\nNo gravel or similar loose materials within 10' of the public right-of-way (lot line)\n\nWork done within the public ROW requires a street-work permit and must comply with city standards.\n\n36",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Technical diagram showing three different driveway surface types: 1) Pavers without mortar with grass between (labeled OK), 2) Hollywood strips with grass between (labeled OK), and 3) Gravel (labeled OK). Each shows a cross-sectional view of the driveway surface pattern.",
+          "location": "Bottom left of page"
+        },
+        {
+          "type": "diagram",
+          "description": "Technical cross-sectional diagram showing driveway clearance and surface width requirements. Shows a driveway with gravel surface, indicating 8' minimum width for driveway surface, 10' minimum width for driveway clearance, and the 10' zone from public right-of-way where loose materials are prohibited. Includes annotations about street-work permit requirements.",
+          "location": "Bottom right of page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Minimum driveway clearance",
+          "value_type": "Measurement",
+          "value": "10",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum driveway surface",
+          "value_type": "Measurement",
+          "value": "8",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum distance between curb cuts",
+          "value_type": "Measurement",
+          "value": "20",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Maximum impermeable front yard percentage",
+          "value_type": "Percentage",
+          "value": "40",
+          "unit": "percent"
+        },
+        {
+          "parameter": "Distance from public right-of-way for loose material restriction",
+          "value_type": "Measurement",
+          "value": "10",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum distance between curb cut and intersection curb face",
+          "value_type": "Measurement",
+          "value": "50",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Maximum curb cuts per single frontage",
+          "value_type": "Numerical",
+          "value": "1",
+          "unit": "curb cuts"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Driveway standards",
+        "subheadings": [
+          "Fig 31 Driveway standards"
+        ],
+        "sections": [
+          "Driveway standards"
+        ]
+      },
+      "additional_notes": [
+        "Page number 36 appears at bottom left",
+        "Image quality is clear and legible throughout"
+      ],
+      "cross_references": [
+        "Public Works standards",
+        "Transportation Division"
+      ],
+      "conditions_and_qualifiers": {
+        "qualifiers": [
+          {
+            "id": "q1",
+            "text": "within 10' of the public right-of-way",
+            "applies_to_conditions": [
+              "c1"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q2",
+            "text": "2nd dwelling units",
+            "applies_to_conditions": [
+              "c2"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q3",
+            "text": "For safety reasons, the city also encourages",
+            "applies_to_conditions": [
+              "c6",
+              "c7"
+            ],
+            "scope": "Global"
+          },
+          {
+            "id": "q4",
+            "text": "work done within the public right-of-way",
+            "applies_to_conditions": [
+              "c5"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q5",
+            "text": "Turns enroute to required parking spaces",
+            "applies_to_conditions": [
+              "c8"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q6",
+            "text": "within 10' of the public right-of-way (lot line)",
+            "applies_to_conditions": [
+              "c9"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q7",
+            "text": "Work done within the public ROW",
+            "applies_to_conditions": [
+              "c10"
+            ],
+            "scope": "Specific"
+          }
+        ],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "may not be of a loose material e.g., gravel",
+            "value_type": "Boolean",
+            "operator": "!=",
+            "threshold_value": "loose material",
+            "unit": "None"
+          },
+          {
+            "id": "c2",
+            "text": "must share common driveway with main dwelling",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "shared driveway",
+            "unit": "None"
+          },
+          {
+            "id": "c3",
+            "text": "Minimum driveway clearance: 10'",
+            "value_type": "Measurement",
+            "operator": ">=",
+            "threshold_value": "10",
+            "unit": "feet"
+          },
+          {
+            "id": "c4",
+            "text": "Minimum driveway surface: 8'",
+            "value_type": "Measurement",
+            "operator": ">=",
+            "threshold_value": "8",
+            "unit": "feet"
+          },
+          {
+            "id": "c5",
+            "text": "Street-work permit required",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "permit required",
+            "unit": "None"
+          },
+          {
+            "id": "c6",
+            "text": "No more than one curb cut per single frontage",
+            "value_type": "Numerical",
+            "operator": "<=",
+            "threshold_value": "1",
+            "unit": "curb cuts"
+          },
+          {
+            "id": "c7",
+            "text": "Minimum of 50' between curb cut and intersection curb face",
+            "value_type": "Measurement",
+            "operator": ">=",
+            "threshold_value": "50",
+            "unit": "feet"
+          },
+          {
+            "id": "c8",
+            "text": "must be deemed maneuverable by the Transportation Division",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "approved by Transportation Division",
+            "unit": "None"
+          },
+          {
+            "id": "c9",
+            "text": "No gravel or similar loose materials",
+            "value_type": "Boolean",
+            "operator": "!=",
+            "threshold_value": "loose materials",
+            "unit": "None"
+          },
+          {
+            "id": "c10",
+            "text": "requires a street-work permit and must comply with city standards",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "permit and compliance required",
+            "unit": "None"
+          }
+        ],
+        "logical_relationships": [
+          {
+            "operation": "AND",
+            "condition_ids": [
+              "c1",
+              "q1"
+            ],
+            "expression": "Driveway surface within 10' of the public right-of-way may not be of a loose material",
+            "evaluation_order": 1
+          },
+          {
+            "operation": "AND",
+            "condition_ids": [
+              "c2",
+              "q2"
+            ],
+            "expression": "2nd dwelling units must share common driveway with main dwelling",
+            "evaluation_order": 2
+          },
+          {
+            "operation": "AND",
+            "condition_ids": [
+              "c5",
+              "q4"
+            ],
+            "expression": "Street-work permit required for work done within the public right-of-way",
+            "evaluation_order": 3
+          },
+          {
+            "operation": "AND",
+            "condition_ids": [
+              "c8",
+              "q5"
+            ],
+            "expression": "Turns enroute to required parking spaces must be deemed maneuverable by the Transportation Division",
+            "evaluation_order": 4
+          },
+          {
+            "operation": "AND",
+            "condition_ids": [
+              "c9",
+              "q6"
+            ],
+            "expression": "No gravel or similar loose materials within 10' of the public right-of-way",
+            "evaluation_order": 5
+          },
+          {
+            "operation": "AND",
+            "condition_ids": [
+              "c10",
+              "q7"
+            ],
+            "expression": "Work done within the public ROW requires a street-work permit and must comply with city standards",
+            "evaluation_order": 6
+          }
+        ],
+        "execution_sequence": [
+          {
+            "step": 1,
+            "action": "Verify driveway materials meet Public Works standards",
+            "condition_ids": [],
+            "qualifier_ids": [],
+            "dependencies": []
+          },
+          {
+            "step": 2,
+            "action": "Check if driveway surface within 10' of public right-of-way uses appropriate materials",
+            "condition_ids": [
+              "c1"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": [
+              1
+            ]
+          },
+          {
+            "step": 3,
+            "action": "Verify shared driveway requirement for 2nd dwelling units",
+            "condition_ids": [
+              "c2"
+            ],
+            "qualifier_ids": [
+              "q2"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 4,
+            "action": "Check minimum clearance and surface width requirements",
+            "condition_ids": [
+              "c3",
+              "c4"
+            ],
+            "qualifier_ids": [],
+            "dependencies": []
+          },
+          {
+            "step": 5,
+            "action": "Verify street-work permit for public right-of-way work",
+            "condition_ids": [
+              "c5"
+            ],
+            "qualifier_ids": [
+              "q4"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 6,
+            "action": "Check Transportation Division approval for parking access turns",
+            "condition_ids": [
+              "c8"
+            ],
+            "qualifier_ids": [
+              "q5"
+            ],
+            "dependencies": []
+          }
+        ]
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:32:42",
+  "model_used": "anthropic/claude-sonnet-4"
+}

@@ -1,0 +1,59 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_17.png",
+  "image_name": "Page_17.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Vaulted entry features\n\nEntry features that are greater than 12' high are called \u201cvaulted entry features\u201d. The footprint of such features\ncount twice toward gross floor area regardless of the design (including whether or not they are open) .\n\nHow to measure the height of an entry feature in order to determine whether or not\nit is considered to be a vaulted entry feature (using Fig 6 - 8 as examples)\n\nFig 6 Entry feature with shed roof\n\nNote: If the entryway is considered to be a vaulted entryway\nthe area will be counted as follows:\n\n\u2022 In this example, a portion of the entryway is recessed\n  beyond the house facade and roof. It is included in the\n  area that counts.\n\n\u2022 The area is measured to the outside material of the entry-\n  way feature.\n\n\u2022 The area counts TWICE toward gross floor area.\n\nHeight\nGrade\n\nIntersection of front\nfacade and top of\nroof material\n\nHeight\n\nOutline of entry-\nway roof\n\nOutline of entryway\nfloor area that counts\nTWICE if entryway is\nvaulted\n\nIsometric View\n\nSide Elevation\n\nPorch Floor Plan\n\n11",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "An isometric (3D) view of a house entrance with a shed roof. It is labeled 'Isometric View'. A vertical line labeled 'Height' indicates the measurement from the 'Grade' (ground level) to the top of the entry roof. The entrance has an arched doorway and is attached to the main wall of a house, which has a window to the right.",
+          "location": "bottom-left"
+        },
+        {
+          "type": "diagram",
+          "description": "A side elevation (2D side view) of the same entry feature. It is labeled 'Side Elevation'. A vertical line labeled 'Height' shows the measurement from the ground level to the point labeled 'Intersection of front facade and top of roof material'.",
+          "location": "bottom-middle"
+        },
+        {
+          "type": "diagram",
+          "description": "A floor plan view of the porch. It is labeled 'Porch Floor Plan'. It shows two outlines. The outer, thinner line is labeled 'Outline of entryway roof'. The inner, thick bold line is labeled 'Outline of entryway floor area that counts TWICE if entryway is vaulted'.",
+          "location": "bottom-right"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Vaulted entry feature height threshold",
+          "value": "greater than 12'",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Gross floor area calculation for vaulted entry features",
+          "value": "count twice",
+          "unit": "multiplier"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Vaulted entry features",
+        "subheadings": [
+          "How to measure the height of an entry feature in order to determine whether or not it is considered to be a vaulted entry feature (using Fig 6 - 8 as examples)",
+          "Fig 6 Entry feature with shed roof"
+        ],
+        "sections": [
+          "11"
+        ]
+      },
+      "additional_notes": [
+        "The main definition of 'vaulted entry features' is presented within a light gray highlighted box.",
+        "The word 'TWICE' is capitalized for emphasis in the notes and diagram labels.",
+        "The page number '11' is located in the bottom-right corner, preceded by two vertical bars '||'."
+      ],
+      "cross_references": [
+        "Reference to '(using Fig 6 - 8 as examples)' indicates that this is part of a series of figures.",
+        "The page explicitly labels the diagrams as 'Fig 6'."
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-11 14:35:43",
+  "model_used": "google/gemini-2.5-pro"
+}

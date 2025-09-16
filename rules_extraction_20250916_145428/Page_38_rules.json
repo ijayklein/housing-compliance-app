@@ -1,0 +1,245 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_38.md",
+  "file_name": "Page_38.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "Qualifiers": {
+          "scope": "Daylight-plane envelope for accessory structures at side lot lines.",
+          "applicability": "Applies to accessory buildings/structures located at or near side lot lines. The structure must fit under the prescribed daylight plane originating at the side lot line(s).",
+          "exclusions": "None stated.",
+          "source": {
+            "page_header": "Accessory structure daylight plane (sides & rear)",
+            "figure": "Figure 25",
+            "figure_caption": "Front elevation showing accessory-structure daylight plane at the side of the lot",
+            "labels_cited": [
+              "Side lot line (left and right)",
+              "8' from average grade",
+              "12' max height of building",
+              "Daylight-plane line labeled with \u201c3\u201d over \u201c1\u201d"
+            ],
+            "footer_page_number": "32",
+            "compiled_page_indicator": "Page 38 (header) vs 32 (footer)"
+          },
+          "ambiguous_language_flags": [
+            "The phrase 'near the rear & side lot lines' does not define a distance threshold; treat as applying at property-line condition unless otherwise defined elsewhere.",
+            "The daylight-plane slope label shows '3' over '1' without axis definition; vertical:horizontal vs horizontal:vertical is ambiguous.",
+            "The datum 'average grade' is referenced but not defined; method of determining average grade is unspecified.",
+            "The '12' max height of building' is shown in the figures; whether this is a sitewide absolute cap for accessory structures or only illustrative is not explicit."
+          ]
+        },
+        "Variables": {
+          "average_grade_elevation_at_side_lot_line": {
+            "type": "elevation",
+            "unit": "ft",
+            "description": "Project-specific elevation reference used to establish the 8 ft start height of the daylight plane at the side lot line."
+          },
+          "building_height_profile": {
+            "type": "function_along_width",
+            "unit": "ft",
+            "description": "Height of the accessory structure at all points along sections perpendicular to each side lot line, measured from average grade. Used to test against daylight plane and 12 ft cap."
+          },
+          "structure_offset_from_side_lot_line": {
+            "type": "distance",
+            "unit": "ft",
+            "description": "Horizontal distance from side lot line to the nearest point of the accessory structure at each section. Used to compute allowable daylight-plane height at that point.",
+            "note": "The regulation appears to apply regardless of setback; if setback is zero, the plane starts at the lot line."
+          },
+          "roof_form": {
+            "type": "categorical",
+            "allowed_examples": [
+              "hipped-gable",
+              "gable",
+              "hip",
+              "flat",
+              "shed"
+            ],
+            "description": "Roof configuration; may assist in compliance. Not mandated."
+          }
+        },
+        "Constants": {
+          "daylight_plane_start_height": {
+            "value": 8,
+            "unit": "ft",
+            "reference": "above average grade at the side lot line"
+          },
+          "daylight_plane_slope_ratio": {
+            "ratio_label": "3:1",
+            "source_label": "diagram shows '3' over '1' next to the daylight-plane line",
+            "axis_definition_ambiguous": true,
+            "possible_interpretations": [
+              "vertical:horizontal = 3:1",
+              "horizontal:vertical = 3:1"
+            ]
+          },
+          "max_building_height": {
+            "value": 12,
+            "unit": "ft",
+            "reference": "labeled '12' max height of building' in figure",
+            "assumed_applicability": "global cap for accessory structure height pending confirmation"
+          }
+        },
+        "Conditions": {
+          "mandatory": [
+            "Establish a daylight plane at each side lot line that begins at 8 ft above average grade at the lot line and slopes inward toward the lot interior at the labeled 3:1 ratio.",
+            "The accessory structure must be entirely below (i.e., not pierce) the daylight plane originating from each adjacent side lot line.",
+            "The accessory structure height must not exceed 12 ft anywhere."
+          ],
+          "optional": [
+            "A hipped-gable roof is suggested as often the best solution to comply with the daylight plane."
+          ],
+          "conditional_logic": [
+            "If the structure is adjacent to two side lot lines, compute and enforce both daylight planes; the governing envelope is the intersection of the two planes.",
+            "If the interpretation of the 3:1 slope is clarified as V:H, the allowable height increases 3 ft for every 1 ft of horizontal distance from the lot line above the 8 ft start. If clarified as H:V, the allowable height increases 1 ft for every 3 ft of horizontal distance from the lot line above the 8 ft start.",
+            "If average grade is defined elsewhere, use that method; otherwise flag for manual verification before automated compliance."
+          ],
+          "validation_steps": [
+            "For each section perpendicular to each side lot line, measure horizontal offset x (ft) from the lot line to the building surface.",
+            "Compute daylight-plane allowable height h_plane(x) = 8 ft + slope(x) per the 3:1 ratio once axis definition is resolved.",
+            "Compute actual building height h_bldg(x) from average grade.",
+            "Check h_bldg(x) <= h_plane(x) for all x along the building adjacent to that side.",
+            "Check h_bldg(x) <= 12 ft for all x.",
+            "If both side lot lines apply, repeat for both sides and enforce both constraints simultaneously."
+          ]
+        },
+        "Exceptions": {
+          "explicit_exceptions": [],
+          "alternatives": [],
+          "special_cases": []
+        },
+        "Relationships": {
+          "hierarchical": [
+            "The daylight-plane control and the absolute 12 ft height cap both apply; the stricter of the two governs at any location."
+          ],
+          "cross_references": [
+            "Figure 25: front elevation context shows planes from left and right side lot lines."
+          ],
+          "logical_dependencies": [
+            "Daylight-plane start height depends on average grade at the side lot line.",
+            "Daylight-plane allowable height at any point depends on horizontal distance from the side lot line and the slope ratio."
+          ]
+        }
+      },
+      {
+        "Qualifiers": {
+          "scope": "Daylight-plane envelope for accessory structures at the rear lot line.",
+          "applicability": "Applies to accessory buildings/structures located at or near the rear lot line. The structure must fit under the prescribed daylight plane originating at the rear lot line.",
+          "exclusions": "None stated.",
+          "source": {
+            "page_header": "Accessory structure daylight plane (sides & rear)",
+            "figure": "Figure 26",
+            "figure_caption": "Side elevation showing accessory-structure daylight plane at the rear of the lot",
+            "labels_cited": [
+              "Rear lot line",
+              "8' from average grade",
+              "12' max height of building",
+              "Daylight-plane line labeled with \u201c3\u201d over \u201c1\u201d"
+            ],
+            "footer_page_number": "32",
+            "compiled_page_indicator": "Page 38 (header) vs 32 (footer)"
+          },
+          "ambiguous_language_flags": [
+            "The phrase 'near the rear & side lot lines' does not define a distance threshold; treat as applying at property-line condition unless otherwise defined elsewhere.",
+            "The daylight-plane slope label shows '3' over '1' without axis definition; vertical:horizontal vs horizontal:vertical is ambiguous.",
+            "The datum 'average grade' is referenced but not defined; method of determining average grade is unspecified.",
+            "The '12' max height of building' is shown in the figure; whether this is a sitewide absolute cap for accessory structures or only illustrative is not explicit."
+          ]
+        },
+        "Variables": {
+          "average_grade_elevation_at_rear_lot_line": {
+            "type": "elevation",
+            "unit": "ft",
+            "description": "Project-specific elevation reference used to establish the 8 ft start height of the daylight plane at the rear lot line."
+          },
+          "building_height_profile": {
+            "type": "function_along_depth",
+            "unit": "ft",
+            "description": "Height of the accessory structure at all points along sections perpendicular to the rear lot line, measured from average grade. Used to test against daylight plane and 12 ft cap."
+          },
+          "structure_offset_from_rear_lot_line": {
+            "type": "distance",
+            "unit": "ft",
+            "description": "Horizontal distance from the rear lot line to the nearest point of the accessory structure at each section. Used to compute allowable daylight-plane height at that point.",
+            "note": "The regulation appears to apply regardless of setback; if setback is zero, the plane starts at the lot line."
+          },
+          "roof_form": {
+            "type": "categorical",
+            "allowed_examples": [
+              "hipped-gable",
+              "gable",
+              "hip",
+              "flat",
+              "shed"
+            ],
+            "description": "Roof configuration; may assist in compliance. Not mandated."
+          }
+        },
+        "Constants": {
+          "daylight_plane_start_height": {
+            "value": 8,
+            "unit": "ft",
+            "reference": "above average grade at the rear lot line"
+          },
+          "daylight_plane_slope_ratio": {
+            "ratio_label": "3:1",
+            "source_label": "diagram shows '3' over '1' next to the daylight-plane line",
+            "axis_definition_ambiguous": true,
+            "possible_interpretations": [
+              "vertical:horizontal = 3:1",
+              "horizontal:vertical = 3:1"
+            ]
+          },
+          "max_building_height": {
+            "value": 12,
+            "unit": "ft",
+            "reference": "labeled '12' max height of building' in figure",
+            "assumed_applicability": "global cap for accessory structure height pending confirmation"
+          }
+        },
+        "Conditions": {
+          "mandatory": [
+            "Establish a daylight plane at the rear lot line that begins at 8 ft above average grade at the lot line and slopes inward toward the lot interior at the labeled 3:1 ratio.",
+            "The accessory structure must be entirely below (i.e., not pierce) the daylight plane originating from the rear lot line.",
+            "The accessory structure height must not exceed 12 ft anywhere."
+          ],
+          "optional": [
+            "A hipped-gable roof is suggested as often the best solution to comply with the daylight plane."
+          ],
+          "conditional_logic": [
+            "If the interpretation of the 3:1 slope is clarified as V:H, the allowable height increases 3 ft for every 1 ft of horizontal distance from the rear lot line above the 8 ft start. If clarified as H:V, the allowable height increases 1 ft for every 3 ft of horizontal distance from the rear lot line above the 8 ft start.",
+            "If average grade is defined elsewhere, use that method; otherwise flag for manual verification before automated compliance."
+          ],
+          "validation_steps": [
+            "For each section perpendicular to the rear lot line, measure horizontal offset x (ft) from the lot line to the building surface.",
+            "Compute daylight-plane allowable height h_plane(x) = 8 ft + slope(x) per the 3:1 ratio once axis definition is resolved.",
+            "Compute actual building height h_bldg(x) from average grade.",
+            "Check h_bldg(x) <= h_plane(x) for all x along the building adjacent to the rear lot line.",
+            "Check h_bldg(x) <= 12 ft for all x."
+          ]
+        },
+        "Exceptions": {
+          "explicit_exceptions": [],
+          "alternatives": [],
+          "special_cases": []
+        },
+        "Relationships": {
+          "hierarchical": [
+            "The daylight-plane control and the absolute 12 ft height cap both apply; the stricter of the two governs at any location."
+          ],
+          "cross_references": [
+            "Figure 26: side elevation context shows plane sloping inward from the rear lot line."
+          ],
+          "logical_dependencies": [
+            "Daylight-plane start height depends on average grade at the rear lot line.",
+            "Daylight-plane allowable height at any point depends on horizontal distance from the rear lot line and the slope ratio."
+          ]
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "[\n  {\n    \"Qualifiers\": {\n      \"scope\": \"Daylight-plane envelope for accessory structures at side lot lines.\",\n      \"applicability\": \"Applies to accessory buildings/structures located at or near side lot lines. The structure must fit under the prescribed daylight plane originating at the side lot line(s).\",\n      \"exclusions\": \"None stated.\",\n      \"source\": {\n        \"page_header\": \"Accessory structure daylight plane (sides & rear)\",\n        \"figure\": \"Figure 25\",\n        \"figure_caption\": \"Front elevation showing accessory-structure daylight plane at the side of the lot\",\n        \"labels_cited\": [\n          \"Side lot line (left and right)\",\n          \"8' from average grade\",\n          \"12' max height of building\",\n          \"Daylight-plane line labeled with \u201c3\u201d over \u201c1\u201d\"\n        ],\n        \"footer_page_number\": \"32\",\n        \"compiled_page_indicator\": \"Page 38 (header) vs 32 (footer)\"\n      },\n      \"ambiguous_language_flags\": [\n        \"The phrase 'near the rear & side lot lines' does not define a distance threshold; treat as applying at property-line condition unless otherwise defined elsewhere.\",\n        \"The daylight-plane slope label shows '3' over '1' without axis definition; vertical:horizontal vs horizontal:vertical is ambiguous.\",\n        \"The datum 'average grade' is referenced but not defined; method of determining average grade is unspecified.\",\n        \"The '12' max height of building' is shown in the figures; whether this is a sitewide absolute cap for accessory structures or only illustrative is not explicit.\"\n      ]\n    },\n    \"Variables\": {\n      \"average_grade_elevation_at_side_lot_line\": {\n        \"type\": \"elevation\",\n        \"unit\": \"ft\",\n        \"description\": \"Project-specific elevation reference used to establish the 8 ft start height of the daylight plane at the side lot line.\"\n      },\n      \"building_height_profile\": {\n        \"type\": \"function_along_width\",\n        \"unit\": \"ft\",\n        \"description\": \"Height of the accessory structure at all points along sections perpendicular to each side lot line, measured from average grade. Used to test against daylight plane and 12 ft cap.\"\n      },\n      \"structure_offset_from_side_lot_line\": {\n        \"type\": \"distance\",\n        \"unit\": \"ft\",\n        \"description\": \"Horizontal distance from side lot line to the nearest point of the accessory structure at each section. Used to compute allowable daylight-plane height at that point.\",\n        \"note\": \"The regulation appears to apply regardless of setback; if setback is zero, the plane starts at the lot line.\"\n      },\n      \"roof_form\": {\n        \"type\": \"categorical\",\n        \"allowed_examples\": [\n          \"hipped-gable\",\n          \"gable\",\n          \"hip\",\n          \"flat\",\n          \"shed\"\n        ],\n        \"description\": \"Roof configuration; may assist in compliance. Not mandated.\"\n      }\n    },\n    \"Constants\": {\n      \"daylight_plane_start_height\": {\n        \"value\": 8,\n        \"unit\": \"ft\",\n        \"reference\": \"above average grade at the side lot line\"\n      },\n      \"daylight_plane_slope_ratio\": {\n        \"ratio_label\": \"3:1\",\n        \"source_label\": \"diagram shows '3' over '1' next to the daylight-plane line\",\n        \"axis_definition_ambiguous\": true,\n        \"possible_interpretations\": [\n          \"vertical:horizontal = 3:1\",\n          \"horizontal:vertical = 3:1\"\n        ]\n      },\n      \"max_building_height\": {\n        \"value\": 12,\n        \"unit\": \"ft\",\n        \"reference\": \"labeled '12' max height of building' in figure\",\n        \"assumed_applicability\": \"global cap for accessory structure height pending confirmation\"\n      }\n    },\n    \"Conditions\": {\n      \"mandatory\": [\n        \"Establish a daylight plane at each side lot line that begins at 8 ft above average grade at the lot line and slopes inward toward the lot interior at the labeled 3:1 ratio.\",\n        \"The accessory structure must be entirely below (i.e., not pierce) the daylight plane originating from each adjacent side lot line.\",\n        \"The accessory structure height must not exceed 12 ft anywhere.\"\n      ],\n      \"optional\": [\n        \"A hipped-gable roof is suggested as often the best solution to comply with the daylight plane.\"\n      ],\n      \"conditional_logic\": [\n        \"If the structure is adjacent to two side lot lines, compute and enforce both daylight planes; the governing envelope is the intersection of the two planes.\",\n        \"If the interpretation of the 3:1 slope is clarified as V:H, the allowable height increases 3 ft for every 1 ft of horizontal distance from the lot line above the 8 ft start. If clarified as H:V, the allowable height increases 1 ft for every 3 ft of horizontal distance from the lot line above the 8 ft start.\",\n        \"If average grade is defined elsewhere, use that method; otherwise flag for manual verification before automated compliance.\"\n      ],\n      \"validation_steps\": [\n        \"For each section perpendicular to each side lot line, measure horizontal offset x (ft) from the lot line to the building surface.\",\n        \"Compute daylight-plane allowable height h_plane(x) = 8 ft + slope(x) per the 3:1 ratio once axis definition is resolved.\",\n        \"Compute actual building height h_bldg(x) from average grade.\",\n        \"Check h_bldg(x) <= h_plane(x) for all x along the building adjacent to that side.\",\n        \"Check h_bldg(x) <= 12 ft for all x.\",\n        \"If both side lot lines apply, repeat for both sides and enforce both constraints simultaneously.\"\n      ]\n    },\n    \"Exceptions\": {\n      \"explicit_exceptions\": [],\n      \"alternatives\": [],\n      \"special_cases\": []\n    },\n    \"Relationships\": {\n      \"hierarchical\": [\n        \"The daylight-plane control and the absolute 12 ft height cap both apply; the stricter of the two governs at any location.\"\n      ],\n      \"cross_references\": [\n        \"Figure 25: front elevation context shows planes from left and right side lot lines.\"\n      ],\n      \"logical_dependencies\": [\n        \"Daylight-plane start height depends on average grade at the side lot line.\",\n        \"Daylight-plane allowable height at any point depends on horizontal distance from the side lot line and the slope ratio.\"\n      ]\n    }\n  },\n  {\n    \"Qualifiers\": {\n      \"scope\": \"Daylight-plane envelope for accessory structures at the rear lot line.\",\n      \"applicability\": \"Applies to accessory buildings/structures located at or near the rear lot line. The structure must fit under the prescribed daylight plane originating at the rear lot line.\",\n      \"exclusions\": \"None stated.\",\n      \"source\": {\n        \"page_header\": \"Accessory structure daylight plane (sides & rear)\",\n        \"figure\": \"Figure 26\",\n        \"figure_caption\": \"Side elevation showing accessory-structure daylight plane at the rear of the lot\",\n        \"labels_cited\": [\n          \"Rear lot line\",\n          \"8' from average grade\",\n          \"12' max height of building\",\n          \"Daylight-plane line labeled with \u201c3\u201d over \u201c1\u201d\"\n        ],\n        \"footer_page_number\": \"32\",\n        \"compiled_page_indicator\": \"Page 38 (header) vs 32 (footer)\"\n      },\n      \"ambiguous_language_flags\": [\n        \"The phrase 'near the rear & side lot lines' does not define a distance threshold; treat as applying at property-line condition unless otherwise defined elsewhere.\",\n        \"The daylight-plane slope label shows '3' over '1' without axis definition; vertical:horizontal vs horizontal:vertical is ambiguous.\",\n        \"The datum 'average grade' is referenced but not defined; method of determining average grade is unspecified.\",\n        \"The '12' max height of building' is shown in the figure; whether this is a sitewide absolute cap for accessory structures or only illustrative is not explicit.\"\n      ]\n    },\n    \"Variables\": {\n      \"average_grade_elevation_at_rear_lot_line\": {\n        \"type\": \"elevation\",\n        \"unit\": \"ft\",\n        \"description\": \"Project-specific elevation reference used to establish the 8 ft start height of the daylight plane at the rear lot line.\"\n      },\n      \"building_height_profile\": {\n        \"type\": \"function_along_depth\",\n        \"unit\": \"ft\",\n        \"description\": \"Height of the accessory structure at all points along sections perpendicular to the rear lot line, measured from average grade. Used to test against daylight plane and 12 ft cap.\"\n      },\n      \"structure_offset_from_rear_lot_line\": {\n        \"type\": \"distance\",\n        \"unit\": \"ft\",\n        \"description\": \"Horizontal distance from the rear lot line to the nearest point of the accessory structure at each section. Used to compute allowable daylight-plane height at that point.\",\n        \"note\": \"The regulation appears to apply regardless of setback; if setback is zero, the plane starts at the lot line.\"\n      },\n      \"roof_form\": {\n        \"type\": \"categorical\",\n        \"allowed_examples\": [\n          \"hipped-gable\",\n          \"gable\",\n          \"hip\",\n          \"flat\",\n          \"shed\"\n        ],\n        \"description\": \"Roof configuration; may assist in compliance. Not mandated.\"\n      }\n    },\n    \"Constants\": {\n      \"daylight_plane_start_height\": {\n        \"value\": 8,\n        \"unit\": \"ft\",\n        \"reference\": \"above average grade at the rear lot line\"\n      },\n      \"daylight_plane_slope_ratio\": {\n        \"ratio_label\": \"3:1\",\n        \"source_label\": \"diagram shows '3' over '1' next to the daylight-plane line\",\n        \"axis_definition_ambiguous\": true,\n        \"possible_interpretations\": [\n          \"vertical:horizontal = 3:1\",\n          \"horizontal:vertical = 3:1\"\n        ]\n      },\n      \"max_building_height\": {\n        \"value\": 12,\n        \"unit\": \"ft\",\n        \"reference\": \"labeled '12' max height of building' in figure\",\n        \"assumed_applicability\": \"global cap for accessory structure height pending confirmation\"\n      }\n    },\n    \"Conditions\": {\n      \"mandatory\": [\n        \"Establish a daylight plane at the rear lot line that begins at 8 ft above average grade at the lot line and slopes inward toward the lot interior at the labeled 3:1 ratio.\",\n        \"The accessory structure must be entirely below (i.e., not pierce) the daylight plane originating from the rear lot line.\",\n        \"The accessory structure height must not exceed 12 ft anywhere.\"\n      ],\n      \"optional\": [\n        \"A hipped-gable roof is suggested as often the best solution to comply with the daylight plane.\"\n      ],\n      \"conditional_logic\": [\n        \"If the interpretation of the 3:1 slope is clarified as V:H, the allowable height increases 3 ft for every 1 ft of horizontal distance from the rear lot line above the 8 ft start. If clarified as H:V, the allowable height increases 1 ft for every 3 ft of horizontal distance from the rear lot line above the 8 ft start.\",\n        \"If average grade is defined elsewhere, use that method; otherwise flag for manual verification before automated compliance.\"\n      ],\n      \"validation_steps\": [\n        \"For each section perpendicular to the rear lot line, measure horizontal offset x (ft) from the lot line to the building surface.\",\n        \"Compute daylight-plane allowable height h_plane(x) = 8 ft + slope(x) per the 3:1 ratio once axis definition is resolved.\",\n        \"Compute actual building height h_bldg(x) from average grade.\",\n        \"Check h_bldg(x) <= h_plane(x) for all x along the building adjacent to the rear lot line.\",\n        \"Check h_bldg(x) <= 12 ft for all x.\"\n      ]\n    },\n    \"Exceptions\": {\n      \"explicit_exceptions\": [],\n      \"alternatives\": [],\n      \"special_cases\": []\n    },\n    \"Relationships\": {\n      \"hierarchical\": [\n        \"The daylight-plane control and the absolute 12 ft height cap both apply; the stricter of the two governs at any location.\"\n      ],\n      \"cross_references\": [\n        \"Figure 26: side elevation context shows plane sloping inward from the rear lot line.\"\n      ],\n      \"logical_dependencies\": [\n        \"Daylight-plane start height depends on average grade at the rear lot line.\",\n        \"Daylight-plane allowable height at any point depends on horizontal distance from the rear lot line and the slope ratio.\"\n      ]\n    }\n  }\n]"
+  },
+  "timestamp": "2025-09-16 15:06:34",
+  "model": "openai/gpt-5",
+  "success": true
+}

@@ -1,0 +1,319 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_32.md",
+  "file_name": "Page_32.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "rule_id": "primary_daylight_plane_sides",
+        "title": "Primary Daylight Plane (Sides)",
+        "Qualifiers": {
+          "scope": "Regulates structures located within the buildable area of a lot along side lot lines to preserve privacy and exposure to natural light.",
+          "applicability": [
+            "Applies to primary structures located within the buildable area.",
+            "Side daylight plane is measured vertically at the side lot line.",
+            "Daylight plane calculations use average grade as the reference datum."
+          ],
+          "exclusions": [
+            "Structures located in the rear and/or side yards that are accessory structures are regulated by the accessory-structure daylight plane (described on the next page; not provided here)."
+          ],
+          "purpose": "Contain development within an \u201cinvisible tent\u201d to preserve privacy and natural light."
+        },
+        "Variables": [
+          {
+            "name": "average_grade_at_wall",
+            "type": "dimensional",
+            "unit": "ft",
+            "definition": "Average grade at the relevant building wall used as the vertical datum for daylight plane measurement.",
+            "establishment_method": "Established using existing grade\u2014before any grading or fill.",
+            "sources": [
+              "Notes: 'Daylight plane is measured from average grade.'",
+              "Notes: 'Average grade is established using existing grade\u2014before any grading or fill (See Figure 44 p. 42)'."
+            ]
+          },
+          {
+            "name": "existing_grade_midpoint_of_wall",
+            "type": "dimensional",
+            "unit": "ft",
+            "definition": "Existing grade elevation at the midpoint of the wall of the structure.",
+            "role": "Input to determining average grade.",
+            "source": "Diagram callout: 'Existing grade of the structure (at midpoint of wall)'."
+          },
+          {
+            "name": "adjacent_lot_nearest_point_grade",
+            "type": "dimensional",
+            "unit": "ft",
+            "definition": "Grade at the nearest point on the adjacent lot.",
+            "role": "Potential input/reference when establishing average grade; exact usage not fully specified.",
+            "ambiguity": true,
+            "ambiguity_notes": "The text does not explicitly state how this grade value is combined with other grade points to compute average grade."
+          },
+          {
+            "name": "side_lot_line",
+            "type": "locational",
+            "definition": "The property boundary along the sides of the lot where the side daylight plane is measured up.",
+            "source": "Diagram and notes."
+          },
+          {
+            "name": "plane_base_elevation_at_side_lot_line",
+            "type": "computed",
+            "unit": "ft",
+            "definition": "Elevation where the daylight plane begins at the side lot line.",
+            "formula": "plane_base_elevation_at_side_lot_line = average_grade_at_wall + 10 ft",
+            "dependencies": [
+              "average_grade_at_wall",
+              "vertical_offset_from_average_grade (constant)"
+            ]
+          },
+          {
+            "name": "max_building_height",
+            "type": "dimensional",
+            "unit": "ft",
+            "definition": "Maximum permitted building height for the structure.",
+            "source": "Referenced by callout 'Max. building height' and code cross-references (18.12.040(a) Table 2; Building Code).",
+            "value_known": false,
+            "ambiguity": true,
+            "ambiguity_notes": "Exact numerical value not provided on this page; governed by referenced code sections and possibly the Building Code."
+          }
+        ],
+        "Constants": [
+          {
+            "name": "plane_slope_angle",
+            "value": 45,
+            "unit": "degrees",
+            "description": "Slope of the primary daylight plane inward from the side lot line.",
+            "source": "Diagram label '45\u00b0'."
+          },
+          {
+            "name": "vertical_offset_from_average_grade",
+            "value": 10,
+            "unit": "ft",
+            "description": "Vertical distance above average grade at which the daylight plane begins at the side lot line.",
+            "source": "Diagram label '10' from average grade'."
+          },
+          {
+            "name": "portions_height_cap",
+            "value": 24,
+            "unit": "ft",
+            "description": "A 24 ft maximum applies to certain portions of the structure; the qualifying portions are not fully legible.",
+            "source": "Diagram callout '24' max. for portions [unclear remainder]'.",
+            "ambiguity": true,
+            "ambiguity_notes": "The text does not specify which 'portions' are subject to the 24 ft maximum or how this interacts with the daylight plane; do not enforce without confirmation."
+          },
+          {
+            "name": "height_limit_regulated_by_building_code",
+            "value": null,
+            "unit": null,
+            "description": "Maximum allowed (context suggests height) is regulated by the Building Code.",
+            "source": "Diagram callout 'Max. allowed is [regulated] by Building Code' [middle words unclear].",
+            "ambiguity": true,
+            "ambiguity_notes": "The exact parameter under Building Code control and the precise language are not fully legible."
+          }
+        ],
+        "Conditions": [
+          {
+            "type": "mandatory",
+            "text": "Daylight plane is measured from average grade.",
+            "dependencies": [
+              "average_grade_at_wall"
+            ],
+            "source": "Notes beneath figure."
+          },
+          {
+            "type": "mandatory",
+            "text": "Average grade must be established using existing grade before any grading or fill.",
+            "source": "Notes beneath figure.",
+            "procedure_reference": "Figure 44 p. 42",
+            "dependencies": [
+              "existing_grade_midpoint_of_wall",
+              "adjacent_lot_nearest_point_grade"
+            ],
+            "ambiguity": true,
+            "ambiguity_notes": "The exact method/points used to compute 'average grade' are referenced to Figure 44, which is not provided here."
+          },
+          {
+            "type": "mandatory",
+            "text": "Side daylight plane is measured vertically at the side lot line.",
+            "source": "Notes beneath figure.",
+            "dependencies": [
+              "side_lot_line"
+            ]
+          },
+          {
+            "type": "mandatory",
+            "text": "The primary daylight plane along side lot lines begins 10 ft above the average grade and slopes inward at 45 degrees.",
+            "dependencies": [
+              "average_grade_at_wall",
+              "vertical_offset_from_average_grade",
+              "plane_slope_angle"
+            ],
+            "source": "Diagram labels '10' from average grade' and '45\u00b0'."
+          },
+          {
+            "type": "mandatory",
+            "text": "Compliance with the daylight plane does not waive or supersede the maximum building height; both must be satisfied.",
+            "dependencies": [
+              "max_building_height"
+            ],
+            "source": "Diagram star 'Max. building height' and code cross-references."
+          },
+          {
+            "type": "ambiguous",
+            "text": "A 24 ft maximum applies to certain portions of the structure.",
+            "source": "Diagram callout '24' max. for portions [unclear]'.",
+            "ambiguity": true,
+            "ambiguity_notes": "The qualifying portions and enforcement logic are not legible; hold from automated enforcement pending clarification."
+          },
+          {
+            "type": "ambiguous",
+            "text": "The phrase 'Max. allowed is [regulated] by Building Code' applies to an unspecified parameter (likely height).",
+            "source": "Diagram callout with fuzzy text.",
+            "ambiguity": true,
+            "ambiguity_notes": "Confirm the exact parameter regulated by the Building Code and the interaction with zoning height limits."
+          }
+        ],
+        "Exceptions": [
+          {
+            "text": "Accessory structures located in rear and/or side yards are not regulated by the primary daylight plane; they are regulated by the accessory-structure daylight plane (next page).",
+            "type": "scope_exclusion",
+            "source": "Gray box statement."
+          }
+        ],
+        "Relationships": {
+          "cross_references": [
+            {
+              "type": "code_section",
+              "citation": "18.12.040(a) Table 2",
+              "pages": [
+                26,
+                28
+              ],
+              "role": "General dimensional standards, including height limits that interact with daylight plane."
+            },
+            {
+              "type": "code_section",
+              "citation": "18.12.050(b)(2)",
+              "page": 29,
+              "role": "Related standards; exact content not provided on this page."
+            },
+            {
+              "type": "code_section",
+              "citation": "18.12.040(i)",
+              "page": 29,
+              "role": "Related standards; exact content not provided on this page."
+            },
+            {
+              "type": "code_section",
+              "citation": "18.04",
+              "page": 27,
+              "role": "Definitions or general provisions; exact content not provided here."
+            }
+          ],
+          "figures_referenced": [
+            {
+              "id": "Figure 20",
+              "title": "Front elevation showing side primary daylight plane",
+              "role": "Illustrates the 10 ft vertical offset and 45\u00b0 slope measured at the side lot line."
+            },
+            {
+              "id": "Figure 44",
+              "page": 42,
+              "title": "Average grade establishment (referenced)",
+              "role": "Defines procedure for establishing average grade; not provided on this page."
+            }
+          ],
+          "logical_dependencies": [
+            "Daylight plane geometry depends on average grade established from existing (pre-fill) conditions.",
+            "Compliance requires simultaneous satisfaction of daylight plane limits and maximum building height limits; the more restrictive governs."
+          ],
+          "hierarchical": [
+            {
+              "parent": "Daylight plane standards",
+              "child": "Primary daylight plane (sides)",
+              "siblings": [
+                "Rear daylight plane",
+                "Accessory-structure daylight plane (not on this page)"
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "rule_id": "rear_daylight_plane_measurement_location",
+        "title": "Rear Daylight Plane \u2014 Measurement Location",
+        "Qualifiers": {
+          "scope": "Specifies the measurement location for the rear daylight plane.",
+          "applicability": [
+            "Applies to rear daylight plane calculations for structures subject to rear daylight plane standards."
+          ],
+          "exclusions": [
+            "Accessory structures located in rear yards may be regulated by the accessory-structure daylight plane (not provided on this page)."
+          ]
+        },
+        "Variables": [
+          {
+            "name": "rear_setback_line",
+            "type": "locational",
+            "definition": "The setback line at the rear of the lot from which the rear daylight plane is measured vertically.",
+            "source": "Notes beneath figure: 'Rear daylight plane is measured (up) at rear setback.'"
+          },
+          {
+            "name": "average_grade_at_rear_plane_reference",
+            "type": "dimensional",
+            "unit": "ft",
+            "definition": "Average grade used as the vertical datum for the rear daylight plane measurement.",
+            "establishment_method": "Established using existing grade\u2014before any grading or fill.",
+            "source": "General note on average grade and reference to Figure 44 p. 42."
+          }
+        ],
+        "Constants": [],
+        "Conditions": [
+          {
+            "type": "mandatory",
+            "text": "Rear daylight plane is measured vertically at the rear setback line.",
+            "source": "Notes beneath figure."
+          },
+          {
+            "type": "mandatory",
+            "text": "Daylight plane (including rear) is measured from average grade.",
+            "source": "Notes beneath figure.",
+            "dependencies": [
+              "average_grade_at_rear_plane_reference"
+            ]
+          }
+        ],
+        "Exceptions": [],
+        "Relationships": {
+          "cross_references": [
+            {
+              "type": "figure",
+              "citation": "Figure 44 (p. 42)",
+              "role": "Defines method for establishing average grade for measurement datum."
+            }
+          ],
+          "logical_dependencies": [
+            "Rear daylight plane geometry depends on the correct identification of the rear setback line and average grade established from existing grades."
+          ],
+          "hierarchical": [
+            {
+              "parent": "Daylight plane standards",
+              "child": "Rear daylight plane",
+              "siblings": [
+                "Primary daylight plane (sides)",
+                "Accessory-structure daylight plane (not on this page)"
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "[\n  {\n    \"rule_id\": \"primary_daylight_plane_sides\",\n    \"title\": \"Primary Daylight Plane (Sides)\",\n    \"Qualifiers\": {\n      \"scope\": \"Regulates structures located within the buildable area of a lot along side lot lines to preserve privacy and exposure to natural light.\",\n      \"applicability\": [\n        \"Applies to primary structures located within the buildable area.\",\n        \"Side daylight plane is measured vertically at the side lot line.\",\n        \"Daylight plane calculations use average grade as the reference datum.\"\n      ],\n      \"exclusions\": [\n        \"Structures located in the rear and/or side yards that are accessory structures are regulated by the accessory-structure daylight plane (described on the next page; not provided here).\"\n      ],\n      \"purpose\": \"Contain development within an \u201cinvisible tent\u201d to preserve privacy and natural light.\"\n    },\n    \"Variables\": [\n      {\n        \"name\": \"average_grade_at_wall\",\n        \"type\": \"dimensional\",\n        \"unit\": \"ft\",\n        \"definition\": \"Average grade at the relevant building wall used as the vertical datum for daylight plane measurement.\",\n        \"establishment_method\": \"Established using existing grade\u2014before any grading or fill.\",\n        \"sources\": [\n          \"Notes: 'Daylight plane is measured from average grade.'\",\n          \"Notes: 'Average grade is established using existing grade\u2014before any grading or fill (See Figure 44 p. 42)'.\"\n        ]\n      },\n      {\n        \"name\": \"existing_grade_midpoint_of_wall\",\n        \"type\": \"dimensional\",\n        \"unit\": \"ft\",\n        \"definition\": \"Existing grade elevation at the midpoint of the wall of the structure.\",\n        \"role\": \"Input to determining average grade.\",\n        \"source\": \"Diagram callout: 'Existing grade of the structure (at midpoint of wall)'.\"\n      },\n      {\n        \"name\": \"adjacent_lot_nearest_point_grade\",\n        \"type\": \"dimensional\",\n        \"unit\": \"ft\",\n        \"definition\": \"Grade at the nearest point on the adjacent lot.\",\n        \"role\": \"Potential input/reference when establishing average grade; exact usage not fully specified.\",\n        \"ambiguity\": true,\n        \"ambiguity_notes\": \"The text does not explicitly state how this grade value is combined with other grade points to compute average grade.\"\n      },\n      {\n        \"name\": \"side_lot_line\",\n        \"type\": \"locational\",\n        \"definition\": \"The property boundary along the sides of the lot where the side daylight plane is measured up.\",\n        \"source\": \"Diagram and notes.\"\n      },\n      {\n        \"name\": \"plane_base_elevation_at_side_lot_line\",\n        \"type\": \"computed\",\n        \"unit\": \"ft\",\n        \"definition\": \"Elevation where the daylight plane begins at the side lot line.\",\n        \"formula\": \"plane_base_elevation_at_side_lot_line = average_grade_at_wall + 10 ft\",\n        \"dependencies\": [\n          \"average_grade_at_wall\",\n          \"vertical_offset_from_average_grade (constant)\"\n        ]\n      },\n      {\n        \"name\": \"max_building_height\",\n        \"type\": \"dimensional\",\n        \"unit\": \"ft\",\n        \"definition\": \"Maximum permitted building height for the structure.\",\n        \"source\": \"Referenced by callout 'Max. building height' and code cross-references (18.12.040(a) Table 2; Building Code).\",\n        \"value_known\": false,\n        \"ambiguity\": true,\n        \"ambiguity_notes\": \"Exact numerical value not provided on this page; governed by referenced code sections and possibly the Building Code.\"\n      }\n    ],\n    \"Constants\": [\n      {\n        \"name\": \"plane_slope_angle\",\n        \"value\": 45,\n        \"unit\": \"degrees\",\n        \"description\": \"Slope of the primary daylight plane inward from the side lot line.\",\n        \"source\": \"Diagram label '45\u00b0'.\"\n      },\n      {\n        \"name\": \"vertical_offset_from_average_grade\",\n        \"value\": 10,\n        \"unit\": \"ft\",\n        \"description\": \"Vertical distance above average grade at which the daylight plane begins at the side lot line.\",\n        \"source\": \"Diagram label '10' from average grade'.\"\n      },\n      {\n        \"name\": \"portions_height_cap\",\n        \"value\": 24,\n        \"unit\": \"ft\",\n        \"description\": \"A 24 ft maximum applies to certain portions of the structure; the qualifying portions are not fully legible.\",\n        \"source\": \"Diagram callout '24' max. for portions [unclear remainder]'.\",\n        \"ambiguity\": true,\n        \"ambiguity_notes\": \"The text does not specify which 'portions' are subject to the 24 ft maximum or how this interacts with the daylight plane; do not enforce without confirmation.\"\n      },\n      {\n        \"name\": \"height_limit_regulated_by_building_code\",\n        \"value\": null,\n        \"unit\": null,\n        \"description\": \"Maximum allowed (context suggests height) is regulated by the Building Code.\",\n        \"source\": \"Diagram callout 'Max. allowed is [regulated] by Building Code' [middle words unclear].\",\n        \"ambiguity\": true,\n        \"ambiguity_notes\": \"The exact parameter under Building Code control and the precise language are not fully legible.\"\n      }\n    ],\n    \"Conditions\": [\n      {\n        \"type\": \"mandatory\",\n        \"text\": \"Daylight plane is measured from average grade.\",\n        \"dependencies\": [\n          \"average_grade_at_wall\"\n        ],\n        \"source\": \"Notes beneath figure.\"\n      },\n      {\n        \"type\": \"mandatory\",\n        \"text\": \"Average grade must be established using existing grade before any grading or fill.\",\n        \"source\": \"Notes beneath figure.\",\n        \"procedure_reference\": \"Figure 44 p. 42\",\n        \"dependencies\": [\n          \"existing_grade_midpoint_of_wall\",\n          \"adjacent_lot_nearest_point_grade\"\n        ],\n        \"ambiguity\": true,\n        \"ambiguity_notes\": \"The exact method/points used to compute 'average grade' are referenced to Figure 44, which is not provided here.\"\n      },\n      {\n        \"type\": \"mandatory\",\n        \"text\": \"Side daylight plane is measured vertically at the side lot line.\",\n        \"source\": \"Notes beneath figure.\",\n        \"dependencies\": [\n          \"side_lot_line\"\n        ]\n      },\n      {\n        \"type\": \"mandatory\",\n        \"text\": \"The primary daylight plane along side lot lines begins 10 ft above the average grade and slopes inward at 45 degrees.\",\n        \"dependencies\": [\n          \"average_grade_at_wall\",\n          \"vertical_offset_from_average_grade\",\n          \"plane_slope_angle\"\n        ],\n        \"source\": \"Diagram labels '10' from average grade' and '45\u00b0'.\"\n      },\n      {\n        \"type\": \"mandatory\",\n        \"text\": \"Compliance with the daylight plane does not waive or supersede the maximum building height; both must be satisfied.\",\n        \"dependencies\": [\n          \"max_building_height\"\n        ],\n        \"source\": \"Diagram star 'Max. building height' and code cross-references.\"\n      },\n      {\n        \"type\": \"ambiguous\",\n        \"text\": \"A 24 ft maximum applies to certain portions of the structure.\",\n        \"source\": \"Diagram callout '24' max. for portions [unclear]'.\",\n        \"ambiguity\": true,\n        \"ambiguity_notes\": \"The qualifying portions and enforcement logic are not legible; hold from automated enforcement pending clarification.\"\n      },\n      {\n        \"type\": \"ambiguous\",\n        \"text\": \"The phrase 'Max. allowed is [regulated] by Building Code' applies to an unspecified parameter (likely height).\",\n        \"source\": \"Diagram callout with fuzzy text.\",\n        \"ambiguity\": true,\n        \"ambiguity_notes\": \"Confirm the exact parameter regulated by the Building Code and the interaction with zoning height limits.\"\n      }\n    ],\n    \"Exceptions\": [\n      {\n        \"text\": \"Accessory structures located in rear and/or side yards are not regulated by the primary daylight plane; they are regulated by the accessory-structure daylight plane (next page).\",\n        \"type\": \"scope_exclusion\",\n        \"source\": \"Gray box statement.\"\n      }\n    ],\n    \"Relationships\": {\n      \"cross_references\": [\n        {\n          \"type\": \"code_section\",\n          \"citation\": \"18.12.040(a) Table 2\",\n          \"pages\": [\n            26,\n            28\n          ],\n            \"role\": \"General dimensional standards, including height limits that interact with daylight plane.\"\n        },\n        {\n          \"type\": \"code_section\",\n          \"citation\": \"18.12.050(b)(2)\",\n          \"page\": 29,\n          \"role\": \"Related standards; exact content not provided on this page.\"\n        },\n        {\n          \"type\": \"code_section\",\n          \"citation\": \"18.12.040(i)\",\n          \"page\": 29,\n          \"role\": \"Related standards; exact content not provided on this page.\"\n        },\n        {\n          \"type\": \"code_section\",\n          \"citation\": \"18.04\",\n          \"page\": 27,\n          \"role\": \"Definitions or general provisions; exact content not provided here.\"\n        }\n      ],\n      \"figures_referenced\": [\n        {\n          \"id\": \"Figure 20\",\n          \"title\": \"Front elevation showing side primary daylight plane\",\n          \"role\": \"Illustrates the 10 ft vertical offset and 45\u00b0 slope measured at the side lot line.\"\n        },\n        {\n          \"id\": \"Figure 44\",\n          \"page\": 42,\n          \"title\": \"Average grade establishment (referenced)\",\n          \"role\": \"Defines procedure for establishing average grade; not provided on this page.\"\n        }\n      ],\n      \"logical_dependencies\": [\n        \"Daylight plane geometry depends on average grade established from existing (pre-fill) conditions.\",\n        \"Compliance requires simultaneous satisfaction of daylight plane limits and maximum building height limits; the more restrictive governs.\"\n      ],\n      \"hierarchical\": [\n        {\n          \"parent\": \"Daylight plane standards\",\n          \"child\": \"Primary daylight plane (sides)\",\n          \"siblings\": [\n            \"Rear daylight plane\",\n            \"Accessory-structure daylight plane (not on this page)\"\n          ]\n        }\n      ]\n    }\n  },\n  {\n    \"rule_id\": \"rear_daylight_plane_measurement_location\",\n    \"title\": \"Rear Daylight Plane \u2014 Measurement Location\",\n    \"Qualifiers\": {\n      \"scope\": \"Specifies the measurement location for the rear daylight plane.\",\n      \"applicability\": [\n        \"Applies to rear daylight plane calculations for structures subject to rear daylight plane standards.\"\n      ],\n      \"exclusions\": [\n        \"Accessory structures located in rear yards may be regulated by the accessory-structure daylight plane (not provided on this page).\"\n      ]\n    },\n    \"Variables\": [\n      {\n        \"name\": \"rear_setback_line\",\n        \"type\": \"locational\",\n        \"definition\": \"The setback line at the rear of the lot from which the rear daylight plane is measured vertically.\",\n        \"source\": \"Notes beneath figure: 'Rear daylight plane is measured (up) at rear setback.'\"\n      },\n      {\n        \"name\": \"average_grade_at_rear_plane_reference\",\n        \"type\": \"dimensional\",\n        \"unit\": \"ft\",\n        \"definition\": \"Average grade used as the vertical datum for the rear daylight plane measurement.\",\n        \"establishment_method\": \"Established using existing grade\u2014before any grading or fill.\",\n        \"source\": \"General note on average grade and reference to Figure 44 p. 42.\"\n      }\n    ],\n    \"Constants\": [],\n    \"Conditions\": [\n      {\n        \"type\": \"mandatory\",\n        \"text\": \"Rear daylight plane is measured vertically at the rear setback line.\",\n        \"source\": \"Notes beneath figure.\"\n      },\n      {\n        \"type\": \"mandatory\",\n        \"text\": \"Daylight plane (including rear) is measured from average grade.\",\n        \"source\": \"Notes beneath figure.\",\n        \"dependencies\": [\n          \"average_grade_at_rear_plane_reference\"\n        ]\n      }\n    ],\n    \"Exceptions\": [],\n    \"Relationships\": {\n      \"cross_references\": [\n        {\n          \"type\": \"figure\",\n          \"citation\": \"Figure 44 (p. 42)\",\n          \"role\": \"Defines method for establishing average grade for measurement datum.\"\n        }\n      ],\n      \"logical_dependencies\": [\n        \"Rear daylight plane geometry depends on the correct identification of the rear setback line and average grade established from existing grades.\"\n      ],\n      \"hierarchical\": [\n        {\n          \"parent\": \"Daylight plane standards\",\n          \"child\": \"Rear daylight plane\",\n          \"siblings\": [\n            \"Primary daylight plane (sides)\",\n            \"Accessory-structure daylight plane (not on this page)\"\n          ]\n        }\n      ]\n    }\n  }\n]",
+    "response_time": 81.17610502243042,
+    "input_tokens": 883,
+    "output_tokens": 6250,
+    "attempt": 2
+  },
+  "timestamp": "2025-09-16 15:54:10",
+  "model": "openai/gpt-5",
+  "success": true
+}

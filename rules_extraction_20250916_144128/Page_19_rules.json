@@ -1,0 +1,120 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_19.md",
+  "file_name": "Page_19.md",
+  "analysis": {
+    "extracted_rules": {
+      "rules": [
+        {
+          "qualifiers": {
+            "scope": "Entry feature with 2nd floor above",
+            "applicability": "Vaulted entryway",
+            "exclusions": "None specified"
+          },
+          "variables": {
+            "dimensional": [
+              {
+                "name": "Height",
+                "views": [
+                  "Isometric View",
+                  "Side Elevation"
+                ]
+              },
+              {
+                "name": "Grade",
+                "views": [
+                  "Isometric View"
+                ]
+              },
+              {
+                "name": "Intersection of front facade and underside or bottom of 2nd floor",
+                "views": [
+                  "Side Elevation"
+                ]
+              },
+              {
+                "name": "Top of 2nd Floor",
+                "views": [
+                  "Side Elevation"
+                ]
+              },
+              {
+                "name": "Bottom of 2nd Floor",
+                "views": [
+                  "Side Elevation"
+                ]
+              },
+              {
+                "name": "Outline of entryway floor area",
+                "views": [
+                  "Porch Floor Plan"
+                ]
+              }
+            ],
+            "material": [
+              {
+                "name": "Outside material of the entry-way feature",
+                "measurement": "Area measured to"
+              }
+            ],
+            "environmental": [],
+            "usage": [
+              {
+                "name": "Gross floor area",
+                "calculation": "Area counts three times if 2nd floor over a vaulted entry"
+              }
+            ]
+          },
+          "constants": {
+            "numerical_values": [
+              {
+                "name": "Area count multiplier",
+                "value": 3,
+                "condition": "2nd floor over a vaulted entry"
+              },
+              {
+                "name": "Area count multiplier",
+                "value": 2,
+                "condition": "Vaulted entryway"
+              }
+            ],
+            "specs": [],
+            "standards": [],
+            "procedures": []
+          },
+          "conditions": {
+            "mandatory": [
+              "The area is measured to the outside material of the entry-way feature."
+            ],
+            "optional": [],
+            "conditional_logic": [
+              {
+                "condition": "If the entryway is considered to be a vaulted entryway",
+                "outcome": "The area counts TWICE toward gross floor area."
+              }
+            ],
+            "dependencies": []
+          },
+          "exceptions": {
+            "explicit_deviations": [],
+            "alternatives": [],
+            "special_cases": [
+              "A portion of the entryway is recessed beyond the house facade and roof. It is included in the area that counts."
+            ]
+          },
+          "relationships": {
+            "hierarchical": [],
+            "cross_references": [],
+            "logical_dependencies": [
+              "The area will count three times toward gross floor area if the 2nd floor is over a vaulted entry."
+            ]
+          }
+        }
+      ]
+    },
+    "parse_error": false,
+    "raw_response": "```json\n{\n  \"rules\": [\n    {\n      \"qualifiers\": {\n        \"scope\": \"Entry feature with 2nd floor above\",\n        \"applicability\": \"Vaulted entryway\",\n        \"exclusions\": \"None specified\"\n      },\n      \"variables\": {\n        \"dimensional\": [\n          {\n            \"name\": \"Height\",\n            \"views\": [\"Isometric View\", \"Side Elevation\"]\n          },\n          {\n            \"name\": \"Grade\",\n            \"views\": [\"Isometric View\"]\n          },\n          {\n            \"name\": \"Intersection of front facade and underside or bottom of 2nd floor\",\n            \"views\": [\"Side Elevation\"]\n          },\n          {\n            \"name\": \"Top of 2nd Floor\",\n            \"views\": [\"Side Elevation\"]\n          },\n          {\n            \"name\": \"Bottom of 2nd Floor\",\n            \"views\": [\"Side Elevation\"]\n          },\n          {\n            \"name\": \"Outline of entryway floor area\",\n            \"views\": [\"Porch Floor Plan\"]\n          }\n        ],\n        \"material\": [\n          {\n            \"name\": \"Outside material of the entry-way feature\",\n            \"measurement\": \"Area measured to\"\n          }\n        ],\n        \"environmental\": [],\n        \"usage\": [\n          {\n            \"name\": \"Gross floor area\",\n            \"calculation\": \"Area counts three times if 2nd floor over a vaulted entry\"\n          }\n        ]\n      },\n      \"constants\": {\n        \"numerical_values\": [\n          {\n            \"name\": \"Area count multiplier\",\n            \"value\": 3,\n            \"condition\": \"2nd floor over a vaulted entry\"\n          },\n          {\n            \"name\": \"Area count multiplier\",\n            \"value\": 2,\n            \"condition\": \"Vaulted entryway\"\n          }\n        ],\n        \"specs\": [],\n        \"standards\": [],\n        \"procedures\": []\n      },\n      \"conditions\": {\n        \"mandatory\": [\n          \"The area is measured to the outside material of the entry-way feature.\"\n        ],\n        \"optional\": [],\n        \"conditional_logic\": [\n          {\n            \"condition\": \"If the entryway is considered to be a vaulted entryway\",\n            \"outcome\": \"The area counts TWICE toward gross floor area.\"\n          }\n        ],\n        \"dependencies\": []\n      },\n      \"exceptions\": {\n        \"explicit_deviations\": [],\n        \"alternatives\": [],\n        \"special_cases\": [\n          \"A portion of the entryway is recessed beyond the house facade and roof. It is included in the area that counts.\"\n        ]\n      },\n      \"relationships\": {\n        \"hierarchical\": [],\n        \"cross_references\": [],\n        \"logical_dependencies\": [\n          \"The area will count three times toward gross floor area if the 2nd floor is over a vaulted entry.\"\n        ]\n      }\n    }\n  ]\n}\n```"
+  },
+  "timestamp": "2025-09-16 14:42:19",
+  "model": "openai/gpt-4o",
+  "success": true
+}

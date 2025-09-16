@@ -1,0 +1,151 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_37.png",
+  "image_name": "Page_37.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Accessory structures site planning\n\nNote: Site planning for accessory buildings differs from that for parking structures in one way. A special allowance enables garages to be located in the rear/side yards even when the lot is not deep enough to maintain the 75' minimum distance from the front lot line. This does not apply to non-parking accessory structures.\n\nFig 24 Examples of site planning solutions for accessory structures\n\nA Combo garage /small pool cabana\n(side by side)\n\n\u2022 Structure is located in rear yard so it must:\n  a. be at least 75' from the front lot line\n  b. be no more than 12' high\n  c. comply with accessory-structure daylight\n     plane. (Figs 25 & 26 on p. 32)\n\u2022 Structure is located right at the side lot line so\n  that wall and the roof must be fire rated.\n\u2022 Structure has 2 plumbing fixtures.\n\nB Stand-alone pool cabana\n\n\u2022 Structure is located in rear yard so it must:\n  a. be at least 75' from the front lot line\n  b. be no more than 12' high\n  c. comply with accessory-structure daylight\n     plane. (Figs 25 & 26 on p. 32)\n\u2022 Structure is located right at the rear lot line so\n  that wall and the roof must be fire rated.\n\u2022 Structure has 3 plumbing fixtures\u2014 sink,\n  toilet, and shower and is greater than 200\n  sf, so it requires a CUP.\n\nC Office above garage\n\n\u2022 Structure is located within the buildable\n  area, so it doesn't have to comply with\n  regulations for structures in the required\n  yards and it may be two stories high.\n\u2022 Structure has 2 plumbing fixtures.\n\u2022 Structure is new 2nd floor addition and\n  therefore subject to the Planning\n  Department's Individual Review (IR).\n\nInterior lot example\nRear yard\nCombo garage /\nsmall pool house\n\nInterior lot example\nRear yard\nLarger pool cabana\n\nCorner lot example\nRear yard\nOffice\nabove\ngarage\n\nNote: Because this\nstructure is 2\nstories, it must be\nlocted within the\nbuildable area\nregardless of the\ndistances from the\nlot lines and is\nsubject to Individual\nReview (IR)\n\nMin. 75'\nInterior-side yard\nMain\ndwelling\nFront yard\n\nMin. 75'\nInterior-side yard\nInterior-side yard\n2-car\nattached\ngarage\nMain\ndwelling\nFront yard\n\n3'\nmin.\nStreet-side yard\nMain\ndwelling\nFront yard\n\nKey\nCurb\nLot line\nSidewalk\nRequired\nsetbacks\nBuildable\narea\nDwelling/\nparking\nAccessory\nstructure\n\n31",
+      "visual_elements": [
+        {
+          "type": "figure",
+          "description": "Figure 24 is a composite diagram showing three different site plans for properties with accessory structures, labeled A, B, and C. Each diagram illustrates a specific zoning scenario described in the text above it.",
+          "location": "Middle and bottom of the page"
+        },
+        {
+          "type": "diagram",
+          "description": "Diagram A, labeled 'Interior lot example', shows a property with a 'Main dwelling'. In the rear yard, a 'Combo garage / small pool house' (black box) and a small pool are depicted. The accessory structure is located on the side lot line. A dimension line indicates a 'Min. 75'' distance from the front lot line to the accessory structure. The diagram labels 'Front yard', 'Rear yard', and 'Interior-side yard'.",
+          "location": "Bottom left"
+        },
+        {
+          "type": "diagram",
+          "description": "Diagram B, labeled 'Interior lot example', shows a property with a 'Main dwelling' that has a '2-car attached garage'. In the rear yard, a 'Larger pool cabana' (black box) and a pool are shown. The cabana is located on the rear lot line. A dimension line indicates a 'Min. 75'' distance from the front lot line to the accessory structure. The diagram labels 'Front yard', 'Rear yard', and two 'Interior-side yard' areas.",
+          "location": "Bottom middle"
+        },
+        {
+          "type": "diagram",
+          "description": "Diagram C, labeled 'Corner lot example', shows a corner property with a 'Main dwelling'. An 'Office above garage' (black box) is shown as part of the main building, located within the buildable area. A dimension line indicates a '3' min.' setback from the street-side lot line. The diagram labels 'Front yard', 'Rear yard', 'Interior-side yard', and 'Street-side yard'.",
+          "location": "Bottom right"
+        },
+        {
+          "type": "table",
+          "description": "A 'Key' or legend in the bottom right corner defines the graphical elements used in the diagrams. It includes symbols for: Curb (thick solid line), Lot line (thin solid line), Sidewalk (tiled pattern), Required setbacks (dashed line), Buildable area (light gray shaded area with dashed border), Dwelling/parking (medium gray shaded area), and Accessory structure (black shaded area).",
+          "location": "Bottom right"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Minimum distance from front lot line",
+          "value": "75",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Maximum height for rear yard structure",
+          "value": "12",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Plumbing fixtures in combo garage/cabana",
+          "value": "2",
+          "unit": "fixtures"
+        },
+        {
+          "parameter": "Plumbing fixtures in stand-alone cabana",
+          "value": "3",
+          "unit": "fixtures (sink, toilet, and shower)"
+        },
+        {
+          "parameter": "Area threshold for CUP requirement",
+          "value": "200",
+          "unit": "square feet (sf)"
+        },
+        {
+          "parameter": "Height of office above garage",
+          "value": "2",
+          "unit": "stories"
+        },
+        {
+          "parameter": "Plumbing fixtures in office above garage",
+          "value": "2",
+          "unit": "fixtures"
+        },
+        {
+          "parameter": "Floor of office addition",
+          "value": "2nd",
+          "unit": "floor"
+        },
+        {
+          "parameter": "Minimum street-side yard setback",
+          "value": "3",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Page Number",
+          "value": "31",
+          "unit": null
+        },
+        {
+          "parameter": "Figure Number",
+          "value": "24",
+          "unit": null
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Accessory structures site planning",
+        "subheadings": [
+          "Fig 24 Examples of site planning solutions for accessory structures",
+          "A Combo garage /small pool cabana (side by side)",
+          "B Stand-alone pool cabana",
+          "C Office above garage",
+          "Key"
+        ],
+        "sections": [
+          "A",
+          "B",
+          "C"
+        ]
+      },
+      "additional_notes": [
+        {
+          "type": "annotation",
+          "description": "A note in the top right corner, in a sans-serif font, explains a special allowance for garages regarding the 75' minimum distance from the front lot line.",
+          "location": "Top right"
+        },
+        {
+          "type": "annotation",
+          "description": "A note with a callout arrow pointing to the 'Office above garage' in diagram C. The note, in a sans-serif font, states: 'Note: Because this structure is 2 stories, it must be locted within the buildable area regardless of the distances from the lot lines and is subject to Individual Review (IR)'. Note the typo 'locted' for 'located'.",
+          "location": "Right side, pointing to diagram C"
+        },
+        {
+          "type": "page_number",
+          "description": "The page is numbered '31' at the bottom right corner.",
+          "location": "Bottom right"
+        },
+        {
+          "type": "layout",
+          "description": "The page is organized with a main title at the top, followed by a descriptive note and a figure caption. The main content is split into three columns (A, B, C) providing rules for different scenarios. Below the text, three corresponding diagrams visually represent these scenarios. A legend ('Key') is provided at the bottom right.",
+          "location": "Full page"
+        },
+        {
+          "type": "ocr_correction",
+          "description": "In diagram A, the label 'small poo house' is a likely OCR error for 'small pool house' given the context of the pool and the other cabana examples.",
+          "location": "Diagram A label"
+        }
+      ],
+      "cross_references": [
+        {
+          "reference": "Figs 25 & 26 on p. 32",
+          "location": "Sections A and B"
+        },
+        {
+          "reference": "CUP (Conditional Use Permit)",
+          "location": "Section B"
+        },
+        {
+          "reference": "Planning Department's Individual Review (IR)",
+          "location": "Section C and side note for diagram C"
+        }
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-11 14:36:25",
+  "model_used": "google/gemini-2.5-pro"
+}

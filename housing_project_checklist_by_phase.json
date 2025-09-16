@@ -1,0 +1,1803 @@
+{
+  "generated_date": "2025-09-16T20:50:51.451422",
+  "total_rules_analyzed": 160,
+  "checklist_type": "housing_project_compliance",
+  "phases": {
+    "Phase 1 - Site Analysis": [
+      {
+        "rule_title": "Flag Lot Setback Determination",
+        "category": "lot_requirements",
+        "scope": "Defines setbacks and the front lot line for flag lots.",
+        "applicability": "Applies to lots configured as 'Flag lots'.",
+        "requirements": [
+          "DIMENSIONS: lot_shape: 'flag_lot'"
+        ],
+        "source_file": "Page_29_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Corner Lot Setback Determination",
+        "category": "lot_requirements",
+        "scope": "Defines the street side setback for standard corner lots.",
+        "applicability": "Applies to lots with two adjacent street frontages, identified as 'Corner lots'.",
+        "requirements": [
+          "MANDATORY: Lot must be a corner lot, with streets along two adjoining edges.",
+          "DIMENSIONS: lot_shape: 'corner_lot'"
+        ],
+        "source_file": "Page_29_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Substandard Corner Lot Setback Exception",
+        "category": "lot_requirements",
+        "scope": "Defines an exception for the street side setback on substandard corner lots.",
+        "applicability": "Applies to corner lots where one street frontage is less than 50 feet.",
+        "requirements": [
+          "DIMENSIONS: frontage_width"
+        ],
+        "source_file": "Page_29_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Through Lot Yard Identification",
+        "category": "lot_requirements",
+        "scope": "Identifies the yard types for a through lot.",
+        "applicability": "Applies to lots with street frontage on two opposite, parallel sides.",
+        "requirements": [
+          "MANDATORY: Lot must have streets on opposite, parallel sides.",
+          "DIMENSIONS: lot_shape: 'through_lot'"
+        ],
+        "source_file": "Page_29_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Wedge Shaped Lot Rear Yard Determination",
+        "category": "lot_requirements",
+        "scope": "Defines the method for determining the rear yard on a wedge-shaped lot, which lacks a rear lot line.",
+        "applicability": "Applies to lots identified as 'Wedge shaped'.",
+        "requirements": [
+          "DIMENSIONS: lot_shape: 'wedge_shaped_lot'"
+        ],
+        "source_file": "Page_29_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Rear Lot Line Determination for Lots with more than 4 sides",
+        "category": "lot_requirements",
+        "scope": "Defines the method for determining the rear lot line on a lot with more than four sides.",
+        "applicability": "Applies to lots with more than four sides (as depicted in Figures F and G).",
+        "requirements": [
+          "MANDATORY: Lot must have more than 4 sides.",
+          "DIMENSIONS: number_of_sides: > 4"
+        ],
+        "source_file": "Page_29_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Basement Floor Area Exemption from FAR",
+        "category": "lot_requirements",
+        "scope": "Regulation of building mass and the appearance of the streetscape through floor area calculations.",
+        "applicability": "Applies to basements, including habitable ones, when calculating total floor area (FAR).",
+        "requirements": [
+          "MANDATORY: The basement must be below grade to be considered for exemption.",
+          "DIMENSIONS: Height of the first floor above grade."
+        ],
+        "source_file": "Page_46_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Bay Window Exclusion from Gross Floor Area Calculation",
+        "category": "lot_requirements",
+        "scope": "Defines the criteria under which a bay window is considered a decorative architectural feature and is excluded from the calculation of gross floor area.",
+        "applicability": "Applies to bay windows as architectural relief features in residential house designs.",
+        "requirements": [
+          "MANDATORY: All three design criteria must be met simultaneously for the exclusion to apply: 1. Bottom of feature must be at least 18 inches above the floor joists. 2. Exterior supports must be non-solid features like corbels/brackets. 3. At least 50% of the surface must be glass. (Ambiguity Flag: 'surface' is not precisely defined, but examples suggest vertical faces).",
+          "VALUES: Minimum height above floor joists: 18 inches. Minimum glass surface percentage: 50%. Maximum projection from facade: 2 feet.",
+          "DIMENSIONS: 1. Height of the bay window's bottom relative to the floor joists. 2. Percentage of the bay window's surface area that is glass. 3. Projection distance from the building facade."
+        ],
+        "source_file": "Page_24_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Gross Floor Area Calculation for Upper Floor Outdoor Areas",
+        "category": "lot_requirements",
+        "scope": "Determination of which outdoor areas on upper floors are counted towards the Gross Floor Area (GFA).",
+        "applicability": "Applies to all balconies, decks, and other outdoor areas located on upper floors of a building. The rule also explicitly applies to 'pop-out balconies'.",
+        "requirements": [
+          "MANDATORY: Outdoor areas on upper levels that are determined to be 'roofed' MUST be counted toward the gross floor area.",
+          "DIMENSIONS: eave_depth_over_area, eave_depth_over_rest_of_building, overhang_width_over_balcony, overhang_width_around_rest_of_house"
+        ],
+        "source_file": "Page_21_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Porch Openness Calculation for Gross Floor Area",
+        "category": "lot_requirements",
+        "scope": "Determination of whether a porch's area is included in the Gross Floor Area (GFA) calculation.",
+        "applicability": "Applies to the perimeter of porches.",
+        "requirements": [],
+        "source_file": "Page_16_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Max Height for Main Dwelling on Standard Lot with Low Roof Slope",
+        "category": "lot_requirements",
+        "scope": "Regulation of maximum building height measured to the roof peak.",
+        "applicability": "Applies to a 'Main dwelling' on a 'standard lot' where the roof slope is less than 12:12.",
+        "requirements": [
+          "MANDATORY: The structure's height to the roof peak must not exceed the specified maximum height."
+        ],
+        "source_file": "Page_52_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Max Height for Main Dwelling on Standard Lot with High Roof Slope",
+        "category": "lot_requirements",
+        "scope": "Regulation of maximum building height measured to the roof peak.",
+        "applicability": "Applies to a 'Main dwelling' on a 'standard lot' where the roof slope is greater than or equal to 12:12.",
+        "requirements": [
+          "MANDATORY: The structure's height to the roof peak must not exceed the specified maximum height."
+        ],
+        "source_file": "Page_52_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Max Height for Main Dwelling on Substandard or Flag Lot",
+        "category": "lot_requirements",
+        "scope": "Regulation of maximum building height measured to the roof peak.",
+        "applicability": "Applies to a 'Main dwelling' on a 'substandard' or 'flag' lot.",
+        "requirements": [
+          "MANDATORY: The structure's height to the roof peak must not exceed the specified maximum height."
+        ],
+        "source_file": "Page_52_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Accessory Structure in Rear Yard (Side Lot Line)",
+        "category": "lot_requirements",
+        "scope": "Site planning for accessory structures.",
+        "applicability": "Applies to accessory structures (e.g., garage, pool cabana) located in the rear yard of an interior lot.",
+        "requirements": [
+          "MANDATORY: IF structure is located in rear yard, THEN distance from front lot line must be >= 75 feet. IF structure is located in rear yard, THEN height must be <= 12 feet. IF structure is located in rear yard, THEN it must comply with accessory structure daylight plane. IF structure is located at the side lot line, THEN the adjacent wall and roof must be fire rated.",
+          "DIMENSIONS: distance_from_front_lot_line, height, location_relative_to_side_lot_line"
+        ],
+        "source_file": "Page_37_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Large Accessory Structure in Rear Yard (Rear Lot Line)",
+        "category": "lot_requirements",
+        "scope": "Site planning and permitting for accessory structures.",
+        "applicability": "Applies to accessory structures located in the rear yard that are over a certain size and contain multiple plumbing fixtures.",
+        "requirements": [
+          "MANDATORY: IF structure is located in rear yard, THEN distance from front lot line must be >= 75 feet. IF structure is located in rear yard, THEN height must be <= 12 feet. IF structure is located in rear yard, THEN it must comply with accessory structure daylight plane. IF structure is located at the rear lot line, THEN the adjacent wall and roof must be fire rated.",
+          "DIMENSIONS: distance_from_front_lot_line, height, location_relative_to_rear_lot_line, area_in_sf"
+        ],
+        "source_file": "Page_37_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Accessory Structure in Buildable Area",
+        "category": "lot_requirements",
+        "scope": "Site planning for accessory structures.",
+        "applicability": "Applies to accessory structures located entirely within the designated buildable area of a lot.",
+        "requirements": [
+          "DIMENSIONS: number_of_stories"
+        ],
+        "source_file": "Page_37_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Floor Area Calculation for Unenclosed Porches",
+        "category": "lot_requirements",
+        "scope": "Determination of what counts as floor area.",
+        "applicability": "Applies to unenclosed porches.",
+        "requirements": [
+          "MANDATORY: The porch must be unenclosed."
+        ],
+        "source_file": "Page_11_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Floor Area Calculation for Enclosed Porches",
+        "category": "lot_requirements",
+        "scope": "Determination of what counts as floor area.",
+        "applicability": "Applies to enclosed porches.",
+        "requirements": [
+          "MANDATORY: The porch must be enclosed."
+        ],
+        "source_file": "Page_11_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Floor Area Calculation for Low-Height Entry Features",
+        "category": "lot_requirements",
+        "scope": "Determination of what counts as floor area.",
+        "applicability": "Applies to entry features with a height of 12 feet or less.",
+        "requirements": [
+          "DIMENSIONS: Height of the entry feature."
+        ],
+        "source_file": "Page_11_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Floor Area Calculation for High-Height Entry Features",
+        "category": "lot_requirements",
+        "scope": "Determination of what counts as floor area.",
+        "applicability": "Applies to entry features with a height greater than 12 feet.",
+        "requirements": [
+          "DIMENSIONS: Height of the entry feature."
+        ],
+        "source_file": "Page_11_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Floor Area Calculation for 1st Floor Recessed Porches",
+        "category": "lot_requirements",
+        "scope": "Determination of what counts as floor area.",
+        "applicability": "Applies to recessed porches on the 1st floor that are open on an exterior side and have a limited depth.",
+        "requirements": [
+          "DIMENSIONS: Depth of the porch, Floor level."
+        ],
+        "source_file": "Page_11_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Floor Area Calculation for 2nd Floor Roofed or Enclosed Features",
+        "category": "lot_requirements",
+        "scope": "Determination of what counts as floor area.",
+        "applicability": "Applies to 2nd floor roofed or enclosed porches, arcades, balconies, porticos, and breezeways.",
+        "requirements": [
+          "MANDATORY: Feature must be on the 2nd floor and be one of the specified types (porch, arcade, etc.) and be roofed or enclosed.",
+          "DIMENSIONS: Floor level."
+        ],
+        "source_file": "Page_11_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Floor Area Calculation for Low-Height Attic Space",
+        "category": "lot_requirements",
+        "scope": "Determination of what counts as floor area.",
+        "applicability": "Applies to attic space where the vertical distance from the floor to the underside of the roof rafter is 5 feet or less.",
+        "requirements": [
+          "DIMENSIONS: Height from floor to underside of roof rafter."
+        ],
+        "source_file": "Page_11_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Floor Area Calculation for Standard 2nd Floor Space and Attics",
+        "category": "lot_requirements",
+        "scope": "Determination of what counts as floor area.",
+        "applicability": "Applies to all 2nd floor space, including attics, where head height is 5 feet or greater.",
+        "requirements": [
+          "DIMENSIONS: Head height (top of floor to bottom of rafter), Floor level."
+        ],
+        "source_file": "Page_11_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Floor Area Calculation for 2nd Floor Equivalent (High Volume)",
+        "category": "lot_requirements",
+        "scope": "Determination of what counts as floor area, with penalties for high-volume spaces.",
+        "applicability": "Applies to areas where the height from the top of the first floor to the top of the roof material is greater than 17 feet.",
+        "requirements": [
+          "DIMENSIONS: Height from top of first floor to top of roof material."
+        ],
+        "source_file": "Page_11_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Floor Area Calculation for 3rd Floor Equivalent (Very High Volume)",
+        "category": "lot_requirements",
+        "scope": "Determination of what counts as floor area, with penalties for very high-volume spaces.",
+        "applicability": "Applies to areas where the height from the top of the first floor to the top of the roof material is 26 feet or greater.",
+        "requirements": [
+          "DIMENSIONS: Height from top of first floor to top of roof material."
+        ],
+        "source_file": "Page_11_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Floor Area Calculation for Compliant Basements",
+        "category": "lot_requirements",
+        "scope": "Determination of what counts as floor area.",
+        "applicability": "Applies to basements that comply with specific patio and lightwell requirements.",
+        "requirements": [],
+        "source_file": "Page_11_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Floor Area Calculation for Basements in Historic Structures",
+        "category": "lot_requirements",
+        "scope": "Determination of what counts as floor area.",
+        "applicability": "Applies to basements of Category 1 & 2 historic homes or contributing structures in a historic district.",
+        "requirements": [],
+        "source_file": "Page_11_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Floor Area Calculation for Bay Windows",
+        "category": "lot_requirements",
+        "scope": "Determination of what counts as floor area.",
+        "applicability": "Applies to bay windows that meet a specific set of dimensional and material criteria.",
+        "requirements": [
+          "DIMENSIONS: Height above interior floor, Projection distance from wall."
+        ],
+        "source_file": "Page_11_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Floor Area Calculation for Architectural Appendages",
+        "category": "lot_requirements",
+        "scope": "Determination of what counts as floor area.",
+        "applicability": "Applies to the footprint of architectural appendages such as fireplaces or buttresses.",
+        "requirements": [
+          "MANDATORY: The footprint of a fireplace or buttress is counted once.",
+          "DIMENSIONS: Footprint area."
+        ],
+        "source_file": "Page_11_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Floor Area Calculation for Large Accessory Structures",
+        "category": "lot_requirements",
+        "scope": "Determination of what counts as floor area.",
+        "applicability": "Applies to accessory structures with a floor area greater than 120 square feet.",
+        "requirements": [
+          "DIMENSIONS: Area of the accessory structure."
+        ],
+        "source_file": "Page_11_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Floor Area Calculation for Garages and Carports",
+        "category": "lot_requirements",
+        "scope": "Determination of what counts as floor area.",
+        "applicability": "Applies to garages and carports.",
+        "requirements": [
+          "MANDATORY: The area of a garage or carport is counted once."
+        ],
+        "source_file": "Page_11_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Floor Area Calculation for Porte Cocheres",
+        "category": "lot_requirements",
+        "scope": "Determination of what counts as floor area.",
+        "applicability": "Applies to porte cocheres.",
+        "requirements": [
+          "MANDATORY: The area of a porte cochere is not counted."
+        ],
+        "source_file": "Page_11_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Minimum & Maximum Lot Sizes for New Lots",
+        "category": "lot_requirements",
+        "scope": "Defines the dimensional requirements (width, depth, area) for the creation of new lots via subdivision.",
+        "applicability": "Applies to new lots created under the subdivision ordinance in the following zones: R-1, R-1(7000), R-1(8000), R-1(10000), R-1(20000).",
+        "requirements": [
+          "MANDATORY: A new lot must satisfy all of the following: (width >= 60 ft) AND (depth >= 100 ft) AND (lot_area is within the min/max range for its specific zone district).",
+          "VALUES: Minimum width: 60 ft\nMinimum depth: 100 ft\nLot Area Ranges (sf):\n- R-1: Min 6,000; Max 9,999\n- R-1(7000): Min 7,000; Max 13,999\n- R-1(8000): Min 8,000; Max 15,999\n- R-1(10000): Min 10,000; Max 19,999\n- R-1(20000): Min 20,000; Max 39,999",
+          "DIMENSIONS: lot_width (ft), lot_depth (ft), lot_area (sf)"
+        ],
+        "source_file": "Page_08_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Definition of a Substandard Lot",
+        "category": "lot_requirements",
+        "scope": "Defines the dimensional criteria used to classify an existing lot as 'substandard'.",
+        "applicability": "Applies to lots within all R-1 zones: R-1, R-1(7000), R-1(8000), R-1(10000), R-1(20000).",
+        "requirements": [
+          "VALUES: Substandard width threshold: < 50 ft\nSubstandard depth threshold: < 83 ft\nArea Thresholds (sf) - A lot is substandard if its area is less than or equal to these values:\n- R-1: Typical 4,980; Flag 5,976\n- R-1(7000): Typical 5,810; Flag 6,972\n- R-1(8000): Typical 6,640; Flag 7,968\n- R-1(10000): Typical 8,300; Flag 9,960\n- R-1(20000): Typical 16,600; Flag 19,920",
+          "DIMENSIONS: lot_width (ft), lot_depth (ft), lot_area (sf)"
+        ],
+        "source_file": "Page_08_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Special Regulations for Substandard Lots",
+        "category": "lot_requirements",
+        "scope": "Specifies alternative development regulations for building height, setbacks, and garage placement on substandard lots.",
+        "applicability": "Applies only to lots that have been classified as 'substandard' based on the official definition.",
+        "requirements": [
+          "VALUES: Max building height: 17 ft (single-story)\nRequired street-side yard: 10 ft\nStandard building height (for comparison): 30 ft\nStandard street-side yard (for comparison): 16 ft\nStandard garage location (for comparison): 75 ft back from front lot line",
+          "DIMENSIONS: building_height (ft), street_side_yard (ft), lot_width (ft), lot_depth (ft), garage_location"
+        ],
+        "source_file": "Page_08_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Vaulted Entryway Gross Floor Area Calculation",
+        "category": "lot_requirements",
+        "scope": "Calculation of Gross Floor Area (GFA).",
+        "applicability": "Applies to entryways that are 'considered to be a vaulted entryway'. The provided example shows a portion of the entryway recessed beyond the house facade and roof.",
+        "requirements": [],
+        "source_file": "Page_19_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Vaulted Entryway with 2nd Floor Gross Floor Area Calculation",
+        "category": "lot_requirements",
+        "scope": "Calculation of Gross Floor Area (GFA).",
+        "applicability": "Applies to a vaulted entry that has a 2nd floor located over it.",
+        "requirements": [],
+        "source_file": "Page_19_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Driveway Dimensional Standards",
+        "category": "lot_requirements",
+        "scope": "Regulates the minimum width and clearance for driveways.",
+        "applicability": "All driveways, noted as 'typ. all' in Figure 31.",
+        "requirements": [
+          "MANDATORY: Driveway surface must be at least 8' wide. Driveway clearance must be at least 10' wide.",
+          "DIMENSIONS: Driveway surface width, Driveway clearance width."
+        ],
+        "source_file": "Page_42_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Recessed Porch Gross Floor Area Exclusion",
+        "category": "lot_requirements",
+        "scope": "Calculation of Gross Floor Area (GFA).",
+        "applicability": "Applies to recessed porches located on the ground floor (1st floor).",
+        "requirements": [
+          "MANDATORY: To be excluded from GFA, a logical AND of three conditions must be met."
+        ],
+        "source_file": "Page_20_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Vaulted Entry Feature Definition and Gross Floor Area (GFA) Calculation",
+        "category": "lot_requirements",
+        "scope": "This rule defines 'vaulted entry features' and stipulates how their area is calculated towards the gross floor area.",
+        "applicability": "Applies to all building entry features.",
+        "requirements": [
+          "MANDATORY: If an entry feature meets the height criteria for a 'vaulted entry feature', its footprint area MUST be counted twice towards the gross floor area.",
+          "DIMENSIONS: entry_feature_height: The vertical distance of the entry feature. entry_feature_footprint_area: The floor area of the entry feature. gross_floor_area: The total gross floor area of the building."
+        ],
+        "source_file": "Page_17_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Setback Determination for Oddly Shaped Lots",
+        "category": "lot_requirements",
+        "scope": "Provides a reference for determining appropriate site plans and setbacks for non-standard lot shapes.",
+        "applicability": "Applies to 'flag lot' (Fig 17 A), 'corner lot' (Fig 17 B), 'through lot' (Fig 17 D), 'wedge-shaped lot' (Fig 17 E), and 'lot with more than four sides' (Fig 17 F & G).",
+        "requirements": [],
+        "source_file": "Page_28_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Reduced Setbacks for Flag and Substandard Lots",
+        "category": "lot_requirements",
+        "scope": "Describes specific instances of reduced setbacks for smaller or oddly shaped lots.",
+        "applicability": "Applies to 'flag lots' and 'substandard corner lots that are less than 50' wide'.",
+        "requirements": [],
+        "source_file": "Page_28_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "GFA Calculation for Roofed Balconies/Outdoor Areas on Upper Floors",
+        "category": "lot_requirements",
+        "scope": "Assessment of gross floor area (GFA) for porches, entryways, and balconies.",
+        "applicability": "Applies to roofed balconies or other roofed outdoor areas on upper floors (i.e., floor level > 1).",
+        "requirements": [],
+        "source_file": "Page_12_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Attached Fireplace, Chimney, and Buttress Gross Floor Area Calculation",
+        "category": "lot_requirements",
+        "scope": "Calculation of gross floor area (GFA) for fireplaces, chimneys, and buttresses attached to a primary structure.",
+        "applicability": "Applies to all configurations and designs of attached fireplaces, chimneys, and buttresses.",
+        "requirements": [
+          "MANDATORY: Fireplaces, ground-floor chimneys, and buttresses must be counted towards GFA.",
+          "DIMENSIONS: Configuration, design, floor level."
+        ],
+        "source_file": "Page_25_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Projections and Appendages Gross Floor Area Calculation",
+        "category": "lot_requirements",
+        "scope": "Calculation of gross floor area (GFA) for sheds, planters, tool sheds, equipment enclosures, play houses, and other similar projections/appendages.",
+        "applicability": "Applies to miscellaneous appendages and projections regardless of configuration or design.",
+        "requirements": [
+          "DIMENSIONS: Height."
+        ],
+        "source_file": "Page_25_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Gross vs. net lot area",
+        "category": "lot_requirements",
+        "scope": "Defines the calculation of net lot area from gross lot area. The net lot area is the basis for determining a lot's development potential.",
+        "applicability": "Applies to all lots in Palo Alto, specifically lots where portions must be excluded from the gross lot area. This includes lots with street right-of-ways, flag lots, and lots with creek channels.",
+        "requirements": [
+          "MANDATORY: The following areas MUST be excluded from the gross lot size to establish net lot area: 1. Street right-of-way. 2. 'Pole' portion of a flag lot. 3. Creek channel.",
+          "DIMENSIONS: Gross lot area: The total size of the lot from lot line to lot line. Net lot area: The area used for calculating development potential, derived from the gross lot area. Area A: The portion of a lot within a public street right-of-way (ROW). Area B: The 'pole' portion of a flag lot. Area C: The portion of a lot within a creek channel."
+        ],
+        "source_file": "Page_09_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Uncovered Parking Space Dimensions",
+        "category": "lot_requirements",
+        "scope": "Minimum dimensions for parking spaces.",
+        "applicability": "Uncovered parking spaces.",
+        "requirements": [
+          "MANDATORY: The specified minimum dimensions must be met."
+        ],
+        "source_file": "Page_40_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Parking Space Clear Area Usage",
+        "category": "lot_requirements",
+        "scope": "Use of the required clear area within a parking space.",
+        "applicability": "All required parking spaces, both covered and uncovered.",
+        "requirements": [
+          "MANDATORY: The clear area required for a parking space must be free of other uses or obstructions."
+        ],
+        "source_file": "Page_40_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Attic, closet, & perimeter spaces contributing to Gross Floor Area",
+        "category": "lot_requirements",
+        "scope": "This rule defines how to calculate the contribution of certain spaces (attics, closets, perimeters) to the total gross floor area of a structure.",
+        "applicability": "The rule applies to all accessible floors in a structure.",
+        "requirements": [
+          "MANDATORY: On any accessible floor, any area with at least 5 feet of head clearance must be counted toward the gross floor area.",
+          "DIMENSIONS: head clearance, gross floor area, floor area"
+        ],
+        "source_file": "Page_22_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Maximum Size of Detached Second Dwelling Unit",
+        "category": "lot_requirements",
+        "scope": "Establishes the maximum permissible floor area for a detached second dwelling unit.",
+        "applicability": "Applies to all 'Detached 2nd dwelling units'.",
+        "requirements": [
+          "MANDATORY: The area of the detached second dwelling unit must not exceed the maximum limit.",
+          "VALUES: 900 sf max",
+          "DIMENSIONS: Gross floor area of the second dwelling unit."
+        ],
+        "source_file": "Page_51_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Maximum Size of Single-Car Garage for Second Dwelling Unit (Ambiguous)",
+        "category": "lot_requirements",
+        "scope": "Establishes a maximum permissible floor area for a single-car garage associated with a second dwelling unit.",
+        "applicability": "Appears to apply to 1-car garages serving a second dwelling unit, whether attached or detached, as labels are noted in both Scenarios A and B.",
+        "requirements": [
+          "MANDATORY: If applicable, the garage area must not exceed the maximum limit.",
+          "VALUES: 200 sf max (Value is faint and not confirmed with certainty)",
+          "DIMENSIONS: Gross floor area of the garage."
+        ],
+        "source_file": "Page_51_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Vaulted Entryway Area Calculation for Gross Floor Area",
+        "category": "lot_requirements",
+        "scope": "Defines the method for calculating the floor area of a specific type of entryway and its contribution to the total gross floor area of a building.",
+        "applicability": "This rule applies to entryways that are classified as 'vaulted'.",
+        "requirements": [],
+        "source_file": "Page_18_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Standards for Accessory Structures in the Buildable Area",
+        "category": "lot_requirements",
+        "scope": "Height and daylight plane regulations for accessory structures.",
+        "applicability": "Applies only to non-dwelling accessory structures located within the 'buildable area' of a lot.",
+        "requirements": [],
+        "source_file": "Page_36_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Siting of Detached Garages/Carports on Shallow Lots",
+        "category": "lot_requirements",
+        "scope": "An exception to the general siting rule for detached parking structures on shallow lots.",
+        "applicability": "Applies to detached garages and carports on lots that are less than 95' deep.",
+        "requirements": [
+          "MANDATORY: Structure must be located in the rear or interior side yard.",
+          "VALUES: 95' (maximum lot depth for this rule to apply).",
+          "DIMENSIONS: Lot depth; Location on lot (rear half); Location in yard (rear or interior side)."
+        ],
+        "source_file": "Page_45_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Fire-Rated Construction for Garages at Lot Line",
+        "category": "lot_requirements",
+        "scope": "Construction requirements for garages built with zero setback to a lot line.",
+        "applicability": "Applies to garages located 'at the lot line'.",
+        "requirements": [
+          "DIMENSIONS: Distance from lot line (must be 0)."
+        ],
+        "source_file": "Page_45_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Garage Size Substitution",
+        "category": "lot_requirements",
+        "scope": "Allows for substitution of a smaller garage if sufficient uncovered parking is available.",
+        "applicability": "Applies to lots where a 2-car garage is being considered.",
+        "requirements": [
+          "VALUES: 1-car; 2-car."
+        ],
+        "source_file": "Page_45_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Lot Coverage",
+        "category": "lot_requirements",
+        "scope": "Describes how much of a lot is covered by structures, without evaluating the mass of those structures.",
+        "applicability": "Applies to the calculation of the total footprint of all structures on a lot.",
+        "requirements": [
+          "MANDATORY: The total lot coverage must not exceed the maximum allowable percentage of the lot size."
+        ],
+        "source_file": "Page_10_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Gross Floor Area (GFA)",
+        "category": "lot_requirements",
+        "scope": "Describes the mass of structures by reflecting the cumulative square footage of all visible levels.",
+        "applicability": "Applies to the calculation of the sum of all floor areas in structures on a lot, measured to the outside of exterior stud walls.",
+        "requirements": [
+          "MANDATORY: The total gross floor area must not exceed the calculated allowable maximum. The main house GFA must not exceed 6,000 sf, regardless of lot size."
+        ],
+        "source_file": "Page_10_rules.json",
+        "status": "pending"
+      }
+    ],
+    "Phase 2 - Building Design": [
+      {
+        "rule_title": "Daylight Plane Protrusion: Television and Radio Antennas",
+        "category": "building_height",
+        "scope": "Regulates the protrusion of television and radio antennas above the maximum building height in relation to the daylight plane.",
+        "applicability": "Applies to television and radio antennas.",
+        "requirements": [
+          "MANDATORY: The protrusion must not exceed 15 feet above the maximum building height.",
+          "VALUES: Maximum protrusion: 15 feet",
+          "DIMENSIONS: protrusion_height_above_max_building_height"
+        ],
+        "source_file": "Page_35_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Daylight Plane Protrusion: Chimneys and Flues",
+        "category": "building_height",
+        "scope": "Regulates the protrusion of small chimneys and flues into the daylight plane.",
+        "applicability": "Applies to chimneys and flues that are less than 5 feet wide.",
+        "requirements": [
+          "MANDATORY: Chimney or flue width must be less than 5 feet.",
+          "VALUES: Maximum width for applicability: < 5 feet",
+          "DIMENSIONS: chimney_flue_width, protrusion_extent"
+        ],
+        "source_file": "Page_35_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Daylight Plane Protrusion: Dormers, Roof Decks, Gables",
+        "category": "building_height",
+        "scope": "Regulates the protrusion of certain architectural features like dormers, roof decks, and gables into the daylight plane.",
+        "applicability": "Applies to dormers, roof decks, gables, or 'similar architectural features'. AMBIGUITY: The term 'similar' is not defined.",
+        "requirements": [
+          "MANDATORY: All dimensional and separation constraints must be met simultaneously. 1) each feature length \u2264 7.5'; 2) cumulative length of all features \u2264 15' (per side); 3) min 5' separation between features (per side); 4) height \u2264 24'. AMBIGUITY: The context for 'height \u2264 24'' is unclear (e.g., height of the feature, height above roof, etc.).",
+          "VALUES: Max individual length: 7.5 feet; Max cumulative length: 15 feet (per side); Min separation: 5 feet (per side); Max height: 24 feet",
+          "DIMENSIONS: individual_feature_length, cumulative_feature_length_per_side, separation_between_features_per_side, feature_height"
+        ],
+        "source_file": "Page_35_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Daylight Plane Protrusion: Cornices and Eaves",
+        "category": "building_height",
+        "scope": "Regulates the protrusion of non-habitable architectural features like cornices and eaves into the daylight plane.",
+        "applicability": "Applies to cornices, eaves, and 'similar architectural features'. AMBIGUITY: The term 'similar' is not defined.",
+        "requirements": [
+          "MANDATORY: Protrusion must not exceed 2 feet. The feature must not be a flat/continuous wall or an enclosure for interior space.",
+          "VALUES: Maximum protrusion: 2 feet",
+          "DIMENSIONS: protrusion_depth"
+        ],
+        "source_file": "Page_35_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Excavated Features and Grade Measurement for FAR",
+        "category": "floor_area",
+        "scope": "Defines how excavated features affect the determination of 'grade' for the purpose of floor area (FAR) calculations.",
+        "applicability": "Excavated features including light wells, stairwells, and below-grade patios.",
+        "requirements": [
+          "DIMENSIONS: Size and dimensional limits of excavated features."
+        ],
+        "source_file": "Page_46_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Roofed Porch Definition",
+        "category": "architectural",
+        "scope": "Defines a type of structure, the 'Roofed porch', as illustrated in Figure 4.",
+        "applicability": "Structures classified as 'A Roofed porch'.",
+        "requirements": [
+          "MANDATORY: No specific constraints are listed on this page for this type.",
+          "DIMENSIONS: Height"
+        ],
+        "source_file": "Page_13_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Roofed Entry Way (not vaulted) Height Regulation",
+        "category": "building_height",
+        "scope": "Regulates the maximum height of non-vaulted roofed entryways.",
+        "applicability": "Structures classified as 'B Roofed entry way (not vaulted)'.",
+        "requirements": [
+          "MANDATORY: The height of the structure must be less than 12 feet above grade.",
+          "DIMENSIONS: Height"
+        ],
+        "source_file": "Page_13_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Vaulted Entry Way Height Regulation",
+        "category": "building_height",
+        "scope": "Regulates the minimum height of vaulted entryways.",
+        "applicability": "Structures classified as 'C Vaulted entry way'.",
+        "requirements": [
+          "MANDATORY: The height of the structure must be greater than 12 feet above grade.",
+          "DIMENSIONS: Height"
+        ],
+        "source_file": "Page_13_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Combination Porch & Vaulted Entry Way Height Regulation",
+        "category": "building_height",
+        "scope": "Regulates the minimum height of combination porch and vaulted entryway structures.",
+        "applicability": "Structures classified as 'D Combination porch & vaulted entry way'.",
+        "requirements": [
+          "MANDATORY: The height of the structure must be greater than 12 feet above grade.",
+          "DIMENSIONS: Height"
+        ],
+        "source_file": "Page_13_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Accessory structure daylight plane (sides & rear)",
+        "category": "setbacks",
+        "scope": "Defines the maximum allowable building envelope for accessory structures on a lot.",
+        "applicability": "Applies to accessory structures, specifically concerning their proximity to side and rear lot lines.",
+        "requirements": [],
+        "source_file": "Page_38_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Porch Safety Railing Height and GFA Classification",
+        "category": "building_height",
+        "scope": "Safety requirements for porch sides and their impact on the 'open' vs. 'closed' classification used for GFA calculations.",
+        "applicability": "Applies to porches where the porch floor is more than 30 inches above grade.",
+        "requirements": [],
+        "source_file": "Page_16_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Main Dwelling - Rear Yard Encroachment",
+        "category": "setbacks",
+        "scope": "Allowable setback encroachments for a portion of the main dwelling at the rear of the structure.",
+        "applicability": "Applies to the 1st floor (ground floor) only. Applies only to legally constructed structures. The addition must be contiguous with an existing protrusion.",
+        "requirements": [
+          "MANDATORY: The encroaching portion's width must be no wider than half the maximum width of the dwelling. The encroachment must be on the ground floor only. The addition must be contiguous with any existing protrusion.",
+          "DIMENSIONS: lot_type (standard lot, back-to-back corner lot), structure_max_width, encroachment_width, encroachment_depth, maintained_setback"
+        ],
+        "source_file": "Page_30_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Main Dwelling - Front Setback Encroachment Extension",
+        "category": "setbacks",
+        "scope": "Allowable extension of an existing front setback encroachment for a main dwelling.",
+        "applicability": "Applies to the 1st floor only. Requires an existing, legal front setback encroachment to extend.",
+        "requirements": [
+          "MANDATORY: Must be an extension of an existing front setback encroachment. Must be on the 1st floor.",
+          "DIMENSIONS: distance_to_front_lot_line"
+        ],
+        "source_file": "Page_30_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Main Dwelling - Interior-Side Setback Encroachment Extension",
+        "category": "setbacks",
+        "scope": "Allowable extension of an existing interior-side setback encroachment for a main dwelling.",
+        "applicability": "Applies to the 1st floor only. Requires an existing, legal interior-side setback encroachment to extend.",
+        "requirements": [
+          "MANDATORY: Must be an extension of an existing interior-side setback encroachment. Must be on the 1st floor.",
+          "DIMENSIONS: distance_to_interior_side_lot_line"
+        ],
+        "source_file": "Page_30_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Main Dwelling - Street-Side Setback Encroachment Extension",
+        "category": "setbacks",
+        "scope": "Allowable extension of an existing street-side setback encroachment for a main dwelling.",
+        "applicability": "Applies to the 1st floor only. Requires an existing, legal street-side setback encroachment to extend.",
+        "requirements": [
+          "MANDATORY: Must be an extension of an existing street-side setback encroachment. Must be on the 1st floor.",
+          "DIMENSIONS: distance_to_street_side_lot_line"
+        ],
+        "source_file": "Page_30_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Porches and Entry Features - Balconies, Porches, Stairways, Fire Escapes",
+        "category": "architectural",
+        "scope": "Allowable setback encroachments for specific 1st floor features.",
+        "applicability": "Applies to 1st floor balconies, uncovered porches, stairways, and fire escapes.",
+        "requirements": [
+          "MANDATORY: Feature must be on the 1st floor. Feature must be one of: balcony, uncovered porch, stairway, or fire escape.",
+          "DIMENSIONS: encroachment_depth"
+        ],
+        "source_file": "Page_30_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Porches and Entry Features - Canopies and Patio Covers",
+        "category": "architectural",
+        "scope": "Allowable placement for canopies and patio covers.",
+        "applicability": "Applies to canopies and patio covers on the 1st floor only.",
+        "requirements": [
+          "MANDATORY: Feature must be on the 1st floor. Feature must be a canopy or patio cover."
+        ],
+        "source_file": "Page_30_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Other Features - 1st Floor Bay/Greenhouse Windows",
+        "category": "building_height",
+        "scope": "Allowable setback encroachments for specific window types in front and rear yards.",
+        "applicability": "Applies to 1st floor bay or greenhouse windows that are composed of a window surface, are cantilevered, and have no floor joists.",
+        "requirements": [
+          "MANDATORY: Must be on the 1st floor. Must be a bay or greenhouse window. Must be composed of a window surface. Must be cantilevered. Must have no floor joists.",
+          "DIMENSIONS: encroachment_depth"
+        ],
+        "source_file": "Page_30_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Other Features - Greenhouse Windows (Side Yard)",
+        "category": "setbacks",
+        "scope": "Allowable setback encroachments for greenhouse windows in side yards.",
+        "applicability": "Applies only to greenhouse windows.",
+        "requirements": [
+          "MANDATORY: Feature must be a greenhouse window.",
+          "DIMENSIONS: encroachment_depth"
+        ],
+        "source_file": "Page_30_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Max Height for Accessory Structure in Yard",
+        "category": "setbacks",
+        "scope": "Regulation of maximum building height measured to the roof peak.",
+        "applicability": "Applies to an 'Accessory structure' located in a 'rear' or 'side' yard.",
+        "requirements": [
+          "MANDATORY: The structure's height to the roof peak must not exceed the specified maximum height."
+        ],
+        "source_file": "Page_52_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Max Height for 2nd-Dwelling Units",
+        "category": "building_height",
+        "scope": "Regulation of maximum building height measured to the roof peak.",
+        "applicability": "Applies to '2nd-dwelling units'.",
+        "requirements": [
+          "MANDATORY: The structure's height to the roof peak must not exceed the specified maximum height."
+        ],
+        "source_file": "Page_52_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Two-Story Accessory Structure Requirements",
+        "category": "building_height",
+        "scope": "Site planning and review process for accessory structures.",
+        "applicability": "Applies to any accessory structure that is two stories high, or is a new second-floor addition.",
+        "requirements": [
+          "MANDATORY: IF an accessory structure is 2 stories, THEN it MUST be located within the buildable area. IF an accessory structure is 2 stories OR is a new 2nd floor addition, THEN it is subject to Individual Review (IR).",
+          "DIMENSIONS: number_of_stories"
+        ],
+        "source_file": "Page_37_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Garage Setback Exception",
+        "category": "setbacks",
+        "scope": "Site planning for parking structures.",
+        "applicability": "Applies ONLY to garages located in rear or side yards.",
+        "requirements": [
+          "DIMENSIONS: lot_depth, distance_from_front_lot_line"
+        ],
+        "source_file": "Page_37_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Attached Garage/Carport Setbacks",
+        "category": "setbacks",
+        "scope": "Site planning regulations for attached vehicle storage structures.",
+        "applicability": "Applies to attached garages and attached carports.",
+        "requirements": [
+          "MANDATORY: Compliance is mandatory. The text uses the word 'must'."
+        ],
+        "source_file": "Page_44_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Standard Setbacks by Zone",
+        "category": "setbacks",
+        "scope": "Defines minimum required yard dimensions (front, rear, interior side, street side) for lots, creating a buildable area and surrounding open space.",
+        "applicability": "Applies in 'most cases' to specific residential zones (R-1, R-1(7000), R-1(8000), R-1(10000), R-1(20000)), flag lots, substandard lots, and substandard corner lots.",
+        "requirements": [
+          "MANDATORY: Required yards must be maintained as open space areas."
+        ],
+        "source_file": "Page_26_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Special Setbacks",
+        "category": "setbacks",
+        "scope": "Defines specific setback requirements that supersede standard setbacks for lots located on a pre-defined list of streets.",
+        "applicability": "Applies to lots on the following streets: Alma St, Arastradero Rd, Ash St, California Ave.",
+        "requirements": [
+          "MANDATORY: Special setbacks override standard setbacks."
+        ],
+        "source_file": "Page_26_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Exemption to 3rd Floor Equivalent for Steep Roof Pitch",
+        "category": "building_height",
+        "scope": "Provides a partial exemption from the '3rd floor equivalent' calculation.",
+        "applicability": "Applies to areas subject to the '3rd floor equivalent' rule where the roof pitch is 4:12 or greater.",
+        "requirements": [
+          "DIMENSIONS: Roof pitch."
+        ],
+        "source_file": "Page_11_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Determination of Porch Openness Percentage",
+        "category": "architectural",
+        "scope": "Procedure to determine if a roofed porch is considered 'open' based on the ratio of its open perimeter segments to its total perimeter.",
+        "applicability": "Roofed porches on the 1st floor.",
+        "requirements": [],
+        "source_file": "Page_14_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "2nd & 3rd floor equivalency",
+        "category": "building_height",
+        "scope": "Calculation of gross floor area (GFA).",
+        "applicability": "Applies to high-volume spaces within a building, measured vertically from the top of the first finished floor.",
+        "requirements": [
+          "MANDATORY: Areas higher than 17' above the first floor must be counted as 2nd floor equivalency GFA. Areas higher than 26' above the first floor must be counted as 3rd floor equivalency GFA.",
+          "DIMENSIONS: height_above_first_floor, area_of_high_volume_space, roof_pitch, width_of_area"
+        ],
+        "source_file": "Page_23_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Primary Daylight Plane (Sides)",
+        "category": "setbacks",
+        "scope": "An invisible tent-like plane intended to contain development on a lot in a way that preserves privacy and exposure to natural light for adjacent properties. It works in conjunction with setbacks and height limits.",
+        "applicability": "Regulates structures located within the buildable area.",
+        "requirements": [
+          "MANDATORY: Structures within the buildable area must be contained within the primary daylight plane.",
+          "DIMENSIONS: Average grade; Existing grade of the structure (at midpoint of wall); Grade at the nearest point on the adjacent lot; Max. building height."
+        ],
+        "source_file": "Page_32_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Front Yard Impermeable Surface Limitation",
+        "category": "setbacks",
+        "scope": "Limits the amount of impermeable surface area within the boundaries of the required front yard.",
+        "applicability": "The required front yard of all properties subject to this regulation.",
+        "requirements": [
+          "MANDATORY: No more than 40% of the required front yard may be impermeable.",
+          "DIMENSIONS: Total area of required front yard, Total area of impermeable surface within the front yard."
+        ],
+        "source_file": "Page_42_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "One-Story Construction Height and 2nd Story Equivalency",
+        "category": "building_height",
+        "scope": "Defines the height limit for one-story construction for the purpose of GFA calculation.",
+        "applicability": "City-wide policy applied to spaces like porches when their area is included in GFA calculations.",
+        "requirements": [
+          "MANDATORY: This is a mandatory city policy for GFA calculation."
+        ],
+        "source_file": "Page_20_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Extension of existing side yard encroachment",
+        "category": "setbacks",
+        "scope": "Allowable extensions to existing encroachments of walls into required yards.",
+        "applicability": "Applies to existing walls that encroach into a required interior side yard. The extension is permitted on the ground floor only. This rule applies only to structures that were legally constructed without a variance or a home improvement exception (HIE). The extension may be performed only once in the life of the structure.",
+        "requirements": [
+          "MANDATORY: The existing wall must be at least 5'-0\" from the property line. The extension must be at the same setback as the existing wall. The extension must be contiguous with the existing protrusion. The original non-complying wall must be retained."
+        ],
+        "source_file": "Page_31_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Extension of existing front yard encroachment",
+        "category": "setbacks",
+        "scope": "Allowable extensions to existing encroachments of walls into required yards.",
+        "applicability": "Applies to existing walls that encroach into a required front yard. The extension is permitted on the ground floor only. This rule applies only to structures that were legally constructed without a variance or a home improvement exception (HIE). The extension may be performed only once in the life of the structure.",
+        "requirements": [
+          "MANDATORY: The existing wall must be at least 14'-0\" from the property line. The extension must be at the same setback as the existing wall. The extension must be contiguous with the existing protrusion. The original non-complying wall must be retained. Both of the following provisions must be met: 1) the length of the extension is no greater than that of the existing encroaching wall, AND 2) the combined length is no greater than one-half the maximum width of the house."
+        ],
+        "source_file": "Page_31_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Extension of existing street-side yard encroachment",
+        "category": "setbacks",
+        "scope": "Allowable extensions to existing encroachments of walls into required yards.",
+        "applicability": "Applies to existing walls that encroach into a required street side yard. The extension is permitted on the ground floor only. This rule applies only to structures that were legally constructed without a variance or a home improvement exception (HIE). The extension may be performed only once in the life of the structure.",
+        "requirements": [
+          "MANDATORY: The existing wall must be at least 10'-0\" from the property line. The extension must be at the same setback as the existing wall. The extension must be contiguous with the existing protrusion. The original non-complying wall must be retained."
+        ],
+        "source_file": "Page_31_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Structure Height Measurement on Land with Natural Slope \u2264 10%",
+        "category": "building_height",
+        "scope": "Measurement of structure height.",
+        "applicability": "Applies to structures located on land with a natural slope of 10% or less.",
+        "requirements": [
+          "MANDATORY: This rule is invoked when measuring the height of a structure.",
+          "DIMENSIONS: Structure height, Natural slope of land"
+        ],
+        "source_file": "Page_53_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Structure Height Measurement on Land with Natural Slope > 10%",
+        "category": "building_height",
+        "scope": "Measurement of structure height and enforcement of height limits.",
+        "applicability": "Applies to structures located on land with a natural slope greater than 10%.",
+        "requirements": [
+          "MANDATORY: This rule is invoked when measuring the height of a structure. The structure must comply with the height limit at all points along the slope.",
+          "DIMENSIONS: Structure height, Natural slope of land"
+        ],
+        "source_file": "Page_53_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Daylight Plane Measurement",
+        "category": "building_height",
+        "scope": "Measurement of a daylight plane.",
+        "applicability": "Applies when measuring a daylight plane.",
+        "requirements": [
+          "MANDATORY: This rule is invoked when measuring a daylight plane.",
+          "DIMENSIONS: Daylight plane"
+        ],
+        "source_file": "Page_53_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Setback Measurement with Easements",
+        "category": "setbacks",
+        "scope": "Defines the origin point for setback measurements when specific easements are present on a lot.",
+        "applicability": "Applies to lots with 'Creek easements' or 'Public street easements'.",
+        "requirements": [
+          "MANDATORY: If a 'Creek easement' or 'Public street easement' exists, the setback MUST be measured from the edge of the easement, regardless of the lot line location."
+        ],
+        "source_file": "Page_28_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Setback Measurement with Sidewalks",
+        "category": "setbacks",
+        "scope": "Defines the origin point for setback measurements in relation to sidewalks and the public right-of-way.",
+        "applicability": "Applies to lots adjacent to a public sidewalk.",
+        "requirements": [
+          "MANDATORY: The setback must be measured from the lot line, not the sidewalk."
+        ],
+        "source_file": "Page_28_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Primary Daylight Plane (Rear)",
+        "category": "setbacks",
+        "scope": "Regulation of the building envelope at the rear of a property to ensure daylight access.",
+        "applicability": "Applies to the rear of a building. The plane is measured from the rear setback line.",
+        "requirements": [],
+        "source_file": "Page_34_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Maximum Building Height",
+        "category": "building_height",
+        "scope": "Defines the maximum allowable vertical height of a structure.",
+        "applicability": "Applies to all structures, with different limits based on roof slope, lot type, and location within a flood zone.",
+        "requirements": [],
+        "source_file": "Page_34_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Rear Protrusions into Daylight Plane",
+        "category": "setbacks",
+        "scope": "Regulates the dimensions, spacing, and cumulative size of building elements that are permitted to extend into the required rear daylight plane.",
+        "applicability": "Applies to protrusions on the rear facade of a building that penetrate the daylight plane.",
+        "requirements": [],
+        "source_file": "Page_34_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "GFA Calculation for Non-Roofed Features",
+        "category": "floor_area",
+        "scope": "Assessment of gross floor area (GFA) for porches, entryways, and balconies.",
+        "applicability": "Applies to non-roofed porches, entryways, balconies, and similar features.",
+        "requirements": [],
+        "source_file": "Page_12_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "GFA Calculation for Roofed Porches on 1st Floor",
+        "category": "building_height",
+        "scope": "Assessment of gross floor area (GFA) for porches, entryways, and balconies.",
+        "applicability": "Applies to roofed porches located on the 1st floor.",
+        "requirements": [],
+        "source_file": "Page_12_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "GFA Calculation for Low-Height Roofed Entry Features on 1st Floor",
+        "category": "building_height",
+        "scope": "Assessment of gross floor area (GFA) for porches, entryways, and balconies.",
+        "applicability": "Applies to roofed entry features on the 1st floor that are less than 12 feet high from grade.",
+        "requirements": [],
+        "source_file": "Page_12_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "GFA Calculation for High-Height (Vaulted) Roofed Entry Features on 1st Floor",
+        "category": "building_height",
+        "scope": "Assessment of gross floor area (GFA) for porches, entryways, and balconies.",
+        "applicability": "Applies to roofed entry features on the 1st floor that are more than 12 feet high from grade. These are termed 'vaulted entry feature'.",
+        "requirements": [],
+        "source_file": "Page_12_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "GFA Calculation for Recessed Porches on 1st Floor",
+        "category": "building_height",
+        "scope": "Assessment of gross floor area (GFA) for porches, entryways, and balconies.",
+        "applicability": "Applies to recessed porches on the 1st floor.",
+        "requirements": [],
+        "source_file": "Page_12_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Average Grade Calculation for Daylight Plane Height Measurement",
+        "category": "building_height",
+        "scope": "Determining the reference point (average grade) for measuring the height of a structure relative to the daylight plane.",
+        "applicability": "Applies when measuring daylight plane height, as depicted in Figure 21.",
+        "requirements": [
+          "MANDATORY: This calculation method is mandatory for determining the measurement datum for daylight plane height.",
+          "DIMENSIONS: height (of daylight plane); grade_at_midpoint_of_building; grade_at_closest_point_on_abutting_site; average_grade."
+        ],
+        "source_file": "Page_33_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Allowable Eave Protrusion and Daylight Plane Clearance",
+        "category": "building_height",
+        "scope": "Regulates the maximum protrusion of eaves from the wall plane and specifies clearance requirements relative to the daylight plane.",
+        "applicability": "Applies to eaves on structures subject to daylight plane regulations, as shown in Figure 22.",
+        "requirements": [
+          "MANDATORY: The 2-foot maximum eave protrusion is a mandatory limit. The daylight plane clearance requirement is also mandatory.",
+          "DIMENSIONS: eave_protrusion_distance (from wall plane)."
+        ],
+        "source_file": "Page_33_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Certification of Daylight Plane Compliance",
+        "category": "building_height",
+        "scope": "Defines the procedural requirement for providing a formal certification of compliance with daylight plane provisions.",
+        "applicability": "Applies to any person building or making improvements to a structure.",
+        "requirements": [
+          "MANDATORY: Providing the certification is mandatory once requested.",
+          "DIMENSIONS: None specified."
+        ],
+        "source_file": "Page_33_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Minimum Rear Yard Setback for Second Dwelling Unit (Ambiguous)",
+        "category": "setbacks",
+        "scope": "Defines a minimum setback dimension in the rear yard for a detached second dwelling unit.",
+        "applicability": "Applies to detached second dwelling units located in the rear yard on an interior lot.",
+        "requirements": [
+          "MANDATORY: The detached second dwelling unit must be placed at or beyond this minimum setback from the rear lot line.",
+          "VALUES: TBD feet (' min). (Value is not legible in the source text).",
+          "DIMENSIONS: Minimum distance from the rear lot line."
+        ],
+        "source_file": "Page_51_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Standards for Accessory Structures in the Required Setback",
+        "category": "setbacks",
+        "scope": "Regulations for accessory structures located within the required setback area of a lot.",
+        "applicability": "Applies only to non-dwelling accessory structures located in the 'required setback' area.",
+        "requirements": [],
+        "source_file": "Page_36_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Stricter Daylight Plane for Setback Exceptions",
+        "category": "setbacks",
+        "scope": "Height and massing regulation for structures using specific setback rules.",
+        "applicability": "Applies to any garage or carport that takes advantage of the setback exceptions (either the 75'/20' rule or the shallow lot rule).",
+        "requirements": [
+          "DIMENSIONS: Daylight plane profile."
+        ],
+        "source_file": "Page_45_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Setback for Open-Sided Carports",
+        "category": "setbacks",
+        "scope": "Minimum setback requirements for open-sided carports from lot lines.",
+        "applicability": "Applies to carports with open sides.",
+        "requirements": [
+          "VALUES: 3' (minimum distance from any lot line).",
+          "DIMENSIONS: Distance from any lot line."
+        ],
+        "source_file": "Page_45_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Contextual front setbacks",
+        "category": "setbacks",
+        "scope": "Regulation for determining the required front setback of a property based on the existing setbacks of neighboring lots.",
+        "applicability": "Applies to lots on a block where the calculated average of existing setbacks on the same side of the block is 30 feet or greater.",
+        "requirements": [
+          "MANDATORY: A contextual setback calculation can only be initiated if the block (or relevant 600' segment) has more than 3 lots, including the project lot.",
+          "VALUES: Setback average threshold: 30 ft\nBlock length limit for special consideration: 600 ft\nLot count limit for long blocks: 10 lots\nMinimum lot count for calculation: > 3 lots\nLot count threshold for excluding smallest/largest setbacks: >= 5 lots\nMulti-family unit count for exclusion: >= 3 units",
+          "DIMENSIONS: existing_setback_depth (ft), block_length (ft), calculated_average_setback (ft)"
+        ],
+        "source_file": "Page_27_rules.json",
+        "status": "pending"
+      }
+    ],
+    "Phase 3 - Parking & Access": [
+      {
+        "rule_title": "Contextual garage placement",
+        "category": "parking_access",
+        "scope": "This rule governs the placement of garages on a lot, specifically whether they should be in the front or rear half, based on the existing neighborhood pattern.",
+        "applicability": "The rule applies if, and only if, a predominant neighborhood pattern exists. A pattern is 'predominant' when more than half of the contributing lots fall into a single category (either front-half or rear-half).",
+        "requirements": [
+          "MANDATORY: If a predominant pattern is established, all new projects on that block must place the garage according to that pattern.",
+          "DIMENSIONS: block_length, distance_from_subject_lot, lot_position (front-half vs rear-half)"
+        ],
+        "source_file": "Page_43_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Detached Accessory Structures - General Placement",
+        "category": "parking_access",
+        "scope": "Allowable placement of detached accessory structures in rear or side yards.",
+        "applicability": "Applies to detached accessory structures.",
+        "requirements": [
+          "MANDATORY: Structure must be located at least 75 feet from the front lot line AND at least 20 feet from the street-side lot line.",
+          "DIMENSIONS: distance_from_front_lot_line, distance_from_street_side_lot_line"
+        ],
+        "source_file": "Page_30_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Detached Accessory Structures - Covered Parking",
+        "category": "parking_access",
+        "scope": "Allowable placement of detached accessory structures used for covered parking.",
+        "applicability": "Applies to detached structures for covered parking on lots of a specific depth.",
+        "requirements": [
+          "MANDATORY: Structure must be for covered parking AND located on a lot \u2264 95 feet deep AND be at least 25 feet from the street-side lot line AND be in the rear half of the lot.",
+          "DIMENSIONS: lot_depth, distance_from_street_side_lot_line"
+        ],
+        "source_file": "Page_30_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Other Features - Uncovered Parking",
+        "category": "parking_access",
+        "scope": "Allowable placement for uncovered parking areas.",
+        "applicability": "Applies to uncovered parking.",
+        "requirements": [
+          "DIMENSIONS: distance_from_street_side_lot_line"
+        ],
+        "source_file": "Page_30_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Uncovered Parking Space Location",
+        "category": "parking_access",
+        "scope": "Site planning regulations for uncovered, surface parking spaces.",
+        "applicability": "Applies to 'uncovered spaces' for parking, often used as secondary or additional parking spaces as suggested by diagrams. Applies to all lot types for the front yard rule, and specifically to corner lots for the street-side yard rule.",
+        "requirements": [
+          "MANDATORY: Compliance is mandatory. The text uses the word 'must'."
+        ],
+        "source_file": "Page_44_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Driveway Surface Material and Composition",
+        "category": "parking_access",
+        "scope": "Regulates the materials used for driveway surfaces, including restrictions near the public right-of-way.",
+        "applicability": "All driveway surfaces on a property.",
+        "requirements": [
+          "MANDATORY: Materials shall meet Public Works standards. Driveway surface within 10' of the public right-of-way may not be of a loose material (e.g., gravel).",
+          "DIMENSIONS: Distance of driveway surface from the public right-of-way."
+        ],
+        "source_file": "Page_42_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Shared Driveway for Second Dwelling Units",
+        "category": "parking_access",
+        "scope": "Regulates driveway access for properties with a second dwelling unit.",
+        "applicability": "Properties with a main dwelling and a second dwelling unit.",
+        "requirements": [
+          "MANDATORY: Second dwelling units must share a common driveway with the main dwelling."
+        ],
+        "source_file": "Page_42_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Driveway Maneuverability for Parking Access",
+        "category": "parking_access",
+        "scope": "Ensures driveways provide safe and practical vehicle access to required parking spaces.",
+        "applicability": "Driveway sections that include turns to provide access to required parking spaces.",
+        "requirements": [
+          "MANDATORY: Turns enroute to required parking spaces must be deemed maneuverable by the Transportation Division.",
+          "DIMENSIONS: Turning radius, path of travel, driveway geometry."
+        ],
+        "source_file": "Page_42_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Detached Fireplace as Accessory Structure Calculation",
+        "category": "parking_access",
+        "scope": "Calculation of Floor Area Ratio (FAR) and lot coverage for fireplaces not physically connected to the main house.",
+        "applicability": "Applies to fireplaces treated as accessory structures.",
+        "requirements": [
+          "MANDATORY: Detached fireplaces must always be counted towards lot coverage, regardless of size.",
+          "DIMENSIONS: Area (in square feet), size."
+        ],
+        "source_file": "Page_25_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Required Number of Parking Spaces",
+        "category": "parking_access",
+        "scope": "On-lot parking for residential properties.",
+        "applicability": "Applies per dwelling unit, including 2nd dwelling units.",
+        "requirements": [
+          "MANDATORY: Two spaces are required on the lot per dwelling."
+        ],
+        "source_file": "Page_40_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Parking Space Location Restrictions",
+        "category": "parking_access",
+        "scope": "Location of required parking spaces on a residential lot.",
+        "applicability": "All required parking spaces.",
+        "requirements": [
+          "MANDATORY: Parking spaces may NOT be located in the required front yard or within the first 10 ft of a required street side yard."
+        ],
+        "source_file": "Page_40_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Underground Parking Garage Prohibition",
+        "category": "parking_access",
+        "scope": "Construction of parking garages.",
+        "applicability": "All residential lots.",
+        "requirements": [
+          "MANDATORY: Underground parking garages are prohibited."
+        ],
+        "source_file": "Page_40_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Covered Parking Space Requirement",
+        "category": "parking_access",
+        "scope": "Type of required parking spaces.",
+        "applicability": "Applies to the two required spaces per dwelling.",
+        "requirements": [
+          "MANDATORY: One of the two required spaces must be covered."
+        ],
+        "source_file": "Page_40_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Definition of Detached Covered-Parking Structure",
+        "category": "parking_access",
+        "scope": "Classification of covered-parking structures relative to the main dwelling.",
+        "applicability": "Applies when a covered-parking structure is intended to be classified as 'detached'.",
+        "requirements": [],
+        "source_file": "Page_40_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Covered Parking Space Internal Clearance",
+        "category": "parking_access",
+        "scope": "Minimum clear internal dimensions for covered parking structures.",
+        "applicability": "Garages, carports, or other covered parking structures.",
+        "requirements": [
+          "MANDATORY: The specified minimum clear internal dimensions must be met for each space."
+        ],
+        "source_file": "Page_40_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Parking Structure Vertical Clearance",
+        "category": "parking_access",
+        "scope": "Minimum vertical clearance for parking.",
+        "applicability": "Covered parking structures (garages, carports).",
+        "requirements": [
+          "MANDATORY: The specified minimum vertical clearance must be met."
+        ],
+        "source_file": "Page_40_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Tandem Parking Allowance",
+        "category": "parking_access",
+        "scope": "Arrangement of required parking spaces.",
+        "applicability": "Lots with two required spaces where one is covered and one is uncovered.",
+        "requirements": [],
+        "source_file": "Page_40_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Placement of Detached Garages",
+        "category": "parking_access",
+        "scope": "Regulates the allowable placement of detached garages on a residential lot.",
+        "applicability": "Applies to any detached garage, including those for main or second dwelling units. Illustrated in Scenarios A and C.",
+        "requirements": [
+          "VALUES: 75 feet (minimum distance from front lot line)",
+          "DIMENSIONS: Distance of the detached garage from the front lot line."
+        ],
+        "source_file": "Page_51_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Placement of Attached Garages",
+        "category": "parking_access",
+        "scope": "Regulates the allowable placement of attached garages on a residential lot.",
+        "applicability": "Applies to any garage that is attached to a dwelling unit. Illustrated in Scenarios B and D.",
+        "requirements": [
+          "MANDATORY: An attached garage MUST be located within the 'buildable area' of the lot."
+        ],
+        "source_file": "Page_51_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Location of Required Uncovered Parking Spaces",
+        "category": "parking_access",
+        "scope": "Defines the prohibited area for satisfying required uncovered parking spaces.",
+        "applicability": "Applies to any required parking space that is not covered (e.g., not in a garage). The text indicates driveways are used for this purpose.",
+        "requirements": [
+          "MANDATORY: Required uncovered parking spaces must be located 'beyond front setback'."
+        ],
+        "source_file": "Page_51_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Minimum Required Parking Spaces per Dwelling (Inferred)",
+        "category": "parking_access",
+        "scope": "Defines the minimum number of parking spaces required for each dwelling on a lot.",
+        "applicability": "Applies to lots containing a main dwelling and a second dwelling unit.",
+        "requirements": [
+          "MANDATORY: Each dwelling unit (main and second) must be provided with the required number of parking spaces.",
+          "VALUES: 1 parking space per dwelling unit (Inferred)"
+        ],
+        "source_file": "Page_51_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "General Standards for All Non-Dwelling Accessory Structures",
+        "category": "parking_access",
+        "scope": "Regulations for accessory structures that are not second-dwelling units.",
+        "applicability": "Applies to all non-dwelling accessory structures on a residential lot.",
+        "requirements": [],
+        "source_file": "Page_36_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Siting of Detached Garages and Carports (General Rule)",
+        "category": "parking_access",
+        "scope": "Site planning regulations for detached accessory parking structures.",
+        "applicability": "Applies to detached garages and carports on lots that are 95' deep or more.",
+        "requirements": [
+          "MANDATORY: Structure must be located in the rear or interior side yard.",
+          "VALUES: 75' (minimum distance from front lot line); 20' (minimum distance from street-side lot line).",
+          "DIMENSIONS: Location in yard (rear or interior side); Distance from front lot line; Distance from street-side lot line."
+        ],
+        "source_file": "Page_45_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Siting of Uncovered Parking Spaces",
+        "category": "parking_access",
+        "scope": "Location requirements for open-air, uncovered parking spaces.",
+        "applicability": "Applies to uncovered parking spaces.",
+        "requirements": [
+          "MANDATORY: Uncovered spaces must be located 'beyond the required front-yard' AND 'beyond the first 10' of the street-side yard'.",
+          "VALUES: 10' (no-parking area measured from the street-side yard).",
+          "DIMENSIONS: Location relative to front-yard setback; Location relative to street-side yard."
+        ],
+        "source_file": "Page_45_rules.json",
+        "status": "pending"
+      }
+    ],
+    "Phase 4 - Special Features": [
+      {
+        "rule_title": "Main Dwelling - Attached Storage Closets",
+        "category": "dwelling_units",
+        "scope": "Allowable setback encroachments for attached storage closets.",
+        "applicability": "Applies to storage closets attached to the main dwelling.",
+        "requirements": [
+          "MANDATORY: Closet height must be \u2264 6 feet AND closet area must be \u2264 25 square feet.",
+          "DIMENSIONS: closet_height, closet_area, encroachment_depth"
+        ],
+        "source_file": "Page_30_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Excavated Features - Below Grade Patios",
+        "category": "site_features",
+        "scope": "Allowable setback encroachments for below grade patios.",
+        "applicability": "Applies to below grade patios with a limited cumulative length.",
+        "requirements": [
+          "MANDATORY: The cumulative length of all such features must be \u2264 5 feet.",
+          "DIMENSIONS: encroachment_depth, cumulative_length"
+        ],
+        "source_file": "Page_30_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Below-grade patios standards & site planning",
+        "category": "site_features",
+        "scope": "Regulations for the design, placement, and dimensions of below-grade patios, including associated lightwells and stairwells, on a residential lot.",
+        "applicability": "Applies to all excavated features such as below-grade patios. These features are explicitly prohibited on the side of a structure that faces the front yard.",
+        "requirements": [
+          "MANDATORY: Location: Must not be located on the side of the structure that faces the front yard. Separation: Each below-grade area must be separated from another by at least 10 feet. Environmental: Excavated features must not be harmful to neighboring trees. (Flag: 'harmful' is ambiguous and requires definition). Drainage: A drainage system must be installed and approved. Architectural: Must be architecturally compatible with the main residence. (Flag: 'architecturally compatible' is ambiguous and requires definition). Screening: Must be screened from off-site views. Lot Coverage: Any sheltering overhangs or canopies must be included in lot coverage calculations."
+        ],
+        "source_file": "Page_49_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Attached 2nd-dwelling unit",
+        "category": "dwelling_units",
+        "scope": "Regulations for attached 2nd-dwelling units, subordinate to a main dwelling on a single lot.",
+        "applicability": "Applies to lots in specified single-family zones (R-1, R-1(7000), R-1(8000), R-1(10000), R-1(20000)) that meet the minimum lot size for the zone.",
+        "requirements": [
+          "MANDATORY: Unit must be subordinate to main dwelling. Lot size must meet minimum for zone. Size must not exceed 450 sf. Height must not exceed 17'. Must have two parking spaces (one covered). Covered parking must not exceed 200 sf. Must be located within setbacks. Counts towards total lot FAR. Basement area counts towards unit size.",
+          "DIMENSIONS: lot_size (dependent on zone and lot type); unit_size; basement_area; unit_height; covered_parking_size; total_FAR (Floor Area Ratio)."
+        ],
+        "source_file": "Page_50_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Detached 2nd-dwelling unit",
+        "category": "dwelling_units",
+        "scope": "Regulations for detached 2nd-dwelling units, subordinate to a main dwelling on a single lot.",
+        "applicability": "Applies to lots in specified single-family zones (R-1, R-1(7000), R-1(8000), R-1(10000), R-1(20000)) that meet the minimum lot size for the zone.",
+        "requirements": [
+          "MANDATORY: Unit must be subordinate to main dwelling. Lot size must meet minimum for zone. Size must not exceed 900 sf. Height must not exceed one story and 17'. Must share driveway with main dwelling. Must have two parking spaces (one covered). Covered parking must not exceed 200 sf. Must be located 12' from main dwelling. Must be located within setbacks. Counts towards total lot FAR. Basement area counts towards unit size. Must be architecturally compatible with main dwelling (AMBIGUOUS).",
+          "DIMENSIONS: lot_size (dependent on zone and lot type); unit_size; basement_area; unit_height (stories and feet); covered_parking_size; separation_from_main_dwelling; total_FAR (Floor Area Ratio)."
+        ],
+        "source_file": "Page_50_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Tree Protection During Excavation",
+        "category": "site_features",
+        "scope": "Protection of tree root systems during any excavation activity.",
+        "applicability": "Applies to all excavation. Protects trees of any species located on the subject property or on abutting lots.",
+        "requirements": [
+          "MANDATORY: It is mandatory to plan excavation to not harm tree roots. It is mandatory for the owner to provide evidence of tree protection.",
+          "DIMENSIONS: Typical root depth ('first 18\u201d below grade'), excavation slope (e.g., '1:1 slope')."
+        ],
+        "source_file": "Page_47_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Location Restriction for Appendages and Noise-Producing Equipment",
+        "category": "utilities",
+        "scope": "Placement and location of miscellaneous appendages and noise-producing equipment.",
+        "applicability": "Applies to appendages (e.g., tool sheds, equipment enclosures, play houses) and any noise-producing equipment.",
+        "requirements": [
+          "MANDATORY: Prohibited from locating these items in required yards."
+        ],
+        "source_file": "Page_25_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Noise-producing equipment site planning",
+        "category": "utilities",
+        "scope": "Regulations governing the physical location (siting) of noise-producing equipment on a property.",
+        "applicability": "Applies to all service equipment, including but not limited to pool equipment, air conditioning units, and generators. Also applies to the replacement of existing equipment.",
+        "requirements": [
+          "MANDATORY: ['All service equipment must meet the City\u2019s Noise Ordinance (Chapter 9.10 of the Municipal Code).', 'Equipment may not be located in front, rear, or interior-side yards.', 'Equipment must be insulated and housed (subject to waiver exception).']",
+          "DIMENSIONS: [{'name': 'equipment_location', 'description': 'The designated yard or area where the equipment is placed.', 'values': ['front yard', 'rear yard', 'interior-side yard', 'street-side yard', 'buildable area']}, {'name': 'street_side_yard_encroachment', 'description': 'The distance equipment may encroach into a street-side yard.', 'unit': 'feet'}, {'name': 'driveway_clearance', 'description': 'Minimum clear distance required for a driveway, as shown in an example.', 'unit': 'feet'}]"
+        ],
+        "source_file": "Page_39_rules.json",
+        "status": "pending"
+      }
+    ],
+    "Phase 5 - Final Review": [
+      {
+        "rule_title": "General Basement Standards",
+        "category": "other",
+        "scope": "Defines mandatory locational and dimensional constraints for all basements.",
+        "applicability": "All basements.",
+        "requirements": [
+          "MANDATORY: Basements must not be located in special flood hazard areas. Basements must not extend beyond the building footprint. Basements must not encroach into required yards.",
+          "DIMENSIONS: Building footprint, Required yards, Rear yard."
+        ],
+        "source_file": "Page_46_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Other Features - Eaves and Cornices",
+        "category": "other",
+        "scope": "Allowable setback encroachments for eaves and cornices.",
+        "applicability": "Applies to eaves and cornices.",
+        "requirements": [
+          "DIMENSIONS: encroachment_depth"
+        ],
+        "source_file": "Page_30_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Other Features - Pools and Spas",
+        "category": "other",
+        "scope": "Allowable placement for pools and spas.",
+        "applicability": "Applies to the main body of pools and spas.",
+        "requirements": [
+          "DIMENSIONS: distance_to_rear_lot_line, distance_to_interior_side_lot_line"
+        ],
+        "source_file": "Page_30_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Other Features - Fireplaces",
+        "category": "other",
+        "scope": "Allowable setback encroachments for fireplaces in side yards.",
+        "applicability": "Applies to fireplaces of a specific width.",
+        "requirements": [
+          "MANDATORY: Fireplace width must be \u2264 5 feet.",
+          "DIMENSIONS: fireplace_width, encroachment_depth"
+        ],
+        "source_file": "Page_30_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Excavated Features - Lightwells and Stairwells",
+        "category": "other",
+        "scope": "Allowable setback encroachments for excavated lightwells and stairwells.",
+        "applicability": "Applies to lightwells and stairwells with a limited cumulative length.",
+        "requirements": [
+          "MANDATORY: The cumulative length of all such features must be \u2264 15 feet.",
+          "DIMENSIONS: encroachment_depth, cumulative_length"
+        ],
+        "source_file": "Page_30_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Exemption for Unusable Attic in Historic Homes",
+        "category": "other",
+        "scope": "Provides a partial exemption for unusable attic space in historic homes.",
+        "applicability": "Applies to unusable attic space in Category 1 & 2 historic homes.",
+        "requirements": [],
+        "source_file": "Page_11_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Carport Standards",
+        "category": "other",
+        "scope": "Standards governing the dimensional requirements for carports, including open sides and vertical clearance.",
+        "applicability": "Applies to the design and construction of carports, specifically covered parking spaces intended for vehicles.",
+        "requirements": [],
+        "source_file": "Page_41_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Curb Cut Spacing and Frequency",
+        "category": "other",
+        "scope": "Regulates the placement, spacing, and number of curb cuts along a property's frontage.",
+        "applicability": "All properties with frontage on a public street where curb cuts are proposed or exist.",
+        "requirements": [
+          "MANDATORY: A minimum of 20' must be maintained between curb cuts.",
+          "DIMENSIONS: Distance between curb cuts, Distance from curb cut to intersection curb face."
+        ],
+        "source_file": "Page_42_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Work in Public Right-of-Way (ROW)",
+        "category": "other",
+        "scope": "Governs any work performed within the public right-of-way.",
+        "applicability": "Construction or modification activities, such as creating a curb cut or driveway apron, that occur in the public ROW.",
+        "requirements": [
+          "MANDATORY: A street-work permit must be obtained. Work must comply with city standards."
+        ],
+        "source_file": "Page_42_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Guard Rail Architectural Compatibility and Landscape Screening",
+        "category": "other",
+        "scope": "Design of guard rails and installation of landscape screening related to excavation.",
+        "applicability": "Applies to any project where an excavation requires a guard rail, or where the Planning Dept. deems landscape screening necessary.",
+        "requirements": [
+          "MANDATORY: If a guard rail is required, it MUST be designed to be architecturally compatible with the residence."
+        ],
+        "source_file": "Page_47_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Prohibition on Construction of New Wood-Burning Fireplaces",
+        "category": "other",
+        "scope": "Prohibition of the construction of new wood-burning fireplaces.",
+        "applicability": "City of Palo Alto. Applies to new construction.",
+        "requirements": [
+          "MANDATORY: Construction of new wood-burning fireplaces is prohibited."
+        ],
+        "source_file": "Page_25_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Determination of Open/Closed Status for Perimeter Segments",
+        "category": "other",
+        "scope": "This rule defines the procedure for classifying perimeter segments of a structure (e.g., a porch) as either 'open' or 'closed'.",
+        "applicability": "Applies to all perimeter segments of a structure's design plan.",
+        "requirements": [],
+        "source_file": "Page_15_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Light Well & Stairwell Standards",
+        "category": "other",
+        "scope": "Standards for the design, placement, and dimensions of excavated features such as light wells and stairwells.",
+        "applicability": "Applies to all excavated features (light wells, stairwells) on a property, particularly in relation to required yards and setbacks.",
+        "requirements": [
+          "MANDATORY: The drainage system for the features must be approved by the Public Works Department."
+        ],
+        "source_file": "Page_48_rules.json",
+        "status": "pending"
+      }
+    ]
+  }
+}

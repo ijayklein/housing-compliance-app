@@ -1,0 +1,176 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_25.png",
+  "image_name": "Page_25.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Fireplaces, chimneys, sheds, planters, and other projections\n\n\u2022 Fireplaces shall be included in the gross floor area (counted one time) regardless of configuration or design.\n\u2022 Sheds, planters, and other projections that are higher than 5' count toward gross floor area regardless of configuration or design.\n\nFig 14 Fireplaces, chimneys, sheds, etc.\n\nChimneys on the upper floors DO NOT COUNT\n\nAll configurations of fireplaces, chimneys, and buttresses COUNT ONCE towards the gross floor area.\nNote: Fireplaces not connected to the house are treated like accessory structures, they and count towards FAR if they are greater than 120 sf. They count towards lot coverage always, regardless of size.\n\nMiscellaneous appendages e.g., tool sheds, equipment enclosures, play houses, etc., that are greater than 5' in height, DO COUNT toward gross floor area. (Note: Neither appendages like this nor noise-producing equipment may be located in the required yards).\n\nNote: In 2000, the city of Palo Alto passed an ordinance prohibiting the construction of new wood-burning fireplaces. For details about and possible prohibition, see the chapter 9.06.030",
+      "visual_elements": [
+        {
+          "type": "figure",
+          "description": "A detailed isometric drawing of a house showing various projections including chimneys, fireplaces, and a shed. The figure includes annotations: 'Chimneys on the upper floors DO NOT COUNT' pointing to a chimney on the upper floor; 'All configurations of fireplaces, chimneys, and buttresses COUNT ONCE towards the gross floor area' pointing to fireplaces and chimneys on the lower floor; and 'Miscellaneous appendages e.g., tool sheds, equipment enclosures, play houses, etc., that are greater than 5' in height, DO COUNT toward gross floor area' pointing to a shed. The figure also shows a vertical dimension labeled 'Height' next to the shed.",
+          "location": "Middle of the page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Height threshold for sheds, planters, and other projections to count toward gross floor area",
+          "value_type": "Measurement",
+          "value": "5",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Fireplaces not connected to the house minimum size to count towards FAR",
+          "value_type": "Measurement",
+          "value": "120",
+          "unit": "square feet"
+        },
+        {
+          "parameter": "Year of ordinance prohibiting new wood-burning fireplaces",
+          "value_type": "Numerical",
+          "value": "2000",
+          "unit": "year"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Fireplaces, chimneys, sheds, planters, and other projections",
+        "subheadings": [],
+        "sections": []
+      },
+      "additional_notes": [
+        "The page includes a shaded note box on the right side with information about a 2000 ordinance in Palo Alto.",
+        "The figure is labeled as Fig 14.",
+        "No handwritten annotations or stamps are present.",
+        "Page number 19 is located at the bottom right corner."
+      ],
+      "cross_references": [
+        "Chapter 9.06.030 referenced for details about the prohibition of new wood-burning fireplaces."
+      ],
+      "conditions_and_qualifiers": {
+        "qualifiers": [
+          {
+            "id": "q1",
+            "text": "Fireplaces shall be included in the gross floor area (counted one time) regardless of configuration or design.",
+            "applies_to_conditions": [
+              "c1"
+            ],
+            "scope": "Global"
+          },
+          {
+            "id": "q2",
+            "text": "Sheds, planters, and other projections that are higher than 5' count toward gross floor area regardless of configuration or design.",
+            "applies_to_conditions": [
+              "c2"
+            ],
+            "scope": "Global"
+          },
+          {
+            "id": "q3",
+            "text": "Fireplaces not connected to the house are treated like accessory structures, they count towards FAR if they are greater than 120 sf. They count towards lot coverage always, regardless of size.",
+            "applies_to_conditions": [
+              "c3",
+              "c4"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q4",
+            "text": "Neither appendages like this nor noise-producing equipment may be located in the required yards.",
+            "applies_to_conditions": [
+              "c2"
+            ],
+            "scope": "Specific"
+          }
+        ],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "Fireplaces shall be counted once towards the gross floor area.",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "true",
+            "unit": "None"
+          },
+          {
+            "id": "c2",
+            "text": "Sheds, planters, and other projections higher than 5 feet count toward gross floor area.",
+            "value_type": "Measurement",
+            "operator": ">",
+            "threshold_value": "5",
+            "unit": "feet"
+          },
+          {
+            "id": "c3",
+            "text": "Fireplaces not connected to the house count towards FAR if greater than 120 square feet.",
+            "value_type": "Measurement",
+            "operator": ">",
+            "threshold_value": "120",
+            "unit": "square feet"
+          },
+          {
+            "id": "c4",
+            "text": "Fireplaces not connected to the house count towards lot coverage always, regardless of size.",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "true",
+            "unit": "None"
+          }
+        ],
+        "logical_relationships": [
+          {
+            "operation": "AND",
+            "condition_ids": [
+              "c2",
+              "q4"
+            ],
+            "expression": "Sheds, planters, and other projections higher than 5 feet count toward gross floor area AND such appendages may not be located in the required yards.",
+            "evaluation_order": 1,
+            "ambiguity_note": "Qualifier q4 is a restriction related to location, logically combined with condition c2 about counting projections."
+          }
+        ],
+        "execution_sequence": [
+          {
+            "step": 1,
+            "action": "Include fireplaces in gross floor area count once regardless of configuration or design.",
+            "condition_ids": [
+              "c1"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 2,
+            "action": "Count sheds, planters, and other projections higher than 5 feet toward gross floor area, ensuring they are not located in required yards.",
+            "condition_ids": [
+              "c2"
+            ],
+            "qualifier_ids": [
+              "q2",
+              "q4"
+            ],
+            "dependencies": [
+              "1"
+            ]
+          },
+          {
+            "step": 3,
+            "action": "Treat fireplaces not connected to the house as accessory structures; count towards FAR if greater than 120 sf and always count towards lot coverage.",
+            "condition_ids": [
+              "c3",
+              "c4"
+            ],
+            "qualifier_ids": [
+              "q3"
+            ],
+            "dependencies": [
+              "1"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:13:36",
+  "model_used": "openai/gpt-4.1-mini"
+}

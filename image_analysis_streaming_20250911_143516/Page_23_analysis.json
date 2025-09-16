@@ -1,0 +1,75 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_23.png",
+  "image_name": "Page_23.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "2nd & 3rd floor equivalency\n\nAreas higher than 17' and 26' above the first floor (that do not already count as floor area e.g., open atrium spaces and inaccessible attic spaces), count toward the gross floor area in the form of 2nd and 3rd floor equivalency regardless of the floor plan or usage of the space. Stairwells will be measured the same way that vaulted ceiling spaces are measured.\n\nIn the examples of Fig 12 below the highlighted areas count as follows:\n\nArea A\n\u2022 once as 1st floor,\n\u2022 again as 2nd floor, and\n\u2022 a third time as 3rd-floor equivalency\n\nArea B\n\u2022 once as 1st floor,\n\u2022 again as 2nd-floor equivalency\n\nNote: 200 sf of 3rd floor equivalency may be exempted where roof pitch is 4:12 or steeper (see \u201cHeight\u201d section).\n\nFig 12 2nd & 3rd floor equivalency\n\n17",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Figure titled 'Fig 12 2nd & 3rd floor equivalency'. It contains two side-by-side cross-sectional diagrams of a building to illustrate how floor area equivalency is calculated for high-ceiling spaces. \n\nLeft Diagram: Shows a two-story structure with a stairwell. Areas are highlighted with diagonal hatching. 'Area A' is a vertical space extending from the 1st floor through the 2nd floor and into the attic. 'Area B' is the stairwell. Horizontal dashed lines indicate height thresholds of 17' and 26' above the first floor. Annotations with arrows define which parts of the vertical space count towards different floor equivalencies. 'Width of area that counts as 2nd floor' is shown for the first floor space. 'Width of area that counts as 2nd-floor equivalency' is shown for the space between 17' and 26'. 'Width of area that counts as 3rd-floor equivalency' is shown for the space above 26'. The attic space is labeled 'Inaccessible attic (or vaulted ceiling)'. The first floor is labeled '1st flr' and 'Top of finished floor (Typical)'. The roof is labeled 'Top of roof material (Typical)'.\n\nRight Diagram: Shows a structure with a vaulted ceiling space. 'Area A' is a vertical space extending from the 1st floor into the attic. 'Area B' is a vaulted ceiling space over the 1st floor, labeled 'Vaulted ceiling space'. Similar to the left diagram, it uses horizontal dashed lines at 17' and 26' and annotations to show how areas are counted for 2nd and 3rd floor equivalency. The attic is labeled 'Inaccessible attic (or vaulted ceiling)'. The first floor is labeled '1st fl'.",
+          "location": "Middle and bottom of the page"
+        },
+        {
+          "type": "text box",
+          "description": "A dark grey rectangular box with white text, positioned in the upper right quadrant of the page. It contains a 'Note' regarding an exemption for 3rd floor equivalency.",
+          "location": "Upper right"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Height threshold for 2nd floor equivalency",
+          "value": "17",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Height threshold for 3rd floor equivalency",
+          "value": "26",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Exempted area for 3rd floor equivalency",
+          "value": "200",
+          "unit": "sf"
+        },
+        {
+          "parameter": "Roof pitch for exemption",
+          "value": "4:12",
+          "unit": "ratio"
+        },
+        {
+          "parameter": "Page Number",
+          "value": "17",
+          "unit": null
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "2nd & 3rd floor equivalency",
+        "subheadings": [
+          "In the examples of Fig 12 below the highlighted areas count as follows:",
+          "Area A",
+          "Area B",
+          "Note:",
+          "Fig 12 2nd & 3rd floor equivalency"
+        ],
+        "sections": [
+          "Main definition paragraph in a grey box.",
+          "Bulleted list for Area A.",
+          "Bulleted list for Area B.",
+          "Note text in a grey box."
+        ]
+      },
+      "additional_notes": [
+        "The page number '17' is located in the bottom right corner.",
+        "The main explanatory paragraph is highlighted with a light grey background.",
+        "The page appears to be a clean digital copy or high-quality scan from a manual."
+      ],
+      "cross_references": [
+        "In the examples of Fig 12 below...",
+        "(see \u201cHeight\u201d section)"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-11 14:35:47",
+  "model_used": "google/gemini-2.5-pro"
+}

@@ -1,0 +1,90 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_15.png",
+  "image_name": "Page_15.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Step 2: Determine which perimeter segments abut the house walls. These are closed segments, or sides.\n\nIn Fig 5 sides A, B, & C abut the house walls.\nThese are considered to be closed segments.\n\nStep 3: Determine the status (open/closed) of the remaining segments based on the design. If at least 50% of the facade area is\nopen, then the segment or side is considered open.\n\nFor purposes of assessing the openess of the facade:\n\u2022\nThe height of the segment facades is measured from the top of the porch floor to the the point where the\nsegment facade intersects with the top of the roof material.\n\u2022\nThe widths of the segment facades are measured from the same plane. Allowances may be made for\nstructural supports that are not excessive.\n\nIntersection\nfacade & top\nof roof material\n\nPorch flr\n\nD\n7'\nOpen\n\nE\n14'\nClosed\n(because of decorative glass wall)\n\nF\n24'\nOpen\n\nG\n4'\nOpen\n\n9",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "A top-down view diagram showing a building corner with three segments labeled A, B, and C. Segment A is 3' long, segment B is 8' long, and segment C is 10' long. These segments are depicted as part of the building's perimeter, indicating closed segments.",
+          "location": "Top right"
+        },
+        {
+          "type": "diagram",
+          "description": "Four elevation diagrams (D, E, F, G) illustrating different facade types and their 'open' or 'closed' status. Each diagram shows a cross-section of a facade with a porch floor indicated. Diagram E includes a label 'Intersection facade & top of roof material' and 'Porch flr' with a vertical arrow indicating 'Height = 8'.",
+          "location": "Bottom half"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Segment A length",
+          "value": "3",
+          "unit": "ft"
+        },
+        {
+          "parameter": "Segment B length",
+          "value": "8",
+          "unit": "ft"
+        },
+        {
+          "parameter": "Segment C length",
+          "value": "10",
+          "unit": "ft"
+        },
+        {
+          "parameter": "Facade D width",
+          "value": "7",
+          "unit": "ft"
+        },
+        {
+          "parameter": "Facade E width",
+          "value": "14",
+          "unit": "ft"
+        },
+        {
+          "parameter": "Facade F width",
+          "value": "24",
+          "unit": "ft"
+        },
+        {
+          "parameter": "Facade G width",
+          "value": "4",
+          "unit": "ft"
+        },
+        {
+          "parameter": "Minimum facade area for 'open' status",
+          "value": "50",
+          "unit": "%"
+        },
+        {
+          "parameter": "Facade E height",
+          "value": "8",
+          "unit": "ft"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": null,
+        "subheadings": [
+          "Step 2:",
+          "Step 3:",
+          "For purposes of assessing the openess of the facade:"
+        ],
+        "sections": [
+          "Step 2: Determine which perimeter segments abut the house walls. These are closed segments, or sides.",
+          "Step 3: Determine the status (open/closed) of the remaining segments based on the design. If at least 50% of the facade area is open, then the segment or side is considered open."
+        ]
+      },
+      "additional_notes": [
+        "Page number '9' is present at the bottom right corner.",
+        "The text 'Height = 8'' is present in the diagram for Facade E, indicating a specific measurement for that facade's height.",
+        "The text '(because of decorative glass wall)' is a parenthetical note explaining why Facade E is 'Closed'."
+      ],
+      "cross_references": [
+        "Fig 5"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-11 14:59:08",
+  "model_used": "google/gemini-2.5-flash"
+}

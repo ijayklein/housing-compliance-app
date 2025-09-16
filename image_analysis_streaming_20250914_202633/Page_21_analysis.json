@@ -1,0 +1,193 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_21.png",
+  "image_name": "Page_21.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Balconies, decks, & outdoor areas on upper floors\n\nOutdoor areas on upper levels that are roofed DO count toward gross floor area regardless of the design (including whether or not the sides are open).\n\nAn outdoor area on an upper floor is considered to be roofed if the eave over that area is deeper than the eave over the rest of the building. This may be illustrated by comparing Roof Plans 1 & 2 of Fig 10.\n\nFig 10 Balconies\n\nRoof plan 1\nRoof plan 2\n\nNote: Pop-out balconies are subject to the same evaluation.\n\nRoof Plan 1  Area A: Counts because it is roofed\nArea B: Does not count because this arbor is substantially open\nArea C: Does not count because the overhang is the same size as the overhang around the rest of the house and is considered to be open\n\nRoof Plan 2  Area A: Counts because it is roofed\nArea B: Counts because the overhang here is greater than the overhang around the rest of the house, and considered to be roofed\nArea C: Does not count because it is open",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "3D isometric illustration of a building corner showing two roof plans labeled 'Roof plan 1' and 'Roof plan 2' with arrows pointing to different eave depths over balconies.",
+          "location": "Bottom left"
+        },
+        {
+          "type": "figure",
+          "description": "Roof Plan 1 schematic: Top-down view of a balcony with three labeled areas (A, B, C). Area A is shaded and counts as roofed; Area B is an arbor and does not count; Area C is open overhang and does not count. Dimensions indicated for 'Width of overhang over the balcony' and 'Width of overhang around the rest of the house'.",
+          "location": "Top right"
+        },
+        {
+          "type": "figure",
+          "description": "Roof Plan 2 schematic: Top-down view of a balcony with three labeled areas (A, B, C). Area A is shaded and counts as roofed; Area B has a larger overhang than the rest of the house and counts as roofed; Area C is open and does not count. Dimensions indicated for 'Width of overhang over the balcony' and 'Width of overhang around the rest of the house'.",
+          "location": "Bottom right"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Eave depth over outdoor area",
+          "value_type": "Measurement",
+          "value": "Deeper than the eave over the rest of the building",
+          "unit": "None"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Balconies, decks, & outdoor areas on upper floors",
+        "subheadings": [],
+        "sections": []
+      },
+      "additional_notes": [
+        "Page number 15 at bottom right corner.",
+        "Note box at bottom left states: 'Pop-out balconies are subject to the same evaluation.'"
+      ],
+      "cross_references": [
+        "Fig 10 referenced for Roof Plans 1 & 2"
+      ],
+      "conditions_and_qualifiers": {
+        "qualifiers": [
+          {
+            "id": "q1",
+            "text": "Outdoor areas on upper levels that are roofed DO count toward gross floor area regardless of the design (including whether or not the sides are open).",
+            "applies_to_conditions": [
+              "c1",
+              "c2",
+              "c3"
+            ],
+            "scope": "Global"
+          },
+          {
+            "id": "q2",
+            "text": "An outdoor area on an upper floor is considered to be roofed if the eave over that area is deeper than the eave over the rest of the building.",
+            "applies_to_conditions": [
+              "c1",
+              "c2"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q3",
+            "text": "Pop-out balconies are subject to the same evaluation.",
+            "applies_to_conditions": [
+              "c1",
+              "c2"
+            ],
+            "scope": "Specific"
+          }
+        ],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "Area A: Counts because it is roofed",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "Counts",
+            "unit": "None"
+          },
+          {
+            "id": "c2",
+            "text": "Area B: Does not count because this arbor is substantially open (Roof Plan 1)",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "Does not count",
+            "unit": "None"
+          },
+          {
+            "id": "c3",
+            "text": "Area C: Does not count because the overhang is the same size as the overhang around the rest of the house and is considered to be open (Roof Plan 1)",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "Does not count",
+            "unit": "None"
+          },
+          {
+            "id": "c4",
+            "text": "Area B: Counts because the overhang here is greater than the overhang around the rest of the house, and considered to be roofed (Roof Plan 2)",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "Counts",
+            "unit": "None"
+          },
+          {
+            "id": "c5",
+            "text": "Area C: Does not count because it is open (Roof Plan 2)",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "Does not count",
+            "unit": "None"
+          }
+        ],
+        "logical_relationships": [
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c1",
+              "q2"
+            ],
+            "expression": "If the eave over the area is deeper than the eave over the rest of the building, then the area counts as roofed (Area A counts).",
+            "evaluation_order": 1
+          },
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c4",
+              "q2"
+            ],
+            "expression": "If the overhang is greater than the overhang around the rest of the house, then the area counts as roofed (Area B counts in Roof Plan 2).",
+            "evaluation_order": 2
+          },
+          {
+            "operation": "AND",
+            "condition_ids": [
+              "c2",
+              "c3",
+              "c5"
+            ],
+            "expression": "Areas that are substantially open or have overhangs equal to the rest of the house do not count.",
+            "evaluation_order": 3
+          }
+        ],
+        "execution_sequence": [
+          {
+            "step": 1,
+            "action": "Evaluate if the eave over the outdoor area is deeper than the eave over the rest of the building.",
+            "condition_ids": [
+              "c1",
+              "c4"
+            ],
+            "qualifier_ids": [
+              "q2"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 2,
+            "action": "Determine if the area is substantially open or has overhang equal to the rest of the house.",
+            "condition_ids": [
+              "c2",
+              "c3",
+              "c5"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": [
+              "1"
+            ]
+          },
+          {
+            "step": 3,
+            "action": "Apply the evaluation to pop-out balconies as well.",
+            "condition_ids": [],
+            "qualifier_ids": [
+              "q3"
+            ],
+            "dependencies": [
+              "1",
+              "2"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:26:59",
+  "model_used": "openai/gpt-4.1-mini"
+}

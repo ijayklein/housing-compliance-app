@@ -1,0 +1,97 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_20.png",
+  "image_name": "Page_20.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Recessed porches on the 1st floor\n\nRecessed porches on the ground floor do NOT count toward\ngross floor area if ALL the following criteria apply:\n\n\u2022 Depth of porch is less than 10' and,\n\u2022 Porch ceiling is below 2nd floor and,\n\u2022 Exterior side is substantially open.\n\nNote: It is the city's policy to consider\none-story construction to be construction\nless than 17' above finished floor. If the\nporch space is higher, the area will count\nagain as 2nd story equivalency.\n\nFig 9 Recessed porches on the 1st floor\n\n2nd floor line\nPorch ceiling\nbelow 2nd floor\n\nA This example complies with all three\ncritera and does NOT count toward\ngross floor area\n\nDepth < 10'\n\n2nd floor line\nHeight extends past\n2nd floor line\n\nB This example violates two of the three critera:\n\u2022 the porch depth is greater than 10' and\n\u2022 the porch ceiling is above the 2nd floor\nTherefore it DOES count toward gross floos area and\nif it is higher than 17' it will count twice (see note).\n\nDepth \u2265 10'\n\n14",
+      "visual_elements": [
+        {
+          "type": "figure",
+          "description": "Figure 9 consists of two axonometric diagrams, labeled A and B, illustrating rules for recessed porches on the 1st floor. Both diagrams show a two-story building with a recessed porch at the ground level, with the porch area outlined by a thick dashed line.",
+          "location": "Middle to bottom of the page"
+        },
+        {
+          "type": "diagram",
+          "description": "Diagram A shows a building where the recessed porch complies with the regulations. Callouts indicate the 'Porch ceiling below 2nd floor' and a 'Depth < 10''. A horizontal line indicates the '2nd floor line'. The text below states this example does NOT count toward gross floor area.",
+          "location": "Left side of the figure area"
+        },
+        {
+          "type": "diagram",
+          "description": "Diagram B shows a building where the recessed porch violates the regulations. Callouts indicate the 'Height extends past 2nd floor line' and a 'Depth \u2265 10''. A horizontal line indicates the '2nd floor line'. The text below states this example DOES count toward gross floor area because the depth is greater than 10' and the ceiling is above the 2nd floor.",
+          "location": "Right side of the figure area"
+        },
+        {
+          "type": "chart",
+          "description": "A grey rectangular box in the upper right quadrant contains a 'Note' about city policy regarding one-story construction height and 2nd story equivalency.",
+          "location": "Upper right"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Porch depth for GFA exclusion",
+          "value": "less than 10",
+          "unit": "feet (')"
+        },
+        {
+          "parameter": "Porch ceiling for GFA exclusion",
+          "value": "below 2nd floor",
+          "unit": "N/A"
+        },
+        {
+          "parameter": "One-story construction height limit",
+          "value": "less than 17",
+          "unit": "feet (')"
+        },
+        {
+          "parameter": "Porch height for 2nd story equivalency",
+          "value": "higher than 17",
+          "unit": "feet (')"
+        },
+        {
+          "parameter": "Porch depth (Example A)",
+          "value": "< 10",
+          "unit": "feet (')"
+        },
+        {
+          "parameter": "Porch depth (Example B)",
+          "value": "\u2265 10",
+          "unit": "feet (')"
+        },
+        {
+          "parameter": "Porch depth violation criteria",
+          "value": "greater than 10",
+          "unit": "feet (')"
+        },
+        {
+          "parameter": "Porch ceiling violation criteria",
+          "value": "above the 2nd floor",
+          "unit": "N/A"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Recessed porches on the 1st floor",
+        "subheadings": [
+          "Recessed porches on the ground floor do NOT count toward gross floor area if ALL the following criteria apply:",
+          "Note:",
+          "Fig 9 Recessed porches on the 1st floor"
+        ],
+        "sections": [
+          "Fig 9",
+          "A",
+          "B"
+        ]
+      },
+      "additional_notes": [
+        "Page number '14' is present in the bottom left corner.",
+        "The document appears to be a clean digital file or high-quality scan with no handwritten annotations or stamps.",
+        "In the description for example B, 'critera' is likely a typo for 'criteria'.",
+        "In the description for example B, 'floos' is likely a typo for 'floor'."
+      ],
+      "cross_references": [
+        "The description for example B contains the phrase '(see note)', which refers to the 'Note' box located in the upper right of the same page."
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-11 14:35:49",
+  "model_used": "google/gemini-2.5-pro"
+}

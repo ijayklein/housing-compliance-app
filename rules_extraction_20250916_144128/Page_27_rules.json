@@ -1,0 +1,86 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_27.md",
+  "file_name": "Page_27.md",
+  "analysis": {
+    "extracted_rules": {
+      "rules": [
+        {
+          "title": "Contextual front setbacks",
+          "qualifiers": {
+            "scope": "Contextual setbacks",
+            "applicability": "Applies if the average of the existing setbacks on the same side of the block is 30' or greater",
+            "exclusions": null
+          },
+          "variables": {
+            "dimensional": [
+              {
+                "name": "average setback",
+                "unit": "feet",
+                "value": "30"
+              }
+            ],
+            "material": null,
+            "environmental": null,
+            "usage": null
+          },
+          "constants": {
+            "numerical_values": [
+              {
+                "name": "block length",
+                "unit": "feet",
+                "value": "600"
+              },
+              {
+                "name": "maximum lots considered",
+                "value": "10"
+              }
+            ],
+            "specs": null,
+            "standards": null,
+            "procedures": [
+              "Determine if a contextual setback applies using Figure 15 as an example"
+            ]
+          },
+          "conditions": {
+            "mandatory": [
+              "Block must have more than 3 lots including the project lot"
+            ],
+            "optional": null,
+            "conditional_logic": [
+              {
+                "condition": "If block is more than 600' long",
+                "action": "Consider only lots within 600' (max. 10 lots)"
+              },
+              {
+                "condition": "If the number of remaining lots is 5 or more",
+                "action": "Exclude the smallest and largest setbacks"
+              }
+            ],
+            "dependencies": null
+          },
+          "exceptions": {
+            "explicit_deviations": null,
+            "alternatives": null,
+            "special_cases": [
+              "Exclude flag lots, multi-family use with 3+ units, and corner lots facing cross street"
+            ]
+          },
+          "relationships": {
+            "hierarchical": null,
+            "cross_references": [
+              "Figure 15"
+            ],
+            "logical_dependencies": [
+              "Average of remaining lots' setbacks must be greater than 30' for contextual setback to apply"
+            ]
+          }
+        }
+      ]
+    },
+    "parse_error": false,
+    "raw_response": "```json\n{\n  \"rules\": [\n    {\n      \"title\": \"Contextual front setbacks\",\n      \"qualifiers\": {\n        \"scope\": \"Contextual setbacks\",\n        \"applicability\": \"Applies if the average of the existing setbacks on the same side of the block is 30' or greater\",\n        \"exclusions\": null\n      },\n      \"variables\": {\n        \"dimensional\": [\n          {\n            \"name\": \"average setback\",\n            \"unit\": \"feet\",\n            \"value\": \"30\"\n          }\n        ],\n        \"material\": null,\n        \"environmental\": null,\n        \"usage\": null\n      },\n      \"constants\": {\n        \"numerical_values\": [\n          {\n            \"name\": \"block length\",\n            \"unit\": \"feet\",\n            \"value\": \"600\"\n          },\n          {\n            \"name\": \"maximum lots considered\",\n            \"value\": \"10\"\n          }\n        ],\n        \"specs\": null,\n        \"standards\": null,\n        \"procedures\": [\n          \"Determine if a contextual setback applies using Figure 15 as an example\"\n        ]\n      },\n      \"conditions\": {\n        \"mandatory\": [\n          \"Block must have more than 3 lots including the project lot\"\n        ],\n        \"optional\": null,\n        \"conditional_logic\": [\n          {\n            \"condition\": \"If block is more than 600' long\",\n            \"action\": \"Consider only lots within 600' (max. 10 lots)\"\n          },\n          {\n            \"condition\": \"If the number of remaining lots is 5 or more\",\n            \"action\": \"Exclude the smallest and largest setbacks\"\n          }\n        ],\n        \"dependencies\": null\n      },\n      \"exceptions\": {\n        \"explicit_deviations\": null,\n        \"alternatives\": null,\n        \"special_cases\": [\n          \"Exclude flag lots, multi-family use with 3+ units, and corner lots facing cross street\"\n        ]\n      },\n      \"relationships\": {\n        \"hierarchical\": null,\n        \"cross_references\": [\n          \"Figure 15\"\n        ],\n        \"logical_dependencies\": [\n          \"Average of remaining lots' setbacks must be greater than 30' for contextual setback to apply\"\n        ]\n      }\n    }\n  ]\n}\n```"
+  },
+  "timestamp": "2025-09-16 14:42:33",
+  "model": "openai/gpt-4o",
+  "success": true
+}

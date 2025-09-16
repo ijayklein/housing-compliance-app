@@ -1,0 +1,268 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_39.png",
+  "image_name": "Page_39.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Noise-producing equipment site planning\n\n\u2022 May not be located in front, rear, or interior-side yards.\n\u2022 May encroach into street-side yard up to 6' (Fig 27 C below)\n\u2022 All service equip. must meet the City's Noise Ordinance in Chapter 9.10 of the Municipal Code.\n\n\u2022 Replacement of equipment shall conform to this section where feasible.\n\u2022 Must be insulated and housed, however, Planning Dept. can waive this requirement if equipment is located in buildable area and a combination of noise specifications, location, and/or other screening or buffering will assure compliance with the City's Noise Ordinance at the nearest lot line.\n\nFig 27 Examples of site planning solutions for noise-producing equipment\n\nA Pool equipment\n\u2022 Pool equip. is within buildable area even though there is room for it behind the garage/poolhouse in the required rear yard.\n\u2022 Air conditioning equip. is located in an out-of-the-way niche maintaining the required 10' min. clearance for the driveway\n\nB Pool equipment & AC unit\n\u2022 Pool equip. is located within buildable area even though there is room for it in the poolhouse in the required rear yard.\n\u2022 Air conditioning equip. is located within buildable area behind the house. There is not enough room along the interior side of the house.\n\nC Generator & AC unit\n\u2022 Air conditioning equip. is located in street side yard in compliance with the regulations. Note that it may not encroach into the front or rear yards.\n\u2022 Generator is located within buildable area.\n\nKey\n\u2014 Curb\n--- Lot line\n\u2294\u2294\u2294 Sidewalk\n--- Required setbacks\n\u25a1 Buildable area\n\u25a0 Dwelling/parking\nP Pool equip.\nAC Air conditioning equip.\nG Generator\n\n33",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Three site plan diagrams (A, B, C) showing different configurations for placing noise-producing equipment on residential lots. Each diagram shows a property layout with main dwelling, garage/poolhouse, and various equipment placements marked with symbols P (pool equipment), AC (air conditioning), and G (generator). Diagrams include property lines, setbacks, buildable areas, and required clearances.",
+          "location": "Middle and bottom portion of page"
+        },
+        {
+          "type": "legend",
+          "description": "Key showing symbols used in diagrams including curb (solid line), lot line (dashed line), sidewalk (hatched pattern), required setbacks (dashed line), buildable area (light gray), dwelling/parking (dark gray), and equipment symbols P, AC, and G",
+          "location": "Bottom right of page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Street-side yard encroachment",
+          "value_type": "Measurement",
+          "value": "6",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Driveway clearance minimum",
+          "value_type": "Measurement",
+          "value": "10",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Municipal Code reference",
+          "value_type": "Text",
+          "value": "Chapter 9.10",
+          "unit": "None"
+        },
+        {
+          "parameter": "Figure reference",
+          "value_type": "Text",
+          "value": "Fig 27 C",
+          "unit": "None"
+        },
+        {
+          "parameter": "Page number",
+          "value_type": "Numerical",
+          "value": "33",
+          "unit": "None"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Noise-producing equipment site planning",
+        "subheadings": [
+          "A Pool equipment",
+          "B Pool equipment & AC unit",
+          "C Generator & AC unit",
+          "Key"
+        ],
+        "sections": [
+          "Fig 27 Examples of site planning solutions for noise-producing equipment"
+        ]
+      },
+      "additional_notes": [
+        "Page appears to be from a technical planning manual with clear diagrams and specifications",
+        "Text quality is good and legible throughout"
+      ],
+      "cross_references": [
+        "Chapter 9.10 of the Municipal Code",
+        "Fig 27 C below"
+      ],
+      "conditions_and_qualifiers": {
+        "qualifiers": [
+          {
+            "id": "q1",
+            "text": "where feasible",
+            "applies_to_conditions": [
+              "c1"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q2",
+            "text": "however, Planning Dept. can waive this requirement if equipment is located in buildable area and a combination of noise specifications, location, and/or other screening or buffering will assure compliance with the City's Noise Ordinance at the nearest lot line",
+            "applies_to_conditions": [
+              "c2"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q3",
+            "text": "even though there is room for it behind the garage/poolhouse in the required rear yard",
+            "applies_to_conditions": [
+              "c3"
+            ],
+            "scope": "Local"
+          },
+          {
+            "id": "q4",
+            "text": "even though there is room for it in the poolhouse in the required rear yard",
+            "applies_to_conditions": [
+              "c4"
+            ],
+            "scope": "Local"
+          }
+        ],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "May not be located in front, rear, or interior-side yards",
+            "value_type": "Boolean",
+            "operator": "!=",
+            "threshold_value": "front, rear, or interior-side yards",
+            "unit": "None"
+          },
+          {
+            "id": "c2",
+            "text": "May encroach into street-side yard up to 6'",
+            "value_type": "Measurement",
+            "operator": "<=",
+            "threshold_value": "6",
+            "unit": "feet"
+          },
+          {
+            "id": "c3",
+            "text": "All service equip. must meet the City's Noise Ordinance in Chapter 9.10 of the Municipal Code",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "compliance with Chapter 9.10",
+            "unit": "None"
+          },
+          {
+            "id": "c4",
+            "text": "Replacement of equipment shall conform to this section",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "conformance to section requirements",
+            "unit": "None"
+          },
+          {
+            "id": "c5",
+            "text": "Must be insulated and housed",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "insulated and housed",
+            "unit": "None"
+          },
+          {
+            "id": "c6",
+            "text": "Air conditioning equip. is located in an out-of-the-way niche maintaining the required 10' min. clearance for the driveway",
+            "value_type": "Measurement",
+            "operator": ">=",
+            "threshold_value": "10",
+            "unit": "feet"
+          },
+          {
+            "id": "c7",
+            "text": "Pool equip. is within buildable area",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "within buildable area",
+            "unit": "None"
+          },
+          {
+            "id": "c8",
+            "text": "Air conditioning equip. is located within buildable area behind the house",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "within buildable area behind house",
+            "unit": "None"
+          },
+          {
+            "id": "c9",
+            "text": "Air conditioning equip. is located in street side yard in compliance with the regulations. Note that it may not encroach into the front or rear yards",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "street side yard placement without front/rear encroachment",
+            "unit": "None"
+          },
+          {
+            "id": "c10",
+            "text": "Generator is located within buildable area",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "within buildable area",
+            "unit": "None"
+          }
+        ],
+        "logical_relationships": [
+          {
+            "operation": "AND",
+            "condition_ids": [
+              "c1",
+              "c3"
+            ],
+            "expression": "Equipment must not be in prohibited yards AND must meet noise ordinance",
+            "evaluation_order": 1
+          },
+          {
+            "operation": "IF-THEN-ELSE",
+            "condition_ids": [
+              "c4",
+              "c5"
+            ],
+            "expression": "Replacement equipment shall conform to section, must be insulated and housed, however Planning Dept. can waive if conditions met",
+            "evaluation_order": 2
+          }
+        ],
+        "execution_sequence": [
+          {
+            "step": 1,
+            "action": "Verify equipment is not located in prohibited yard areas",
+            "condition_ids": [
+              "c1"
+            ],
+            "qualifier_ids": [],
+            "dependencies": []
+          },
+          {
+            "step": 2,
+            "action": "Check if encroachment into street-side yard is within 6 feet limit",
+            "condition_ids": [
+              "c2"
+            ],
+            "qualifier_ids": [],
+            "dependencies": [
+              1
+            ]
+          },
+          {
+            "step": 3,
+            "action": "Ensure all service equipment meets City's Noise Ordinance requirements",
+            "condition_ids": [
+              "c3"
+            ],
+            "qualifier_ids": [],
+            "dependencies": []
+          },
+          {
+            "step": 4,
+            "action": "For replacement equipment, verify conformance to section requirements",
+            "condition_ids": [
+              "c4"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 5,
+            "action": "Verify equipment is insulated and housed, or evaluate waiver conditions",
+            "condition_ids": [
+              "c5"
+            ],
+            "qualifier_ids": [
+              "q2"
+            ],
+            "dependencies": [
+              4
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:32:30",
+  "model_used": "anthropic/claude-sonnet-4"
+}

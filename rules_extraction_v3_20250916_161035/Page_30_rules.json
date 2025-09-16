@@ -1,0 +1,603 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_30.md",
+  "file_name": "Page_30.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "rule": "Main Dwelling - Rear Yard Encroachment",
+        "Qualifiers": {
+          "Scope": "Allowable setback encroachments for a portion of the main dwelling at the rear of the structure.",
+          "Applicability": "Applies to the 1st floor (ground floor) only. Applies only to legally constructed structures. The addition must be contiguous with an existing protrusion.",
+          "Exclusions": "Not applicable if the structure was built with a variance or a home-improvement exception (HIE). Multiple protrusions are not permitted. This encroachment is allowed only once in the life of the structure."
+        },
+        "Variables": {
+          "Dimensional": "lot_type (standard lot, back-to-back corner lot), structure_max_width, encroachment_width, encroachment_depth, maintained_setback",
+          "Material": "",
+          "Environmental": "",
+          "Usage": "Applies to main dwelling additions."
+        },
+        "Constants": {
+          "encroachment_width_max_ratio": "\u2264 half (0.5) the max. width of the dwelling",
+          "floor_level": "1st floor only",
+          "standard_lot_encroachment_depth_max": "up to 6 feet",
+          "standard_lot_rear_setback_min": "14 feet",
+          "back_to_back_corner_lot_encroachment_depth_max": "up to 10 feet",
+          "back_to_back_corner_lot_rear_setback_min": "10 feet",
+          "occurrence_limit": "Once in the life of the structure"
+        },
+        "Conditions": {
+          "Mandatory": "The encroaching portion's width must be no wider than half the maximum width of the dwelling. The encroachment must be on the ground floor only. The addition must be contiguous with any existing protrusion.",
+          "Optional": "",
+          "Conditional Logic": "IF lot_type is 'standard' (not back-to-back corner), THEN encroachment is up to 6 feet, providing a minimum setback of 14 feet is maintained. IF lot_type is 'back-to-back corner lot', THEN encroachment is up to 10 feet, providing a minimum setback of 10 feet is maintained.",
+          "Dependencies": ""
+        },
+        "Exceptions": {
+          "Explicit Deviations": "For back-to-back corner lots, the encroachment rules are different: up to 10 feet encroachment is allowed, maintaining a 10 feet minimum setback.",
+          "Alternatives": "",
+          "Special Cases": "Applies only to legally constructed structures, excluding those with a variance or HIE."
+        },
+        "Relationships": {
+          "Hierarchical": "Parent Category: Main dwelling. This rule is a detailed explanation of the first item in the summary table.",
+          "Cross-references": "Code Sec: 18.12.050 ([illegible])(2). Illustration: Figure 18 on Page 30.",
+          "Logical Dependencies": ""
+        }
+      },
+      {
+        "rule": "Main Dwelling - Front Setback Encroachment Extension",
+        "Qualifiers": {
+          "Scope": "Allowable extension of an existing front setback encroachment for a main dwelling.",
+          "Applicability": "Applies to the 1st floor only. Requires an existing, legal front setback encroachment to extend.",
+          "Exclusions": "Does not apply to new encroachments, only extensions. Does not apply to floors other than the 1st."
+        },
+        "Variables": {
+          "Dimensional": "distance_to_front_lot_line",
+          "Material": "",
+          "Environmental": "",
+          "Usage": "Extension of an existing encroachment."
+        },
+        "Constants": {
+          "floor_level": "1st floor",
+          "min_distance_to_front_lot_line": "14 feet"
+        },
+        "Conditions": {
+          "Mandatory": "Must be an extension of an existing front setback encroachment. Must be on the 1st floor.",
+          "Optional": "",
+          "Conditional Logic": "The extension can go to within 14 feet of the front lot line.",
+          "Dependencies": "Depends on the existence of a legal, pre-existing front setback encroachment."
+        },
+        "Exceptions": {
+          "Explicit Deviations": "",
+          "Alternatives": "",
+          "Special Cases": ""
+        },
+        "Relationships": {
+          "Hierarchical": "Parent Category: Main dwelling.",
+          "Cross-references": "Code Sec: 18.12.050 ([illegible])(1)(A). Illustration: Figure 19 p. 25.",
+          "Logical Dependencies": ""
+        }
+      },
+      {
+        "rule": "Main Dwelling - Interior-Side Setback Encroachment Extension",
+        "Qualifiers": {
+          "Scope": "Allowable extension of an existing interior-side setback encroachment for a main dwelling.",
+          "Applicability": "Applies to the 1st floor only. Requires an existing, legal interior-side setback encroachment to extend.",
+          "Exclusions": "Does not apply to new encroachments, only extensions. Does not apply to floors other than the 1st."
+        },
+        "Variables": {
+          "Dimensional": "distance_to_interior_side_lot_line",
+          "Material": "",
+          "Environmental": "",
+          "Usage": "Extension of an existing encroachment."
+        },
+        "Constants": {
+          "floor_level": "1st floor",
+          "min_distance_to_interior_side_lot_line": "5 feet"
+        },
+        "Conditions": {
+          "Mandatory": "Must be an extension of an existing interior-side setback encroachment. Must be on the 1st floor.",
+          "Optional": "",
+          "Conditional Logic": "The extension can go to within 5 feet of the interior-side lot line.",
+          "Dependencies": "Depends on the existence of a legal, pre-existing interior-side setback encroachment."
+        },
+        "Exceptions": {
+          "Explicit Deviations": "",
+          "Alternatives": "",
+          "Special Cases": ""
+        },
+        "Relationships": {
+          "Hierarchical": "Parent Category: Main dwelling.",
+          "Cross-references": "Code Sec: 18.12.050 ([illegible])(1)(B). Illustration: Figure 19 p. 25.",
+          "Logical Dependencies": ""
+        }
+      },
+      {
+        "rule": "Main Dwelling - Street-Side Setback Encroachment Extension",
+        "Qualifiers": {
+          "Scope": "Allowable extension of an existing street-side setback encroachment for a main dwelling.",
+          "Applicability": "Applies to the 1st floor only. Requires an existing, legal street-side setback encroachment to extend.",
+          "Exclusions": "Does not apply to new encroachments, only extensions. Does not apply to floors other than the 1st."
+        },
+        "Variables": {
+          "Dimensional": "distance_to_street_side_lot_line",
+          "Material": "",
+          "Environmental": "",
+          "Usage": "Extension of an existing encroachment."
+        },
+        "Constants": {
+          "floor_level": "1st floor",
+          "min_distance_to_street_side_lot_line": "10 feet"
+        },
+        "Conditions": {
+          "Mandatory": "Must be an extension of an existing street-side setback encroachment. Must be on the 1st floor.",
+          "Optional": "",
+          "Conditional Logic": "The extension can go to within 10 feet of the street-side lot line.",
+          "Dependencies": "Depends on the existence of a legal, pre-existing street-side setback encroachment."
+        },
+        "Exceptions": {
+          "Explicit Deviations": "",
+          "Alternatives": "",
+          "Special Cases": ""
+        },
+        "Relationships": {
+          "Hierarchical": "Parent Category: Main dwelling.",
+          "Cross-references": "Code Sec: 18.12.050 ([illegible])(1)(C). Illustration: Figure 19 p. 25.",
+          "Logical Dependencies": ""
+        }
+      },
+      {
+        "rule": "Main Dwelling - Attached Storage Closets",
+        "Qualifiers": {
+          "Scope": "Allowable setback encroachments for attached storage closets.",
+          "Applicability": "Applies to storage closets attached to the main dwelling.",
+          "Exclusions": ""
+        },
+        "Variables": {
+          "Dimensional": "closet_height, closet_area, encroachment_depth",
+          "Material": "",
+          "Environmental": "",
+          "Usage": "Feature type: attached storage closet."
+        },
+        "Constants": {
+          "max_height": "6 feet",
+          "max_area": "25 square feet",
+          "max_encroachment_front_rear": "4 feet",
+          "max_encroachment_side": "2 feet"
+        },
+        "Conditions": {
+          "Mandatory": "Closet height must be \u2264 6 feet AND closet area must be \u2264 25 square feet.",
+          "Optional": "",
+          "Conditional Logic": "Encroachment is allowed up to 4 feet into front and rear yards, and up to 2 feet into side yards.",
+          "Dependencies": ""
+        },
+        "Exceptions": {
+          "Explicit Deviations": "",
+          "Alternatives": "",
+          "Special Cases": ""
+        },
+        "Relationships": {
+          "Hierarchical": "Parent Category: Main dwelling.",
+          "Cross-references": "Code Sec: 18.12.050 ([illegible]). Illustration: not shown/illegible.",
+          "Logical Dependencies": ""
+        }
+      },
+      {
+        "rule": "Detached Accessory Structures - General Placement",
+        "Qualifiers": {
+          "Scope": "Allowable placement of detached accessory structures in rear or side yards.",
+          "Applicability": "Applies to detached accessory structures.",
+          "Exclusions": ""
+        },
+        "Variables": {
+          "Dimensional": "distance_from_front_lot_line, distance_from_street_side_lot_line",
+          "Material": "",
+          "Environmental": "",
+          "Usage": "Location: rear or side yards."
+        },
+        "Constants": {
+          "min_distance_from_front_lot_line": "75 feet",
+          "min_distance_from_street_side_lot_line": "20 feet"
+        },
+        "Conditions": {
+          "Mandatory": "Structure must be located at least 75 feet from the front lot line AND at least 20 feet from the street-side lot line.",
+          "Optional": "",
+          "Conditional Logic": "If mandatory conditions are met, the structure is permitted in rear or side yards.",
+          "Dependencies": ""
+        },
+        "Exceptions": {
+          "Explicit Deviations": "",
+          "Alternatives": "",
+          "Special Cases": ""
+        },
+        "Relationships": {
+          "Hierarchical": "Parent Category: Detached accessory structures.",
+          "Cross-references": "Code Sec: 18.12.080 (b)(3). Illustration: Figure 34 p. 39.",
+          "Logical Dependencies": ""
+        }
+      },
+      {
+        "rule": "Detached Accessory Structures - Covered Parking",
+        "Qualifiers": {
+          "Scope": "Allowable placement of detached accessory structures used for covered parking.",
+          "Applicability": "Applies to detached structures for covered parking on lots of a specific depth.",
+          "Exclusions": ""
+        },
+        "Variables": {
+          "Dimensional": "lot_depth, distance_from_street_side_lot_line",
+          "Material": "",
+          "Environmental": "",
+          "Usage": "Structure use: covered parking. Location: rear half of lot, rear or side yards."
+        },
+        "Constants": {
+          "max_lot_depth": "95 feet",
+          "min_distance_from_street_side_lot_line": "25 feet"
+        },
+        "Conditions": {
+          "Mandatory": "Structure must be for covered parking AND located on a lot \u2264 95 feet deep AND be at least 25 feet from the street-side lot line AND be in the rear half of the lot.",
+          "Optional": "",
+          "Conditional Logic": "If mandatory conditions are met, the structure is permitted in rear or side yards.",
+          "Dependencies": ""
+        },
+        "Exceptions": {
+          "Explicit Deviations": "",
+          "Alternatives": "",
+          "Special Cases": ""
+        },
+        "Relationships": {
+          "Hierarchical": "Parent Category: Detached accessory structures.",
+          "Cross-references": "Code Sec: 18.12.080 ([illegible]). Illustration: Figure 34 p. 39.",
+          "Logical Dependencies": ""
+        }
+      },
+      {
+        "rule": "Porches and Entry Features - Balconies, Porches, Stairways, Fire Escapes",
+        "Qualifiers": {
+          "Scope": "Allowable setback encroachments for specific 1st floor features.",
+          "Applicability": "Applies to 1st floor balconies, uncovered porches, stairways, and fire escapes.",
+          "Exclusions": "Does not apply to covered porches. Does not apply to floors other than the 1st."
+        },
+        "Variables": {
+          "Dimensional": "encroachment_depth",
+          "Material": "",
+          "Environmental": "",
+          "Usage": "Feature type: balcony, uncovered porch, stairway, fire escape."
+        },
+        "Constants": {
+          "floor_level": "1st floor",
+          "max_encroachment_front_rear": "6 feet",
+          "max_encroachment_side": "3 feet"
+        },
+        "Conditions": {
+          "Mandatory": "Feature must be on the 1st floor. Feature must be one of: balcony, uncovered porch, stairway, or fire escape.",
+          "Optional": "",
+          "Conditional Logic": "Encroachment is allowed up to 6 feet into front and rear yards, and up to 3 feet into side yards.",
+          "Dependencies": ""
+        },
+        "Exceptions": {
+          "Explicit Deviations": "",
+          "Alternatives": "",
+          "Special Cases": ""
+        },
+        "Relationships": {
+          "Hierarchical": "Parent Category: Porches and entry features.",
+          "Cross-references": "Code Sec: 18.12.050 (a)(3)(D). Illustration: not shown.",
+          "Logical Dependencies": ""
+        }
+      },
+      {
+        "rule": "Porches and Entry Features - Canopies and Patio Covers",
+        "Qualifiers": {
+          "Scope": "Allowable placement for canopies and patio covers.",
+          "Applicability": "Applies to canopies and patio covers on the 1st floor only.",
+          "Exclusions": "Not permitted in front yards."
+        },
+        "Variables": {
+          "Dimensional": "",
+          "Material": "",
+          "Environmental": "",
+          "Usage": "Feature type: canopy, patio cover. Location: rear or side yards."
+        },
+        "Constants": {
+          "floor_level": "1st floor only"
+        },
+        "Conditions": {
+          "Mandatory": "Feature must be on the 1st floor. Feature must be a canopy or patio cover.",
+          "Optional": "",
+          "Conditional Logic": "Permitted location is in rear or side yards.",
+          "Dependencies": ""
+        },
+        "Exceptions": {
+          "Explicit Deviations": "",
+          "Alternatives": "",
+          "Special Cases": ""
+        },
+        "Relationships": {
+          "Hierarchical": "Parent Category: Porches and entry features.",
+          "Cross-references": "Code Sec: 18.12.050 (a)(3)(E). Illustration: not shown.",
+          "Logical Dependencies": ""
+        }
+      },
+      {
+        "rule": "Other Features - Eaves and Cornices",
+        "Qualifiers": {
+          "Scope": "Allowable setback encroachments for eaves and cornices.",
+          "Applicability": "Applies to eaves and cornices.",
+          "Exclusions": ""
+        },
+        "Variables": {
+          "Dimensional": "encroachment_depth",
+          "Material": "",
+          "Environmental": "",
+          "Usage": "Feature type: eaves, cornices."
+        },
+        "Constants": {
+          "max_encroachment_side": "2 feet",
+          "max_encroachment_front_rear": "4 feet"
+        },
+        "Conditions": {
+          "Mandatory": "",
+          "Optional": "",
+          "Conditional Logic": "Encroachment is allowed up to 2 feet into side yards, and up to 4 feet into front and rear yards.",
+          "Dependencies": ""
+        },
+        "Exceptions": {
+          "Explicit Deviations": "",
+          "Alternatives": "",
+          "Special Cases": ""
+        },
+        "Relationships": {
+          "Hierarchical": "Parent Category: Other.",
+          "Cross-references": "Code Sec: 18.12.050 (a)(3)(A). Illustration: not shown.",
+          "Logical Dependencies": ""
+        }
+      },
+      {
+        "rule": "Other Features - 1st Floor Bay/Greenhouse Windows",
+        "Qualifiers": {
+          "Scope": "Allowable setback encroachments for specific window types in front and rear yards.",
+          "Applicability": "Applies to 1st floor bay or greenhouse windows that are composed of a window surface, are cantilevered, and have no floor joists.",
+          "Exclusions": "Does not apply to windows with floor joists, or windows on other floors. Does not apply to side yards."
+        },
+        "Variables": {
+          "Dimensional": "encroachment_depth",
+          "Material": "Composition: window surface. Structure: cantilevered, no floor joists.",
+          "Environmental": "",
+          "Usage": "Feature type: bay window, greenhouse window."
+        },
+        "Constants": {
+          "floor_level": "1st floor",
+          "max_encroachment_front": "2 feet",
+          "max_encroachment_rear": "3 feet"
+        },
+        "Conditions": {
+          "Mandatory": "Must be on the 1st floor. Must be a bay or greenhouse window. Must be composed of a window surface. Must be cantilevered. Must have no floor joists.",
+          "Optional": "",
+          "Conditional Logic": "Encroachment is allowed up to 2 feet into the front yard and 3 feet into the rear yard.",
+          "Dependencies": ""
+        },
+        "Exceptions": {
+          "Explicit Deviations": "",
+          "Alternatives": "",
+          "Special Cases": ""
+        },
+        "Relationships": {
+          "Hierarchical": "Parent Category: Other.",
+          "Cross-references": "Code Sec: 18.12.050 (a)(3)(B). Illustration: not shown.",
+          "Logical Dependencies": "Complements the rule for 'Greenhouse Windows (Side Yard)'."
+        }
+      },
+      {
+        "rule": "Other Features - Greenhouse Windows (Side Yard)",
+        "Qualifiers": {
+          "Scope": "Allowable setback encroachments for greenhouse windows in side yards.",
+          "Applicability": "Applies only to greenhouse windows.",
+          "Exclusions": "Does not apply to bay windows. Does not apply to front or rear yards."
+        },
+        "Variables": {
+          "Dimensional": "encroachment_depth",
+          "Material": "",
+          "Environmental": "",
+          "Usage": "Feature type: greenhouse window."
+        },
+        "Constants": {
+          "max_encroachment_side": "2 feet"
+        },
+        "Conditions": {
+          "Mandatory": "Feature must be a greenhouse window.",
+          "Optional": "",
+          "Conditional Logic": "Encroachment is allowed up to 2 feet into side yards.",
+          "Dependencies": ""
+        },
+        "Exceptions": {
+          "Explicit Deviations": "",
+          "Alternatives": "",
+          "Special Cases": ""
+        },
+        "Relationships": {
+          "Hierarchical": "Parent Category: Other.",
+          "Cross-references": "Code Sec: 18.12.050 ([illegible]). Illustration: not shown.",
+          "Logical Dependencies": "Complements the rule for '1st Floor Bay/Greenhouse Windows'."
+        }
+      },
+      {
+        "rule": "Other Features - Uncovered Parking",
+        "Qualifiers": {
+          "Scope": "Allowable placement for uncovered parking areas.",
+          "Applicability": "Applies to uncovered parking.",
+          "Exclusions": "Not permitted in front yards. Not permitted in the first 10 feet of a street side yard."
+        },
+        "Variables": {
+          "Dimensional": "distance_from_street_side_lot_line",
+          "Material": "",
+          "Environmental": "",
+          "Usage": "Feature type: uncovered parking. Location: rear yard, side yard."
+        },
+        "Constants": {
+          "street_side_yard_exclusion_zone": "first 10 feet"
+        },
+        "Conditions": {
+          "Mandatory": "",
+          "Optional": "",
+          "Conditional Logic": "Permitted in rear or side yards, EXCEPT for the first 10 feet of the street side yard.",
+          "Dependencies": ""
+        },
+        "Exceptions": {
+          "Explicit Deviations": "",
+          "Alternatives": "",
+          "Special Cases": ""
+        },
+        "Relationships": {
+          "Hierarchical": "Parent Category: Other.",
+          "Cross-references": "Code Sec: 18.12.060 (c). Illustration: Figure 34 p. 39.",
+          "Logical Dependencies": ""
+        }
+      },
+      {
+        "rule": "Other Features - Pools and Spas",
+        "Qualifiers": {
+          "Scope": "Allowable placement for pools and spas.",
+          "Applicability": "Applies to the main body of pools and spas.",
+          "Exclusions": "Does not apply to associated equipment."
+        },
+        "Variables": {
+          "Dimensional": "distance_to_rear_lot_line, distance_to_interior_side_lot_line",
+          "Material": "",
+          "Environmental": "",
+          "Usage": "Feature type: pool, spa."
+        },
+        "Constants": {
+          "min_distance_to_rear_lot_line": "6 feet",
+          "min_distance_to_interior_side_lot_line": "6 feet"
+        },
+        "Conditions": {
+          "Mandatory": "",
+          "Optional": "",
+          "Conditional Logic": "Can be located to within 6 feet of rear and interior-side lot lines.",
+          "Dependencies": ""
+        },
+        "Exceptions": {
+          "Explicit Deviations": "",
+          "Alternatives": "",
+          "Special Cases": ""
+        },
+        "Relationships": {
+          "Hierarchical": "Parent Category: Other.",
+          "Cross-references": "Code Sec: 18.12.060 ([illegible]). Illustration: not shown.",
+          "Logical Dependencies": ""
+        }
+      },
+      {
+        "rule": "Other Features - Fireplaces",
+        "Qualifiers": {
+          "Scope": "Allowable setback encroachments for fireplaces in side yards.",
+          "Applicability": "Applies to fireplaces of a specific width.",
+          "Exclusions": "Does not specify rules for front or rear yards."
+        },
+        "Variables": {
+          "Dimensional": "fireplace_width, encroachment_depth",
+          "Material": "",
+          "Environmental": "",
+          "Usage": "Feature type: fireplace."
+        },
+        "Constants": {
+          "max_width": "5 feet",
+          "max_encroachment_side": "2 feet"
+        },
+        "Conditions": {
+          "Mandatory": "Fireplace width must be \u2264 5 feet.",
+          "Optional": "",
+          "Conditional Logic": "If width condition is met, encroachment is allowed up to 2 feet into a side yard.",
+          "Dependencies": ""
+        },
+        "Exceptions": {
+          "Explicit Deviations": "",
+          "Alternatives": "",
+          "Special Cases": ""
+        },
+        "Relationships": {
+          "Hierarchical": "Parent Category: Other.",
+          "Cross-references": "Code Sec: 18.12.050 ([illegible]). Illustration: not shown.",
+          "Logical Dependencies": ""
+        }
+      },
+      {
+        "rule": "Excavated Features - Lightwells and Stairwells",
+        "Qualifiers": {
+          "Scope": "Allowable setback encroachments for excavated lightwells and stairwells.",
+          "Applicability": "Applies to lightwells and stairwells with a limited cumulative length.",
+          "Exclusions": "Does not apply to front yards."
+        },
+        "Variables": {
+          "Dimensional": "encroachment_depth, cumulative_length",
+          "Material": "",
+          "Environmental": "",
+          "Usage": "Feature type: lightwell, stairwell."
+        },
+        "Constants": {
+          "max_encroachment_side": "3 feet",
+          "max_encroachment_rear": "4 feet",
+          "max_cumulative_length": "15 feet"
+        },
+        "Conditions": {
+          "Mandatory": "The cumulative length of all such features must be \u2264 15 feet.",
+          "Optional": "",
+          "Conditional Logic": "Encroachment is allowed up to 3 feet into side yards and 4 feet into the rear yard.",
+          "Dependencies": ""
+        },
+        "Exceptions": {
+          "Explicit Deviations": "",
+          "Alternatives": "",
+          "Special Cases": ""
+        },
+        "Relationships": {
+          "Hierarchical": "Parent Category: Excavated features.",
+          "Cross-references": "Code Sec: 18.12.090 (c). Illustration: Figure 39 p. 42.",
+          "Logical Dependencies": ""
+        }
+      },
+      {
+        "rule": "Excavated Features - Below Grade Patios",
+        "Qualifiers": {
+          "Scope": "Allowable setback encroachments for below grade patios.",
+          "Applicability": "Applies to below grade patios with a limited cumulative length.",
+          "Exclusions": "Does not apply to front yards."
+        },
+        "Variables": {
+          "Dimensional": "encroachment_depth, cumulative_length",
+          "Material": "",
+          "Environmental": "",
+          "Usage": "Feature type: below grade patio."
+        },
+        "Constants": {
+          "max_encroachment_side": "2 feet",
+          "max_encroachment_rear": "4 feet",
+          "max_cumulative_length": "5 feet"
+        },
+        "Conditions": {
+          "Mandatory": "The cumulative length of all such features must be \u2264 5 feet.",
+          "Optional": "",
+          "Conditional Logic": "Encroachment is allowed up to 2 feet into side yards and 4 feet into the rear yard.",
+          "Dependencies": ""
+        },
+        "Exceptions": {
+          "Explicit Deviations": "",
+          "Alternatives": "",
+          "Special Cases": ""
+        },
+        "Relationships": {
+          "Hierarchical": "Parent Category: Excavated features.",
+          "Cross-references": "Code Sec: 18.12.090 (c). Illustration: Figure 40 p. 43.",
+          "Logical Dependencies": ""
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n  {\n    \"rule\": \"Main Dwelling - Rear Yard Encroachment\",\n    \"Qualifiers\": {\n      \"Scope\": \"Allowable setback encroachments for a portion of the main dwelling at the rear of the structure.\",\n      \"Applicability\": \"Applies to the 1st floor (ground floor) only. Applies only to legally constructed structures. The addition must be contiguous with an existing protrusion.\",\n      \"Exclusions\": \"Not applicable if the structure was built with a variance or a home-improvement exception (HIE). Multiple protrusions are not permitted. This encroachment is allowed only once in the life of the structure.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"lot_type (standard lot, back-to-back corner lot), structure_max_width, encroachment_width, encroachment_depth, maintained_setback\",\n      \"Material\": \"\",\n      \"Environmental\": \"\",\n      \"Usage\": \"Applies to main dwelling additions.\"\n    },\n    \"Constants\": {\n      \"encroachment_width_max_ratio\": \"\u2264 half (0.5) the max. width of the dwelling\",\n      \"floor_level\": \"1st floor only\",\n      \"standard_lot_encroachment_depth_max\": \"up to 6 feet\",\n      \"standard_lot_rear_setback_min\": \"14 feet\",\n      \"back_to_back_corner_lot_encroachment_depth_max\": \"up to 10 feet\",\n      \"back_to_back_corner_lot_rear_setback_min\": \"10 feet\",\n      \"occurrence_limit\": \"Once in the life of the structure\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"The encroaching portion's width must be no wider than half the maximum width of the dwelling. The encroachment must be on the ground floor only. The addition must be contiguous with any existing protrusion.\",\n      \"Optional\": \"\",\n      \"Conditional Logic\": \"IF lot_type is 'standard' (not back-to-back corner), THEN encroachment is up to 6 feet, providing a minimum setback of 14 feet is maintained. IF lot_type is 'back-to-back corner lot', THEN encroachment is up to 10 feet, providing a minimum setback of 10 feet is maintained.\",\n      \"Dependencies\": \"\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"For back-to-back corner lots, the encroachment rules are different: up to 10 feet encroachment is allowed, maintaining a 10 feet minimum setback.\",\n      \"Alternatives\": \"\",\n      \"Special Cases\": \"Applies only to legally constructed structures, excluding those with a variance or HIE.\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"Parent Category: Main dwelling. This rule is a detailed explanation of the first item in the summary table.\",\n      \"Cross-references\": \"Code Sec: 18.12.050 ([illegible])(2). Illustration: Figure 18 on Page 30.\",\n      \"Logical Dependencies\": \"\"\n    }\n  },\n  {\n    \"rule\": \"Main Dwelling - Front Setback Encroachment Extension\",\n    \"Qualifiers\": {\n      \"Scope\": \"Allowable extension of an existing front setback encroachment for a main dwelling.\",\n      \"Applicability\": \"Applies to the 1st floor only. Requires an existing, legal front setback encroachment to extend.\",\n      \"Exclusions\": \"Does not apply to new encroachments, only extensions. Does not apply to floors other than the 1st.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"distance_to_front_lot_line\",\n      \"Material\": \"\",\n      \"Environmental\": \"\",\n      \"Usage\": \"Extension of an existing encroachment.\"\n    },\n    \"Constants\": {\n      \"floor_level\": \"1st floor\",\n      \"min_distance_to_front_lot_line\": \"14 feet\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"Must be an extension of an existing front setback encroachment. Must be on the 1st floor.\",\n      \"Optional\": \"\",\n      \"Conditional Logic\": \"The extension can go to within 14 feet of the front lot line.\",\n      \"Dependencies\": \"Depends on the existence of a legal, pre-existing front setback encroachment.\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"\",\n      \"Alternatives\": \"\",\n      \"Special Cases\": \"\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"Parent Category: Main dwelling.\",\n      \"Cross-references\": \"Code Sec: 18.12.050 ([illegible])(1)(A). Illustration: Figure 19 p. 25.\",\n      \"Logical Dependencies\": \"\"\n    }\n  },\n  {\n    \"rule\": \"Main Dwelling - Interior-Side Setback Encroachment Extension\",\n    \"Qualifiers\": {\n      \"Scope\": \"Allowable extension of an existing interior-side setback encroachment for a main dwelling.\",\n      \"Applicability\": \"Applies to the 1st floor only. Requires an existing, legal interior-side setback encroachment to extend.\",\n      \"Exclusions\": \"Does not apply to new encroachments, only extensions. Does not apply to floors other than the 1st.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"distance_to_interior_side_lot_line\",\n      \"Material\": \"\",\n      \"Environmental\": \"\",\n      \"Usage\": \"Extension of an existing encroachment.\"\n    },\n    \"Constants\": {\n      \"floor_level\": \"1st floor\",\n      \"min_distance_to_interior_side_lot_line\": \"5 feet\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"Must be an extension of an existing interior-side setback encroachment. Must be on the 1st floor.\",\n      \"Optional\": \"\",\n      \"Conditional Logic\": \"The extension can go to within 5 feet of the interior-side lot line.\",\n      \"Dependencies\": \"Depends on the existence of a legal, pre-existing interior-side setback encroachment.\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"\",\n      \"Alternatives\": \"\",\n      \"Special Cases\": \"\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"Parent Category: Main dwelling.\",\n      \"Cross-references\": \"Code Sec: 18.12.050 ([illegible])(1)(B). Illustration: Figure 19 p. 25.\",\n      \"Logical Dependencies\": \"\"\n    }\n  },\n  {\n    \"rule\": \"Main Dwelling - Street-Side Setback Encroachment Extension\",\n    \"Qualifiers\": {\n      \"Scope\": \"Allowable extension of an existing street-side setback encroachment for a main dwelling.\",\n      \"Applicability\": \"Applies to the 1st floor only. Requires an existing, legal street-side setback encroachment to extend.\",\n      \"Exclusions\": \"Does not apply to new encroachments, only extensions. Does not apply to floors other than the 1st.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"distance_to_street_side_lot_line\",\n      \"Material\": \"\",\n      \"Environmental\": \"\",\n      \"Usage\": \"Extension of an existing encroachment.\"\n    },\n    \"Constants\": {\n      \"floor_level\": \"1st floor\",\n      \"min_distance_to_street_side_lot_line\": \"10 feet\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"Must be an extension of an existing street-side setback encroachment. Must be on the 1st floor.\",\n      \"Optional\": \"\",\n      \"Conditional Logic\": \"The extension can go to within 10 feet of the street-side lot line.\",\n      \"Dependencies\": \"Depends on the existence of a legal, pre-existing street-side setback encroachment.\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"\",\n      \"Alternatives\": \"\",\n      \"Special Cases\": \"\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"Parent Category: Main dwelling.\",\n      \"Cross-references\": \"Code Sec: 18.12.050 ([illegible])(1)(C). Illustration: Figure 19 p. 25.\",\n      \"Logical Dependencies\": \"\"\n    }\n  },\n  {\n    \"rule\": \"Main Dwelling - Attached Storage Closets\",\n    \"Qualifiers\": {\n      \"Scope\": \"Allowable setback encroachments for attached storage closets.\",\n      \"Applicability\": \"Applies to storage closets attached to the main dwelling.\",\n      \"Exclusions\": \"\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"closet_height, closet_area, encroachment_depth\",\n      \"Material\": \"\",\n      \"Environmental\": \"\",\n      \"Usage\": \"Feature type: attached storage closet.\"\n    },\n    \"Constants\": {\n      \"max_height\": \"6 feet\",\n      \"max_area\": \"25 square feet\",\n      \"max_encroachment_front_rear\": \"4 feet\",\n      \"max_encroachment_side\": \"2 feet\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"Closet height must be \u2264 6 feet AND closet area must be \u2264 25 square feet.\",\n      \"Optional\": \"\",\n      \"Conditional Logic\": \"Encroachment is allowed up to 4 feet into front and rear yards, and up to 2 feet into side yards.\",\n      \"Dependencies\": \"\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"\",\n      \"Alternatives\": \"\",\n      \"Special Cases\": \"\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"Parent Category: Main dwelling.\",\n      \"Cross-references\": \"Code Sec: 18.12.050 ([illegible]). Illustration: not shown/illegible.\",\n      \"Logical Dependencies\": \"\"\n    }\n  },\n  {\n    \"rule\": \"Detached Accessory Structures - General Placement\",\n    \"Qualifiers\": {\n      \"Scope\": \"Allowable placement of detached accessory structures in rear or side yards.\",\n      \"Applicability\": \"Applies to detached accessory structures.\",\n      \"Exclusions\": \"\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"distance_from_front_lot_line, distance_from_street_side_lot_line\",\n      \"Material\": \"\",\n      \"Environmental\": \"\",\n      \"Usage\": \"Location: rear or side yards.\"\n    },\n    \"Constants\": {\n      \"min_distance_from_front_lot_line\": \"75 feet\",\n      \"min_distance_from_street_side_lot_line\": \"20 feet\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"Structure must be located at least 75 feet from the front lot line AND at least 20 feet from the street-side lot line.\",\n      \"Optional\": \"\",\n      \"Conditional Logic\": \"If mandatory conditions are met, the structure is permitted in rear or side yards.\",\n      \"Dependencies\": \"\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"\",\n      \"Alternatives\": \"\",\n      \"Special Cases\": \"\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"Parent Category: Detached accessory structures.\",\n      \"Cross-references\": \"Code Sec: 18.12.080 (b)(3). Illustration: Figure 34 p. 39.\",\n      \"Logical Dependencies\": \"\"\n    }\n  },\n  {\n    \"rule\": \"Detached Accessory Structures - Covered Parking\",\n    \"Qualifiers\": {\n      \"Scope\": \"Allowable placement of detached accessory structures used for covered parking.\",\n      \"Applicability\": \"Applies to detached structures for covered parking on lots of a specific depth.\",\n      \"Exclusions\": \"\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"lot_depth, distance_from_street_side_lot_line\",\n      \"Material\": \"\",\n      \"Environmental\": \"\",\n      \"Usage\": \"Structure use: covered parking. Location: rear half of lot, rear or side yards.\"\n    },\n    \"Constants\": {\n      \"max_lot_depth\": \"95 feet\",\n      \"min_distance_from_street_side_lot_line\": \"25 feet\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"Structure must be for covered parking AND located on a lot \u2264 95 feet deep AND be at least 25 feet from the street-side lot line AND be in the rear half of the lot.\",\n      \"Optional\": \"\",\n      \"Conditional Logic\": \"If mandatory conditions are met, the structure is permitted in rear or side yards.\",\n      \"Dependencies\": \"\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"\",\n      \"Alternatives\": \"\",\n      \"Special Cases\": \"\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"Parent Category: Detached accessory structures.\",\n      \"Cross-references\": \"Code Sec: 18.12.080 ([illegible]). Illustration: Figure 34 p. 39.\",\n      \"Logical Dependencies\": \"\"\n    }\n  },\n  {\n    \"rule\": \"Porches and Entry Features - Balconies, Porches, Stairways, Fire Escapes\",\n    \"Qualifiers\": {\n      \"Scope\": \"Allowable setback encroachments for specific 1st floor features.\",\n      \"Applicability\": \"Applies to 1st floor balconies, uncovered porches, stairways, and fire escapes.\",\n      \"Exclusions\": \"Does not apply to covered porches. Does not apply to floors other than the 1st.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"encroachment_depth\",\n      \"Material\": \"\",\n      \"Environmental\": \"\",\n      \"Usage\": \"Feature type: balcony, uncovered porch, stairway, fire escape.\"\n    },\n    \"Constants\": {\n      \"floor_level\": \"1st floor\",\n      \"max_encroachment_front_rear\": \"6 feet\",\n      \"max_encroachment_side\": \"3 feet\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"Feature must be on the 1st floor. Feature must be one of: balcony, uncovered porch, stairway, or fire escape.\",\n      \"Optional\": \"\",\n      \"Conditional Logic\": \"Encroachment is allowed up to 6 feet into front and rear yards, and up to 3 feet into side yards.\",\n      \"Dependencies\": \"\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"\",\n      \"Alternatives\": \"\",\n      \"Special Cases\": \"\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"Parent Category: Porches and entry features.\",\n      \"Cross-references\": \"Code Sec: 18.12.050 (a)(3)(D). Illustration: not shown.\",\n      \"Logical Dependencies\": \"\"\n    }\n  },\n  {\n    \"rule\": \"Porches and Entry Features - Canopies and Patio Covers\",\n    \"Qualifiers\": {\n      \"Scope\": \"Allowable placement for canopies and patio covers.\",\n      \"Applicability\": \"Applies to canopies and patio covers on the 1st floor only.\",\n      \"Exclusions\": \"Not permitted in front yards.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"\",\n      \"Material\": \"\",\n      \"Environmental\": \"\",\n      \"Usage\": \"Feature type: canopy, patio cover. Location: rear or side yards.\"\n    },\n    \"Constants\": {\n      \"floor_level\": \"1st floor only\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"Feature must be on the 1st floor. Feature must be a canopy or patio cover.\",\n      \"Optional\": \"\",\n      \"Conditional Logic\": \"Permitted location is in rear or side yards.\",\n      \"Dependencies\": \"\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"\",\n      \"Alternatives\": \"\",\n      \"Special Cases\": \"\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"Parent Category: Porches and entry features.\",\n      \"Cross-references\": \"Code Sec: 18.12.050 (a)(3)(E). Illustration: not shown.\",\n      \"Logical Dependencies\": \"\"\n    }\n  },\n  {\n    \"rule\": \"Other Features - Eaves and Cornices\",\n    \"Qualifiers\": {\n      \"Scope\": \"Allowable setback encroachments for eaves and cornices.\",\n      \"Applicability\": \"Applies to eaves and cornices.\",\n      \"Exclusions\": \"\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"encroachment_depth\",\n      \"Material\": \"\",\n      \"Environmental\": \"\",\n      \"Usage\": \"Feature type: eaves, cornices.\"\n    },\n    \"Constants\": {\n      \"max_encroachment_side\": \"2 feet\",\n      \"max_encroachment_front_rear\": \"4 feet\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"\",\n      \"Optional\": \"\",\n      \"Conditional Logic\": \"Encroachment is allowed up to 2 feet into side yards, and up to 4 feet into front and rear yards.\",\n      \"Dependencies\": \"\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"\",\n      \"Alternatives\": \"\",\n      \"Special Cases\": \"\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"Parent Category: Other.\",\n      \"Cross-references\": \"Code Sec: 18.12.050 (a)(3)(A). Illustration: not shown.\",\n      \"Logical Dependencies\": \"\"\n    }\n  },\n  {\n    \"rule\": \"Other Features - 1st Floor Bay/Greenhouse Windows\",\n    \"Qualifiers\": {\n      \"Scope\": \"Allowable setback encroachments for specific window types in front and rear yards.\",\n      \"Applicability\": \"Applies to 1st floor bay or greenhouse windows that are composed of a window surface, are cantilevered, and have no floor joists.\",\n      \"Exclusions\": \"Does not apply to windows with floor joists, or windows on other floors. Does not apply to side yards.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"encroachment_depth\",\n      \"Material\": \"Composition: window surface. Structure: cantilevered, no floor joists.\",\n      \"Environmental\": \"\",\n      \"Usage\": \"Feature type: bay window, greenhouse window.\"\n    },\n    \"Constants\": {\n      \"floor_level\": \"1st floor\",\n      \"max_encroachment_front\": \"2 feet\",\n      \"max_encroachment_rear\": \"3 feet\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"Must be on the 1st floor. Must be a bay or greenhouse window. Must be composed of a window surface. Must be cantilevered. Must have no floor joists.\",\n      \"Optional\": \"\",\n      \"Conditional Logic\": \"Encroachment is allowed up to 2 feet into the front yard and 3 feet into the rear yard.\",\n      \"Dependencies\": \"\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"\",\n      \"Alternatives\": \"\",\n      \"Special Cases\": \"\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"Parent Category: Other.\",\n      \"Cross-references\": \"Code Sec: 18.12.050 (a)(3)(B). Illustration: not shown.\",\n      \"Logical Dependencies\": \"Complements the rule for 'Greenhouse Windows (Side Yard)'.\"\n    }\n  },\n  {\n    \"rule\": \"Other Features - Greenhouse Windows (Side Yard)\",\n    \"Qualifiers\": {\n      \"Scope\": \"Allowable setback encroachments for greenhouse windows in side yards.\",\n      \"Applicability\": \"Applies only to greenhouse windows.\",\n      \"Exclusions\": \"Does not apply to bay windows. Does not apply to front or rear yards.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"encroachment_depth\",\n      \"Material\": \"\",\n      \"Environmental\": \"\",\n      \"Usage\": \"Feature type: greenhouse window.\"\n    },\n    \"Constants\": {\n      \"max_encroachment_side\": \"2 feet\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"Feature must be a greenhouse window.\",\n      \"Optional\": \"\",\n      \"Conditional Logic\": \"Encroachment is allowed up to 2 feet into side yards.\",\n      \"Dependencies\": \"\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"\",\n      \"Alternatives\": \"\",\n      \"Special Cases\": \"\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"Parent Category: Other.\",\n      \"Cross-references\": \"Code Sec: 18.12.050 ([illegible]). Illustration: not shown.\",\n      \"Logical Dependencies\": \"Complements the rule for '1st Floor Bay/Greenhouse Windows'.\"\n    }\n  },\n  {\n    \"rule\": \"Other Features - Uncovered Parking\",\n    \"Qualifiers\": {\n      \"Scope\": \"Allowable placement for uncovered parking areas.\",\n      \"Applicability\": \"Applies to uncovered parking.\",\n      \"Exclusions\": \"Not permitted in front yards. Not permitted in the first 10 feet of a street side yard.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"distance_from_street_side_lot_line\",\n      \"Material\": \"\",\n      \"Environmental\": \"\",\n      \"Usage\": \"Feature type: uncovered parking. Location: rear yard, side yard.\"\n    },\n    \"Constants\": {\n      \"street_side_yard_exclusion_zone\": \"first 10 feet\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"\",\n      \"Optional\": \"\",\n      \"Conditional Logic\": \"Permitted in rear or side yards, EXCEPT for the first 10 feet of the street side yard.\",\n      \"Dependencies\": \"\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"\",\n      \"Alternatives\": \"\",\n      \"Special Cases\": \"\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"Parent Category: Other.\",\n      \"Cross-references\": \"Code Sec: 18.12.060 (c). Illustration: Figure 34 p. 39.\",\n      \"Logical Dependencies\": \"\"\n    }\n  },\n  {\n    \"rule\": \"Other Features - Pools and Spas\",\n    \"Qualifiers\": {\n      \"Scope\": \"Allowable placement for pools and spas.\",\n      \"Applicability\": \"Applies to the main body of pools and spas.\",\n      \"Exclusions\": \"Does not apply to associated equipment.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"distance_to_rear_lot_line, distance_to_interior_side_lot_line\",\n      \"Material\": \"\",\n      \"Environmental\": \"\",\n      \"Usage\": \"Feature type: pool, spa.\"\n    },\n    \"Constants\": {\n      \"min_distance_to_rear_lot_line\": \"6 feet\",\n      \"min_distance_to_interior_side_lot_line\": \"6 feet\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"\",\n      \"Optional\": \"\",\n      \"Conditional Logic\": \"Can be located to within 6 feet of rear and interior-side lot lines.\",\n      \"Dependencies\": \"\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"\",\n      \"Alternatives\": \"\",\n      \"Special Cases\": \"\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"Parent Category: Other.\",\n      \"Cross-references\": \"Code Sec: 18.12.060 ([illegible]). Illustration: not shown.\",\n      \"Logical Dependencies\": \"\"\n    }\n  },\n  {\n    \"rule\": \"Other Features - Fireplaces\",\n    \"Qualifiers\": {\n      \"Scope\": \"Allowable setback encroachments for fireplaces in side yards.\",\n      \"Applicability\": \"Applies to fireplaces of a specific width.\",\n      \"Exclusions\": \"Does not specify rules for front or rear yards.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"fireplace_width, encroachment_depth\",\n      \"Material\": \"\",\n      \"Environmental\": \"\",\n      \"Usage\": \"Feature type: fireplace.\"\n    },\n    \"Constants\": {\n      \"max_width\": \"5 feet\",\n      \"max_encroachment_side\": \"2 feet\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"Fireplace width must be \u2264 5 feet.\",\n      \"Optional\": \"\",\n      \"Conditional Logic\": \"If width condition is met, encroachment is allowed up to 2 feet into a side yard.\",\n      \"Dependencies\": \"\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"\",\n      \"Alternatives\": \"\",\n      \"Special Cases\": \"\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"Parent Category: Other.\",\n      \"Cross-references\": \"Code Sec: 18.12.050 ([illegible]). Illustration: not shown.\",\n      \"Logical Dependencies\": \"\"\n    }\n  },\n  {\n    \"rule\": \"Excavated Features - Lightwells and Stairwells\",\n    \"Qualifiers\": {\n      \"Scope\": \"Allowable setback encroachments for excavated lightwells and stairwells.\",\n      \"Applicability\": \"Applies to lightwells and stairwells with a limited cumulative length.\",\n      \"Exclusions\": \"Does not apply to front yards.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"encroachment_depth, cumulative_length\",\n      \"Material\": \"\",\n      \"Environmental\": \"\",\n      \"Usage\": \"Feature type: lightwell, stairwell.\"\n    },\n    \"Constants\": {\n      \"max_encroachment_side\": \"3 feet\",\n      \"max_encroachment_rear\": \"4 feet\",\n      \"max_cumulative_length\": \"15 feet\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"The cumulative length of all such features must be \u2264 15 feet.\",\n      \"Optional\": \"\",\n      \"Conditional Logic\": \"Encroachment is allowed up to 3 feet into side yards and 4 feet into the rear yard.\",\n      \"Dependencies\": \"\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"\",\n      \"Alternatives\": \"\",\n      \"Special Cases\": \"\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"Parent Category: Excavated features.\",\n      \"Cross-references\": \"Code Sec: 18.12.090 (c). Illustration: Figure 39 p. 42.\",\n      \"Logical Dependencies\": \"\"\n    }\n  },\n  {\n    \"rule\": \"Excavated Features - Below Grade Patios\",\n    \"Qualifiers\": {\n      \"Scope\": \"Allowable setback encroachments for below grade patios.\",\n      \"Applicability\": \"Applies to below grade patios with a limited cumulative length.\",\n      \"Exclusions\": \"Does not apply to front yards.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"encroachment_depth, cumulative_length\",\n      \"Material\": \"\",\n      \"Environmental\": \"\",\n      \"Usage\": \"Feature type: below grade patio.\"\n    },\n    \"Constants\": {\n      \"max_encroachment_side\": \"2 feet\",\n      \"max_encroachment_rear\": \"4 feet\",\n      \"max_cumulative_length\": \"5 feet\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"The cumulative length of all such features must be \u2264 5 feet.\",\n      \"Optional\": \"\",\n      \"Conditional Logic\": \"Encroachment is allowed up to 2 feet into side yards and 4 feet into the rear yard.\",\n      \"Dependencies\": \"\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"\",\n      \"Alternatives\": \"\",\n      \"Special Cases\": \"\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"Parent Category: Excavated features.\",\n      \"Cross-references\": \"Code Sec: 18.12.090 (c). Illustration: Figure 40 p. 43.\",\n      \"Logical Dependencies\": \"\"\n    }\n  }\n]\n```",
+    "response_time": 115.09630799293518,
+    "input_tokens": 1808,
+    "output_tokens": 14076,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 16:14:06",
+  "model": "google/gemini-2.5-pro",
+  "success": true
+}

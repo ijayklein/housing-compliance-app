@@ -1,0 +1,12 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_35.png",
+  "image_name": "Page_35.png",
+  "analysis": {
+    "raw_content": "Extracted content (verbatim transcription)\n\nPage heading:\n- Allowable daylight plane protrusions summary\n\nTable\n- Column headers: Feature | Allowable protrusion | Illustration\n\nRows:\n\n1) Feature: Television and radio antennas\n   Allowable protrusion: up to 15' above maximum building height\n   Illustration: [blank]\n\n2) Feature: Chimneys and flues < 5' wide\n   Allowable protrusion: may extend beyond the daylight plane to meet minimum required clearance of Building Code (Chapter 16.04)\n   Illustration: Fig 20 on p. 26\n\n3) Feature: Dormers, roof decks, gables, or similar architectural features\n   Allowable protrusion: each feature \u2264 7.5' long and cumulative length of all features \u2264 15' with min 5' separation between features (on each side); height \u2264 24';\n   Illustration: Fig 20 on p. 26 & Fig 23 on p. 28\n   Note: The string \u201cheight \u2264 24'\u201d is unclear; it appears exactly as shown in the image.\n\n4) Feature: Cornices, eaves, and similar architectural features (excluding flat or continuous walls or enclosures usable for interior space)\n   Allowable protrusion: max 2'\n   Illustration: Fig 22 on p. 27\n\nFooter:\n- Page number: 29",
+    "content_length": 1134,
+    "parse_error": false
+  },
+  "timestamp": "2025-09-16 14:08:06",
+  "model": "openai/gpt-5",
+  "success": true
+}

@@ -1,0 +1,237 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_29.md",
+  "file_name": "Page_29.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "Rule": "Flag Lot Setbacks",
+        "Qualifiers": {
+          "Scope": "Flag lots",
+          "Applicability": "Lots with a flag shape",
+          "Exclusions": "Non-flag shaped lots"
+        },
+        "Variables": {
+          "Dimensional": {
+            "Front setback": "10 feet",
+            "Standard front setback": "20 feet"
+          },
+          "Material": null,
+          "Environmental": null,
+          "Usage parameters": null
+        },
+        "Constants": {
+          "Numerical values": {
+            "Front setback": "10 feet"
+          },
+          "Specs": null,
+          "Standards": null,
+          "Procedures": null
+        },
+        "Conditions": {
+          "Mandatory": "Front setback is 10 feet",
+          "Optional": null,
+          "Conditional logic": null,
+          "Dependencies": "Front lot line is closest and most parallel to street"
+        },
+        "Exceptions": {
+          "Explicit deviations": "Front setback is 10 feet instead of 20 feet",
+          "Alternatives": null,
+          "Special cases": null
+        },
+        "Relationships": {
+          "Hierarchical": null,
+          "Cross-references": null,
+          "Logical dependencies": "Front lot line is closest and most parallel to street"
+        }
+      },
+      {
+        "Rule": "Corner Lot Setbacks",
+        "Qualifiers": {
+          "Scope": "Corner lots",
+          "Applicability": "Lots located at street corners",
+          "Exclusions": "Non-corner lots"
+        },
+        "Variables": {
+          "Dimensional": {
+            "Street side setback": "16 feet"
+          },
+          "Material": null,
+          "Environmental": null,
+          "Usage parameters": null
+        },
+        "Constants": {
+          "Numerical values": {
+            "Street side setback": "16 feet"
+          },
+          "Specs": null,
+          "Standards": null,
+          "Procedures": null
+        },
+        "Conditions": {
+          "Mandatory": "Street side setback is 16 feet",
+          "Optional": null,
+          "Conditional logic": null,
+          "Dependencies": "Two streets shown along two edges"
+        },
+        "Exceptions": {
+          "Explicit deviations": null,
+          "Alternatives": null,
+          "Special cases": null
+        },
+        "Relationships": {
+          "Hierarchical": null,
+          "Cross-references": null,
+          "Logical dependencies": "Two streets shown along two edges"
+        }
+      },
+      {
+        "Rule": "Substandard Corner Lot Setbacks",
+        "Qualifiers": {
+          "Scope": "Substandard corner lots with frontage less than 50 feet",
+          "Applicability": "Corner lots with limited frontage",
+          "Exclusions": "Standard corner lots"
+        },
+        "Variables": {
+          "Dimensional": {
+            "Street side setback": "10 feet",
+            "Standard street side setback": "16 feet"
+          },
+          "Material": null,
+          "Environmental": null,
+          "Usage parameters": null
+        },
+        "Constants": {
+          "Numerical values": {
+            "Street side setback": "10 feet"
+          },
+          "Specs": null,
+          "Standards": null,
+          "Procedures": null
+        },
+        "Conditions": {
+          "Mandatory": "Street side setback is 10 feet",
+          "Optional": null,
+          "Conditional logic": null,
+          "Dependencies": "Front lot line is shortest of the two frontages"
+        },
+        "Exceptions": {
+          "Explicit deviations": "Street side setback is 10 feet instead of 16 feet",
+          "Alternatives": null,
+          "Special cases": null
+        },
+        "Relationships": {
+          "Hierarchical": null,
+          "Cross-references": null,
+          "Logical dependencies": "Front lot line is shortest of the two frontages"
+        }
+      },
+      {
+        "Rule": "Through Lot Setbacks",
+        "Qualifiers": {
+          "Scope": "Through lots",
+          "Applicability": "Lots with streets on opposite, parallel sides",
+          "Exclusions": "Non-through lots"
+        },
+        "Variables": {
+          "Dimensional": null,
+          "Material": null,
+          "Environmental": null,
+          "Usage parameters": null
+        },
+        "Constants": {
+          "Numerical values": null,
+          "Specs": null,
+          "Standards": null,
+          "Procedures": null
+        },
+        "Conditions": {
+          "Mandatory": null,
+          "Optional": null,
+          "Conditional logic": null,
+          "Dependencies": "Streets shown on opposite, parallel sides"
+        },
+        "Exceptions": {
+          "Explicit deviations": null,
+          "Alternatives": null,
+          "Special cases": null
+        },
+        "Relationships": {
+          "Hierarchical": null,
+          "Cross-references": null,
+          "Logical dependencies": "Streets shown on opposite, parallel sides"
+        }
+      },
+      {
+        "Rule": "Wedge Shaped Lot Setbacks",
+        "Qualifiers": {
+          "Scope": "Wedge shaped lots",
+          "Applicability": "Lots with a wedge shape",
+          "Exclusions": "Non-wedge shaped lots"
+        },
+        "Variables": {
+          "Dimensional": {
+            "Rear yard radius": "20 feet"
+          },
+          "Material": null,
+          "Environmental": null,
+          "Usage parameters": null
+        },
+        "Constants": {
+          "Numerical values": {
+            "Rear yard radius": "20 feet"
+          },
+          "Specs": null,
+          "Standards": null,
+          "Procedures": null
+        },
+        "Conditions": {
+          "Mandatory": "Rear yard is determined by a 20' radius from intersection of side lot lines",
+          "Optional": null,
+          "Conditional logic": null,
+          "Dependencies": "Wedge shaped lots don't have rear lot lines"
+        },
+        "Exceptions": {
+          "Explicit deviations": null,
+          "Alternatives": null,
+          "Special cases": null
+        },
+        "Relationships": {
+          "Hierarchical": null,
+          "Cross-references": null,
+          "Logical dependencies": "Wedge shaped lots don't have rear lot lines"
+        }
+      },
+      {
+        "Rule": "Lot with More Than 4 Sides Setbacks",
+        "Qualifiers": {
+          "Scope": "Lots with more than 4 sides",
+          "Applicability": "Irregularly shaped lots with more than 4 sides",
+          "Exclusions": "Lots with 4 or fewer sides"
+        },
+        "Variables": null,
+        "Constants": null,
+        "Conditions": {
+          "Mandatory": null,
+          "Optional": null,
+          "Conditional logic": null,
+          "Dependencies": "Rear lot line is farthest and most parallel to street"
+        },
+        "Exceptions": {
+          "Explicit deviations": null,
+          "Alternatives": null,
+          "Special cases": null
+        },
+        "Relationships": {
+          "Hierarchical": null,
+          "Cross-references": null,
+          "Logical dependencies": "Rear lot line is farthest and most parallel to street"
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n    {\n        \"Rule\": \"Flag Lot Setbacks\",\n        \"Qualifiers\": {\n            \"Scope\": \"Flag lots\",\n            \"Applicability\": \"Lots with a flag shape\",\n            \"Exclusions\": \"Non-flag shaped lots\"\n        },\n        \"Variables\": {\n            \"Dimensional\": {\n                \"Front setback\": \"10 feet\",\n                \"Standard front setback\": \"20 feet\"\n            },\n            \"Material\": null,\n            \"Environmental\": null,\n            \"Usage parameters\": null\n        },\n        \"Constants\": {\n            \"Numerical values\": {\n                \"Front setback\": \"10 feet\"\n            },\n            \"Specs\": null,\n            \"Standards\": null,\n            \"Procedures\": null\n        },\n        \"Conditions\": {\n            \"Mandatory\": \"Front setback is 10 feet\",\n            \"Optional\": null,\n            \"Conditional logic\": null,\n            \"Dependencies\": \"Front lot line is closest and most parallel to street\"\n        },\n        \"Exceptions\": {\n            \"Explicit deviations\": \"Front setback is 10 feet instead of 20 feet\",\n            \"Alternatives\": null,\n            \"Special cases\": null\n        },\n        \"Relationships\": {\n            \"Hierarchical\": null,\n            \"Cross-references\": null,\n            \"Logical dependencies\": \"Front lot line is closest and most parallel to street\"\n        }\n    },\n    {\n        \"Rule\": \"Corner Lot Setbacks\",\n        \"Qualifiers\": {\n            \"Scope\": \"Corner lots\",\n            \"Applicability\": \"Lots located at street corners\",\n            \"Exclusions\": \"Non-corner lots\"\n        },\n        \"Variables\": {\n            \"Dimensional\": {\n                \"Street side setback\": \"16 feet\"\n            },\n            \"Material\": null,\n            \"Environmental\": null,\n            \"Usage parameters\": null\n        },\n        \"Constants\": {\n            \"Numerical values\": {\n                \"Street side setback\": \"16 feet\"\n            },\n            \"Specs\": null,\n            \"Standards\": null,\n            \"Procedures\": null\n        },\n        \"Conditions\": {\n            \"Mandatory\": \"Street side setback is 16 feet\",\n            \"Optional\": null,\n            \"Conditional logic\": null,\n            \"Dependencies\": \"Two streets shown along two edges\"\n        },\n        \"Exceptions\": {\n            \"Explicit deviations\": null,\n            \"Alternatives\": null,\n            \"Special cases\": null\n        },\n        \"Relationships\": {\n            \"Hierarchical\": null,\n            \"Cross-references\": null,\n            \"Logical dependencies\": \"Two streets shown along two edges\"\n        }\n    },\n    {\n        \"Rule\": \"Substandard Corner Lot Setbacks\",\n        \"Qualifiers\": {\n            \"Scope\": \"Substandard corner lots with frontage less than 50 feet\",\n            \"Applicability\": \"Corner lots with limited frontage\",\n            \"Exclusions\": \"Standard corner lots\"\n        },\n        \"Variables\": {\n            \"Dimensional\": {\n                \"Street side setback\": \"10 feet\",\n                \"Standard street side setback\": \"16 feet\"\n            },\n            \"Material\": null,\n            \"Environmental\": null,\n            \"Usage parameters\": null\n        },\n        \"Constants\": {\n            \"Numerical values\": {\n                \"Street side setback\": \"10 feet\"\n            },\n            \"Specs\": null,\n            \"Standards\": null,\n            \"Procedures\": null\n        },\n        \"Conditions\": {\n            \"Mandatory\": \"Street side setback is 10 feet\",\n            \"Optional\": null,\n            \"Conditional logic\": null,\n            \"Dependencies\": \"Front lot line is shortest of the two frontages\"\n        },\n        \"Exceptions\": {\n            \"Explicit deviations\": \"Street side setback is 10 feet instead of 16 feet\",\n            \"Alternatives\": null,\n            \"Special cases\": null\n        },\n        \"Relationships\": {\n            \"Hierarchical\": null,\n            \"Cross-references\": null,\n            \"Logical dependencies\": \"Front lot line is shortest of the two frontages\"\n        }\n    },\n    {\n        \"Rule\": \"Through Lot Setbacks\",\n        \"Qualifiers\": {\n            \"Scope\": \"Through lots\",\n            \"Applicability\": \"Lots with streets on opposite, parallel sides\",\n            \"Exclusions\": \"Non-through lots\"\n        },\n        \"Variables\": {\n            \"Dimensional\": null,\n            \"Material\": null,\n            \"Environmental\": null,\n            \"Usage parameters\": null\n        },\n        \"Constants\": {\n            \"Numerical values\": null,\n            \"Specs\": null,\n            \"Standards\": null,\n            \"Procedures\": null\n        },\n        \"Conditions\": {\n            \"Mandatory\": null,\n            \"Optional\": null,\n            \"Conditional logic\": null,\n            \"Dependencies\": \"Streets shown on opposite, parallel sides\"\n        },\n        \"Exceptions\": {\n            \"Explicit deviations\": null,\n            \"Alternatives\": null,\n            \"Special cases\": null\n        },\n        \"Relationships\": {\n            \"Hierarchical\": null,\n            \"Cross-references\": null,\n            \"Logical dependencies\": \"Streets shown on opposite, parallel sides\"\n        }\n    },\n    {\n        \"Rule\": \"Wedge Shaped Lot Setbacks\",\n        \"Qualifiers\": {\n            \"Scope\": \"Wedge shaped lots\",\n            \"Applicability\": \"Lots with a wedge shape\",\n            \"Exclusions\": \"Non-wedge shaped lots\"\n        },\n        \"Variables\": {\n            \"Dimensional\": {\n                \"Rear yard radius\": \"20 feet\"\n            },\n            \"Material\": null,\n            \"Environmental\": null,\n            \"Usage parameters\": null\n        },\n        \"Constants\": {\n            \"Numerical values\": {\n                \"Rear yard radius\": \"20 feet\"\n            },\n            \"Specs\": null,\n            \"Standards\": null,\n            \"Procedures\": null\n        },\n        \"Conditions\": {\n            \"Mandatory\": \"Rear yard is determined by a 20' radius from intersection of side lot lines\",\n            \"Optional\": null,\n            \"Conditional logic\": null,\n            \"Dependencies\": \"Wedge shaped lots don't have rear lot lines\"\n        },\n        \"Exceptions\": {\n            \"Explicit deviations\": null,\n            \"Alternatives\": null,\n            \"Special cases\": null\n        },\n        \"Relationships\": {\n            \"Hierarchical\": null,\n            \"Cross-references\": null,\n            \"Logical dependencies\": \"Wedge shaped lots don't have rear lot lines\"\n        }\n    },\n    {\n        \"Rule\": \"Lot with More Than 4 Sides Setbacks\",\n        \"Qualifiers\": {\n            \"Scope\": \"Lots with more than 4 sides\",\n            \"Applicability\": \"Irregularly shaped lots with more than 4 sides\",\n            \"Exclusions\": \"Lots with 4 or fewer sides\"\n        },\n        \"Variables\": null,\n        \"Constants\": null,\n        \"Conditions\": {\n            \"Mandatory\": null,\n            \"Optional\": null,\n            \"Conditional logic\": null,\n            \"Dependencies\": \"Rear lot line is farthest and most parallel to street\"\n        },\n        \"Exceptions\": {\n            \"Explicit deviations\": null,\n            \"Alternatives\": null,\n            \"Special cases\": null\n        },\n        \"Relationships\": {\n            \"Hierarchical\": null,\n            \"Cross-references\": null,\n            \"Logical dependencies\": \"Rear lot line is farthest and most parallel to street\"\n        }\n    }\n]\n```"
+  },
+  "timestamp": "2025-09-16 14:42:46",
+  "model": "openai/gpt-4o",
+  "success": true
+}

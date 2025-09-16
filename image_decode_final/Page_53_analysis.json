@@ -1,0 +1,115 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_53.png",
+  "image_name": "Page_53.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Grade\n\nWhen measuring\n\nUse\n\nWhich is defined as\n\nIllus.\n\nThe height of a\nstructure on land with\nnatural slope \u2264 10%\n\nExisting\nGrade\n\nfor each building or structure,\nthe lowest point of adjacent\nground elevation prior to\ngrading or fill\n\nFig 44 on\nthis page\n\nThe height of a\nstructure on land with\nnatural slope > 10%\n\nGrade\n\nadjacent ground elevation of\nthe finished or existing grade,\nwhichever is lower\u2014at any\npoint of the structure\n\nFig 45 on\nthis page\n\nA daylight plane\n\nAverage\ngrade\n\naverage of the grade at the\nmidpoint of the building and\nthe grade at the closest point\non the abutting site\n\nFigs 20-21\npp. 26-27\n\nFig 44 Existing vs. Finished grade\n\nHeight: measured\nto top of roof material\nof the highest peak\n\nFig 45 Height limits for structures on slopes greater than 10%\n\n30' above existing grade\n30' above finished\n\nThe structure must comply\nwith the lower of the two\nlimits at all points along\nthe slope\n\nHeight\n\nHeight\n\nFig 46 Comparison of different grades\n\nFinished grade (after fill)\nExisting grade (before fill)\n\nLowest point of ground eleva-\ntion before fill (existing grade)\nadjacent to the structure\n\n10:10\n100%\n\n5:10\n50%\n\n3:10\n33%\n\n1:10\n10%\n\n47",
+      "visual_elements": [
+        {
+          "type": "table",
+          "description": "A table defining 'Grade' based on 'When measuring', 'Use', 'Which is defined as', and 'Illus.'. It contains three rows of definitions for different scenarios.",
+          "location": "Top left"
+        },
+        {
+          "type": "diagram",
+          "description": "Figure 45: Height limits for structures on slopes greater than 10%. It shows two houses on a sloped terrain. Dashed lines indicate the existing grade (before fill) and the finished grade. Arrows indicate 'Height' measurements from the grade to the roof peak. Two horizontal lines are labeled '30' above existing grade' and '30' above finished'. A text box explains that the structure must comply with the lower of the two limits.",
+          "location": "Top right"
+        },
+        {
+          "type": "diagram",
+          "description": "Figure 44: Existing vs. Finished grade. This diagram illustrates a single house with its foundation. It shows the 'Existing grade (before fill)' and 'Finished grade (after fill)'. An arrow indicates 'Height: measured to top of roof material of the highest peak'. A callout points to the 'Lowest point of ground elevation before fill (existing grade) adjacent to the structure'.",
+          "location": "Bottom left"
+        },
+        {
+          "type": "chart",
+          "description": "Figure 46: Comparison of different grades. A line graph with a grid, showing four diagonal lines representing different slopes: 1:10 (10%), 3:10 (33%), 5:10 (50%), and 10:10 (100%).",
+          "location": "Bottom right"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Natural slope for Existing Grade definition",
+          "value": "10",
+          "unit": "%"
+        },
+        {
+          "parameter": "Natural slope for Grade definition",
+          "value": "10",
+          "unit": "%"
+        },
+        {
+          "parameter": "Height limit above existing grade",
+          "value": "30",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Height limit above finished grade",
+          "value": "30",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Slope 1",
+          "value": "1:10",
+          "unit": "ratio"
+        },
+        {
+          "parameter": "Slope 1 percentage",
+          "value": "10",
+          "unit": "%"
+        },
+        {
+          "parameter": "Slope 2",
+          "value": "3:10",
+          "unit": "ratio"
+        },
+        {
+          "parameter": "Slope 2 percentage",
+          "value": "33",
+          "unit": "%"
+        },
+        {
+          "parameter": "Slope 3",
+          "value": "5:10",
+          "unit": "ratio"
+        },
+        {
+          "parameter": "Slope 3 percentage",
+          "value": "50",
+          "unit": "%"
+        },
+        {
+          "parameter": "Slope 4",
+          "value": "10:10",
+          "unit": "ratio"
+        },
+        {
+          "parameter": "Slope 4 percentage",
+          "value": "100",
+          "unit": "%"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Grade",
+        "subheadings": [
+          "When measuring",
+          "Use",
+          "Which is defined as",
+          "Illus."
+        ],
+        "sections": [
+          "Fig 44 Existing vs. Finished grade",
+          "Fig 45 Height limits for structures on slopes greater than 10%",
+          "Fig 46 Comparison of different grades"
+        ]
+      },
+      "additional_notes": [],
+      "cross_references": [
+        "Fig 44 on this page",
+        "Fig 45 on this page",
+        "Figs 20-21 pp. 26-27"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-11 14:59:28",
+  "model_used": "google/gemini-2.5-flash"
+}

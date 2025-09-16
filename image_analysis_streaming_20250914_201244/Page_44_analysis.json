@@ -1,0 +1,104 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_44.png",
+  "image_name": "Page_44.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Attached garages/carports site planning\n\n\u2022 Attached garages must comply with same setbacks as main dwelling.\n\nNote: Uncovered spaces must be located beyond the required frontyard and beyond the first 10' of the street-side yard.\n\nFig 33 Examples of site planning solutions for attached garages/carports\n\nA 1-car garage with 2nd space (uncovered) located in the sideyard\n\nB 1-car garage with 2nd space (uncovered) located in the driveway\n\nC 2-car garage with no uncovered spaces\n\nKey\n\u2014 Curb\n\u2014 Lot line\n[pattern] Sidewalk\n- - - - Required setbacks\n[box with dashed border] Buildable area\n[solid grey box] Dwelling\n[solid black box] Parking structure\n[diagonal lines pattern] No-parking area\n[car icon] Uncovered space\n\nInterior lot example\nRear yard\nBuildable area\nMain dwelling\n1-car attached\n\nInterior lot example\nRear yard\nBuildable area\nMain dwelling\n1-car attached\n\nCorner lot example\nRear yard\nBuildable area\nMain dwelling\n2-car attached\n\nDistance of 1' from sidewalk\n\n10'\n\nFront yard\nStreet-side yard\n\n",
+      "visual_elements": [
+        {
+          "type": "figure",
+          "description": "Figure 33 shows three schematic site planning examples for attached garages/carports. Each example depicts a lot layout with labeled areas such as 'Rear yard', 'Front yard', 'Street-side yard', 'Buildable area', and 'Main dwelling'. The figure includes three lot types: two 'Interior lot examples' and one 'Corner lot example'.\n\n- Example A: Shows a 1-car garage attached to the main dwelling with a second uncovered parking space located in the sideyard. The garage is adjacent to the sidewalk with a 1-foot distance from the sidewalk.\n- Example B: Shows a 1-car garage attached to the main dwelling with a second uncovered parking space located in the driveway.\n- Example C: Shows a 2-car garage attached to the main dwelling with no uncovered spaces.\n\nThe figure uses a key to denote various elements: solid lines for curb and lot line, a patterned area for sidewalk, dashed lines for required setbacks, a dashed box for buildable area, solid grey for dwelling, solid black for parking structure, diagonal lines for no-parking area, and a car icon for uncovered space. A 10-foot measurement is shown indicating the required distance for uncovered spaces from the street-side yard.\n\nThe figure is positioned at the bottom half of the page.",
+          "location": "Bottom half of the page"
+        },
+        {
+          "type": "text box",
+          "description": "A grey shaded note box containing the text: 'Note: Uncovered spaces must be located beyond the required frontyard and beyond the first 10' of the street-side yard.'",
+          "location": "Upper right quadrant of the page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Distance of uncovered spaces from street-side yard",
+          "value_type": "Measurement",
+          "value": "10",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Distance of garage from sidewalk",
+          "value_type": "Measurement",
+          "value": "1",
+          "unit": "foot"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Attached garages/carports site planning",
+        "subheadings": [],
+        "sections": []
+      },
+      "additional_notes": [
+        "Page number 38 at bottom left corner.",
+        "No handwritten annotations or stamps detected.",
+        "Text and figure are clear and legible."
+      ],
+      "cross_references": [
+        "Fig 33 referenced as example figure for site planning solutions for attached garages/carports."
+      ],
+      "conditions_and_qualifiers": {
+        "qualifiers": [
+          {
+            "id": "q1",
+            "text": "Attached garages must comply with same setbacks as main dwelling.",
+            "applies_to_conditions": [
+              "c1"
+            ],
+            "scope": "Global"
+          }
+        ],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "Uncovered spaces must be located beyond the required frontyard and beyond the first 10' of the street-side yard.",
+            "value_type": "Measurement",
+            "operator": ">",
+            "threshold_value": "10",
+            "unit": "feet"
+          }
+        ],
+        "logical_relationships": [
+          {
+            "operation": "AND",
+            "condition_ids": [
+              "c1"
+            ],
+            "expression": "Uncovered spaces must be located beyond the required frontyard AND beyond the first 10' of the street-side yard.",
+            "evaluation_order": 1
+          }
+        ],
+        "execution_sequence": [
+          {
+            "step": 1,
+            "action": "Ensure attached garages comply with same setbacks as main dwelling.",
+            "condition_ids": [],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 2,
+            "action": "Locate uncovered parking spaces beyond the required frontyard and beyond the first 10 feet of the street-side yard.",
+            "condition_ids": [
+              "c1"
+            ],
+            "qualifier_ids": [],
+            "dependencies": [
+              1
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:14:08",
+  "model_used": "openai/gpt-4.1-mini"
+}

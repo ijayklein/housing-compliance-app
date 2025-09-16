@@ -1,0 +1,74 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_17.md",
+  "file_name": "Page_17.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "Title": "Vaulted entry features",
+        "Rule": {
+          "Qualifiers": {
+            "Scope": "Entry features",
+            "Applicability": "Entry features greater than 12' high",
+            "Exclusions": "Entry features 12' high or less"
+          },
+          "Variables": {
+            "Dimensional": {
+              "Height": "greater than 12 feet"
+            },
+            "Usage parameters": {
+              "Gross floor area": "counts twice if entryway is vaulted"
+            }
+          },
+          "Constants": {
+            "Numerical values": {
+              "Height threshold": "12 feet"
+            }
+          },
+          "Conditions": {
+            "Mandatory": "Entry features greater than 12' high are considered vaulted",
+            "Conditional logic": "If entryway is vaulted, area counts twice"
+          },
+          "Exceptions": {
+            "Explicit deviations": "None specified"
+          },
+          "Relationships": {
+            "Hierarchical": "Entry features > Vaulted entry features",
+            "Logical dependencies": "Height measurement determines vaulted status"
+          }
+        }
+      },
+      {
+        "Title": "Measurement of entry feature height",
+        "Rule": {
+          "Qualifiers": {
+            "Scope": "Measurement of entry feature height",
+            "Applicability": "Determining vaulted status",
+            "Exclusions": "None specified"
+          },
+          "Variables": {
+            "Dimensional": {
+              "Height": "Measured from grade to intersection of front facade and top of roof material"
+            }
+          },
+          "Constants": {
+            "Standards": "Use Figure 6 - 8 as examples"
+          },
+          "Conditions": {
+            "Mandatory": "Height must be measured to determine vaulted status"
+          },
+          "Exceptions": {
+            "Explicit deviations": "None specified"
+          },
+          "Relationships": {
+            "Cross-references": "Refer to Figure 6 - 8 for measurement examples"
+          }
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n    {\n        \"Title\": \"Vaulted entry features\",\n        \"Rule\": {\n            \"Qualifiers\": {\n                \"Scope\": \"Entry features\",\n                \"Applicability\": \"Entry features greater than 12' high\",\n                \"Exclusions\": \"Entry features 12' high or less\"\n            },\n            \"Variables\": {\n                \"Dimensional\": {\n                    \"Height\": \"greater than 12 feet\"\n                },\n                \"Usage parameters\": {\n                    \"Gross floor area\": \"counts twice if entryway is vaulted\"\n                }\n            },\n            \"Constants\": {\n                \"Numerical values\": {\n                    \"Height threshold\": \"12 feet\"\n                }\n            },\n            \"Conditions\": {\n                \"Mandatory\": \"Entry features greater than 12' high are considered vaulted\",\n                \"Conditional logic\": \"If entryway is vaulted, area counts twice\"\n            },\n            \"Exceptions\": {\n                \"Explicit deviations\": \"None specified\"\n            },\n            \"Relationships\": {\n                \"Hierarchical\": \"Entry features > Vaulted entry features\",\n                \"Logical dependencies\": \"Height measurement determines vaulted status\"\n            }\n        }\n    },\n    {\n        \"Title\": \"Measurement of entry feature height\",\n        \"Rule\": {\n            \"Qualifiers\": {\n                \"Scope\": \"Measurement of entry feature height\",\n                \"Applicability\": \"Determining vaulted status\",\n                \"Exclusions\": \"None specified\"\n            },\n            \"Variables\": {\n                \"Dimensional\": {\n                    \"Height\": \"Measured from grade to intersection of front facade and top of roof material\"\n                }\n            },\n            \"Constants\": {\n                \"Standards\": \"Use Figure 6 - 8 as examples\"\n            },\n            \"Conditions\": {\n                \"Mandatory\": \"Height must be measured to determine vaulted status\"\n            },\n            \"Exceptions\": {\n                \"Explicit deviations\": \"None specified\"\n            },\n            \"Relationships\": {\n                \"Cross-references\": \"Refer to Figure 6 - 8 for measurement examples\"\n            }\n        }\n    }\n]\n```"
+  },
+  "timestamp": "2025-09-16 14:42:13",
+  "model": "openai/gpt-4o",
+  "success": true
+}

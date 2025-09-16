@@ -1,0 +1,119 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_40.png",
+  "image_name": "Page_40.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Parking\n\nParking regulations af-\nfect the appearance of\nthe streetscapes in our\nresidential neighbor-\nhoods by minimizing\nthe number of cars\nparked on the street\nand in the front yards\nby requiring that there\nare parking spaces\navailable deeper into\nthe lot.\n\nCode sections\nPage 34\n18.12.060, 18.83.090\nPage 35\n18.83.090, 18.83.110(a)\nPage 36\n18.12.060\nPage 37\n18.12.040 (f)\nPage 38\n18.12.060\nPage 39\n18.12.080 (b)\n\n34\n\nParking space standards\n\nFig 28 Parking space dimensions for garage\nand uncovered space in plan view\n\n\u2022 Two spaces are required on the lot (per\n  dwelling).\n\n\u2022 They may NOT be located in the\n  required front yard or, first 10 ft of,\n  required street side yard.\n\n\u2022 2nd dwelling units have same require-\n  ments.\n\n\u2022 No underground parking garages except\n  by variance.\n\n\u2022 One of the two spaces must be covered.\n\n\u2022 To be considered detached, a covered-\n  parking structure must be a minimum of\n  3' from the main dwelling.\n\n\u2022 Minimim size for an uncovered space is\n  8.5' x 18'.\n\n* \u2022 Minimum clearance inside a covered\n  parking structure to be 10' x 20' for\n  each space. Therefore, a two-car garage\n  or carport to be 20' x 20' clear inside.\n\n\u2022 Minimum vertical clearance: 7'.\n\n* Clear area for parking space must be free\n  of other uses e.g., water heaters, clothes\n  washers or dryer, bicycle parking facili-\n  ties, etc.",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "A plan view diagram titled 'Fig 28 Parking space dimensions for garage and uncovered space in plan view'. It illustrates two tandem parking spaces. The top space is labeled 'Required covered space' and shows a car inside a garage-like structure. Its dimensions are marked as '10' min inside clearance' for width and '20' min. inside clearance' for length. The bottom space is labeled '2nd space (uncovered) Tandem OK' and shows a car in an open space. Its dimensions are marked as '8.5' min uncovered space' for width and '18' min. uncovered space' for length. Three asterisks are present on the diagram, one pointing to the 10' width dimension, one to the 20' length dimension, and one to the general area of the uncovered space, likely referencing the bulleted notes.",
+          "location": "Right side of the page, from middle to bottom."
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Required spaces per dwelling",
+          "value": "2",
+          "unit": "spaces"
+        },
+        {
+          "parameter": "Front yard parking restriction",
+          "value": "NOT be located in the required front yard",
+          "unit": null
+        },
+        {
+          "parameter": "Street side yard parking restriction",
+          "value": "first 10 ft",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Required covered spaces",
+          "value": "One of the two",
+          "unit": "spaces"
+        },
+        {
+          "parameter": "Minimum distance for detached covered structure",
+          "value": "3",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum size for uncovered space",
+          "value": "8.5' x 18'",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum clearance inside covered structure (per space)",
+          "value": "10' x 20'",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Clear inside dimension for two-car garage/carport",
+          "value": "20' x 20'",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum vertical clearance",
+          "value": "7",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Diagrammed covered space width",
+          "value": "10' min",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Diagrammed covered space length",
+          "value": "20' min",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Diagrammed uncovered space width",
+          "value": "8.5' min",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Diagrammed uncovered space length",
+          "value": "18' min",
+          "unit": "feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Parking space standards",
+        "subheadings": [
+          "Parking",
+          "Code sections"
+        ],
+        "sections": [
+          "18.12.060",
+          "18.83.090",
+          "18.83.110(a)",
+          "18.12.040 (f)",
+          "18.12.080 (b)"
+        ]
+      },
+      "additional_notes": [
+        "The page has a two-column layout. The left column is a dark gray sidebar containing the main title, an introductory paragraph, and code references. The right column contains the main content.",
+        "The page number '34' is located at the bottom left corner.",
+        "Asterisks (*) are used as visual markers. Large asterisks appear next to two bullet points on the right side. Three smaller asterisks are used within the diagram to highlight specific dimensions and areas.",
+        "The text 'Minimim' in the bullet point 'Minimim size for an uncovered space is 8.5' x 18'' appears to be a typo for 'Minimum'."
+      ],
+      "cross_references": [
+        "Fig 28",
+        "Page 34",
+        "Code section 18.12.060",
+        "Code section 18.83.090",
+        "Page 35",
+        "Code section 18.83.110(a)",
+        "Page 36",
+        "Page 37",
+        "Code section 18.12.040 (f)",
+        "Page 38",
+        "Page 39",
+        "Code section 18.12.080 (b)"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-11 14:36:29",
+  "model_used": "google/gemini-2.5-pro"
+}

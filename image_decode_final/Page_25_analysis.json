@@ -1,0 +1,54 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_25.png",
+  "image_name": "Page_25.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Fireplaces, chimneys, sheds, planters, and other projections\n\n\u2022 Fireplaces shall be included in the gross floor area (counted one time) regardless of configura-\ntion or design.\n\u2022 Sheds, planters, and other projections that are higher than 5' count toward gross floor area\nregardless of configuration or design.\n\nFig 14 Fireplaces, chimneys, sheds, etc.\n\nNote: In 2000, the city of Palo Alto\npassed an ordinance prohibiting the\nconstruction of new wood-burning fire-\nplaces. For details about and possible\nhibition, see the\nter 9.06.030\n\nChimneys on the\nupper floors DO\nNOT COUNT\n\nHeight\n\nAll configurations of fireplaces, chimneys, and buttresses\nCOUNT ONCE towards the gross floor area.\nNote: Fireplaces not connected to the house are treated\nlike accessory structures, they and count towards FAR if\nthey are greater than 120 sf. They count towards lot\ncoverage always, regardless of size.\n\nMiscellaneous appendages e.g., tool\nsheds, equipment enclosures, play\nhouses, etc., that are greater than 5' in\nheight, DO COUNT toward gross floor\narea. (Note: Neither appendages like\nthis nor noise-producing equipment may\nbe located in the required yards).\n\n19",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "An isometric line drawing of a house with multiple chimneys and a small shed-like structure. Arrows and text labels point to specific elements to explain how they are counted for gross floor area, FAR, and lot coverage. One chimney is shown on an upper floor with a 'DO NOT COUNT' label. Another chimney and a buttress are shown at ground level with a label indicating they 'COUNT ONCE towards the gross floor area'. A separate shed-like structure is shown with a 'Height' dimension line and a label explaining that miscellaneous appendages greater than 5' in height 'DO COUNT toward gross floor area'.",
+          "location": "Middle to bottom of the page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Shed/projection height threshold for counting towards gross floor area",
+          "value": "5",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Fireplace size threshold for counting towards FAR if not connected to house",
+          "value": "120",
+          "unit": "square feet"
+        },
+        {
+          "parameter": "Year of Palo Alto ordinance prohibiting new wood-burning fireplaces",
+          "value": "2000",
+          "unit": null
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Fireplaces, chimneys, sheds, planters, and other projections",
+        "subheadings": [],
+        "sections": [
+          "Fig 14 Fireplaces, chimneys, sheds, etc.",
+          "Note: In 2000, the city of Palo Alto passed an ordinance prohibiting the construction of new wood-burning fire-places. For details about and possible hibition, see the ter 9.06.030",
+          "Chimneys on the upper floors DO NOT COUNT",
+          "All configurations of fireplaces, chimneys, and buttresses COUNT ONCE towards the gross floor area.",
+          "Note: Fireplaces not connected to the house are treated like accessory structures, they and count towards FAR if they are greater than 120 sf. They count towards lot coverage always, regardless of size.",
+          "Miscellaneous appendages e.g., tool sheds, equipment enclosures, play houses, etc., that are greater than 5' in height, DO COUNT toward gross floor area. (Note: Neither appendages like this nor noise-producing equipment may be located in the required yards)."
+        ]
+      },
+      "additional_notes": [
+        "The page number '19' is present in the bottom right corner.",
+        "The text 'hibition, see the ter 9.06.030' appears to be a partial or cut-off sentence, likely 'prohibition, see Chapter 9.06.030'."
+      ],
+      "cross_references": [
+        "Chapter 9.06.030 (referenced for details on wood-burning fireplace prohibition)"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-11 14:59:13",
+  "model_used": "google/gemini-2.5-flash"
+}

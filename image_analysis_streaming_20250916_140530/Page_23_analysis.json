@@ -1,0 +1,12 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_23.png",
+  "image_name": "Page_23.png",
+  "analysis": {
+    "raw_content": "Extracted content from the page image\n\nTitle\n- 2nd & 3rd floor equivalency\n\nPrimary rule (verbatim)\n- Areas higher than 17' and 26' above the first floor (that do not already count as floor area e.g., open atrium spaces and inaccessible attic spaces), count toward the gross floor area in the form of 2nd and 3rd floor equivalency regardless of the floor plan or usage of the space. Stairwells will be measured the same way that vaulted ceiling spaces are measured.\n\nExamples statement\n- In the examples of Fig 12 below the highlighted areas count as follows:\n\nArea A\n- once as 1st floor,\n- again as 2nd floor, and\n- a third time as 3rd floor equivalency\n\nArea B\n- once as 1st floor,\n- again as 2nd floor equivalency\n\nNote (verbatim)\n- 200 sf of 3rd floor equivalency may be exempted where roof pitch is 4:12 or steeper (see \u201cHeight\u201d section).\n\nFigure caption\n- Fig 12 2nd & 3rd floor equivalency\n\nFigure callouts and labels visible in both building sections\n- 26'\n- 17'\n- Top of roof material (Typical)\n- Top of finished floor (Typical)\n- 1st flr (left figure label at first floor)\n- 1st fl (right figure label at first floor)\n- Inaccessible attic (or vaulted ceiling)\n- Vaulted ceiling space (appears over Area B in right figure)\n- A (shaded area label)\n- B (shaded area label)\n- Width of area that counts as 3rd floor equivalency\n- Width of area that counts as 2nd floor equivalency\n- Width of area that counts as 2nd floor (baseline width noted along the first level)\n\nPage number\n- 17",
+    "content_length": 1489,
+    "parse_error": false
+  },
+  "timestamp": "2025-09-16 14:07:46",
+  "model": "openai/gpt-5",
+  "success": true
+}

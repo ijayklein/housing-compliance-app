@@ -1,0 +1,86 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_15.png",
+  "image_name": "Page_15.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Step 2: Determine which perimeter segments abut the house walls. These are closed segments, or sides.\n\nIn Fig 5 sides A, B, & C abut the house walls. These are considered to be closed segments.\n\nStep 3: Determine the status (open/closed) of the remaining segments based on the design. If at least 50% of the facade area is open, then the segment or side is considered open.\n\nFor purposes of assessing the openess of the facade:\n\u2022 The height of the segment facades is measured from the top of the porch floor to the the point where the segment facade intersects with the top of the roof material.\n\u2022 The widths of the segment facades are measured from the same plane. Allowances may be made for structural supports that are not excessive.",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Floor plan segment showing three labeled sides A, B, and C with dimensions: A = 3', B = 8', C = 10'. These sides abut the house walls and are considered closed segments.",
+          "location": "Top right"
+        },
+        {
+          "type": "diagram",
+          "description": "Four elevation views of facade segments labeled D, E, F, and G with widths and open/closed status:\n- D: 7', Open\n- E: 14', Closed (because of decorative glass wall)\n- F: 24', Open\n- G: 4', Open\nHeight of segment facades is marked as 8' from porch floor to intersection of facade and roof material.",
+          "location": "Bottom half"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Segment A width",
+          "value": "3",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Segment B width",
+          "value": "8",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Segment C width",
+          "value": "10",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Segment D width",
+          "value": "7",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Segment E width",
+          "value": "14",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Segment F width",
+          "value": "24",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Segment G width",
+          "value": "4",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Facade segment height",
+          "value": "8",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Facade openness threshold",
+          "value": "50",
+          "unit": "percent"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": null,
+        "subheadings": [
+          "Step 2",
+          "Step 3",
+          "For purposes of assessing the openess of the facade:"
+        ],
+        "sections": []
+      },
+      "additional_notes": [
+        "No handwritten notes or stamps present.",
+        "Text is clear and legible with no quality issues."
+      ],
+      "cross_references": [
+        "Reference to Fig 5 in Step 2."
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-14 19:40:53",
+  "model_used": "openai/gpt-4.1-mini"
+}

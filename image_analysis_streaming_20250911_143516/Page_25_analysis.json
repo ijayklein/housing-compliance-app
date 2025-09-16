@@ -1,0 +1,81 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_25.png",
+  "image_name": "Page_25.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Fireplaces, chimneys, sheds, planters, and other projections\n\n\u2022 Fireplaces shall be included in the gross floor area (counted one time) regardless of configura-\ntion or design.\n\u2022 Sheds, planters, and other projections that are higher than 5' count toward gross floor area\nregardless of configuration or design.\n\n\nFig 14 Fireplaces, chimneys, sheds, etc.\n\nNote: In 2000, the city of Palo Alto\npassed an ordinance prohibiting the\nconstruction of new wood-burning fire-\nplaces. For details about and possible\nprohibition, see the\nChapter 9.06.030\n\nChimneys on the\nupper floors DO\nNOT COUNT\n\nHeight\n\nMiscellaneous appendages e.g., tool\nsheds, equipment enclosures, play\nhouses, etc., that are greater than 5' in\nheight, DO COUNT toward gross floor\narea. (Note: Neither appendages like\nthis nor noise-producing equipment may\nbe located in the required yards).\n\nAll configurations of fireplaces, chimneys, and buttresses\nCOUNT ONCE towards the gross floor area.\nNote: Fireplaces not connected to the house are treated\nlike accessory structures, they and count towards FAR if\nthey are greater than 120 sf. They count towards lot\ncoverage always, regardless of size.\n\n19",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "A line drawing labeled 'Fig 14' illustrating a two-story house with various projections to explain zoning rules. The diagram shows a house with a gabled roof and a covered porch. Several elements are highlighted with pointers and annotations: 1. A chimney on the side of the upper floor is labeled 'Chimneys on the upper floors DO NOT COUNT'. 2. Two large, ground-based chimneys attached to the house are covered by a single annotation: 'All configurations of fireplaces, chimneys, and buttresses COUNT ONCE towards the gross floor area. Note: Fireplaces not connected to the house are treated like accessory structures, they and count towards FAR if they are greater than 120 sf. They count towards lot coverage always, regardless of size.'. 3. A detached shed in the yard is annotated: 'Miscellaneous appendages e.g., tool sheds, equipment enclosures, play houses, etc., that are greater than 5' in height, DO COUNT toward gross floor area. (Note: Neither appendages like this nor noise-producing equipment may be located in the required yards).'. A vertical line with arrows next to the shed indicates its 'Height'.",
+          "location": "Center of the page, below the main heading and bullet points."
+        },
+        {
+          "type": "text box",
+          "description": "A gray-shaded rectangular box containing a note about a Palo Alto ordinance regarding wood-burning fireplaces.",
+          "location": "Upper right quadrant, partially overlapping the main diagram."
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Fireplace count in gross floor area",
+          "value": "one time",
+          "unit": "N/A"
+        },
+        {
+          "parameter": "Projection height threshold for gross floor area",
+          "value": "5'",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Palo Alto ordinance year",
+          "value": "2000",
+          "unit": "year"
+        },
+        {
+          "parameter": "Accessory structure FAR threshold",
+          "value": "120",
+          "unit": "sf"
+        },
+        {
+          "parameter": "Figure Number",
+          "value": "14",
+          "unit": "N/A"
+        },
+        {
+          "parameter": "Page Number",
+          "value": "19",
+          "unit": "N/A"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Fireplaces, chimneys, sheds, planters, and other projections",
+        "subheadings": [
+          "Fig 14 Fireplaces, chimneys, sheds, etc."
+        ],
+        "sections": [
+          "Page 19"
+        ]
+      },
+      "additional_notes": [
+        "The page number '19' is located in the bottom right corner.",
+        "The main rules are presented as two bullet points in a gray-shaded box at the top of the page.",
+        "A separate gray-shaded text box in the upper right provides a 'Note' with a cross-reference to a city ordinance."
+      ],
+      "cross_references": [
+        {
+          "reference_to": "Chapter 9.06.030",
+          "location_on_page": "Note box in the upper right quadrant",
+          "description": "Reference for details on a 2000 Palo Alto ordinance prohibiting the construction of new wood-burning fireplaces."
+        },
+        {
+          "reference_to": "Fig 14",
+          "location_on_page": "Caption below the main bullet points",
+          "description": "Label for the main diagram on the page illustrating rules for fireplaces, chimneys, and sheds."
+        }
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-11 14:36:08",
+  "model_used": "google/gemini-2.5-pro"
+}

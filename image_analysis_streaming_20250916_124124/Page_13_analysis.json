@@ -1,0 +1,19 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_13.png",
+  "image_name": "Page_13.png",
+  "analysis": {
+    "page_number": "unknown",
+    "main_heading": "PARSE_ERROR",
+    "text_content": "Failed to parse response: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)",
+    "tables": [],
+    "figures": [],
+    "zoning_rules": [],
+    "code_references": [],
+    "quality_notes": "JSON parsing failed: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)",
+    "raw_response": "```json\n{\n  \"page_number\": \"\",\n  \"main_heading\": \"Fig 4 Types of porches and entry ways\",\n  \"text_content\": \"Fig 4 Types of porches and entry ways\\n\\nA Roofed porch\\n\\nC Vaulted entry way\\nHeight\\ngreater than 12'\\nabove grade\\n\\nSee how to measure height of porches &\\nentry features in Figs 6-8 on pp. 11-13\\n\\nB Roofed entry way\\n(not vaulted)\\nHeight\\nless than 12'\\nabove grade\\n\\nD Combination porch & vaulted entry way\\nHeight\\ngreater than 12'\\nabove grade\",\n  \"tables\": [],\n  \"figures\": [\n    {\n      \"number\": \"Fig 4\",\n      \"caption\": \"Types of porches and entry ways\"\n    }\n  ],\n  \"rules\": [\n    {\n      \"type\": \"height requirement\",\n      \"text\": \"Vaulted entry way height greater than 12' above grade\",\n      \"values\": [\"12'\"]\n    },\n    {\n      \"type\": \"height requirement\", \n      \"text\": \"Roofed entry way (not vaulted) height less than 12' above grade\",\n      \"values\": [\"12'\"]\n    },\n    {\n      \"type\": \"height requirement\",\n      \"text\": \"Combination porch & vaulted entry way he",
+    "parse_error": true
+  },
+  "analysis_timestamp": "2025-09-16 12:41:38",
+  "model_used": "anthropic/claude-sonnet-4",
+  "success": false
+}

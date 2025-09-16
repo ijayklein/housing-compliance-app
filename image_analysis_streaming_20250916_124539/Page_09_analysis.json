@@ -1,0 +1,23 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_09.png",
+  "image_name": "Page_09.png",
+  "analysis": {
+    "page": "3",
+    "heading": "Gross vs. net lot area",
+    "content": "Gross lot area is the size of the lot\u2014from lot line to lot line. Development potential is based on the net lot area and while gross and net lot area are the same for most lots in Palo Alto, there are some lots for which portions must be excluded from the gross lot area to establish the net lot area. Areas excluded from the gross lot size are: Street right-of-way (Area A of Fig 1 on this page), 'Pole' portion of a flag lot (Area B of Fig 2 on this page), Creek channel (Area C of Fig 3 on this page)",
+    "figures": [
+      "Fig 1 Gross lot area exclusions: street easements - Shows lot with boundaries extending into public ROW",
+      "Fig 2 Gross lot area exclusions: flag-lot 'poles' - Illustrates flag lot configurations",
+      "Fig 3 Gross lot area exclusions: creek easements - Depicts lot with creek channel"
+    ],
+    "tables": [],
+    "codes": [
+      "Note: Private access easements that provide access to lots are NOT subtracted from the lot on which they occur",
+      "Note: In some areas of Palo Alto, like Barron Park, it is not unusual for the lot to extend to the middle of the street",
+      "Note: The channel or area to be subtracted is defined by Santa Clara Valley Water District's easement or, if there is no easement, the top-of-bank"
+    ]
+  },
+  "timestamp": "2025-09-16 12:45:52",
+  "model": "anthropic/claude-3.5-sonnet",
+  "success": true
+}

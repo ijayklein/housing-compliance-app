@@ -1,0 +1,118 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_16.png",
+  "image_name": "Page_16.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Step 4: Finalize the determination of which segments are closed and which are open, total the linear feet in each\ncategory, and compare the totals.\n\nFor the porch in Fig 5, the summary is as follows:\n\nClosed\n\nSegment Feet\nA\n3'\nB\n8'\nC\n10'\nE\n14'\n\n35'\n\nOpen\n\nSegment Feet\nD\n7'\nF\n24'\nG\n4'\n\n35'\n\nConclusion: The perimeter of the porch in Fig 5 is 50% open and so the porch would NOT count toward gross floor area\n\nNote: If a porch floor is more than 30\" above\ngrade, the porch sides may need to be 36\" high for\nsafety reasons. This may cause the porch facade\nto be considered closed. Possible solutions to make\nsure the porch sides are considered open are\nillustrated to the right:\n\n\u2022 Railings (ballisters) instead of solid half walls.\n\u2022 A single safety rail above lower, solid half walls.\n\n10",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "A top-down view of a porch structure, showing various segments labeled A through G with their respective lengths. Segments A, B, C, E are shaded dark gray, indicating 'Closed segments'. Segments D, F, G are shaded light gray, indicating 'Open segments'. Dimensions are provided for each segment. The overall dimensions of the porch are also indicated.",
+          "location": "Top right and middle of the page"
+        },
+        {
+          "type": "legend",
+          "description": "A legend for the porch diagram, showing a dark gray square labeled 'Closed segments' and a light gray square labeled 'Open segments'.",
+          "location": "Top right, above the porch diagram"
+        },
+        {
+          "type": "table",
+          "description": "A two-column table summarizing the 'Closed' segments and their lengths, and another two-column table summarizing the 'Open' segments and their lengths. Both tables show a total of 35' at the bottom.",
+          "location": "Middle left of the page"
+        },
+        {
+          "type": "diagram",
+          "description": "Two side-by-side cross-sectional diagrams of porch railings. The left diagram shows a porch with vertical railings (ballisters) and a safety rail. The right diagram shows a porch with a lower solid half wall and a single safety rail above it. Both diagrams indicate a 'Porch flr' (porch floor) and 'Grade' (ground level). Dimensions of 30\" from grade to porch floor and 36\" from porch floor to safety rail are shown.",
+          "location": "Bottom right of the page"
+        },
+        {
+          "type": "arrow",
+          "description": "A large gray arrow pointing from the 'Note' box on the bottom left to the two cross-sectional diagrams on the bottom right, indicating that the diagrams illustrate the solutions mentioned in the note.",
+          "location": "Bottom middle of the page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Segment A length",
+          "value": "3",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Segment B length",
+          "value": "8",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Segment C length",
+          "value": "10",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Segment E length",
+          "value": "14",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Total Closed segments length",
+          "value": "35",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Segment D length",
+          "value": "7",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Segment F length",
+          "value": "24",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Segment G length",
+          "value": "4",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Total Open segments length",
+          "value": "35",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Porch openness percentage",
+          "value": "50",
+          "unit": "percent"
+        },
+        {
+          "parameter": "Minimum porch floor height above grade for safety considerations",
+          "value": "30",
+          "unit": "inches"
+        },
+        {
+          "parameter": "Required porch side height for safety reasons",
+          "value": "36",
+          "unit": "inches"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": null,
+        "subheadings": [
+          "Step 4:",
+          "Conclusion:",
+          "Note:"
+        ],
+        "sections": [
+          "Closed",
+          "Open"
+        ]
+      },
+      "additional_notes": [
+        "Page number '10' is present at the bottom left."
+      ],
+      "cross_references": [
+        "Fig 5"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-11 14:59:09",
+  "model_used": "google/gemini-2.5-flash"
+}

@@ -1,0 +1,191 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_42.md",
+  "file_name": "Page_42.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "rule": "Driveway Surface Standards",
+        "Qualifiers": {
+          "Scope": "Driveway surfaces",
+          "Applicability": "All driveways",
+          "Exclusions": null
+        },
+        "Variables": {
+          "Dimensional": [
+            {
+              "name": "Minimum driveway clearance",
+              "value": 10,
+              "unit": "feet"
+            },
+            {
+              "name": "Minimum driveway surface",
+              "value": 8,
+              "unit": "feet"
+            },
+            {
+              "name": "Minimum distance between curb cuts",
+              "value": 20,
+              "unit": "feet"
+            }
+          ],
+          "Material": [
+            {
+              "name": "Driveway surface material",
+              "options": [
+                "permeable",
+                "impermeable"
+              ],
+              "standard": "Public Works standards"
+            }
+          ],
+          "Environmental": [
+            {
+              "name": "Maximum impermeable surface in front yard",
+              "value": 40,
+              "unit": "percent"
+            }
+          ],
+          "Usage": null
+        },
+        "Constants": {
+          "Numerical values": null,
+          "Specs": null,
+          "Standards": "Public Works standards",
+          "Procedures": "Street-work permit required for work done within the public right-of-way"
+        },
+        "Conditions": {
+          "Mandatory": [
+            "Driveway surface within 10' of the public right-of-way may not be of a loose material e.g., gravel",
+            "2nd dwelling units must share common driveway with main dwelling"
+          ],
+          "Optional": null,
+          "Conditional logic": null,
+          "Dependencies": null
+        },
+        "Exceptions": {
+          "Explicit deviations": null,
+          "Alternatives": null,
+          "Special cases": null
+        },
+        "Relationships": {
+          "Hierarchical": null,
+          "Cross-references": null,
+          "Logical dependencies": null
+        }
+      },
+      {
+        "rule": "Encouraged Safety Standards",
+        "Qualifiers": {
+          "Scope": "Driveway and curb cuts",
+          "Applicability": "All driveways",
+          "Exclusions": null
+        },
+        "Variables": {
+          "Dimensional": [
+            {
+              "name": "Minimum distance between curb cut and intersection curb face",
+              "value": 50,
+              "unit": "feet"
+            }
+          ],
+          "Material": null,
+          "Environmental": null,
+          "Usage": null
+        },
+        "Constants": {
+          "Numerical values": null,
+          "Specs": null,
+          "Standards": null,
+          "Procedures": null
+        },
+        "Conditions": {
+          "Mandatory": null,
+          "Optional": [
+            "No more than one curb cut per single frontage"
+          ],
+          "Conditional logic": null,
+          "Dependencies": null
+        },
+        "Exceptions": {
+          "Explicit deviations": null,
+          "Alternatives": null,
+          "Special cases": null
+        },
+        "Relationships": {
+          "Hierarchical": null,
+          "Cross-references": null,
+          "Logical dependencies": null
+        }
+      },
+      {
+        "rule": "Figure 31 Annotations",
+        "Qualifiers": {
+          "Scope": "Driveway sketches",
+          "Applicability": "All driveways",
+          "Exclusions": null
+        },
+        "Variables": {
+          "Dimensional": [
+            {
+              "name": "Minimum width for driveway surface",
+              "value": 8,
+              "unit": "feet"
+            },
+            {
+              "name": "Minimum width for driveway clearance",
+              "value": 10,
+              "unit": "feet"
+            }
+          ],
+          "Material": [
+            {
+              "name": "Driveway surface material",
+              "options": [
+                "pavers without mortar",
+                "Hollywood strips",
+                "gravel"
+              ],
+              "notes": "Grass between pavers or strips is acceptable"
+            }
+          ],
+          "Environmental": null,
+          "Usage": [
+            {
+              "name": "Maneuverability",
+              "condition": "Turns enroute to required parking spaces must be deemed maneuverable by the Transportation Division"
+            }
+          ]
+        },
+        "Constants": {
+          "Numerical values": null,
+          "Specs": null,
+          "Standards": "City standards for work within public ROW",
+          "Procedures": "Streetwork permit required for work done within the public ROW"
+        },
+        "Conditions": {
+          "Mandatory": [
+            "No gravel or similar loose materials within 10' of the public right-of-way (lot line)"
+          ],
+          "Optional": null,
+          "Conditional logic": null,
+          "Dependencies": null
+        },
+        "Exceptions": {
+          "Explicit deviations": null,
+          "Alternatives": null,
+          "Special cases": null
+        },
+        "Relationships": {
+          "Hierarchical": null,
+          "Cross-references": null,
+          "Logical dependencies": null
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n    {\n        \"rule\": \"Driveway Surface Standards\",\n        \"Qualifiers\": {\n            \"Scope\": \"Driveway surfaces\",\n            \"Applicability\": \"All driveways\",\n            \"Exclusions\": null\n        },\n        \"Variables\": {\n            \"Dimensional\": [\n                {\n                    \"name\": \"Minimum driveway clearance\",\n                    \"value\": 10,\n                    \"unit\": \"feet\"\n                },\n                {\n                    \"name\": \"Minimum driveway surface\",\n                    \"value\": 8,\n                    \"unit\": \"feet\"\n                },\n                {\n                    \"name\": \"Minimum distance between curb cuts\",\n                    \"value\": 20,\n                    \"unit\": \"feet\"\n                }\n            ],\n            \"Material\": [\n                {\n                    \"name\": \"Driveway surface material\",\n                    \"options\": [\"permeable\", \"impermeable\"],\n                    \"standard\": \"Public Works standards\"\n                }\n            ],\n            \"Environmental\": [\n                {\n                    \"name\": \"Maximum impermeable surface in front yard\",\n                    \"value\": 40,\n                    \"unit\": \"percent\"\n                }\n            ],\n            \"Usage\": null\n        },\n        \"Constants\": {\n            \"Numerical values\": null,\n            \"Specs\": null,\n            \"Standards\": \"Public Works standards\",\n            \"Procedures\": \"Street-work permit required for work done within the public right-of-way\"\n        },\n        \"Conditions\": {\n            \"Mandatory\": [\n                \"Driveway surface within 10' of the public right-of-way may not be of a loose material e.g., gravel\",\n                \"2nd dwelling units must share common driveway with main dwelling\"\n            ],\n            \"Optional\": null,\n            \"Conditional logic\": null,\n            \"Dependencies\": null\n        },\n        \"Exceptions\": {\n            \"Explicit deviations\": null,\n            \"Alternatives\": null,\n            \"Special cases\": null\n        },\n        \"Relationships\": {\n            \"Hierarchical\": null,\n            \"Cross-references\": null,\n            \"Logical dependencies\": null\n        }\n    },\n    {\n        \"rule\": \"Encouraged Safety Standards\",\n        \"Qualifiers\": {\n            \"Scope\": \"Driveway and curb cuts\",\n            \"Applicability\": \"All driveways\",\n            \"Exclusions\": null\n        },\n        \"Variables\": {\n            \"Dimensional\": [\n                {\n                    \"name\": \"Minimum distance between curb cut and intersection curb face\",\n                    \"value\": 50,\n                    \"unit\": \"feet\"\n                }\n            ],\n            \"Material\": null,\n            \"Environmental\": null,\n            \"Usage\": null\n        },\n        \"Constants\": {\n            \"Numerical values\": null,\n            \"Specs\": null,\n            \"Standards\": null,\n            \"Procedures\": null\n        },\n        \"Conditions\": {\n            \"Mandatory\": null,\n            \"Optional\": [\n                \"No more than one curb cut per single frontage\"\n            ],\n            \"Conditional logic\": null,\n            \"Dependencies\": null\n        },\n        \"Exceptions\": {\n            \"Explicit deviations\": null,\n            \"Alternatives\": null,\n            \"Special cases\": null\n        },\n        \"Relationships\": {\n            \"Hierarchical\": null,\n            \"Cross-references\": null,\n            \"Logical dependencies\": null\n        }\n    },\n    {\n        \"rule\": \"Figure 31 Annotations\",\n        \"Qualifiers\": {\n            \"Scope\": \"Driveway sketches\",\n            \"Applicability\": \"All driveways\",\n            \"Exclusions\": null\n        },\n        \"Variables\": {\n            \"Dimensional\": [\n                {\n                    \"name\": \"Minimum width for driveway surface\",\n                    \"value\": 8,\n                    \"unit\": \"feet\"\n                },\n                {\n                    \"name\": \"Minimum width for driveway clearance\",\n                    \"value\": 10,\n                    \"unit\": \"feet\"\n                }\n            ],\n            \"Material\": [\n                {\n                    \"name\": \"Driveway surface material\",\n                    \"options\": [\"pavers without mortar\", \"Hollywood strips\", \"gravel\"],\n                    \"notes\": \"Grass between pavers or strips is acceptable\"\n                }\n            ],\n            \"Environmental\": null,\n            \"Usage\": [\n                {\n                    \"name\": \"Maneuverability\",\n                    \"condition\": \"Turns enroute to required parking spaces must be deemed maneuverable by the Transportation Division\"\n                }\n            ]\n        },\n        \"Constants\": {\n            \"Numerical values\": null,\n            \"Specs\": null,\n            \"Standards\": \"City standards for work within public ROW\",\n            \"Procedures\": \"Streetwork permit required for work done within the public ROW\"\n        },\n        \"Conditions\": {\n            \"Mandatory\": [\n                \"No gravel or similar loose materials within 10' of the public right-of-way (lot line)\"\n            ],\n            \"Optional\": null,\n            \"Conditional logic\": null,\n            \"Dependencies\": null\n        },\n        \"Exceptions\": {\n            \"Explicit deviations\": null,\n            \"Alternatives\": null,\n            \"Special cases\": null\n        },\n        \"Relationships\": {\n            \"Hierarchical\": null,\n            \"Cross-references\": null,\n            \"Logical dependencies\": null\n        }\n    }\n]\n```"
+  },
+  "timestamp": "2025-09-16 14:43:21",
+  "model": "openai/gpt-4o",
+  "success": true
+}

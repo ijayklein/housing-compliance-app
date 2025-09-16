@@ -1,0 +1,121 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_53.md",
+  "file_name": "Page_53.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "rule": "Height measurement on land with natural slope \u2264 10%",
+        "Qualifiers": {
+          "Scope": "Height measurement",
+          "Applicability": "Structures on land with natural slope \u2264 10%",
+          "Exclusions": null
+        },
+        "Variables": {
+          "Dimensional": "Height of a structure",
+          "Material": null,
+          "Environmental": "Natural slope \u2264 10%",
+          "Usage": null
+        },
+        "Constants": {
+          "Numerical values": null,
+          "Specs": null,
+          "Standards": null,
+          "Procedures": "Use existing grade"
+        },
+        "Conditions": {
+          "Mandatory": "Use existing grade",
+          "Optional": null,
+          "Conditional logic": null,
+          "Dependencies": null
+        },
+        "Exceptions": {
+          "Explicit deviations": null,
+          "Alternatives": null,
+          "Special cases": null
+        },
+        "Relationships": {
+          "Hierarchical": null,
+          "Cross-references": "Figure 44",
+          "Logical dependencies": null
+        }
+      },
+      {
+        "rule": "Height measurement on land with natural slope > 10%",
+        "Qualifiers": {
+          "Scope": "Height measurement",
+          "Applicability": "Structures on land with natural slope > 10%",
+          "Exclusions": null
+        },
+        "Variables": {
+          "Dimensional": "Height of a structure",
+          "Material": null,
+          "Environmental": "Natural slope > 10%",
+          "Usage": null
+        },
+        "Constants": {
+          "Numerical values": "30' above existing grade, 30' above finished",
+          "Specs": null,
+          "Standards": null,
+          "Procedures": "Use the lower of existing or finished grade"
+        },
+        "Conditions": {
+          "Mandatory": "The structure must comply with the lower of the two limits at all points along the slope",
+          "Optional": null,
+          "Conditional logic": null,
+          "Dependencies": null
+        },
+        "Exceptions": {
+          "Explicit deviations": null,
+          "Alternatives": null,
+          "Special cases": null
+        },
+        "Relationships": {
+          "Hierarchical": null,
+          "Cross-references": "Figure 45",
+          "Logical dependencies": null
+        }
+      },
+      {
+        "rule": "Daylight plane measurement",
+        "Qualifiers": {
+          "Scope": "Daylight plane measurement",
+          "Applicability": "All structures",
+          "Exclusions": null
+        },
+        "Variables": {
+          "Dimensional": "Daylight plane",
+          "Material": null,
+          "Environmental": null,
+          "Usage": null
+        },
+        "Constants": {
+          "Numerical values": null,
+          "Specs": null,
+          "Standards": null,
+          "Procedures": "Use average grade"
+        },
+        "Conditions": {
+          "Mandatory": "Use average grade",
+          "Optional": null,
+          "Conditional logic": null,
+          "Dependencies": null
+        },
+        "Exceptions": {
+          "Explicit deviations": null,
+          "Alternatives": null,
+          "Special cases": null
+        },
+        "Relationships": {
+          "Hierarchical": null,
+          "Cross-references": "Figures 20\u201321 pp. 26\u201327",
+          "Logical dependencies": null
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n    {\n        \"rule\": \"Height measurement on land with natural slope \u2264 10%\",\n        \"Qualifiers\": {\n            \"Scope\": \"Height measurement\",\n            \"Applicability\": \"Structures on land with natural slope \u2264 10%\",\n            \"Exclusions\": null\n        },\n        \"Variables\": {\n            \"Dimensional\": \"Height of a structure\",\n            \"Material\": null,\n            \"Environmental\": \"Natural slope \u2264 10%\",\n            \"Usage\": null\n        },\n        \"Constants\": {\n            \"Numerical values\": null,\n            \"Specs\": null,\n            \"Standards\": null,\n            \"Procedures\": \"Use existing grade\"\n        },\n        \"Conditions\": {\n            \"Mandatory\": \"Use existing grade\",\n            \"Optional\": null,\n            \"Conditional logic\": null,\n            \"Dependencies\": null\n        },\n        \"Exceptions\": {\n            \"Explicit deviations\": null,\n            \"Alternatives\": null,\n            \"Special cases\": null\n        },\n        \"Relationships\": {\n            \"Hierarchical\": null,\n            \"Cross-references\": \"Figure 44\",\n            \"Logical dependencies\": null\n        }\n    },\n    {\n        \"rule\": \"Height measurement on land with natural slope > 10%\",\n        \"Qualifiers\": {\n            \"Scope\": \"Height measurement\",\n            \"Applicability\": \"Structures on land with natural slope > 10%\",\n            \"Exclusions\": null\n        },\n        \"Variables\": {\n            \"Dimensional\": \"Height of a structure\",\n            \"Material\": null,\n            \"Environmental\": \"Natural slope > 10%\",\n            \"Usage\": null\n        },\n        \"Constants\": {\n            \"Numerical values\": \"30' above existing grade, 30' above finished\",\n            \"Specs\": null,\n            \"Standards\": null,\n            \"Procedures\": \"Use the lower of existing or finished grade\"\n        },\n        \"Conditions\": {\n            \"Mandatory\": \"The structure must comply with the lower of the two limits at all points along the slope\",\n            \"Optional\": null,\n            \"Conditional logic\": null,\n            \"Dependencies\": null\n        },\n        \"Exceptions\": {\n            \"Explicit deviations\": null,\n            \"Alternatives\": null,\n            \"Special cases\": null\n        },\n        \"Relationships\": {\n            \"Hierarchical\": null,\n            \"Cross-references\": \"Figure 45\",\n            \"Logical dependencies\": null\n        }\n    },\n    {\n        \"rule\": \"Daylight plane measurement\",\n        \"Qualifiers\": {\n            \"Scope\": \"Daylight plane measurement\",\n            \"Applicability\": \"All structures\",\n            \"Exclusions\": null\n        },\n        \"Variables\": {\n            \"Dimensional\": \"Daylight plane\",\n            \"Material\": null,\n            \"Environmental\": null,\n            \"Usage\": null\n        },\n        \"Constants\": {\n            \"Numerical values\": null,\n            \"Specs\": null,\n            \"Standards\": null,\n            \"Procedures\": \"Use average grade\"\n        },\n        \"Conditions\": {\n            \"Mandatory\": \"Use average grade\",\n            \"Optional\": null,\n            \"Conditional logic\": null,\n            \"Dependencies\": null\n        },\n        \"Exceptions\": {\n            \"Explicit deviations\": null,\n            \"Alternatives\": null,\n            \"Special cases\": null\n        },\n        \"Relationships\": {\n            \"Hierarchical\": null,\n            \"Cross-references\": \"Figures 20\u201321 pp. 26\u201327\",\n            \"Logical dependencies\": null\n        }\n    }\n]\n```"
+  },
+  "timestamp": "2025-09-16 14:43:45",
+  "model": "openai/gpt-4o",
+  "success": true
+}

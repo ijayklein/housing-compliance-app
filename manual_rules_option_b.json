@@ -1,0 +1,1028 @@
+[
+  {
+    "id": "LS-1",
+    "title": "Minimum & Maximum Lot Sizes by Zone",
+    "category": "Lot Size & Lot Area",
+    "summary": "Defines minimum and maximum lot sizes for each R-1 zone district.",
+    "includes": [],
+    "excludes": [],
+    "pages": [
+      2
+    ],
+    "figures": [],
+    "citations": [
+      "18.12.040 (a) Table 2"
+    ],
+    "notes": "Specific maximum values need to be extracted from the table - TODO clarify exact maximum values",
+    "requirements": {
+      "type": "conditional_or",
+      "conditions": [
+        {
+          "condition": "zone == \"R-1 zone\"",
+          "rule": "minimum 6,000 sf, maximum varies"
+        },
+        {
+          "condition": "zone == \"R-1(7000) zone\"",
+          "rule": "minimum 7,000 sf, maximum varies"
+        },
+        {
+          "condition": "zone == \"R-1(8000) zone\"",
+          "rule": "minimum 8,000 sf, maximum varies"
+        },
+        {
+          "condition": "zone == \"R-1(10000) zone\"",
+          "rule": "minimum 10,000 sf, maximum varies"
+        },
+        {
+          "condition": "zone == \"R-1(20000) zone\"",
+          "rule": "minimum 20,000 sf, maximum varies"
+        }
+      ]
+    }
+  },
+  {
+    "id": "LS-2",
+    "title": "Exceptions to Maximum Lot Size",
+    "category": "Lot Size & Lot Area",
+    "summary": "Lists exceptions where maximum lot size requirements may be waived.",
+    "includes": [],
+    "excludes": [],
+    "pages": [
+      2
+    ],
+    "figures": [],
+    "citations": [
+      "18.12.040 (d)",
+      "18.12.040 (c)"
+    ],
+    "notes": "",
+    "requirements": {
+      "type": "or",
+      "options": [
+        "Exception - Where underlying lot lines must be removed to eliminate non-conformities and results in no net loss of housing",
+        "Exception - Where an adjacent substandard lot of less than 25' in width is combined with another lot and results in no net loss of housing",
+        "Exception - Where the resultant number of lots increases or stays the same and results in no net loss of housing"
+      ]
+    }
+  },
+  {
+    "id": "LS-3",
+    "title": "Substandard Lot Sizes by Zone",
+    "category": "Lot Size & Lot Area",
+    "summary": "Defines criteria for substandard lots and their size thresholds.",
+    "includes": [],
+    "excludes": [],
+    "pages": [
+      2
+    ],
+    "figures": [],
+    "citations": [],
+    "notes": "",
+    "requirements": {
+      "type": "conditional_or",
+      "conditions": [
+        {
+          "condition": "zone == \"R-1 zone\"",
+          "rule": "substandard if \u2264 4,980 sf (typical lot) or \u2264 5,976 sf (flag lot)"
+        },
+        {
+          "condition": "zone == \"R-1(7000) zone\"",
+          "rule": "substandard if \u2264 5,810 sf (typical lot) or \u2264 6,972 sf (flag lot)"
+        },
+        {
+          "condition": "zone == \"R-1(8000) zone\"",
+          "rule": "substandard if \u2264 6,640 sf (typical lot) or \u2264 7,968 sf (flag lot)"
+        },
+        {
+          "condition": "zone == \"R-1(10000) zone\"",
+          "rule": "substandard if \u2264 8,300 sf (typical lot) or \u2264 9,960 sf (flag lot)"
+        },
+        {
+          "condition": "zone == \"R-1(20000) zone\"",
+          "rule": "substandard if \u2264 16,600 sf (typical lot) or \u2264 19,920 sf (flag lot)"
+        }
+      ]
+    }
+  },
+  {
+    "id": "LS-4",
+    "title": "Special Regulations for Substandard Lots",
+    "category": "Lot Size & Lot Area",
+    "summary": "Special building restrictions that apply to substandard lots.",
+    "includes": [],
+    "excludes": [],
+    "pages": [
+      2
+    ],
+    "figures": [
+      "Fig 15 C on p. 23"
+    ],
+    "citations": [],
+    "notes": "",
+    "requirements": {
+      "type": "conditional_and",
+      "base_requirements": [
+        "Maximum building height is single-story and 17' instead of 30'"
+      ],
+      "conditional_requirements": [
+        {
+          "condition": "For lots less than 50' wide",
+          "rule": "the required street-side yard is 10' instead of 16'"
+        },
+        {
+          "condition": "For lots less than 95' deep",
+          "rule": "garage requirements are that it be in the rear half of the lot instead of 75' back from the front lot line"
+        }
+      ]
+    }
+  },
+  {
+    "id": "LS-5",
+    "title": "Gross vs Net Lot Area",
+    "category": "Lot Size & Lot Area",
+    "summary": "Defines what areas are excluded from gross lot area to establish net lot area.",
+    "includes": [],
+    "excludes": [
+      "Street right-of-way",
+      "\"Pole\" portion of a flag lot",
+      "Creek channel"
+    ],
+    "pages": [
+      3
+    ],
+    "figures": [
+      "Fig 1",
+      "Fig 2",
+      "Fig 3"
+    ],
+    "citations": [
+      "18.04.030 (a) (85)"
+    ],
+    "notes": "",
+    "requirements": {
+      "type": "and",
+      "requirements": [
+        "Development potential is based on net lot area",
+        "Net lot area = gross lot area minus excluded areas"
+      ]
+    }
+  },
+  {
+    "id": "LCFA-1",
+    "title": "Lot Coverage Definition & Maximum Allowable",
+    "category": "Lot Coverage & Floor Area",
+    "summary": "Defines lot coverage calculation and maximum allowable percentage.",
+    "includes": [
+      "Footprints of all structures including main residence, covered parking, tool sheds, covered pool equipment units",
+      "Projecting elements such as balconies, stairways, porches, patio covers",
+      "Decking that exceeds 30\" above grade",
+      "For roof overhangs or eaves that exceed 4', the portion that is beyond 4'",
+      "Swimming pools and spas that exceed 30\" above grade"
+    ],
+    "excludes": [
+      "Roof overhangs up to 4'",
+      "Uncovered structures less than 30\" above grade"
+    ],
+    "pages": [
+      4
+    ],
+    "figures": [],
+    "citations": [
+      "18.12.040 (a) Table 2"
+    ],
+    "notes": "To qualify as a structure that is less than 30 inches above grade, a porch or deck may only have open railings above 30 inches\u2014no solid half walls.",
+    "requirements": {
+      "type": "and",
+      "requirements": [
+        "Maximum allowable lot coverage is 35% of the lot size",
+        "Additional 5% coverage is permitted for covered patios, canopies and roof overhangs beyond 4 feet"
+      ]
+    }
+  },
+  {
+    "id": "LCFA-2",
+    "title": "Gross Floor Area (GFA) Formula & Cap",
+    "category": "Lot Coverage & Floor Area",
+    "summary": "Defines the GFA calculation and maximum allowable floor area.",
+    "includes": [
+      "All floors measured to outside of exterior stud walls",
+      "Stairwells at all floors and all areas that are greater than 50% enclosed and covered",
+      "Covered parking and all accessory buildings which are greater than 120 square feet",
+      "Spaces that meet the criteria for second and third floor equivalents"
+    ],
+    "excludes": [],
+    "pages": [
+      4
+    ],
+    "figures": [],
+    "citations": [
+      "18.12.040 (b) Table 3",
+      "18.04.030 (a) (86)"
+    ],
+    "notes": "Main house maximum applies regardless of formula result.",
+    "requirements": {
+      "type": "and",
+      "requirements": [
+        "GFA = 45% of first 5,000 sf of lot area + 30% of lot area over 5,000 sf",
+        "Main house GFA may not exceed 6,000 sf regardless of lot size"
+      ]
+    }
+  },
+  {
+    "id": "PE-1",
+    "title": "Roofed 1st Floor Porch Openness Test",
+    "category": "Porches, Entries, Balconies",
+    "summary": "Determines whether roofed 1st floor porches count toward GFA based on openness.",
+    "includes": [],
+    "excludes": [],
+    "pages": [
+      8,
+      9,
+      10
+    ],
+    "figures": [
+      "Fig 4 A & D",
+      "Fig 5"
+    ],
+    "citations": [
+      "18.04.030(a)(65)",
+      "18.12.040(b)Table 3"
+    ],
+    "notes": "",
+    "requirements": {
+      "type": "conditional_and",
+      "base_requirements": [
+        "Roofed porches on 1st floor count toward GFA unless at least 50% open",
+        "Openness is determined by the perimeter of the porch that is open to the outdoors"
+      ],
+      "conditional_requirements": [
+        {
+          "condition": "conditional",
+          "rule": "If at least 50% open, the porch does NOT count toward GFA"
+        },
+        {
+          "condition": "conditional",
+          "rule": "If less than 50% open, the porch counts once toward GFA regardless of height"
+        }
+      ]
+    }
+  },
+  {
+    "id": "PE-2",
+    "title": "Roofed Entry Features Under 12 Feet",
+    "category": "Porches, Entries, Balconies",
+    "summary": "Rules for roofed entry features on 1st floor that are less than 12' high from grade.",
+    "includes": [],
+    "excludes": [],
+    "pages": [
+      7
+    ],
+    "figures": [
+      "Fig 4 B"
+    ],
+    "citations": [
+      "18.04.030(a)(113.1)"
+    ],
+    "notes": "",
+    "requirements": {
+      "type": "and",
+      "requirements": [
+        "Roofed entry features less than 12' high from grade count once toward GFA regardless of design including openness"
+      ]
+    }
+  },
+  {
+    "id": "PE-3",
+    "title": "Vaulted Entry Features Over 12 Feet",
+    "category": "Porches, Entries, Balconies",
+    "summary": "Rules for roofed entry features on 1st floor that are 12' or higher from grade.",
+    "includes": [],
+    "excludes": [],
+    "pages": [
+      7,
+      11,
+      12,
+      13
+    ],
+    "figures": [
+      "Fig 4 C & D",
+      "Fig 6",
+      "Fig 7",
+      "Fig 8"
+    ],
+    "citations": [
+      "18.04.030(143.5)"
+    ],
+    "notes": "TODO - clarify specific counting rules for vaulted entry features",
+    "requirements": {
+      "type": "conditional_and",
+      "base_requirements": [
+        "Roofed entry features 12' or higher from grade are considered \"vaulted entry features\""
+      ],
+      "conditional_requirements": [
+        {
+          "condition": "conditional",
+          "rule": "Count toward GFA based on specific vaulted entry feature rules"
+        }
+      ]
+    }
+  },
+  {
+    "id": "PE-4",
+    "title": "Recessed Porches on 1st Floor",
+    "category": "Porches, Entries, Balconies",
+    "summary": "Rules for recessed porches on the 1st floor.",
+    "includes": [],
+    "excludes": [],
+    "pages": [
+      14
+    ],
+    "figures": [
+      "Fig 9"
+    ],
+    "citations": [],
+    "notes": "TODO - clarify specific counting rules for recessed porches",
+    "requirements": {
+      "type": "conditional_and",
+      "base_requirements": [],
+      "conditional_requirements": [
+        {
+          "condition": "conditional",
+          "rule": "Recessed porches on 1st floor have specific GFA counting rules"
+        }
+      ]
+    }
+  },
+  {
+    "id": "PE-5",
+    "title": "Upper Floor Balconies and Outdoor Areas",
+    "category": "Porches, Entries, Balconies",
+    "summary": "Rules for roofed balconies and outdoor areas on upper floors.",
+    "includes": [],
+    "excludes": [],
+    "pages": [
+      15
+    ],
+    "figures": [
+      "Fig 10"
+    ],
+    "citations": [],
+    "notes": "TODO - clarify specific counting rules for upper floor outdoor areas",
+    "requirements": {
+      "type": "conditional_and",
+      "base_requirements": [],
+      "conditional_requirements": [
+        {
+          "condition": "conditional",
+          "rule": "Roofed balconies/outdoor areas on upper floors have specific GFA counting rules"
+        }
+      ]
+    }
+  },
+  {
+    "id": "SB-1",
+    "title": "Standard Setbacks by Zone",
+    "category": "Setbacks & Encroachments",
+    "summary": "Defines standard front, rear, and side setback requirements for each R-1 zone district.",
+    "includes": [],
+    "excludes": [],
+    "pages": [
+      20
+    ],
+    "figures": [],
+    "citations": [
+      "18.12.040 (a) Table 2",
+      "18.12.040 (a,c,e,& i)"
+    ],
+    "notes": "For front setback, if contextual setback is greater than 30' then it applies\u2014otherwise, the 20' setback applies. For front & street side setbacks a special setback may apply.",
+    "requirements": {
+      "type": "conditional_or",
+      "conditions": [
+        {
+          "condition": "zone == \"R-1 zone\"",
+          "rule": "Front = Contextual or 20', Rear = 20', Interior Side = 6', Street Side = 16'"
+        },
+        {
+          "condition": "zone == \"R-1(7000) zone\"",
+          "rule": "Front = Contextual or 20', Rear = 20', Interior Side = 8', Street Side = 16'"
+        },
+        {
+          "condition": "zone == \"R-1(8000) zone\"",
+          "rule": "Front = Contextual or 20', Rear = 20', Interior Side = 8', Street Side = 16'"
+        },
+        {
+          "condition": "zone == \"R-1(10000) zone\"",
+          "rule": "Front = Contextual or 20', Rear = 20', Interior Side = 8', Street Side = 16'"
+        },
+        {
+          "condition": "zone == \"R-1(20000) zone\"",
+          "rule": "Front = Contextual or 20', Rear = 20', Interior Side = 8', Street Side = 16'"
+        }
+      ]
+    }
+  },
+  {
+    "id": "SB-2",
+    "title": "Contextual Front Setbacks",
+    "category": "Setbacks & Encroachments",
+    "summary": "Rules for when contextual front setbacks apply instead of standard setbacks.",
+    "includes": [],
+    "excludes": [],
+    "pages": [
+      21
+    ],
+    "figures": [
+      "Fig 15"
+    ],
+    "citations": [
+      "18.04.040 (e)"
+    ],
+    "notes": "",
+    "requirements": {
+      "type": "conditional_and",
+      "base_requirements": [],
+      "conditional_requirements": [
+        {
+          "condition": "conditional",
+          "rule": "Contextual setbacks apply if, and only if, the average of the existing setbacks on the same side of the block is 30' or greater"
+        },
+        {
+          "condition": "conditional",
+          "rule": "If contextual setback applies and is greater than 30', then it applies instead of the 20' standard setback"
+        },
+        {
+          "condition": "conditional",
+          "rule": "If both a contextual and special setback apply, the greater of the two setbacks is required"
+        }
+      ]
+    }
+  },
+  {
+    "id": "SB-3",
+    "title": "Special Setbacks",
+    "category": "Setbacks & Encroachments",
+    "summary": "Special setback requirements that override standard setbacks for specific streets.",
+    "includes": [
+      "Alma St",
+      "Embarcadero Rd",
+      "Middlefield Rd",
+      "Arastradero Rd",
+      "Guinda St",
+      "Miranda Ave",
+      "Ash St",
+      "Hamilton Ave",
+      "Newell Rd",
+      "California Ave",
+      "Hanover St",
+      "Oak Hill Ave",
+      "Channing Ave",
+      "Lincoln Ave",
+      "Page Mill Rd",
+      "Charleston Rd",
+      "Loma Verde Ave",
+      "Park Blvd",
+      "Churchill Ave",
+      "Louis Rd",
+      "Stanford Ave",
+      "Colorado Ave",
+      "Lytton Ave",
+      "University Ave",
+      "East Meadow Dr",
+      "Manuela Ave",
+      "West Meadow Dr",
+      "El Camino Real",
+      "Mesa Ave"
+    ],
+    "excludes": [],
+    "pages": [
+      20
+    ],
+    "figures": [],
+    "citations": [],
+    "notes": "Special setback distances can be found on pages of the city's zone-map booklet and parcel reports from the city's GIS",
+    "requirements": {
+      "type": "conditional_and",
+      "base_requirements": [
+        "Special setbacks override standard setbacks unless a larger contextual setback applies"
+      ],
+      "conditional_requirements": [
+        {
+          "condition": "conditional",
+          "rule": "Special setbacks apply to specific streets as listed in Table 3"
+        }
+      ]
+    }
+  },
+  {
+    "id": "SB-4",
+    "title": "Setback Considerations for Special Lots",
+    "category": "Setbacks & Encroachments",
+    "summary": "Special setback considerations for easements, sidewalks, oddly shaped lots, and substandard lots.",
+    "includes": [],
+    "excludes": [],
+    "pages": [
+      22,
+      23
+    ],
+    "figures": [],
+    "citations": [
+      "18.040.030 (84, 87, 91, 128, & 146)"
+    ],
+    "notes": "Determining where lot lines are on the ground may require a boundary survey",
+    "requirements": {
+      "type": "and",
+      "requirements": [
+        "Easements - setbacks measured from easement boundaries where applicable",
+        "Sidewalks - setbacks measured from property line, not sidewalk edge",
+        "Oddly shaped lots - special determination methods apply",
+        "Flags and substandard lots - special setback rules apply"
+      ]
+    }
+  },
+  {
+    "id": "SB-5",
+    "title": "Allowable Setback Encroachments - Main Dwelling",
+    "category": "Setbacks & Encroachments",
+    "summary": "Permitted encroachments of main dwelling into required setbacks.",
+    "includes": [],
+    "excludes": [],
+    "pages": [
+      24
+    ],
+    "figures": [
+      "Fig 18",
+      "Fig 19"
+    ],
+    "citations": [
+      "18.12.050 (a)(2)",
+      "18.12.050 (a)(1)(A)",
+      "18.12.050 (a)(1)(B)",
+      "18.12.050 (a)(1)(C)"
+    ],
+    "notes": "",
+    "requirements": {
+      "type": "or",
+      "options": [
+        "1st floor portion at rear of structure \u2264 half width of structure may encroach to within 14' of rear lot line",
+        "1st floor extension of existing front setback encroachment may extend to within 14' of front lot line",
+        "1st floor extension of existing interior-side setback encroachment may extend to within 5' of interior-side lot line",
+        "1st floor extension of existing street-side setback encroachment may extend to within 10' of street-side lot line",
+        "Attached storage closets \u2264 6' in height & \u2264 25 sf may encroach 4' into front & rear yards & 2' into side yards"
+      ]
+    }
+  },
+  {
+    "id": "SB-6",
+    "title": "Allowable Setback Encroachments - Porches and Entry Features",
+    "category": "Setbacks & Encroachments",
+    "summary": "Permitted encroachments of porches and entry features into required setbacks.",
+    "includes": [],
+    "excludes": [],
+    "pages": [
+      24
+    ],
+    "figures": [],
+    "citations": [
+      "18.12.050 (a)(3)(D)",
+      "18.12.050 (a)(3)(E)"
+    ],
+    "notes": "",
+    "requirements": {
+      "type": "or",
+      "options": [
+        "1st floor balconies, uncovered porches, stairways, and fire escapes may encroach 6' into front & rear yard & 3' into side yards",
+        "1st floor only canopies & patio covers may encroach into rear or side yards"
+      ]
+    }
+  },
+  {
+    "id": "SB-7",
+    "title": "Allowable Setback Encroachments - Other Elements",
+    "category": "Setbacks & Encroachments",
+    "summary": "Permitted encroachments of various building elements into required setbacks.",
+    "includes": [],
+    "excludes": [],
+    "pages": [
+      24
+    ],
+    "figures": [],
+    "citations": [
+      "18.12.050 (a)(3)(A)",
+      "18.12.050 (a)(3)(B)",
+      "18.12.060 (c)"
+    ],
+    "notes": "",
+    "requirements": {
+      "type": "or",
+      "options": [
+        "Eaves & cornices may encroach 2' into side & 4' into front & rear yards",
+        "1st floor bay/greenhouse windows composed of window surface & cantilevered with no floor joists may encroach 2' into front yard & 3' into rear yard",
+        "Greenhouse windows only may encroach 2' into side yards",
+        "Uncovered parking may be in rear or side yards except for 1st 10' of street side yard",
+        "Pools & spas (not equipment) may be to within 6' of rear & interior-side lot lines",
+        "Fireplaces \u2264 5' wide may encroach 2' into side yard"
+      ]
+    }
+  },
+  {
+    "id": "DP-1",
+    "title": "Primary Daylight Plane - Side",
+    "category": "Daylight Plane & Protrusions",
+    "summary": "Defines the primary daylight plane regulations for side yards.",
+    "includes": [],
+    "excludes": [],
+    "pages": [
+      26
+    ],
+    "figures": [
+      "Fig 20",
+      "Fig 21",
+      "Fig 22"
+    ],
+    "citations": [
+      "18.12.040 (a) Table 2",
+      "18.04"
+    ],
+    "notes": "The daylight plane in conjunction with setbacks & height limits creates an invisible tent to contain development and preserve privacy and natural light",
+    "requirements": {
+      "type": "and",
+      "requirements": [
+        "Primary daylight plane regulates structures located within the buildable area",
+        "Structures in rear and/or side yards are regulated by accessory-structure daylight plane"
+      ]
+    }
+  },
+  {
+    "id": "AS-1",
+    "title": "Detached Accessory Structures - Setback Encroachments",
+    "category": "Accessory Structures",
+    "summary": "Permitted setback encroachments for detached accessory structures.",
+    "includes": [],
+    "excludes": [],
+    "pages": [
+      24
+    ],
+    "figures": [
+      "Fig 34"
+    ],
+    "citations": [
+      "18.12.080 (b)(3)"
+    ],
+    "notes": "",
+    "requirements": {
+      "type": "or",
+      "options": [
+        "Detached accessory structures that are 75' from front lot line and 20' from street-side lot line may be in rear or side yards",
+        "Detached accessory structures for covered parking on lots \u2264 95' deep and 25' from street-side lot line and in rear half of lot may be in rear or side yards"
+      ]
+    }
+  },
+  {
+    "id": "BX-1",
+    "title": "Excavated Features - Setback Encroachments",
+    "category": "Basements & Excavation",
+    "summary": "Permitted setback encroachments for excavated features.",
+    "includes": [],
+    "excludes": [],
+    "pages": [
+      24
+    ],
+    "figures": [
+      "Fig 39",
+      "Fig 40"
+    ],
+    "citations": [
+      "18.12.090 (c)"
+    ],
+    "notes": "",
+    "requirements": {
+      "type": "or",
+      "options": [
+        "Lightwells and stairwells may encroach 3' into side yards & 4' into rear yard (cumulative length \u2264 15')",
+        "Below grade patios may encroach 2' into side yards & 4' into rear yard (cumulative length \u2264 5')"
+      ]
+    }
+  },
+  {
+    "id": "PK-1",
+    "title": "Parking Space Standards",
+    "category": "Parking",
+    "summary": "Defines parking space requirements and dimensions for residential lots.",
+    "includes": [],
+    "excludes": [
+      "Water heaters, clothes washers or dryer, bicycle parking facilities in parking space clear area"
+    ],
+    "pages": [
+      34
+    ],
+    "figures": [
+      "Fig 28"
+    ],
+    "citations": [
+      "18.12.060",
+      "18.83.090"
+    ],
+    "notes": "",
+    "requirements": {
+      "type": "and",
+      "requirements": [
+        "Two spaces are required on the lot per dwelling",
+        "Parking spaces may NOT be located in the required front yard or first 10 ft of required street side yard",
+        "2nd dwelling units have same parking requirements",
+        "No underground parking garages except by variance",
+        "One of the two spaces must be covered",
+        "To be considered detached, a covered-parking structure must be a minimum of 3' from the main dwelling",
+        "Minimum size for an uncovered space is 8.5' x 18'",
+        "Minimum clearance inside a covered parking structure to be 10' x 20' for each space",
+        "Two-car garage or carport to be 20' x 20' clear inside",
+        "Minimum vertical clearance: 7'",
+        "Clear area for parking space must be free of other uses"
+      ]
+    }
+  },
+  {
+    "id": "PK-2",
+    "title": "Carport Standards",
+    "category": "Parking",
+    "summary": "Specific requirements for carport structures.",
+    "includes": [],
+    "excludes": [],
+    "pages": [
+      35
+    ],
+    "figures": [
+      "Fig 29",
+      "Fig 30"
+    ],
+    "citations": [
+      "18.83.090",
+      "18.83.110(a)"
+    ],
+    "notes": "",
+    "requirements": {
+      "type": "and",
+      "requirements": [
+        "Both garages and carports count towards gross floor area",
+        "Carports are defined as having two open sides and do not have doors"
+      ]
+    }
+  },
+  {
+    "id": "GP-1",
+    "title": "Contextual Garage Placement",
+    "category": "Garage Placement",
+    "summary": "Rules for when contextual garage placement requirements apply.",
+    "includes": [],
+    "excludes": [],
+    "pages": [
+      37
+    ],
+    "figures": [
+      "Fig 32"
+    ],
+    "citations": [
+      "18.12.040 (f)"
+    ],
+    "notes": "",
+    "requirements": {
+      "type": "conditional_and",
+      "base_requirements": [],
+      "conditional_requirements": [
+        {
+          "condition": "conditional",
+          "rule": "Contextual garage placement applies if, and only if, there is a predominant neighborhood pattern"
+        },
+        {
+          "condition": "conditional",
+          "rule": "If block is more than 600' long, consider only lots within 600' or the 10 lots closest to the subject lot"
+        },
+        {
+          "condition": "conditional",
+          "rule": "If subject lot is a corner lot, consider the pattern on the street that the subject garage faces"
+        }
+      ]
+    }
+  },
+  {
+    "id": "GP-2",
+    "title": "Attached Garages/Carports Site Planning",
+    "category": "Garage Placement",
+    "summary": "Site planning requirements for attached garages and carports.",
+    "includes": [],
+    "excludes": [],
+    "pages": [
+      38
+    ],
+    "figures": [
+      "Fig 33"
+    ],
+    "citations": [
+      "18.12.060"
+    ],
+    "notes": "Uncovered spaces must be located beyond the required front yard and beyond the first 10' of the street-side yard",
+    "requirements": {
+      "type": "and",
+      "requirements": [
+        "Attached garages must comply with same setbacks as main dwelling"
+      ]
+    }
+  },
+  {
+    "id": "GP-3",
+    "title": "Detached Garages/Carports Site Planning",
+    "category": "Garage Placement",
+    "summary": "Site planning requirements for detached garages and carports.",
+    "includes": [],
+    "excludes": [],
+    "pages": [
+      39
+    ],
+    "figures": [
+      "Fig 34",
+      "Figs 25-26"
+    ],
+    "citations": [
+      "18.12.080 (b)"
+    ],
+    "notes": "",
+    "requirements": {
+      "type": "conditional_and",
+      "base_requirements": [
+        "Garages and carports that take advantage of setback exceptions are subject to a stricter daylight plane"
+      ],
+      "conditional_requirements": [
+        {
+          "condition": "conditional",
+          "rule": "Detached garages and carports may be located in the rear or interior side yard if at least 75' from the front lot line and at least 20' from the street-side lot line"
+        },
+        {
+          "condition": "conditional",
+          "rule": "On lots less than 95' deep, they may be located in rear or interior side yards if placed in rear half of the lot"
+        }
+      ]
+    }
+  },
+  {
+    "id": "BX-2",
+    "title": "Basement Standards",
+    "category": "Basements & Excavation",
+    "summary": "Standards and restrictions for basement construction.",
+    "includes": [],
+    "excludes": [],
+    "pages": [
+      40
+    ],
+    "figures": [
+      "Fig 35"
+    ],
+    "citations": [
+      "18.12.090 (a, b, & c)"
+    ],
+    "notes": "Floor area regulations are intended to address building mass and streetscape appearance",
+    "requirements": {
+      "type": "and",
+      "requirements": [
+        "Basements may not be located in special flood hazard areas",
+        "Basements may not extend beyond building footprint",
+        "Basements may not encroach into required yards, except where main dwelling is permitted to extend into rear yard",
+        "Basements (even habitable ones) do not count as floor area if first floor is no more than 3' above grade"
+      ]
+    }
+  },
+  {
+    "id": "BX-3",
+    "title": "Light Well & Stairwell Standards",
+    "category": "Basements & Excavation",
+    "summary": "Standards for light wells and stairwells as excavated features.",
+    "includes": [],
+    "excludes": [],
+    "pages": [
+      42
+    ],
+    "figures": [
+      "Fig 39"
+    ],
+    "citations": [
+      "18.12.090 (c)"
+    ],
+    "notes": "",
+    "requirements": {
+      "type": "and",
+      "requirements": [
+        "Such features may not be located on the side of the structure that faces the front yard",
+        "Maximum width (interior dimension) is 3'",
+        "Combined length (interior dimensions) of all excavated features may not exceed 30% of basement perimeter",
+        "Allowable encroachment into required side yard is 3' max (however feature must be minimum 3' from side lot line)",
+        "Allowable encroachment into required rear yard is 4'",
+        "Combined length of all excavated features or portions that encroach into required yards may not exceed 15'",
+        "Excavated features shall not be harmful to neighboring trees",
+        "Public Works Department must approve drainage system"
+      ]
+    }
+  },
+  {
+    "id": "BX-4",
+    "title": "Below-Grade Patio Standards",
+    "category": "Basements & Excavation",
+    "summary": "Standards for below-grade patios as excavated features.",
+    "includes": [],
+    "excludes": [
+      "Area devoted to required stairway egress shall not be included in the 200 sf limitation"
+    ],
+    "pages": [
+      43
+    ],
+    "figures": [
+      "Fig 40"
+    ],
+    "citations": [
+      "18.12.090 (c) (1)",
+      "18.12.090 (c) (2)"
+    ],
+    "notes": "",
+    "requirements": {
+      "type": "and",
+      "requirements": [
+        "Such features may not be located on the side of the structure that faces the front yard",
+        "Combined area of all such areas not to exceed 2% of the area of the lot or 200 sf, whichever is greater",
+        "No single area may exceed 200 sf",
+        "Each such area is separated from another by at least 10'",
+        "Allowable encroachment into required side yard is 2' max",
+        "Allowable encroachment into required rear yard is 4'"
+      ]
+    }
+  },
+  {
+    "id": "HG-1",
+    "title": "Height Limits by Structure Type",
+    "category": "Height & Grade",
+    "summary": "Maximum height limits for different structure types and lot conditions.",
+    "includes": [],
+    "excludes": [],
+    "pages": [
+      46
+    ],
+    "figures": [
+      "Fig 42",
+      "Fig 43"
+    ],
+    "citations": [
+      "18.12.040 (a) Table 2"
+    ],
+    "notes": "Height allowances enable a variety of architectural styles while preserving residential scale and privacy",
+    "requirements": {
+      "type": "conditional_or",
+      "conditions": [
+        {
+          "condition": "Main dwelling on a standard lot with a roof slope \u226512:12",
+          "rule": "30' max height to roof peak"
+        },
+        {
+          "condition": "Main dwelling on a standard lot with a roof slope <12:12",
+          "rule": "33' max height to roof peak"
+        },
+        {
+          "condition": "Main dwelling on a substandard or flag lot",
+          "rule": "17' max height"
+        },
+        {
+          "condition": "Accessory structure in rear or side yard",
+          "rule": "12' max height"
+        },
+        {
+          "condition": "2nd-dwelling units",
+          "rule": "17' max height"
+        }
+      ]
+    }
+  },
+  {
+    "id": "HG-2",
+    "title": "Grade Definitions for Height Measurement",
+    "category": "Height & Grade",
+    "summary": "Defines different grade measurements used for height calculations.",
+    "includes": [],
+    "excludes": [],
+    "pages": [
+      47
+    ],
+    "figures": [
+      "Fig 44",
+      "Fig 45",
+      "Fig 46",
+      "Figs 20-21"
+    ],
+    "citations": [
+      "18.04.030 (64) (b)"
+    ],
+    "notes": "",
+    "requirements": {
+      "type": "and",
+      "requirements": [
+        "For structures on land with natural slope \u2264 10%: use Existing Grade (lowest point of adjacent ground elevation prior to grading or fill)",
+        "For structures on land with natural slope > 10%: use Grade (adjacent ground elevation of finished or existing grade, whichever is lower at any point of the structure)",
+        "For daylight plane calculations: use Average grade (average of grade at midpoint of building and grade at closest point on abutting site)"
+      ]
+    }
+  }
+]

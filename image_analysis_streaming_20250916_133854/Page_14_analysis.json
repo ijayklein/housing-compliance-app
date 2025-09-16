@@ -1,0 +1,12 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_14.png",
+  "image_name": "Page_14.png",
+  "analysis": {
+    "raw_content": "Here's the extracted information from the image:\n\n**Title:** Roofed porches on the 1st floor\n\n**Section Heading:** How to determine if a porch is at least 50% open (using Fig 5 as an example)\n\n**Figure Caption:** Fig 5 Roofed 1st floor porch\n\n**Step 1:** Determine the perimeter of the porch and divide it into segments that will allow a comparison of closed and open segments.\n\n**Text:** The perimeter of the porch in Fig 5 is shown below. It is the sum of segments A through G. It is 70 linear feet.\n\n**Measurements from the diagram:**\n*   Segment A: 3'\n*   Segment B: 8'\n*   Segment C: 4' (This measurement is partially obscured, but \"4'\" is visible next to C)\n*   Segment C (angled): 10'\n*   Segment D: 7'\n*   Segment E: 14'\n*   Segment F: 24'\n\n**Page Number:** 8",
+    "content_length": 767,
+    "parse_error": false
+  },
+  "timestamp": "2025-09-16 13:38:59",
+  "model": "google/gemini-2.5-flash",
+  "success": true
+}

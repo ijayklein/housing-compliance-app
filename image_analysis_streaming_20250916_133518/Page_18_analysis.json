@@ -1,0 +1,12 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_18.png",
+  "image_name": "Page_18.png",
+  "analysis": {
+    "raw_content": "Based on the photocopied page from this city planning technical manual, I can extract the following information:\n\n**Figure Title:**\nFig 7 Entry feature with gabled roof\n\n**Technical Diagrams:**\nThe page contains three architectural views:\n1. Isometric View\n2. Side Elevation  \n3. Porch Floor Plan\n\n**Measurement Labels:**\n- Height (shown on isometric view)\n- Grade (shown on isometric view)\n- Height (shown on side elevation)\n- Grade (shown on side elevation)\n- \"Intersection of front facade and top of roof material at ridge\" (labeled on side elevation)\n\n**Technical Specifications/Rules:**\n\n**Note:** If the entryway is considered to be a vaulted entryway the area will be counted as follows:\n\n\u2022 In this example, a portion of the entryway is recessed beyond the house facade and roof. It is included in the area that counts.\n\n\u2022 The area is measured to the outside material of the entryway feature.\n\n\u2022 The area counts **TWICE** toward gross floor area.\n\n**Floor Plan Labels:**\n- \"Outline of entryway roof\"\n- \"Outline of entryway floor area that counts **TWICE** if entryway is vaulted\"\n\n**Page Number:**\n12",
+    "content_length": 1107,
+    "parse_error": false
+  },
+  "timestamp": "2025-09-16 13:36:02",
+  "model": "anthropic/claude-sonnet-4",
+  "success": true
+}

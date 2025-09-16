@@ -1,0 +1,216 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_14.md",
+  "file_name": "Page_14.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "Qualifiers": {
+          "scope": "Roofed porches on the 1st floor",
+          "applicability": "Procedure to determine if a porch is at least 50% open (evaluation method)",
+          "exclusions": null,
+          "references": {
+            "page": 8,
+            "title": "Roofed porches on the 1st floor",
+            "subheading": "How to determine if a porch is at least 50% open (using Figure 5 as an example)",
+            "figure": "Figure 5 Roofed 1st floor porch"
+          },
+          "notes": "Content provides Step 1 only; subsequent steps are not present on this page."
+        },
+        "Variables": [
+          {
+            "name": "porch_perimeter",
+            "description": "Total perimeter length of the porch being evaluated",
+            "category": "dimensional",
+            "unit": "ft",
+            "derivation": "Sum of perimeter segments A through G",
+            "source": "Step 1 instruction and perimeter note"
+          },
+          {
+            "name": "segment_length_A",
+            "description": "Length of perimeter segment A",
+            "category": "dimensional",
+            "unit": "ft"
+          },
+          {
+            "name": "segment_length_B",
+            "description": "Length of perimeter segment B",
+            "category": "dimensional",
+            "unit": "ft"
+          },
+          {
+            "name": "segment_length_C",
+            "description": "Length of perimeter segment C",
+            "category": "dimensional",
+            "unit": "ft"
+          },
+          {
+            "name": "segment_length_D",
+            "description": "Length of perimeter segment D",
+            "category": "dimensional",
+            "unit": "ft"
+          },
+          {
+            "name": "segment_length_E",
+            "description": "Length of perimeter segment E",
+            "category": "dimensional",
+            "unit": "ft"
+          },
+          {
+            "name": "segment_length_F",
+            "description": "Length of perimeter segment F",
+            "category": "dimensional",
+            "unit": "ft"
+          },
+          {
+            "name": "segment_length_G",
+            "description": "Length of perimeter segment G",
+            "category": "dimensional",
+            "unit": "ft"
+          },
+          {
+            "name": "open_perimeter_length",
+            "description": "Total length of perimeter segments that are open",
+            "category": "dimensional",
+            "unit": "ft",
+            "ambiguity": true,
+            "ambiguity_reason": "This page instructs to separate open vs closed segments but does not identify which segments are open in the example."
+          },
+          {
+            "name": "closed_perimeter_length",
+            "description": "Total length of perimeter segments that are closed",
+            "category": "dimensional",
+            "unit": "ft",
+            "ambiguity": true,
+            "ambiguity_reason": "Criteria for classifying segments as closed are not provided on this page."
+          },
+          {
+            "name": "open_percentage",
+            "description": "Percentage of the porch perimeter that is open",
+            "category": "calculated",
+            "unit": "%",
+            "formula": "open_perimeter_length / porch_perimeter * 100",
+            "ambiguity": true,
+            "ambiguity_reason": "A comparison of open vs closed segments is implied, but the formula is not explicitly stated in the provided text."
+          }
+        ],
+        "Constants": [
+          {
+            "name": "procedure_step_1",
+            "type": "procedure",
+            "value": "Determine the perimeter of the porch and divide it into segments that will allow a comparison of closed and open segments.",
+            "source": "Step 1 text"
+          },
+          {
+            "name": "figure5_perimeter_total",
+            "type": "dimensional",
+            "value": 70,
+            "unit": "ft",
+            "source": "Perimeter note: 'It is 70 linear feet.'"
+          },
+          {
+            "name": "segment_length_A_value",
+            "type": "dimensional",
+            "value": 2,
+            "unit": "ft",
+            "source": "Plan diagram"
+          },
+          {
+            "name": "segment_length_B_value",
+            "type": "dimensional",
+            "value": 8,
+            "unit": "ft",
+            "source": "Plan diagram"
+          },
+          {
+            "name": "segment_length_C_value",
+            "type": "dimensional",
+            "value": 10,
+            "unit": "ft",
+            "source": "Plan diagram"
+          },
+          {
+            "name": "segment_length_D_value",
+            "type": "dimensional",
+            "value": 7,
+            "unit": "ft",
+            "source": "Plan diagram"
+          },
+          {
+            "name": "segment_length_E_value",
+            "type": "dimensional",
+            "value": 14,
+            "unit": "ft",
+            "source": "Plan diagram"
+          },
+          {
+            "name": "segment_length_F_value",
+            "type": "dimensional",
+            "value": 24,
+            "unit": "ft",
+            "source": "Plan diagram"
+          },
+          {
+            "name": "segment_length_G_value",
+            "type": "dimensional",
+            "value": 2,
+            "unit": "ft",
+            "source": "Plan diagram"
+          }
+        ],
+        "Conditions": [
+          {
+            "type": "mandatory",
+            "trigger": "When determining if a porch is at least 50% open",
+            "requirement": "Perform Step 1: determine the porch perimeter and divide it into segments for comparison of closed and open segments.",
+            "dependencies": null
+          },
+          {
+            "type": "threshold",
+            "trigger": "Evaluation target referenced by subheading",
+            "requirement": "A porch qualifies as 'at least 50% open' if open_percentage >= 50.",
+            "dependencies": [
+              "porch_perimeter is calculated",
+              "open_perimeter_length is calculated"
+            ],
+            "ambiguity": true,
+            "ambiguity_reason": "The enforcement context and exact calculation/classification rules are not provided on this page."
+          }
+        ],
+        "Exceptions": [],
+        "Relationships": [
+          {
+            "type": "hierarchical",
+            "parent": "Determine if a porch is at least 50% open (overall method)",
+            "child": "Step 1: perimeter determination and segmentation",
+            "notes": "This page covers only Step 1 of a likely multi-step procedure."
+          },
+          {
+            "type": "mathematical",
+            "relation": "porch_perimeter = segment_length_A + segment_length_B + segment_length_C + segment_length_D + segment_length_E + segment_length_F + segment_length_G",
+            "scope": "Figure 5 example and general perimeter determination"
+          },
+          {
+            "type": "logical_dependency",
+            "relation": "open_percentage depends on open_perimeter_length and porch_perimeter",
+            "notes": "Classification of segments into 'open' vs 'closed' precedes calculation."
+          },
+          {
+            "type": "consistency_check",
+            "relation": "Sum of provided segment values vs stated total perimeter",
+            "calculation": {
+              "sum_of_segments_ft": 67,
+              "stated_total_perimeter_ft": 70
+            },
+            "status": "inconsistency_detected",
+            "details": "A (2) + B (8) + C (10) + D (7) + E (14) + F (24) + G (2) = 67 ft, but the perimeter note states 70 ft. This discrepancy must be resolved before validation."
+          }
+        ]
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "[\n  {\n    \"Qualifiers\": {\n      \"scope\": \"Roofed porches on the 1st floor\",\n      \"applicability\": \"Procedure to determine if a porch is at least 50% open (evaluation method)\",\n      \"exclusions\": null,\n      \"references\": {\n        \"page\": 8,\n        \"title\": \"Roofed porches on the 1st floor\",\n        \"subheading\": \"How to determine if a porch is at least 50% open (using Figure 5 as an example)\",\n        \"figure\": \"Figure 5 Roofed 1st floor porch\"\n      },\n      \"notes\": \"Content provides Step 1 only; subsequent steps are not present on this page.\"\n    },\n    \"Variables\": [\n      {\n        \"name\": \"porch_perimeter\",\n        \"description\": \"Total perimeter length of the porch being evaluated\",\n        \"category\": \"dimensional\",\n        \"unit\": \"ft\",\n        \"derivation\": \"Sum of perimeter segments A through G\",\n        \"source\": \"Step 1 instruction and perimeter note\"\n      },\n      {\n        \"name\": \"segment_length_A\",\n        \"description\": \"Length of perimeter segment A\",\n        \"category\": \"dimensional\",\n        \"unit\": \"ft\"\n      },\n      {\n        \"name\": \"segment_length_B\",\n        \"description\": \"Length of perimeter segment B\",\n        \"category\": \"dimensional\",\n        \"unit\": \"ft\"\n      },\n      {\n        \"name\": \"segment_length_C\",\n        \"description\": \"Length of perimeter segment C\",\n        \"category\": \"dimensional\",\n        \"unit\": \"ft\"\n      },\n      {\n        \"name\": \"segment_length_D\",\n        \"description\": \"Length of perimeter segment D\",\n        \"category\": \"dimensional\",\n        \"unit\": \"ft\"\n      },\n      {\n        \"name\": \"segment_length_E\",\n        \"description\": \"Length of perimeter segment E\",\n        \"category\": \"dimensional\",\n        \"unit\": \"ft\"\n      },\n      {\n        \"name\": \"segment_length_F\",\n        \"description\": \"Length of perimeter segment F\",\n        \"category\": \"dimensional\",\n        \"unit\": \"ft\"\n      },\n      {\n        \"name\": \"segment_length_G\",\n        \"description\": \"Length of perimeter segment G\",\n        \"category\": \"dimensional\",\n        \"unit\": \"ft\"\n      },\n      {\n        \"name\": \"open_perimeter_length\",\n        \"description\": \"Total length of perimeter segments that are open\",\n        \"category\": \"dimensional\",\n        \"unit\": \"ft\",\n        \"ambiguity\": true,\n        \"ambiguity_reason\": \"This page instructs to separate open vs closed segments but does not identify which segments are open in the example.\"\n      },\n      {\n        \"name\": \"closed_perimeter_length\",\n        \"description\": \"Total length of perimeter segments that are closed\",\n        \"category\": \"dimensional\",\n        \"unit\": \"ft\",\n        \"ambiguity\": true,\n        \"ambiguity_reason\": \"Criteria for classifying segments as closed are not provided on this page.\"\n      },\n      {\n        \"name\": \"open_percentage\",\n        \"description\": \"Percentage of the porch perimeter that is open\",\n        \"category\": \"calculated\",\n        \"unit\": \"%\",\n        \"formula\": \"open_perimeter_length / porch_perimeter * 100\",\n        \"ambiguity\": true,\n        \"ambiguity_reason\": \"A comparison of open vs closed segments is implied, but the formula is not explicitly stated in the provided text.\"\n      }\n    ],\n    \"Constants\": [\n      {\n        \"name\": \"procedure_step_1\",\n        \"type\": \"procedure\",\n        \"value\": \"Determine the perimeter of the porch and divide it into segments that will allow a comparison of closed and open segments.\",\n        \"source\": \"Step 1 text\"\n      },\n      {\n        \"name\": \"figure5_perimeter_total\",\n        \"type\": \"dimensional\",\n        \"value\": 70,\n        \"unit\": \"ft\",\n        \"source\": \"Perimeter note: 'It is 70 linear feet.'\"\n      },\n      {\n        \"name\": \"segment_length_A_value\",\n        \"type\": \"dimensional\",\n        \"value\": 2,\n        \"unit\": \"ft\",\n        \"source\": \"Plan diagram\"\n      },\n      {\n        \"name\": \"segment_length_B_value\",\n        \"type\": \"dimensional\",\n        \"value\": 8,\n        \"unit\": \"ft\",\n        \"source\": \"Plan diagram\"\n      },\n      {\n        \"name\": \"segment_length_C_value\",\n        \"type\": \"dimensional\",\n        \"value\": 10,\n        \"unit\": \"ft\",\n        \"source\": \"Plan diagram\"\n      },\n      {\n        \"name\": \"segment_length_D_value\",\n        \"type\": \"dimensional\",\n        \"value\": 7,\n        \"unit\": \"ft\",\n        \"source\": \"Plan diagram\"\n      },\n      {\n        \"name\": \"segment_length_E_value\",\n        \"type\": \"dimensional\",\n        \"value\": 14,\n        \"unit\": \"ft\",\n        \"source\": \"Plan diagram\"\n      },\n      {\n        \"name\": \"segment_length_F_value\",\n        \"type\": \"dimensional\",\n        \"value\": 24,\n        \"unit\": \"ft\",\n        \"source\": \"Plan diagram\"\n      },\n      {\n        \"name\": \"segment_length_G_value\",\n        \"type\": \"dimensional\",\n        \"value\": 2,\n        \"unit\": \"ft\",\n        \"source\": \"Plan diagram\"\n      }\n    ],\n    \"Conditions\": [\n      {\n        \"type\": \"mandatory\",\n        \"trigger\": \"When determining if a porch is at least 50% open\",\n        \"requirement\": \"Perform Step 1: determine the porch perimeter and divide it into segments for comparison of closed and open segments.\",\n        \"dependencies\": null\n      },\n      {\n        \"type\": \"threshold\",\n        \"trigger\": \"Evaluation target referenced by subheading\",\n        \"requirement\": \"A porch qualifies as 'at least 50% open' if open_percentage >= 50.\",\n        \"dependencies\": [\n          \"porch_perimeter is calculated\",\n          \"open_perimeter_length is calculated\"\n        ],\n        \"ambiguity\": true,\n        \"ambiguity_reason\": \"The enforcement context and exact calculation/classification rules are not provided on this page.\"\n      }\n    ],\n    \"Exceptions\": [],\n    \"Relationships\": [\n      {\n        \"type\": \"hierarchical\",\n        \"parent\": \"Determine if a porch is at least 50% open (overall method)\",\n        \"child\": \"Step 1: perimeter determination and segmentation\",\n        \"notes\": \"This page covers only Step 1 of a likely multi-step procedure.\"\n      },\n      {\n        \"type\": \"mathematical\",\n        \"relation\": \"porch_perimeter = segment_length_A + segment_length_B + segment_length_C + segment_length_D + segment_length_E + segment_length_F + segment_length_G\",\n        \"scope\": \"Figure 5 example and general perimeter determination\"\n      },\n      {\n        \"type\": \"logical_dependency\",\n        \"relation\": \"open_percentage depends on open_perimeter_length and porch_perimeter\",\n        \"notes\": \"Classification of segments into 'open' vs 'closed' precedes calculation.\"\n      },\n      {\n        \"type\": \"consistency_check\",\n        \"relation\": \"Sum of provided segment values vs stated total perimeter\",\n        \"calculation\": {\n          \"sum_of_segments_ft\": 67,\n          \"stated_total_perimeter_ft\": 70\n        },\n        \"status\": \"inconsistency_detected\",\n        \"details\": \"A (2) + B (8) + C (10) + D (7) + E (14) + F (24) + G (2) = 67 ft, but the perimeter note states 70 ft. This discrepancy must be resolved before validation.\"\n      }\n    ]\n  }\n]"
+  },
+  "timestamp": "2025-09-16 14:57:01",
+  "model": "openai/gpt-5",
+  "success": true
+}

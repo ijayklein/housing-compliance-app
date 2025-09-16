@@ -1,0 +1,23 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_34.png",
+  "image_name": "Page_34.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "PARSE_ERROR",
+      "visual_elements": [],
+      "technical_specifications": [],
+      "structural_elements": {
+        "main_heading": "",
+        "subheadings": [],
+        "sections": []
+      },
+      "additional_notes": [
+        "Failed to parse LLM response: Expecting value: line 1 column 1 (char 0)"
+      ],
+      "cross_references": []
+    },
+    "raw_response": "Here's the extracted information from the image, maintaining absolute precision and avoiding any deductions:\n\n**Title:** Primary daylight plane (rear)\n\n**Figure Caption:** Fig 23 Side elevation showing Rear primary daylight plane\n\n**Measurements/Specifications:**\n*   **Protrusions:**\n    *   7.5' max. each protrusion\n    *   5' min. separation\n    *   Cumulative length of protrusions must not exceed 15' on any one side.\n    *   Rear protrusions subject to same rules as side protrusions.\n*   **Max. for protrusions:** 24'\n*   **Angle:** 60\u00b0\n*   **Vertical dimension (left of 60\u00b0 angle):** 16'\n*   **Max. bldg. height:** (indicated by a vertical line extending from the ground to the top of the building)\n\n**Max building. height is:**\n*   30' for structures w/roof slope < 12:12\n*   33' for structures w/roof slope > 12:12\n*   17' for structures on substandard or flag lots regardless of flood plane\n*   variable for structures located in flood zones except on substandard and flag lots - up to 33'\n\n**Notes:**\n*   There is no front daylight plane.\n*   Side daylight plane is measured (up) at lot line.\n*   Rear daylight plane is measured (up) at rear setback.\n\n**Labels on Diagram:**\n*   Setback line\n*   Rear yard\n*   Rear lot line\n\n**Page Number:** 28"
+  },
+  "analysis_timestamp": "2025-09-16 12:25:56",
+  "model_used": "google/gemini-2.5-flash"
+}

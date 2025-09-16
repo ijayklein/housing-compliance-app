@@ -1,0 +1,332 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_16.png",
+  "image_name": "Page_16.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Step 4: Finalize the determination of which segments are closed and which are open, total the linear feet in each\ncategory, and compare the totals.\n\nFor the porch in Fig 5, the summary is as follows:\n\nClosed\nSegment Feet\nA 3'\nB 8'\nC 10'\nE 14'\n\n35'\n\nOpen\nSegment Feet\nD 7'\nF 24'\nG 4'\n\n35'\n\nClosed segments\nOpen segments\n\nConclusion: The perimeter of the porch in Fig 5 is 50% open and so the porch would NOT count toward gross floor area\n\nNote: If a porch floor is more than 30\" above\ngrade, the porch sides may need to be 36\" high for\nsafety reasons. This may cause the porch facade\nto be considered closed. Possible solutions to make\nsure the porch sides are considered open are\nillustrated to the right:\n\u2022 Railings (ballisters) instead of solid half walls.\n\u2022 A single safety rail above lower, solid half walls.\n\nOpen\n\nOpen\n\nSafety rail\nPorch flr\nGrade\n\n10",
+      "visual_elements": [
+        {
+          "type": "table",
+          "description": "A table summarizing the linear feet of 'Closed' and 'Open' segments of a porch. The 'Closed' section lists segments A, B, C, E with their respective lengths. The 'Open' section lists segments D, F, G with their respective lengths. Both sections sum to 35'.",
+          "location": "Middle-left"
+        },
+        {
+          "type": "diagram",
+          "description": "A plan view diagram of a porch with various segments labeled A through G, indicating their lengths. Segments A, B, C, E are shaded dark grey, representing 'Closed segments'. Segments D, F, G are shaded light grey, representing 'Open segments'. The diagram shows the overall dimensions of the porch, including a 14' length for segment E and a 24' length for segment F. A legend indicates dark grey for 'Closed segments' and light grey for 'Open segments'.",
+          "location": "Middle-right"
+        },
+        {
+          "type": "diagram",
+          "description": "A cross-sectional view of a porch side, illustrating two possible solutions to ensure porch sides are considered 'Open'. The left illustration shows railings (ballisters) from the porch floor down to the grade. The right illustration shows a lower, solid half wall with a single safety rail above it. Dimensions are indicated: 30\" from grade to porch floor, and 36\" from porch floor to the top of the safety rail.",
+          "location": "Bottom-right"
+        },
+        {
+          "type": "figure",
+          "description": "A large grey arrow pointing from the 'Note' box to the cross-sectional diagrams of porch sides.",
+          "location": "Bottom-middle"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Segment A length",
+          "value_type": "Measurement",
+          "value": "3",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Segment B length",
+          "value_type": "Measurement",
+          "value": "8",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Segment C length",
+          "value_type": "Measurement",
+          "value": "10",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Segment E length",
+          "value_type": "Measurement",
+          "value": "14",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Total Closed segments length",
+          "value_type": "Measurement",
+          "value": "35",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Segment D length",
+          "value_type": "Measurement",
+          "value": "7",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Segment F length",
+          "value_type": "Measurement",
+          "value": "24",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Segment G length",
+          "value_type": "Measurement",
+          "value": "4",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Total Open segments length",
+          "value_type": "Measurement",
+          "value": "35",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Porch openness percentage",
+          "value_type": "Percentage",
+          "value": "50",
+          "unit": "%"
+        },
+        {
+          "parameter": "Porch floor height above grade threshold",
+          "value_type": "Measurement",
+          "value": "30",
+          "unit": "inches"
+        },
+        {
+          "parameter": "Porch side height for safety reasons",
+          "value_type": "Measurement",
+          "value": "36",
+          "unit": "inches"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": null,
+        "subheadings": [
+          "Step 4:",
+          "Conclusion:",
+          "Note:"
+        ],
+        "sections": []
+      },
+      "additional_notes": [
+        "Page number '10' is present at the bottom left."
+      ],
+      "cross_references": [
+        "Fig 5"
+      ],
+      "conditions_and_qualifiers": {
+        "qualifiers": [
+          {
+            "id": "q1",
+            "text": "For the porch in Fig 5",
+            "applies_to_conditions": [
+              "c1",
+              "c2"
+            ],
+            "scope": "Local"
+          },
+          {
+            "id": "q2",
+            "text": "If a porch floor is more than 30\" above grade",
+            "applies_to_conditions": [
+              "c3",
+              "c4"
+            ],
+            "scope": "Local"
+          },
+          {
+            "id": "q3",
+            "text": "for safety reasons",
+            "applies_to_conditions": [
+              "c3"
+            ],
+            "scope": "Local"
+          },
+          {
+            "id": "q4",
+            "text": "Possible solutions to make sure the porch sides are considered open are illustrated to the right:",
+            "applies_to_conditions": [
+              "c5",
+              "c6"
+            ],
+            "scope": "Local"
+          }
+        ],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "The perimeter of the porch in Fig 5 is 50% open",
+            "value_type": "Percentage",
+            "operator": "=",
+            "threshold_value": "50",
+            "unit": "%"
+          },
+          {
+            "id": "c2",
+            "text": "the porch would NOT count toward gross floor area",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "true",
+            "unit": "None"
+          },
+          {
+            "id": "c3",
+            "text": "the porch sides may need to be 36\" high",
+            "value_type": "Measurement",
+            "operator": ">=",
+            "threshold_value": "36",
+            "unit": "inches"
+          },
+          {
+            "id": "c4",
+            "text": "This may cause the porch facade to be considered closed",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "true",
+            "unit": "None"
+          },
+          {
+            "id": "c5",
+            "text": "Railing (ballisters) instead of solid half walls",
+            "value_type": "Text",
+            "operator": "matches",
+            "threshold_value": "Railing (ballisters)",
+            "unit": "None"
+          },
+          {
+            "id": "c6",
+            "text": "A single safety rail above lower, solid half walls",
+            "value_type": "Text",
+            "operator": "matches",
+            "threshold_value": "Single safety rail above lower, solid half walls",
+            "unit": "None"
+          }
+        ],
+        "logical_relationships": [
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c1"
+            ],
+            "expression": "IF (The perimeter of the porch in Fig 5 is 50% open) THEN (the porch would NOT count toward gross floor area)",
+            "evaluation_order": 1
+          },
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "q2"
+            ],
+            "expression": "IF (a porch floor is more than 30\" above grade) THEN (the porch sides may need to be 36\" high for safety reasons)",
+            "evaluation_order": 2
+          },
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c3"
+            ],
+            "expression": "IF (the porch sides may need to be 36\" high) THEN (This may cause the porch facade to be considered closed)",
+            "evaluation_order": 3
+          },
+          {
+            "operation": "OR",
+            "condition_ids": [
+              "c5",
+              "c6"
+            ],
+            "expression": "Railing (ballisters) instead of solid half walls OR A single safety rail above lower, solid half walls",
+            "evaluation_order": 4,
+            "ambiguity_note": "This OR relationship is implied as 'possible solutions' are listed, suggesting either one can be chosen to achieve the goal of being considered open."
+          }
+        ],
+        "execution_sequence": [
+          {
+            "step": 1,
+            "action": "Finalize the determination of which segments are closed and which are open, total the linear feet in each category, and compare the totals.",
+            "condition_ids": [],
+            "qualifier_ids": [],
+            "dependencies": []
+          },
+          {
+            "step": 2,
+            "action": "Evaluate if the porch in Fig 5 is 50% open.",
+            "condition_ids": [
+              "c1"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": [
+              "1"
+            ]
+          },
+          {
+            "step": 3,
+            "action": "Determine if the porch counts toward gross floor area based on openness.",
+            "condition_ids": [
+              "c2"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": [
+              "2"
+            ]
+          },
+          {
+            "step": 4,
+            "action": "Check if porch floor is more than 30\" above grade.",
+            "condition_ids": [],
+            "qualifier_ids": [
+              "q2"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 5,
+            "action": "If porch floor is more than 30\" above grade, assess if porch sides need to be 36\" high for safety reasons.",
+            "condition_ids": [
+              "c3"
+            ],
+            "qualifier_ids": [
+              "q2",
+              "q3"
+            ],
+            "dependencies": [
+              "4"
+            ]
+          },
+          {
+            "step": 6,
+            "action": "If porch sides need to be 36\" high, note that this may cause the porch facade to be considered closed.",
+            "condition_ids": [
+              "c4"
+            ],
+            "qualifier_ids": [
+              "q2"
+            ],
+            "dependencies": [
+              "5"
+            ]
+          },
+          {
+            "step": 7,
+            "action": "Consider possible solutions to ensure porch sides are considered open.",
+            "condition_ids": [
+              "c5",
+              "c6"
+            ],
+            "qualifier_ids": [
+              "q4"
+            ],
+            "dependencies": [
+              "6"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:24:16",
+  "model_used": "google/gemini-2.5-flash"
+}

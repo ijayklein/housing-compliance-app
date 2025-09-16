@@ -1,0 +1,333 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_36.png",
+  "image_name": "Page_36.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Accessory structures\n(other than 2nd-dwelling units)\n\nThe code accommodates a wide variety of choices regarding accessory structures while utilizing parameters like setbacks and the daylight plane to preserve the characteristics of a residential neighborhood as well as privacy and daylight to each lot.\n\nCode sections\nPage 30\u201331\n18.12.080\nPage 32\n18.12.080 (b) (4)\n\nAccessory structure standards (non-dwelling)\n\nThere are no minimum lot size requirements for non-dwelling accessory structures.\nThe regulations are as follows:\n\nAll accessory structures...\n\u2022 Must have a use that is incidental to main dwelling\n\u2022 Must be detached and at least 3\u2019 from main dwelling\n\u2022 May NOT have a kitchen\n\u2022 Count toward the total lot coverage\n\u2022 If over 120 sf, require a building permit and count towards total gross floor area\n\nAccessory structures located in the buildable area....\n\u2022 Are subject to the same height and daylight plane regulations as the main dwelling\n\nAccessory structures located in the required setback.....\n\u2022 May not be located in the front yard\n\u2022 May not be located in the street-side yard\n\u2022 May not be located in the rear yard of a through lot\n\u2022 May not cover more than 50% of the rear yard\n\u2022 May not be used for sleeping or living\n\u2022 Are subject to the accessory-structure height and daylight plane regulations (see Figs 25-26 on p. 32)\n\u2022 May NOT have a kitchen\n\u2022 Count toward the total lot coverage\n\u2022 If over 120 sf, require a building permit and count towards total gross floor area\n\u2022 If over 200 sf, may have no more than two plumbing fixtures\n\nNote: Accessory structures less than 120 sf do not require a building permit but must still comply with all zoning regulations",
+      "visual_elements": [
+        {
+          "type": "text box",
+          "description": "Gray vertical sidebar on left side of page containing the heading 'Accessory structures (other than 2nd-dwelling units)', a descriptive paragraph about the code accommodating a wide variety of choices regarding accessory structures, and code section references at the bottom.",
+          "location": "Left side vertical sidebar"
+        },
+        {
+          "type": "highlighted text box",
+          "description": "Gray horizontal box near top center containing bold text: 'There are no minimum lot size requirements for non-dwelling accessory structures. The regulations are as follows:'",
+          "location": "Top center"
+        },
+        {
+          "type": "bullet lists",
+          "description": "Three bullet lists detailing regulations for: 'All accessory structures...', 'Accessory structures located in the buildable area....', and 'Accessory structures located in the required setback.....'. Each bullet point lists specific rules and conditions.",
+          "location": "Center-left and middle of page"
+        },
+        {
+          "type": "note box",
+          "description": "Gray rectangular box at bottom right containing the note: 'Note: Accessory structures less than 120 sf do not require a building permit but must still comply with all zoning regulations'.",
+          "location": "Bottom right"
+        },
+        {
+          "type": "blank rectangular box",
+          "description": "Empty white rectangular box outlined in gray, positioned to the right of the bullet lists, presumably reserved for figures or diagrams but currently blank.",
+          "location": "Middle right"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Minimum lot size requirements for non-dwelling accessory structures",
+          "value_type": "Text",
+          "value": "There are no minimum lot size requirements",
+          "unit": "None"
+        },
+        {
+          "parameter": "Distance accessory structures must be detached from main dwelling",
+          "value_type": "Measurement",
+          "value": "3",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Accessory structure size threshold requiring building permit",
+          "value_type": "Measurement",
+          "value": "120",
+          "unit": "square feet"
+        },
+        {
+          "parameter": "Maximum rear yard coverage by accessory structures in required setback",
+          "value_type": "Percentage",
+          "value": "50",
+          "unit": "percent"
+        },
+        {
+          "parameter": "Accessory structure size threshold allowing no more than two plumbing fixtures",
+          "value_type": "Measurement",
+          "value": "200",
+          "unit": "square feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Accessory structure standards (non-dwelling)",
+        "subheadings": [
+          "All accessory structures...",
+          "Accessory structures located in the buildable area....",
+          "Accessory structures located in the required setback....."
+        ],
+        "sections": [
+          "Code sections Page 30\u201331 18.12.080",
+          "Page 32 18.12.080 (b) (4)"
+        ]
+      },
+      "additional_notes": [
+        "No handwritten notes, stamps, or markings detected.",
+        "Page number '30' located at bottom left corner.",
+        "The blank rectangular box on the right side appears reserved for figures (Figs 25-26 referenced in text) but is empty on this page."
+      ],
+      "cross_references": [
+        "Accessory-structure height and daylight plane regulations (see Figs 25-26 on p. 32)"
+      ],
+      "conditions_and_qualifiers": {
+        "qualifiers": [
+          {
+            "id": "q1",
+            "text": "There are no minimum lot size requirements for non-dwelling accessory structures.",
+            "applies_to_conditions": [
+              "c1",
+              "c2",
+              "c3",
+              "c4",
+              "c5",
+              "c6",
+              "c7",
+              "c8",
+              "c9",
+              "c10",
+              "c11"
+            ],
+            "scope": "Global"
+          }
+        ],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "Must have a use that is incidental to main dwelling",
+            "value_type": "Text",
+            "operator": "contains",
+            "threshold_value": "incidental to main dwelling",
+            "unit": "None"
+          },
+          {
+            "id": "c2",
+            "text": "Must be detached and at least 3\u2019 from main dwelling",
+            "value_type": "Measurement",
+            "operator": ">=",
+            "threshold_value": "3",
+            "unit": "feet"
+          },
+          {
+            "id": "c3",
+            "text": "May NOT have a kitchen",
+            "value_type": "Boolean",
+            "operator": "!=",
+            "threshold_value": "kitchen present",
+            "unit": "None"
+          },
+          {
+            "id": "c4",
+            "text": "Count toward the total lot coverage",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "counted",
+            "unit": "None"
+          },
+          {
+            "id": "c5",
+            "text": "If over 120 sf, require a building permit and count towards total gross floor area",
+            "value_type": "Measurement",
+            "operator": ">",
+            "threshold_value": "120",
+            "unit": "square feet"
+          },
+          {
+            "id": "c6",
+            "text": "Are subject to the same height and daylight plane regulations as the main dwelling",
+            "value_type": "Text",
+            "operator": "contains",
+            "threshold_value": "height and daylight plane regulations",
+            "unit": "None"
+          },
+          {
+            "id": "c7",
+            "text": "May not be located in the front yard",
+            "value_type": "Boolean",
+            "operator": "!=",
+            "threshold_value": "located in front yard",
+            "unit": "None"
+          },
+          {
+            "id": "c8",
+            "text": "May not be located in the street-side yard",
+            "value_type": "Boolean",
+            "operator": "!=",
+            "threshold_value": "located in street-side yard",
+            "unit": "None"
+          },
+          {
+            "id": "c9",
+            "text": "May not be located in the rear yard of a through lot",
+            "value_type": "Boolean",
+            "operator": "!=",
+            "threshold_value": "located in rear yard of through lot",
+            "unit": "None"
+          },
+          {
+            "id": "c10",
+            "text": "May not cover more than 50% of the rear yard",
+            "value_type": "Percentage",
+            "operator": "<=",
+            "threshold_value": "50",
+            "unit": "percent"
+          },
+          {
+            "id": "c11",
+            "text": "May not be used for sleeping or living",
+            "value_type": "Boolean",
+            "operator": "!=",
+            "threshold_value": "used for sleeping or living",
+            "unit": "None"
+          },
+          {
+            "id": "c12",
+            "text": "Are subject to the accessory-structure height and daylight plane regulations (see Figs 25-26 on p. 32)",
+            "value_type": "Text",
+            "operator": "contains",
+            "threshold_value": "height and daylight plane regulations",
+            "unit": "None"
+          },
+          {
+            "id": "c13",
+            "text": "If over 200 sf, may have no more than two plumbing fixtures",
+            "value_type": "Measurement",
+            "operator": "<=",
+            "threshold_value": "2",
+            "unit": "plumbing fixtures"
+          }
+        ],
+        "logical_relationships": [
+          {
+            "operation": "AND",
+            "condition_ids": [
+              "c1",
+              "c2",
+              "c3",
+              "c4",
+              "c5"
+            ],
+            "expression": "All accessory structures must have a use incidental to main dwelling AND be detached at least 3\u2019 from main dwelling AND may NOT have a kitchen AND count toward total lot coverage AND if over 120 sf require a building permit and count towards total gross floor area",
+            "evaluation_order": 1
+          },
+          {
+            "operation": "AND",
+            "condition_ids": [
+              "c6"
+            ],
+            "expression": "Accessory structures located in the buildable area are subject to the same height and daylight plane regulations as the main dwelling",
+            "evaluation_order": 2
+          },
+          {
+            "operation": "AND",
+            "condition_ids": [
+              "c7",
+              "c8",
+              "c9",
+              "c10",
+              "c11",
+              "c12",
+              "c3",
+              "c4",
+              "c5",
+              "c13"
+            ],
+            "expression": "Accessory structures located in the required setback may not be located in the front yard AND may not be located in the street-side yard AND may not be located in the rear yard of a through lot AND may not cover more than 50% of the rear yard AND may not be used for sleeping or living AND are subject to accessory-structure height and daylight plane regulations AND may NOT have a kitchen AND count toward total lot coverage AND if over 120 sf require a building permit and count towards total gross floor area AND if over 200 sf may have no more than two plumbing fixtures",
+            "evaluation_order": 3
+          }
+        ],
+        "execution_sequence": [
+          {
+            "step": 1,
+            "action": "Verify accessory structure use is incidental to main dwelling and detached at least 3 feet",
+            "condition_ids": [
+              "c1",
+              "c2"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 2,
+            "action": "Confirm accessory structure does not have a kitchen and counts toward total lot coverage",
+            "condition_ids": [
+              "c3",
+              "c4"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": [
+              1
+            ]
+          },
+          {
+            "step": 3,
+            "action": "If accessory structure is over 120 sf, require building permit and count towards total gross floor area",
+            "condition_ids": [
+              "c5"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": [
+              2
+            ]
+          },
+          {
+            "step": 4,
+            "action": "If accessory structure is located in buildable area, ensure compliance with height and daylight plane regulations",
+            "condition_ids": [
+              "c6"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": [
+              3
+            ]
+          },
+          {
+            "step": 5,
+            "action": "If accessory structure is located in required setback, verify location restrictions, coverage limits, use restrictions, and plumbing fixture limits",
+            "condition_ids": [
+              "c7",
+              "c8",
+              "c9",
+              "c10",
+              "c11",
+              "c12",
+              "c3",
+              "c4",
+              "c5",
+              "c13"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": [
+              4
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:27:47",
+  "model_used": "openai/gpt-4.1-mini"
+}

@@ -1,0 +1,791 @@
+{
+  "document": "single-family-zoning-technical-manual.pdf",
+  "version_note": "Curated extraction based on page-verified content; figures refer to manual figures.",
+  "rules": [
+    {
+      "id": "LS-1",
+      "title": "Minimum & Maximum Lot Sizes by Zone",
+      "category": "Lot Size",
+      "summary": "Defines typical minimum lot sizes for R-1 subzones and flag lots; provides exceptions to maximum lot size.",
+      "requirements": [
+        {
+          "zone": "R-1",
+          "typical_lot": 4980,
+          "flag_lot": 5976,
+          "units": "sf"
+        },
+        {
+          "zone": "R-1(7000)",
+          "typical_lot": 5810,
+          "flag_lot": 6972,
+          "units": "sf"
+        },
+        {
+          "zone": "R-1(8000)",
+          "typical_lot": 6640,
+          "flag_lot": 7968,
+          "units": "sf"
+        },
+        {
+          "zone": "R-1(10000)",
+          "typical_lot": 8300,
+          "flag_lot": 9960,
+          "units": "sf"
+        },
+        {
+          "zone": "R-1(20000)",
+          "typical_lot": 16600,
+          "flag_lot": 19920,
+          "units": "sf"
+        },
+        {
+          "substandard_definition": "width < 50 ft OR depth < 83 ft AND area \u2264 83% of minimum lot size for zone"
+        }
+      ],
+      "pages": [
+        8
+      ],
+      "figures": [],
+      "notes": "Exceptions to max lot size include lot line removals to eliminate nonconformities, combining substandard lots, or where lots increase or stay same without net housing loss.",
+      "citations": [
+        "Page 2 table; Code 18.12.040 (a),(c),(d); 18.04.030(a)(85)"
+      ],
+      "includes": [],
+      "excludes": []
+    },
+    {
+      "id": "LS-2",
+      "title": "Gross vs. Net Lot Area",
+      "category": "Lot Size",
+      "summary": "Net lot area excludes certain portions of the gross area.",
+      "requirements": [
+        "Exclude street right-of-way from net area",
+        "Exclude the 'pole' of a flag lot",
+        "Exclude creek channel area within creek easements"
+      ],
+      "pages": [
+        9
+      ],
+      "figures": [
+        "Fig 1-3"
+      ],
+      "notes": "",
+      "citations": [
+        "Gross vs. net lot area diagrams on page 3"
+      ],
+      "includes": [],
+      "excludes": []
+    },
+    {
+      "id": "LCFA-1",
+      "title": "Lot Coverage (LC)",
+      "category": "Lot Coverage & Floor Area",
+      "summary": "Maximum lot coverage and what counts/does not count.",
+      "requirements": [
+        "Max lot coverage = 35% of lot size",
+        "Additional 5% permitted for covered patios/canopies/eaves beyond 4 ft",
+        "Count footprints of all structures; projecting elements (balconies, stairways, porches, patio covers); decks >30\" above grade; pools/spas >30\" above grade; eave portions beyond 4'",
+        "Exclude roof overhangs up to 4' and uncovered structures <30\" above grade"
+      ],
+      "pages": [
+        10
+      ],
+      "figures": [],
+      "notes": "",
+      "citations": [
+        "18.12.040(a) Table 2; 18.12.040(b) Table 3; 18.04.030(a)(86)"
+      ],
+      "includes": [
+        "Main residence footprint",
+        "Covered parking",
+        "Accessory buildings",
+        "Decking >30\" above grade",
+        "Eave portions beyond 4'"
+      ],
+      "excludes": [
+        "Roof overhangs up to 4'",
+        "Uncovered structures <30\" above grade"
+      ]
+    },
+    {
+      "id": "LCFA-2",
+      "title": "Gross Floor Area (GFA) Formula & Cap",
+      "category": "Lot Coverage & Floor Area",
+      "summary": "Defines the GFA calculation and what is included.",
+      "requirements": [
+        "GFA = 45% of first 5,000 sf of lot area + 30% of lot area over 5,000 sf",
+        "Main house GFA may not exceed 6,000 sf regardless of lot size"
+      ],
+      "pages": [
+        10,
+        11
+      ],
+      "figures": [],
+      "notes": "",
+      "citations": [
+        "18.12.040(a) Table 2; 18.12.040(b) Table 3"
+      ],
+      "includes": [
+        "All floors measured to outside of exterior stud walls",
+        "Stairwells at all floors",
+        "Areas >50% enclosed and covered",
+        "Covered parking",
+        "Accessory buildings >120 sf",
+        "2nd and 3rd-floor equivalency areas"
+      ],
+      "excludes": []
+    },
+    {
+      "id": "PE-1",
+      "title": "Roofed 1st-Floor Porches\u2014Openness Test",
+      "category": "Porches & Entries",
+      "summary": "A roofed 1st-floor porch does NOT count toward GFA if openness thresholds are met.",
+      "requirements": [
+        "At least 50% of the porch perimeter is at least 50% open (measured from porch floor to underside of roof material)",
+        "If porch floor >30\" above grade, guard design must keep facades open (e.g., railings vs. solid half walls)"
+      ],
+      "pages": [
+        8,
+        9,
+        10
+      ],
+      "figures": [
+        "Fig 5 steps 1\u20134"
+      ],
+      "notes": "",
+      "citations": [
+        "Porch openness method on pages 8\u201310"
+      ],
+      "includes": [],
+      "excludes": []
+    },
+    {
+      "id": "PE-2",
+      "title": "Vaulted Entry Features (>12' high)",
+      "category": "Porches & Entries",
+      "summary": "Footprint of a vaulted entry counts twice toward GFA regardless of openness.",
+      "requirements": [
+        "Height measured from grade to intersection of fa\u00e7ade and roof (shed/gable) determines if vaulted (>12')",
+        "If second floor exists above a vaulted entry, that second-floor area still counts normally (totaling three counts)"
+      ],
+      "pages": [
+        11,
+        12,
+        13
+      ],
+      "figures": [
+        "Fig 6\u20138"
+      ],
+      "notes": "",
+      "citations": [
+        "Vaulted entry feature rules pages 11\u201313"
+      ],
+      "includes": [],
+      "excludes": []
+    },
+    {
+      "id": "PE-3",
+      "title": "Recessed 1st-Floor Porches",
+      "category": "Porches & Entries",
+      "summary": "Recessed porches do not count if all criteria are met; otherwise they count (and may count twice if >17').",
+      "requirements": [
+        "Depth <10' AND porch ceiling is below 2nd floor AND exterior side is substantially open \u2192 does NOT count",
+        "If porch space is higher than 17' above finished floor, counts again as 2nd-story equivalency"
+      ],
+      "pages": [
+        14
+      ],
+      "figures": [
+        "Fig 9"
+      ],
+      "notes": "",
+      "citations": [
+        "Recessed porch criteria page 14"
+      ],
+      "includes": [],
+      "excludes": []
+    },
+    {
+      "id": "PE-4",
+      "title": "Upper-Floor Roofed Outdoor Areas",
+      "category": "Porches & Entries",
+      "summary": "Roofed outdoor areas on upper floors count toward GFA regardless of openness.",
+      "requirements": [
+        "Considered roofed if eave over outdoor area is deeper than eave over rest of building"
+      ],
+      "pages": [
+        15
+      ],
+      "figures": [
+        "Fig 10"
+      ],
+      "notes": "",
+      "citations": [
+        "Upper-floor balconies page 15"
+      ],
+      "includes": [],
+      "excludes": []
+    },
+    {
+      "id": "AE-1",
+      "title": "Attic, Closet, & Perimeter Spaces",
+      "category": "Attic & Equivalency",
+      "summary": "On accessible floors, areas with \u22655' head clearance count toward GFA.",
+      "requirements": [
+        "Accessible floors with \u22655' headroom count regardless of use"
+      ],
+      "pages": [
+        16
+      ],
+      "figures": [],
+      "notes": "Historic Category 1 & 2 homes may exempt 500 sf of unusable attic space.",
+      "citations": [
+        "Page 16; 18.04.030(a)(65); 18.12.040(b) Table 3"
+      ],
+      "includes": [],
+      "excludes": []
+    },
+    {
+      "id": "AE-2",
+      "title": "2nd & 3rd Floor Equivalency",
+      "category": "Attic & Equivalency",
+      "summary": "Open volumes above first floor count again as equivalency thresholds are crossed.",
+      "requirements": [
+        "Areas higher than 17' above first floor count as 2nd-floor equivalency (if not already counted)",
+        "Areas higher than 26' above first floor count as 3rd-floor equivalency",
+        "Stairwells measured the same way as vaulted spaces",
+        "Exemption: up to 200 sf of 3rd-floor equivalency where roof pitch is \u22654:12"
+      ],
+      "pages": [
+        17
+      ],
+      "figures": [
+        "Fig 12"
+      ],
+      "notes": "",
+      "citations": [
+        "Page 17"
+      ],
+      "includes": [],
+      "excludes": []
+    },
+    {
+      "id": "PR-1",
+      "title": "Bay Windows Not Counting Toward GFA (Decorative)",
+      "category": "Projections",
+      "summary": "Bay windows are exempt if all design criteria are met.",
+      "requirements": [
+        "Bottom \u226518\" above floor joists",
+        "Exterior support via corbels/brackets (not solid walls)",
+        "\u226550% of surface is glass"
+      ],
+      "pages": [
+        18
+      ],
+      "figures": [
+        "Fig 13"
+      ],
+      "notes": "Bay windows extending higher than roof are dormers and do count toward GFA.",
+      "citations": [
+        "Page 18"
+      ],
+      "includes": [],
+      "excludes": []
+    },
+    {
+      "id": "PR-2",
+      "title": "Fireplaces, Chimneys, Sheds, Planters",
+      "category": "Projections",
+      "summary": "These elements generally count toward GFA.",
+      "requirements": [
+        "Fireplaces count once toward GFA regardless of configuration",
+        "Sheds/planters/other projections >5' high count toward GFA"
+      ],
+      "pages": [
+        19
+      ],
+      "figures": [
+        "Fig 14"
+      ],
+      "notes": "",
+      "citations": [
+        "Page 19"
+      ],
+      "includes": [],
+      "excludes": []
+    },
+    {
+      "id": "SB-1",
+      "title": "Standard Setbacks by Zone",
+      "category": "Setbacks",
+      "summary": "Baseline front, rear, interior-side, and street-side setbacks for R-1 zones and special cases.",
+      "requirements": [
+        "Front: Contextual or 20' (see contextual rule)",
+        "Rear: 20'",
+        "Interior side: 6'\u20138' by subzone",
+        "Street side: 16' (10' for substandard corner lots <50' wide)"
+      ],
+      "pages": [
+        20
+      ],
+      "figures": [],
+      "notes": "",
+      "citations": [
+        "Page 20 tables; 18.12.040 (a,c,e,i); 18.04.040(e)"
+      ],
+      "includes": [],
+      "excludes": []
+    },
+    {
+      "id": "SB-2",
+      "title": "Contextual Front Setback",
+      "category": "Setbacks",
+      "summary": "Applies only if the same-side block average \u226530'.",
+      "requirements": [
+        "Compute average of existing setbacks on same block side; if \u226530', use that as contextual setback; else use 20'"
+      ],
+      "pages": [
+        21
+      ],
+      "figures": [
+        "Fig 15"
+      ],
+      "notes": "",
+      "citations": [
+        "Page 21"
+      ],
+      "includes": [],
+      "excludes": []
+    },
+    {
+      "id": "SB-3",
+      "title": "Easements & Sidewalk Considerations",
+      "category": "Setbacks",
+      "summary": "Where to measure setbacks from when easements/ROW differ from sidewalk location.",
+      "requirements": [
+        "Measure from lot line, not sidewalk",
+        "Public street and creek easements can shift setback baselines"
+      ],
+      "pages": [
+        22
+      ],
+      "figures": [
+        "Fig 16"
+      ],
+      "notes": "",
+      "citations": [
+        "Page 22"
+      ],
+      "includes": [],
+      "excludes": []
+    },
+    {
+      "id": "SB-4",
+      "title": "Odd Lot Shapes & Reduced Setbacks",
+      "category": "Setbacks",
+      "summary": "Guidance and diagrams for flag, corner, through, wedge, and multi-sided lots; reduced setbacks in specific cases.",
+      "requirements": [
+        "Flag lots: reduced front setback (e.g., 10')",
+        "Substandard corner lots <50' wide: street-side yard may be 10'"
+      ],
+      "pages": [
+        23
+      ],
+      "figures": [
+        "Fig 17"
+      ],
+      "notes": "",
+      "citations": [
+        "Page 23"
+      ],
+      "includes": [],
+      "excludes": []
+    },
+    {
+      "id": "SB-5",
+      "title": "Allowable Encroachments (Summary)",
+      "category": "Setbacks",
+      "summary": "Permitted ground-floor encroachments and dimensions into required yards.",
+      "requirements": [
+        "Rear yard: 1st-floor portion at rear may extend half building width to within 14' of rear lot line",
+        "Extensions of existing encroachments: front to within 14', interior side to within 5', street side to within 10' (ground floor only)",
+        "1st-floor balconies/porches/stairways: 6' into front/rear; 3' into side",
+        "Eaves/cornices: 2' into side; 4' into front/rear",
+        "Bay/greenhouse windows: 2' into front; 3' into rear; greenhouse windows: 2' into side",
+        "Lightwells/stairwells: 3' into side, 4' into rear (total length \u226415')",
+        "Below-grade patios: 2' into side, 4' into rear (total length \u226415')",
+        "Uncovered parking permitted in rear/side yards (except first 10' of street-side)"
+      ],
+      "pages": [
+        24,
+        25
+      ],
+      "figures": [
+        "Fig 18\u201319"
+      ],
+      "notes": "",
+      "citations": [
+        "Pages 24\u201325; 18.12.050; 18.12.060; 18.12.080; 18.12.090"
+      ],
+      "includes": [],
+      "excludes": []
+    },
+    {
+      "id": "DP-1",
+      "title": "Primary Daylight Plane (Side & Rear)",
+      "category": "Daylight Plane",
+      "summary": "Defines the primary daylight plane for structures in buildable area and how to measure average grade.",
+      "requirements": [
+        "Measure height from average of grade at building midpoint and closest point on abutting site",
+        "Allowed eave protrusion into daylight plane: 2'",
+        "Dormers/roof decks/gables: each \u22647.5' length; total \u226415' per side; \u22655' separation; height \u226424'",
+        "Chimneys/flues (<5' wide) & antennas may extend to meet code/height allowances"
+      ],
+      "pages": [
+        26,
+        27,
+        28,
+        29
+      ],
+      "figures": [
+        "Fig 20\u201323"
+      ],
+      "notes": "",
+      "citations": [
+        "Pages 26\u201329"
+      ],
+      "includes": [],
+      "excludes": []
+    },
+    {
+      "id": "AS-1",
+      "title": "Accessory Structures\u2014General",
+      "category": "Accessory Structures",
+      "summary": "Use, separation, permit, and yard restrictions for non-dwelling accessory structures.",
+      "requirements": [
+        "Must be detached and \u22653' from main dwelling; no kitchens",
+        "Count toward lot coverage; >120 sf require building permit and count toward GFA",
+        "In buildable area: subject to same height/daylight as main dwelling",
+        "In required setbacks: not in front or street-side yards; not in rear yard of through lots; may not cover >50% of rear yard; no sleeping/living",
+        "If >200 sf: max two plumbing fixtures"
+      ],
+      "pages": [
+        30,
+        31
+      ],
+      "figures": [],
+      "notes": "",
+      "citations": [
+        "18.12.080; pages 30\u201331"
+      ],
+      "includes": [],
+      "excludes": []
+    },
+    {
+      "id": "AS-2",
+      "title": "Accessory-Structure Daylight Plane (Rear/Side Yards)",
+      "category": "Accessory Structures",
+      "summary": "Lower daylight plane governs accessory structures in rear/side yards; garages taking setback exceptions are subject to this.",
+      "requirements": [
+        "Detached garages/carports in rear/side subject to accessory daylight plane when using setback exceptions"
+      ],
+      "pages": [
+        32
+      ],
+      "figures": [
+        "Fig 25\u201326"
+      ],
+      "notes": "",
+      "citations": [
+        "Page 32"
+      ],
+      "includes": [],
+      "excludes": []
+    },
+    {
+      "id": "EQ-1",
+      "title": "Noise-Producing Equipment Siting",
+      "category": "Equipment",
+      "summary": "Location limits and insulation/waiver conditions.",
+      "requirements": [
+        "Not in front, rear, or interior-side yards; up to 6' encroachment into street-side yard",
+        "Must meet City Noise Ordinance; insulation/housing required unless waived when in buildable area with compliant specs/screening"
+      ],
+      "pages": [
+        33
+      ],
+      "figures": [],
+      "notes": "",
+      "citations": [
+        "Page 33; Municipal Code Ch 9.10"
+      ],
+      "includes": [],
+      "excludes": []
+    },
+    {
+      "id": "PK-1",
+      "title": "Parking Space Standards",
+      "category": "Parking",
+      "summary": "On-lot parking requirements and minimum dimensions.",
+      "requirements": [
+        "Two spaces per dwelling; one must be covered",
+        "No spaces in required front yard or first 10' of street-side yard",
+        "Uncovered space min 8.5'\u00d718'",
+        "Covered space clear inside: 10'\u00d720' per space (two-car: 20'\u00d720')",
+        "Vertical clearance min 7'",
+        "Covered parking must be \u22653' from main dwelling to be 'detached'",
+        "No underground garages except by variance"
+      ],
+      "pages": [
+        34,
+        35
+      ],
+      "figures": [],
+      "notes": "",
+      "citations": [
+        "18.12.060; 18.83.090; 18.83.110(a)"
+      ],
+      "includes": [],
+      "excludes": []
+    },
+    {
+      "id": "PK-2",
+      "title": "Driveway Standards",
+      "category": "Parking",
+      "summary": "Width/clearance, surfacing near ROW, permeable limit in front yard.",
+      "requirements": [
+        "Driveway clearance \u226510'; surface \u22658' wide",
+        "No loose material within 10' of ROW",
+        "No more than 40% of required front yard may be impermeable",
+        "Street-work permit required for work in ROW",
+        "City encourages one curb cut per frontage and 50' min from intersections"
+      ],
+      "pages": [
+        36
+      ],
+      "figures": [],
+      "notes": "",
+      "citations": [
+        "Page 36"
+      ],
+      "includes": [],
+      "excludes": []
+    },
+    {
+      "id": "PK-3",
+      "title": "Contextual Garage Placement",
+      "category": "Parking",
+      "summary": "Applies where there is a predominant neighborhood garage pattern on the relevant block segment.",
+      "requirements": [
+        "If block >600', consider only lots within 600' or nearest 10 lots",
+        "For corner lots, evaluate pattern on the street the garage faces"
+      ],
+      "pages": [
+        37
+      ],
+      "figures": [
+        "Fig 32"
+      ],
+      "notes": "",
+      "citations": [
+        "Page 37"
+      ],
+      "includes": [],
+      "excludes": []
+    },
+    {
+      "id": "PK-4",
+      "title": "Siting of Attached & Detached Garages/Carports",
+      "category": "Parking",
+      "summary": "Attached garages follow main-dwelling setbacks; detached may use rear/side with distance criteria.",
+      "requirements": [
+        "Attached: comply with main-dwelling setbacks",
+        "Detached: may be in rear/interior-side if \u226575' from front lot line and \u226520' from street-side lot line",
+        "On lots <95' deep: detached may be in rear/interior-side if in rear half of lot",
+        "Uncovered spaces must be beyond required front yard and first 10' of street-side yard"
+      ],
+      "pages": [
+        38,
+        39
+      ],
+      "figures": [
+        "Fig 33\u201334"
+      ],
+      "notes": "",
+      "citations": [
+        "Pages 38\u201339"
+      ],
+      "includes": [],
+      "excludes": []
+    },
+    {
+      "id": "BX-1",
+      "title": "Basement FAR & Standards",
+      "category": "Basements & Excavation",
+      "summary": "Basement GFA exclusion and placement limits.",
+      "requirements": [
+        "Basement area does NOT count toward FAR if first floor is \u22643' above grade",
+        "Basements may not be in special flood hazard areas",
+        "May not extend beyond building footprint",
+        "May not encroach into required yards (except where main dwelling may extend into rear yard per allowances)"
+      ],
+      "pages": [
+        40
+      ],
+      "figures": [],
+      "notes": "",
+      "citations": [
+        "Pages 40; 18.12.090"
+      ],
+      "includes": [],
+      "excludes": []
+    },
+    {
+      "id": "BX-2",
+      "title": "Light Wells & Stairwells",
+      "category": "Basements & Excavation",
+      "summary": "Dimensional, encroachment, and cumulative-length limits.",
+      "requirements": [
+        "Not on side of structure facing front yard",
+        "Interior width \u22643'",
+        "Combined opening length \u226430% of basement perimeter",
+        "Encroachment: \u22643' into side yards (min 3' from lot line); \u22644' into rear yard",
+        "Cumulative encroaching length across all yards \u226415'",
+        "Must not harm neighboring trees; drainage must be approved (Public Works)"
+      ],
+      "pages": [
+        42
+      ],
+      "figures": [
+        "Fig 39"
+      ],
+      "notes": "",
+      "citations": [
+        "Page 42; 18.12.090(c)"
+      ],
+      "includes": [],
+      "excludes": []
+    },
+    {
+      "id": "BX-3",
+      "title": "Below-Grade Patios",
+      "category": "Basements & Excavation",
+      "summary": "Area limits, separation, and encroachments; screening/compatibility expectations.",
+      "requirements": [
+        "Total area of all below-grade patios \u22642% of lot area or 200 sf (whichever greater); no single patio >200 sf (egress stair area not counted toward 200 sf limit)",
+        "Patios separated by \u226510'",
+        "Encroachment: \u22642' into side yards; \u22644' into rear yard",
+        "Cumulative encroaching length across all yards \u226415'",
+        "Must be screened and architecturally compatible; overhangs/canopies count toward lot coverage; drainage approval required"
+      ],
+      "pages": [
+        43
+      ],
+      "figures": [
+        "Fig 40"
+      ],
+      "notes": "",
+      "citations": [
+        "Page 43; 18.12.090(c)(2)"
+      ],
+      "includes": [],
+      "excludes": []
+    },
+    {
+      "id": "BX-4",
+      "title": "Tree Protection & Screening",
+      "category": "Basements & Excavation",
+      "summary": "Excavation must avoid damaging tree roots and may require guardrail/landscape screening.",
+      "requirements": [
+        "Tree roots often within top 18\"; root zone extends beyond drip line\u2014plan excavation accordingly",
+        "Provide evidence prior to permit that features won\u2019t harm trees on subject or abutting lots",
+        "Guard rails must be architecturally compatible; screening may be required by Planning"
+      ],
+      "pages": [
+        41
+      ],
+      "figures": [
+        "Fig 37\u201338"
+      ],
+      "notes": "",
+      "citations": [
+        "Page 41"
+      ],
+      "includes": [],
+      "excludes": []
+    },
+    {
+      "id": "ADU-1",
+      "title": "Second Dwelling Units\u2014Lot Size & Standards",
+      "category": "Second Dwelling Units",
+      "summary": "Threshold lot sizes; unit size & height caps; parking; compatibility; siting rules.",
+      "requirements": [
+        "Minimum lot sizes (typical/flag): R-1 8,100/9,720; R-1(7000) 9,450/11,340; R-1(8000) 10,800/12,960; R-1(10000) 13,500/16,200; R-1(20000) 27,000/32,400 sf",
+        "Attached unit: max 450 sf; height \u226417'; counts toward lot FAR; two parking spaces (one covered; covered parking \u2264200 sf for the unit)",
+        "Detached unit: max 900 sf; height \u226417'; share driveway with main dwelling; two parking spaces (one covered; covered parking \u2264200 sf for the unit)",
+        "Entrance orientation and exterior stair placement constraints (e.g., not facing same lot line as main entry; exterior stairs toward interior side/rear)",
+        "Detached ADU to be \u226512' from main dwelling; architecturally compatible"
+      ],
+      "pages": [
+        44,
+        45
+      ],
+      "figures": [
+        "Fig 41"
+      ],
+      "notes": "",
+      "citations": [
+        "18.12.070; 18.12.080(d\u2013f)"
+      ],
+      "includes": [],
+      "excludes": []
+    },
+    {
+      "id": "HG-1",
+      "title": "Height Limits",
+      "category": "Height & Grade",
+      "summary": "Maximum structure heights by type and roof slope.",
+      "requirements": [
+        "Main dwelling on standard lot: max height 30' (or 33' with 12:12 roof per table depiction)",
+        "Main dwelling on substandard or flag lot: 17' (single-story)",
+        "Accessory structures in rear/side yard: 12'",
+        "Second dwelling units: 17'"
+      ],
+      "pages": [
+        46
+      ],
+      "figures": [
+        "Fig 42\u201343"
+      ],
+      "notes": "",
+      "citations": [
+        "18.12.040(a) Table 2; pages 46"
+      ],
+      "includes": [],
+      "excludes": []
+    },
+    {
+      "id": "HG-2",
+      "title": "Grade Definitions & Measurement",
+      "category": "Height & Grade",
+      "summary": "Which grade to use for structures and daylight plane; special rule for slopes >10%.",
+      "requirements": [
+        "Existing grade used for structures on land with natural slope \u226410%",
+        "For natural slope >10%: measure from finished or existing grade (whichever is lower) at any point of the structure",
+        "For daylight plane: use average of grade at building midpoint and grade at closest point on abutting site"
+      ],
+      "pages": [
+        47
+      ],
+      "figures": [
+        "Fig 44\u201346"
+      ],
+      "notes": "",
+      "citations": [
+        "18.04.030(64)(b); pages 47"
+      ],
+      "includes": [],
+      "excludes": []
+    }
+  ]
+}

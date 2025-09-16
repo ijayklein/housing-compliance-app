@@ -1,0 +1,99 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_29.png",
+  "image_name": "Page_29.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Determining setbacks on oddly shaped lots considerations\n\nFig 17 Setbacks for oddly shaped lots\n\nKey\n\u2014 Curb\n- - - Lot line\n\u25ad\u25ad\u25ad\u25ad Sidewalk\n\u2014\u2014\u2014 Required setbacks\n\u25ad\u25ad\u25ad\u25ad Buildable area\n\n[Diagram A]\nRear yard\nA\nFlag lot\nFront lot line is closest and most parallel to street.\nFront setback is 10' instead of 20'\n\n[Diagram B]\nRear yard\nB\nCorner lot\n16'\n\n[Diagram C]\nRear yard\nC\nSubstandard Corner lot w/frontage < 50'\nStreet side setback is 10' instead of 16'\nFront lot line is shortest of the two frontages.\n\n[Diagram D]\nRear yard\nD\nThrough lot\n\n[Diagram E]\nWedge shaped lots don't have rear lot lines. The rear yard is determined by a 20' radius from intersection of side lot lines.\nRear yard\nE\nWedge shaped lot\n\n[Diagram F]\nRear yard\nF\nLot with more than 4 sides\nRear lot line is farthest and most parallel to street.\n\n[Diagram G]\nRear yard\nG\nLot with more than 4 sides\n\nStreet\nFront yard\nInterior side yard\n\n23",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Diagram A: Flag lot with labeled areas including Rear yard, Front yard, Interior side yard, and Street. Shows front lot line closest and most parallel to street. Front setback is 10' instead of 20'. Buildable area shaded.",
+          "location": "Top left"
+        },
+        {
+          "type": "diagram",
+          "description": "Diagram B: Corner lot with Rear yard, Front yard, Interior side yard, and Street side yard labeled. Shows 16' setback on street side.",
+          "location": "Top middle"
+        },
+        {
+          "type": "diagram",
+          "description": "Diagram C: Substandard corner lot with frontage less than 50'. Rear yard, Front yard, Interior side yard, and Street side yard labeled. Street side setback is 10' instead of 16'. Front lot line is shortest of two frontages.",
+          "location": "Top right"
+        },
+        {
+          "type": "diagram",
+          "description": "Diagram D: Through lot with Rear yard, Front yard, Interior side yard, and Street labeled. Buildable area shaded.",
+          "location": "Bottom left"
+        },
+        {
+          "type": "diagram",
+          "description": "Diagram E: Wedge shaped lot with curved front yard and no rear lot lines. Rear yard determined by a 20' radius from intersection of side lot lines. Rear yard, Front yard, Interior side yard labeled.",
+          "location": "Bottom middle left"
+        },
+        {
+          "type": "diagram",
+          "description": "Diagram F: Lot with more than 4 sides. Rear yard, Front yard, Interior side yard labeled. Rear lot line is farthest and most parallel to street.",
+          "location": "Bottom middle right"
+        },
+        {
+          "type": "diagram",
+          "description": "Diagram G: Lot with more than 4 sides in an L-shape. Rear yard, Front yard, Interior side yard labeled.",
+          "location": "Bottom right"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Front setback (Flag lot)",
+          "value": "10",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Front setback (standard)",
+          "value": "20",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Street side setback (Substandard corner lot)",
+          "value": "10",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Street side setback (standard corner lot)",
+          "value": "16",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Rear yard radius (Wedge shaped lot)",
+          "value": "20",
+          "unit": "feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Determining setbacks on oddly shaped lots considerations",
+        "subheadings": [
+          "Fig 17 Setbacks for oddly shaped lots",
+          "Key"
+        ],
+        "sections": [
+          "A Flag lot",
+          "B Corner lot",
+          "C Substandard Corner lot w/frontage < 50'",
+          "D Through lot",
+          "E Wedge shaped lot",
+          "F Lot with more than 4 sides",
+          "G Lot with more than 4 sides"
+        ]
+      },
+      "additional_notes": [
+        "Page number 23 at bottom right corner",
+        "No handwritten annotations or stamps visible",
+        "All text and diagrams are clear and legible"
+      ],
+      "cross_references": [
+        "Fig 17 referenced in main heading"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-14 19:41:11",
+  "model_used": "openai/gpt-4.1-mini"
+}

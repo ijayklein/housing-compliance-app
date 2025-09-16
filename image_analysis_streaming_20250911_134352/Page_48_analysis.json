@@ -1,0 +1,75 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_48.png",
+  "image_name": "Page_48.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Light well & stairwell standards\n& site planning\n\nFig 39 Examples of site plan w/light wells & stairwells\n\nInterior lot example\n\n\u2022 Such features may not be located on the side of the structure that faces the front yard.\n\n\u2022 Maximum width (interior dimension) is 3'.\n\n\u2022 The combined length (interior dimensions of the opening excluding encasing structure) of all the excavated features may not exceed 30% of basement perimeter.\n\n\u2022 Allowable encroachment into required side yard is 3' max (however feature must be a minimum of 3' from side lot line).\n\n\u2022 Allowable encroachment into required rear yard is 4'.\n\n\u2022 The combined length (interior dimensions of the opening excluding encasing structure) of all the excavated features or portions of features that encroach into the required yards, on all sides of the structure, may not exceed 15'.\n\n\u2022 Excavated features shall not be harmful to neighboring trees.\n\n\u2022 Public Works Department must approve drainage system.\n\nLightwells & stairwells\n\u2022 a + b (encroaching features) may not exceed 15'\n\u2022 a + b + c + d (all features) may not exceed 30% of the perimeter of the basement\n\nNote: measurements are based on interior dimension of opening and exclude encasing structure.\n\n42",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Site plan diagram showing an interior lot example with a main dwelling, buildable area, and various measurements for light wells and stairwells. The diagram includes labels for rear yard, front yard, interior side yard, and shows the positioning of excavated features with dimensional annotations including 3' max width, various encroachment measurements (a, b, c, d), and setback requirements.",
+          "location": "Right side of page, center"
+        },
+        {
+          "type": "legend",
+          "description": "Key showing different line types and symbols: Curb/lot line (solid line), Sidewalk (hatched pattern), Required setbacks (dashed line), Buildable area (dash-dot line), Dwelling (light gray), Lightwells & stairwells (dark gray/black), Lightwells & stairwells that encroach into the req yards (white/outline)",
+          "location": "Bottom right of diagram"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Maximum width (interior dimension)",
+          "value": "3",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Combined length of excavated features",
+          "value": "30",
+          "unit": "percent of basement perimeter"
+        },
+        {
+          "parameter": "Allowable encroachment into required side yard",
+          "value": "3",
+          "unit": "feet max"
+        },
+        {
+          "parameter": "Minimum distance from side lot line",
+          "value": "3",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Allowable encroachment into required rear yard",
+          "value": "4",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Combined length of encroaching features",
+          "value": "15",
+          "unit": "feet max"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Light well & stairwell standards & site planning",
+        "subheadings": [
+          "Lightwells & stairwells"
+        ],
+        "sections": [
+          "Fig 39 Examples of site plan w/light wells & stairwells",
+          "Interior lot example",
+          "Key",
+          "Note"
+        ]
+      },
+      "additional_notes": [
+        "Page number 42 appears at bottom left",
+        "Diagram uses different shading and line patterns to distinguish between various elements",
+        "Measurements in diagram are clearly labeled with letters a, b, c, d for reference"
+      ],
+      "cross_references": [
+        "Reference to Public Works Department for drainage system approval"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-11 13:45:14",
+  "model_used": "anthropic/claude-sonnet-4"
+}

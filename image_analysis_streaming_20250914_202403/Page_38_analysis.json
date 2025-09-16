@@ -1,0 +1,97 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_38.png",
+  "image_name": "Page_38.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Accessory structure daylight plane (sides & rear)\n\nFig 25 Front elevation showing accessory-structure daylight plane at the side of the lot\n\nSide lot line\n\n3\n\n1\n\nSide lot line\n\n8' from\naverage\ngrade\n\n12' max. height of\nbuilding\n\nNote: For accessory buildings near the\nrear & side lot lines, a hipped-gable\nroof is often the best solution for\ncomplying with the accesory-structure\ndaylight plane.\n\nSide\n\nFig 26 Side elevation showing accessory-structure daylight plane at the rear of the lot\n\nRear lot line\n\n3\n\n1\n\n8' from\naverage\ngrade\n\n12' max. height of\nbuilding\n\nFront\n\nSide\n\nRear\n\n32",
+      "visual_elements": [
+        {
+          "type": "figure",
+          "description": "Figure 25: Front elevation diagram showing an accessory structure (garage) with a daylight plane restriction at the side of the lot. It illustrates a dashed line representing the daylight plane starting from the side lot line, rising at a 1:3 slope, and indicating a maximum height of 8 feet from average grade and a total maximum building height of 12 feet. The diagram shows the 'Side lot line' on the left and a vertical dashed line indicating the point where the daylight plane starts to slope.",
+          "location": "Top-middle"
+        },
+        {
+          "type": "figure",
+          "description": "Figure 26: Side elevation diagram showing an accessory structure (garage) with a daylight plane restriction at the rear of the lot. It illustrates a dashed line representing the daylight plane starting from the rear lot line, rising at a 1:3 slope, and indicating a maximum height of 8 feet from average grade and a total maximum building height of 12 feet. The diagram shows the 'Rear lot line' on the left and a vertical dashed line indicating the point where the daylight plane starts to slope.",
+          "location": "Bottom-middle"
+        },
+        {
+          "type": "diagram",
+          "description": "A square diagram labeled 'Side' at the top and bottom, 'Front' on the left, and 'Rear' on the right. It is divided into three sections by lines originating from the center. Arrows indicate directions: an upward arrow in the 'Front' section, a rightward arrow in the 'Rear' section, and a downward arrow in the 'Side' section. This diagram likely illustrates the orientation of the daylight plane application relative to the property lines.",
+          "location": "Middle-right"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Daylight plane slope",
+          "value_type": "Numerical",
+          "value": "1:3",
+          "unit": "ratio"
+        },
+        {
+          "parameter": "Maximum height from average grade at lot line",
+          "value_type": "Measurement",
+          "value": "8",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Maximum height of building",
+          "value_type": "Measurement",
+          "value": "12",
+          "unit": "feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Accessory structure daylight plane (sides & rear)",
+        "subheadings": [],
+        "sections": [
+          "Fig 25 Front elevation showing accessory-structure daylight plane at the side of the lot",
+          "Fig 26 Side elevation showing accessory-structure daylight plane at the rear of the lot",
+          "Note"
+        ]
+      },
+      "additional_notes": [
+        "Page number '32' is located at the bottom left."
+      ],
+      "cross_references": [],
+      "conditions_and_qualifiers": {
+        "qualifiers": [
+          {
+            "id": "q1",
+            "text": "For accessory buildings near the rear & side lot lines",
+            "applies_to_conditions": [
+              "c1"
+            ],
+            "scope": "Specific"
+          }
+        ],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "a hipped-gable roof is often the best solution for complying with the accesory-structure daylight plane.",
+            "value_type": "Text",
+            "operator": "contains",
+            "threshold_value": "hipped-gable roof",
+            "unit": "None"
+          }
+        ],
+        "logical_relationships": [],
+        "execution_sequence": [
+          {
+            "step": 1,
+            "action": "Consider a hipped-gable roof",
+            "condition_ids": [
+              "c1"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": []
+          }
+        ]
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:24:28",
+  "model_used": "google/gemini-2.5-flash"
+}

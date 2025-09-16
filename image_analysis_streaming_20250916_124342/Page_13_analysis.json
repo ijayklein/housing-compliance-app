@@ -1,0 +1,19 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_13.png",
+  "image_name": "Page_13.png",
+  "analysis": {
+    "page_number": "unknown",
+    "main_heading": "PARSE_ERROR",
+    "text_content": "Failed to parse response: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)",
+    "tables": [],
+    "figures": [],
+    "zoning_rules": [],
+    "code_references": [],
+    "quality_notes": "JSON parsing failed: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)",
+    "raw_response": "{\n  \"page\": \"4\",\n  \"heading\": \"Types of porches and entry ways\",\n  \"content\": \"See how to measure height of porches & entry features in Figs 6-8 on pp. 11-13\",\n  \"figures\": [\n    \"Fig 4: Types of porches and entry ways\",\n    \"A: Roofed porch\",\n    \"B: Roofed entry way (not vaulted)\",\n    \"C: Vaulted entry way\", \n    \"D: Combination porch & vaulted entry way\"\n  ],\n  \"tables\": [],\n  \"codes\": []\n}",
+    "parse_error": true
+  },
+  "analysis_timestamp": "2025-09-16 12:43:53",
+  "model_used": "anthropic/claude-3.5-sonnet",
+  "success": false
+}

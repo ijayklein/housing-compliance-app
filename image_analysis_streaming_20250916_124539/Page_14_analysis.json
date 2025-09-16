@@ -1,0 +1,17 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_14.png",
+  "image_name": "Page_14.png",
+  "analysis": {
+    "page": "8",
+    "heading": "Roofed porches on the 1st floor",
+    "content": "How to determine if a porch is at least 50% open (using Fig 5 as an example)\n\nStep 1: Determine the perimeter of the porch and divide it into segments that will allow a comparison of closed and open segments.\n\nThe perimeter of the porch in Fig 5 is shown below. It is the sum of segments A through G. It is 70 linear feet.",
+    "figures": [
+      "Fig 5 - Roofed 1st floor porch showing isometric view and floor plan with labeled segments A through G. Floor plan shows dimensions including 24' width (F) and 14' depth (E)"
+    ],
+    "tables": [],
+    "codes": []
+  },
+  "timestamp": "2025-09-16 12:45:59",
+  "model": "anthropic/claude-3.5-sonnet",
+  "success": true
+}

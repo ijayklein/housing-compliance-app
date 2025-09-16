@@ -1,0 +1,53 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_17.md",
+  "file_name": "Page_17.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "rule": "Vaulted Entry Feature Definition and Gross Floor Area (GFA) Calculation",
+        "Qualifiers": {
+          "Scope": "This rule defines 'vaulted entry features' and stipulates how their area is calculated towards the gross floor area.",
+          "Applicability": "Applies to all building entry features.",
+          "Exclusions": "The rule applies 'regardless of the design (including whether or not they are open)'."
+        },
+        "Variables": {
+          "Dimensional": "entry_feature_height: The vertical distance of the entry feature. entry_feature_footprint_area: The floor area of the entry feature. gross_floor_area: The total gross floor area of the building.",
+          "material": "top_of_roof_material: The material at the top of the roof, used as the upper measurement point for height. outside_material_of_entryway: The material on the exterior of the entryway, used as the boundary for footprint area measurement.",
+          "environmental": "Grade: The ground level used as the starting point for height measurement. (Ambiguous: The specific definition of 'Grade' is not provided in the text).",
+          "usage parameters": ""
+        },
+        "Constants": {
+          "Numerical values": "Height Threshold: 12 feet. Gross Floor Area Multiplier: 2 (counts twice).",
+          "specs": "",
+          "standards": "",
+          "procedures": "Height Measurement Procedure: Measure the vertical distance from 'Grade' to the 'intersection of front facade and top of roof material' as illustrated in Figure 6. Footprint Area Measurement Procedure: Measure the area to the 'outside material of the entryway feature', ensuring to include any portion of the entryway that is 'recessed beyond the house facade and roof'."
+        },
+        "Conditions": {
+          "Mandatory": "If an entry feature meets the height criteria for a 'vaulted entry feature', its footprint area MUST be counted twice towards the gross floor area.",
+          "Optional": "",
+          "Conditional logic": "IF entry_feature_height > 12 feet THEN the feature is classified as a 'vaulted entry feature'. IF feature is a 'vaulted entry feature' THEN its contribution to gross_floor_area = entry_feature_footprint_area * 2.",
+          "Dependencies": "The calculation of gross floor area is dependent on the measured height of any entry features."
+        },
+        "Exceptions": {
+          "Explicit deviations": "None specified.",
+          "Alternatives": "None specified.",
+          "Special cases": "The rule explicitly preempts special cases based on design (e.g., open vs. closed features) by stating it applies 'regardless of the design'."
+        },
+        "Relationships": {
+          "Hierarchical": "This rule is a specific sub-component of the broader regulations for calculating a building's total Gross Floor Area.",
+          "Cross-references": "The rule explicitly references 'Figure 6' for measurement methodology. It also mentions 'Figure 6 - 8', implying additional related figures that are not included in the provided text.",
+          "Logical dependencies": "The application of the GFA multiplier (x2) is logically dependent on the outcome of the height comparison (height > 12 feet)."
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n  {\n    \"rule\": \"Vaulted Entry Feature Definition and Gross Floor Area (GFA) Calculation\",\n    \"Qualifiers\": {\n      \"Scope\": \"This rule defines 'vaulted entry features' and stipulates how their area is calculated towards the gross floor area.\",\n      \"Applicability\": \"Applies to all building entry features.\",\n      \"Exclusions\": \"The rule applies 'regardless of the design (including whether or not they are open)'.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"entry_feature_height: The vertical distance of the entry feature. entry_feature_footprint_area: The floor area of the entry feature. gross_floor_area: The total gross floor area of the building.\",\n      \"material\": \"top_of_roof_material: The material at the top of the roof, used as the upper measurement point for height. outside_material_of_entryway: The material on the exterior of the entryway, used as the boundary for footprint area measurement.\",\n      \"environmental\": \"Grade: The ground level used as the starting point for height measurement. (Ambiguous: The specific definition of 'Grade' is not provided in the text).\",\n      \"usage parameters\": \"\"\n    },\n    \"Constants\": {\n      \"Numerical values\": \"Height Threshold: 12 feet. Gross Floor Area Multiplier: 2 (counts twice).\",\n      \"specs\": \"\",\n      \"standards\": \"\",\n      \"procedures\": \"Height Measurement Procedure: Measure the vertical distance from 'Grade' to the 'intersection of front facade and top of roof material' as illustrated in Figure 6. Footprint Area Measurement Procedure: Measure the area to the 'outside material of the entryway feature', ensuring to include any portion of the entryway that is 'recessed beyond the house facade and roof'.\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"If an entry feature meets the height criteria for a 'vaulted entry feature', its footprint area MUST be counted twice towards the gross floor area.\",\n      \"Optional\": \"\",\n      \"Conditional logic\": \"IF entry_feature_height > 12 feet THEN the feature is classified as a 'vaulted entry feature'. IF feature is a 'vaulted entry feature' THEN its contribution to gross_floor_area = entry_feature_footprint_area * 2.\",\n      \"Dependencies\": \"The calculation of gross floor area is dependent on the measured height of any entry features.\"\n    },\n    \"Exceptions\": {\n      \"Explicit deviations\": \"None specified.\",\n      \"Alternatives\": \"None specified.\",\n      \"Special cases\": \"The rule explicitly preempts special cases based on design (e.g., open vs. closed features) by stating it applies 'regardless of the design'.\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"This rule is a specific sub-component of the broader regulations for calculating a building's total Gross Floor Area.\",\n      \"Cross-references\": \"The rule explicitly references 'Figure 6' for measurement methodology. It also mentions 'Figure 6 - 8', implying additional related figures that are not included in the provided text.\",\n      \"Logical dependencies\": \"The application of the GFA multiplier (x2) is logically dependent on the outcome of the height comparison (height > 12 feet).\"\n    }\n  }\n]\n```",
+    "response_time": 47.03329610824585,
+    "input_tokens": 856,
+    "output_tokens": 5066,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 16:11:55",
+  "model": "google/gemini-2.5-pro",
+  "success": true
+}

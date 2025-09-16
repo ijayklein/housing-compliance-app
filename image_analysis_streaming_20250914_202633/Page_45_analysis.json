@@ -1,0 +1,162 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_45.png",
+  "image_name": "Page_45.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Detached garages/carports site planning\n\n\u2022 Detached garages and carports may be located in the rear or interior side yard if at least 75' from the front lot line and at least 20' from the street-side lot line.\n\u2022 Additionally, on lots less than 95' deep, they may be located in rear or interior side yards if placed in rear half of the lot.\n\u2022 Garages and carports that take advantage of this setback exception are subject to a stricter daylight plane. See Figs 25-26 p. 32.\n\nFig 34 Examples of site planning solutions for detached garages/carports\n\nGarages at the lot line must comply with Uniform Building Code (UBC) requirements for fire-rated walls & roof materials.\n\nCarports with open sides must be at least 3' from any lot line.\n\nInterior lot example\n\nRear yard\n\n2-car Garage w/rated walls\n\nBuildable area\n\nMain dwelling\n\nMin. 75' or midpoint for lots < 95' deep\n\nFront yard\n\nDistance of front setback\n\nInterior lot example\n\nRear yard\n\n2-car Carport w/open sides\n\nBuildable area\n\nMain dwelling\n\nMin. 75' or midpoint for lots < 95' deep\n\nFront yard\n\nInterior lot example\n\nRear yard\n\n2-car Garage w/rated walls\n\nBuildable area\n\nMain dwelling\n\nMin. 75' or midpoint for lots < 95' deep\n\nFront yard\n\nStreet-side yard\n\nCorner lot example\n\nRear yard\n\n20' min\n\n10'\n\nNote: Uncovered spaces must be located beyond the required front-yard and beyond the first 10' of the street-side yard.\n\nNote: In all the examples on this page, a 1-car garage could be substituted for a 2-car garage because there is room for uncovered parking in the driveway.\n\nKey\n\nCurb\nLot line\nSidewalk\nRequired setbacks\nBuildable area\nDwelling\nParking structure\nNo-parking area\nUncovered space\n\nA 2-car garage w/uncovered spaces in driveway (tandem OK)\nB 2-car carport w/uncovered spaces in driveway (tandem OK)\nC 2-car garage w/uncovered spaces in driveway (tandem OK)",
+      "visual_elements": [
+        {
+          "type": "figure",
+          "description": "Fig 34 shows three site planning examples for detached garages/carports on interior and corner lots. Each example depicts a lot layout with labeled areas: buildable area, main dwelling, front yard, rear yard, interior side yard, and street-side yard. The figure includes a 2-car garage with rated walls at the lot line, a 2-car carport with open sides set back at least 3 feet from any lot line, and a 2-car garage with rated walls on a corner lot. Measurements such as minimum 75 feet or midpoint for lots less than 95 feet deep, 20 feet minimum from street-side lot line, and 10 feet setback on corner lot are shown. The figure also includes a key explaining symbols for curb, lot line, sidewalk, required setbacks, buildable area, dwelling, parking structure, no-parking area, and uncovered space. Car icons indicate parking spaces in driveways and uncovered spaces.",
+          "location": "Middle to bottom of the page"
+        },
+        {
+          "type": "text box",
+          "description": "A grey shaded note box stating: 'Note: Uncovered spaces must be located beyond the required front-yard and beyond the first 10' of the street-side yard.'",
+          "location": "Top right of the page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Minimum distance from front lot line for detached garages/carports",
+          "value_type": "Measurement",
+          "value": 75,
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum distance from street-side lot line for detached garages/carports",
+          "value_type": "Measurement",
+          "value": 20,
+          "unit": "feet"
+        },
+        {
+          "parameter": "Lot depth threshold for rear or interior side yard placement",
+          "value_type": "Measurement",
+          "value": 95,
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum setback for carports with open sides from any lot line",
+          "value_type": "Measurement",
+          "value": 3,
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum distance or midpoint for lots less than 95' deep",
+          "value_type": "Measurement",
+          "value": 75,
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum street-side yard setback on corner lot",
+          "value_type": "Measurement",
+          "value": 20,
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum setback on street-side yard for uncovered spaces on corner lot",
+          "value_type": "Measurement",
+          "value": 10,
+          "unit": "feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Detached garages/carports site planning",
+        "subheadings": [],
+        "sections": []
+      },
+      "additional_notes": [
+        "Page number 39 at bottom right corner.",
+        "No handwritten annotations or stamps detected.",
+        "Text and figure are clear and legible."
+      ],
+      "cross_references": [
+        "See Figs 25-26 p. 32 for daylight plane requirements."
+      ],
+      "conditions_and_qualifiers": {
+        "qualifiers": [
+          {
+            "id": "q1",
+            "text": "Garages and carports that take advantage of this setback exception are subject to a stricter daylight plane.",
+            "applies_to_conditions": [
+              "c1",
+              "c2"
+            ],
+            "scope": "Local"
+          }
+        ],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "Detached garages and carports may be located in the rear or interior side yard if at least 75' from the front lot line and at least 20' from the street-side lot line.",
+            "value_type": "Measurement",
+            "operator": ">=",
+            "threshold_value": "75",
+            "unit": "feet"
+          },
+          {
+            "id": "c2",
+            "text": "On lots less than 95' deep, garages and carports may be located in rear or interior side yards if placed in rear half of the lot.",
+            "value_type": "Measurement",
+            "operator": "<",
+            "threshold_value": "95",
+            "unit": "feet"
+          },
+          {
+            "id": "c3",
+            "text": "Carports with open sides must be at least 3' from any lot line.",
+            "value_type": "Measurement",
+            "operator": ">=",
+            "threshold_value": "3",
+            "unit": "feet"
+          }
+        ],
+        "logical_relationships": [
+          {
+            "operation": "AND",
+            "condition_ids": [
+              "c1"
+            ],
+            "expression": "Detached garages and carports may be located in the rear or interior side yard if at least 75' from the front lot line AND at least 20' from the street-side lot line.",
+            "evaluation_order": 1
+          },
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c2"
+            ],
+            "expression": "IF lot depth < 95' THEN garages and carports may be located in rear or interior side yards if placed in rear half of the lot.",
+            "evaluation_order": 2
+          }
+        ],
+        "execution_sequence": [
+          {
+            "step": 1,
+            "action": "Verify lot depth and location of garage/carport relative to front and street-side lot lines.",
+            "condition_ids": [
+              "c1",
+              "c2"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 2,
+            "action": "Ensure carports with open sides maintain minimum 3' setback from any lot line.",
+            "condition_ids": [
+              "c3"
+            ],
+            "qualifier_ids": [],
+            "dependencies": [
+              1
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:27:48",
+  "model_used": "openai/gpt-4.1-mini"
+}

@@ -1,0 +1,66 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_46.png",
+  "image_name": "Page_46.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Basements\n&\nExcavated\nfeatures\n\nFloor area regulations\nare intended to address\nthe building mass and\nthe appearance of the\nstreetscape. Therefore,\nif basement area is\nbelow grade and does\nnot contribute to the\napparent mass of a\nbuilding, that area,\neven if it is habitable,\nneed not be included in\nthe total floor area.\n\nCode sections\nPage 40\n18.12.090 (a, b, & c)\nPage 41\n18.12.090 (c)\nPage 43\n18.12.090 (c) (1)\nPage 44\n18.12.090 (c) (2)\n\nBasement standards\n\n\u2022 May not be located in special flood hazard areas.\n\u2022 May not extend beyond building footprint.\n\u2022 May not encroach into required yards, except where\n  main dwelling is permitted to extend into rear yard.\n\nFAR\nBasements (even habitable ones) do\nnot count as floor area if first floor\nis no more than 3' above grade.\n\nFig 35 Basement & grade\n\nExcavated features\n\nThere are two types of excavated features:\n\u2022 Light wells and stairwells\n\u2022 Below-grade patios\n\nFAR\nExcavation will not affect grade or\nmeasurement of floor area if stan-\ndards are met (see pages 42 and 43).\n\nFig 36 Excavated feature & grade\n\nA: distance between top of first floor\nand grade if excavation meets the\nsize/dimensioinal limits described in\nFigs 39-40 on pp. 42-43.\n\nB: distance between top of first\nfloor and grade if excavated\nfeatures exceed the\nsize/dimensioinal limits described\nin Figs 39-40 on pp. 42-43.\n\nTop of first floor\n\nBasement\nExcavated\nfeature\n\nGrade if excavated features\nmeet standards described in\nFigs 39-40 on pp. 42-43.\n\nGrade if excavated features\nexceed standards described in\nFigs 39-40 on pp. 42-43.\n\n40",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Figure 35: A cross-section diagram illustrating 'Basement & grade'. It shows a section of ground with a hatched pattern representing earth. There is a horizontal line indicating 'grade' and a hatched area below it, representing a basement. The diagram depicts the relationship between the ground level and the basement.",
+          "location": "Middle-left"
+        },
+        {
+          "type": "diagram",
+          "description": "Figure 36: A cross-section diagram illustrating 'Excavated feature & grade'. It shows a partial side view of a building with a basement and an excavated feature. The ground is represented by a hatched pattern. A vertical line labeled 'Basement' extends downwards from the building's foundation. Adjacent to it, another vertical line labeled 'Excavated feature' extends downwards, indicating an excavation. There are two arrows labeled 'A' and 'B' indicating vertical distances. 'A' points from the 'Top of first floor' to the 'Grade' line where excavated features meet standards. 'B' points from the 'Top of first floor' to a lower 'Grade' line where excavated features exceed standards. The diagram visually explains the definitions of 'A' and 'B' in relation to the top of the first floor and different grade levels for excavated features.",
+          "location": "Middle-right to Bottom-right"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Maximum height of first floor above grade for FAR exclusion (basements)",
+          "value": "3",
+          "unit": "feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": null,
+        "subheadings": [
+          "Basements & Excavated features",
+          "Basement standards",
+          "FAR",
+          "Excavated features",
+          "FAR"
+        ],
+        "sections": [
+          "Floor area regulations are intended to address the building mass and the appearance of the streetscape. Therefore, if basement area is below grade and does not contribute to the apparent mass of a building, that area, even if it is habitable, need not be included in the total floor area.",
+          "Code sections",
+          "May not be located in special flood hazard areas.",
+          "May not extend beyond building footprint.",
+          "May not encroach into required yards, except where main dwelling is permitted to extend into rear yard.",
+          "Basements (even habitable ones) do not count as floor area if first floor is no more than 3' above grade.",
+          "There are two types of excavated features:",
+          "Light wells and stairwells",
+          "Below-grade patios",
+          "Excavation will not affect grade or measurement of floor area if standards are met (see pages 42 and 43).",
+          "A: distance between top of first floor and grade if excavation meets the size/dimensioinal limits described in Figs 39-40 on pp. 42-43.",
+          "B: distance between top of first floor and grade if excavated features exceed the size/dimensioinal limits described in Figs 39-40 on pp. 42-43.",
+          "Grade if excavated features meet standards described in Figs 39-40 on pp. 42-43.",
+          "Grade if excavated features exceed standards described in Figs 39-40 on pp. 42-43."
+        ]
+      },
+      "additional_notes": [
+        "Page number '40' is located at the bottom left corner of the page."
+      ],
+      "cross_references": [
+        "Fig 35 Basement & grade",
+        "Fig 36 Excavated feature & grade",
+        "pages 42 and 43",
+        "Figs 39-40 on pp. 42-43",
+        "Code sections:\nPage 40: 18.12.090 (a, b, & c)\nPage 41: 18.12.090 (c)\nPage 43: 18.12.090 (c) (1)\nPage 44: 18.12.090 (c) (2)"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-14 19:32:35",
+  "model_used": "google/gemini-2.5-flash"
+}

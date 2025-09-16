@@ -1,0 +1,134 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_24.png",
+  "image_name": "Page_24.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Projections\nArchitectural relief features such as bay windows are pleasant additions to a house design and are encouraged. If they meet certain design criteria they do not count toward gross floor area.\n\nCode sections\n18.04.030(a)(65)\n18.12.040(b)Table 3\n\nBay windows\nBay windows that meet the design criteria below are considered to be decorative architectural features and do NOT count toward gross floor area.\n\nDesign criteria for bay windows that do not count:\n\u2022 Bottom of feature must be at least 18\" above the floor joists\n\u2022 Exterior supports must be features like corbels and/or brackets rather than solid walls\n\u2022 At least 50% of the surface is glass\n\nFig 13 Bay windows\n\n2' max. from bay window surface to facade surface (Typical all)\n\n18\" min. from top of floor to bottom of bay window structure\n\nA\nDoes NOT count\n\nB\nCounts because floor joists continue into the bay window\n\nC & D\nCount because of exterior skirt wall (angled or straight)\n\nE\nCounts because the surface is not at least 50% glass\n\nNote: Bay windows that extend higher than the structure's roof are considered to be dormers and count toward gross floor area.",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Five side-view architectural diagrams labeled A, B, C & D, and E illustrating different bay window designs and their compliance with gross floor area counting rules. Diagram A shows a bay window with a bottom feature at least 18\" above floor joists and exterior supports like corbels/brackets, labeled 'Does NOT count'. Diagram B shows a bay window where floor joists continue into the bay window, labeled 'Counts'. Diagrams C & D show bay windows with exterior skirt walls (angled or straight), labeled 'Count'. Diagram E shows a bay window with surface less than 50% glass, labeled 'Counts'. Annotations indicate a maximum 2' projection from bay window surface to facade surface and minimum 18\" height from floor to bottom of bay window structure.",
+          "location": "Middle of the page, below the design criteria text"
+        },
+        {
+          "type": "text box",
+          "description": "Gray shaded box with note: 'Bay windows that extend higher than the structure's roof are considered to be dormers and count toward gross floor area.'",
+          "location": "Right side of the page, middle"
+        },
+        {
+          "type": "sidebar",
+          "description": "Vertical gray sidebar on left side with heading 'Projections' and text encouraging architectural relief features such as bay windows, noting they do not count toward gross floor area if they meet design criteria. Also includes code section references: 18.04.030(a)(65) and 18.12.040(b)Table 3.",
+          "location": "Left side of the page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Bottom of feature height",
+          "value_type": "Measurement",
+          "value": 18,
+          "unit": "inches"
+        },
+        {
+          "parameter": "Maximum projection from bay window surface to facade surface",
+          "value_type": "Measurement",
+          "value": 2,
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum glass surface percentage",
+          "value_type": "Percentage",
+          "value": 50,
+          "unit": "%"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Bay windows",
+        "subheadings": [
+          "Design criteria for bay windows that do not count"
+        ],
+        "sections": [
+          "Projections",
+          "Code sections"
+        ]
+      },
+      "additional_notes": [
+        "Page number 18 at bottom left corner.",
+        "No handwritten annotations or stamps detected.",
+        "Text and diagrams are clear and legible."
+      ],
+      "cross_references": [
+        "Code sections 18.04.030(a)(65)",
+        "Code sections 18.12.040(b)Table 3"
+      ],
+      "conditions_and_qualifiers": {
+        "qualifiers": [
+          {
+            "id": "q1",
+            "text": "Bay windows that meet the design criteria below are considered to be decorative architectural features and do NOT count toward gross floor area.",
+            "applies_to_conditions": [
+              "c1",
+              "c2",
+              "c3"
+            ],
+            "scope": "Global"
+          }
+        ],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "Bottom of feature must be at least 18\" above the floor joists",
+            "value_type": "Measurement",
+            "operator": ">=",
+            "threshold_value": 18,
+            "unit": "inches"
+          },
+          {
+            "id": "c2",
+            "text": "Exterior supports must be features like corbels and/or brackets rather than solid walls",
+            "value_type": "Text",
+            "operator": "contains",
+            "threshold_value": "corbels and/or brackets",
+            "unit": "None"
+          },
+          {
+            "id": "c3",
+            "text": "At least 50% of the surface is glass",
+            "value_type": "Percentage",
+            "operator": ">=",
+            "threshold_value": 50,
+            "unit": "%"
+          }
+        ],
+        "logical_relationships": [
+          {
+            "operation": "AND",
+            "condition_ids": [
+              "c1",
+              "c2",
+              "c3"
+            ],
+            "expression": "Bottom of feature must be at least 18\" above the floor joists AND Exterior supports must be features like corbels and/or brackets rather than solid walls AND At least 50% of the surface is glass",
+            "evaluation_order": 1
+          }
+        ],
+        "execution_sequence": [
+          {
+            "step": 1,
+            "action": "Evaluate if bay window meets all design criteria (c1, c2, c3) to determine if it does NOT count toward gross floor area",
+            "condition_ids": [
+              "c1",
+              "c2",
+              "c3"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": []
+          }
+        ]
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:13:31",
+  "model_used": "openai/gpt-4.1-mini"
+}

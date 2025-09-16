@@ -1,0 +1,141 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_38.png",
+  "image_name": "Page_38.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Accessory structure daylight plane (sides & rear)\n\nFig 25 Front elevation showing accessory-structure daylight plane at the side of the lot\n\nFig 26 Side elevation showing accessory-structure daylight plane at the rear of the lot\n\nNote: For accessory buildings near the rear & side lot lines, a hipped-gable roof is often the best solution for complying with the accessory-structure daylight plane.\n\n32",
+      "visual_elements": [
+        {
+          "type": "figure",
+          "description": "Front elevation diagram showing an accessory structure with a dashed line representing the daylight plane at the side of the lot. The diagram includes vertical measurements: 8' from average grade and 12' max. height of building. The side lot lines are marked on both sides of the structure. The roof is shown with a hipped-gable shape. The dashed daylight plane line slopes upward from the side lot line at a ratio of 3:1 (horizontal:vertical).",
+          "location": "Top half of the page, left side"
+        },
+        {
+          "type": "figure",
+          "description": "Side elevation diagram showing an accessory structure with a dashed line representing the daylight plane at the rear of the lot. The diagram includes vertical measurements: 8' from average grade and 12' max. height of building. The rear lot line is marked. The roof is shown with a hipped-gable shape. The dashed daylight plane line slopes upward from the rear lot line at a ratio of 3:1 (horizontal:vertical).",
+          "location": "Middle left side of the page, below the first figure"
+        },
+        {
+          "type": "diagram",
+          "description": "A square diagram divided into four triangular sections representing the lot orientation: Front, Rear, and two Sides. Arrows indicate directions: upward arrow labeled 'Side' at top, rightward arrow labeled 'Rear' on right side, downward arrow labeled 'Side' at bottom, and left side labeled 'Front'. This diagram clarifies orientation references used in the elevation figures.",
+          "location": "Right side of the page, middle"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Distance from average grade to start of daylight plane",
+          "value_type": "Measurement",
+          "value": 8,
+          "unit": "feet"
+        },
+        {
+          "parameter": "Maximum height of accessory structure building",
+          "value_type": "Measurement",
+          "value": 12,
+          "unit": "feet"
+        },
+        {
+          "parameter": "Slope ratio of daylight plane",
+          "value_type": "Numerical",
+          "value": "3:1",
+          "unit": "horizontal:vertical"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Accessory structure daylight plane (sides & rear)",
+        "subheadings": [],
+        "sections": []
+      },
+      "additional_notes": [
+        "Page number 32 at bottom left corner.",
+        "No handwritten annotations, stamps, or markings detected.",
+        "Text and diagrams are clear and legible."
+      ],
+      "cross_references": [],
+      "conditions_and_qualifiers": {
+        "qualifiers": [
+          {
+            "id": "q1",
+            "text": "For accessory buildings near the rear & side lot lines, a hipped-gable roof is often the best solution for complying with the accessory-structure daylight plane.",
+            "applies_to_conditions": [],
+            "scope": "Local"
+          }
+        ],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "Daylight plane starts 8' from average grade",
+            "value_type": "Measurement",
+            "operator": "=",
+            "threshold_value": 8,
+            "unit": "feet"
+          },
+          {
+            "id": "c2",
+            "text": "Maximum height of accessory structure building is 12'",
+            "value_type": "Measurement",
+            "operator": "<=",
+            "threshold_value": 12,
+            "unit": "feet"
+          },
+          {
+            "id": "c3",
+            "text": "Daylight plane slopes upward at a ratio of 3:1 (horizontal:vertical)",
+            "value_type": "Numerical",
+            "operator": "=",
+            "threshold_value": "3:1",
+            "unit": "horizontal:vertical"
+          }
+        ],
+        "logical_relationships": [
+          {
+            "operation": "AND",
+            "condition_ids": [
+              "c1",
+              "c2",
+              "c3"
+            ],
+            "expression": "Daylight plane must start 8' from average grade AND max height must be 12' AND slope ratio must be 3:1",
+            "evaluation_order": 1
+          }
+        ],
+        "execution_sequence": [
+          {
+            "step": 1,
+            "action": "Verify daylight plane starts 8' from average grade",
+            "condition_ids": [
+              "c1"
+            ],
+            "qualifier_ids": [],
+            "dependencies": []
+          },
+          {
+            "step": 2,
+            "action": "Ensure maximum building height does not exceed 12'",
+            "condition_ids": [
+              "c2"
+            ],
+            "qualifier_ids": [],
+            "dependencies": [
+              1
+            ]
+          },
+          {
+            "step": 3,
+            "action": "Confirm daylight plane slope ratio is 3:1 (horizontal:vertical)",
+            "condition_ids": [
+              "c3"
+            ],
+            "qualifier_ids": [],
+            "dependencies": [
+              1,
+              2
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:27:29",
+  "model_used": "openai/gpt-4.1-mini"
+}

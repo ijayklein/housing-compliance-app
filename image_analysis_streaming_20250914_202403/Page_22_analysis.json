@@ -1,0 +1,176 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_22.png",
+  "image_name": "Page_22.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Attic\nspace &\nequivalen-\ncies\n\nVoluminous spaces in a\nstructure contribute to\nthe mass even if these\nareas are not used\nor described in the\nfloor plan. The 2nd &\n3rd floor equivalency\naddresses how these\nareas count toward the\ngross floor area.\n\nCode sections\n18.04.030(a)(65)\n18.12.040(b)Table 3\n\n16\n\nAttic, closet, & perimeter spaces\n\nOn all accessible floors, areas with at least 5' of head clearance count toward the gross\nfloor area regardless of the floor plan or actual usage of the space.\n\nIn Fig 11 below, the highlighted areas count as follows:\n\n\u2022 Area A of this 3rd floor (accessible via stairs), has 5' of head\nclearance and counts as 3rd floor area.\n\u2022 Area B of this 2rd floor (accessible via stairs), has 5' of head\nclearance and is included in the count of the, more obvious, 2nd\nfloor area.\n\nFig 11 Attic, closet, & perimeter spaces\n\nNote: 500 sf of unusable attic\nspace may be exempted for\nCategory 1 & 2 historic homes.\n\nNote:\nMeasurements are\nfrom top of floor to\nunderside of the rafter\n\nUnderside of\npical)\n\noor\n\n1st floor",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "A cross-section diagram of a multi-story building showing an attic space (Area A) and a second-floor space (Area B) with sloped ceilings. Area A is in the attic, hatched with diagonal lines, and labeled 'A'. Area B is on the second floor, also hatched with diagonal lines, and labeled 'B'. A staircase is visible leading from the first floor to the second floor, and another staircase leads from the second floor to the attic. A vertical measurement of 5' is indicated for head clearance on the second floor. The diagram also points to '1st floor' and indicates 'underside of rafter' and 'underside of typical'. There are labels 'CC' and 'W' near the staircase.",
+          "location": "Bottom middle"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Minimum head clearance for counting towards gross floor area",
+          "value_type": "Measurement",
+          "value": "5",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Maximum unusable attic space exemption",
+          "value_type": "Measurement",
+          "value": "500",
+          "unit": "sf"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Attic, closet, & perimeter spaces",
+        "subheadings": [],
+        "sections": [
+          "Attic space & equivalencies",
+          "Code sections",
+          "Note: 500 sf of unusable attic space may be exempted for Category 1 & 2 historic homes.",
+          "Note: Measurements are from top of floor to underside of the rafter"
+        ]
+      },
+      "additional_notes": [],
+      "cross_references": [
+        "Fig 11",
+        "18.04.030(a)(65)",
+        "18.12.040(b)Table 3"
+      ],
+      "conditions_and_qualifiers": {
+        "qualifiers": [
+          {
+            "id": "q1",
+            "text": "On all accessible floors",
+            "applies_to_conditions": [
+              "c1"
+            ],
+            "scope": "Global"
+          },
+          {
+            "id": "q2",
+            "text": "regardless of the floor plan or actual usage of the space",
+            "applies_to_conditions": [
+              "c1"
+            ],
+            "scope": "Global"
+          },
+          {
+            "id": "q3",
+            "text": "accessible via stairs",
+            "applies_to_conditions": [
+              "c2",
+              "c3"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q4",
+            "text": "of unusable attic space",
+            "applies_to_conditions": [
+              "c4"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q5",
+            "text": "for Category 1 & 2 historic homes",
+            "applies_to_conditions": [
+              "c4"
+            ],
+            "scope": "Specific"
+          }
+        ],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "areas with at least 5' of head clearance count toward the gross floor area",
+            "value_type": "Measurement",
+            "operator": ">=",
+            "threshold_value": "5",
+            "unit": "feet"
+          },
+          {
+            "id": "c2",
+            "text": "Area A of this 3rd floor (accessible via stairs), has 5' of head clearance and counts as 3rd floor area.",
+            "value_type": "Measurement",
+            "operator": "=",
+            "threshold_value": "5",
+            "unit": "feet"
+          },
+          {
+            "id": "c3",
+            "text": "Area B of this 2rd floor (accessible via stairs), has 5' of head clearance and is included in the count of the, more obvious, 2nd floor area.",
+            "value_type": "Measurement",
+            "operator": "=",
+            "threshold_value": "5",
+            "unit": "feet"
+          },
+          {
+            "id": "c4",
+            "text": "500 sf of unusable attic space may be exempted",
+            "value_type": "Measurement",
+            "operator": "<=",
+            "threshold_value": "500",
+            "unit": "sf"
+          }
+        ],
+        "logical_relationships": [],
+        "execution_sequence": [
+          {
+            "step": 1,
+            "action": "Determine if an area on an accessible floor counts toward gross floor area.",
+            "condition_ids": [
+              "c1"
+            ],
+            "qualifier_ids": [
+              "q1",
+              "q2"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 2,
+            "action": "Evaluate Area A's contribution to 3rd floor area.",
+            "condition_ids": [
+              "c2"
+            ],
+            "qualifier_ids": [
+              "q3"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 3,
+            "action": "Evaluate Area B's contribution to 2nd floor area.",
+            "condition_ids": [
+              "c3"
+            ],
+            "qualifier_ids": [
+              "q3"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 4,
+            "action": "Determine if unusable attic space is exempt.",
+            "condition_ids": [
+              "c4"
+            ],
+            "qualifier_ids": [
+              "q4",
+              "q5"
+            ],
+            "dependencies": []
+          }
+        ]
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:24:13",
+  "model_used": "google/gemini-2.5-flash"
+}

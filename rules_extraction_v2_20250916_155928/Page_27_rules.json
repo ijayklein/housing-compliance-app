@@ -1,0 +1,233 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_27.md",
+  "file_name": "Page_27.md",
+  "analysis": {
+    "extracted_rules": {
+      "rules": [
+        {
+          "rule_id": "R1",
+          "rule_name": "Contextual Front Setbacks",
+          "qualifiers": {
+            "scope": "Applies to the determination of front setbacks for lots on a block.",
+            "applicability": "Applies if, and only if, the calculated contextual setback average is 30 feet or greater.",
+            "exclusions": [
+              {
+                "type": "Lot Type",
+                "description": "Flag lot",
+                "source_ref": "Figure 15, Lot C"
+              },
+              {
+                "type": "Lot Usage",
+                "description": "Multi-family use with 3 or more units",
+                "condition": "number_of_units >= 3",
+                "source_ref": "Figure 15, Lot G"
+              },
+              {
+                "type": "Lot Configuration",
+                "description": "Corner lot facing a cross street",
+                "source_ref": "Figure 15, Lot H"
+              },
+              {
+                "type": "Conditional Exclusion for Averaging",
+                "description": "If the number of lots remaining after initial exclusions is 5 or more, the lots with the smallest and largest setbacks are also excluded from the average calculation.",
+                "condition": "count(remaining_lots) >= 5",
+                "source_ref": "Figure 15, Lots D and E"
+              }
+            ]
+          },
+          "variables": [
+            {
+              "name": "existing_setback",
+              "type": "Dimensional",
+              "description": "The front setback of an existing lot on the same side of the block.",
+              "unit": "feet"
+            },
+            {
+              "name": "number_of_lots_on_block",
+              "type": "Count",
+              "description": "Total number of lots on the same side of the block, including the project lot."
+            },
+            {
+              "name": "block_length",
+              "type": "Dimensional",
+              "description": "The total length of the block face.",
+              "unit": "feet"
+            },
+            {
+              "name": "number_of_units",
+              "type": "Count",
+              "description": "Number of dwelling units on a lot, used to determine multi-family exclusion."
+            },
+            {
+              "name": "lot_type",
+              "type": "Categorical",
+              "description": "The classification of a lot (e.g., 'Flag lot', 'Corner lot')."
+            },
+            {
+              "name": "lot_usage",
+              "type": "Categorical",
+              "description": "The use of a lot (e.g., 'Single-Family', 'Multi-family use')."
+            },
+            {
+              "name": "contextual_setback_average",
+              "type": "Dimensional",
+              "description": "The calculated average setback of qualifying lots.",
+              "unit": "feet"
+            }
+          ],
+          "constants": [
+            {
+              "name": "Applicability Threshold",
+              "value": 30,
+              "unit": "feet",
+              "description": "The minimum average setback for the contextual rule to apply. Primary rule states '30 or greater'."
+            },
+            {
+              "name": "Minimum Lot Count for Process",
+              "value": 3,
+              "unit": "lots",
+              "description": "The process applies only if the block has more than 3 lots."
+            },
+            {
+              "name": "Maximum Block Length for Consideration",
+              "value": 600,
+              "unit": "feet",
+              "description": "For blocks longer than this, only lots within a 600' segment are considered."
+            },
+            {
+              "name": "Maximum Lot Count for Long Blocks",
+              "value": 10,
+              "unit": "lots",
+              "description": "The maximum number of lots to consider within the 600' segment on a long block."
+            },
+            {
+              "name": "Multi-family Unit Threshold",
+              "value": 3,
+              "unit": "units",
+              "description": "Lots with 3 or more units are excluded."
+            },
+            {
+              "name": "Lot Count Threshold for Outlier Exclusion",
+              "value": 5,
+              "unit": "lots",
+              "description": "If 5 or more lots remain after initial exclusions, the smallest and largest setbacks are also excluded."
+            },
+            {
+              "name": "Calculation Procedure",
+              "value": "A multi-step process to determine the contextual setback average.",
+              "description": "See 'conditions' for the detailed logic flow."
+            }
+          ],
+          "conditions": {
+            "main_applicability_condition": {
+              "logic": "IF (contextual_setback_average >= 30) THEN RuleApplies",
+              "description": "Contextual setbacks apply if, and only if, the calculated average is 30' or greater.",
+              "dependencies": [
+                "R1.constants.Applicability Threshold",
+                "R1.variables.contextual_setback_average"
+              ]
+            },
+            "calculation_procedure": [
+              {
+                "step": 1,
+                "condition": "number_of_lots_on_block > 3",
+                "action_if_true": "Proceed to Step 2.",
+                "action_if_false": "Contextual setback rule does not apply.",
+                "description": "Check if the block has more than 3 lots (including the project lot)."
+              },
+              {
+                "step": 2,
+                "condition": "block_length > 600",
+                "action_if_true": "Limit the set of lots to be considered to those within a 600' segment, up to a maximum of 10 lots.",
+                "action_if_false": "Consider all lots on the block face.",
+                "description": "Handle special case for long blocks. This is an optional/conditional step."
+              },
+              {
+                "step": 3,
+                "condition": "Always executed if Step 1 is true.",
+                "action_if_true": "From the set of lots, exclude: Flag lots, Multi-family lots (>=3 units), and Corner lots facing a cross street.",
+                "description": "Filter out non-qualifying lots based on type, usage, and configuration."
+              },
+              {
+                "step": 4,
+                "condition": "count(remaining_lots) >= 5",
+                "action_if_true": "Exclude the lots with the single smallest and single largest setbacks from the remaining set.",
+                "action_if_false": "Proceed to Step 5 with all remaining lots.",
+                "description": "Check if outlier setbacks should be excluded from the average calculation."
+              },
+              {
+                "step": 5,
+                "condition": "Always executed after previous steps.",
+                "action_if_true": "Calculate the arithmetic average of the front setbacks of the final set of lots. This result is the 'contextual_setback_average'.",
+                "description": "Calculate the average setback."
+              },
+              {
+                "step": 6,
+                "condition": "contextual_setback_average >= 30",
+                "action_if_true": "The contextual setback rule applies.",
+                "action_if_false": "The contextual setback rule does not apply.",
+                "description": "Final check to see if the rule applies, based on the primary rule's threshold."
+              }
+            ]
+          },
+          "exceptions": [
+            {
+              "case": "Long Blocks",
+              "condition": "block_length > 600'",
+              "rule": "Consider only lots within a 600' segment of the block, up to a maximum of 10 lots.",
+              "description": "A special procedure for blocks exceeding 600 feet in length."
+            }
+          ],
+          "relationships": {
+            "hierarchical": "The 'calculation_procedure' is a sub-component of the main rule, defining the method to derive the 'contextual_setback_average' variable required for the 'main_applicability_condition'.",
+            "cross_references": [
+              {
+                "from": "Process Header",
+                "to": "Figure 15",
+                "description": "The process description explicitly references Figure 15 as an example."
+              },
+              {
+                "from": "Figure 15",
+                "to": "Calculation Procedure",
+                "description": "Figure 15 provides a visual example of the lots and exclusions described in the calculation procedure."
+              }
+            ],
+            "logical_dependencies": [
+              {
+                "dependency": "The applicability of the entire rule is dependent on the final output of the multi-step calculation procedure.",
+                "from": "conditions.main_applicability_condition",
+                "to": "conditions.calculation_procedure"
+              },
+              {
+                "dependency": "The exclusion of smallest and largest setbacks (Step 4) is conditional on the number of lots remaining after the initial exclusions (Step 3).",
+                "from": "conditions.calculation_procedure.step[3]",
+                "to": "conditions.calculation_procedure.step[2]"
+              }
+            ]
+          },
+          "ambiguous_language": [
+            {
+              "text": "Is the number of remaining lots more or less than 5 or more?",
+              "interpretation": "Interpreted as 'Is the number of remaining lots 5 or more?' based on the subsequent step ('Yes Exclude the smallest and largest setbacks').",
+              "location": "Decision/steps (flowchart text)"
+            },
+            {
+              "text": "If greater than 30', it applies.",
+              "interpretation": "This contradicts the primary rule which states '30' or greater'. The primary rule ('if, and only if, the average... is 30' or greater') is assumed to be authoritative and is used in the structured conditions.",
+              "location": "Decision/steps (flowchart text) vs. Primary rule (boxed)"
+            }
+          ]
+        }
+      ]
+    },
+    "parse_error": false,
+    "raw_response": "```json\n{\n  \"rules\": [\n    {\n      \"rule_id\": \"R1\",\n      \"rule_name\": \"Contextual Front Setbacks\",\n      \"qualifiers\": {\n        \"scope\": \"Applies to the determination of front setbacks for lots on a block.\",\n        \"applicability\": \"Applies if, and only if, the calculated contextual setback average is 30 feet or greater.\",\n        \"exclusions\": [\n          {\n            \"type\": \"Lot Type\",\n            \"description\": \"Flag lot\",\n            \"source_ref\": \"Figure 15, Lot C\"\n          },\n          {\n            \"type\": \"Lot Usage\",\n            \"description\": \"Multi-family use with 3 or more units\",\n            \"condition\": \"number_of_units >= 3\",\n            \"source_ref\": \"Figure 15, Lot G\"\n          },\n          {\n            \"type\": \"Lot Configuration\",\n            \"description\": \"Corner lot facing a cross street\",\n            \"source_ref\": \"Figure 15, Lot H\"\n          },\n          {\n            \"type\": \"Conditional Exclusion for Averaging\",\n            \"description\": \"If the number of lots remaining after initial exclusions is 5 or more, the lots with the smallest and largest setbacks are also excluded from the average calculation.\",\n            \"condition\": \"count(remaining_lots) >= 5\",\n            \"source_ref\": \"Figure 15, Lots D and E\"\n          }\n        ]\n      },\n      \"variables\": [\n        {\n          \"name\": \"existing_setback\",\n          \"type\": \"Dimensional\",\n          \"description\": \"The front setback of an existing lot on the same side of the block.\",\n          \"unit\": \"feet\"\n        },\n        {\n          \"name\": \"number_of_lots_on_block\",\n          \"type\": \"Count\",\n          \"description\": \"Total number of lots on the same side of the block, including the project lot.\"\n        },\n        {\n          \"name\": \"block_length\",\n          \"type\": \"Dimensional\",\n          \"description\": \"The total length of the block face.\",\n          \"unit\": \"feet\"\n        },\n        {\n          \"name\": \"number_of_units\",\n          \"type\": \"Count\",\n          \"description\": \"Number of dwelling units on a lot, used to determine multi-family exclusion.\"\n        },\n        {\n          \"name\": \"lot_type\",\n          \"type\": \"Categorical\",\n          \"description\": \"The classification of a lot (e.g., 'Flag lot', 'Corner lot').\"\n        },\n        {\n          \"name\": \"lot_usage\",\n          \"type\": \"Categorical\",\n          \"description\": \"The use of a lot (e.g., 'Single-Family', 'Multi-family use').\"\n        },\n        {\n          \"name\": \"contextual_setback_average\",\n          \"type\": \"Dimensional\",\n          \"description\": \"The calculated average setback of qualifying lots.\",\n          \"unit\": \"feet\"\n        }\n      ],\n      \"constants\": [\n        {\n          \"name\": \"Applicability Threshold\",\n          \"value\": 30,\n          \"unit\": \"feet\",\n          \"description\": \"The minimum average setback for the contextual rule to apply. Primary rule states '30 or greater'.\"\n        },\n        {\n          \"name\": \"Minimum Lot Count for Process\",\n          \"value\": 3,\n          \"unit\": \"lots\",\n          \"description\": \"The process applies only if the block has more than 3 lots.\"\n        },\n        {\n          \"name\": \"Maximum Block Length for Consideration\",\n          \"value\": 600,\n          \"unit\": \"feet\",\n          \"description\": \"For blocks longer than this, only lots within a 600' segment are considered.\"\n        },\n        {\n          \"name\": \"Maximum Lot Count for Long Blocks\",\n          \"value\": 10,\n          \"unit\": \"lots\",\n          \"description\": \"The maximum number of lots to consider within the 600' segment on a long block.\"\n        },\n        {\n          \"name\": \"Multi-family Unit Threshold\",\n          \"value\": 3,\n          \"unit\": \"units\",\n          \"description\": \"Lots with 3 or more units are excluded.\"\n        },\n        {\n          \"name\": \"Lot Count Threshold for Outlier Exclusion\",\n          \"value\": 5,\n          \"unit\": \"lots\",\n          \"description\": \"If 5 or more lots remain after initial exclusions, the smallest and largest setbacks are also excluded.\"\n        },\n        {\n          \"name\": \"Calculation Procedure\",\n          \"value\": \"A multi-step process to determine the contextual setback average.\",\n          \"description\": \"See 'conditions' for the detailed logic flow.\"\n        }\n      ],\n      \"conditions\": {\n        \"main_applicability_condition\": {\n          \"logic\": \"IF (contextual_setback_average >= 30) THEN RuleApplies\",\n          \"description\": \"Contextual setbacks apply if, and only if, the calculated average is 30' or greater.\",\n          \"dependencies\": [\n            \"R1.constants.Applicability Threshold\",\n            \"R1.variables.contextual_setback_average\"\n          ]\n        },\n        \"calculation_procedure\": [\n          {\n            \"step\": 1,\n            \"condition\": \"number_of_lots_on_block > 3\",\n            \"action_if_true\": \"Proceed to Step 2.\",\n            \"action_if_false\": \"Contextual setback rule does not apply.\",\n            \"description\": \"Check if the block has more than 3 lots (including the project lot).\"\n          },\n          {\n            \"step\": 2,\n            \"condition\": \"block_length > 600\",\n            \"action_if_true\": \"Limit the set of lots to be considered to those within a 600' segment, up to a maximum of 10 lots.\",\n            \"action_if_false\": \"Consider all lots on the block face.\",\n            \"description\": \"Handle special case for long blocks. This is an optional/conditional step.\"\n          },\n          {\n            \"step\": 3,\n            \"condition\": \"Always executed if Step 1 is true.\",\n            \"action_if_true\": \"From the set of lots, exclude: Flag lots, Multi-family lots (>=3 units), and Corner lots facing a cross street.\",\n            \"description\": \"Filter out non-qualifying lots based on type, usage, and configuration.\"\n          },\n          {\n            \"step\": 4,\n            \"condition\": \"count(remaining_lots) >= 5\",\n            \"action_if_true\": \"Exclude the lots with the single smallest and single largest setbacks from the remaining set.\",\n            \"action_if_false\": \"Proceed to Step 5 with all remaining lots.\",\n            \"description\": \"Check if outlier setbacks should be excluded from the average calculation.\"\n          },\n          {\n            \"step\": 5,\n            \"condition\": \"Always executed after previous steps.\",\n            \"action_if_true\": \"Calculate the arithmetic average of the front setbacks of the final set of lots. This result is the 'contextual_setback_average'.\",\n            \"description\": \"Calculate the average setback.\"\n          },\n          {\n            \"step\": 6,\n            \"condition\": \"contextual_setback_average >= 30\",\n            \"action_if_true\": \"The contextual setback rule applies.\",\n            \"action_if_false\": \"The contextual setback rule does not apply.\",\n            \"description\": \"Final check to see if the rule applies, based on the primary rule's threshold.\"\n          }\n        ]\n      },\n      \"exceptions\": [\n        {\n          \"case\": \"Long Blocks\",\n          \"condition\": \"block_length > 600'\",\n          \"rule\": \"Consider only lots within a 600' segment of the block, up to a maximum of 10 lots.\",\n          \"description\": \"A special procedure for blocks exceeding 600 feet in length.\"\n        }\n      ],\n      \"relationships\": {\n        \"hierarchical\": \"The 'calculation_procedure' is a sub-component of the main rule, defining the method to derive the 'contextual_setback_average' variable required for the 'main_applicability_condition'.\",\n        \"cross_references\": [\n          {\n            \"from\": \"Process Header\",\n            \"to\": \"Figure 15\",\n            \"description\": \"The process description explicitly references Figure 15 as an example.\"\n          },\n          {\n            \"from\": \"Figure 15\",\n            \"to\": \"Calculation Procedure\",\n            \"description\": \"Figure 15 provides a visual example of the lots and exclusions described in the calculation procedure.\"\n          }\n        ],\n        \"logical_dependencies\": [\n          {\n            \"dependency\": \"The applicability of the entire rule is dependent on the final output of the multi-step calculation procedure.\",\n            \"from\": \"conditions.main_applicability_condition\",\n            \"to\": \"conditions.calculation_procedure\"\n          },\n          {\n            \"dependency\": \"The exclusion of smallest and largest setbacks (Step 4) is conditional on the number of lots remaining after the initial exclusions (Step 3).\",\n            \"from\": \"conditions.calculation_procedure.step[3]\",\n            \"to\": \"conditions.calculation_procedure.step[2]\"\n          }\n        ]\n      },\n      \"ambiguous_language\": [\n        {\n          \"text\": \"Is the number of remaining lots more or less than 5 or more?\",\n          \"interpretation\": \"Interpreted as 'Is the number of remaining lots 5 or more?' based on the subsequent step ('Yes Exclude the smallest and largest setbacks').\",\n          \"location\": \"Decision/steps (flowchart text)\"\n        },\n        {\n          \"text\": \"If greater than 30', it applies.\",\n          \"interpretation\": \"This contradicts the primary rule which states '30' or greater'. The primary rule ('if, and only if, the average... is 30' or greater') is assumed to be authoritative and is used in the structured conditions.\",\n          \"location\": \"Decision/steps (flowchart text) vs. Primary rule (boxed)\"\n        }\n      ]\n    }\n  ]\n}\n```",
+    "response_time": 52.48502707481384,
+    "input_tokens": 987,
+    "output_tokens": 6808,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 16:01:56",
+  "model": "google/gemini-2.5-pro",
+  "success": true
+}

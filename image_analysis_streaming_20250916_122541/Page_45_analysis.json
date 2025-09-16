@@ -1,0 +1,23 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_45.png",
+  "image_name": "Page_45.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "PARSE_ERROR",
+      "visual_elements": [],
+      "technical_specifications": [],
+      "structural_elements": {
+        "main_heading": "",
+        "subheadings": [],
+        "sections": []
+      },
+      "additional_notes": [
+        "Failed to parse LLM response: Expecting value: line 1 column 1 (char 0)"
+      ],
+      "cross_references": []
+    },
+    "raw_response": "Here's the extracted information from the images, maintaining absolute precision and avoiding any deductions:\n\n**Title:** Detached garages/carports site planning\n\n**Bullet Points:**\n*   Detached garages and carports may be located in the rear or interior side yard if at least 75' from the front lot line and at least 20' from the street-side lot line.\n*   Additionally, on lots less than 95' deep, they may be located in rear or interior side yards if placed in rear half of the lot.\n*   Garages and carports that take advantage of this setback exception are subject to a stricter daylight plane. See Figs 25-26 p. 32.\n\n**Figure Title:** Fig 34 Examples of site planning solutions for detached garages/carports\n\n**Notes:**\n*   **Note:** Uncovered spaces must be located beyond the required front-yard and beyond the first 10' of the street-side yard.\n*   **Note:** In all the examples on this page, a 1-car garage could be substituted for a 2-car garage because there is room for uncovered parking in the driveway.\n\n**Callouts/Labels within the diagrams:**\n*   Garages at the lot line must comply with Uniform Building Code (UBC) requirements for fire-rated walls & roof materials.\n*   Carports with open sides must be at least 3' from any lot line.\n*   3' min. (associated with carport setback)\n*   Interior lot example\n*   Rear yard\n*   2-car Garage w/rated walls\n*   Min. 75' or midpoint for lots < 95' deep\n*   Buildable area\n*   Main dwelling\n*   Front yard\n*   Interior-side yard\n*   Distance of front setback\n*   2-car Carport w/open sides\n*   20' min (associated with corner lot example)\n*   10' (associated with corner lot example)\n*   Corner lot example\n*   Street-side yard\n\n**Diagram Labels (A, B, C):**\n*   **A** 2-car garage w/uncovered spaces in driveway (tandem OK)\n*   **B** 2-car carport w/uncovered spaces in driveway (tandem OK)\n*   **C** 2-car garage w/uncovered spaces in driveway (tandem OK)\n\n**Key:**\n*   Curb (solid thick line)\n*   Lot line (solid thin line)\n*   Sidewalk (pattern of small rectangles)\n*   Required setbacks (dashed line)\n*   Buildable area (light gray shaded area with dashed border)\n*   Dwelling (darker gray shaded area)\n*   Parking structure (solid black area)\n*   No-parking area (hatched pattern)\n*   Uncovered space (car icon)\n\n**Page Number:** 39"
+  },
+  "analysis_timestamp": "2025-09-16 12:26:01",
+  "model_used": "google/gemini-2.5-flash"
+}

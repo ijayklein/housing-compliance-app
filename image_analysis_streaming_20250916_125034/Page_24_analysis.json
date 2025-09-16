@@ -1,0 +1,12 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_24.png",
+  "image_name": "Page_24.png",
+  "analysis": {
+    "parse_error": true,
+    "error": "JSON parse failed: Expecting value: line 1 column 1 (char 0)",
+    "raw_response": "The following information has been extracted from the provided images:\n\n**Title:** Bay windows\n\n**Main Text:**\nBay windows that meet the design criteria below are considered to be decorative architectural features and do NOT count toward gross floor area.\n\n**Design criteria for bay windows that do not count:**\n*   Bottom of feature must be at least 18\" above the floor joists\n*   Exterior supports must be features like corbels and/or brackets rather than solid walls\n*   At least 50% of the surfac"
+  },
+  "timestamp": "2025-09-16 12:50:55",
+  "model": "google/gemini-2.5-flash",
+  "success": false
+}

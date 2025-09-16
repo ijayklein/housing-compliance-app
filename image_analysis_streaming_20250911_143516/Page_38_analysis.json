@@ -1,0 +1,79 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_38.png",
+  "image_name": "Page_38.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Accessory structure daylight plane (sides & rear)\n\n\nFig 25 Front elevation showing accessory-structure daylight plane at the side of the lot\n\nSide lot line\n\n3\n1\n\nSide lot line\n\n8' from\naverage\ngrade\n\n12' max. height of\nbuilding\n\nNote: For accessory buildings near the\nrear & side lot lines, a hipped-gable\nroof is often the best solution for\ncomplying with the accesory-structure\ndaylight plane.\n\nFront\nSide\nRear\nSide\n\nFig 26 Side elevation showing accessory-structure daylight plane at the rear of the lot\n\n3\n1\n\nRear lot line\n\n8' from\naverage\ngrade\n\n12' max. height of\nbuilding\n\n32",
+      "visual_elements": [
+        {
+          "type": "figure",
+          "description": "Figure 25: A 2D front elevation diagram of an accessory structure, resembling a garage with a gabled roof and a large garage door. The diagram illustrates the 'daylight plane' regulation. A vertical line labeled 'Side lot line' is shown on both sides of the structure. The daylight plane is represented by a dashed line that starts at a height of 8 feet from the average grade at the lot line, extends vertically, and then slopes inwards over the structure at a 1:3 ratio (indicated by a right-angle triangle with sides labeled '1' and '3'). The diagram also indicates a '12' max. height of building' from the average grade.",
+          "location": "Top-middle of the page"
+        },
+        {
+          "type": "figure",
+          "description": "Figure 26: A 2D side elevation diagram of an accessory structure with siding and a sloped roof. This diagram illustrates the 'daylight plane' at the rear of the lot. A vertical line labeled 'Rear lot line' is shown to the right of the structure. Similar to Fig 25, a dashed line represents the daylight plane, starting at 8 feet from average grade at the lot line and sloping inwards over the structure at a 1:3 ratio. The '12' max. height of building' is also indicated.",
+          "location": "Bottom-middle of the page"
+        },
+        {
+          "type": "diagram",
+          "description": "A simple top-down line drawing of a hipped-gable roof. The diagram is a rectangle with lines indicating the roof ridges and hips. It is labeled 'Front', 'Side', and 'Rear' on its respective edges. Arrows point downwards from the central ridge towards the 'Side' edges, and another arrow points from the hipped section towards the 'Rear', indicating the direction of the roof slope.",
+          "location": "Middle-right of the page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Daylight plane start height",
+          "value": "8",
+          "unit": "feet from average grade"
+        },
+        {
+          "parameter": "Maximum building height",
+          "value": "12",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Daylight plane slope ratio (vertical to horizontal)",
+          "value": "1:3",
+          "unit": "N/A"
+        },
+        {
+          "parameter": "Figure Number",
+          "value": "25",
+          "unit": "N/A"
+        },
+        {
+          "parameter": "Figure Number",
+          "value": "26",
+          "unit": "N/A"
+        },
+        {
+          "parameter": "Page Number",
+          "value": "32",
+          "unit": "N/A"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Accessory structure daylight plane (sides & rear)",
+        "subheadings": [
+          "Fig 25 Front elevation showing accessory-structure daylight plane at the side of the lot",
+          "Fig 26 Side elevation showing accessory-structure daylight plane at the rear of the lot",
+          "Note"
+        ],
+        "sections": [
+          "Fig 25",
+          "Fig 26"
+        ]
+      },
+      "additional_notes": [
+        "The page number '32' is located in the bottom-left corner.",
+        "A gray horizontal bar is present under the main heading, serving as a design element.",
+        "There is a typographical error in the 'Note' section: 'accesory-structure' should be 'accessory-structure'.",
+        "The overall layout is clean and organized, with two main figures illustrating regulations, a supplementary diagram, and a note box for clarification."
+      ],
+      "cross_references": []
+    }
+  },
+  "analysis_timestamp": "2025-09-11 14:36:14",
+  "model_used": "google/gemini-2.5-pro"
+}

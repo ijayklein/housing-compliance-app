@@ -1,0 +1,83 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_09.png",
+  "image_name": "Page_09.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Gross vs. net lot area\n\nGross lot area is the size of the lot\u2014from lot line to lot line. Development potential is based on the net lot area and while gross and net lot area are the same for most lots in Palo Alto, there are some lots for which portions must be excluded from the gross lot area to establish the net lot area.\n\nAreas excluded from the gross lot size are:\n\u2022 Street right-of-way (Area A of Fig 1 on this page)\n\u2022 \u201cPole\u201d portion of a flag lot (Area B of Fig 2 on this page)\n\u2022 Creek channel (Area C of Fig 3 on this page)\n\nFig 1 Gross lot area exclusions: street easements\n\nLot with boundaries that extend into the public ROW\n\nThe portion of the lot within the public ROW must be subtracted from the gross lot area.\n\nNote: In some areas of Palo Alto, like Barron Park, it is not unusual for the lot to extend to the middle of the street. However, for purposes, the lot is defined by the edge of the public street easement or public right-of-way (ROW). Dimensions for the public ROW are available at the Development Center\n\nPublic ROW\n\nFig 2 Gross lot area exclusions: flag-lot \u201cpoles\u201d\n\nFlag lot accessed via private easement\n\nFlag lot with \u201cpole\u201d\n\n\u201cpole\u201d portion of a lot must be subtracted from the gross lot size\n\nNote: Private access easements that provide access to lots are NOT subtracted from the lot on which they occur.\n\nStreet\n\nFig 3 Gross lot area exclusions: creek easements\n\nTop of bank\n\nLot with creek and/or creek easement\n\nThe portion of the lot within a creek channel must be subtracted from gross lot size.\n\nNote: The channel or area to be subtracted is defined by Santa Clara Valley Water District\u2019s easement or, if there is no easement, the top-of-bank. Determining the top-of-bank may require a surveyor.\n\nKey\n\nCurb\nSidewalk\nLot lines\n\nCreek\nArea that must be subtracted from gross lot area",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Fig 1 shows a street easement with a lot boundary extending into the public right-of-way (ROW). The diagram includes two cars on a street labeled 'Public ROW' with an area marked 'A' indicating the portion of the lot within the public ROW that must be subtracted from the gross lot area. Annotations explain the lot boundary and the subtraction requirement.",
+          "location": "bottom left"
+        },
+        {
+          "type": "diagram",
+          "description": "Fig 2 illustrates gross lot area exclusions for flag-lot 'poles'. It shows two adjacent flag lots, one accessed via a private easement and the other with a 'pole' portion marked 'B'. The 'pole' portion is shaded and indicated as needing subtraction from the gross lot size. A note clarifies that private access easements are not subtracted from the lot on which they occur.",
+          "location": "top right"
+        },
+        {
+          "type": "diagram",
+          "description": "Fig 3 depicts gross lot area exclusions for creek easements. It shows a lot with a creek channel and/or creek easement marked 'C' shaded at the top of the lot adjacent to the street. The diagram includes a 'Top of bank' label and indicates that the portion of the lot within the creek channel must be subtracted from the gross lot size. A note explains the definition of the channel or area to be subtracted and mentions the need for a surveyor to determine the top-of-bank if no easement exists.",
+          "location": "bottom right"
+        },
+        {
+          "type": "key",
+          "description": "A legend explaining symbols used in the diagrams: Curb, Sidewalk, Lot lines, Creek, and Area that must be subtracted from gross lot area.",
+          "location": "bottom right below Fig 3"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Gross lot area",
+          "value": "Size of the lot from lot line to lot line",
+          "unit": "N/A"
+        },
+        {
+          "parameter": "Net lot area",
+          "value": "Gross lot area minus excluded portions",
+          "unit": "N/A"
+        },
+        {
+          "parameter": "Area A",
+          "value": "Portion of lot within public right-of-way (ROW)",
+          "unit": "N/A"
+        },
+        {
+          "parameter": "Area B",
+          "value": "Pole portion of a flag lot",
+          "unit": "N/A"
+        },
+        {
+          "parameter": "Area C",
+          "value": "Portion of lot within a creek channel or creek easement",
+          "unit": "N/A"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Gross vs. net lot area",
+        "subheadings": [
+          "Areas excluded from the gross lot size are:"
+        ],
+        "sections": [
+          "Fig 1 Gross lot area exclusions: street easements",
+          "Fig 2 Gross lot area exclusions: flag-lot \u201cpoles\u201d",
+          "Fig 3 Gross lot area exclusions: creek easements",
+          "Key"
+        ]
+      },
+      "additional_notes": [
+        "No handwritten annotations or stamps present.",
+        "Text is clear and legible with no quality issues."
+      ],
+      "cross_references": [
+        "Area A of Fig 1 on this page",
+        "Area B of Fig 2 on this page",
+        "Area C of Fig 3 on this page",
+        "Dimensions for the public ROW are available at the Development Center",
+        "Santa Clara Valley Water District\u2019s easement"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-14 19:41:02",
+  "model_used": "openai/gpt-4.1-mini"
+}

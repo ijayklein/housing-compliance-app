@@ -1,0 +1,12 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_52.png",
+  "image_name": "Page_52.png",
+  "analysis": {
+    "raw_content": "# Height & Grade - Technical Manual Page\n\n## Height Regulations\n\n### Maximum Height to Roof Peak by Structure Type:\n\n| Structure | Max. height to roof peak |\n|-----------|-------------------------|\n| Main dwelling on a standard lot with a roof slope \u226412:12 | 30' |\n| Main dwelling on a standard lot with a roof slope \u226512:12 | 33' |\n| Main dwelling on a substandard or flag lot | 17' |\n| Accessory structure in rear or side yard | 12' |\n| 2nd-dwelling units | 17' |\n\n## Technical Specifications\n\n### Fig 43 Determining slope of roof\n- Shows diagram with 12\" run measurement\n- Roof slope is the vertical rise in inches for every horizontal distance of twelve inches (called the \"run\"). It is expressed as rise:run or, in this example 6:12.\n- Note: On a drawing this slope might also be represented as: 1:2/6 or 1/2\n\n### Fig 42 Comparison of roof slopes\n- Displays five house silhouettes showing different roof slopes: 12:14, 12:12, 12:10, 12:6, 12:3\n- Height measured to top of roof material\n- Two height limits shown: Height limit = 33' and Height limit = 30'\n\n## Code References\n- **Page 46**: 18.12.040 (a) Table 2\n- **Page 47**: 18.04.030 (64) (b)\n\n## Page Number\n46\n\n## Additional Information\nHeight allowances enable a variety of architectural styles while preserving the residential scale of our neighborhoods as well as the privacy and natural light available to each lot.",
+    "content_length": 1378,
+    "parse_error": false
+  },
+  "timestamp": "2025-09-16 13:38:06",
+  "model": "anthropic/claude-sonnet-4",
+  "success": true
+}

@@ -1,0 +1,19 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_51.png",
+  "image_name": "Page_51.png",
+  "analysis": {
+    "page_number": "unknown",
+    "main_heading": "PARSE_ERROR",
+    "text_content": "Failed to parse response: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)",
+    "tables": [],
+    "figures": [],
+    "zoning_rules": [],
+    "code_references": [],
+    "quality_notes": "JSON parsing failed: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)",
+    "raw_response": "```json\n{\n  \"page_number\": \"45\",\n  \"main_heading\": \"Detached 2nd-dwelling units & associated parking site planning\",\n  \"text_content\": \"Fig 41 Examples of site planning solutions for detached 2nd dwelling units and associated required parking\\nA Detached & separate from main-dwelling parking\\n\u2022 Main dwelling has a 1-car attached garage.\\n\u2022 2nd dwelling has a 1-car detached garage. (Because it is detached and at least 75' from the front lot line, it may be located in the rear and side yards.)\\n\u2022 Both dwellings use driveway for their uncovered spaces (beyond front setback)\\nInterior lot example\\nB Attached & separate from main-dwelling parking\\n\u2022 Main dwelling has 1-car attached garage.\\n\u2022 2nd dwelling has a 1-car attached garage. (Because attached, it must be located with the building area rather than in the rear or side yards).\\n\u2022 Both dwellings use driveway for their uncovered spaces (beyond front setback)\\nInterior lot example\\nC Detached & combined with main-dwelling parking\\n\u2022 Both",
+    "parse_error": true
+  },
+  "analysis_timestamp": "2025-09-16 12:33:47",
+  "model_used": "google/gemini-2.5-flash",
+  "success": false
+}

@@ -1,0 +1,281 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_29.png",
+  "image_name": "Page_29.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Determining setbacks on oddly shaped lots considerations\n\nFig 17 Setbacks for oddly shaped lots\n\nKey\n\u2014 Curb\n- - - Lot line\n[patterned rectangle] Sidewalk\n\u2014\u2014\u2014 Required setbacks\n[empty rectangle] Buildable area\n\n[Diagram A]\nRear yard\nInterior side yard\nA\nFlag lot\nFront yard\nRear yard\nInterior side yard\nFront yard\nStreet\nFront lot line is closest and most parallel to street.\nFront setback is 10' instead of 20'\n\n[Diagram B]\nRear yard\nInterior side yard\nB\nCorner lot\nStreet side yard\nStreet side yard\nFront yard\nStreet\n16'\n\n[Diagram C]\nRear yard\nInterior side yard\nC\nSubstandard Corner lot w/frontage < 50'\nStreet side yard\nStreet\n10'\nStreet side setback is 10' instead of 16'\nFront lot line is shortest of the two frontages.\nFront yard\nStreet\n\n[Diagram D]\nRear yard\nInterior side yard\nD\nThrough lot\nFront yard\nStreet\n\n[Diagram E]\nWedge shaped lots don't have rear lot lines.\nThe rear yard is determined by a 20' radius from intersection of side lot lines.\nRear yard\nInterior side yard\nE\nWedge shaped lot\nFront yard\nStreet\n\n[Diagram F]\nRear yard\nInterior side yard\nF\nLot with more than 4 sides\nFront yard\nStreet\nRear lot line is farthest and most parallel to street.\n\n[Diagram G]\nRear yard\nInterior side yard\nG\nLot with more than 4 sides\nFront yard\nStreet\n\n23",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Diagram A: Flag lot with labeled rear yard, front yard, interior side yards, showing front lot line closest and most parallel to street. Front setback is 10' instead of 20'. Buildable area shaded. Curb, lot lines, sidewalk, required setbacks indicated in key.",
+          "location": "Top left"
+        },
+        {
+          "type": "diagram",
+          "description": "Diagram B: Corner lot with rear yard, interior side yard, street side yard, front yard. Street side setback is 16'. Front lot line is shortest of two frontages. Buildable area shaded.",
+          "location": "Top center"
+        },
+        {
+          "type": "diagram",
+          "description": "Diagram C: Substandard corner lot with frontage less than 50 feet. Rear yard, interior side yard, street side yard, front yard labeled. Street side setback is 10' instead of 16'. Front lot line is shortest of two frontages. Buildable area shaded.",
+          "location": "Top right"
+        },
+        {
+          "type": "diagram",
+          "description": "Diagram D: Through lot with rear yard, interior side yards, front yard, street labeled. Buildable area shaded.",
+          "location": "Bottom left"
+        },
+        {
+          "type": "diagram",
+          "description": "Diagram E: Wedge shaped lot with rear yard determined by 20' radius from intersection of side lot lines. No rear lot lines. Rear yard, interior side yard, front yard, street labeled. Buildable area shaded.",
+          "location": "Bottom center-left"
+        },
+        {
+          "type": "diagram",
+          "description": "Diagram F: Lot with more than 4 sides. Rear yard, interior side yard, front yard, street labeled. Rear lot line is farthest and most parallel to street. Buildable area shaded.",
+          "location": "Bottom center-right"
+        },
+        {
+          "type": "diagram",
+          "description": "Diagram G: Lot with more than 4 sides. Rear yard, interior side yard, front yard, street labeled. Buildable area shaded.",
+          "location": "Bottom right"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Front setback for Flag lot",
+          "value_type": "Measurement",
+          "value": "10",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Standard front setback for Flag lot",
+          "value_type": "Measurement",
+          "value": "20",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Street side setback for Corner lot",
+          "value_type": "Measurement",
+          "value": "16",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Street side setback for Substandard Corner lot with frontage < 50'",
+          "value_type": "Measurement",
+          "value": "10",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Front lot line for Corner and Substandard Corner lots",
+          "value_type": "Text",
+          "value": "Front lot line is shortest of the two frontages",
+          "unit": "None"
+        },
+        {
+          "parameter": "Rear yard determination for Wedge shaped lots",
+          "value_type": "Measurement",
+          "value": "20",
+          "unit": "feet radius"
+        },
+        {
+          "parameter": "Rear lot line for Lot with more than 4 sides",
+          "value_type": "Text",
+          "value": "Rear lot line is farthest and most parallel to street",
+          "unit": "None"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Determining setbacks on oddly shaped lots considerations",
+        "subheadings": [
+          "Fig 17 Setbacks for oddly shaped lots",
+          "Key"
+        ],
+        "sections": []
+      },
+      "additional_notes": [
+        "Page number 23 at bottom right corner",
+        "No handwritten annotations or stamps detected",
+        "All diagrams use consistent symbology as per key: solid line for curb, dashed line for lot line, patterned rectangle for sidewalk, solid thin line for required setbacks, empty rectangle for buildable area"
+      ],
+      "cross_references": [],
+      "conditions_and_qualifiers": {
+        "qualifiers": [
+          {
+            "id": "q1",
+            "text": "Front lot line is closest and most parallel to street.",
+            "applies_to_conditions": [
+              "c1"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q2",
+            "text": "Front lot line is shortest of the two frontages.",
+            "applies_to_conditions": [
+              "c3",
+              "c4"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q3",
+            "text": "Wedge shaped lots don't have rear lot lines.",
+            "applies_to_conditions": [
+              "c5"
+            ],
+            "scope": "Specific"
+          }
+        ],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "Front setback is 10' instead of 20'",
+            "value_type": "Measurement",
+            "operator": "=",
+            "threshold_value": "10",
+            "unit": "feet"
+          },
+          {
+            "id": "c2",
+            "text": "Street side setback is 16'",
+            "value_type": "Measurement",
+            "operator": "=",
+            "threshold_value": "16",
+            "unit": "feet"
+          },
+          {
+            "id": "c3",
+            "text": "Street side setback is 10' instead of 16'",
+            "value_type": "Measurement",
+            "operator": "=",
+            "threshold_value": "10",
+            "unit": "feet"
+          },
+          {
+            "id": "c4",
+            "text": "Front lot line is shortest of the two frontages.",
+            "value_type": "Text",
+            "operator": "contains",
+            "threshold_value": "shortest of the two frontages",
+            "unit": "None"
+          },
+          {
+            "id": "c5",
+            "text": "The rear yard is determined by a 20' radius from intersection of side lot lines.",
+            "value_type": "Measurement",
+            "operator": "=",
+            "threshold_value": "20",
+            "unit": "feet radius"
+          },
+          {
+            "id": "c6",
+            "text": "Rear lot line is farthest and most parallel to street.",
+            "value_type": "Text",
+            "operator": "contains",
+            "threshold_value": "farthest and most parallel to street",
+            "unit": "None"
+          }
+        ],
+        "logical_relationships": [
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c1"
+            ],
+            "expression": "If front lot line is closest and most parallel to street (q1), then front setback is 10' instead of 20' (c1).",
+            "evaluation_order": 1
+          },
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c3",
+              "c4"
+            ],
+            "expression": "If front lot line is shortest of the two frontages (q2), then street side setback is 10' instead of 16' (c3) and front lot line is shortest of the two frontages (c4).",
+            "evaluation_order": 2
+          },
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c5"
+            ],
+            "expression": "If wedge shaped lots don't have rear lot lines (q3), then rear yard is determined by a 20' radius from intersection of side lot lines (c5).",
+            "evaluation_order": 3
+          }
+        ],
+        "execution_sequence": [
+          {
+            "step": 1,
+            "action": "Evaluate if front lot line is closest and most parallel to street",
+            "condition_ids": [],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 2,
+            "action": "If step 1 true, apply front setback of 10' instead of 20'",
+            "condition_ids": [
+              "c1"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": [
+              1
+            ]
+          },
+          {
+            "step": 3,
+            "action": "Evaluate if front lot line is shortest of two frontages",
+            "condition_ids": [],
+            "qualifier_ids": [
+              "q2"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 4,
+            "action": "If step 3 true, apply street side setback of 10' instead of 16' and recognize front lot line as shortest frontage",
+            "condition_ids": [
+              "c3",
+              "c4"
+            ],
+            "qualifier_ids": [
+              "q2"
+            ],
+            "dependencies": [
+              3
+            ]
+          },
+          {
+            "step": 5,
+            "action": "Evaluate if lot is wedge shaped and has no rear lot lines",
+            "condition_ids": [],
+            "qualifier_ids": [
+              "q3"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 6,
+            "action": "If step 5 true, determine rear yard by 20' radius from intersection of side lot lines",
+            "condition_ids": [
+              "c5"
+            ],
+            "qualifier_ids": [
+              "q3"
+            ],
+            "dependencies": [
+              5
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:27:27",
+  "model_used": "openai/gpt-4.1-mini"
+}

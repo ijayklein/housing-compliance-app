@@ -1,0 +1,12 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_09.png",
+  "image_name": "Page_09.png",
+  "analysis": {
+    "raw_content": "# Gross vs. net lot area\n\n## Definition\nGross lot area is the size of the lot\u2014from lot line to lot line.\n\nDevelopment potential is based on the net lot area and while gross and net lot area are the same for most lots in Palo Alto, there are some lots for which portions must be excluded from the gross lot area to establish the net lot area.\n\n## Areas excluded from the gross lot size are:\n\u2022 Street right-of-way (Area A of Fig 1 on this page)\n\u2022 \"Pole\" portion of a flag lot (Area B of Fig 2 on this page)\n\u2022 Creek channel (Area C of Fig 3 on this page)\n\n## Figure Descriptions\n\n**Fig 1 Gross lot area exclusions: street easements**\n- Shows a lot with boundaries that extend into the public ROW\n- The portion of the lot within the public ROW must be subtracted from the gross lot area\n- Notes: In some areas of Palo Alto, like Barron Park, it is not unusual for the lot to extend to the middle of the street. However, for zoning purposes, the lot is defined by the edge of the public street easement or public right-of-way (ROW). Dimensions for the public ROW are available at the Development Center.\n\n**Fig 2 Gross lot area exclusions: flag-lot \"poles\"**\n- Shows flag lot containing private easement and flag lot with \"pole\"\n- The \"pole\" portion of a lot must be subtracted from the gross lot size\n- Note: Private access easements that provide access to lots are NOT subtracted from the lot on which they occur.\n\n**Fig 3 Gross lot area exclusions: creek easements**\n- Shows lot with creek and/or creek easement\n- The portion of the lot within a creek channel must be subtracted from gross lot size\n- Notes: The channel or area to be subtracted is defined by Santa Clara Valley Water District's easement or, if there is no easement, the top-of-bank. Determining the top-of-bank may require a surveyor.\n\n## Key\n- Curb\n- Sidewalk\n- Lot lines\n- Creek\n- Area that must be subtracted from gross lot area\n\nPage 3",
+    "content_length": 1904,
+    "parse_error": false
+  },
+  "timestamp": "2025-09-16 13:35:36",
+  "model": "anthropic/claude-sonnet-4",
+  "success": true
+}

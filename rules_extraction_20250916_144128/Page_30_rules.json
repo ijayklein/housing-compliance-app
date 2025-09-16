@@ -1,0 +1,290 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_30.md",
+  "file_name": "Page_30.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "rule": "Main dwelling setback encroachments",
+        "Qualifiers": {
+          "Scope": "Main dwelling",
+          "Applicability": "1st floor portions and extensions",
+          "Exclusions": "None specified"
+        },
+        "Variables": {
+          "Dimensional": [
+            "half width of structure",
+            "14' of rear lot line",
+            "14' of front lot line",
+            "5' of interior-side lot line",
+            "10' of street-side lot line"
+          ],
+          "Material": "None specified",
+          "Environmental": "None specified",
+          "Usage": "None specified"
+        },
+        "Constants": {
+          "Numerical values": [
+            "\u2264 6' in height",
+            "\u2264 25 sf"
+          ],
+          "Specs": "None specified",
+          "Standards": "None specified",
+          "Procedures": "None specified"
+        },
+        "Conditions": {
+          "Mandatory": "None specified",
+          "Optional": "None specified",
+          "Conditional logic": "None specified",
+          "Dependencies": "None specified"
+        },
+        "Exceptions": {
+          "Explicit deviations": "None specified",
+          "Alternatives": "None specified",
+          "Special cases": "None specified"
+        },
+        "Relationships": {
+          "Hierarchical": "None specified",
+          "Cross-references": [
+            "18.12.050 ([illegible])(2)",
+            "18.12.050 ([illegible])(1)(A)",
+            "18.12.050 ([illegible])(1)(B)",
+            "18.12.050 ([illegible])(1)(C)"
+          ],
+          "Logical dependencies": "None specified"
+        }
+      },
+      {
+        "rule": "Detached accessory structures",
+        "Qualifiers": {
+          "Scope": "Detached accessory structures",
+          "Applicability": "Structures 75' from front lot line and 20' from street-side lot line",
+          "Exclusions": "None specified"
+        },
+        "Variables": {
+          "Dimensional": [
+            "75' from front lot line",
+            "20' from street-side lot line"
+          ],
+          "Material": "None specified",
+          "Environmental": "None specified",
+          "Usage": "Covered parking"
+        },
+        "Constants": {
+          "Numerical values": [
+            "\u2264 95' deep",
+            "25' from street-side lot line"
+          ],
+          "Specs": "None specified",
+          "Standards": "None specified",
+          "Procedures": "None specified"
+        },
+        "Conditions": {
+          "Mandatory": "None specified",
+          "Optional": "None specified",
+          "Conditional logic": "None specified",
+          "Dependencies": "None specified"
+        },
+        "Exceptions": {
+          "Explicit deviations": "None specified",
+          "Alternatives": "None specified",
+          "Special cases": "None specified"
+        },
+        "Relationships": {
+          "Hierarchical": "None specified",
+          "Cross-references": [
+            "18.12.080 (b)(3)",
+            "18.12.080 ([illegible])"
+          ],
+          "Logical dependencies": "None specified"
+        }
+      },
+      {
+        "rule": "Porches and entry features",
+        "Qualifiers": {
+          "Scope": "Porches and entry features",
+          "Applicability": "1st floor balconies, uncovered porches, stairways, and fire escapes",
+          "Exclusions": "None specified"
+        },
+        "Variables": {
+          "Dimensional": [
+            "6' into front & rear yard",
+            "3' into the side yards"
+          ],
+          "Material": "None specified",
+          "Environmental": "None specified",
+          "Usage": "None specified"
+        },
+        "Constants": {
+          "Numerical values": "None specified",
+          "Specs": "None specified",
+          "Standards": "None specified",
+          "Procedures": "None specified"
+        },
+        "Conditions": {
+          "Mandatory": "None specified",
+          "Optional": "None specified",
+          "Conditional logic": "None specified",
+          "Dependencies": "None specified"
+        },
+        "Exceptions": {
+          "Explicit deviations": "None specified",
+          "Alternatives": "None specified",
+          "Special cases": "None specified"
+        },
+        "Relationships": {
+          "Hierarchical": "None specified",
+          "Cross-references": [
+            "18.12.050 (a)(3)(D)",
+            "18.12.050 (a)(3)(E)"
+          ],
+          "Logical dependencies": "None specified"
+        }
+      },
+      {
+        "rule": "Other features",
+        "Qualifiers": {
+          "Scope": "Other features",
+          "Applicability": "Eaves, cornices, bay/greenhouse windows, uncovered parking, pools & spas, fireplaces",
+          "Exclusions": "None specified"
+        },
+        "Variables": {
+          "Dimensional": [
+            "2' into side & 4' into front & rear yards",
+            "2' into front yard & 3' into rear yard",
+            "2' into side yards",
+            "6' of rear & interior-side lot lines",
+            "2' into side yard"
+          ],
+          "Material": "None specified",
+          "Environmental": "None specified",
+          "Usage": "None specified"
+        },
+        "Constants": {
+          "Numerical values": [
+            "\u2264 5' wide"
+          ],
+          "Specs": "None specified",
+          "Standards": "None specified",
+          "Procedures": "None specified"
+        },
+        "Conditions": {
+          "Mandatory": "None specified",
+          "Optional": "None specified",
+          "Conditional logic": "None specified",
+          "Dependencies": "None specified"
+        },
+        "Exceptions": {
+          "Explicit deviations": "None specified",
+          "Alternatives": "None specified",
+          "Special cases": "None specified"
+        },
+        "Relationships": {
+          "Hierarchical": "None specified",
+          "Cross-references": [
+            "18.12.050 (a)(3)(A)",
+            "18.12.050 (a)(3)(B)",
+            "18.12.060 (c)",
+            "18.12.060 ([illegible])"
+          ],
+          "Logical dependencies": "None specified"
+        }
+      },
+      {
+        "rule": "Excavated features",
+        "Qualifiers": {
+          "Scope": "Excavated features",
+          "Applicability": "Lightwells, stairwells, below grade patios",
+          "Exclusions": "None specified"
+        },
+        "Variables": {
+          "Dimensional": [
+            "3' into side yards & 4' into rear yard",
+            "2' into side yards & 4' into rear yard"
+          ],
+          "Material": "None specified",
+          "Environmental": "None specified",
+          "Usage": "None specified"
+        },
+        "Constants": {
+          "Numerical values": [
+            "cumulative length \u2264 15'",
+            "cumulative length \u2264 5'"
+          ],
+          "Specs": "None specified",
+          "Standards": "None specified",
+          "Procedures": "None specified"
+        },
+        "Conditions": {
+          "Mandatory": "None specified",
+          "Optional": "None specified",
+          "Conditional logic": "None specified",
+          "Dependencies": "None specified"
+        },
+        "Exceptions": {
+          "Explicit deviations": "None specified",
+          "Alternatives": "None specified",
+          "Special cases": "None specified"
+        },
+        "Relationships": {
+          "Hierarchical": "None specified",
+          "Cross-references": [
+            "18.12.090 (c)"
+          ],
+          "Logical dependencies": "None specified"
+        }
+      },
+      {
+        "rule": "Rear yard encroachment",
+        "Qualifiers": {
+          "Scope": "Rear yard encroachment",
+          "Applicability": "Main dwelling portion no wider than half the max. width of the dwelling",
+          "Exclusions": "Back-to-back corner lots"
+        },
+        "Variables": {
+          "Dimensional": [
+            "up to 6'",
+            "minimum setback of 14'",
+            "up to 10'",
+            "minimum setback 10'"
+          ],
+          "Material": "None specified",
+          "Environmental": "None specified",
+          "Usage": "None specified"
+        },
+        "Constants": {
+          "Numerical values": "None specified",
+          "Specs": "None specified",
+          "Standards": "None specified",
+          "Procedures": "None specified"
+        },
+        "Conditions": {
+          "Mandatory": [
+            "Multiple protrusions are not permitted",
+            "Addition must be contiguous with existing protrusion",
+            "Only for legally constructed structures"
+          ],
+          "Optional": "None specified",
+          "Conditional logic": "None specified",
+          "Dependencies": "None specified"
+        },
+        "Exceptions": {
+          "Explicit deviations": "None specified",
+          "Alternatives": "None specified",
+          "Special cases": [
+            "Only once in the life of the structure"
+          ]
+        },
+        "Relationships": {
+          "Hierarchical": "None specified",
+          "Cross-references": "None specified",
+          "Logical dependencies": "None specified"
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n    {\n        \"rule\": \"Main dwelling setback encroachments\",\n        \"Qualifiers\": {\n            \"Scope\": \"Main dwelling\",\n            \"Applicability\": \"1st floor portions and extensions\",\n            \"Exclusions\": \"None specified\"\n        },\n        \"Variables\": {\n            \"Dimensional\": [\n                \"half width of structure\",\n                \"14' of rear lot line\",\n                \"14' of front lot line\",\n                \"5' of interior-side lot line\",\n                \"10' of street-side lot line\"\n            ],\n            \"Material\": \"None specified\",\n            \"Environmental\": \"None specified\",\n            \"Usage\": \"None specified\"\n        },\n        \"Constants\": {\n            \"Numerical values\": [\n                \"\u2264 6' in height\",\n                \"\u2264 25 sf\"\n            ],\n            \"Specs\": \"None specified\",\n            \"Standards\": \"None specified\",\n            \"Procedures\": \"None specified\"\n        },\n        \"Conditions\": {\n            \"Mandatory\": \"None specified\",\n            \"Optional\": \"None specified\",\n            \"Conditional logic\": \"None specified\",\n            \"Dependencies\": \"None specified\"\n        },\n        \"Exceptions\": {\n            \"Explicit deviations\": \"None specified\",\n            \"Alternatives\": \"None specified\",\n            \"Special cases\": \"None specified\"\n        },\n        \"Relationships\": {\n            \"Hierarchical\": \"None specified\",\n            \"Cross-references\": [\n                \"18.12.050 ([illegible])(2)\",\n                \"18.12.050 ([illegible])(1)(A)\",\n                \"18.12.050 ([illegible])(1)(B)\",\n                \"18.12.050 ([illegible])(1)(C)\"\n            ],\n            \"Logical dependencies\": \"None specified\"\n        }\n    },\n    {\n        \"rule\": \"Detached accessory structures\",\n        \"Qualifiers\": {\n            \"Scope\": \"Detached accessory structures\",\n            \"Applicability\": \"Structures 75' from front lot line and 20' from street-side lot line\",\n            \"Exclusions\": \"None specified\"\n        },\n        \"Variables\": {\n            \"Dimensional\": [\n                \"75' from front lot line\",\n                \"20' from street-side lot line\"\n            ],\n            \"Material\": \"None specified\",\n            \"Environmental\": \"None specified\",\n            \"Usage\": \"Covered parking\"\n        },\n        \"Constants\": {\n            \"Numerical values\": [\n                \"\u2264 95' deep\",\n                \"25' from street-side lot line\"\n            ],\n            \"Specs\": \"None specified\",\n            \"Standards\": \"None specified\",\n            \"Procedures\": \"None specified\"\n        },\n        \"Conditions\": {\n            \"Mandatory\": \"None specified\",\n            \"Optional\": \"None specified\",\n            \"Conditional logic\": \"None specified\",\n            \"Dependencies\": \"None specified\"\n        },\n        \"Exceptions\": {\n            \"Explicit deviations\": \"None specified\",\n            \"Alternatives\": \"None specified\",\n            \"Special cases\": \"None specified\"\n        },\n        \"Relationships\": {\n            \"Hierarchical\": \"None specified\",\n            \"Cross-references\": [\n                \"18.12.080 (b)(3)\",\n                \"18.12.080 ([illegible])\"\n            ],\n            \"Logical dependencies\": \"None specified\"\n        }\n    },\n    {\n        \"rule\": \"Porches and entry features\",\n        \"Qualifiers\": {\n            \"Scope\": \"Porches and entry features\",\n            \"Applicability\": \"1st floor balconies, uncovered porches, stairways, and fire escapes\",\n            \"Exclusions\": \"None specified\"\n        },\n        \"Variables\": {\n            \"Dimensional\": [\n                \"6' into front & rear yard\",\n                \"3' into the side yards\"\n            ],\n            \"Material\": \"None specified\",\n            \"Environmental\": \"None specified\",\n            \"Usage\": \"None specified\"\n        },\n        \"Constants\": {\n            \"Numerical values\": \"None specified\",\n            \"Specs\": \"None specified\",\n            \"Standards\": \"None specified\",\n            \"Procedures\": \"None specified\"\n        },\n        \"Conditions\": {\n            \"Mandatory\": \"None specified\",\n            \"Optional\": \"None specified\",\n            \"Conditional logic\": \"None specified\",\n            \"Dependencies\": \"None specified\"\n        },\n        \"Exceptions\": {\n            \"Explicit deviations\": \"None specified\",\n            \"Alternatives\": \"None specified\",\n            \"Special cases\": \"None specified\"\n        },\n        \"Relationships\": {\n            \"Hierarchical\": \"None specified\",\n            \"Cross-references\": [\n                \"18.12.050 (a)(3)(D)\",\n                \"18.12.050 (a)(3)(E)\"\n            ],\n            \"Logical dependencies\": \"None specified\"\n        }\n    },\n    {\n        \"rule\": \"Other features\",\n        \"Qualifiers\": {\n            \"Scope\": \"Other features\",\n            \"Applicability\": \"Eaves, cornices, bay/greenhouse windows, uncovered parking, pools & spas, fireplaces\",\n            \"Exclusions\": \"None specified\"\n        },\n        \"Variables\": {\n            \"Dimensional\": [\n                \"2' into side & 4' into front & rear yards\",\n                \"2' into front yard & 3' into rear yard\",\n                \"2' into side yards\",\n                \"6' of rear & interior-side lot lines\",\n                \"2' into side yard\"\n            ],\n            \"Material\": \"None specified\",\n            \"Environmental\": \"None specified\",\n            \"Usage\": \"None specified\"\n        },\n        \"Constants\": {\n            \"Numerical values\": [\n                \"\u2264 5' wide\"\n            ],\n            \"Specs\": \"None specified\",\n            \"Standards\": \"None specified\",\n            \"Procedures\": \"None specified\"\n        },\n        \"Conditions\": {\n            \"Mandatory\": \"None specified\",\n            \"Optional\": \"None specified\",\n            \"Conditional logic\": \"None specified\",\n            \"Dependencies\": \"None specified\"\n        },\n        \"Exceptions\": {\n            \"Explicit deviations\": \"None specified\",\n            \"Alternatives\": \"None specified\",\n            \"Special cases\": \"None specified\"\n        },\n        \"Relationships\": {\n            \"Hierarchical\": \"None specified\",\n            \"Cross-references\": [\n                \"18.12.050 (a)(3)(A)\",\n                \"18.12.050 (a)(3)(B)\",\n                \"18.12.060 (c)\",\n                \"18.12.060 ([illegible])\"\n            ],\n            \"Logical dependencies\": \"None specified\"\n        }\n    },\n    {\n        \"rule\": \"Excavated features\",\n        \"Qualifiers\": {\n            \"Scope\": \"Excavated features\",\n            \"Applicability\": \"Lightwells, stairwells, below grade patios\",\n            \"Exclusions\": \"None specified\"\n        },\n        \"Variables\": {\n            \"Dimensional\": [\n                \"3' into side yards & 4' into rear yard\",\n                \"2' into side yards & 4' into rear yard\"\n            ],\n            \"Material\": \"None specified\",\n            \"Environmental\": \"None specified\",\n            \"Usage\": \"None specified\"\n        },\n        \"Constants\": {\n            \"Numerical values\": [\n                \"cumulative length \u2264 15'\",\n                \"cumulative length \u2264 5'\"\n            ],\n            \"Specs\": \"None specified\",\n            \"Standards\": \"None specified\",\n            \"Procedures\": \"None specified\"\n        },\n        \"Conditions\": {\n            \"Mandatory\": \"None specified\",\n            \"Optional\": \"None specified\",\n            \"Conditional logic\": \"None specified\",\n            \"Dependencies\": \"None specified\"\n        },\n        \"Exceptions\": {\n            \"Explicit deviations\": \"None specified\",\n            \"Alternatives\": \"None specified\",\n            \"Special cases\": \"None specified\"\n        },\n        \"Relationships\": {\n            \"Hierarchical\": \"None specified\",\n            \"Cross-references\": [\n                \"18.12.090 (c)\"\n            ],\n            \"Logical dependencies\": \"None specified\"\n        }\n    },\n    {\n        \"rule\": \"Rear yard encroachment\",\n        \"Qualifiers\": {\n            \"Scope\": \"Rear yard encroachment\",\n            \"Applicability\": \"Main dwelling portion no wider than half the max. width of the dwelling\",\n            \"Exclusions\": \"Back-to-back corner lots\"\n        },\n        \"Variables\": {\n            \"Dimensional\": [\n                \"up to 6'\",\n                \"minimum setback of 14'\",\n                \"up to 10'\",\n                \"minimum setback 10'\"\n            ],\n            \"Material\": \"None specified\",\n            \"Environmental\": \"None specified\",\n            \"Usage\": \"None specified\"\n        },\n        \"Constants\": {\n            \"Numerical values\": \"None specified\",\n            \"Specs\": \"None specified\",\n            \"Standards\": \"None specified\",\n            \"Procedures\": \"None specified\"\n        },\n        \"Conditions\": {\n            \"Mandatory\": [\n                \"Multiple protrusions are not permitted\",\n                \"Addition must be contiguous with existing protrusion\",\n                \"Only for legally constructed structures\"\n            ],\n            \"Optional\": \"None specified\",\n            \"Conditional logic\": \"None specified\",\n            \"Dependencies\": \"None specified\"\n        },\n        \"Exceptions\": {\n            \"Explicit deviations\": \"None specified\",\n            \"Alternatives\": \"None specified\",\n            \"Special cases\": [\n                \"Only once in the life of the structure\"\n            ]\n        },\n        \"Relationships\": {\n            \"Hierarchical\": \"None specified\",\n            \"Cross-references\": \"None specified\",\n            \"Logical dependencies\": \"None specified\"\n        }\n    }\n]\n```"
+  },
+  "timestamp": "2025-09-16 14:42:51",
+  "model": "openai/gpt-4o",
+  "success": true
+}

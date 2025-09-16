@@ -1,0 +1,58 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_46.png",
+  "image_name": "Page_46.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Basements & Excavated features\n\nFloor area regulations are intended to address the building mass and the appearance of the streetscape. Therefore, if basement area is below grade and does not contribute to the apparent mass of a building, that area, even if it is habitable, need not be included in the total floor area.\n\nCode sections\nPage 40\n18.12.090 (a, b, & c)\nPage 41\n18.12.090 (c)\nPage 43\n18.12.090 (c) (1)\nPage 44\n18.12.090 (c) (2)\n\n40\n\nBasement standards\n\n\u2022 May not be located in special flood hazard areas.\n\u2022 May not extend beyond building footprint.\n\u2022 May not encroach into required yards, except where main dwelling is permitted to extend into rear yard.\n\nFAR\nBasements (even habitable ones) do not count as floor area if first floor is no more than 3' above grade.\n\nFig 35 Basement & grade\n\nExcavated features\n\nThere are two types of excavated features:\n\u2022 Light wells and stairwells\n\u2022 Below-grade patios\n\nFAR\nExcavation will not affect grade or measurement of floor area if standards are met (see pages 42 and 43).\n\nFig 36 Excavated feature & grade\n\nA: distance between top of first floor and grade if excavation meets the size/dimensional limits described in Figs 39-40 on pp. 42-43.\n\nB: distance between top of first floor and grade if excavated features exceed the size/dimensional limits described in Figs 39-40 on pp. 42-43.\n\nTop of first floor\n\nBasement\nExcavated\n\nGrade if excavated features meet standards described in Figs 39-40 on pp. 42-43.\n\nGrade if excavated features exceed standards described in Figs 39-40 on pp. 42-43.",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Fig 35 Basement & grade - Shows a cross-sectional view of a basement with hatched pattern indicating below-grade area",
+          "location": "Left side, middle of page"
+        },
+        {
+          "type": "diagram",
+          "description": "Fig 36 Excavated feature & grade - Shows a detailed cross-sectional view of a building with basement and excavated features, including measurements A and B, labels for basement, excavated areas, top of first floor, and two different grade levels",
+          "location": "Right side, bottom half of page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Maximum first floor height above grade for basement FAR exemption",
+          "value": "3",
+          "unit": "feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Basements & Excavated features",
+        "subheadings": [
+          "Basement standards",
+          "Excavated features",
+          "FAR"
+        ],
+        "sections": [
+          "Code sections",
+          "Page 40",
+          "Page 41",
+          "Page 43",
+          "Page 44"
+        ]
+      },
+      "additional_notes": [
+        "Page number 40 appears at bottom left",
+        "Two gray shaded boxes contain FAR information",
+        "Diagrams use hatched patterns to indicate different materials/areas"
+      ],
+      "cross_references": [
+        "18.12.090 (a, b, & c)",
+        "18.12.090 (c)",
+        "18.12.090 (c) (1)",
+        "18.12.090 (c) (2)",
+        "see pages 42 and 43",
+        "Figs 39-40 on pp. 42-43"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-11 13:45:10",
+  "model_used": "anthropic/claude-sonnet-4"
+}

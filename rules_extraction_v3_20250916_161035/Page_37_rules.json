@@ -1,0 +1,189 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_37.md",
+  "file_name": "Page_37.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "rule": "Accessory Structure in Rear Yard (Side Lot Line)",
+        "Qualifiers": {
+          "Scope": "Site planning for accessory structures.",
+          "Applicability": "Applies to accessory structures (e.g., garage, pool cabana) located in the rear yard of an interior lot.",
+          "Exclusions": "Does not apply to structures located within the buildable area. Does not apply to two-story structures."
+        },
+        "Variables": {
+          "Dimensional": "distance_from_front_lot_line, height, location_relative_to_side_lot_line",
+          "Material": "wall_fire_rating, roof_fire_rating",
+          "Environmental": "",
+          "Usage": "number_of_plumbing_fixtures"
+        },
+        "Constants": {
+          "min_distance_from_front_lot_line": "75 feet",
+          "max_height": "12 feet",
+          "plumbing_fixture_count": "2"
+        },
+        "Conditions": {
+          "Mandatory": "IF structure is located in rear yard, THEN distance from front lot line must be >= 75 feet. IF structure is located in rear yard, THEN height must be <= 12 feet. IF structure is located in rear yard, THEN it must comply with accessory structure daylight plane. IF structure is located at the side lot line, THEN the adjacent wall and roof must be fire rated.",
+          "Optional": "",
+          "Conditional Logic": "",
+          "Dependencies": "Requirements are dependent on the structure's location within a required yard (rear yard)."
+        },
+        "Exceptions": {
+          "Explicit Deviations": "A special allowance for garages may waive the 75' minimum distance requirement (see separate rule).",
+          "Alternatives": "",
+          "Special Cases": ""
+        },
+        "Relationships": {
+          "Hierarchical": "This rule is subordinate to rules for structures within the buildable area.",
+          "Cross-references": "Must comply with accessory structure daylight plane, as detailed in Figures 25 & 26 on page 32.",
+          "Logical Dependencies": "Fire rating requirement is dependent on placement at the lot line. Setback and height requirements are dependent on placement in the rear yard."
+        }
+      },
+      {
+        "rule": "Large Accessory Structure in Rear Yard (Rear Lot Line)",
+        "Qualifiers": {
+          "Scope": "Site planning and permitting for accessory structures.",
+          "Applicability": "Applies to accessory structures located in the rear yard that are over a certain size and contain multiple plumbing fixtures.",
+          "Exclusions": "Does not apply to structures located within the buildable area."
+        },
+        "Variables": {
+          "Dimensional": "distance_from_front_lot_line, height, location_relative_to_rear_lot_line, area_in_sf",
+          "Material": "wall_fire_rating, roof_fire_rating",
+          "Environmental": "",
+          "Usage": "number_of_plumbing_fixtures, fixture_types (sink, toilet, shower)"
+        },
+        "Constants": {
+          "min_distance_from_front_lot_line": "75 feet",
+          "max_height": "12 feet",
+          "area_threshold": "200 sf",
+          "plumbing_fixture_count": "3",
+          "permit_type": "Conditional Use Permit (CUP)"
+        },
+        "Conditions": {
+          "Mandatory": "IF structure is located in rear yard, THEN distance from front lot line must be >= 75 feet. IF structure is located in rear yard, THEN height must be <= 12 feet. IF structure is located in rear yard, THEN it must comply with accessory structure daylight plane. IF structure is located at the rear lot line, THEN the adjacent wall and roof must be fire rated.",
+          "Optional": "",
+          "Conditional Logic": "IF structure area > 200 sf AND it contains multiple plumbing fixtures (e.g., 3 fixtures: sink, toilet, shower), THEN a Conditional Use Permit (CUP) is required. Ambiguity Flag: The text links '3 plumbing fixtures' and '> 200 sf' directly; it is unclear if a CUP is required for a structure > 200 sf with fewer than 3 fixtures.",
+          "Dependencies": "CUP requirement is dependent on both size and plumbing fixture count."
+        },
+        "Exceptions": {
+          "Explicit Deviations": "",
+          "Alternatives": "",
+          "Special Cases": ""
+        },
+        "Relationships": {
+          "Hierarchical": "",
+          "Cross-references": "Must comply with accessory structure daylight plane, as detailed in Figures 25 & 26 on page 32.",
+          "Logical Dependencies": "The requirement for a CUP is logically dependent on crossing both the size and plumbing thresholds."
+        }
+      },
+      {
+        "rule": "Accessory Structure in Buildable Area",
+        "Qualifiers": {
+          "Scope": "Site planning for accessory structures.",
+          "Applicability": "Applies to accessory structures located entirely within the designated buildable area of a lot.",
+          "Exclusions": "Regulations for structures in required yards (e.g., height limits for rear yards, 75' setback) do not apply."
+        },
+        "Variables": {
+          "Dimensional": "number_of_stories",
+          "Material": "",
+          "Environmental": "",
+          "Usage": "number_of_plumbing_fixtures"
+        },
+        "Constants": {
+          "max_stories_allowed": "2"
+        },
+        "Conditions": {
+          "Mandatory": "",
+          "Optional": "A structure located within the buildable area MAY be two stories high.",
+          "Conditional Logic": "IF a structure is located within the buildable area, THEN it is exempt from the regulations for structures in required yards.",
+          "Dependencies": ""
+        },
+        "Exceptions": {
+          "Explicit Deviations": "This rule provides an explicit deviation from the regulations governing structures in required yards.",
+          "Alternatives": "",
+          "Special Cases": "This rule represents the standard case, while structures in setbacks are the special case."
+        },
+        "Relationships": {
+          "Hierarchical": "This rule for the buildable area takes precedence over yard-specific rules for any structure located within it.",
+          "Cross-references": "",
+          "Logical Dependencies": "The allowance for two stories is dependent on the structure's location within the buildable area."
+        }
+      },
+      {
+        "rule": "Two-Story Accessory Structure Requirements",
+        "Qualifiers": {
+          "Scope": "Site planning and review process for accessory structures.",
+          "Applicability": "Applies to any accessory structure that is two stories high, or is a new second-floor addition.",
+          "Exclusions": ""
+        },
+        "Variables": {
+          "Dimensional": "number_of_stories",
+          "Material": "",
+          "Environmental": "",
+          "Usage": ""
+        },
+        "Constants": {
+          "story_count_trigger": "2",
+          "review_process": "Planning Department's Individual Review (IR)"
+        },
+        "Conditions": {
+          "Mandatory": "IF an accessory structure is 2 stories, THEN it MUST be located within the buildable area. IF an accessory structure is 2 stories OR is a new 2nd floor addition, THEN it is subject to Individual Review (IR).",
+          "Optional": "",
+          "Conditional Logic": "",
+          "Dependencies": "The mandatory location within the buildable area and the IR process are both triggered by the structure being two stories."
+        },
+        "Exceptions": {
+          "Explicit Deviations": "",
+          "Alternatives": "",
+          "Special Cases": ""
+        },
+        "Relationships": {
+          "Hierarchical": "This is a mandatory, overriding rule for all two-story accessory structures, regardless of other conditions.",
+          "Cross-references": "",
+          "Logical Dependencies": "This rule reinforces and expands on the conditions noted for the 'Office above garage' example."
+        }
+      },
+      {
+        "rule": "Garage Setback Exception",
+        "Qualifiers": {
+          "Scope": "Site planning for parking structures.",
+          "Applicability": "Applies ONLY to garages located in rear or side yards.",
+          "Exclusions": "This allowance does not apply to non-parking accessory structures."
+        },
+        "Variables": {
+          "Dimensional": "lot_depth, distance_from_front_lot_line",
+          "Material": "",
+          "Environmental": "",
+          "Usage": "structure_type (garage)"
+        },
+        "Constants": {
+          "min_distance_from_front_lot_line": "75 feet"
+        },
+        "Conditions": {
+          "Mandatory": "",
+          "Optional": "",
+          "Conditional Logic": "IF structure_type is 'garage' AND lot is not deep enough to maintain the 75' minimum distance from the front lot line, THEN the garage is still permitted to be located in the rear/side yards.",
+          "Dependencies": "This exception is dependent on both the structure's use (garage) and a physical property of the lot (insufficient depth)."
+        },
+        "Exceptions": {
+          "Explicit Deviations": "This rule is a 'special allowance' that creates an exception to the standard 75' minimum distance requirement for structures in required yards.",
+          "Alternatives": "",
+          "Special Cases": "This applies to lots that are not deep enough for standard compliance."
+        },
+        "Relationships": {
+          "Hierarchical": "",
+          "Cross-references": "This rule directly modifies the 75' setback requirement detailed in the rules for 'Accessory Structure in Rear Yard'.",
+          "Logical Dependencies": ""
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n  {\n    \"rule\": \"Accessory Structure in Rear Yard (Side Lot Line)\",\n    \"Qualifiers\": {\n      \"Scope\": \"Site planning for accessory structures.\",\n      \"Applicability\": \"Applies to accessory structures (e.g., garage, pool cabana) located in the rear yard of an interior lot.\",\n      \"Exclusions\": \"Does not apply to structures located within the buildable area. Does not apply to two-story structures.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"distance_from_front_lot_line, height, location_relative_to_side_lot_line\",\n      \"Material\": \"wall_fire_rating, roof_fire_rating\",\n      \"Environmental\": \"\",\n      \"Usage\": \"number_of_plumbing_fixtures\"\n    },\n    \"Constants\": {\n      \"min_distance_from_front_lot_line\": \"75 feet\",\n      \"max_height\": \"12 feet\",\n      \"plumbing_fixture_count\": \"2\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"IF structure is located in rear yard, THEN distance from front lot line must be >= 75 feet. IF structure is located in rear yard, THEN height must be <= 12 feet. IF structure is located in rear yard, THEN it must comply with accessory structure daylight plane. IF structure is located at the side lot line, THEN the adjacent wall and roof must be fire rated.\",\n      \"Optional\": \"\",\n      \"Conditional Logic\": \"\",\n      \"Dependencies\": \"Requirements are dependent on the structure's location within a required yard (rear yard).\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"A special allowance for garages may waive the 75' minimum distance requirement (see separate rule).\",\n      \"Alternatives\": \"\",\n      \"Special Cases\": \"\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"This rule is subordinate to rules for structures within the buildable area.\",\n      \"Cross-references\": \"Must comply with accessory structure daylight plane, as detailed in Figures 25 & 26 on page 32.\",\n      \"Logical Dependencies\": \"Fire rating requirement is dependent on placement at the lot line. Setback and height requirements are dependent on placement in the rear yard.\"\n    }\n  },\n  {\n    \"rule\": \"Large Accessory Structure in Rear Yard (Rear Lot Line)\",\n    \"Qualifiers\": {\n      \"Scope\": \"Site planning and permitting for accessory structures.\",\n      \"Applicability\": \"Applies to accessory structures located in the rear yard that are over a certain size and contain multiple plumbing fixtures.\",\n      \"Exclusions\": \"Does not apply to structures located within the buildable area.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"distance_from_front_lot_line, height, location_relative_to_rear_lot_line, area_in_sf\",\n      \"Material\": \"wall_fire_rating, roof_fire_rating\",\n      \"Environmental\": \"\",\n      \"Usage\": \"number_of_plumbing_fixtures, fixture_types (sink, toilet, shower)\"\n    },\n    \"Constants\": {\n      \"min_distance_from_front_lot_line\": \"75 feet\",\n      \"max_height\": \"12 feet\",\n      \"area_threshold\": \"200 sf\",\n      \"plumbing_fixture_count\": \"3\",\n      \"permit_type\": \"Conditional Use Permit (CUP)\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"IF structure is located in rear yard, THEN distance from front lot line must be >= 75 feet. IF structure is located in rear yard, THEN height must be <= 12 feet. IF structure is located in rear yard, THEN it must comply with accessory structure daylight plane. IF structure is located at the rear lot line, THEN the adjacent wall and roof must be fire rated.\",\n      \"Optional\": \"\",\n      \"Conditional Logic\": \"IF structure area > 200 sf AND it contains multiple plumbing fixtures (e.g., 3 fixtures: sink, toilet, shower), THEN a Conditional Use Permit (CUP) is required. Ambiguity Flag: The text links '3 plumbing fixtures' and '> 200 sf' directly; it is unclear if a CUP is required for a structure > 200 sf with fewer than 3 fixtures.\",\n      \"Dependencies\": \"CUP requirement is dependent on both size and plumbing fixture count.\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"\",\n      \"Alternatives\": \"\",\n      \"Special Cases\": \"\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"\",\n      \"Cross-references\": \"Must comply with accessory structure daylight plane, as detailed in Figures 25 & 26 on page 32.\",\n      \"Logical Dependencies\": \"The requirement for a CUP is logically dependent on crossing both the size and plumbing thresholds.\"\n    }\n  },\n  {\n    \"rule\": \"Accessory Structure in Buildable Area\",\n    \"Qualifiers\": {\n      \"Scope\": \"Site planning for accessory structures.\",\n      \"Applicability\": \"Applies to accessory structures located entirely within the designated buildable area of a lot.\",\n      \"Exclusions\": \"Regulations for structures in required yards (e.g., height limits for rear yards, 75' setback) do not apply.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"number_of_stories\",\n      \"Material\": \"\",\n      \"Environmental\": \"\",\n      \"Usage\": \"number_of_plumbing_fixtures\"\n    },\n    \"Constants\": {\n      \"max_stories_allowed\": \"2\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"\",\n      \"Optional\": \"A structure located within the buildable area MAY be two stories high.\",\n      \"Conditional Logic\": \"IF a structure is located within the buildable area, THEN it is exempt from the regulations for structures in required yards.\",\n      \"Dependencies\": \"\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"This rule provides an explicit deviation from the regulations governing structures in required yards.\",\n      \"Alternatives\": \"\",\n      \"Special Cases\": \"This rule represents the standard case, while structures in setbacks are the special case.\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"This rule for the buildable area takes precedence over yard-specific rules for any structure located within it.\",\n      \"Cross-references\": \"\",\n      \"Logical Dependencies\": \"The allowance for two stories is dependent on the structure's location within the buildable area.\"\n    }\n  },\n  {\n    \"rule\": \"Two-Story Accessory Structure Requirements\",\n    \"Qualifiers\": {\n      \"Scope\": \"Site planning and review process for accessory structures.\",\n      \"Applicability\": \"Applies to any accessory structure that is two stories high, or is a new second-floor addition.\",\n      \"Exclusions\": \"\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"number_of_stories\",\n      \"Material\": \"\",\n      \"Environmental\": \"\",\n      \"Usage\": \"\"\n    },\n    \"Constants\": {\n      \"story_count_trigger\": \"2\",\n      \"review_process\": \"Planning Department's Individual Review (IR)\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"IF an accessory structure is 2 stories, THEN it MUST be located within the buildable area. IF an accessory structure is 2 stories OR is a new 2nd floor addition, THEN it is subject to Individual Review (IR).\",\n      \"Optional\": \"\",\n      \"Conditional Logic\": \"\",\n      \"Dependencies\": \"The mandatory location within the buildable area and the IR process are both triggered by the structure being two stories.\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"\",\n      \"Alternatives\": \"\",\n      \"Special Cases\": \"\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"This is a mandatory, overriding rule for all two-story accessory structures, regardless of other conditions.\",\n      \"Cross-references\": \"\",\n      \"Logical Dependencies\": \"This rule reinforces and expands on the conditions noted for the 'Office above garage' example.\"\n    }\n  },\n  {\n    \"rule\": \"Garage Setback Exception\",\n    \"Qualifiers\": {\n      \"Scope\": \"Site planning for parking structures.\",\n      \"Applicability\": \"Applies ONLY to garages located in rear or side yards.\",\n      \"Exclusions\": \"This allowance does not apply to non-parking accessory structures.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"lot_depth, distance_from_front_lot_line\",\n      \"Material\": \"\",\n      \"Environmental\": \"\",\n      \"Usage\": \"structure_type (garage)\"\n    },\n    \"Constants\": {\n      \"min_distance_from_front_lot_line\": \"75 feet\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"\",\n      \"Optional\": \"\",\n      \"Conditional Logic\": \"IF structure_type is 'garage' AND lot is not deep enough to maintain the 75' minimum distance from the front lot line, THEN the garage is still permitted to be located in the rear/side yards.\",\n      \"Dependencies\": \"This exception is dependent on both the structure's use (garage) and a physical property of the lot (insufficient depth).\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"This rule is a 'special allowance' that creates an exception to the standard 75' minimum distance requirement for structures in required yards.\",\n      \"Alternatives\": \"\",\n      \"Special Cases\": \"This applies to lots that are not deep enough for standard compliance.\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"\",\n      \"Cross-references\": \"This rule directly modifies the 75' setback requirement detailed in the rules for 'Accessory Structure in Rear Yard'.\",\n      \"Logical Dependencies\": \"\"\n    }\n  }\n]\n```",
+    "response_time": 45.86496305465698,
+    "input_tokens": 1163,
+    "output_tokens": 5144,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 16:13:33",
+  "model": "google/gemini-2.5-pro",
+  "success": true
+}

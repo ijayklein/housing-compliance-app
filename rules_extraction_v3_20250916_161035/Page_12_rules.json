@@ -1,0 +1,202 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_12.md",
+  "file_name": "Page_12.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "rule": "GFA Calculation for Non-Roofed Features",
+        "Qualifiers": {
+          "Scope": "Assessment of gross floor area (GFA) for porches, entryways, and balconies.",
+          "Applicability": "Applies to non-roofed porches, entryways, balconies, and similar features.",
+          "Exclusions": "Applies only to features that are not roofed."
+        },
+        "Variables": {
+          "feature_type": "porch, entryway, balcony",
+          "has_roof": "boolean (must be false for this rule to apply)"
+        },
+        "Constants": {
+          "gfa_contribution": "0 (does not count)"
+        },
+        "Conditions": {
+          "mandatory": "Feature must be non-roofed.",
+          "conditional_logic": "IF has_roof IS false THEN GFA contribution is 0."
+        },
+        "Exceptions": {
+          "ambiguous_language": "The text states features 'generally do not count', which implies there may be unstated exceptions. The exact conditions are not fully defined."
+        },
+        "Relationships": {
+          "hierarchical": "This is Category 1 of 6 for assessing GFA of porch/entryway features.",
+          "cross_references": "Code Sections: 18.04.030(a)(65), 18.04.030(q)([illegible]), 18.04.030([illegible]), 18.12.040(b)Table 3.",
+          "logical_dependencies": "This rule is the baseline for features without a roof, contrasting with rules 2 through 6 which all pertain to roofed features."
+        }
+      },
+      {
+        "rule": "GFA Calculation for Roofed Porches on 1st Floor",
+        "Qualifiers": {
+          "Scope": "Assessment of gross floor area (GFA) for porches, entryways, and balconies.",
+          "Applicability": "Applies to roofed porches located on the 1st floor.",
+          "Exclusions": "Entry features, features on upper floors, non-roofed features, recessed porches."
+        },
+        "Variables": {
+          "feature_type": "porch",
+          "floor_level": "integer (must be 1)",
+          "has_roof": "boolean (must be true)",
+          "openness_of_sides": "descriptive (e.g., open, enclosed)",
+          "height": "dimensional (value does not affect the condition for counting)"
+        },
+        "Constants": {
+          "gfa_multiplier": "1 (counts only once)"
+        },
+        "Conditions": {
+          "mandatory": "Feature must be a roofed porch on the 1st floor.",
+          "dependencies": "'Openness of the sides determines whether or not these count'. The specific criteria for 'openness' are not defined on this page.",
+          "conditional_logic": "IF (feature counts based on openness criteria) THEN GFA contribution is area * 1."
+        },
+        "Exceptions": {
+          "explicit_deviations": "The rule applies 'regardless of the height'."
+        },
+        "Relationships": {
+          "hierarchical": "This is Category 2 of 6 for assessing GFA of porch/entryway features.",
+          "cross_references": "Figure 4 (A & D) on p. 7; Figure 5 on p. 8; Code Sections: 18.04.030(a)(65), 18.04.030(q)([illegible]), 18.04.030([illegible]), 18.12.040(b)Table 3.",
+          "logical_dependencies": "The definition of 'porch' vs 'entry feature' (from right-side callout box) is critical for applying this rule. The footer note indicates more details are on subsequent pages."
+        }
+      },
+      {
+        "rule": "GFA Calculation for Low-Height Roofed Entry Features on 1st Floor",
+        "Qualifiers": {
+          "Scope": "Assessment of gross floor area (GFA) for porches, entryways, and balconies.",
+          "Applicability": "Applies to roofed entry features on the 1st floor that are less than 12 feet high from grade.",
+          "Exclusions": "Porches, features more than or equal to 12 feet high, features on upper floors."
+        },
+        "Variables": {
+          "feature_type": "entry feature",
+          "floor_level": "integer (must be 1)",
+          "has_roof": "boolean (must be true)",
+          "height_from_grade": "dimensional, in feet",
+          "design": "descriptive",
+          "openness": "descriptive"
+        },
+        "Constants": {
+          "height_threshold": "12 feet",
+          "gfa_multiplier": "1 (counts once)"
+        },
+        "Conditions": {
+          "mandatory": "Feature must be a roofed entry feature on the 1st floor.",
+          "conditional_logic": "IF height_from_grade < 12' THEN GFA contribution is area * 1."
+        },
+        "Exceptions": {
+          "explicit_deviations": "The feature counts 'regardless of the design including openess'."
+        },
+        "Relationships": {
+          "hierarchical": "This is Category 3 of 6 for assessing GFA. It is a sub-case of 'Roofed entry features on the 1st floor', contrasting with Rule 4.",
+          "cross_references": "Figure 4 (B) on p. 7; Code Sections: 18.04.030(a)(65), 18.04.030(q)([illegible]), 18.04.030([illegible]), 18.12.040(b)Table 3.",
+          "logical_dependencies": "Mutually exclusive with Rule 4 based on the height variable. Depends on the definition of 'entry feature' vs 'porch'."
+        }
+      },
+      {
+        "rule": "GFA Calculation for High-Height (Vaulted) Roofed Entry Features on 1st Floor",
+        "Qualifiers": {
+          "Scope": "Assessment of gross floor area (GFA) for porches, entryways, and balconies.",
+          "Applicability": "Applies to roofed entry features on the 1st floor that are more than 12 feet high from grade. These are termed 'vaulted entry feature'.",
+          "Exclusions": "Porches, features less than or equal to 12 feet high, features on upper floors."
+        },
+        "Variables": {
+          "feature_type": "entry feature, vaulted entry feature",
+          "floor_level": "integer (must be 1)",
+          "has_roof": "boolean (must be true)",
+          "height_from_grade": "dimensional, in feet",
+          "design": "descriptive",
+          "openness": "descriptive"
+        },
+        "Constants": {
+          "height_threshold": "12 feet",
+          "gfa_multiplier": "2 (counts twice)",
+          "specs_standards": "Official term is 'vaulted entry feature'."
+        },
+        "Conditions": {
+          "mandatory": "Feature must be a roofed entry feature on the 1st floor.",
+          "conditional_logic": "IF height_from_grade > 12' THEN GFA contribution is area * 2."
+        },
+        "Exceptions": {
+          "explicit_deviations": "The feature counts 'regardless of the design including openess'."
+        },
+        "Relationships": {
+          "hierarchical": "This is Category 4 of 6 for assessing GFA. It is a sub-case of 'Roofed entry features on the 1st floor', contrasting with Rule 3.",
+          "cross_references": "Figure 4 (C & D) on p. 7; Figures 6, 7, & 8 on pp. 11-13; Code Sections: 18.04.030(a)(65), 18.04.030(q)([illegible]), 18.04.030([illegible]), 18.12.040(b)Table 3.",
+          "logical_dependencies": "Mutually exclusive with Rule 3 based on the height variable. Depends on the definition of 'entry feature' vs 'porch'."
+        }
+      },
+      {
+        "rule": "GFA Calculation for Recessed Porches on 1st Floor",
+        "Qualifiers": {
+          "Scope": "Assessment of gross floor area (GFA) for porches, entryways, and balconies.",
+          "Applicability": "Applies to recessed porches on the 1st floor.",
+          "Exclusions": "Non-recessed porches, entry features, features on upper floors."
+        },
+        "Variables": {
+          "feature_type": "recessed porch",
+          "floor_level": "integer (must be 1)",
+          "height": "dimensional, in feet",
+          "depth": "dimensional",
+          "openness": "descriptive"
+        },
+        "Constants": {
+          "height_threshold": "17 feet",
+          "gfa_multiplier_low_height": "1 (counts only once)",
+          "gfa_multiplier_high_height": "2 (counts twice)"
+        },
+        "Conditions": {
+          "mandatory": "Feature must be a recessed porch on the 1st floor.",
+          "dependencies": "'Height, depth, & openess determine whether or not these count'. The specific criteria for this initial determination are not defined on this page.",
+          "conditional_logic": "IF (feature counts) AND (height < 17') THEN GFA contribution is area * 1. IF (feature counts) AND (height > 17') THEN GFA contribution is area * 2."
+        },
+        "Exceptions": {
+          "ambiguous_language": "The conditions under which a recessed porch 'counts' based on height, depth, and openness are not specified. The footer note suggests details are on following pages, making this rule incomplete on its own."
+        },
+        "Relationships": {
+          "hierarchical": "This is Category 5 of 6 for assessing GFA of porch/entryway features.",
+          "cross_references": "Figure 9 on p. 14; Code Sections: 18.04.030(a)(65), 18.04.030(q)([illegible]), 18.04.030([illegible]), 18.12.040(b)Table 3.",
+          "logical_dependencies": "Calculation is a two-step process: first determine if it counts at all (based on undefined criteria), then apply the multiplier based on height."
+        }
+      },
+      {
+        "rule": "GFA Calculation for Roofed Balconies/Outdoor Areas on Upper Floors",
+        "Qualifiers": {
+          "Scope": "Assessment of gross floor area (GFA) for porches, entryways, and balconies.",
+          "Applicability": "Applies to roofed balconies or other roofed outdoor areas on upper floors (i.e., floor level > 1).",
+          "Exclusions": "All features on the 1st floor, non-roofed features."
+        },
+        "Variables": {
+          "feature_type": "balcony, outdoor area",
+          "floor_level": "integer (must be > 1)",
+          "has_roof": "boolean (must be true)",
+          "design": "descriptive",
+          "openness": "descriptive"
+        },
+        "Constants": {
+          "gfa_multiplier": "1 (counts once)"
+        },
+        "Conditions": {
+          "mandatory": "Feature must be a roofed balcony or outdoor area on an upper floor. GFA contribution is area * 1."
+        },
+        "Exceptions": {
+          "explicit_deviations": "The feature counts 'regardless of the design including openess'."
+        },
+        "Relationships": {
+          "hierarchical": "This is Category 6 of 6 for assessing GFA of porch/entryway features.",
+          "cross_references": "Figure 10 on p. 15; Code Sections: 18.04.030(a)(65), 18.04.030(q)([illegible]), 18.04.030([illegible]), 18.12.040(b)Table 3.",
+          "logical_dependencies": "This rule is specific to upper floors, distinguishing it from rules 2-5 which are for the 1st floor."
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n  {\n    \"rule\": \"GFA Calculation for Non-Roofed Features\",\n    \"Qualifiers\": {\n      \"Scope\": \"Assessment of gross floor area (GFA) for porches, entryways, and balconies.\",\n      \"Applicability\": \"Applies to non-roofed porches, entryways, balconies, and similar features.\",\n      \"Exclusions\": \"Applies only to features that are not roofed.\"\n    },\n    \"Variables\": {\n      \"feature_type\": \"porch, entryway, balcony\",\n      \"has_roof\": \"boolean (must be false for this rule to apply)\"\n    },\n    \"Constants\": {\n      \"gfa_contribution\": \"0 (does not count)\"\n    },\n    \"Conditions\": {\n      \"mandatory\": \"Feature must be non-roofed.\",\n      \"conditional_logic\": \"IF has_roof IS false THEN GFA contribution is 0.\"\n    },\n    \"Exceptions\": {\n      \"ambiguous_language\": \"The text states features 'generally do not count', which implies there may be unstated exceptions. The exact conditions are not fully defined.\"\n    },\n    \"Relationships\": {\n      \"hierarchical\": \"This is Category 1 of 6 for assessing GFA of porch/entryway features.\",\n      \"cross_references\": \"Code Sections: 18.04.030(a)(65), 18.04.030(q)([illegible]), 18.04.030([illegible]), 18.12.040(b)Table 3.\",\n      \"logical_dependencies\": \"This rule is the baseline for features without a roof, contrasting with rules 2 through 6 which all pertain to roofed features.\"\n    }\n  },\n  {\n    \"rule\": \"GFA Calculation for Roofed Porches on 1st Floor\",\n    \"Qualifiers\": {\n      \"Scope\": \"Assessment of gross floor area (GFA) for porches, entryways, and balconies.\",\n      \"Applicability\": \"Applies to roofed porches located on the 1st floor.\",\n      \"Exclusions\": \"Entry features, features on upper floors, non-roofed features, recessed porches.\"\n    },\n    \"Variables\": {\n      \"feature_type\": \"porch\",\n      \"floor_level\": \"integer (must be 1)\",\n      \"has_roof\": \"boolean (must be true)\",\n      \"openness_of_sides\": \"descriptive (e.g., open, enclosed)\",\n      \"height\": \"dimensional (value does not affect the condition for counting)\"\n    },\n    \"Constants\": {\n      \"gfa_multiplier\": \"1 (counts only once)\"\n    },\n    \"Conditions\": {\n      \"mandatory\": \"Feature must be a roofed porch on the 1st floor.\",\n      \"dependencies\": \"'Openness of the sides determines whether or not these count'. The specific criteria for 'openness' are not defined on this page.\",\n      \"conditional_logic\": \"IF (feature counts based on openness criteria) THEN GFA contribution is area * 1.\"\n    },\n    \"Exceptions\": {\n      \"explicit_deviations\": \"The rule applies 'regardless of the height'.\"\n    },\n    \"Relationships\": {\n      \"hierarchical\": \"This is Category 2 of 6 for assessing GFA of porch/entryway features.\",\n      \"cross_references\": \"Figure 4 (A & D) on p. 7; Figure 5 on p. 8; Code Sections: 18.04.030(a)(65), 18.04.030(q)([illegible]), 18.04.030([illegible]), 18.12.040(b)Table 3.\",\n      \"logical_dependencies\": \"The definition of 'porch' vs 'entry feature' (from right-side callout box) is critical for applying this rule. The footer note indicates more details are on subsequent pages.\"\n    }\n  },\n  {\n    \"rule\": \"GFA Calculation for Low-Height Roofed Entry Features on 1st Floor\",\n    \"Qualifiers\": {\n      \"Scope\": \"Assessment of gross floor area (GFA) for porches, entryways, and balconies.\",\n      \"Applicability\": \"Applies to roofed entry features on the 1st floor that are less than 12 feet high from grade.\",\n      \"Exclusions\": \"Porches, features more than or equal to 12 feet high, features on upper floors.\"\n    },\n    \"Variables\": {\n      \"feature_type\": \"entry feature\",\n      \"floor_level\": \"integer (must be 1)\",\n      \"has_roof\": \"boolean (must be true)\",\n      \"height_from_grade\": \"dimensional, in feet\",\n      \"design\": \"descriptive\",\n      \"openness\": \"descriptive\"\n    },\n    \"Constants\": {\n      \"height_threshold\": \"12 feet\",\n      \"gfa_multiplier\": \"1 (counts once)\"\n    },\n    \"Conditions\": {\n      \"mandatory\": \"Feature must be a roofed entry feature on the 1st floor.\",\n      \"conditional_logic\": \"IF height_from_grade < 12' THEN GFA contribution is area * 1.\"\n    },\n    \"Exceptions\": {\n      \"explicit_deviations\": \"The feature counts 'regardless of the design including openess'.\"\n    },\n    \"Relationships\": {\n      \"hierarchical\": \"This is Category 3 of 6 for assessing GFA. It is a sub-case of 'Roofed entry features on the 1st floor', contrasting with Rule 4.\",\n      \"cross_references\": \"Figure 4 (B) on p. 7; Code Sections: 18.04.030(a)(65), 18.04.030(q)([illegible]), 18.04.030([illegible]), 18.12.040(b)Table 3.\",\n      \"logical_dependencies\": \"Mutually exclusive with Rule 4 based on the height variable. Depends on the definition of 'entry feature' vs 'porch'.\"\n    }\n  },\n  {\n    \"rule\": \"GFA Calculation for High-Height (Vaulted) Roofed Entry Features on 1st Floor\",\n    \"Qualifiers\": {\n      \"Scope\": \"Assessment of gross floor area (GFA) for porches, entryways, and balconies.\",\n      \"Applicability\": \"Applies to roofed entry features on the 1st floor that are more than 12 feet high from grade. These are termed 'vaulted entry feature'.\",\n      \"Exclusions\": \"Porches, features less than or equal to 12 feet high, features on upper floors.\"\n    },\n    \"Variables\": {\n      \"feature_type\": \"entry feature, vaulted entry feature\",\n      \"floor_level\": \"integer (must be 1)\",\n      \"has_roof\": \"boolean (must be true)\",\n      \"height_from_grade\": \"dimensional, in feet\",\n      \"design\": \"descriptive\",\n      \"openness\": \"descriptive\"\n    },\n    \"Constants\": {\n      \"height_threshold\": \"12 feet\",\n      \"gfa_multiplier\": \"2 (counts twice)\",\n      \"specs_standards\": \"Official term is 'vaulted entry feature'.\"\n    },\n    \"Conditions\": {\n      \"mandatory\": \"Feature must be a roofed entry feature on the 1st floor.\",\n      \"conditional_logic\": \"IF height_from_grade > 12' THEN GFA contribution is area * 2.\"\n    },\n    \"Exceptions\": {\n      \"explicit_deviations\": \"The feature counts 'regardless of the design including openess'.\"\n    },\n    \"Relationships\": {\n      \"hierarchical\": \"This is Category 4 of 6 for assessing GFA. It is a sub-case of 'Roofed entry features on the 1st floor', contrasting with Rule 3.\",\n      \"cross_references\": \"Figure 4 (C & D) on p. 7; Figures 6, 7, & 8 on pp. 11-13; Code Sections: 18.04.030(a)(65), 18.04.030(q)([illegible]), 18.04.030([illegible]), 18.12.040(b)Table 3.\",\n      \"logical_dependencies\": \"Mutually exclusive with Rule 3 based on the height variable. Depends on the definition of 'entry feature' vs 'porch'.\"\n    }\n  },\n  {\n    \"rule\": \"GFA Calculation for Recessed Porches on 1st Floor\",\n    \"Qualifiers\": {\n      \"Scope\": \"Assessment of gross floor area (GFA) for porches, entryways, and balconies.\",\n      \"Applicability\": \"Applies to recessed porches on the 1st floor.\",\n      \"Exclusions\": \"Non-recessed porches, entry features, features on upper floors.\"\n    },\n    \"Variables\": {\n      \"feature_type\": \"recessed porch\",\n      \"floor_level\": \"integer (must be 1)\",\n      \"height\": \"dimensional, in feet\",\n      \"depth\": \"dimensional\",\n      \"openness\": \"descriptive\"\n    },\n    \"Constants\": {\n      \"height_threshold\": \"17 feet\",\n      \"gfa_multiplier_low_height\": \"1 (counts only once)\",\n      \"gfa_multiplier_high_height\": \"2 (counts twice)\"\n    },\n    \"Conditions\": {\n      \"mandatory\": \"Feature must be a recessed porch on the 1st floor.\",\n      \"dependencies\": \"'Height, depth, & openess determine whether or not these count'. The specific criteria for this initial determination are not defined on this page.\",\n      \"conditional_logic\": \"IF (feature counts) AND (height < 17') THEN GFA contribution is area * 1. IF (feature counts) AND (height > 17') THEN GFA contribution is area * 2.\"\n    },\n    \"Exceptions\": {\n      \"ambiguous_language\": \"The conditions under which a recessed porch 'counts' based on height, depth, and openness are not specified. The footer note suggests details are on following pages, making this rule incomplete on its own.\"\n    },\n    \"Relationships\": {\n      \"hierarchical\": \"This is Category 5 of 6 for assessing GFA of porch/entryway features.\",\n      \"cross_references\": \"Figure 9 on p. 14; Code Sections: 18.04.030(a)(65), 18.04.030(q)([illegible]), 18.04.030([illegible]), 18.12.040(b)Table 3.\",\n      \"logical_dependencies\": \"Calculation is a two-step process: first determine if it counts at all (based on undefined criteria), then apply the multiplier based on height.\"\n    }\n  },\n  {\n    \"rule\": \"GFA Calculation for Roofed Balconies/Outdoor Areas on Upper Floors\",\n    \"Qualifiers\": {\n      \"Scope\": \"Assessment of gross floor area (GFA) for porches, entryways, and balconies.\",\n      \"Applicability\": \"Applies to roofed balconies or other roofed outdoor areas on upper floors (i.e., floor level > 1).\",\n      \"Exclusions\": \"All features on the 1st floor, non-roofed features.\"\n    },\n    \"Variables\": {\n      \"feature_type\": \"balcony, outdoor area\",\n      \"floor_level\": \"integer (must be > 1)\",\n      \"has_roof\": \"boolean (must be true)\",\n      \"design\": \"descriptive\",\n      \"openness\": \"descriptive\"\n    },\n    \"Constants\": {\n      \"gfa_multiplier\": \"1 (counts once)\"\n    },\n    \"Conditions\": {\n      \"mandatory\": \"Feature must be a roofed balcony or outdoor area on an upper floor. GFA contribution is area * 1.\"\n    },\n    \"Exceptions\": {\n      \"explicit_deviations\": \"The feature counts 'regardless of the design including openess'.\"\n    },\n    \"Relationships\": {\n      \"hierarchical\": \"This is Category 6 of 6 for assessing GFA of porch/entryway features.\",\n      \"cross_references\": \"Figure 10 on p. 15; Code Sections: 18.04.030(a)(65), 18.04.030(q)([illegible]), 18.04.030([illegible]), 18.12.040(b)Table 3.\",\n      \"logical_dependencies\": \"This rule is specific to upper floors, distinguishing it from rules 2-5 which are for the 1st floor.\"\n    }\n  }\n]\n```",
+    "response_time": 70.3626868724823,
+    "input_tokens": 1144,
+    "output_tokens": 9343,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 16:11:51",
+  "model": "google/gemini-2.5-pro",
+  "success": true
+}

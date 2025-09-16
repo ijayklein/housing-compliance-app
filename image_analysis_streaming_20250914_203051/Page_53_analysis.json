@@ -1,0 +1,216 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_53.png",
+  "image_name": "Page_53.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Grade\n\nFig 45 Height limits for structures on slopes greater than 10%\n\nWhen measuring    Use    Which is defined as    Illus.\n\nThe height of a structure on land with natural slope \u2264 10%    Existing Grade    for each building or structure, the lowest point of adjacent ground elevation prior to grading or fill    Fig 44 on this page\n\nThe height of a structure on land with natural slope > 10%    Grade    adjacent ground elevation of the finished or existing grade, whichever is lower--at any point of the structure    Fig 45 on this page\n\nA daylight plane    Average grade    average of the grade at the midpoint of the building and the grade at the closest point on the abutting site    Figs 20-21 pp. 26-27\n\nFig 44 Existing vs. Finished grade\n\n[Diagram shows a two-story house with basement, indicating height measurement from lowest point of ground elevation before fill (existing grade) to top of structure, with finished grade (after fill) and existing grade (before fill) labeled]\n\nlowest point of ground elevation before fill (existing grade) adjacent to the structure\n\n30' above existing grade\n30' above finished grade\n\nThe structure must comply with the lower of the two limits at all points along the slope\n\nHeight\nHeight\n\nExisting grade (before fill)\n\nFig 46 Comparison of different grades\n\n[Diagram shows angular lines representing different slope percentages: 10%, 20%, 30%, 40%, 50%]\n\n47",
+      "visual_elements": [
+        {
+          "type": "table",
+          "description": "A four-column table defining grade measurements with columns for 'When measuring', 'Use', 'Which is defined as', and 'Illus.' Contains three rows defining different grade measurement scenarios",
+          "location": "top portion of page"
+        },
+        {
+          "type": "diagram",
+          "description": "Fig 44 - Cross-section diagram of a two-story house with basement showing existing vs. finished grade, with labels for height measurement points, finished grade after fill, existing grade before fill, and lowest point of ground elevation",
+          "location": "bottom left of page"
+        },
+        {
+          "type": "diagram",
+          "description": "Fig 45 - Diagram showing height limits for structures on slopes greater than 10%, depicting buildings on a slope with 30' height limits measured from both existing and finished grade, with note about compliance with lower limits",
+          "location": "top right and center right of page"
+        },
+        {
+          "type": "diagram",
+          "description": "Fig 46 - Angular diagram showing comparison of different slope grades at 10%, 20%, 30%, 40%, and 50% angles",
+          "location": "bottom right of page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Natural slope threshold for grade measurement method",
+          "value_type": "Percentage",
+          "value": "10",
+          "unit": "%"
+        },
+        {
+          "parameter": "Height limit above existing grade",
+          "value_type": "Measurement",
+          "value": "30",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Height limit above finished grade",
+          "value_type": "Measurement",
+          "value": "30",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Slope percentages shown in comparison diagram",
+          "value_type": "List",
+          "value": "10%, 20%, 30%, 40%, 50%",
+          "unit": "%"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Grade",
+        "subheadings": [],
+        "sections": [
+          "Grade measurement definitions",
+          "Figure illustrations"
+        ]
+      },
+      "additional_notes": [
+        "Page number 47 appears at bottom right",
+        "Image quality is clear and legible throughout"
+      ],
+      "cross_references": [
+        "Fig 44 on this page",
+        "Fig 45 on this page",
+        "Figs 20-21 pp. 26-27"
+      ],
+      "conditions_and_qualifiers": {
+        "qualifiers": [
+          {
+            "id": "q1",
+            "text": "When measuring the height of a structure on land with natural slope \u2264 10%",
+            "applies_to_conditions": [
+              "c1"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q2",
+            "text": "When measuring the height of a structure on land with natural slope > 10%",
+            "applies_to_conditions": [
+              "c2"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q3",
+            "text": "When measuring a daylight plane",
+            "applies_to_conditions": [
+              "c3"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q4",
+            "text": "for structures on slopes greater than 10%",
+            "applies_to_conditions": [
+              "c4"
+            ],
+            "scope": "Specific"
+          }
+        ],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "natural slope \u2264 10%",
+            "value_type": "Numerical",
+            "operator": "<=",
+            "threshold_value": "10",
+            "unit": "%"
+          },
+          {
+            "id": "c2",
+            "text": "natural slope > 10%",
+            "value_type": "Numerical",
+            "operator": ">",
+            "threshold_value": "10",
+            "unit": "%"
+          },
+          {
+            "id": "c3",
+            "text": "Use Average grade",
+            "value_type": "Text",
+            "operator": "=",
+            "threshold_value": "Average grade",
+            "unit": "None"
+          },
+          {
+            "id": "c4",
+            "text": "The structure must comply with the lower of the two limits at all points along the slope",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "true",
+            "unit": "None"
+          }
+        ],
+        "logical_relationships": [
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c1"
+            ],
+            "expression": "If natural slope \u2264 10%, then use Existing Grade",
+            "evaluation_order": 1
+          },
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c2"
+            ],
+            "expression": "If natural slope > 10%, then use Grade (whichever is lower--finished or existing grade at any point of the structure)",
+            "evaluation_order": 2
+          },
+          {
+            "operation": "AND",
+            "condition_ids": [
+              "c2",
+              "c4"
+            ],
+            "expression": "For slopes > 10%, structure must comply with lower of 30' above existing grade AND 30' above finished grade",
+            "evaluation_order": 3
+          }
+        ],
+        "execution_sequence": [
+          {
+            "step": 1,
+            "action": "Determine the natural slope percentage of the land",
+            "condition_ids": [
+              "c1",
+              "c2"
+            ],
+            "qualifier_ids": [
+              "q1",
+              "q2"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 2,
+            "action": "Select appropriate grade measurement method based on slope",
+            "condition_ids": [
+              "c1",
+              "c2"
+            ],
+            "qualifier_ids": [
+              "q1",
+              "q2"
+            ],
+            "dependencies": [
+              1
+            ]
+          },
+          {
+            "step": 3,
+            "action": "Apply height limits and compliance requirements",
+            "condition_ids": [
+              "c4"
+            ],
+            "qualifier_ids": [
+              "q4"
+            ],
+            "dependencies": [
+              2
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:33:02",
+  "model_used": "anthropic/claude-sonnet-4"
+}

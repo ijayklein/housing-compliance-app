@@ -1,0 +1,273 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_11.png",
+  "image_name": "Page_11.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "What counts as floor area summary\n\nArchitectural feature\tCounts?\tIllustration\n\nPorches & entry features\n\u2022 Unenclosed porches\tNo\tFig 5 on pp. 8-10\n\u2022 Enclosed porches\tOnce\tFig 5 on pp. 8-10\n\u2022 Entry feature \u2264 12' in height\tNo\tFigs 6-8 on pp. 11-13\n\u2022 Entry feature > 12' in height\tTwice (footprint)\tFigs 6-8 on pp. 11-13\n\u2022 1st floor recessed porches < 10' in depth and open on exterior side\tNo\tFig 9 on p. 14\n\u2022 2nd floor roofed or enclosed porches, arcades, balconies, porticos, breezeways\tOnce\tFig 10 on p. 15\n\nAttics & equivalencies\n\u2022 Attic space where floor to under side of roof rafter distance is < 5'\tNo\tFig 11 on p. 16\n\u2022 All 2nd floor space (including attics) where head height or distance from top of floor to bottom of rafter is \u2265 5'\tOnce\tFig 11 on p. 16\n\u2022 2nd floor equivalent: areas where height from top of first floor to top of roof material is > 17'\tTwice\tFig 12 on p. 17\n\u2022 3rd floor equivalent: areas where height from top of first floor to top of roof material is > 26'\tThree times\tFig 12 on p. 17\n  o Exemption: 3rd floor equivalent, where roof pitch is \u2265 4:12\t200 sf exempt\n  o Exemption: Unusable attic space for Category 1 & 2 historic homes\t500 sf exempt\n\nBasements\n\u2022 Basements that comply with patio & lightwell requirements of 18.12.070\tNo\tFigs 35, 36, 39, 40 on pp. 39-43\n\u2022 Basements of Category 1 & 2 historic homes or contributing structures in a historic district (even if > 3')\tNo\n\nOther\n\u2022 Bay windows (if \u2265 18\" above interior flr, does not project > 2', and > 50% windows)\tNo\tFig 13 on p. 18\n\u2022 Architectural appendages like fireplace or buttress footprint\tOnce\tFig 14 on p. 19\n\nAccessory structures\n\u2022 Accessory structures >120 sf\tOnce\n\u2022 Garages and carports\tOnce\n\u2022 Porte cocheres\tNo",
+      "visual_elements": [
+        {
+          "type": "table",
+          "description": "A table summarizing architectural features, whether they count towards floor area, and references to illustrations. The table is divided into categories: Porches & entry features, Attics & equivalencies, Basements, Other, and Accessory structures. Each row lists a specific architectural feature, its count status (No, Once, Twice, Three times), and illustration references with figure numbers and page numbers.",
+          "location": "Center of the page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Entry feature height",
+          "value_type": "Measurement",
+          "value": "12",
+          "unit": "feet"
+        },
+        {
+          "parameter": "1st floor recessed porches depth",
+          "value_type": "Measurement",
+          "value": "10",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Attic space floor to underside of roof rafter distance",
+          "value_type": "Measurement",
+          "value": "5",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Head height or distance from top of floor to bottom of rafter",
+          "value_type": "Measurement",
+          "value": "5",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Height from top of first floor to top of roof material (2nd floor equivalent)",
+          "value_type": "Measurement",
+          "value": "17",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Height from top of first floor to top of roof material (3rd floor equivalent)",
+          "value_type": "Measurement",
+          "value": "26",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Roof pitch exemption for 3rd floor equivalent",
+          "value_type": "Range",
+          "value": ">= 4:12",
+          "unit": "pitch ratio"
+        },
+        {
+          "parameter": "Exemption for 3rd floor equivalent roof pitch",
+          "value_type": "Numerical",
+          "value": "200",
+          "unit": "square feet"
+        },
+        {
+          "parameter": "Exemption for unusable attic space for Category 1 & 2 historic homes",
+          "value_type": "Numerical",
+          "value": "500",
+          "unit": "square feet"
+        },
+        {
+          "parameter": "Bay windows height above interior floor",
+          "value_type": "Measurement",
+          "value": "18",
+          "unit": "inches"
+        },
+        {
+          "parameter": "Bay windows projection",
+          "value_type": "Measurement",
+          "value": "2",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Accessory structures minimum size",
+          "value_type": "Numerical",
+          "value": "120",
+          "unit": "square feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "What counts as floor area summary",
+        "subheadings": [
+          "Porches & entry features",
+          "Attics & equivalencies",
+          "Basements",
+          "Other",
+          "Accessory structures"
+        ],
+        "sections": []
+      },
+      "additional_notes": [
+        "Page number '5' printed at bottom right corner.",
+        "No handwritten annotations, stamps, or markings detected.",
+        "Text is clear and legible with no quality issues."
+      ],
+      "cross_references": [
+        "Fig 5 on pp. 8-10",
+        "Figs 6-8 on pp. 11-13",
+        "Fig 9 on p. 14",
+        "Fig 10 on p. 15",
+        "Fig 11 on p. 16",
+        "Fig 12 on p. 17",
+        "Figs 35, 36, 39, 40 on pp. 39-43",
+        "Fig 13 on p. 18",
+        "Fig 14 on p. 19",
+        "Reference to patio & lightwell requirements of 18.12.070"
+      ],
+      "conditions_and_qualifiers": {
+        "qualifiers": [
+          {
+            "id": "q1",
+            "text": "Basements that comply with patio & lightwell requirements of 18.12.070",
+            "applies_to_conditions": [
+              "c1"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q2",
+            "text": "Basements of Category 1 & 2 historic homes or contributing structures in a historic district (even if > 3')",
+            "applies_to_conditions": [
+              "c2"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q3",
+            "text": "Bay windows (if \u2265 18\" above interior flr, does not project > 2', and > 50% windows)",
+            "applies_to_conditions": [
+              "c3"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q4",
+            "text": "Exemption: 3rd floor equivalent, where roof pitch is \u2265 4:12",
+            "applies_to_conditions": [
+              "c4"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q5",
+            "text": "Exemption: Unusable attic space for Category 1 & 2 historic homes",
+            "applies_to_conditions": [
+              "c5"
+            ],
+            "scope": "Specific"
+          }
+        ],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "Basements that comply with patio & lightwell requirements of 18.12.070 count as No floor area",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "No",
+            "unit": null
+          },
+          {
+            "id": "c2",
+            "text": "Basements of Category 1 & 2 historic homes or contributing structures in a historic district (even if > 3') count as No floor area",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "No",
+            "unit": null
+          },
+          {
+            "id": "c3",
+            "text": "Bay windows (if \u2265 18\" above interior floor, does not project > 2', and > 50% windows) count as No floor area",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "No",
+            "unit": null
+          },
+          {
+            "id": "c4",
+            "text": "3rd floor equivalent exemption applies where roof pitch is \u2265 4:12",
+            "value_type": "Range",
+            "operator": ">=",
+            "threshold_value": "4:12",
+            "unit": "pitch ratio"
+          },
+          {
+            "id": "c5",
+            "text": "Unusable attic space exemption applies for Category 1 & 2 historic homes",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "exempt",
+            "unit": null
+          }
+        ],
+        "logical_relationships": [
+          {
+            "operation": "AND",
+            "condition_ids": [
+              "c3"
+            ],
+            "expression": "Bay windows (if \u2265 18\" above interior flr, does not project > 2', and > 50% windows) count as No floor area",
+            "evaluation_order": 1
+          }
+        ],
+        "execution_sequence": [
+          {
+            "step": 1,
+            "action": "Evaluate if basement complies with patio & lightwell requirements of 18.12.070",
+            "condition_ids": [
+              "c1"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 2,
+            "action": "Evaluate if basement is Category 1 & 2 historic home or contributing structure in historic district",
+            "condition_ids": [
+              "c2"
+            ],
+            "qualifier_ids": [
+              "q2"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 3,
+            "action": "Evaluate bay window conditions (height, projection, window percentage)",
+            "condition_ids": [
+              "c3"
+            ],
+            "qualifier_ids": [
+              "q3"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 4,
+            "action": "Check roof pitch for 3rd floor equivalent exemption",
+            "condition_ids": [
+              "c4"
+            ],
+            "qualifier_ids": [
+              "q4"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 5,
+            "action": "Check unusable attic space exemption for Category 1 & 2 historic homes",
+            "condition_ids": [
+              "c5"
+            ],
+            "qualifier_ids": [
+              "q5"
+            ],
+            "dependencies": []
+          }
+        ]
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:27:07",
+  "model_used": "openai/gpt-4.1-mini"
+}

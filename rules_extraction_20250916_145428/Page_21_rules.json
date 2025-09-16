@@ -1,0 +1,280 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_21.md",
+  "file_name": "Page_21.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "Qualifiers": {
+          "Scope": [
+            "Balconies, decks, and outdoor areas located on upper floors",
+            "Includes pop-out balconies"
+          ],
+          "Applicability": [
+            "Determination of whether such areas count toward Gross Floor Area (GFA)"
+          ],
+          "Exclusions": [
+            "Ground-level outdoor areas (not addressed in the provided text)",
+            "Interior spaces (not addressed in the provided text)"
+          ],
+          "Ambiguities": [
+            "The term 'upper levels' is not explicitly defined (e.g., second story and above vs. any non-ground floor).",
+            "The phrase 'regardless of the design' is broad and may include unenumerated design variations.",
+            "Boundary definition of an 'outdoor area' is not specified (e.g., how the area is delineated for measurement)."
+          ]
+        },
+        "Variables": [
+          {
+            "name": "location_level",
+            "type": "enum",
+            "allowed_values": [
+              "upper",
+              "ground"
+            ],
+            "description": "Floor level of the outdoor area under evaluation."
+          },
+          {
+            "name": "roofed_status",
+            "type": "boolean",
+            "description": "Whether the outdoor area is considered roofed per the roofed determination rule."
+          },
+          {
+            "name": "sides_open",
+            "type": "boolean",
+            "description": "Whether the sides of the outdoor area are open."
+          },
+          {
+            "name": "area_type",
+            "type": "enum",
+            "allowed_values": [
+              "balcony",
+              "deck",
+              "arbor",
+              "pop_out_balcony",
+              "other_outdoor_area"
+            ],
+            "description": "Type/classification of the outdoor area."
+          },
+          {
+            "name": "counts_in_gfa",
+            "type": "boolean",
+            "description": "Result variable indicating whether the area must be included in Gross Floor Area."
+          }
+        ],
+        "Constants": [
+          {
+            "name": "counting_principle",
+            "value": "Outdoor areas on upper levels that are roofed count toward GFA regardless of side openness or design.",
+            "type": "policy_statement"
+          }
+        ],
+        "Conditions": [
+          {
+            "type": "mandatory",
+            "if": [
+              {
+                "var": "location_level",
+                "op": "==",
+                "value": "upper"
+              },
+              {
+                "var": "roofed_status",
+                "op": "==",
+                "value": true
+              }
+            ],
+            "then": [
+              {
+                "var": "counts_in_gfa",
+                "set": true
+              }
+            ],
+            "notes": "Counts even if sides are open."
+          },
+          {
+            "type": "mandatory",
+            "if": [
+              {
+                "var": "location_level",
+                "op": "==",
+                "value": "upper"
+              },
+              {
+                "var": "roofed_status",
+                "op": "==",
+                "value": false
+              }
+            ],
+            "then": [
+              {
+                "var": "counts_in_gfa",
+                "set": false
+              }
+            ]
+          }
+        ],
+        "Exceptions": [],
+        "Relationships": [
+          {
+            "type": "depends_on",
+            "from": "roofed_status",
+            "to_rule_id": "roofed_determination_by_eave_depth"
+          },
+          {
+            "type": "also_applies_to",
+            "target": "pop_out_balconies",
+            "note": "Pop-out balconies are evaluated by the same roofed determination and counting logic."
+          },
+          {
+            "type": "illustrated_by",
+            "reference": "Figure 10 (Roof Plans 1 & 2)",
+            "note": "Areas labeled A/B/C demonstrate counting outcomes."
+          }
+        ]
+      },
+      {
+        "Qualifiers": {
+          "Scope": [
+            "Determination of whether an upper-floor outdoor area is considered 'roofed'"
+          ],
+          "Applicability": [
+            "Input to GFA counting rule for upper-floor outdoor areas"
+          ],
+          "Exclusions": [
+            "Determination methods other than eave depth comparison are not provided"
+          ],
+          "Ambiguities": [
+            "No measurement procedure is defined for 'eave depth' (e.g., datum, measurement direction, or tolerance).",
+            "If eave depths vary around the building, the definition of 'eave over the rest of the building' (average, minimum, typical) is not specified.",
+            "The term 'substantially open' for arbors is qualitative and lacks a numeric threshold."
+          ]
+        },
+        "Variables": [
+          {
+            "name": "eave_depth_over_area",
+            "type": "length",
+            "units": "length (unspecified; must be consistent within project)",
+            "description": "Depth of the eave directly above the outdoor area under evaluation."
+          },
+          {
+            "name": "eave_depth_rest_of_building",
+            "type": "length",
+            "units": "length (unspecified; must be consistent within project)",
+            "description": "Representative depth of the eave around the rest of the building (baseline for comparison)."
+          },
+          {
+            "name": "roofed_status",
+            "type": "boolean",
+            "description": "Derived status indicating whether the area is considered roofed."
+          },
+          {
+            "name": "structure_type",
+            "type": "enum",
+            "allowed_values": [
+              "arbor",
+              "balcony",
+              "deck",
+              "other"
+            ],
+            "description": "Structure type of the outdoor area for special-case interpretation (e.g., arbor)."
+          },
+          {
+            "name": "is_substantially_open",
+            "type": "boolean",
+            "description": "Qualitative indicator that a structure (e.g., arbor) is substantially open; used when no roof/eave enclosure exists."
+          }
+        ],
+        "Constants": [
+          {
+            "name": "roofing_threshold_relation",
+            "value": "eave_depth_over_area > eave_depth_rest_of_building",
+            "type": "comparison_rule"
+          },
+          {
+            "name": "non_roofed_equality_relation",
+            "value": "eave_depth_over_area <= eave_depth_rest_of_building",
+            "type": "comparison_rule"
+          }
+        ],
+        "Conditions": [
+          {
+            "type": "definitional",
+            "if": [
+              {
+                "var": "eave_depth_over_area",
+                "op": ">",
+                "value_var": "eave_depth_rest_of_building"
+              }
+            ],
+            "then": [
+              {
+                "var": "roofed_status",
+                "set": true
+              }
+            ],
+            "notes": "Per explanatory paragraph and Figure 10 Roof Plan 2 Area B."
+          },
+          {
+            "type": "definitional",
+            "if": [
+              {
+                "var": "eave_depth_over_area",
+                "op": "<=",
+                "value_var": "eave_depth_rest_of_building"
+              }
+            ],
+            "then": [
+              {
+                "var": "roofed_status",
+                "set": false
+              }
+            ],
+            "notes": "Equal or smaller overhang is considered open; see Figure 10 Roof Plan 1 Area C."
+          },
+          {
+            "type": "definitional",
+            "if": [
+              {
+                "var": "structure_type",
+                "op": "==",
+                "value": "arbor"
+              },
+              {
+                "var": "is_substantially_open",
+                "op": "==",
+                "value": true
+              }
+            ],
+            "then": [
+              {
+                "var": "roofed_status",
+                "set": false
+              }
+            ],
+            "notes": "Substantially open arbors are not considered roofed; see Figure 10 Roof Plan 1 Area B."
+          }
+        ],
+        "Exceptions": [],
+        "Relationships": [
+          {
+            "type": "feeds",
+            "to_rule_id": "GFA_counting_for_upper_floor_outdoor_areas",
+            "outputs": [
+              "roofed_status"
+            ]
+          },
+          {
+            "type": "illustrated_by",
+            "reference": "Figure 10 (Roof Plans 1 & 2)",
+            "note": "Examples: Area A counts because it is roofed; Area B varies by openness/overhang; Area C does not count when open."
+          }
+        ],
+        "id": "roofed_determination_by_eave_depth"
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "[\n  {\n    \"Qualifiers\": {\n      \"Scope\": [\n        \"Balconies, decks, and outdoor areas located on upper floors\",\n        \"Includes pop-out balconies\"\n      ],\n      \"Applicability\": [\n        \"Determination of whether such areas count toward Gross Floor Area (GFA)\"\n      ],\n      \"Exclusions\": [\n        \"Ground-level outdoor areas (not addressed in the provided text)\",\n        \"Interior spaces (not addressed in the provided text)\"\n      ],\n      \"Ambiguities\": [\n        \"The term 'upper levels' is not explicitly defined (e.g., second story and above vs. any non-ground floor).\",\n        \"The phrase 'regardless of the design' is broad and may include unenumerated design variations.\",\n        \"Boundary definition of an 'outdoor area' is not specified (e.g., how the area is delineated for measurement).\"\n      ]\n    },\n    \"Variables\": [\n      {\n        \"name\": \"location_level\",\n        \"type\": \"enum\",\n        \"allowed_values\": [\n          \"upper\",\n          \"ground\"\n        ],\n        \"description\": \"Floor level of the outdoor area under evaluation.\"\n      },\n      {\n        \"name\": \"roofed_status\",\n        \"type\": \"boolean\",\n        \"description\": \"Whether the outdoor area is considered roofed per the roofed determination rule.\"\n      },\n      {\n        \"name\": \"sides_open\",\n        \"type\": \"boolean\",\n        \"description\": \"Whether the sides of the outdoor area are open.\"\n      },\n      {\n        \"name\": \"area_type\",\n        \"type\": \"enum\",\n        \"allowed_values\": [\n          \"balcony\",\n          \"deck\",\n          \"arbor\",\n          \"pop_out_balcony\",\n          \"other_outdoor_area\"\n        ],\n        \"description\": \"Type/classification of the outdoor area.\"\n      },\n      {\n        \"name\": \"counts_in_gfa\",\n        \"type\": \"boolean\",\n        \"description\": \"Result variable indicating whether the area must be included in Gross Floor Area.\"\n      }\n    ],\n    \"Constants\": [\n      {\n        \"name\": \"counting_principle\",\n        \"value\": \"Outdoor areas on upper levels that are roofed count toward GFA regardless of side openness or design.\",\n        \"type\": \"policy_statement\"\n      }\n    ],\n    \"Conditions\": [\n      {\n        \"type\": \"mandatory\",\n        \"if\": [\n          {\n            \"var\": \"location_level\",\n            \"op\": \"==\",\n            \"value\": \"upper\"\n          },\n          {\n            \"var\": \"roofed_status\",\n            \"op\": \"==\",\n            \"value\": true\n          }\n        ],\n        \"then\": [\n          {\n            \"var\": \"counts_in_gfa\",\n            \"set\": true\n          }\n        ],\n        \"notes\": \"Counts even if sides are open.\"\n      },\n      {\n        \"type\": \"mandatory\",\n        \"if\": [\n          {\n            \"var\": \"location_level\",\n            \"op\": \"==\",\n            \"value\": \"upper\"\n          },\n          {\n            \"var\": \"roofed_status\",\n            \"op\": \"==\",\n            \"value\": false\n          }\n        ],\n        \"then\": [\n          {\n            \"var\": \"counts_in_gfa\",\n            \"set\": false\n          }\n        ]\n      }\n    ],\n    \"Exceptions\": [],\n    \"Relationships\": [\n      {\n        \"type\": \"depends_on\",\n        \"from\": \"roofed_status\",\n        \"to_rule_id\": \"roofed_determination_by_eave_depth\"\n      },\n      {\n        \"type\": \"also_applies_to\",\n        \"target\": \"pop_out_balconies\",\n        \"note\": \"Pop-out balconies are evaluated by the same roofed determination and counting logic.\"\n      },\n      {\n        \"type\": \"illustrated_by\",\n        \"reference\": \"Figure 10 (Roof Plans 1 & 2)\",\n        \"note\": \"Areas labeled A/B/C demonstrate counting outcomes.\"\n      }\n    ]\n  },\n  {\n    \"Qualifiers\": {\n      \"Scope\": [\n        \"Determination of whether an upper-floor outdoor area is considered 'roofed'\"\n      ],\n      \"Applicability\": [\n        \"Input to GFA counting rule for upper-floor outdoor areas\"\n      ],\n      \"Exclusions\": [\n        \"Determination methods other than eave depth comparison are not provided\"\n      ],\n      \"Ambiguities\": [\n        \"No measurement procedure is defined for 'eave depth' (e.g., datum, measurement direction, or tolerance).\",\n        \"If eave depths vary around the building, the definition of 'eave over the rest of the building' (average, minimum, typical) is not specified.\",\n        \"The term 'substantially open' for arbors is qualitative and lacks a numeric threshold.\"\n      ]\n    },\n    \"Variables\": [\n      {\n        \"name\": \"eave_depth_over_area\",\n        \"type\": \"length\",\n        \"units\": \"length (unspecified; must be consistent within project)\",\n        \"description\": \"Depth of the eave directly above the outdoor area under evaluation.\"\n      },\n      {\n        \"name\": \"eave_depth_rest_of_building\",\n        \"type\": \"length\",\n        \"units\": \"length (unspecified; must be consistent within project)\",\n        \"description\": \"Representative depth of the eave around the rest of the building (baseline for comparison).\"\n      },\n      {\n        \"name\": \"roofed_status\",\n        \"type\": \"boolean\",\n        \"description\": \"Derived status indicating whether the area is considered roofed.\"\n      },\n      {\n        \"name\": \"structure_type\",\n        \"type\": \"enum\",\n        \"allowed_values\": [\n          \"arbor\",\n          \"balcony\",\n          \"deck\",\n          \"other\"\n        ],\n        \"description\": \"Structure type of the outdoor area for special-case interpretation (e.g., arbor).\"\n      },\n      {\n        \"name\": \"is_substantially_open\",\n        \"type\": \"boolean\",\n        \"description\": \"Qualitative indicator that a structure (e.g., arbor) is substantially open; used when no roof/eave enclosure exists.\"\n      }\n    ],\n    \"Constants\": [\n      {\n        \"name\": \"roofing_threshold_relation\",\n        \"value\": \"eave_depth_over_area > eave_depth_rest_of_building\",\n        \"type\": \"comparison_rule\"\n      },\n      {\n        \"name\": \"non_roofed_equality_relation\",\n        \"value\": \"eave_depth_over_area <= eave_depth_rest_of_building\",\n        \"type\": \"comparison_rule\"\n      }\n    ],\n    \"Conditions\": [\n      {\n        \"type\": \"definitional\",\n        \"if\": [\n          {\n            \"var\": \"eave_depth_over_area\",\n            \"op\": \">\",\n            \"value_var\": \"eave_depth_rest_of_building\"\n          }\n        ],\n        \"then\": [\n          {\n            \"var\": \"roofed_status\",\n            \"set\": true\n          }\n        ],\n        \"notes\": \"Per explanatory paragraph and Figure 10 Roof Plan 2 Area B.\"\n      },\n      {\n        \"type\": \"definitional\",\n        \"if\": [\n          {\n            \"var\": \"eave_depth_over_area\",\n            \"op\": \"<=\",\n            \"value_var\": \"eave_depth_rest_of_building\"\n          }\n        ],\n        \"then\": [\n          {\n            \"var\": \"roofed_status\",\n            \"set\": false\n          }\n        ],\n        \"notes\": \"Equal or smaller overhang is considered open; see Figure 10 Roof Plan 1 Area C.\"\n      },\n      {\n        \"type\": \"definitional\",\n        \"if\": [\n          {\n            \"var\": \"structure_type\",\n            \"op\": \"==\",\n            \"value\": \"arbor\"\n          },\n          {\n            \"var\": \"is_substantially_open\",\n            \"op\": \"==\",\n            \"value\": true\n          }\n        ],\n        \"then\": [\n          {\n            \"var\": \"roofed_status\",\n            \"set\": false\n          }\n        ],\n        \"notes\": \"Substantially open arbors are not considered roofed; see Figure 10 Roof Plan 1 Area B.\"\n      }\n    ],\n    \"Exceptions\": [],\n    \"Relationships\": [\n      {\n        \"type\": \"feeds\",\n        \"to_rule_id\": \"GFA_counting_for_upper_floor_outdoor_areas\",\n        \"outputs\": [\n          \"roofed_status\"\n        ]\n      },\n      {\n        \"type\": \"illustrated_by\",\n        \"reference\": \"Figure 10 (Roof Plans 1 & 2)\",\n        \"note\": \"Examples: Area A counts because it is roofed; Area B varies by openness/overhang; Area C does not count when open.\"\n      }\n    ],\n    \"id\": \"roofed_determination_by_eave_depth\"\n  }\n]"
+  },
+  "timestamp": "2025-09-16 14:59:05",
+  "model": "openai/gpt-5",
+  "success": true
+}

@@ -1,0 +1,145 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_41.md",
+  "file_name": "Page_41.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "rule_id": "CS-P41-R1",
+        "rule_name": "Carport Standards",
+        "source": {
+          "document_name": "City Planning Regulations (assumed)",
+          "page_header": "Page 41",
+          "page_footer": "35",
+          "figures": [
+            "Figure 29",
+            "Figure 30"
+          ]
+        },
+        "analysis": {
+          "Qualifiers": {
+            "scope": "Standards for carport dimensions and structure.",
+            "applicability": "Applies to structures defined as 'carport' or 'covered space' for parking, as depicted in plan and elevation views.",
+            "exclusions": "None specified in the provided text."
+          },
+          "Variables": [
+            {
+              "variable_name": "longitudinal_opening",
+              "type": "Dimensional",
+              "description": "The open length of the carport, shown along the side of the parking space."
+            },
+            {
+              "variable_name": "front_opening_width",
+              "type": "Dimensional",
+              "description": "The open width of the carport at the vehicle entrance."
+            },
+            {
+              "variable_name": "vertical_clearance",
+              "type": "Dimensional",
+              "description": "The open height from the driveway/parking surface to the bottom of the roof system."
+            },
+            {
+              "variable_name": "entrance_transverse_opening",
+              "type": "Dimensional",
+              "description": "The open width at the entrance, as shown in the plan view."
+            },
+            {
+              "variable_name": "structural_support",
+              "type": "Structural",
+              "description": "Elements supporting the roof, specifically corner columns."
+            }
+          ],
+          "Constants": [
+            {
+              "constant_name": "Minimum Longitudinal Opening",
+              "value": 20,
+              "unit": "feet",
+              "source": "Figure 29 (Plan View), Figure 30 (Left Side Elevation)"
+            },
+            {
+              "constant_name": "Minimum Front Opening Width",
+              "value": 10,
+              "unit": "feet",
+              "source": "Figure 30 (Front Elevation)"
+            },
+            {
+              "constant_name": "Minimum Vertical Clearance",
+              "value": 7,
+              "unit": "feet",
+              "source": "Figure 30 (Left Side Elevation, Front Elevation)"
+            },
+            {
+              "constant_name": "Number of Corner Columns Mentioned",
+              "value": 2,
+              "unit": "count",
+              "source": "Figure 29, Figure 30",
+              "notes": "The label 'One of 2 corner columns' is ambiguous. See Ambiguous_Language section for details."
+            }
+          ],
+          "Conditions": {
+            "mandatory": [
+              "The longitudinal dimension alongside the parking space must be a minimum of 20 feet open.",
+              "The front horizontal opening width must be a minimum of 10 feet open.",
+              "The vertical clearance must be a minimum of 7 feet open from the parking surface to the bottom of the roof system.",
+              "The transverse dimension at the entrance must be 'open'. A specific numeric value is not provided.",
+              "The structure must be supported by corner columns."
+            ],
+            "optional": "None specified.",
+            "conditional_logic": "None specified."
+          },
+          "Exceptions": {
+            "deviations": "None specified.",
+            "alternatives": "None specified.",
+            "special_cases": "None specified."
+          },
+          "Relationships": {
+            "hierarchical": "The top-level rule 'Carport Standards' is defined by a set of dimensional and structural requirements. These requirements are specified across different views: a Plan View (Figure 29) and two Elevation Views (Figure 30).",
+            "cross_references": [
+              {
+                "item_1": "Longitudinal opening requirement (20' min.)",
+                "item_2": "Figure 29 (Plan View) and Figure 30 (Left Side Elevation)",
+                "relationship": "The same requirement is specified in two different views, confirming its application to the carport's length."
+              },
+              {
+                "item_1": "Vertical clearance requirement (7' min.)",
+                "item_2": "Figure 30 (Left Side Elevation) and Figure 30 (Front Elevation)",
+                "relationship": "The same requirement is specified for both side and front views, indicating a uniform minimum height for the entire covered space."
+              },
+              {
+                "item_1": "Corner columns",
+                "item_2": "Figure 29 and Figure 30",
+                "relationship": "The presence of corner columns as a structural element is noted in all provided views."
+              },
+              {
+                "item_1": "Page Header ('Page 41')",
+                "item_2": "Page Footer ('35')",
+                "relationship": "Conflicting page numbers are present in the source text, which may indicate a transcription or document assembly error."
+              }
+            ],
+            "logical_dependencies": "Overall compliance is dependent on satisfying all specified minimum dimensional requirements (length, width, and height) simultaneously."
+          },
+          "Ambiguous_Language": [
+            {
+              "term": "'open' (transverse dimension at the entrance)",
+              "source": "Figure 29 (Plan View)",
+              "issue": "The requirement is stated as 'open' without a specific minimum numerical dimension. This prevents quantitative validation. It may be intended to match the '10' min open' from the Front Elevation, but this is not explicitly stated."
+            },
+            {
+              "term": "'One of 2 corner columns'",
+              "source": "Figure 29, Figure 30",
+              "issue": "It is unclear if this is a prescriptive requirement that a carport must have exactly two corner columns (implying a specific design, e.g., attached to another structure) or if it is a descriptive label on a diagram that happens to show two. This ambiguity affects structural validation."
+            }
+          ]
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n  {\n    \"rule_id\": \"CS-P41-R1\",\n    \"rule_name\": \"Carport Standards\",\n    \"source\": {\n      \"document_name\": \"City Planning Regulations (assumed)\",\n      \"page_header\": \"Page 41\",\n      \"page_footer\": \"35\",\n      \"figures\": [\n        \"Figure 29\",\n        \"Figure 30\"\n      ]\n    },\n    \"analysis\": {\n      \"Qualifiers\": {\n        \"scope\": \"Standards for carport dimensions and structure.\",\n        \"applicability\": \"Applies to structures defined as 'carport' or 'covered space' for parking, as depicted in plan and elevation views.\",\n        \"exclusions\": \"None specified in the provided text.\"\n      },\n      \"Variables\": [\n        {\n          \"variable_name\": \"longitudinal_opening\",\n          \"type\": \"Dimensional\",\n          \"description\": \"The open length of the carport, shown along the side of the parking space.\"\n        },\n        {\n          \"variable_name\": \"front_opening_width\",\n          \"type\": \"Dimensional\",\n          \"description\": \"The open width of the carport at the vehicle entrance.\"\n        },\n        {\n          \"variable_name\": \"vertical_clearance\",\n          \"type\": \"Dimensional\",\n          \"description\": \"The open height from the driveway/parking surface to the bottom of the roof system.\"\n        },\n        {\n          \"variable_name\": \"entrance_transverse_opening\",\n          \"type\": \"Dimensional\",\n          \"description\": \"The open width at the entrance, as shown in the plan view.\"\n        },\n        {\n          \"variable_name\": \"structural_support\",\n          \"type\": \"Structural\",\n          \"description\": \"Elements supporting the roof, specifically corner columns.\"\n        }\n      ],\n      \"Constants\": [\n        {\n          \"constant_name\": \"Minimum Longitudinal Opening\",\n          \"value\": 20,\n          \"unit\": \"feet\",\n          \"source\": \"Figure 29 (Plan View), Figure 30 (Left Side Elevation)\"\n        },\n        {\n          \"constant_name\": \"Minimum Front Opening Width\",\n          \"value\": 10,\n          \"unit\": \"feet\",\n          \"source\": \"Figure 30 (Front Elevation)\"\n        },\n        {\n          \"constant_name\": \"Minimum Vertical Clearance\",\n          \"value\": 7,\n          \"unit\": \"feet\",\n          \"source\": \"Figure 30 (Left Side Elevation, Front Elevation)\"\n        },\n        {\n          \"constant_name\": \"Number of Corner Columns Mentioned\",\n          \"value\": 2,\n          \"unit\": \"count\",\n          \"source\": \"Figure 29, Figure 30\",\n          \"notes\": \"The label 'One of 2 corner columns' is ambiguous. See Ambiguous_Language section for details.\"\n        }\n      ],\n      \"Conditions\": {\n        \"mandatory\": [\n          \"The longitudinal dimension alongside the parking space must be a minimum of 20 feet open.\",\n          \"The front horizontal opening width must be a minimum of 10 feet open.\",\n          \"The vertical clearance must be a minimum of 7 feet open from the parking surface to the bottom of the roof system.\",\n          \"The transverse dimension at the entrance must be 'open'. A specific numeric value is not provided.\",\n          \"The structure must be supported by corner columns.\"\n        ],\n        \"optional\": \"None specified.\",\n        \"conditional_logic\": \"None specified.\"\n      },\n      \"Exceptions\": {\n        \"deviations\": \"None specified.\",\n        \"alternatives\": \"None specified.\",\n        \"special_cases\": \"None specified.\"\n      },\n      \"Relationships\": {\n        \"hierarchical\": \"The top-level rule 'Carport Standards' is defined by a set of dimensional and structural requirements. These requirements are specified across different views: a Plan View (Figure 29) and two Elevation Views (Figure 30).\",\n        \"cross_references\": [\n          {\n            \"item_1\": \"Longitudinal opening requirement (20' min.)\",\n            \"item_2\": \"Figure 29 (Plan View) and Figure 30 (Left Side Elevation)\",\n            \"relationship\": \"The same requirement is specified in two different views, confirming its application to the carport's length.\"\n          },\n          {\n            \"item_1\": \"Vertical clearance requirement (7' min.)\",\n            \"item_2\": \"Figure 30 (Left Side Elevation) and Figure 30 (Front Elevation)\",\n            \"relationship\": \"The same requirement is specified for both side and front views, indicating a uniform minimum height for the entire covered space.\"\n          },\n          {\n            \"item_1\": \"Corner columns\",\n            \"item_2\": \"Figure 29 and Figure 30\",\n            \"relationship\": \"The presence of corner columns as a structural element is noted in all provided views.\"\n          },\n          {\n            \"item_1\": \"Page Header ('Page 41')\",\n            \"item_2\": \"Page Footer ('35')\",\n            \"relationship\": \"Conflicting page numbers are present in the source text, which may indicate a transcription or document assembly error.\"\n          }\n        ],\n        \"logical_dependencies\": \"Overall compliance is dependent on satisfying all specified minimum dimensional requirements (length, width, and height) simultaneously.\"\n      },\n      \"Ambiguous_Language\": [\n        {\n          \"term\": \"'open' (transverse dimension at the entrance)\",\n          \"source\": \"Figure 29 (Plan View)\",\n          \"issue\": \"The requirement is stated as 'open' without a specific minimum numerical dimension. This prevents quantitative validation. It may be intended to match the '10' min open' from the Front Elevation, but this is not explicitly stated.\"\n        },\n        {\n          \"term\": \"'One of 2 corner columns'\",\n          \"source\": \"Figure 29, Figure 30\",\n          \"issue\": \"It is unclear if this is a prescriptive requirement that a carport must have exactly two corner columns (implying a specific design, e.g., attached to another structure) or if it is a descriptive label on a diagram that happens to show two. This ambiguity affects structural validation.\"\n        }\n      ]\n    }\n  }\n]\n```",
+    "response_time": 51.04159092903137,
+    "input_tokens": 641,
+    "output_tokens": 5769,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 16:03:39",
+  "model": "google/gemini-2.5-pro",
+  "success": true
+}

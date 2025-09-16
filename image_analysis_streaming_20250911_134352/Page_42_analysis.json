@@ -1,0 +1,81 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_42.png",
+  "image_name": "Page_42.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Driveway standards\n\n\u2022 Driveway surfaces may have either permeable or impermeable paving. Materials shall meet Public Works standards.\n\n\u2022 Driveway surface within 10' of the public right-of-way may not be of a loose material e.g., gravel.\n\n\u2022 2nd dwelling units must share common driveway with main dwelling.\n\n\u2022 Minimum driveway clearance: 10'\n\n\u2022 Minimum driveway surface: 8'\n\n\u2022 Minimum 20' between curb cuts.\n\n\u2022 No more than 40% of required front yard may be impermeable.\n\n\u2022 Street-work permit required for work done within the public right-of-way.\n\nFor safety reasons, the city also encourages that the following standard be met:\n\n\u2022 No more than one curb cut per single frontage.\n\n\u2022 Minimum of 50' between curb cut and intersection curb face.\n\nFig 31 Driveway standards\n\nPavers without mortar (grass between) OK\n\n\"Hollywood strips\" (grass between) OK\n\nGravel OK\n\nTurns enroute to required parking spaces must be deemed maneuverable by the Transportation Division.\n\n8' min. width for driveway surface (typ. all)\n\n10' min. width for driveway clearance (typ. all)\n\nNo gravel or similar loose materials within 10' of the public right-of-way (lot line)\n\nWork done within the public ROW requires a street-work permit and must comply with city standards.\n\n36",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Technical diagram showing three different driveway surface types with cross-sectional views. Left shows pavers without mortar with grass between (labeled OK), middle shows 'Hollywood strips' with grass between (labeled OK), and right shows gravel surface (labeled OK). Each has a curved bottom representing the street connection.",
+          "location": "Bottom left of page"
+        },
+        {
+          "type": "diagram",
+          "description": "Detailed technical cross-section diagram of a driveway showing various measurements and specifications. Shows gravel surface area, required clearances, and connection to public right-of-way. Includes dimensional arrows and labels for 8' minimum width, 10' minimum clearance, and 10' restriction zone for loose materials.",
+          "location": "Bottom right of page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Minimum driveway clearance",
+          "value": "10",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum driveway surface",
+          "value": "8",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum distance between curb cuts",
+          "value": "20",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Maximum impermeable front yard coverage",
+          "value": "40",
+          "unit": "percent"
+        },
+        {
+          "parameter": "Loose material restriction distance from public right-of-way",
+          "value": "10",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum distance between curb cut and intersection curb face",
+          "value": "50",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum width for driveway surface",
+          "value": "8",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum width for driveway clearance",
+          "value": "10",
+          "unit": "feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Driveway standards",
+        "subheadings": [],
+        "sections": [
+          "Fig 31 Driveway standards"
+        ]
+      },
+      "additional_notes": [
+        "Page number 36 appears at bottom left",
+        "Image quality is clear and legible throughout"
+      ],
+      "cross_references": [
+        "Public Works standards",
+        "Transportation Division",
+        "Fig 31 Driveway standards"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-11 13:45:06",
+  "model_used": "anthropic/claude-sonnet-4"
+}

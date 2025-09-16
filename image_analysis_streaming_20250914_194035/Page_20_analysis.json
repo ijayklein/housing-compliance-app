@@ -1,0 +1,47 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_20.png",
+  "image_name": "Page_20.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Recessed porches on the 1st floor\n\nRecessed porches on the ground floor do NOT count toward gross floor area if ALL the following criteria apply:\n\u2022 Depth of porch is less than 10' and,\n\u2022 Porch ceiling is below 2nd floor and,\n\u2022 Exterior side is substantially open.\n\nFig 9 Recessed porches on the 1st floor\n\nA This example complies with all three criteria and does NOT count toward gross floor area\n\nB This example violates two of the three criteria;\n\u2022 the porch depth is greater than 10' and\n\u2022 the porch ceiling is above the 2nd floor\nTherefore it DOES count toward gross floor area and if it is higher than 17' it will count twice (see note).\n\nNote: It is the city's policy to consider one-story construction to be construction less than 17' above finished floor. If the porch space is higher, the area will count again as 2nd story equivalency.",
+      "visual_elements": [
+        {
+          "type": "figure",
+          "description": "Two isometric architectural diagrams labeled A and B showing examples of recessed porches on the 1st floor. Diagram A shows a porch with a depth less than 10 feet, porch ceiling below the 2nd floor line, and substantially open exterior side, complying with all criteria and not counting toward gross floor area. Diagram B shows a porch with depth greater than 10 feet and porch ceiling above the 2nd floor line, violating two criteria and counting toward gross floor area. Both diagrams have annotations indicating '2nd floor line', 'Porch ceiling below 2nd floor' (A), 'Height extends past 2nd floor line' (B), and porch depth measurements.",
+          "location": "Bottom half of the page, side-by-side"
+        },
+        {
+          "type": "text box",
+          "description": "A shaded note box stating the city's policy on one-story construction height and porch space height affecting gross floor area calculation.",
+          "location": "Upper right quadrant of the page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Porch depth",
+          "value": "10",
+          "unit": "feet"
+        },
+        {
+          "parameter": "One-story construction height",
+          "value": "17",
+          "unit": "feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Recessed porches on the 1st floor",
+        "subheadings": [],
+        "sections": []
+      },
+      "additional_notes": [
+        "Page number 14 at bottom left corner.",
+        "Text and diagrams are clear and legible with no visible handwritten annotations or stamps."
+      ],
+      "cross_references": [
+        "see note (referenced in text regarding 17' height policy)"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-14 19:40:51",
+  "model_used": "openai/gpt-4.1-mini"
+}

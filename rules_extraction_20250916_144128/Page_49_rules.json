@@ -1,0 +1,120 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_49.md",
+  "file_name": "Page_49.md",
+  "analysis": {
+    "extracted_rules": {
+      "rules": [
+        {
+          "title": "Below-grade patios standards & site planning",
+          "qualifiers": {
+            "scope": "Below-grade patios",
+            "applicability": "All below-grade patios on a lot",
+            "exclusions": "None specified"
+          },
+          "variables": {
+            "dimensional": [
+              {
+                "name": "combined area of all below-grade patios",
+                "value": "2% of the lot area or 200 sf",
+                "condition": "whichever is greater"
+              },
+              {
+                "name": "single below-grade patio area",
+                "value": "200 sf",
+                "condition": "maximum"
+              },
+              {
+                "name": "separation between areas",
+                "value": "10'",
+                "condition": "minimum"
+              },
+              {
+                "name": "encroachment into required side yard",
+                "value": "2'",
+                "condition": "maximum"
+              },
+              {
+                "name": "encroachment into required rear yard",
+                "value": "4'",
+                "condition": "maximum"
+              },
+              {
+                "name": "combined length of encroaching features",
+                "value": "15'",
+                "condition": "maximum"
+              }
+            ],
+            "material": [
+              {
+                "name": "landscaping and/or fencing",
+                "condition": "for screening"
+              }
+            ],
+            "environmental": [
+              {
+                "name": "drainage system",
+                "approval": "Public Works Department"
+              }
+            ],
+            "usage": [
+              {
+                "name": "architectural compatibility",
+                "condition": "with residence"
+              }
+            ]
+          },
+          "constants": {
+            "numerical_values": [
+              {
+                "name": "lot coverage",
+                "condition": "includes overhangs or canopies"
+              }
+            ],
+            "specs": [
+              {
+                "name": "measurements",
+                "condition": "based on interior dimension of opening"
+              }
+            ],
+            "standards": [
+              {
+                "name": "screening",
+                "condition": "determined appropriate by Planning Dept"
+              }
+            ]
+          },
+          "conditions": {
+            "mandatory": [
+              "Below-grade patios may not be located on the side of the structure that faces the front yard.",
+              "Excavated features shall not be harmful to neighboring trees."
+            ],
+            "optional": [],
+            "conditional_logic": [],
+            "dependencies": []
+          },
+          "exceptions": {
+            "explicit_deviations": [
+              "Area devoted to required stairway egress shall not be included in the 200 sf limitation."
+            ],
+            "alternatives": [],
+            "special_cases": []
+          },
+          "relationships": {
+            "hierarchical": [],
+            "cross_references": [
+              "Figure 40: Examples of site plan w/below-grade patios"
+            ],
+            "logical_dependencies": [
+              "a + b (encroaching features) may not exceed 15'"
+            ]
+          }
+        }
+      ]
+    },
+    "parse_error": false,
+    "raw_response": "```json\n{\n  \"rules\": [\n    {\n      \"title\": \"Below-grade patios standards & site planning\",\n      \"qualifiers\": {\n        \"scope\": \"Below-grade patios\",\n        \"applicability\": \"All below-grade patios on a lot\",\n        \"exclusions\": \"None specified\"\n      },\n      \"variables\": {\n        \"dimensional\": [\n          {\n            \"name\": \"combined area of all below-grade patios\",\n            \"value\": \"2% of the lot area or 200 sf\",\n            \"condition\": \"whichever is greater\"\n          },\n          {\n            \"name\": \"single below-grade patio area\",\n            \"value\": \"200 sf\",\n            \"condition\": \"maximum\"\n          },\n          {\n            \"name\": \"separation between areas\",\n            \"value\": \"10'\",\n            \"condition\": \"minimum\"\n          },\n          {\n            \"name\": \"encroachment into required side yard\",\n            \"value\": \"2'\",\n            \"condition\": \"maximum\"\n          },\n          {\n            \"name\": \"encroachment into required rear yard\",\n            \"value\": \"4'\",\n            \"condition\": \"maximum\"\n          },\n          {\n            \"name\": \"combined length of encroaching features\",\n            \"value\": \"15'\",\n            \"condition\": \"maximum\"\n          }\n        ],\n        \"material\": [\n          {\n            \"name\": \"landscaping and/or fencing\",\n            \"condition\": \"for screening\"\n          }\n        ],\n        \"environmental\": [\n          {\n            \"name\": \"drainage system\",\n            \"approval\": \"Public Works Department\"\n          }\n        ],\n        \"usage\": [\n          {\n            \"name\": \"architectural compatibility\",\n            \"condition\": \"with residence\"\n          }\n        ]\n      },\n      \"constants\": {\n        \"numerical_values\": [\n          {\n            \"name\": \"lot coverage\",\n            \"condition\": \"includes overhangs or canopies\"\n          }\n        ],\n        \"specs\": [\n          {\n            \"name\": \"measurements\",\n            \"condition\": \"based on interior dimension of opening\"\n          }\n        ],\n        \"standards\": [\n          {\n            \"name\": \"screening\",\n            \"condition\": \"determined appropriate by Planning Dept\"\n          }\n        ]\n      },\n      \"conditions\": {\n        \"mandatory\": [\n          \"Below-grade patios may not be located on the side of the structure that faces the front yard.\",\n          \"Excavated features shall not be harmful to neighboring trees.\"\n        ],\n        \"optional\": [],\n        \"conditional_logic\": [],\n        \"dependencies\": []\n      },\n      \"exceptions\": {\n        \"explicit_deviations\": [\n          \"Area devoted to required stairway egress shall not be included in the 200 sf limitation.\"\n        ],\n        \"alternatives\": [],\n        \"special_cases\": []\n      },\n      \"relationships\": {\n        \"hierarchical\": [],\n        \"cross_references\": [\n          \"Figure 40: Examples of site plan w/below-grade patios\"\n        ],\n        \"logical_dependencies\": [\n          \"a + b (encroaching features) may not exceed 15'\"\n        ]\n      }\n    }\n  ]\n}\n```"
+  },
+  "timestamp": "2025-09-16 14:43:38",
+  "model": "openai/gpt-4o",
+  "success": true
+}

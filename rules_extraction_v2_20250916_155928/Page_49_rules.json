@@ -1,0 +1,265 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_49.md",
+  "file_name": "Page_49.md",
+  "analysis": {
+    "extracted_rules": {
+      "regulations": [
+        {
+          "regulation_name": "Below-grade patios standards & site planning",
+          "source_page": {
+            "header": "49",
+            "footer": "43",
+            "note": "Discrepancy between page number in transcription header and footer."
+          },
+          "Qualifiers": {
+            "scope": "Applies to the planning and construction of below-grade patios, also referred to as 'such features', 'excavated features', 'lightwells & stairwells'.",
+            "applicability": "Residential lots.",
+            "exclusions": [
+              {
+                "subject": "Area Calculation",
+                "details": "The area devoted to required stairway egress is not included in the 200 sf single area limitation."
+              },
+              {
+                "subject": "Measurement Basis",
+                "details": "Measurements are based on the interior dimension of the opening and exclude the enclosing structure."
+              }
+            ]
+          },
+          "Variables": [
+            {
+              "name": "location_relative_to_front_yard",
+              "type": "Positional",
+              "description": "The location of the below-grade feature relative to the side of the structure that faces the front yard."
+            },
+            {
+              "name": "combined_area",
+              "type": "Dimensional",
+              "unit": "square feet",
+              "description": "The sum of the areas of all below-grade features on the lot."
+            },
+            {
+              "name": "single_area",
+              "type": "Dimensional",
+              "unit": "square feet",
+              "description": "The area of any single below-grade feature."
+            },
+            {
+              "name": "lot_area",
+              "type": "Dimensional",
+              "unit": "square feet",
+              "description": "The total area of the lot."
+            },
+            {
+              "name": "separation_distance",
+              "type": "Dimensional",
+              "unit": "feet",
+              "description": "The distance separating one below-grade feature from another."
+            },
+            {
+              "name": "side_yard_encroachment",
+              "type": "Dimensional",
+              "unit": "feet",
+              "description": "The distance a feature encroaches into a required side yard."
+            },
+            {
+              "name": "rear_yard_encroachment",
+              "type": "Dimensional",
+              "unit": "feet",
+              "description": "The distance a feature encroaches into a required rear yard."
+            },
+            {
+              "name": "combined_encroachment_length",
+              "type": "Dimensional",
+              "unit": "feet",
+              "description": "The combined length of all portions of features that encroach into any required yards."
+            },
+            {
+              "name": "tree_impact",
+              "type": "Environmental",
+              "description": "The effect of excavation on neighboring trees. (Qualitative)"
+            },
+            {
+              "name": "architectural_compatibility",
+              "type": "Usage Parameter",
+              "description": "The design compatibility of the feature with the main residence. (Qualitative)"
+            },
+            {
+              "name": "screening_method",
+              "type": "Material",
+              "description": "The method used for screening, such as landscaping or fencing."
+            }
+          ],
+          "Constants": [
+            {
+              "name": "max_single_area",
+              "value": 200,
+              "unit": "sf"
+            },
+            {
+              "name": "combined_area_limit",
+              "logic": "The greater of 2% of lot area or 200 sf",
+              "expression": "MAX(0.02 * lot_area, 200)"
+            },
+            {
+              "name": "min_separation_distance",
+              "value": 10,
+              "unit": "ft"
+            },
+            {
+              "name": "max_side_yard_encroachment",
+              "value": 2,
+              "unit": "ft"
+            },
+            {
+              "name": "max_rear_yard_encroachment",
+              "value": 4,
+              "unit": "ft"
+            },
+            {
+              "name": "max_combined_encroachment_length",
+              "value": 15,
+              "unit": "ft"
+            },
+            {
+              "name": "measurement_standard",
+              "procedure": "Measurements are based on the interior dimension of the opening, excluding the enclosing structure."
+            },
+            {
+              "name": "ambiguous_language",
+              "flags": [
+                {
+                  "term": "harmful",
+                  "context": "Excavated features shall not be harmful to neighboring trees.",
+                  "issue": "Not quantitatively defined."
+                },
+                {
+                  "term": "architecturally compatible",
+                  "context": "Such areas to be architecturally compatible with residence.",
+                  "issue": "Subjective and not defined."
+                },
+                {
+                  "term": "may [not] exceed",
+                  "context": "Boxed note: 'No single below-grade patio may [not] exceed 200 sf'",
+                  "issue": "Word 'not' is unclear in photocopy. Assumed to mean 'may not exceed' based on other text."
+                }
+              ]
+            }
+          ],
+          "Conditions": [
+            {
+              "type": "mandatory",
+              "rule": "Location Prohibited",
+              "description": "Features may not be located on the side of the structure that faces the front yard."
+            },
+            {
+              "type": "mandatory",
+              "rule": "Maximum Area (Single)",
+              "description": "No single area may exceed 200 sf.",
+              "check": "single_area <= 200"
+            },
+            {
+              "type": "mandatory",
+              "rule": "Maximum Area (Combined)",
+              "description": "Combined area of all such areas not to exceed 2% of the area of the lot or 200 sf, whichever is greater.",
+              "check": "combined_area <= MAX(0.02 * lot_area, 200)"
+            },
+            {
+              "type": "conditional",
+              "if": "More than one below-grade feature exists",
+              "then": {
+                "type": "mandatory",
+                "rule": "Minimum Separation",
+                "description": "Each such area must be separated from another by at least 10'.",
+                "check": "separation_distance >= 10"
+              }
+            },
+            {
+              "type": "mandatory",
+              "rule": "Maximum Encroachment (Side Yard)",
+              "description": "Allowable encroachment into a required side yard is 2' max.",
+              "check": "side_yard_encroachment <= 2"
+            },
+            {
+              "type": "mandatory",
+              "rule": "Maximum Encroachment (Rear Yard)",
+              "description": "Allowable encroachment into a required rear yard is 4' max.",
+              "check": "rear_yard_encroachment <= 4"
+            },
+            {
+              "type": "mandatory",
+              "rule": "Maximum Encroachment (Combined Length)",
+              "description": "The combined length of all encroaching portions of features may not exceed 15'.",
+              "check": "combined_encroachment_length <= 15"
+            },
+            {
+              "type": "mandatory",
+              "rule": "Environmental Protection",
+              "description": "Excavated features shall not be harmful to neighboring trees."
+            },
+            {
+              "type": "mandatory",
+              "rule": "Departmental Approval (Drainage)",
+              "description": "Public Works Department must approve the drainage system."
+            },
+            {
+              "type": "mandatory",
+              "rule": "Architectural Standard",
+              "description": "Areas must be architecturally compatible with the residence."
+            },
+            {
+              "type": "mandatory",
+              "rule": "Screening Requirement",
+              "description": "Areas must be screened from off-site views by landscaping and/or fencing, as determined appropriate by the Planning Dept."
+            }
+          ],
+          "Exceptions": [
+            {
+              "applies_to_rule": "Maximum Area (Single)",
+              "description": "The area calculation for the 200 sf limitation on a single area does not need to include the area devoted to required stairway egress."
+            }
+          ],
+          "Relationships": {
+            "hierarchical": "This regulation is a comprehensive set of standards for a single feature type ('below-grade patios'), encompassing rules for location, dimension, separation, encroachment, environmental impact, and design.",
+            "cross_references": [
+              {
+                "to": "Lot Coverage",
+                "description": "Overhangs or canopies installed to shelter a below-grade patio area shall count towards the 'lot coverage' calculation, linking this feature to a separate regulation."
+              },
+              {
+                "to": "Setback Regulations",
+                "description": "Encroachment rules are dependent on the definition of 'required side yard' and 'required rear yard', which are established by setback regulations."
+              }
+            ],
+            "logical_dependencies": [
+              {
+                "dependency": "The 10' separation rule is only triggered if more than one below-grade feature is proposed.",
+                "on": "Count of features"
+              },
+              {
+                "dependency": "The combined encroachment length is the sum of individual encroachment lengths (e.g., 'a + b' from the diagram).",
+                "on": "Individual encroachment measurements"
+              },
+              {
+                "dependency": "Final approval of the drainage system is contingent on the Public Works Department.",
+                "on": "External entity (Public Works Dept.)"
+              },
+              {
+                "dependency": "The choice and adequacy of the screening method is contingent on the Planning Department.",
+                "on": "External entity (Planning Dept.)"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "parse_error": false,
+    "raw_response": "```json\n{\n  \"regulations\": [\n    {\n      \"regulation_name\": \"Below-grade patios standards & site planning\",\n      \"source_page\": {\n        \"header\": \"49\",\n        \"footer\": \"43\",\n        \"note\": \"Discrepancy between page number in transcription header and footer.\"\n      },\n      \"Qualifiers\": {\n        \"scope\": \"Applies to the planning and construction of below-grade patios, also referred to as 'such features', 'excavated features', 'lightwells & stairwells'.\",\n        \"applicability\": \"Residential lots.\",\n        \"exclusions\": [\n          {\n            \"subject\": \"Area Calculation\",\n            \"details\": \"The area devoted to required stairway egress is not included in the 200 sf single area limitation.\"\n          },\n          {\n            \"subject\": \"Measurement Basis\",\n            \"details\": \"Measurements are based on the interior dimension of the opening and exclude the enclosing structure.\"\n          }\n        ]\n      },\n      \"Variables\": [\n        {\n          \"name\": \"location_relative_to_front_yard\",\n          \"type\": \"Positional\",\n          \"description\": \"The location of the below-grade feature relative to the side of the structure that faces the front yard.\"\n        },\n        {\n          \"name\": \"combined_area\",\n          \"type\": \"Dimensional\",\n          \"unit\": \"square feet\",\n          \"description\": \"The sum of the areas of all below-grade features on the lot.\"\n        },\n        {\n          \"name\": \"single_area\",\n          \"type\": \"Dimensional\",\n          \"unit\": \"square feet\",\n          \"description\": \"The area of any single below-grade feature.\"\n        },\n        {\n          \"name\": \"lot_area\",\n          \"type\": \"Dimensional\",\n          \"unit\": \"square feet\",\n          \"description\": \"The total area of the lot.\"\n        },\n        {\n          \"name\": \"separation_distance\",\n          \"type\": \"Dimensional\",\n          \"unit\": \"feet\",\n          \"description\": \"The distance separating one below-grade feature from another.\"\n        },\n        {\n          \"name\": \"side_yard_encroachment\",\n          \"type\": \"Dimensional\",\n          \"unit\": \"feet\",\n          \"description\": \"The distance a feature encroaches into a required side yard.\"\n        },\n        {\n          \"name\": \"rear_yard_encroachment\",\n          \"type\": \"Dimensional\",\n          \"unit\": \"feet\",\n          \"description\": \"The distance a feature encroaches into a required rear yard.\"\n        },\n        {\n          \"name\": \"combined_encroachment_length\",\n          \"type\": \"Dimensional\",\n          \"unit\": \"feet\",\n          \"description\": \"The combined length of all portions of features that encroach into any required yards.\"\n        },\n        {\n          \"name\": \"tree_impact\",\n          \"type\": \"Environmental\",\n          \"description\": \"The effect of excavation on neighboring trees. (Qualitative)\"\n        },\n        {\n          \"name\": \"architectural_compatibility\",\n          \"type\": \"Usage Parameter\",\n          \"description\": \"The design compatibility of the feature with the main residence. (Qualitative)\"\n        },\n        {\n          \"name\": \"screening_method\",\n          \"type\": \"Material\",\n          \"description\": \"The method used for screening, such as landscaping or fencing.\"\n        }\n      ],\n      \"Constants\": [\n        {\n          \"name\": \"max_single_area\",\n          \"value\": 200,\n          \"unit\": \"sf\"\n        },\n        {\n          \"name\": \"combined_area_limit\",\n          \"logic\": \"The greater of 2% of lot area or 200 sf\",\n          \"expression\": \"MAX(0.02 * lot_area, 200)\"\n        },\n        {\n          \"name\": \"min_separation_distance\",\n          \"value\": 10,\n          \"unit\": \"ft\"\n        },\n        {\n          \"name\": \"max_side_yard_encroachment\",\n          \"value\": 2,\n          \"unit\": \"ft\"\n        },\n        {\n          \"name\": \"max_rear_yard_encroachment\",\n          \"value\": 4,\n          \"unit\": \"ft\"\n        },\n        {\n          \"name\": \"max_combined_encroachment_length\",\n          \"value\": 15,\n          \"unit\": \"ft\"\n        },\n        {\n          \"name\": \"measurement_standard\",\n          \"procedure\": \"Measurements are based on the interior dimension of the opening, excluding the enclosing structure.\"\n        },\n        {\n          \"name\": \"ambiguous_language\",\n          \"flags\": [\n            {\n              \"term\": \"harmful\",\n              \"context\": \"Excavated features shall not be harmful to neighboring trees.\",\n              \"issue\": \"Not quantitatively defined.\"\n            },\n            {\n              \"term\": \"architecturally compatible\",\n              \"context\": \"Such areas to be architecturally compatible with residence.\",\n              \"issue\": \"Subjective and not defined.\"\n            },\n            {\n              \"term\": \"may [not] exceed\",\n              \"context\": \"Boxed note: 'No single below-grade patio may [not] exceed 200 sf'\",\n              \"issue\": \"Word 'not' is unclear in photocopy. Assumed to mean 'may not exceed' based on other text.\"\n            }\n          ]\n        }\n      ],\n      \"Conditions\": [\n        {\n          \"type\": \"mandatory\",\n          \"rule\": \"Location Prohibited\",\n          \"description\": \"Features may not be located on the side of the structure that faces the front yard.\"\n        },\n        {\n          \"type\": \"mandatory\",\n          \"rule\": \"Maximum Area (Single)\",\n          \"description\": \"No single area may exceed 200 sf.\",\n          \"check\": \"single_area <= 200\"\n        },\n        {\n          \"type\": \"mandatory\",\n          \"rule\": \"Maximum Area (Combined)\",\n          \"description\": \"Combined area of all such areas not to exceed 2% of the area of the lot or 200 sf, whichever is greater.\",\n          \"check\": \"combined_area <= MAX(0.02 * lot_area, 200)\"\n        },\n        {\n          \"type\": \"conditional\",\n          \"if\": \"More than one below-grade feature exists\",\n          \"then\": {\n            \"type\": \"mandatory\",\n            \"rule\": \"Minimum Separation\",\n            \"description\": \"Each such area must be separated from another by at least 10'.\",\n            \"check\": \"separation_distance >= 10\"\n          }\n        },\n        {\n          \"type\": \"mandatory\",\n          \"rule\": \"Maximum Encroachment (Side Yard)\",\n          \"description\": \"Allowable encroachment into a required side yard is 2' max.\",\n          \"check\": \"side_yard_encroachment <= 2\"\n        },\n        {\n          \"type\": \"mandatory\",\n          \"rule\": \"Maximum Encroachment (Rear Yard)\",\n          \"description\": \"Allowable encroachment into a required rear yard is 4' max.\",\n          \"check\": \"rear_yard_encroachment <= 4\"\n        },\n        {\n          \"type\": \"mandatory\",\n          \"rule\": \"Maximum Encroachment (Combined Length)\",\n          \"description\": \"The combined length of all encroaching portions of features may not exceed 15'.\",\n          \"check\": \"combined_encroachment_length <= 15\"\n        },\n        {\n          \"type\": \"mandatory\",\n          \"rule\": \"Environmental Protection\",\n          \"description\": \"Excavated features shall not be harmful to neighboring trees.\"\n        },\n        {\n          \"type\": \"mandatory\",\n          \"rule\": \"Departmental Approval (Drainage)\",\n          \"description\": \"Public Works Department must approve the drainage system.\"\n        },\n        {\n          \"type\": \"mandatory\",\n          \"rule\": \"Architectural Standard\",\n          \"description\": \"Areas must be architecturally compatible with the residence.\"\n        },\n        {\n          \"type\": \"mandatory\",\n          \"rule\": \"Screening Requirement\",\n          \"description\": \"Areas must be screened from off-site views by landscaping and/or fencing, as determined appropriate by the Planning Dept.\"\n        }\n      ],\n      \"Exceptions\": [\n        {\n          \"applies_to_rule\": \"Maximum Area (Single)\",\n          \"description\": \"The area calculation for the 200 sf limitation on a single area does not need to include the area devoted to required stairway egress.\"\n        }\n      ],\n      \"Relationships\": {\n        \"hierarchical\": \"This regulation is a comprehensive set of standards for a single feature type ('below-grade patios'), encompassing rules for location, dimension, separation, encroachment, environmental impact, and design.\",\n        \"cross_references\": [\n          {\n            \"to\": \"Lot Coverage\",\n            \"description\": \"Overhangs or canopies installed to shelter a below-grade patio area shall count towards the 'lot coverage' calculation, linking this feature to a separate regulation.\"\n          },\n          {\n            \"to\": \"Setback Regulations\",\n            \"description\": \"Encroachment rules are dependent on the definition of 'required side yard' and 'required rear yard', which are established by setback regulations.\"\n          }\n        ],\n        \"logical_dependencies\": [\n          {\n            \"dependency\": \"The 10' separation rule is only triggered if more than one below-grade feature is proposed.\",\n            \"on\": \"Count of features\"\n          },\n          {\n            \"dependency\": \"The combined encroachment length is the sum of individual encroachment lengths (e.g., 'a + b' from the diagram).\",\n            \"on\": \"Individual encroachment measurements\"\n          },\n          {\n            \"dependency\": \"Final approval of the drainage system is contingent on the Public Works Department.\",\n            \"on\": \"External entity (Public Works Dept.)\"\n          },\n          {\n            \"dependency\": \"The choice and adequacy of the screening method is contingent on the Planning Department.\",\n            \"on\": \"External entity (Planning Dept.)\"\n          }\n        ]\n      }\n    }\n  ]\n}\n```",
+    "response_time": 53.64626407623291,
+    "input_tokens": 924,
+    "output_tokens": 6750,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 16:04:40",
+  "model": "google/gemini-2.5-pro",
+  "success": true
+}

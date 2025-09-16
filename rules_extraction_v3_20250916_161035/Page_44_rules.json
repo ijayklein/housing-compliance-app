@@ -1,0 +1,84 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_44.md",
+  "file_name": "Page_44.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "rule": "Attached Garage/Carport Setbacks",
+        "Qualifiers": {
+          "Scope": "Site planning regulations for attached vehicle storage structures.",
+          "Applicability": "Applies to attached garages and attached carports.",
+          "Exclusions": "Does not apply to detached garages/carports or uncovered parking spaces. The rule is specific to attached structures."
+        },
+        "Variables": {
+          "structure_type": "The type of structure being built (e.g., 'attached garage', 'attached carport').",
+          "garage_setback": "The required setback distances (front, side, rear) for the attached garage/carport.",
+          "main_dwelling_setback": "The required setback distances for the main dwelling on the same lot."
+        },
+        "Constants": {
+          "compliance_target": "Setbacks of the main dwelling. The rule mandates equality between garage/carport setbacks and main dwelling setbacks."
+        },
+        "Conditions": {
+          "Mandatory": "Compliance is mandatory. The text uses the word 'must'.",
+          "Optional": "None specified.",
+          "Conditional Logic": "IF structure is an 'attached garage' OR 'attached carport', THEN its setbacks MUST EQUAL the setbacks of the 'main dwelling'.",
+          "Dependencies": "This rule is dependent on the setback regulations for the 'main dwelling', which must be sourced from a different part of the code."
+        },
+        "Exceptions": {
+          "Explicit Deviations": "None specified.",
+          "Alternatives": "None specified.",
+          "Special Cases": "None specified."
+        },
+        "Relationships": {
+          "Hierarchical": "This rule is a specific requirement under the general topic of 'Attached garages/carports site planning'.",
+          "Cross-references": "Implicitly cross-references the section of the code defining setbacks for a 'main dwelling'.",
+          "Logical Dependencies": "The validation of an attached garage's setbacks is directly dependent on the setback values defined for the main dwelling."
+        }
+      },
+      {
+        "rule": "Uncovered Parking Space Location",
+        "Qualifiers": {
+          "Scope": "Site planning regulations for uncovered, surface parking spaces.",
+          "Applicability": "Applies to 'uncovered spaces' for parking, often used as secondary or additional parking spaces as suggested by diagrams. Applies to all lot types for the front yard rule, and specifically to corner lots for the street-side yard rule.",
+          "Exclusions": "Does not apply to covered parking structures like garages or carports."
+        },
+        "Variables": {
+          "space_location": "The geometric location of the uncovered parking space on the lot.",
+          "lot_type": "The type of lot (e.g., 'interior lot', 'corner lot').",
+          "required_front_yard_area": "The area defined by the front lot line and the required front yard setback line.",
+          "street_side_yard_area": "The area defined by the street-side lot line and the interior of the lot."
+        },
+        "Constants": {
+          "street_side_yard_no_parking_depth": "10 feet (10')",
+          "front_yard_location_spec": "Location must be 'beyond the required frontyard'. Ambiguity Flag: This is interpreted as being located behind the front yard setback line, not necessarily outside the entire front yard area, as supported by Figure 33-B.",
+          "street_side_yard_location_spec": "Location must be 'beyond the first 10' of the street-side yard'."
+        },
+        "Conditions": {
+          "Mandatory": "Compliance is mandatory. The text uses the word 'must'.",
+          "Optional": "None specified.",
+          "Conditional Logic": "1. An 'uncovered space' MUST NOT be located within the 'required frontyard' area. 2. IF the lot is a 'corner lot', an 'uncovered space' MUST NOT be located within the first 10 feet of the 'street-side yard'.",
+          "Dependencies": "This rule depends on the definitions and dimensions of 'required frontyard' and 'street-side yard' from other sections of the code."
+        },
+        "Exceptions": {
+          "Explicit Deviations": "None specified.",
+          "Alternatives": "Figure 33-B shows an uncovered space located in the driveway, which is a valid alternative placement as long as it is behind the required front yard setback line.",
+          "Special Cases": "The 10-foot restriction on the street-side yard is a special case that applies only to lots with a street-side yard (i.e., corner lots)."
+        },
+        "Relationships": {
+          "Hierarchical": "This rule is a specific requirement under the general topic of site planning, often related to overall parking requirements.",
+          "Cross-references": "Implicitly cross-references sections of the code defining 'required frontyard', 'street-side yard', and lot types.",
+          "Logical Dependencies": "This rule is logically linked to the first rule, as the diagrams show uncovered spaces being used to supplement attached garages, likely to meet a total parking space requirement for the dwelling."
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n  {\n    \"rule\": \"Attached Garage/Carport Setbacks\",\n    \"Qualifiers\": {\n      \"Scope\": \"Site planning regulations for attached vehicle storage structures.\",\n      \"Applicability\": \"Applies to attached garages and attached carports.\",\n      \"Exclusions\": \"Does not apply to detached garages/carports or uncovered parking spaces. The rule is specific to attached structures.\"\n    },\n    \"Variables\": {\n      \"structure_type\": \"The type of structure being built (e.g., 'attached garage', 'attached carport').\",\n      \"garage_setback\": \"The required setback distances (front, side, rear) for the attached garage/carport.\",\n      \"main_dwelling_setback\": \"The required setback distances for the main dwelling on the same lot.\"\n    },\n    \"Constants\": {\n      \"compliance_target\": \"Setbacks of the main dwelling. The rule mandates equality between garage/carport setbacks and main dwelling setbacks.\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"Compliance is mandatory. The text uses the word 'must'.\",\n      \"Optional\": \"None specified.\",\n      \"Conditional Logic\": \"IF structure is an 'attached garage' OR 'attached carport', THEN its setbacks MUST EQUAL the setbacks of the 'main dwelling'.\",\n      \"Dependencies\": \"This rule is dependent on the setback regulations for the 'main dwelling', which must be sourced from a different part of the code.\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"None specified.\",\n      \"Alternatives\": \"None specified.\",\n      \"Special Cases\": \"None specified.\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"This rule is a specific requirement under the general topic of 'Attached garages/carports site planning'.\",\n      \"Cross-references\": \"Implicitly cross-references the section of the code defining setbacks for a 'main dwelling'.\",\n      \"Logical Dependencies\": \"The validation of an attached garage's setbacks is directly dependent on the setback values defined for the main dwelling.\"\n    }\n  },\n  {\n    \"rule\": \"Uncovered Parking Space Location\",\n    \"Qualifiers\": {\n      \"Scope\": \"Site planning regulations for uncovered, surface parking spaces.\",\n      \"Applicability\": \"Applies to 'uncovered spaces' for parking, often used as secondary or additional parking spaces as suggested by diagrams. Applies to all lot types for the front yard rule, and specifically to corner lots for the street-side yard rule.\",\n      \"Exclusions\": \"Does not apply to covered parking structures like garages or carports.\"\n    },\n    \"Variables\": {\n      \"space_location\": \"The geometric location of the uncovered parking space on the lot.\",\n      \"lot_type\": \"The type of lot (e.g., 'interior lot', 'corner lot').\",\n      \"required_front_yard_area\": \"The area defined by the front lot line and the required front yard setback line.\",\n      \"street_side_yard_area\": \"The area defined by the street-side lot line and the interior of the lot.\"\n    },\n    \"Constants\": {\n      \"street_side_yard_no_parking_depth\": \"10 feet (10')\",\n      \"front_yard_location_spec\": \"Location must be 'beyond the required frontyard'. Ambiguity Flag: This is interpreted as being located behind the front yard setback line, not necessarily outside the entire front yard area, as supported by Figure 33-B.\",\n      \"street_side_yard_location_spec\": \"Location must be 'beyond the first 10' of the street-side yard'.\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"Compliance is mandatory. The text uses the word 'must'.\",\n      \"Optional\": \"None specified.\",\n      \"Conditional Logic\": \"1. An 'uncovered space' MUST NOT be located within the 'required frontyard' area. 2. IF the lot is a 'corner lot', an 'uncovered space' MUST NOT be located within the first 10 feet of the 'street-side yard'.\",\n      \"Dependencies\": \"This rule depends on the definitions and dimensions of 'required frontyard' and 'street-side yard' from other sections of the code.\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"None specified.\",\n      \"Alternatives\": \"Figure 33-B shows an uncovered space located in the driveway, which is a valid alternative placement as long as it is behind the required front yard setback line.\",\n      \"Special Cases\": \"The 10-foot restriction on the street-side yard is a special case that applies only to lots with a street-side yard (i.e., corner lots).\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"This rule is a specific requirement under the general topic of site planning, often related to overall parking requirements.\",\n      \"Cross-references\": \"Implicitly cross-references sections of the code defining 'required frontyard', 'street-side yard', and lot types.\",\n      \"Logical Dependencies\": \"This rule is logically linked to the first rule, as the diagrams show uncovered spaces being used to supplement attached garages, likely to meet a total parking space requirement for the dwelling.\"\n    }\n  }\n]\n```",
+    "response_time": 30.15185832977295,
+    "input_tokens": 832,
+    "output_tokens": 3207,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 16:14:03",
+  "model": "google/gemini-2.5-pro",
+  "success": true
+}

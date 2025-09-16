@@ -1,0 +1,214 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_19.md",
+  "file_name": "Page_19.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "Qualifiers": {
+          "scope": "Gross floor area (GFA) accounting for entryway features that are considered vaulted entryways, as depicted in Figure 8.",
+          "applicability": [
+            "Buildings with an entryway that is considered a vaulted entryway.",
+            "Measurement of the entryway area for inclusion in GFA."
+          ],
+          "exclusions": [
+            "No explicit exclusions stated."
+          ],
+          "ambiguities": [
+            "The phrase 'considered to be a vaulted entryway' is undefined; criteria for determining a vaulted entryway are not provided.",
+            "Measurement boundary 'outside material of the entry-way feature' is not specified (e.g., face of cladding, trim, column edges).",
+            "Units for area measurement are not stated; presume jurisdictional standard units for GFA."
+          ]
+        },
+        "Variables": [
+          {
+            "name": "entryway_floor_area_footprint",
+            "description": "Plan area of the entryway feature to be counted toward GFA.",
+            "data_type": "area",
+            "units": "unspecified (use jurisdictional standard for GFA)",
+            "measurement_reference": "Measured to the outside material of the entry-way feature."
+          },
+          {
+            "name": "recessed_portion_included",
+            "description": "Indicates whether portions of the entryway recessed beyond the house facade and roof are included in area counting.",
+            "data_type": "boolean",
+            "allowed_values": [
+              true,
+              false
+            ],
+            "default": true,
+            "notes": "Text states recessed portions are included in the area that counts."
+          },
+          {
+            "name": "grade_elevation",
+            "description": "Grade reference used in the isometric/side elevation views (contextual; not used directly in area counting rule).",
+            "data_type": "length",
+            "units": "unspecified"
+          },
+          {
+            "name": "front_facade_to_2nd_floor_intersection_elevation",
+            "description": "Elevation at the intersection of the front facade and underside/bottom of 2nd floor (contextual marker).",
+            "data_type": "length",
+            "units": "unspecified"
+          },
+          {
+            "name": "second_floor_top_elevation",
+            "description": "Top of 2nd floor elevation (contextual marker).",
+            "data_type": "length",
+            "units": "unspecified"
+          },
+          {
+            "name": "second_floor_bottom_elevation",
+            "description": "Bottom/underside of 2nd floor elevation (contextual marker).",
+            "data_type": "length",
+            "units": "unspecified"
+          }
+        ],
+        "Constants": [
+          {
+            "name": "vaulted_entry_gfa_count_multiplier",
+            "value": 2,
+            "units": "dimensionless (multiplier)",
+            "spec": "The area counts TWICE toward gross floor area if the entryway is a vaulted entryway."
+          }
+        ],
+        "Conditions": {
+          "mandatory": [
+            {
+              "condition": "The entryway must be considered a vaulted entryway.",
+              "type": "applicability"
+            },
+            {
+              "condition": "Measure the entryway area to the outside material of the entry-way feature.",
+              "type": "measurement_method"
+            },
+            {
+              "condition": "Include portions of the entryway that are recessed beyond the house facade and roof in the area that counts.",
+              "type": "inclusion_rule"
+            }
+          ],
+          "optional": [],
+          "conditional_logic": [
+            {
+              "if": "entryway is considered a vaulted entryway",
+              "then": "entryway_floor_area_footprint contributes to GFA with a multiplier of 2 (counts twice)"
+            }
+          ]
+        },
+        "Exceptions": [
+          "No explicit exceptions or exclusions stated beyond inclusion of recessed portions."
+        ],
+        "Relationships": {
+          "hierarchical": [
+            "This rule is the base counting rule for vaulted entryways."
+          ],
+          "cross_references": [
+            "Figure 8: Entry feature with 2nd floor above.",
+            "Porch Floor Plan: Outline of entryway floor area that counts TWICE if entryway is vaulted.",
+            "Isometric View and Side Elevation labels provide contextual geometry markers (Height, Grade, Top/Bottom of 2nd Floor)."
+          ],
+          "logical_dependencies": [
+            "Applies independently, but forms the basis for the extended case when a 2nd floor is above the vaulted entry (see related rule where total count becomes three times)."
+          ]
+        }
+      },
+      {
+        "Qualifiers": {
+          "scope": "Gross floor area (GFA) accounting for configurations where a second floor exists above a vaulted entryway.",
+          "applicability": [
+            "Buildings with an entryway that is a vaulted entryway AND has a 2nd floor above that entry feature."
+          ],
+          "exclusions": [
+            "No explicit exclusions stated."
+          ],
+          "ambiguities": [
+            "The phrase '2nd floor over a vaulted entry will count as usual' is undefined; 'as usual' counting method is not specified in this excerpt.",
+            "Units for area measurement are not stated; presume jurisdictional standard units for GFA."
+          ]
+        },
+        "Variables": [
+          {
+            "name": "entryway_floor_area_footprint",
+            "description": "Plan area of the vaulted entryway feature (same measurement method as base rule: to outside material).",
+            "data_type": "area",
+            "units": "unspecified (use jurisdictional standard for GFA)"
+          },
+          {
+            "name": "second_floor_area_over_entry",
+            "description": "Plan area of the second floor located above the vaulted entry footprint.",
+            "data_type": "area",
+            "units": "unspecified (use jurisdictional standard for GFA)",
+            "notes": "Counted 'as usual' per general GFA rules."
+          },
+          {
+            "name": "has_second_floor_above_entry",
+            "description": "Presence of a second floor above the vaulted entryway.",
+            "data_type": "boolean",
+            "allowed_values": [
+              true,
+              false
+            ]
+          }
+        ],
+        "Constants": [
+          {
+            "name": "total_gfa_count_multiplier_when_2nd_floor_over_vaulted_entry",
+            "value": 3,
+            "units": "dimensionless (multiplier)",
+            "spec": "The area will count three times toward gross floor area when a 2nd floor is over a vaulted entry."
+          },
+          {
+            "name": "second_floor_counts_as_usual",
+            "value": true,
+            "units": "n/a",
+            "spec": "The 2nd floor over a vaulted entry will count as usual (exact method not defined in this excerpt)."
+          }
+        ],
+        "Conditions": {
+          "mandatory": [
+            {
+              "condition": "Entryway must qualify as a vaulted entryway per the base rule.",
+              "type": "applicability"
+            },
+            {
+              "condition": "A second floor must exist above the vaulted entryway.",
+              "type": "applicability"
+            }
+          ],
+          "optional": [],
+          "conditional_logic": [
+            {
+              "if": "has_second_floor_above_entry == true AND entryway is a vaulted entryway",
+              "then": "The combined GFA counting for the affected area is three times total: two times for the vaulted entry footprint plus one time for the second floor area counted as usual.",
+              "notes": "This is expressed succinctly in the text as 'the area will count three times toward gross floor area'."
+            }
+          ]
+        },
+        "Exceptions": [
+          "No explicit exceptions or alternatives provided."
+        ],
+        "Relationships": {
+          "hierarchical": [
+            "This rule extends the base vaulted entry counting rule by adding the second-floor component."
+          ],
+          "cross_references": [
+            "Figure 8: Entry feature with 2nd floor above.",
+            "Side Elevation labels: Intersection of front facade and underside or bottom of 2nd floor; Top/Bottom of 2nd Floor."
+          ],
+          "logical_dependencies": [
+            "Depends on the base vaulted entry rule (vaulted entry counts twice).",
+            "Also depends on the general GFA rule for second floors ('counts as usual'), not defined in this excerpt."
+          ]
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "[\n  {\n    \"Qualifiers\": {\n      \"scope\": \"Gross floor area (GFA) accounting for entryway features that are considered vaulted entryways, as depicted in Figure 8.\",\n      \"applicability\": [\n        \"Buildings with an entryway that is considered a vaulted entryway.\",\n        \"Measurement of the entryway area for inclusion in GFA.\"\n      ],\n      \"exclusions\": [\n        \"No explicit exclusions stated.\"\n      ],\n      \"ambiguities\": [\n        \"The phrase 'considered to be a vaulted entryway' is undefined; criteria for determining a vaulted entryway are not provided.\",\n        \"Measurement boundary 'outside material of the entry-way feature' is not specified (e.g., face of cladding, trim, column edges).\",\n        \"Units for area measurement are not stated; presume jurisdictional standard units for GFA.\"\n      ]\n    },\n    \"Variables\": [\n      {\n        \"name\": \"entryway_floor_area_footprint\",\n        \"description\": \"Plan area of the entryway feature to be counted toward GFA.\",\n        \"data_type\": \"area\",\n        \"units\": \"unspecified (use jurisdictional standard for GFA)\",\n        \"measurement_reference\": \"Measured to the outside material of the entry-way feature.\"\n      },\n      {\n        \"name\": \"recessed_portion_included\",\n        \"description\": \"Indicates whether portions of the entryway recessed beyond the house facade and roof are included in area counting.\",\n        \"data_type\": \"boolean\",\n        \"allowed_values\": [\n          true,\n          false\n        ],\n        \"default\": true,\n        \"notes\": \"Text states recessed portions are included in the area that counts.\"\n      },\n      {\n        \"name\": \"grade_elevation\",\n        \"description\": \"Grade reference used in the isometric/side elevation views (contextual; not used directly in area counting rule).\",\n        \"data_type\": \"length\",\n        \"units\": \"unspecified\"\n      },\n      {\n        \"name\": \"front_facade_to_2nd_floor_intersection_elevation\",\n        \"description\": \"Elevation at the intersection of the front facade and underside/bottom of 2nd floor (contextual marker).\",\n        \"data_type\": \"length\",\n        \"units\": \"unspecified\"\n      },\n      {\n        \"name\": \"second_floor_top_elevation\",\n        \"description\": \"Top of 2nd floor elevation (contextual marker).\",\n        \"data_type\": \"length\",\n        \"units\": \"unspecified\"\n      },\n      {\n        \"name\": \"second_floor_bottom_elevation\",\n        \"description\": \"Bottom/underside of 2nd floor elevation (contextual marker).\",\n        \"data_type\": \"length\",\n        \"units\": \"unspecified\"\n      }\n    ],\n    \"Constants\": [\n      {\n        \"name\": \"vaulted_entry_gfa_count_multiplier\",\n        \"value\": 2,\n        \"units\": \"dimensionless (multiplier)\",\n        \"spec\": \"The area counts TWICE toward gross floor area if the entryway is a vaulted entryway.\"\n      }\n    ],\n    \"Conditions\": {\n      \"mandatory\": [\n        {\n          \"condition\": \"The entryway must be considered a vaulted entryway.\",\n          \"type\": \"applicability\"\n        },\n        {\n          \"condition\": \"Measure the entryway area to the outside material of the entry-way feature.\",\n          \"type\": \"measurement_method\"\n        },\n        {\n          \"condition\": \"Include portions of the entryway that are recessed beyond the house facade and roof in the area that counts.\",\n          \"type\": \"inclusion_rule\"\n        }\n      ],\n      \"optional\": [],\n      \"conditional_logic\": [\n        {\n          \"if\": \"entryway is considered a vaulted entryway\",\n          \"then\": \"entryway_floor_area_footprint contributes to GFA with a multiplier of 2 (counts twice)\"\n        }\n      ]\n    },\n    \"Exceptions\": [\n      \"No explicit exceptions or exclusions stated beyond inclusion of recessed portions.\"\n    ],\n    \"Relationships\": {\n      \"hierarchical\": [\n        \"This rule is the base counting rule for vaulted entryways.\"\n      ],\n      \"cross_references\": [\n        \"Figure 8: Entry feature with 2nd floor above.\",\n        \"Porch Floor Plan: Outline of entryway floor area that counts TWICE if entryway is vaulted.\",\n        \"Isometric View and Side Elevation labels provide contextual geometry markers (Height, Grade, Top/Bottom of 2nd Floor).\"\n      ],\n      \"logical_dependencies\": [\n        \"Applies independently, but forms the basis for the extended case when a 2nd floor is above the vaulted entry (see related rule where total count becomes three times).\"\n      ]\n    }\n  },\n  {\n    \"Qualifiers\": {\n      \"scope\": \"Gross floor area (GFA) accounting for configurations where a second floor exists above a vaulted entryway.\",\n      \"applicability\": [\n        \"Buildings with an entryway that is a vaulted entryway AND has a 2nd floor above that entry feature.\"\n      ],\n      \"exclusions\": [\n        \"No explicit exclusions stated.\"\n      ],\n      \"ambiguities\": [\n        \"The phrase '2nd floor over a vaulted entry will count as usual' is undefined; 'as usual' counting method is not specified in this excerpt.\",\n        \"Units for area measurement are not stated; presume jurisdictional standard units for GFA.\"\n      ]\n    },\n    \"Variables\": [\n      {\n        \"name\": \"entryway_floor_area_footprint\",\n        \"description\": \"Plan area of the vaulted entryway feature (same measurement method as base rule: to outside material).\",\n        \"data_type\": \"area\",\n        \"units\": \"unspecified (use jurisdictional standard for GFA)\"\n      },\n      {\n        \"name\": \"second_floor_area_over_entry\",\n        \"description\": \"Plan area of the second floor located above the vaulted entry footprint.\",\n        \"data_type\": \"area\",\n        \"units\": \"unspecified (use jurisdictional standard for GFA)\",\n        \"notes\": \"Counted 'as usual' per general GFA rules.\"\n      },\n      {\n        \"name\": \"has_second_floor_above_entry\",\n        \"description\": \"Presence of a second floor above the vaulted entryway.\",\n        \"data_type\": \"boolean\",\n        \"allowed_values\": [\n          true,\n          false\n        ]\n      }\n    ],\n    \"Constants\": [\n      {\n        \"name\": \"total_gfa_count_multiplier_when_2nd_floor_over_vaulted_entry\",\n        \"value\": 3,\n        \"units\": \"dimensionless (multiplier)\",\n        \"spec\": \"The area will count three times toward gross floor area when a 2nd floor is over a vaulted entry.\"\n      },\n      {\n        \"name\": \"second_floor_counts_as_usual\",\n        \"value\": true,\n        \"units\": \"n/a\",\n        \"spec\": \"The 2nd floor over a vaulted entry will count as usual (exact method not defined in this excerpt).\"\n      }\n    ],\n    \"Conditions\": {\n      \"mandatory\": [\n        {\n          \"condition\": \"Entryway must qualify as a vaulted entryway per the base rule.\",\n          \"type\": \"applicability\"\n        },\n        {\n          \"condition\": \"A second floor must exist above the vaulted entryway.\",\n          \"type\": \"applicability\"\n        }\n      ],\n      \"optional\": [],\n      \"conditional_logic\": [\n        {\n          \"if\": \"has_second_floor_above_entry == true AND entryway is a vaulted entryway\",\n          \"then\": \"The combined GFA counting for the affected area is three times total: two times for the vaulted entry footprint plus one time for the second floor area counted as usual.\",\n          \"notes\": \"This is expressed succinctly in the text as 'the area will count three times toward gross floor area'.\"\n        }\n      ]\n    },\n    \"Exceptions\": [\n      \"No explicit exceptions or alternatives provided.\"\n    ],\n    \"Relationships\": {\n      \"hierarchical\": [\n        \"This rule extends the base vaulted entry counting rule by adding the second-floor component.\"\n      ],\n      \"cross_references\": [\n        \"Figure 8: Entry feature with 2nd floor above.\",\n        \"Side Elevation labels: Intersection of front facade and underside or bottom of 2nd floor; Top/Bottom of 2nd Floor.\"\n      ],\n      \"logical_dependencies\": [\n        \"Depends on the base vaulted entry rule (vaulted entry counts twice).\",\n        \"Also depends on the general GFA rule for second floors ('counts as usual'), not defined in this excerpt.\"\n      ]\n    }\n  }\n]",
+    "response_time": 71.0699999332428,
+    "input_tokens": 618,
+    "output_tokens": 5138,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 15:51:29",
+  "model": "openai/gpt-5",
+  "success": true
+}

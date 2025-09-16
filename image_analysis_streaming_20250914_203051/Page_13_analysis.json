@@ -1,0 +1,193 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_13.png",
+  "image_name": "Page_13.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Fig 4 Types of porches and entry ways\n\nA Roofed porch\n\nC Vaulted entry way\nHeight\ngreater than 12'\nabove grade\n\nSee how to measure height of porches &\nentry features in Figs 6-8 on pp. 11-13\n\nB Roofed entry way\n(not vaulted)\nHeight\nless than 12'\nabove grade\n\nD Combination porch & vaulted entry way\nHeight\ngreater than 12'\nabove grade",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Four architectural elevation drawings showing different types of porches and entry ways. Drawing A shows a single-story building with a roofed porch supported by columns. Drawing B shows a two-story house with a small roofed entry way with height measurement indicator showing 'less than 12' above grade'. Drawing C shows a two-story building with a vaulted entry way and height measurement indicator showing 'greater than 12' above grade'. Drawing D shows a building combining both a porch and vaulted entry way with height measurement indicator showing 'greater than 12' above grade'.",
+          "location": "Center of page, arranged in 2x2 grid format"
+        },
+        {
+          "type": "figure",
+          "description": "Height measurement indicators with vertical lines and dimension markings showing measurement points from grade level to top of architectural features",
+          "location": "Right side of drawings B, C, and D"
+        },
+        {
+          "type": "text box",
+          "description": "Gray rectangular text box containing reference information about measuring height",
+          "location": "Center of page between drawings B and D"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Height threshold for vaulted entry way",
+          "value_type": "Measurement",
+          "value": "12",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Height threshold for roofed entry way (not vaulted)",
+          "value_type": "Measurement",
+          "value": "12",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Reference pages for measurement methodology",
+          "value_type": "Range",
+          "value": "11-13",
+          "unit": "pages"
+        },
+        {
+          "parameter": "Reference figures for measurement methodology",
+          "value_type": "Range",
+          "value": "6-8",
+          "unit": "figures"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Fig 4 Types of porches and entry ways",
+        "subheadings": [
+          "A Roofed porch",
+          "B Roofed entry way",
+          "C Vaulted entry way",
+          "D Combination porch & vaulted entry way"
+        ],
+        "sections": [
+          "Fig 4"
+        ]
+      },
+      "additional_notes": [
+        "Image quality is clear with good contrast",
+        "Architectural drawings are technical line drawings showing building elevations",
+        "Height measurement indicators use standard architectural notation"
+      ],
+      "cross_references": [
+        "Figs 6-8 on pp. 11-13"
+      ],
+      "conditions_and_qualifiers": {
+        "qualifiers": [
+          {
+            "id": "q1",
+            "text": "above grade",
+            "applies_to_conditions": [
+              "c1",
+              "c2",
+              "c3"
+            ],
+            "scope": "Global"
+          },
+          {
+            "id": "q2",
+            "text": "(not vaulted)",
+            "applies_to_conditions": [
+              "c1"
+            ],
+            "scope": "Specific"
+          }
+        ],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "Height less than 12'",
+            "value_type": "Measurement",
+            "operator": "<",
+            "threshold_value": "12",
+            "unit": "feet"
+          },
+          {
+            "id": "c2",
+            "text": "Height greater than 12'",
+            "value_type": "Measurement",
+            "operator": ">",
+            "threshold_value": "12",
+            "unit": "feet"
+          },
+          {
+            "id": "c3",
+            "text": "Height greater than 12'",
+            "value_type": "Measurement",
+            "operator": ">",
+            "threshold_value": "12",
+            "unit": "feet"
+          }
+        ],
+        "logical_relationships": [
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c1"
+            ],
+            "expression": "If height is less than 12' above grade and not vaulted, then it is classified as a roofed entry way",
+            "evaluation_order": 1
+          },
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c2"
+            ],
+            "expression": "If height is greater than 12' above grade, then it is classified as a vaulted entry way",
+            "evaluation_order": 2
+          },
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c3"
+            ],
+            "expression": "If height is greater than 12' above grade and combines porch and vaulted features, then it is classified as a combination porch & vaulted entry way",
+            "evaluation_order": 3
+          }
+        ],
+        "execution_sequence": [
+          {
+            "step": 1,
+            "action": "Measure height of porch or entry feature from grade level",
+            "condition_ids": [
+              "c1",
+              "c2",
+              "c3"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 2,
+            "action": "Determine if feature is vaulted or not vaulted",
+            "condition_ids": [
+              "c1"
+            ],
+            "qualifier_ids": [
+              "q2"
+            ],
+            "dependencies": [
+              1
+            ]
+          },
+          {
+            "step": 3,
+            "action": "Classify the porch or entry way type based on height and vaulting characteristics",
+            "condition_ids": [
+              "c1",
+              "c2",
+              "c3"
+            ],
+            "qualifier_ids": [
+              "q1",
+              "q2"
+            ],
+            "dependencies": [
+              1,
+              2
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:31:21",
+  "model_used": "anthropic/claude-sonnet-4"
+}

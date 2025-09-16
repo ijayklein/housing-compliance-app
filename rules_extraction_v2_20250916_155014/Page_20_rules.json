@@ -1,0 +1,264 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_20.md",
+  "file_name": "Page_20.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "Qualifiers": {
+          "scope": [
+            "Recessed porches located on the ground/1st floor"
+          ],
+          "applicability": [
+            "Determination of whether porch area is included in Gross Floor Area (GFA) calculations"
+          ],
+          "exclusions": [
+            "Porches not on the ground/1st floor (not within this rule\u2019s scope)",
+            "Non-recessed porches (title indicates recessed porches; non-recessed not addressed by this rule)"
+          ],
+          "ambiguities": [
+            "Term 'substantially open' is not quantified (no percentage or measurement standard provided)",
+            "Boundary condition for 'Porch ceiling below 2nd floor' is unclear for ceilings exactly at the 2nd floor line",
+            "Equivalence of 'ground floor' and '1st floor' is implied but not explicitly defined",
+            "What qualifies as a 'recessed porch' is not defined on this page"
+          ]
+        },
+        "Variables": [
+          {
+            "name": "porch_depth",
+            "description": "Horizontal depth of the recessed porch",
+            "type": "number",
+            "unit": "ft",
+            "constraints": {
+              "threshold": 10,
+              "comparator": "<"
+            }
+          },
+          {
+            "name": "porch_ceiling_position_relative_to_2nd_floor_line",
+            "description": "Vertical relationship of porch ceiling to the 2nd floor line",
+            "type": "enum",
+            "values": [
+              "below",
+              "at",
+              "above"
+            ],
+            "required_value": "below"
+          },
+          {
+            "name": "exterior_side_substantially_open",
+            "description": "Whether the exterior side of the porch is substantially open",
+            "type": "boolean",
+            "note": "No quantitative threshold is provided for 'substantially open'"
+          },
+          {
+            "name": "floor_level",
+            "description": "Floor level of the porch",
+            "type": "enum",
+            "values": [
+              "ground/1st",
+              "upper"
+            ],
+            "required_value": "ground/1st"
+          },
+          {
+            "name": "include_in_gfa",
+            "description": "Outcome flag indicating if porch area is included in GFA",
+            "type": "boolean",
+            "derived": true
+          }
+        ],
+        "Constants": [
+          {
+            "name": "DEPTH_THRESHOLD",
+            "value": 10,
+            "unit": "ft",
+            "description": "Maximum porch depth to qualify for GFA exclusion (strictly less than 10')"
+          },
+          {
+            "name": "REFERENCE_PLANE_SECOND_FLOOR_LINE",
+            "value": null,
+            "unit": null,
+            "description": "Reference plane used to determine porch ceiling position"
+          },
+          {
+            "name": "REFERENCE_PLANE_FINISHED_FLOOR",
+            "value": null,
+            "unit": null,
+            "description": "Reference plane used for height measurements in related policy"
+          }
+        ],
+        "Conditions": [
+          {
+            "id": "R1-C1",
+            "type": "inclusion_test",
+            "logic": {
+              "all": [
+                {
+                  "var": "floor_level",
+                  "op": "==",
+                  "value": "ground/1st"
+                },
+                {
+                  "var": "porch_depth",
+                  "op": "<",
+                  "value": 10,
+                  "unit": "ft"
+                },
+                {
+                  "var": "porch_ceiling_position_relative_to_2nd_floor_line",
+                  "op": "==",
+                  "value": "below"
+                },
+                {
+                  "var": "exterior_side_substantially_open",
+                  "op": "==",
+                  "value": true
+                }
+              ]
+            },
+            "outcome": {
+              "include_in_gfa": false
+            },
+            "notes": [
+              "All three listed criteria must be met to exclude area from GFA; 'recessed' and '1st floor' are scoping constraints"
+            ]
+          },
+          {
+            "id": "R1-C2",
+            "type": "default_else",
+            "logic": {
+              "else_of": "R1-C1"
+            },
+            "outcome": {
+              "include_in_gfa": true
+            }
+          }
+        ],
+        "Exceptions": [],
+        "Relationships": [
+          {
+            "type": "dependency",
+            "description": "If Condition R1-C2 results in include_in_gfa = true, and the porch height above finished floor exceeds 17 ft, Rule 2 applies to count the area again as 2nd story equivalency",
+            "references": [
+              "Rule 2"
+            ]
+          },
+          {
+            "type": "illustrative_examples",
+            "description": "Example A complies (depth < 10', ceiling below 2nd floor, exterior side open) and does not count toward GFA; Example B violates depth and ceiling criteria, so counts toward GFA"
+          }
+        ]
+      },
+      {
+        "Qualifiers": {
+          "scope": [
+            "Story equivalency counting policy as applied to porch spaces (and generally to one-story construction)"
+          ],
+          "applicability": [
+            "Determination of additional '2nd story equivalency' count when height thresholds are exceeded for areas that otherwise count toward GFA"
+          ],
+          "exclusions": [
+            "Spaces that do not count toward GFA are outside the counting-again logic"
+          ],
+          "ambiguities": [
+            "Exact handling of height exactly equal to 17' is unclear: 'one-story' is defined as less than 17', but double-counting is triggered by 'higher than 17''; equality case (== 17') is ambiguous",
+            "Term '2nd story equivalency' is not defined procedurally (e.g., whether it is an additional GFA count, FAR penalty, or separate metric)"
+          ]
+        },
+        "Variables": [
+          {
+            "name": "height_above_finished_floor",
+            "description": "Vertical height of the relevant space measured from finished floor",
+            "type": "number",
+            "unit": "ft"
+          },
+          {
+            "name": "counts_toward_gfa",
+            "description": "Whether the space is already counted in GFA (e.g., per Rule 1 outcome)",
+            "type": "boolean",
+            "required_value": true
+          },
+          {
+            "name": "second_story_equivalency_count",
+            "description": "Count of story equivalency for the area",
+            "type": "integer",
+            "derived": true
+          }
+        ],
+        "Constants": [
+          {
+            "name": "ONE_STORY_HEIGHT_MAX",
+            "value": 17,
+            "unit": "ft",
+            "description": "City policy: one-story construction is less than 17' above finished floor (strictly < 17')"
+          },
+          {
+            "name": "DOUBLE_COUNT_TRIGGER",
+            "value": 17,
+            "unit": "ft",
+            "description": "Spaces higher than 17' above finished floor are counted again as 2nd story equivalency (strictly > 17')"
+          }
+        ],
+        "Conditions": [
+          {
+            "id": "R2-C1",
+            "type": "double_count_trigger",
+            "logic": {
+              "all": [
+                {
+                  "var": "counts_toward_gfa",
+                  "op": "==",
+                  "value": true
+                },
+                {
+                  "var": "height_above_finished_floor",
+                  "op": ">",
+                  "value": 17,
+                  "unit": "ft"
+                }
+              ]
+            },
+            "outcome": {
+              "second_story_equivalency_count": 2
+            },
+            "notes": [
+              "The phrase 'will count again as 2nd story equivalency' is implemented as total count = 2"
+            ]
+          },
+          {
+            "id": "R2-C2",
+            "type": "default_else",
+            "logic": {
+              "else_of": "R2-C1"
+            },
+            "outcome": {
+              "second_story_equivalency_count": 1
+            },
+            "notes": [
+              "Equality case (== 17') defaults to no additional count per the 'higher than 17'' trigger, but this conflicts with the strict '< 17'' definition of one-story; treat as ambiguous in policy and confirm with authority"
+            ]
+          }
+        ],
+        "Exceptions": [],
+        "Relationships": [
+          {
+            "type": "input_dependency",
+            "description": "Requires prior determination that the porch area counts toward GFA (e.g., failure of Rule 1's exclusion criteria)",
+            "references": [
+              "Rule 1"
+            ]
+          }
+        ]
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "[\n  {\n    \"Qualifiers\": {\n      \"scope\": [\n        \"Recessed porches located on the ground/1st floor\"\n      ],\n      \"applicability\": [\n        \"Determination of whether porch area is included in Gross Floor Area (GFA) calculations\"\n      ],\n      \"exclusions\": [\n        \"Porches not on the ground/1st floor (not within this rule\u2019s scope)\",\n        \"Non-recessed porches (title indicates recessed porches; non-recessed not addressed by this rule)\"\n      ],\n      \"ambiguities\": [\n        \"Term 'substantially open' is not quantified (no percentage or measurement standard provided)\",\n        \"Boundary condition for 'Porch ceiling below 2nd floor' is unclear for ceilings exactly at the 2nd floor line\",\n        \"Equivalence of 'ground floor' and '1st floor' is implied but not explicitly defined\",\n        \"What qualifies as a 'recessed porch' is not defined on this page\"\n      ]\n    },\n    \"Variables\": [\n      {\n        \"name\": \"porch_depth\",\n        \"description\": \"Horizontal depth of the recessed porch\",\n        \"type\": \"number\",\n        \"unit\": \"ft\",\n        \"constraints\": {\n          \"threshold\": 10,\n          \"comparator\": \"<\"\n        }\n      },\n      {\n        \"name\": \"porch_ceiling_position_relative_to_2nd_floor_line\",\n        \"description\": \"Vertical relationship of porch ceiling to the 2nd floor line\",\n        \"type\": \"enum\",\n        \"values\": [\n          \"below\",\n          \"at\",\n          \"above\"\n        ],\n        \"required_value\": \"below\"\n      },\n      {\n        \"name\": \"exterior_side_substantially_open\",\n        \"description\": \"Whether the exterior side of the porch is substantially open\",\n        \"type\": \"boolean\",\n        \"note\": \"No quantitative threshold is provided for 'substantially open'\"\n      },\n      {\n        \"name\": \"floor_level\",\n        \"description\": \"Floor level of the porch\",\n        \"type\": \"enum\",\n        \"values\": [\n          \"ground/1st\",\n          \"upper\"\n        ],\n        \"required_value\": \"ground/1st\"\n      },\n      {\n        \"name\": \"include_in_gfa\",\n        \"description\": \"Outcome flag indicating if porch area is included in GFA\",\n        \"type\": \"boolean\",\n        \"derived\": true\n      }\n    ],\n    \"Constants\": [\n      {\n        \"name\": \"DEPTH_THRESHOLD\",\n        \"value\": 10,\n        \"unit\": \"ft\",\n        \"description\": \"Maximum porch depth to qualify for GFA exclusion (strictly less than 10')\"\n      },\n      {\n        \"name\": \"REFERENCE_PLANE_SECOND_FLOOR_LINE\",\n        \"value\": null,\n        \"unit\": null,\n        \"description\": \"Reference plane used to determine porch ceiling position\"\n      },\n      {\n        \"name\": \"REFERENCE_PLANE_FINISHED_FLOOR\",\n        \"value\": null,\n        \"unit\": null,\n        \"description\": \"Reference plane used for height measurements in related policy\"\n      }\n    ],\n    \"Conditions\": [\n      {\n        \"id\": \"R1-C1\",\n        \"type\": \"inclusion_test\",\n        \"logic\": {\n          \"all\": [\n            {\n              \"var\": \"floor_level\",\n              \"op\": \"==\",\n              \"value\": \"ground/1st\"\n            },\n            {\n              \"var\": \"porch_depth\",\n              \"op\": \"<\",\n              \"value\": 10,\n              \"unit\": \"ft\"\n            },\n            {\n              \"var\": \"porch_ceiling_position_relative_to_2nd_floor_line\",\n              \"op\": \"==\",\n              \"value\": \"below\"\n            },\n            {\n              \"var\": \"exterior_side_substantially_open\",\n              \"op\": \"==\",\n              \"value\": true\n            }\n          ]\n        },\n        \"outcome\": {\n          \"include_in_gfa\": false\n        },\n        \"notes\": [\n          \"All three listed criteria must be met to exclude area from GFA; 'recessed' and '1st floor' are scoping constraints\"\n        ]\n      },\n      {\n        \"id\": \"R1-C2\",\n        \"type\": \"default_else\",\n        \"logic\": {\n          \"else_of\": \"R1-C1\"\n        },\n        \"outcome\": {\n          \"include_in_gfa\": true\n        }\n      }\n    ],\n    \"Exceptions\": [],\n    \"Relationships\": [\n      {\n        \"type\": \"dependency\",\n        \"description\": \"If Condition R1-C2 results in include_in_gfa = true, and the porch height above finished floor exceeds 17 ft, Rule 2 applies to count the area again as 2nd story equivalency\",\n        \"references\": [\n          \"Rule 2\"\n        ]\n      },\n      {\n        \"type\": \"illustrative_examples\",\n        \"description\": \"Example A complies (depth < 10', ceiling below 2nd floor, exterior side open) and does not count toward GFA; Example B violates depth and ceiling criteria, so counts toward GFA\"\n      }\n    ]\n  },\n  {\n    \"Qualifiers\": {\n      \"scope\": [\n        \"Story equivalency counting policy as applied to porch spaces (and generally to one-story construction)\"\n      ],\n      \"applicability\": [\n        \"Determination of additional '2nd story equivalency' count when height thresholds are exceeded for areas that otherwise count toward GFA\"\n      ],\n      \"exclusions\": [\n        \"Spaces that do not count toward GFA are outside the counting-again logic\"\n      ],\n      \"ambiguities\": [\n        \"Exact handling of height exactly equal to 17' is unclear: 'one-story' is defined as less than 17', but double-counting is triggered by 'higher than 17''; equality case (== 17') is ambiguous\",\n        \"Term '2nd story equivalency' is not defined procedurally (e.g., whether it is an additional GFA count, FAR penalty, or separate metric)\"\n      ]\n    },\n    \"Variables\": [\n      {\n        \"name\": \"height_above_finished_floor\",\n        \"description\": \"Vertical height of the relevant space measured from finished floor\",\n        \"type\": \"number\",\n        \"unit\": \"ft\"\n      },\n      {\n        \"name\": \"counts_toward_gfa\",\n        \"description\": \"Whether the space is already counted in GFA (e.g., per Rule 1 outcome)\",\n        \"type\": \"boolean\",\n        \"required_value\": true\n      },\n      {\n        \"name\": \"second_story_equivalency_count\",\n        \"description\": \"Count of story equivalency for the area\",\n        \"type\": \"integer\",\n        \"derived\": true\n      }\n    ],\n    \"Constants\": [\n      {\n        \"name\": \"ONE_STORY_HEIGHT_MAX\",\n        \"value\": 17,\n        \"unit\": \"ft\",\n        \"description\": \"City policy: one-story construction is less than 17' above finished floor (strictly < 17')\"\n      },\n      {\n        \"name\": \"DOUBLE_COUNT_TRIGGER\",\n        \"value\": 17,\n        \"unit\": \"ft\",\n        \"description\": \"Spaces higher than 17' above finished floor are counted again as 2nd story equivalency (strictly > 17')\"\n      }\n    ],\n    \"Conditions\": [\n      {\n        \"id\": \"R2-C1\",\n        \"type\": \"double_count_trigger\",\n        \"logic\": {\n          \"all\": [\n            {\n              \"var\": \"counts_toward_gfa\",\n              \"op\": \"==\",\n              \"value\": true\n            },\n            {\n              \"var\": \"height_above_finished_floor\",\n              \"op\": \">\",\n              \"value\": 17,\n              \"unit\": \"ft\"\n            }\n          ]\n        },\n        \"outcome\": {\n          \"second_story_equivalency_count\": 2\n        },\n        \"notes\": [\n          \"The phrase 'will count again as 2nd story equivalency' is implemented as total count = 2\"\n        ]\n      },\n      {\n        \"id\": \"R2-C2\",\n        \"type\": \"default_else\",\n        \"logic\": {\n          \"else_of\": \"R2-C1\"\n        },\n        \"outcome\": {\n          \"second_story_equivalency_count\": 1\n        },\n        \"notes\": [\n          \"Equality case (== 17') defaults to no additional count per the 'higher than 17'' trigger, but this conflicts with the strict '< 17'' definition of one-story; treat as ambiguous in policy and confirm with authority\"\n        ]\n      }\n    ],\n    \"Exceptions\": [],\n    \"Relationships\": [\n      {\n        \"type\": \"input_dependency\",\n        \"description\": \"Requires prior determination that the porch area counts toward GFA (e.g., failure of Rule 1's exclusion criteria)\",\n        \"references\": [\n          \"Rule 1\"\n        ]\n      }\n    ]\n  }\n]",
+    "response_time": 105.03210401535034,
+    "input_tokens": 701,
+    "output_tokens": 5494,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 15:52:03",
+  "model": "openai/gpt-5",
+  "success": true
+}

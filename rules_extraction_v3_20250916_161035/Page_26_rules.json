@@ -1,0 +1,89 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_26.md",
+  "file_name": "Page_26.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "rule": "Standard Setbacks by Zone",
+        "Qualifiers": {
+          "Scope": "Defines minimum required yard dimensions (front, rear, interior side, street side) for lots, creating a buildable area and surrounding open space.",
+          "Applicability": "Applies in 'most cases' to specific residential zones (R-1, R-1(7000), R-1(8000), R-1(10000), R-1(20000)), flag lots, substandard lots, and substandard corner lots.",
+          "Exclusions": "Standard setbacks for Front and Street Side may be superseded by Special Setbacks or Contextual Setbacks if they are applicable and result in a greater setback dimension."
+        },
+        "Variables": {
+          "zone_type": "The specific residential zone designation of the lot (e.g., R-1, R-1(7000)).",
+          "lot_type": "The classification of the lot (e.g., standard, flag lot, substandard lot, substandard corner lot).",
+          "lot_width": "The width of a corner lot, used as a conditional parameter.",
+          "contextual_setback": "A variable front setback value determined by the context of the surrounding area. Its calculation method is not defined in this text. Flagged as ambiguous.",
+          "special_setback": "A variable front or street side setback value determined by the street the lot is on. See 'Special Setbacks' rule."
+        },
+        "Constants": {
+          "R-1_Setbacks": "Front: 20 ft (or Contextual), Rear: 20 ft, Interior Side: 6 ft, Street Side: 16 ft",
+          "R-1(7000)_Setbacks": "Front: 20 ft (or Contextual), Rear: 20 ft, Interior Side: 8 ft, Street Side: 16 ft",
+          "R-1(8000)_Setbacks": "Front: 20 ft (or Contextual), Rear: 20 ft, Interior Side: 8 ft, Street Side: 16 ft",
+          "R-1(10000)_Setbacks": "Front: 20 ft (or Contextual), Rear: 20 ft, Interior Side: 8 ft, Street Side: 16 ft",
+          "R-1(20000)_Setbacks": "Front: 20 ft (or Contextual), Rear: 20 ft, Interior Side: 8 ft, Street Side: 16 ft",
+          "Flag_Lot_Setbacks": "Front: 10 ft, Rear: 20 ft, Interior Side: 'see zone', Street Side: 'na'",
+          "Substandard_Lot_Setbacks": "Front: 20 ft (or Contextual), Rear: 20 ft, Interior Side: 'see zone', Street Side: 16 ft",
+          "Substandard_Corner_Lot_Setbacks": "Front: 20 ft (or Contextual), Rear: 20 ft, Interior Side: 'see zone', Street Side: 10 ft",
+          "Contextual_Setback_Application_Threshold": "30 ft",
+          "Substandard_Corner_Lot_Width_Threshold": "50 ft",
+          "Unit_Assumption": "All dimensional values are assumed to be in feet, as indicated by the use of ' in the source text."
+        },
+        "Conditions": {
+          "Mandatory": "Required yards must be maintained as open space areas.",
+          "Front_Setback_Logic": "IF Contextual Setback > 30 ft, THEN the Contextual Setback applies. OTHERWISE, the 20 ft setback applies.",
+          "Front_And_StreetSide_Logic": "IF both a Contextual and Special Setback apply, the greater of the two setbacks is required.",
+          "Substandard_Corner_Lot_Applicability": "The specific rule for 'Substandard corner lot' applies only IF lot width is less than 50 ft.",
+          "Interior_Side_Dependency": "For Flag lots, Substandard lots, and Substandard corner lots, the Interior Side setback value is determined by the requirement of the base zone ('see zone'). This requires a lookup outside this rule."
+        },
+        "Exceptions": {
+          "Contextual_Setback_Alternative": "A 'Contextual' setback is an alternative for the Front setback instead of the standard 20 ft value, subject to the 30 ft threshold condition.",
+          "Special_Setback_Override": "A 'Special' setback may apply to Front and Street Side setbacks, which would override the standard values listed in the table. See 'Special Setbacks' rule."
+        },
+        "Relationships": {
+          "Hierarchical": "This rule is a primary component under the 'Setbacks' topic. It contains a table-based structure organized by zone and lot type.",
+          "Cross-references": "Code Sections: 18.12.040(a) Table 2, 18.12.040(a,c,e,&i), 18.04.040(a), 18.040.030(84, 87, 91, 128, & 146). Logically linked to the 'Special Setbacks' rule.",
+          "Logical_Dependencies": "The final required Front and Street Side setbacks are dependent on the evaluation of 'Contextual Setback' and 'Special Setback' rules. The Interior Side setback for certain lot types is dependent on the base zone's rules."
+        }
+      },
+      {
+        "rule": "Special Setbacks",
+        "Qualifiers": {
+          "Scope": "Defines specific setback requirements that supersede standard setbacks for lots located on a pre-defined list of streets.",
+          "Applicability": "Applies to lots on the following streets: Alma St, Arastradero Rd, Ash St, California Ave.",
+          "Exclusions": "This rule is superseded if a larger Contextual Setback is applicable to the same lot."
+        },
+        "Variables": {
+          "street_name": "The name of the street where the lot is located.",
+          "special_setback_value": "The specific setback dimension for the street. Flagged as ambiguous: The text does not provide the numerical values for these setbacks.",
+          "contextual_setback_value": "A variable setback value determined by the surrounding area, which can override this rule if larger."
+        },
+        "Constants": {
+          "Applicable_Streets_List": "Alma St, Arastradero Rd, Ash St, California Ave"
+        },
+        "Conditions": {
+          "Mandatory": "Special setbacks override standard setbacks.",
+          "Conditional_Logic": "IF a lot is on a specified street, the Special Setback applies. HOWEVER, IF a Contextual Setback also applies, the final required setback is the greater of the Special Setback and the Contextual Setback."
+        },
+        "Exceptions": {
+          "Contextual_Setback_Override": "A larger Contextual Setback will override the Special Setback value."
+        },
+        "Relationships": {
+          "Hierarchical": "This rule is a sub-category under the 'Setbacks' topic, functioning as an exception or override to the main rule.",
+          "Cross-references": "Refers to the 'Standard Setbacks' rule, which it overrides. Refers to the concept of 'Contextual Setback'.",
+          "Logical_Dependencies": "This rule acts as a conditional override to the 'Standard Setbacks' rule for Front and Street Side setbacks on specific streets. Its own application is conditional on a comparison with the 'Contextual Setback' value."
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n  {\n    \"rule\": \"Standard Setbacks by Zone\",\n    \"Qualifiers\": {\n      \"Scope\": \"Defines minimum required yard dimensions (front, rear, interior side, street side) for lots, creating a buildable area and surrounding open space.\",\n      \"Applicability\": \"Applies in 'most cases' to specific residential zones (R-1, R-1(7000), R-1(8000), R-1(10000), R-1(20000)), flag lots, substandard lots, and substandard corner lots.\",\n      \"Exclusions\": \"Standard setbacks for Front and Street Side may be superseded by Special Setbacks or Contextual Setbacks if they are applicable and result in a greater setback dimension.\"\n    },\n    \"Variables\": {\n      \"zone_type\": \"The specific residential zone designation of the lot (e.g., R-1, R-1(7000)).\",\n      \"lot_type\": \"The classification of the lot (e.g., standard, flag lot, substandard lot, substandard corner lot).\",\n      \"lot_width\": \"The width of a corner lot, used as a conditional parameter.\",\n      \"contextual_setback\": \"A variable front setback value determined by the context of the surrounding area. Its calculation method is not defined in this text. Flagged as ambiguous.\",\n      \"special_setback\": \"A variable front or street side setback value determined by the street the lot is on. See 'Special Setbacks' rule.\"\n    },\n    \"Constants\": {\n      \"R-1_Setbacks\": \"Front: 20 ft (or Contextual), Rear: 20 ft, Interior Side: 6 ft, Street Side: 16 ft\",\n      \"R-1(7000)_Setbacks\": \"Front: 20 ft (or Contextual), Rear: 20 ft, Interior Side: 8 ft, Street Side: 16 ft\",\n      \"R-1(8000)_Setbacks\": \"Front: 20 ft (or Contextual), Rear: 20 ft, Interior Side: 8 ft, Street Side: 16 ft\",\n      \"R-1(10000)_Setbacks\": \"Front: 20 ft (or Contextual), Rear: 20 ft, Interior Side: 8 ft, Street Side: 16 ft\",\n      \"R-1(20000)_Setbacks\": \"Front: 20 ft (or Contextual), Rear: 20 ft, Interior Side: 8 ft, Street Side: 16 ft\",\n      \"Flag_Lot_Setbacks\": \"Front: 10 ft, Rear: 20 ft, Interior Side: 'see zone', Street Side: 'na'\",\n      \"Substandard_Lot_Setbacks\": \"Front: 20 ft (or Contextual), Rear: 20 ft, Interior Side: 'see zone', Street Side: 16 ft\",\n      \"Substandard_Corner_Lot_Setbacks\": \"Front: 20 ft (or Contextual), Rear: 20 ft, Interior Side: 'see zone', Street Side: 10 ft\",\n      \"Contextual_Setback_Application_Threshold\": \"30 ft\",\n      \"Substandard_Corner_Lot_Width_Threshold\": \"50 ft\",\n      \"Unit_Assumption\": \"All dimensional values are assumed to be in feet, as indicated by the use of ' in the source text.\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"Required yards must be maintained as open space areas.\",\n      \"Front_Setback_Logic\": \"IF Contextual Setback > 30 ft, THEN the Contextual Setback applies. OTHERWISE, the 20 ft setback applies.\",\n      \"Front_And_StreetSide_Logic\": \"IF both a Contextual and Special Setback apply, the greater of the two setbacks is required.\",\n      \"Substandard_Corner_Lot_Applicability\": \"The specific rule for 'Substandard corner lot' applies only IF lot width is less than 50 ft.\",\n      \"Interior_Side_Dependency\": \"For Flag lots, Substandard lots, and Substandard corner lots, the Interior Side setback value is determined by the requirement of the base zone ('see zone'). This requires a lookup outside this rule.\"\n    },\n    \"Exceptions\": {\n      \"Contextual_Setback_Alternative\": \"A 'Contextual' setback is an alternative for the Front setback instead of the standard 20 ft value, subject to the 30 ft threshold condition.\",\n      \"Special_Setback_Override\": \"A 'Special' setback may apply to Front and Street Side setbacks, which would override the standard values listed in the table. See 'Special Setbacks' rule.\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"This rule is a primary component under the 'Setbacks' topic. It contains a table-based structure organized by zone and lot type.\",\n      \"Cross-references\": \"Code Sections: 18.12.040(a) Table 2, 18.12.040(a,c,e,&i), 18.04.040(a), 18.040.030(84, 87, 91, 128, & 146). Logically linked to the 'Special Setbacks' rule.\",\n      \"Logical_Dependencies\": \"The final required Front and Street Side setbacks are dependent on the evaluation of 'Contextual Setback' and 'Special Setback' rules. The Interior Side setback for certain lot types is dependent on the base zone's rules.\"\n    }\n  },\n  {\n    \"rule\": \"Special Setbacks\",\n    \"Qualifiers\": {\n      \"Scope\": \"Defines specific setback requirements that supersede standard setbacks for lots located on a pre-defined list of streets.\",\n      \"Applicability\": \"Applies to lots on the following streets: Alma St, Arastradero Rd, Ash St, California Ave.\",\n      \"Exclusions\": \"This rule is superseded if a larger Contextual Setback is applicable to the same lot.\"\n    },\n    \"Variables\": {\n      \"street_name\": \"The name of the street where the lot is located.\",\n      \"special_setback_value\": \"The specific setback dimension for the street. Flagged as ambiguous: The text does not provide the numerical values for these setbacks.\",\n      \"contextual_setback_value\": \"A variable setback value determined by the surrounding area, which can override this rule if larger.\"\n    },\n    \"Constants\": {\n      \"Applicable_Streets_List\": \"Alma St, Arastradero Rd, Ash St, California Ave\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"Special setbacks override standard setbacks.\",\n      \"Conditional_Logic\": \"IF a lot is on a specified street, the Special Setback applies. HOWEVER, IF a Contextual Setback also applies, the final required setback is the greater of the Special Setback and the Contextual Setback.\"\n    },\n    \"Exceptions\": {\n      \"Contextual_Setback_Override\": \"A larger Contextual Setback will override the Special Setback value.\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"This rule is a sub-category under the 'Setbacks' topic, functioning as an exception or override to the main rule.\",\n      \"Cross-references\": \"Refers to the 'Standard Setbacks' rule, which it overrides. Refers to the concept of 'Contextual Setback'.\",\n      \"Logical_Dependencies\": \"This rule acts as a conditional override to the 'Standard Setbacks' rule for Front and Street Side setbacks on specific streets. Its own application is conditional on a comparison with the 'Contextual Setback' value.\"\n    }\n  }\n]\n```",
+    "response_time": 48.09047198295593,
+    "input_tokens": 1170,
+    "output_tokens": 5588,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 16:12:41",
+  "model": "google/gemini-2.5-pro",
+  "success": true
+}

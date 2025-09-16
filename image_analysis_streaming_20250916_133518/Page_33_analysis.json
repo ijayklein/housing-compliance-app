@@ -1,0 +1,12 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_33.png",
+  "image_name": "Page_33.png",
+  "analysis": {
+    "raw_content": "I can extract the following information from this page of the city planning technical manual:\n\n## Figure 21: Plan view showing how to determine average grade\n\n**Text content:**\n\"When measuring daylight plane, height is measured from the average of the grade at the midpoint of the building and the grade of the closest point on the abutting site.\"\n\n**Diagram elements:**\n- Shows three property sections with \"Rear yard,\" \"Front yard\" areas\n- Contains \"Subject House\" in center section\n- Shows \"Neighbor\" properties on left and right\n- Displays \"Buildable area\" zones\n- Includes measurement points and grade lines\n- Shows required setbacks with dashed lines\n\n**Key/Legend:**\n- Lot line (solid line)\n- Required setbacks (dashed line)\n- Sidewalk (hatched pattern)\n- Buildable area (dotted pattern)\n- Existing house (solid gray)\n\n## Figure 22: Detail showing allowable eave protrusion\n\n**Technical specifications:**\n- Shows \"2' max.\" measurement for eave protrusion\n- Indicates \"wall plane\" \n- States \"The daylight plane must clear the point where the wall plane intersects the top of the roof material\"\n\n## Certification of daylight plane compliance:\n\n\"Upon request by the building official any person building or making improvements to a structure shall provide a certification that the structure, as built, complies with the daylight plane provisions in Code Section 18.12.040(a). Such certification shall be prepared by a licensed engineer, architect, or surveyor, and shall be provided prior to frame inspection. (Sections 18.12.040(j)).\"\n\n**Page number:** 27",
+    "content_length": 1560,
+    "parse_error": false
+  },
+  "timestamp": "2025-09-16 13:37:01",
+  "model": "anthropic/claude-sonnet-4",
+  "success": true
+}

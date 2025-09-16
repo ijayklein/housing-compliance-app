@@ -1,0 +1,88 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_52.png",
+  "image_name": "Page_52.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Height\n&\ngrade\n\nHeight allowances enable a variety of architectural styles while preserving the residential scale of our neighborhoods as well as the privacy and natural light available to each lot.\n\nCode sections\nPage 46\n18.12.040 (a) Table 2\nPage 47\n18.04.030 (64) (b)\n\n46\n\nHeight\n\nStructure                                Max. height\n                                        to roof peak\n\nMain dwelling on a standard lot\nwith a roof slope \u226512:12               30'\n\nMain dwelling on a standard lot\nwith a roof slope \u226512:12               33'\n\nMain dwelling on a substandard\nor flag lot                            17'\n\nAccessory structure in rear or\nside yard                              12'\n\n2nd-dwelling units                     17'\n\nFig 42 Comparison of roof slopes\n\n33'                                    Height measured to top of roof material\n30'\n\n12 : 14    12 : 12    12 : 10    12 : 6    12 : 3\n\nHeight limit = 33'                     Height limit = 30'\n\nFig 43 Determining slope of roof\n\n12\"\nrun\n\n6\"\nrise\n\nRoof slope is the vertical rise in inches for every horizontal distance of twelve inches (called the \"run\"). It is expressed as rise:run or, in this example 6:12.\n\nNote: On a drawing this slope might also be represented as:\n\n1:2\n6     or     1\n\n2",
+      "visual_elements": [
+        {
+          "type": "table",
+          "description": "Height specifications table showing different structure types and their maximum height to roof peak. Contains 5 rows with structure descriptions and corresponding height limits (30', 33', 17', 12', 17')",
+          "location": "upper middle of page"
+        },
+        {
+          "type": "diagram",
+          "description": "Fig 42 - Comparison of roof slopes showing 5 house silhouettes with different roof slopes (12:14, 12:12, 12:10, 12:6, 12:3) under height limits of 33' and 30'",
+          "location": "lower middle of page"
+        },
+        {
+          "type": "diagram",
+          "description": "Fig 43 - Technical diagram showing how to determine roof slope with a 12\" run and 6\" rise measurement, including visual representation of slope calculation",
+          "location": "right side of page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Main dwelling standard lot roof slope \u226512:12",
+          "value": "30",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Main dwelling standard lot roof slope \u226512:12",
+          "value": "33",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Main dwelling substandard/flag lot",
+          "value": "17",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Accessory structure rear/side yard",
+          "value": "12",
+          "unit": "feet"
+        },
+        {
+          "parameter": "2nd-dwelling units",
+          "value": "17",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Roof slope measurement run",
+          "value": "12",
+          "unit": "inches"
+        },
+        {
+          "parameter": "Example roof slope rise",
+          "value": "6",
+          "unit": "inches"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Height & grade",
+        "subheadings": [
+          "Height",
+          "Fig 42 Comparison of roof slopes",
+          "Fig 43 Determining slope of roof"
+        ],
+        "sections": [
+          "Height allowances description",
+          "Code sections",
+          "Height specifications table",
+          "Roof slope diagrams"
+        ]
+      },
+      "additional_notes": [
+        "Page number 46 appears at bottom left",
+        "Gray sidebar contains introductory text and code references",
+        "Technical diagrams include detailed measurement annotations"
+      ],
+      "cross_references": [
+        "Page 46 - 18.12.040 (a) Table 2",
+        "Page 47 - 18.04.030 (64) (b)"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-11 13:45:23",
+  "model_used": "anthropic/claude-sonnet-4"
+}

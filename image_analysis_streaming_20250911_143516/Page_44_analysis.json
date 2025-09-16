@@ -1,0 +1,112 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_44.png",
+  "image_name": "Page_44.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Attached garages/carports site planning\n\n\u2022 Attached garages must comply with same setbacks as main dwelling.\n\nNote: Uncovered spaces must be located\nbeyond the required frontyard and beyond\nthe first 10' of the street-side yard.\n\nFig 33 Examples of site planning solutions for attached garages/carports\n\nInterior lot example\nRear yard\nBuildable area\nInterior-side yard\n1-car\nat-\ntached\nMain dwelling\nFront yard\nDistance of\nfront setback\n\nInterior lot example\nRear yard\nBuildable area\nInterior-side yard\nInterior-side yard\n1-car\nattached\nMain dwelling\nFront yard\n\nCorner lot example\nRear yard\nBuildable area\nStreet-side yard\nMain dwelling\n2-car\nattached\nFront yard\n\n10'\n\nKey\nCurb\nLot line\nSidewalk\nRequired\nsetbacks\nBuildable\narea\nDwelling\nParking\nstructure\nNo-parking\narea\nUncovered\nspace\n\nA 1-car garage with 2nd space\n(uncovered) located in the sideyard\n\nB 1-car garage with 2nd space (uncovered)\nlocated in the driveway\n\nC 2-car garage with no uncovered spaces\n\n38",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Figure 33 is a top-down site plan diagram illustrating three different scenarios (A, B, C) for attached garages and parking on residential lots. It shows property lines, setbacks, dwelling footprints, and parking locations. A key on the right explains the symbology used.",
+          "location": "Middle and bottom of the page"
+        },
+        {
+          "type": "diagram",
+          "description": "Sub-diagram 'A' shows an 'Interior lot example' with a main dwelling. A '1-car attached' garage is located on the left side of the dwelling. An 'Uncovered space' for a second vehicle is shown in the 'Interior-side yard' behind the 'Distance of front setback' line. The diagram labels the 'Front yard' and 'Rear yard'.",
+          "location": "Bottom left"
+        },
+        {
+          "type": "diagram",
+          "description": "Sub-diagram 'B' shows an 'Interior lot example' with a main dwelling. A '1-car attached' garage is located in front of the main dwelling. An 'Uncovered space' for a second vehicle is shown in the driveway, directly in front of the attached garage. The diagram labels 'Front yard', 'Rear yard', and 'Interior-side yard'.",
+          "location": "Bottom middle"
+        },
+        {
+          "type": "diagram",
+          "description": "Sub-diagram 'C' shows a 'Corner lot example' with a main dwelling. A '2-car attached' garage is located on the right side of the dwelling, adjacent to the 'Street-side yard'. A '10'' dimension is indicated as a setback from the street-side lot line, creating a 'No-parking area'. The diagram labels 'Front yard', 'Rear yard', and 'Street-side yard'.",
+          "location": "Bottom right"
+        },
+        {
+          "type": "table",
+          "description": "A 'Key' or legend that defines the graphical elements used in the diagrams. It includes:\n- Solid black line: Curb\n- Dashed black line: Lot line\n- Tiled gray rectangle: Sidewalk\n- Long dashed line: Required setbacks\n- Light gray area with dashed border: Buildable area\n- Medium gray solid area: Dwelling\n- Dark gray/black solid area: Parking structure\n- Hatched area: No-parking area\n- Icon of a car: Uncovered space",
+          "location": "Middle right"
+        },
+        {
+          "type": "figure",
+          "description": "A small icon of a top-down view of a car, used to represent an 'Uncovered space' in the diagrams and the key.",
+          "location": "Within diagrams A, B and the Key"
+        },
+        {
+          "type": "figure",
+          "description": "A grey rectangular box with white text, labeled 'Note', providing a specific regulation about uncovered spaces.",
+          "location": "Top right"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Street-side yard setback for uncovered spaces",
+          "value": "10",
+          "unit": "feet (' symbol)"
+        },
+        {
+          "parameter": "Figure number",
+          "value": "33",
+          "unit": null
+        },
+        {
+          "parameter": "Page number",
+          "value": "38",
+          "unit": null
+        },
+        {
+          "parameter": "Garage capacity in example A",
+          "value": "1",
+          "unit": "car"
+        },
+        {
+          "parameter": "Additional parking in example A",
+          "value": "2nd",
+          "unit": "space (uncovered)"
+        },
+        {
+          "parameter": "Garage capacity in example B",
+          "value": "1",
+          "unit": "car"
+        },
+        {
+          "parameter": "Additional parking in example B",
+          "value": "2nd",
+          "unit": "space (uncovered)"
+        },
+        {
+          "parameter": "Garage capacity in example C",
+          "value": "2",
+          "unit": "car"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Attached garages/carports site planning",
+        "subheadings": [
+          "Note:",
+          "Fig 33 Examples of site planning solutions for attached garages/carports",
+          "Key"
+        ],
+        "sections": [
+          "A 1-car garage with 2nd space (uncovered) located in the sideyard",
+          "B 1-car garage with 2nd space (uncovered) located in the driveway",
+          "C 2-car garage with no uncovered spaces"
+        ]
+      },
+      "additional_notes": [
+        "The page number '38' is located in the bottom left corner.",
+        "The page appears to be from a professionally printed technical manual or guide.",
+        "The layout consists of a title, a single bullet point rule, a large diagram with three sub-examples (A, B, C), a note box, and a key.",
+        "The text '1-car at-tached' in diagram A is split across two lines due to space constraints."
+      ],
+      "cross_references": [
+        "Fig 33"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-11 14:36:40",
+  "model_used": "google/gemini-2.5-pro"
+}

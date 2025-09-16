@@ -1,0 +1,62 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_22.png",
+  "image_name": "Page_22.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Attic space & equivalencies\nVoluminous spaces in a structure contribute to the mass even if these areas are not used or described in the floor plan. The 2nd & 3rd floor equivalency addresses how these areas count toward the gross floor area.\n\nCode sections\n18.04.030(a)(65)\n18.12.040(b)Table 3\n\nAttic, closet, & perimeter spaces\nOn all accessible floors, areas with at least 5' of head clearance count toward the gross floor area regardless of the floor plan or actual usage of the space.\n\nIn Fig 11 below, the highlighted areas count as follows:\n\n\u2022 Area A of this 3rd floor (accessible via stairs), has 5' of head clearance and counts as 3rd floor area.\n\u2022 Area B of this 2nd floor (accessible via stairs), has 5' of head clearance and is included in the count of the, more obvious, 2nd floor area.\n\nFig 11 Attic, closet, & perimeter spaces\n\nNote: 500 sf of unusable attic space may be exempted for Category 1 & 2 historic homes.\n\nNote:\nMeasurements are from top of floor to underside of the rafter\n\n5'\n\n1st floor",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "A cross-sectional architectural diagram of a house showing attic, closet, and perimeter spaces. The diagram highlights two areas labeled 'A' and 'B'. Area A is located in the attic space above the 3rd floor, and Area B is a smaller highlighted section on the 2nd floor near the perimeter. The diagram includes a vertical measurement line indicating 5 feet of head clearance from the floor to the underside of the rafter. Additional labels indicate the 1st floor level and notes about measurement points.",
+          "location": "Bottom half of the page"
+        },
+        {
+          "type": "text box",
+          "description": "A shaded note box stating: 'Note: 500 sf of unusable attic space may be exempted for Category 1 & 2 historic homes.'",
+          "location": "Upper right quadrant of the page"
+        },
+        {
+          "type": "sidebar",
+          "description": "A vertical sidebar on the left side of the page with the heading 'Attic space & equivalencies' and explanatory text about voluminous spaces contributing to mass and floor area equivalency. Also includes code section references at the bottom.",
+          "location": "Left side of the page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Minimum head clearance for counting floor area",
+          "value": "5",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Exempted unusable attic space for historic homes",
+          "value": "500",
+          "unit": "square feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Attic, closet, & perimeter spaces",
+        "subheadings": [
+          "On all accessible floors, areas with at least 5' of head clearance count toward the gross floor area regardless of the floor plan or actual usage of the space.",
+          "In Fig 11 below, the highlighted areas count as follows:"
+        ],
+        "sections": [
+          "Area A of this 3rd floor (accessible via stairs), has 5' of head clearance and counts as 3rd floor area.",
+          "Area B of this 2nd floor (accessible via stairs), has 5' of head clearance and is included in the count of the, more obvious, 2nd floor area."
+        ]
+      },
+      "additional_notes": [
+        "Page number 16 at bottom left corner.",
+        "Text in the diagram is partially faint but legible.",
+        "No handwritten annotations or stamps detected.",
+        "The note about measurements clarifies that measurements are from top of floor to underside of the rafter."
+      ],
+      "cross_references": [
+        "Code sections 18.04.030(a)(65)",
+        "Code section 18.12.040(b)Table 3",
+        "Reference to Fig 11 within the page"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-14 19:40:56",
+  "model_used": "openai/gpt-4.1-mini"
+}

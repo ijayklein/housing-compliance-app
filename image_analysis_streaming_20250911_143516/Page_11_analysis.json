@@ -1,0 +1,125 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_11.png",
+  "image_name": "Page_11.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "What counts as floor area summary\n\nArchitectural feature                                                                                              Counts?             Illustration\n\nPorches & entry features\n\u2022 Unenclosed porches                                                                                               No                  Fig 5 on pp. 8-10\n\u2022 Enclosed porches                                                                                                 Once                Fig 5 on pp. 8-10\n\u2022 Entry feature \u2264 12' in height                                                                                    No                  Figs 6-8 on pp. 11-13\n\u2022 Entry feature > 12' in height                                                                                    Twice (footprint)   Figs 6-8 on pp. 11-13\n\u2022 1st floor recessed porches < 10' in depth and open on exterior side                                              No                  Fig 9 on p. 14\n\u2022 2nd floor roofed or enclosed porches, arcades, balconies, porticos, breezeways                                   Once                Fig 10 on p. 15\n\nAttics & equivalencies\n\u2022 Attic space where floor to under side of roof rafter distance is < 5'                                            No                  Fig 11 on p. 16\n\u2022 All 2nd floor space (including attics) where head height or distance from top of floor to bottom of rafter is \u2265 5' Once                Fig 11 on p. 16\n\u2022 2nd floor equivalent: areas where height from top of first floor to top of roof material is > 17'                Twice               Fig 12 on p. 17\n\u2022 3rd floor equivalent: areas where height from top of first floor to top of roof material is > 26'                Three times         Fig 12 on p. 17\n    \u25cb Exemption: 3rd floor equivalent, where roof pitch is \u2265 4:12                                                  200 sf exempt\n    \u25cb Exemption: Unusable attic space for Category 1 & 2 historic homes                                            500 sf exempt\n\nBasements\n\u2022 Basements that comply with patio & lightwell requirements of 18.12.070                                         No                  Figs 35, 36, 39, 40 on pp. 39-43\n\u2022 Basements of Category 1 & 2 historic homes or contributing structures in a historic district (even if > 3')      No\n\nOther\n\u2022 Bay windows (if \u2265 18\" above interior flr, does not project > 2', and > 50% windows)                             No                  Fig 13 on p. 18\n\u2022 Architectural appendages like fireplace or buttress footprint                                                    Once                Fig 14 on p. 19\n\nAccessory structures\n\u2022 Accessory structures >120 sf                                                                                     Once\n\u2022 Garages and carports                                                                                             Once\n\u2022 Porte cocheres                                                                                                   No\n\n5",
+      "visual_elements": [
+        {
+          "type": "table",
+          "description": "A three-column summary table that spans the width of the page. The columns are titled 'Architectural feature', 'Counts?', and 'Illustration'. The table lists various architectural features and specifies whether and how they are counted towards the floor area summary. The 'Architectural feature' column is organized with gray-bar subheadings for different categories of features. The 'Counts?' column provides the rule for counting (e.g., 'No', 'Once', 'Twice (footprint)', or an exemption value). The 'Illustration' column provides cross-references to figures and page numbers in the manual.",
+          "location": "Main body of the page, below the main heading."
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Entry feature height",
+          "value": "\u2264 12",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Entry feature height",
+          "value": "> 12",
+          "unit": "feet"
+        },
+        {
+          "parameter": "1st floor recessed porch depth",
+          "value": "< 10",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Attic space floor to rafter distance",
+          "value": "< 5",
+          "unit": "feet"
+        },
+        {
+          "parameter": "2nd floor space head height/rafter distance",
+          "value": "\u2265 5",
+          "unit": "feet"
+        },
+        {
+          "parameter": "2nd floor equivalent height",
+          "value": "> 17",
+          "unit": "feet"
+        },
+        {
+          "parameter": "3rd floor equivalent height",
+          "value": "> 26",
+          "unit": "feet"
+        },
+        {
+          "parameter": "3rd floor equivalent exemption roof pitch",
+          "value": "\u2265 4:12",
+          "unit": "ratio"
+        },
+        {
+          "parameter": "3rd floor equivalent exemption area",
+          "value": "200",
+          "unit": "sf exempt"
+        },
+        {
+          "parameter": "Unusable attic space exemption area (historic homes)",
+          "value": "500",
+          "unit": "sf exempt"
+        },
+        {
+          "parameter": "Basement depth (historic homes)",
+          "value": "> 3",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Bay window height above interior floor",
+          "value": "\u2265 18",
+          "unit": "inches"
+        },
+        {
+          "parameter": "Bay window projection",
+          "value": "> 2",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Bay window glazing percentage",
+          "value": "> 50",
+          "unit": "percent"
+        },
+        {
+          "parameter": "Accessory structure area",
+          "value": "> 120",
+          "unit": "sf"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "What counts as floor area summary",
+        "subheadings": [
+          "Porches & entry features",
+          "Attics & equivalencies",
+          "Basements",
+          "Other",
+          "Accessory structures"
+        ],
+        "sections": [
+          "5"
+        ]
+      },
+      "additional_notes": [
+        "The page is numbered '5' in the bottom right corner.",
+        "The document appears to be a clean, high-quality photocopy or digital original with no handwritten annotations or stamps.",
+        "Bullet points are used to list items: primary items use a solid circle (\u2022) and secondary/exemption items use an open circle (\u25cb)."
+      ],
+      "cross_references": [
+        "Fig 5 on pp. 8-10",
+        "Figs 6-8 on pp. 11-13",
+        "Fig 9 on p. 14",
+        "Fig 10 on p. 15",
+        "Fig 11 on p. 16",
+        "Fig 12 on p. 17",
+        "18.12.070",
+        "Figs 35, 36, 39, 40 on pp. 39-43",
+        "Fig 13 on p. 18",
+        "Fig 14 on p. 19"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-11 14:35:49",
+  "model_used": "google/gemini-2.5-pro"
+}

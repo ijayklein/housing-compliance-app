@@ -1,0 +1,12 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_16.png",
+  "image_name": "Page_16.png",
+  "analysis": {
+    "raw_content": "Here's the extracted information from the images, focusing on crucial zoning rules, regulations, and technical specifications with absolute precision:\n\n**Step 4: Finalize the determination of which segments are closed and which are open, total the linear feet in each category, and compare the totals.**\n\nFor the porch in Fig 5, the summary is as follows:\n\n**Closed**\n*   **Segment A:** 3'\n*   **Segment B:** 8'\n*   **Segment C:** 10'\n*   **Segment E:** 14'\n*   **Total Closed:** 35'\n\n**Open**\n*   **Segment D:** 7'\n*   **Segment F:** 24'\n*   **Segment G:** 4'\n*   **Total Open:** 35'\n\n**Legend for Diagram:**\n*   Black square: Closed segments\n*   Grey square: Open segments\n\n**Diagram Measurements:**\n*   Segment A: 3'\n*   Segment B: 8'\n*   Segment C: 10'\n*   Segment D: 7'\n*   Segment E: 14'\n*   Segment F: 24'\n*   Segment G: 4'\n\n**Conclusion:** The perimeter of the porch in Fig 5 is 50% open and so the porch would **NOT** count toward gross floor area.\n\n**Note:**\n*   If a porch floor is more than 30\" above grade, the porch sides may need to be 36\" high for safety reasons.\n*   This may cause the porch facade to be considered closed.\n*   Possible solutions to make sure the porch sides are considered open are illustrated to the right:\n    *   Railing (ballisters) instead of solid half walls.\n    *   A single safety rail above lower, solid half walls.\n\n**Diagram of Open Porch Side:**\n*   Safety rail\n*   Porch flr\n*   Grade\n*   Dimension from Grade to Porch flr: \u226530\"\n*   Dimension from Porch flr to top of Safety rail: 36\"\n\n**Page Number:** 10",
+    "content_length": 1554,
+    "parse_error": false
+  },
+  "timestamp": "2025-09-16 13:39:01",
+  "model": "google/gemini-2.5-flash",
+  "success": true
+}

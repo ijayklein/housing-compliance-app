@@ -1,0 +1,180 @@
+{
+  "file_path": "markdown_pages/Page_36.md",
+  "file_name": "Page_36.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "rule": "Accessory structures (other than 2nd-dwelling units)",
+        "qualifiers": {
+          "scope": "Accessory structures",
+          "applicability": "Non-dwelling accessory structures",
+          "exclusions": "2nd-dwelling units"
+        },
+        "variables": {
+          "dimensional": [
+            {
+              "name": "setbacks",
+              "description": "Distance from property lines"
+            },
+            {
+              "name": "daylight plane",
+              "description": "Angle or plane to preserve daylight access"
+            }
+          ],
+          "usage": [
+            {
+              "name": "incidental use",
+              "description": "Use must be incidental to main dwelling"
+            }
+          ]
+        },
+        "constants": {
+          "numerical_values": [
+            {
+              "value": 3,
+              "unit": "feet",
+              "description": "Minimum distance from main dwelling"
+            },
+            {
+              "value": 120,
+              "unit": "square feet",
+              "description": "Threshold for requiring a building permit"
+            },
+            {
+              "value": 200,
+              "unit": "square feet",
+              "description": "Threshold for allowing no more than two plumbing fixtures"
+            }
+          ],
+          "specs": [
+            "Must be detached",
+            "May NOT have a kitchen",
+            "Count toward the total lot coverage"
+          ],
+          "standards": [
+            "Subject to accessory-structure height and daylight plane regulations"
+          ]
+        },
+        "conditions": {
+          "mandatory": [
+            "Must have a use that is incidental to main dwelling",
+            "Must be detached and at least 3' from main dwelling",
+            "Count toward the total lot coverage"
+          ],
+          "optional": [],
+          "conditional_logic": [
+            {
+              "condition": "If over 120 sf",
+              "result": [
+                "Require a building permit",
+                "Count towards total gross floor area"
+              ]
+            },
+            {
+              "condition": "If over 200 sf",
+              "result": [
+                "May have no more than two plumbing fixtures"
+              ]
+            }
+          ],
+          "dependencies": []
+        },
+        "exceptions": {
+          "explicit_deviations": [
+            "Accessory structures less than 120 sf do not require a building permit but must still comply with all zoning regulations"
+          ],
+          "alternatives": [],
+          "special_cases": []
+        },
+        "relationships": {
+          "hierarchical": [
+            "Accessory structures located in the buildable area are subject to the same height and daylight plane regulations as the main dwelling"
+          ],
+          "cross_references": [
+            "See Figs 25-26 on p. 32 for accessory-structure height and daylight plane regulations"
+          ],
+          "logical_dependencies": []
+        }
+      },
+      {
+        "rule": "Accessory structures located in the required setback",
+        "qualifiers": {
+          "scope": "Accessory structures in required setback",
+          "applicability": "Non-dwelling accessory structures",
+          "exclusions": []
+        },
+        "variables": {
+          "dimensional": [],
+          "usage": [
+            {
+              "name": "prohibited uses",
+              "description": "May not be used for sleeping or living"
+            }
+          ]
+        },
+        "constants": {
+          "numerical_values": [
+            {
+              "value": 50,
+              "unit": "percent",
+              "description": "Maximum coverage of the rear yard"
+            }
+          ],
+          "specs": [
+            "May not be located in the front yard",
+            "May not be located in the street-side yard",
+            "May not be located in the rear yard of a through lot",
+            "May NOT have a kitchen",
+            "Count toward the total lot coverage"
+          ],
+          "standards": [
+            "Subject to accessory-structure height and daylight plane regulations"
+          ]
+        },
+        "conditions": {
+          "mandatory": [
+            "May not cover more than 50% of the rear yard",
+            "May not be used for sleeping or living",
+            "Count toward the total lot coverage"
+          ],
+          "optional": [],
+          "conditional_logic": [
+            {
+              "condition": "If over 120 sf",
+              "result": [
+                "Require a building permit",
+                "Count towards total gross floor area"
+              ]
+            },
+            {
+              "condition": "If over 200 sf",
+              "result": [
+                "May have no more than two plumbing fixtures"
+              ]
+            }
+          ],
+          "dependencies": []
+        },
+        "exceptions": {
+          "explicit_deviations": [
+            "Accessory structures less than 120 sf do not require a building permit but must still comply with all zoning regulations"
+          ],
+          "alternatives": [],
+          "special_cases": []
+        },
+        "relationships": {
+          "hierarchical": [],
+          "cross_references": [
+            "See Figs 25-26 on p. 32 for accessory-structure height and daylight plane regulations"
+          ],
+          "logical_dependencies": []
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n    {\n        \"rule\": \"Accessory structures (other than 2nd-dwelling units)\",\n        \"qualifiers\": {\n            \"scope\": \"Accessory structures\",\n            \"applicability\": \"Non-dwelling accessory structures\",\n            \"exclusions\": \"2nd-dwelling units\"\n        },\n        \"variables\": {\n            \"dimensional\": [\n                {\n                    \"name\": \"setbacks\",\n                    \"description\": \"Distance from property lines\"\n                },\n                {\n                    \"name\": \"daylight plane\",\n                    \"description\": \"Angle or plane to preserve daylight access\"\n                }\n            ],\n            \"usage\": [\n                {\n                    \"name\": \"incidental use\",\n                    \"description\": \"Use must be incidental to main dwelling\"\n                }\n            ]\n        },\n        \"constants\": {\n            \"numerical_values\": [\n                {\n                    \"value\": 3,\n                    \"unit\": \"feet\",\n                    \"description\": \"Minimum distance from main dwelling\"\n                },\n                {\n                    \"value\": 120,\n                    \"unit\": \"square feet\",\n                    \"description\": \"Threshold for requiring a building permit\"\n                },\n                {\n                    \"value\": 200,\n                    \"unit\": \"square feet\",\n                    \"description\": \"Threshold for allowing no more than two plumbing fixtures\"\n                }\n            ],\n            \"specs\": [\n                \"Must be detached\",\n                \"May NOT have a kitchen\",\n                \"Count toward the total lot coverage\"\n            ],\n            \"standards\": [\n                \"Subject to accessory-structure height and daylight plane regulations\"\n            ]\n        },\n        \"conditions\": {\n            \"mandatory\": [\n                \"Must have a use that is incidental to main dwelling\",\n                \"Must be detached and at least 3' from main dwelling\",\n                \"Count toward the total lot coverage\"\n            ],\n            \"optional\": [],\n            \"conditional_logic\": [\n                {\n                    \"condition\": \"If over 120 sf\",\n                    \"result\": [\n                        \"Require a building permit\",\n                        \"Count towards total gross floor area\"\n                    ]\n                },\n                {\n                    \"condition\": \"If over 200 sf\",\n                    \"result\": [\n                        \"May have no more than two plumbing fixtures\"\n                    ]\n                }\n            ],\n            \"dependencies\": []\n        },\n        \"exceptions\": {\n            \"explicit_deviations\": [\n                \"Accessory structures less than 120 sf do not require a building permit but must still comply with all zoning regulations\"\n            ],\n            \"alternatives\": [],\n            \"special_cases\": []\n        },\n        \"relationships\": {\n            \"hierarchical\": [\n                \"Accessory structures located in the buildable area are subject to the same height and daylight plane regulations as the main dwelling\"\n            ],\n            \"cross_references\": [\n                \"See Figs 25-26 on p. 32 for accessory-structure height and daylight plane regulations\"\n            ],\n            \"logical_dependencies\": []\n        }\n    },\n    {\n        \"rule\": \"Accessory structures located in the required setback\",\n        \"qualifiers\": {\n            \"scope\": \"Accessory structures in required setback\",\n            \"applicability\": \"Non-dwelling accessory structures\",\n            \"exclusions\": []\n        },\n        \"variables\": {\n            \"dimensional\": [],\n            \"usage\": [\n                {\n                    \"name\": \"prohibited uses\",\n                    \"description\": \"May not be used for sleeping or living\"\n                }\n            ]\n        },\n        \"constants\": {\n            \"numerical_values\": [\n                {\n                    \"value\": 50,\n                    \"unit\": \"percent\",\n                    \"description\": \"Maximum coverage of the rear yard\"\n                }\n            ],\n            \"specs\": [\n                \"May not be located in the front yard\",\n                \"May not be located in the street-side yard\",\n                \"May not be located in the rear yard of a through lot\",\n                \"May NOT have a kitchen\",\n                \"Count toward the total lot coverage\"\n            ],\n            \"standards\": [\n                \"Subject to accessory-structure height and daylight plane regulations\"\n            ]\n        },\n        \"conditions\": {\n            \"mandatory\": [\n                \"May not cover more than 50% of the rear yard\",\n                \"May not be used for sleeping or living\",\n                \"Count toward the total lot coverage\"\n            ],\n            \"optional\": [],\n            \"conditional_logic\": [\n                {\n                    \"condition\": \"If over 120 sf\",\n                    \"result\": [\n                        \"Require a building permit\",\n                        \"Count towards total gross floor area\"\n                    ]\n                },\n                {\n                    \"condition\": \"If over 200 sf\",\n                    \"result\": [\n                        \"May have no more than two plumbing fixtures\"\n                    ]\n                }\n            ],\n            \"dependencies\": []\n        },\n        \"exceptions\": {\n            \"explicit_deviations\": [\n                \"Accessory structures less than 120 sf do not require a building permit but must still comply with all zoning regulations\"\n            ],\n            \"alternatives\": [],\n            \"special_cases\": []\n        },\n        \"relationships\": {\n            \"hierarchical\": [],\n            \"cross_references\": [\n                \"See Figs 25-26 on p. 32 for accessory-structure height and daylight plane regulations\"\n            ],\n            \"logical_dependencies\": []\n        }\n    }\n]\n```"
+  },
+  "timestamp": "2025-09-16 15:44:34",
+  "model": "openai/gpt-4o",
+  "success": true
+}

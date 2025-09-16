@@ -1,0 +1,66 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_43.png",
+  "image_name": "Page_43.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Contextual garage placement\n\nContextual garage placement applies if, and only if, there is a predominant neighborhood pattern.\n\nHow to determine if contextual garage placement applies (using Fig 32 below as an example)\n\nNote:\n\u2022 If block is more than 600' long, consider only lots with in 600' or the 10 lots closest to the subject lot\n\u2022 If subject lot is a corner lot, consider the pattern on the street that the subject garage faces\n\nExclude the following types of lots:\n\u2022 Flag lot (C)\n\u2022 Multi-family use of 3+ units (G)\n\u2022 Corner lots (A & H)\n\nThe remaining lots including the subject lot, contribute to the determination.\n\nNote:\n\u2022 If block more than 600' long, consider only lots within 600' or 10 closest lots.\n\u2022 If subject lot is a corner lot, consider the pattern on the street that the garage faces\n\nDivide the remaining lots, including the subject lot, into two categories:\n\n1. Front-half pattern lots\n\u2022 lots with garage in front half of the lot (F)\n\n2. Rear-half pattern lots\n\u2022 lots with garage in the rear half of the lot (B & D) and\n\u2022 lots with no garage (E) (counts as a rear-pattern lot)\n\nDetermine which pattern category is predominant i.e., into which category more than half of the lots fall.\n\nFront half\n\nRear half\n\nThe contextual garage placement regulation DOES apply. Projects on this block must place the garage in the rear half of the lot.\n\nFig 32 Example of a block on which the contextual garage placement regulation applies\n\n37",
+      "visual_elements": [
+        {
+          "type": "flowchart",
+          "description": "A flowchart showing the process for determining contextual garage placement, with boxes connected by arrows. Shows exclusion criteria, categorization into front-half and rear-half patterns, and final determination.",
+          "location": "upper portion of page"
+        },
+        {
+          "type": "diagram",
+          "description": "Figure 32 - A detailed block diagram showing lots labeled A through I, with houses and garages positioned differently on each lot. Shows various garage placements including front garages, rear garages, multiple garages, and lots with no garages. Includes hatched areas indicating excluded lots and demonstrates the application of contextual garage placement rules.",
+          "location": "bottom portion of page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Block length consideration threshold",
+          "value": "600",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Alternative lot consideration limit",
+          "value": "10",
+          "unit": "lots"
+        },
+        {
+          "parameter": "Multi-family unit threshold for exclusion",
+          "value": "3",
+          "unit": "units"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Contextual garage placement",
+        "subheadings": [
+          "How to determine if contextual garage placement applies",
+          "Note:",
+          "Exclude the following types of lots:",
+          "1. Front-half pattern lots",
+          "2. Rear-half pattern lots",
+          "Front half",
+          "Rear half"
+        ],
+        "sections": [
+          "Fig 32"
+        ]
+      },
+      "additional_notes": [
+        "Page number 37 appears at bottom right",
+        "Gray shaded box contains key rule about predominant neighborhood pattern",
+        "Italicized reference to Fig 32 in parentheses",
+        "Diagram uses letters A through I to label different lots",
+        "Some lots in diagram are marked with hatched patterns to indicate exclusions"
+      ],
+      "cross_references": [
+        "Fig 32 below as an example",
+        "Fig 32 Example of a block on which the contextual garage placement regulation applies"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-11 13:45:09",
+  "model_used": "anthropic/claude-sonnet-4"
+}

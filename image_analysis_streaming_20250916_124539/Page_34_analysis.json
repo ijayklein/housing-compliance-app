@@ -1,0 +1,25 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_34.png",
+  "image_name": "Page_34.png",
+  "analysis": {
+    "page": "28",
+    "heading": "Primary daylight plane (rear)",
+    "content": "Fig 23 Side elevation showing Rear primary daylight plane",
+    "figures": [
+      "Architectural diagram showing side elevation with measurements: 7.5' max protrusions on each side with 5' min separation, 24' height, 60\u00b0 angle"
+    ],
+    "tables": [],
+    "codes": [
+      "Max building height is:",
+      "\u2022 30' for structures w/roof slope < 12:12",
+      "\u2022 33' for structures w/roof slope > 12:12",
+      "\u2022 17' for structures on substandard or flag lots",
+      "\u2022 variable for structures located in flood zones except on substandard and flag lots - up to 33'",
+      "Cumulative length of protrusions must not exceed 15' on any one side.",
+      "Rear protrusions subject to same rules as side protrusions regardless of flood plane"
+    ]
+  },
+  "timestamp": "2025-09-16 12:46:57",
+  "model": "anthropic/claude-3.5-sonnet",
+  "success": true
+}

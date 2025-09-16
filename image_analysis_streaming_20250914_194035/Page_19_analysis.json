@@ -1,0 +1,60 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_19.png",
+  "image_name": "Page_19.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Fig 8 Entry feature with 2nd floor above\n\nNote: The 2nd floor over a vaulted entry will count as usual. Therefore, the area will count three times toward gross floor area.\n\nNote: If the entryway is considered to be a vaulted entryway the area will be counted as follows:\n\u2022 In this example, a portion of the entryway is recessed beyond the house facade and roof. It is included in the area that counts.\n\u2022 The area is measured to the outside material of the entryway feature.\n\u2022 The area counts TWICE toward gross floor area.\n\nIsometric View\nSide Elevation\nPorch Floor Plan",
+      "visual_elements": [
+        {
+          "type": "figure",
+          "description": "Isometric View of a building corner showing an entry feature with a 2nd floor above. The height from grade to the intersection of the front facade and underside or bottom of the 2nd floor is indicated with a vertical dimension line labeled 'Height'.",
+          "location": "left side of page"
+        },
+        {
+          "type": "figure",
+          "description": "Side Elevation drawing showing the vertical dimension labeled 'Height' from grade to the intersection of the front facade and underside or bottom of the 2nd floor. The top and bottom of the 2nd floor are marked with arrows.",
+          "location": "middle of page"
+        },
+        {
+          "type": "figure",
+          "description": "Porch Floor Plan showing the outline of the entryway floor area that counts TWICE if the entryway is vaulted. The outline is marked with a thick black line.",
+          "location": "right side of page"
+        },
+        {
+          "type": "text box",
+          "description": "Gray shaded note box at top right corner stating: 'Note: The 2nd floor over a vaulted entry will count as usual. Therefore, the area will count three times toward gross floor area.'",
+          "location": "top right corner"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Gross floor area count for 2nd floor over vaulted entry",
+          "value": "3",
+          "unit": "times"
+        },
+        {
+          "parameter": "Gross floor area count for vaulted entryway floor area",
+          "value": "2",
+          "unit": "times"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Fig 8 Entry feature with 2nd floor above",
+        "subheadings": [
+          "Isometric View",
+          "Side Elevation",
+          "Porch Floor Plan"
+        ],
+        "sections": []
+      },
+      "additional_notes": [
+        "Page number 13 at bottom right corner.",
+        "No handwritten annotations or stamps detected.",
+        "Text is clear and legible."
+      ],
+      "cross_references": []
+    }
+  },
+  "analysis_timestamp": "2025-09-14 19:40:50",
+  "model_used": "openai/gpt-4.1-mini"
+}

@@ -1,0 +1,288 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_48.png",
+  "image_name": "Page_48.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Light well & stairwell standards & site planning\n\n\u2022 Such features may not be located on the side of the structure that faces the front yard.\n\n\u2022 Maximum width (interior dimension) is 3'.\n\n\u2022 The combined length (interior dimensions of the opening excluding encasing structure) of all the excavated features may not exceed 30% of basement perimeter.\n\n\u2022 Allowable encroachment into required side yard is 3' max (however feature must be a minimum of 3' from side lot line).\n\n\u2022 Allowable encroachment into required rear yard is 4'.\n\n\u2022 The combined length (interior dimensions of the opening excluding encasing structure) of all the excavated features or portions of features that encroach into the required yards, on all sides of the structure, may not exceed 15'.\n\n\u2022 Excavated features shall not be harmful to neighboring trees.\n\n\u2022 Public Works Department must approve drainage system.\n\nFig 39 Examples of site plan w/light wells & stairwells\n\nInterior lot example\n\nRear yard\n\nBuildable area\n\n3' max width\n\nMain dwelling\n\n3' max. width\n\n3' min. from lot line (Typ.)\n\n3' max. into side yard (Typ.)\n\nFront yard\n\nKey\n\nCurb\nLot line\nSidewalk\nRequired setbacks\nBuildable area\nDwelling\nLightwells & stairwells\nLightwells & stairwells that encroach into the rec yards\n\nLightwells & stairwells\n\u2022 a + b (encroaching features) may not exceed 15'\n\u2022 a + b + c + d (all features) may not exceed 30% of the perimeter of the basement\n\nNote: measurments are based on interior dimension of opening and exclude encasing structure.",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Site plan diagram labeled 'Interior lot example' showing a rectangular buildable area with a main dwelling inside. The diagram indicates rear yard, front yard, and interior side yards. It shows maximum widths of 3' for light wells and stairwells, with labeled dimensions a, b, c, and d representing different encroaching features. The diagram includes arrows and dimension lines illustrating 3' max width, 3' min from lot line, and 3' max into side yard. A key explains line types and shading: solid line for curb, dashed line for lot line, shaded rectangles for sidewalk, required setbacks, buildable area, dwelling, lightwells & stairwells, and lightwells & stairwells that encroach into the required yards.",
+          "location": "Right half of the page, middle to bottom"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Maximum width (interior dimension) of light wells and stairwells",
+          "value_type": "Measurement",
+          "value": 3,
+          "unit": "feet"
+        },
+        {
+          "parameter": "Combined length (interior dimensions of the opening excluding encasing structure) of all excavated features",
+          "value_type": "Percentage",
+          "value": 30,
+          "unit": "percent of basement perimeter"
+        },
+        {
+          "parameter": "Allowable encroachment into required side yard",
+          "value_type": "Measurement",
+          "value": 3,
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum distance from side lot line for encroaching feature",
+          "value_type": "Measurement",
+          "value": 3,
+          "unit": "feet"
+        },
+        {
+          "parameter": "Allowable encroachment into required rear yard",
+          "value_type": "Measurement",
+          "value": 4,
+          "unit": "feet"
+        },
+        {
+          "parameter": "Combined length (interior dimensions of the opening excluding encasing structure) of all excavated features or portions encroaching into required yards",
+          "value_type": "Measurement",
+          "value": 15,
+          "unit": "feet"
+        },
+        {
+          "parameter": "Sum of a + b (encroaching features)",
+          "value_type": "Measurement",
+          "value": 15,
+          "unit": "feet"
+        },
+        {
+          "parameter": "Sum of a + b + c + d (all features)",
+          "value_type": "Percentage",
+          "value": 30,
+          "unit": "percent of basement perimeter"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Light well & stairwell standards & site planning",
+        "subheadings": [],
+        "sections": []
+      },
+      "additional_notes": [
+        "Measurements are based on interior dimension of opening and exclude encasing structure.",
+        "No handwritten notes, stamps, or markings detected.",
+        "Page number 42 at bottom left corner."
+      ],
+      "cross_references": [
+        "Fig 39 Examples of site plan w/light wells & stairwells"
+      ],
+      "conditions_and_qualifiers": {
+        "qualifiers": [
+          {
+            "id": "q1",
+            "text": "Such features may not be located on the side of the structure that faces the front yard.",
+            "applies_to_conditions": [
+              "c1",
+              "c2",
+              "c3",
+              "c4",
+              "c5",
+              "c6"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q2",
+            "text": "Measurements are based on interior dimension of opening and exclude encasing structure.",
+            "applies_to_conditions": [
+              "c2",
+              "c6"
+            ],
+            "scope": "Global"
+          },
+          {
+            "id": "q3",
+            "text": "Excavated features shall not be harmful to neighboring trees.",
+            "applies_to_conditions": [],
+            "scope": "Global"
+          },
+          {
+            "id": "q4",
+            "text": "Public Works Department must approve drainage system.",
+            "applies_to_conditions": [],
+            "scope": "Global"
+          },
+          {
+            "id": "q5",
+            "text": "Allowable encroachment into required side yard is 3' max (however feature must be a minimum of 3' from side lot line).",
+            "applies_to_conditions": [
+              "c3",
+              "c4"
+            ],
+            "scope": "Specific"
+          }
+        ],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "Maximum width (interior dimension) is 3'.",
+            "value_type": "Measurement",
+            "operator": "<=",
+            "threshold_value": 3,
+            "unit": "feet"
+          },
+          {
+            "id": "c2",
+            "text": "The combined length (interior dimensions of the opening excluding encasing structure) of all the excavated features may not exceed 30% of basement perimeter.",
+            "value_type": "Percentage",
+            "operator": "<=",
+            "threshold_value": 30,
+            "unit": "percent"
+          },
+          {
+            "id": "c3",
+            "text": "Allowable encroachment into required side yard is 3' max.",
+            "value_type": "Measurement",
+            "operator": "<=",
+            "threshold_value": 3,
+            "unit": "feet"
+          },
+          {
+            "id": "c4",
+            "text": "Feature must be a minimum of 3' from side lot line.",
+            "value_type": "Measurement",
+            "operator": ">=",
+            "threshold_value": 3,
+            "unit": "feet"
+          },
+          {
+            "id": "c5",
+            "text": "Allowable encroachment into required rear yard is 4'.",
+            "value_type": "Measurement",
+            "operator": "<=",
+            "threshold_value": 4,
+            "unit": "feet"
+          },
+          {
+            "id": "c6",
+            "text": "The combined length (interior dimensions of the opening excluding encasing structure) of all the excavated features or portions of features that encroach into the required yards, on all sides of the structure, may not exceed 15'.",
+            "value_type": "Measurement",
+            "operator": "<=",
+            "threshold_value": 15,
+            "unit": "feet"
+          }
+        ],
+        "logical_relationships": [
+          {
+            "operation": "AND",
+            "condition_ids": [
+              "c1",
+              "c2",
+              "c3",
+              "c4",
+              "c5",
+              "c6"
+            ],
+            "expression": "All conditions c1 through c6 must be met simultaneously for compliance.",
+            "evaluation_order": 1
+          }
+        ],
+        "execution_sequence": [
+          {
+            "step": 1,
+            "action": "Verify that features are not located on the side of the structure facing the front yard (qualifier q1).",
+            "condition_ids": [],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 2,
+            "action": "Check maximum width of features does not exceed 3 feet (condition c1).",
+            "condition_ids": [
+              "c1"
+            ],
+            "qualifier_ids": [],
+            "dependencies": [
+              1
+            ]
+          },
+          {
+            "step": 3,
+            "action": "Ensure combined length of all excavated features does not exceed 30% of basement perimeter (condition c2) applying measurement basis qualifier q2.",
+            "condition_ids": [
+              "c2"
+            ],
+            "qualifier_ids": [
+              "q2"
+            ],
+            "dependencies": [
+              2
+            ]
+          },
+          {
+            "step": 4,
+            "action": "Confirm allowable encroachment into side yard is max 3 feet and feature is minimum 3 feet from side lot line (conditions c3 and c4) with qualifier q5.",
+            "condition_ids": [
+              "c3",
+              "c4"
+            ],
+            "qualifier_ids": [
+              "q5"
+            ],
+            "dependencies": [
+              3
+            ]
+          },
+          {
+            "step": 5,
+            "action": "Confirm allowable encroachment into rear yard is max 4 feet (condition c5).",
+            "condition_ids": [
+              "c5"
+            ],
+            "qualifier_ids": [],
+            "dependencies": [
+              4
+            ]
+          },
+          {
+            "step": 6,
+            "action": "Ensure combined length of all features encroaching into required yards does not exceed 15 feet (condition c6) applying measurement basis qualifier q2.",
+            "condition_ids": [
+              "c6"
+            ],
+            "qualifier_ids": [
+              "q2"
+            ],
+            "dependencies": [
+              5
+            ]
+          },
+          {
+            "step": 7,
+            "action": "Verify excavated features are not harmful to neighboring trees (qualifier q3).",
+            "condition_ids": [],
+            "qualifier_ids": [
+              "q3"
+            ],
+            "dependencies": [
+              6
+            ]
+          },
+          {
+            "step": 8,
+            "action": "Obtain Public Works Department approval for drainage system (qualifier q4).",
+            "condition_ids": [],
+            "qualifier_ids": [
+              "q4"
+            ],
+            "dependencies": [
+              7
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:14:24",
+  "model_used": "openai/gpt-4.1-mini"
+}

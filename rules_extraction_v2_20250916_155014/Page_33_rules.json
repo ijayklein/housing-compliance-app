@@ -1,0 +1,244 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_33.md",
+  "file_name": "Page_33.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "Qualifiers": {
+          "Scope": "Method for establishing the height reference (baseline) used to measure the daylight plane for a given side of a structure.",
+          "Applicability": [
+            "Applies when determining the daylight plane height for each side of a building that abuts another site (parcel).",
+            "Applied per side of the structure; the calculation is performed separately for each side yard condition."
+          ],
+          "Exclusions": [
+            "No explicit method provided for sides not abutting another site (e.g., sides abutting a street or public right-of-way)."
+          ],
+          "Ambiguities": [
+            "The phrase 'midpoint of the building' is not explicitly defined; context implies the midpoint along the length of the building wall on the relevant side (midpoint of side yard).",
+            "The 'closest point on the abutting site' is not explicitly defined relative to what; context implies the nearest point on the abutting site to the relevant side of the subject structure or its lot line.",
+            "No datum or unit of measure for grade is specified; assume consistent vertical units (e.g., feet) tied to a common survey datum."
+          ]
+        },
+        "Variables": [
+          {
+            "name": "grade_at_midpoint_of_building_side",
+            "description": "Ground elevation at the midpoint of the subject building along the side being evaluated.",
+            "unit": "length (elevation), e.g., feet",
+            "source": "site survey/grade measurement"
+          },
+          {
+            "name": "grade_at_closest_point_on_abutting_site",
+            "description": "Ground elevation at the closest point located on the adjacent (abutting) parcel relative to the side being evaluated.",
+            "unit": "length (elevation), e.g., feet",
+            "source": "site survey/grade measurement on abutting site"
+          },
+          {
+            "name": "average_grade_for_side",
+            "description": "Arithmetic mean of two grade points used as the daylight plane height reference for the evaluated side.",
+            "unit": "length (elevation), e.g., feet",
+            "formula": "average_grade_for_side = (grade_at_midpoint_of_building_side + grade_at_closest_point_on_abutting_site) / 2"
+          },
+          {
+            "name": "abutting_site",
+            "description": "The parcel that shares the relevant side lot line with the subject parcel.",
+            "type": "parcel reference"
+          },
+          {
+            "name": "evaluated_side",
+            "description": "The specific side of the subject building for which daylight plane measurement is being performed.",
+            "type": "enumeration",
+            "values": [
+              "left side yard",
+              "right side yard",
+              "rear yard (if abutting)",
+              "front yard (if abutting)"
+            ]
+          }
+        ],
+        "Constants": [
+          {
+            "name": "height_reference_method",
+            "description": "Use arithmetic mean of two specified grade points as the baseline for daylight plane height measurement.",
+            "spec": "Mean of midpoint grade on subject side and closest grade on abutting site."
+          }
+        ],
+        "Conditions": [
+          {
+            "type": "mandatory",
+            "statement": "When measuring the daylight plane height for an evaluated side, use the average of (1) the grade at the midpoint of the building on that side and (2) the grade at the closest point on the abutting site as the height baseline."
+          },
+          {
+            "type": "procedural",
+            "statement": "Perform the calculation independently for each side of the structure that abuts another site."
+          }
+        ],
+        "Exceptions": [],
+        "Relationships": [
+          {
+            "type": "cross-reference",
+            "reference": "Daylight plane provisions in Code Section 18.12.040(a) (measurement baseline supports compliance with that section)."
+          },
+          {
+            "type": "dependency",
+            "depends_on": "Availability of accurate grade measurements on both the subject lot and the abutting site for the evaluated side."
+          }
+        ]
+      },
+      {
+        "Qualifiers": {
+          "Scope": "Control of roof eave projections relative to the daylight plane and definition of the controlling clearance point on the building.",
+          "Applicability": [
+            "Applies to eave projections extending from the wall plane adjacent to a daylight plane control line."
+          ],
+          "Exclusions": [
+            "No explicit provisions for projections other than eaves (e.g., gutters, chimneys, balconies) are provided in this text."
+          ],
+          "Ambiguities": [
+            "The '2' max' limit is indicated but the direction of measurement (horizontal from wall plane vs. perpendicular to daylight plane) is not explicitly stated; typical practice is horizontal from wall plane.",
+            "The text does not explicitly state whether eaves may encroach into the daylight plane volume by up to 2 feet or whether the 2 feet is simply the maximum eave projection allowed while still staying outside the daylight plane. The figure title implies 'allowable eave protrusion', suggesting a permitted encroachment."
+          ]
+        },
+        "Variables": [
+          {
+            "name": "eave_projection_distance",
+            "description": "Distance the eave extends outward from the wall plane.",
+            "unit": "feet",
+            "measurement_direction": "ambiguous (assume horizontal from wall plane unless specified otherwise)"
+          },
+          {
+            "name": "control_point_at_wall_roof_intersection",
+            "description": "The line/point where the vertical wall plane intersects the top surface of the roof material.",
+            "type": "geometric reference"
+          },
+          {
+            "name": "daylight_plane_surface",
+            "description": "The regulatory daylight plane surface against which projections and clearances are evaluated.",
+            "type": "geometric control surface"
+          }
+        ],
+        "Constants": [
+          {
+            "name": "max_eave_projection",
+            "value": 2,
+            "unit": "feet",
+            "spec": "Maximum allowable eave protrusion distance indicated in figure."
+          }
+        ],
+        "Conditions": [
+          {
+            "type": "mandatory",
+            "statement": "The daylight plane must clear the point where the wall plane intersects the top of the roof material (no part of the daylight plane may penetrate this control point)."
+          },
+          {
+            "type": "limit",
+            "statement": "Eave projection distance shall not exceed 2 feet.",
+            "notes": "Direction of measurement relative to wall plane or daylight plane is not specified in text; assume horizontal from wall plane unless otherwise defined by the governing code or figure details."
+          },
+          {
+            "type": "interpretive",
+            "statement": "Whether up to 2 feet of eave encroachment into the daylight plane is permitted is not explicit; verify with governing code section or detail legend."
+          }
+        ],
+        "Exceptions": [],
+        "Relationships": [
+          {
+            "type": "dependency",
+            "depends_on": "Established daylight plane geometry and height baseline as measured per the daylight plane measurement rule."
+          },
+          {
+            "type": "cross-reference",
+            "reference": "Daylight plane provisions in Code Section 18.12.040(a)."
+          }
+        ]
+      },
+      {
+        "Qualifiers": {
+          "Scope": "Certification requirements for demonstrating compliance with daylight plane regulations.",
+          "Applicability": [
+            "Applies to any person constructing or making improvements to a structure when the building official requests certification of daylight plane compliance."
+          ],
+          "Exclusions": [
+            "Certification is not required unless requested by the building official."
+          ],
+          "Ambiguities": [
+            "The phrase 'as built' suggests post-construction conditions; however, the requirement to provide certification prior to frame inspection implies certification during construction. Clarify whether an interim certification based on constructed conditions to date is acceptable."
+          ]
+        },
+        "Variables": [
+          {
+            "name": "building_official_request",
+            "description": "Indicates whether the building official has requested daylight plane compliance certification.",
+            "type": "boolean"
+          },
+          {
+            "name": "certifying_professional_type",
+            "description": "Professional discipline permitted to prepare the certification.",
+            "type": "enumeration",
+            "values": [
+              "licensed engineer",
+              "licensed architect",
+              "licensed surveyor"
+            ]
+          },
+          {
+            "name": "submission_timing",
+            "description": "The stage in the inspection process by which certification must be provided.",
+            "type": "milestone",
+            "value": "prior to frame inspection"
+          }
+        ],
+        "Constants": [
+          {
+            "name": "governing_code_substantive",
+            "value": "Section 18.12.040(a)",
+            "spec": "Daylight plane provisions to which the structure must comply."
+          },
+          {
+            "name": "governing_code_procedural",
+            "value": "Section 18.12.040(j)",
+            "spec": "Authority for the certification requirement."
+          }
+        ],
+        "Conditions": [
+          {
+            "type": "conditional",
+            "trigger": "building_official_request == true",
+            "requirement": "The person building or making improvements to a structure shall provide a certification that the structure, as built, complies with the daylight plane provisions in Code Section 18.12.040(a)."
+          },
+          {
+            "type": "qualification",
+            "requirement": "The certification shall be prepared by a licensed engineer, architect, or surveyor."
+          },
+          {
+            "type": "timing",
+            "requirement": "The certification shall be provided prior to frame inspection."
+          }
+        ],
+        "Exceptions": [],
+        "Relationships": [
+          {
+            "type": "cross-reference",
+            "reference": "Certification authority and timing: Code Section 18.12.040(j)."
+          },
+          {
+            "type": "cross-reference",
+            "reference": "Substantive compliance target: Daylight plane provisions in Code Section 18.12.040(a)."
+          },
+          {
+            "type": "dependency",
+            "depends_on": "Accurate determination of daylight plane per measurement rules and allowable eave protrusions."
+          }
+        ]
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "[\n  {\n    \"Qualifiers\": {\n      \"Scope\": \"Method for establishing the height reference (baseline) used to measure the daylight plane for a given side of a structure.\",\n      \"Applicability\": [\n        \"Applies when determining the daylight plane height for each side of a building that abuts another site (parcel).\",\n        \"Applied per side of the structure; the calculation is performed separately for each side yard condition.\"\n      ],\n      \"Exclusions\": [\n        \"No explicit method provided for sides not abutting another site (e.g., sides abutting a street or public right-of-way).\"\n      ],\n      \"Ambiguities\": [\n        \"The phrase 'midpoint of the building' is not explicitly defined; context implies the midpoint along the length of the building wall on the relevant side (midpoint of side yard).\",\n        \"The 'closest point on the abutting site' is not explicitly defined relative to what; context implies the nearest point on the abutting site to the relevant side of the subject structure or its lot line.\",\n        \"No datum or unit of measure for grade is specified; assume consistent vertical units (e.g., feet) tied to a common survey datum.\"\n      ]\n    },\n    \"Variables\": [\n      {\n        \"name\": \"grade_at_midpoint_of_building_side\",\n        \"description\": \"Ground elevation at the midpoint of the subject building along the side being evaluated.\",\n        \"unit\": \"length (elevation), e.g., feet\",\n        \"source\": \"site survey/grade measurement\"\n      },\n      {\n        \"name\": \"grade_at_closest_point_on_abutting_site\",\n        \"description\": \"Ground elevation at the closest point located on the adjacent (abutting) parcel relative to the side being evaluated.\",\n        \"unit\": \"length (elevation), e.g., feet\",\n        \"source\": \"site survey/grade measurement on abutting site\"\n      },\n      {\n        \"name\": \"average_grade_for_side\",\n        \"description\": \"Arithmetic mean of two grade points used as the daylight plane height reference for the evaluated side.\",\n        \"unit\": \"length (elevation), e.g., feet\",\n        \"formula\": \"average_grade_for_side = (grade_at_midpoint_of_building_side + grade_at_closest_point_on_abutting_site) / 2\"\n      },\n      {\n        \"name\": \"abutting_site\",\n        \"description\": \"The parcel that shares the relevant side lot line with the subject parcel.\",\n        \"type\": \"parcel reference\"\n      },\n      {\n        \"name\": \"evaluated_side\",\n        \"description\": \"The specific side of the subject building for which daylight plane measurement is being performed.\",\n        \"type\": \"enumeration\",\n        \"values\": [\"left side yard\", \"right side yard\", \"rear yard (if abutting)\", \"front yard (if abutting)\"]\n      }\n    ],\n    \"Constants\": [\n      {\n        \"name\": \"height_reference_method\",\n        \"description\": \"Use arithmetic mean of two specified grade points as the baseline for daylight plane height measurement.\",\n        \"spec\": \"Mean of midpoint grade on subject side and closest grade on abutting site.\"\n      }\n    ],\n    \"Conditions\": [\n      {\n        \"type\": \"mandatory\",\n        \"statement\": \"When measuring the daylight plane height for an evaluated side, use the average of (1) the grade at the midpoint of the building on that side and (2) the grade at the closest point on the abutting site as the height baseline.\"\n      },\n      {\n        \"type\": \"procedural\",\n        \"statement\": \"Perform the calculation independently for each side of the structure that abuts another site.\"\n      }\n    ],\n    \"Exceptions\": [],\n    \"Relationships\": [\n      {\n        \"type\": \"cross-reference\",\n        \"reference\": \"Daylight plane provisions in Code Section 18.12.040(a) (measurement baseline supports compliance with that section).\"\n      },\n      {\n        \"type\": \"dependency\",\n        \"depends_on\": \"Availability of accurate grade measurements on both the subject lot and the abutting site for the evaluated side.\"\n      }\n    ]\n  },\n  {\n    \"Qualifiers\": {\n      \"Scope\": \"Control of roof eave projections relative to the daylight plane and definition of the controlling clearance point on the building.\",\n      \"Applicability\": [\n        \"Applies to eave projections extending from the wall plane adjacent to a daylight plane control line.\"\n      ],\n      \"Exclusions\": [\n        \"No explicit provisions for projections other than eaves (e.g., gutters, chimneys, balconies) are provided in this text.\"\n      ],\n      \"Ambiguities\": [\n        \"The '2' max' limit is indicated but the direction of measurement (horizontal from wall plane vs. perpendicular to daylight plane) is not explicitly stated; typical practice is horizontal from wall plane.\",\n        \"The text does not explicitly state whether eaves may encroach into the daylight plane volume by up to 2 feet or whether the 2 feet is simply the maximum eave projection allowed while still staying outside the daylight plane. The figure title implies 'allowable eave protrusion', suggesting a permitted encroachment.\"\n      ]\n    },\n    \"Variables\": [\n      {\n        \"name\": \"eave_projection_distance\",\n        \"description\": \"Distance the eave extends outward from the wall plane.\",\n        \"unit\": \"feet\",\n        \"measurement_direction\": \"ambiguous (assume horizontal from wall plane unless specified otherwise)\"\n      },\n      {\n        \"name\": \"control_point_at_wall_roof_intersection\",\n        \"description\": \"The line/point where the vertical wall plane intersects the top surface of the roof material.\",\n        \"type\": \"geometric reference\"\n      },\n      {\n        \"name\": \"daylight_plane_surface\",\n        \"description\": \"The regulatory daylight plane surface against which projections and clearances are evaluated.\",\n        \"type\": \"geometric control surface\"\n      }\n    ],\n    \"Constants\": [\n      {\n        \"name\": \"max_eave_projection\",\n        \"value\": 2,\n        \"unit\": \"feet\",\n        \"spec\": \"Maximum allowable eave protrusion distance indicated in figure.\"\n      }\n    ],\n    \"Conditions\": [\n      {\n        \"type\": \"mandatory\",\n        \"statement\": \"The daylight plane must clear the point where the wall plane intersects the top of the roof material (no part of the daylight plane may penetrate this control point).\"\n      },\n      {\n        \"type\": \"limit\",\n        \"statement\": \"Eave projection distance shall not exceed 2 feet.\",\n        \"notes\": \"Direction of measurement relative to wall plane or daylight plane is not specified in text; assume horizontal from wall plane unless otherwise defined by the governing code or figure details.\"\n      },\n      {\n        \"type\": \"interpretive\",\n        \"statement\": \"Whether up to 2 feet of eave encroachment into the daylight plane is permitted is not explicit; verify with governing code section or detail legend.\"\n      }\n    ],\n    \"Exceptions\": [],\n    \"Relationships\": [\n      {\n        \"type\": \"dependency\",\n        \"depends_on\": \"Established daylight plane geometry and height baseline as measured per the daylight plane measurement rule.\"\n      },\n      {\n        \"type\": \"cross-reference\",\n        \"reference\": \"Daylight plane provisions in Code Section 18.12.040(a).\"\n      }\n    ]\n  },\n  {\n    \"Qualifiers\": {\n      \"Scope\": \"Certification requirements for demonstrating compliance with daylight plane regulations.\",\n      \"Applicability\": [\n        \"Applies to any person constructing or making improvements to a structure when the building official requests certification of daylight plane compliance.\"\n      ],\n      \"Exclusions\": [\n        \"Certification is not required unless requested by the building official.\"\n      ],\n      \"Ambiguities\": [\n        \"The phrase 'as built' suggests post-construction conditions; however, the requirement to provide certification prior to frame inspection implies certification during construction. Clarify whether an interim certification based on constructed conditions to date is acceptable.\"\n      ]\n    },\n    \"Variables\": [\n      {\n        \"name\": \"building_official_request\",\n        \"description\": \"Indicates whether the building official has requested daylight plane compliance certification.\",\n        \"type\": \"boolean\"\n      },\n      {\n        \"name\": \"certifying_professional_type\",\n        \"description\": \"Professional discipline permitted to prepare the certification.\",\n        \"type\": \"enumeration\",\n        \"values\": [\"licensed engineer\", \"licensed architect\", \"licensed surveyor\"]\n      },\n      {\n        \"name\": \"submission_timing\",\n        \"description\": \"The stage in the inspection process by which certification must be provided.\",\n        \"type\": \"milestone\",\n        \"value\": \"prior to frame inspection\"\n      }\n    ],\n    \"Constants\": [\n      {\n        \"name\": \"governing_code_substantive\",\n        \"value\": \"Section 18.12.040(a)\",\n        \"spec\": \"Daylight plane provisions to which the structure must comply.\"\n      },\n      {\n        \"name\": \"governing_code_procedural\",\n        \"value\": \"Section 18.12.040(j)\",\n        \"spec\": \"Authority for the certification requirement.\"\n      }\n    ],\n    \"Conditions\": [\n      {\n        \"type\": \"conditional\",\n        \"trigger\": \"building_official_request == true\",\n        \"requirement\": \"The person building or making improvements to a structure shall provide a certification that the structure, as built, complies with the daylight plane provisions in Code Section 18.12.040(a).\"\n      },\n      {\n        \"type\": \"qualification\",\n        \"requirement\": \"The certification shall be prepared by a licensed engineer, architect, or surveyor.\"\n      },\n      {\n        \"type\": \"timing\",\n        \"requirement\": \"The certification shall be provided prior to frame inspection.\"\n      }\n    ],\n    \"Exceptions\": [],\n    \"Relationships\": [\n      {\n        \"type\": \"cross-reference\",\n        \"reference\": \"Certification authority and timing: Code Section 18.12.040(j).\"\n      },\n      {\n        \"type\": \"cross-reference\",\n        \"reference\": \"Substantive compliance target: Daylight plane provisions in Code Section 18.12.040(a).\"\n      },\n      {\n        \"type\": \"dependency\",\n        \"depends_on\": \"Accurate determination of daylight plane per measurement rules and allowable eave protrusions.\"\n      }\n    ]\n  }\n]",
+    "response_time": 105.21103692054749,
+    "input_tokens": 702,
+    "output_tokens": 5686,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 15:53:49",
+  "model": "openai/gpt-5",
+  "success": true
+}

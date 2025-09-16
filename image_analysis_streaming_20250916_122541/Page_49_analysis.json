@@ -1,0 +1,23 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_49.png",
+  "image_name": "Page_49.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "PARSE_ERROR",
+      "visual_elements": [],
+      "technical_specifications": [],
+      "structural_elements": {
+        "main_heading": "",
+        "subheadings": [],
+        "sections": []
+      },
+      "additional_notes": [
+        "Failed to parse LLM response: Expecting value: line 1 column 1 (char 0)"
+      ],
+      "cross_references": []
+    },
+    "raw_response": "Below-grade patios standards & site planning\n\n**Textual Information:**\n\n*   **Such features may not be located on the side of the structure that faces the front yard.**\n*   **Combined area of all such areas not to exceed 2% of the area of the lot or 200 sf, whichever is greater and no single area may exceed 200 sf. Note area devoted to required stairway egress shall not be included in the 200 sf limitation.**\n*   **Each such area is separated from another by at least 10'.**\n*   **Allowable encroachment into required side yard is 2' max.**\n*   **Allowable encroachment into required rear yard is 4'.**\n*   **The combined length of all the excavated features or portions of features that encroach into the required yards, on all sides of the structure, may not exceed 15'.**\n*   **Excavated features shall not be harmful to neighboring trees.**\n*   **Public Works Department must approve drainage system.**\n*   **Overhangs or canopies installed to shelter such area shall count towards lot coverage.**\n*   **Such areas to be architecturally compatible with residence.**\n*   **Such areas to be screened to off site views by means of landscaping and/or fencing as determined appropriate by Planning Dept.**\n\n**Below-grade patios (specific rules):**\n\n*   **a + b (encroaching features) may not exceed 15'**\n*   **No single below-grade patio may not exceed 200 sf**\n*   **Combined areas of all below-grade patio areas may not exceed 2% of the lot area or 200 sf, which ever is greater**\n*   **Note: measurements are based on interior dimension of opening and exclude encasing structure.**\n\n**Figure 40: Examples of site plan w/below-grade patios**\n\n**Diagram Elements and Labels:**\n\n*   **Interior lot example**\n*   **Rear yard**\n*   **Front yard**\n*   **Interior-side yard** (appears on both sides of the main dwelling)\n*   **Main dwelling**\n*   **2nd dwelling**\n*   **10' min. separation** (between Main dwelling and 2nd dwelling)\n*   **4' max. encroachment** (labeled with 'b' and 'length of encroachment' pointing to an encroachment into the rear yard)\n*   **2' max. encroachment** (labeled with 'a' and 'length of encroachment' pointing to an encroachment into the side yard)\n*   **Landscape screening** (indicated by shrubbery symbols)\n\n**Key:**\n\n*   **Curb** (solid thick line)\n*   **Lot line** (solid thin line)\n*   **Sidewalk** (patterned block line)\n*   **Required setbacks** (dashed line)\n*   **Buildable area** (light gray shaded area)\n*   **Dwelling** (darker gray shaded area)\n*   **Lightwells & stairwells** (black shaded area)\n*   **Lightwells & stairwells that encroach into the required yards** (hatched shaded area)\n*   **Landscaping screening** (shrubbery symbol)\n\n**Page Number:** 43"
+  },
+  "analysis_timestamp": "2025-09-16 12:26:02",
+  "model_used": "google/gemini-2.5-flash"
+}

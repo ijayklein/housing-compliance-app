@@ -1,0 +1,519 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_51.md",
+  "file_name": "Page_51.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "Qualifiers": {
+          "title": "Maximum floor area for detached 2nd dwelling unit",
+          "scope": "Site planning for detached second-dwelling units (accessory/secondary dwelling on the same lot as a main dwelling)",
+          "applicability": [
+            "Interior lot example (illustrative); applicability likely general but only interior-lot layout is shown"
+          ],
+          "exclusions": [],
+          "notes": [
+            "The label 'Detached 2nd dwelling unit 900 sf max' appears in all scenarios (A\u2013D), indicating a global cap for the detached 2nd unit on these examples."
+          ]
+        },
+        "Variables": [
+          {
+            "name": "second_unit_floor_area",
+            "description": "Gross floor area of the detached second-dwelling unit",
+            "units": "sf",
+            "domain": "nonnegative real"
+          }
+        ],
+        "Constants": [
+          {
+            "name": "second_unit_floor_area_max",
+            "value": 900,
+            "units": "sf",
+            "source": "Figure labels in Scenarios A\u2013D",
+            "confidence": "confirmed"
+          }
+        ],
+        "Conditions": [
+          {
+            "type": "mandatory",
+            "rule": "second_unit_floor_area <= second_unit_floor_area_max"
+          }
+        ],
+        "Exceptions": [],
+        "Relationships": [
+          {
+            "type": "referenced_by",
+            "targets": [
+              "Scenarios A, B, C, D (the detached 2nd unit in each is labeled '900 sf max')"
+            ]
+          }
+        ]
+      },
+      {
+        "Qualifiers": {
+          "title": "Location allowances for detached garages relative to front lot line distance",
+          "scope": "Location of detached parking garages serving the main dwelling, second dwelling, or both",
+          "applicability": [
+            "Detached garages on interior lots (illustrative); condition likely general"
+          ],
+          "exclusions": [
+            "Attached garages (covered separately)"
+          ],
+          "notes": [
+            "Text in Scenarios A and C: 'Because it is detached and at least 75' from the front lot line, it may be located in the rear and side yards.'"
+          ]
+        },
+        "Variables": [
+          {
+            "name": "garage_attachment",
+            "description": "Attachment status of garage to a dwelling",
+            "units": null,
+            "allowed_values": [
+              "detached",
+              "attached"
+            ]
+          },
+          {
+            "name": "distance_from_front_lot_line",
+            "description": "Horizontal distance from the garage to the front lot line",
+            "units": "ft",
+            "domain": "nonnegative real"
+          },
+          {
+            "name": "garage_location_zone",
+            "description": "Yard or area where the detached garage is sited",
+            "units": null,
+            "allowed_values": [
+              "rear_yard",
+              "side_yard",
+              "buildable_area",
+              "front_yard"
+            ]
+          }
+        ],
+        "Constants": [
+          {
+            "name": "rear_side_yard_distance_threshold",
+            "value": 75,
+            "units": "ft",
+            "source": "Scenario A and C parenthetical text",
+            "confidence": "confirmed"
+          }
+        ],
+        "Conditions": [
+          {
+            "type": "conditional",
+            "rule": "IF garage_attachment == 'detached' AND distance_from_front_lot_line >= rear_side_yard_distance_threshold THEN garage_location_zone IN {'rear_yard','side_yard'}"
+          }
+        ],
+        "Exceptions": [],
+        "Relationships": [
+          {
+            "type": "used_in",
+            "targets": [
+              "Scenario A (1-car detached for 2nd unit)",
+              "Scenario C (shared 2-car detached for both dwellings)"
+            ]
+          },
+          {
+            "type": "complements",
+            "targets": [
+              "Rule: Location requirements for attached garages"
+            ]
+          }
+        ]
+      },
+      {
+        "Qualifiers": {
+          "title": "Location requirements for attached garages",
+          "scope": "Attached garages serving either the main dwelling or the 2nd dwelling",
+          "applicability": [
+            "Interior lot example (illustrative)"
+          ],
+          "exclusions": [
+            "Detached garages (covered separately)"
+          ],
+          "notes": [
+            "Scenario B parenthetical: 'Because attached, it must be located within the building area rather than in the rear or side yards.'"
+          ]
+        },
+        "Variables": [
+          {
+            "name": "garage_attachment",
+            "description": "Attachment status of garage to a dwelling",
+            "units": null,
+            "allowed_values": [
+              "attached",
+              "detached"
+            ]
+          },
+          {
+            "name": "garage_location_zone",
+            "description": "Placement relative to site yard/buildable area",
+            "units": null,
+            "allowed_values": [
+              "buildable_area",
+              "rear_yard",
+              "side_yard",
+              "front_yard"
+            ]
+          }
+        ],
+        "Constants": [],
+        "Conditions": [
+          {
+            "type": "mandatory",
+            "rule": "IF garage_attachment == 'attached' THEN garage_location_zone == 'buildable_area' AND garage_location_zone NOT IN {'rear_yard','side_yard'}"
+          }
+        ],
+        "Exceptions": [],
+        "Relationships": [
+          {
+            "type": "used_in",
+            "targets": [
+              "Scenario B (2nd unit has 1-car attached garage)",
+              "Scenario D (shared 2-car attached garage at the main dwelling)"
+            ]
+          },
+          {
+            "type": "complements",
+            "targets": [
+              "Rule: Location allowances for detached garages relative to front lot line distance"
+            ]
+          }
+        ]
+      },
+      {
+        "Qualifiers": {
+          "title": "Use of driveway to satisfy uncovered parking spaces relative to front setback",
+          "scope": "Uncovered parking spaces for the main dwelling and the detached 2nd dwelling",
+          "applicability": [
+            "Interior lot example (illustrative) in Scenarios A\u2013D"
+          ],
+          "exclusions": [],
+          "notes": [
+            "All scenarios state: 'Both dwellings use the driveway for their uncovered spaces (beyond front setback)'.",
+            "Directionality of 'beyond' (in front of vs. behind the front setback line) is not explicitly defined here; typical practice implies behind the front setback line."
+          ]
+        },
+        "Variables": [
+          {
+            "name": "parking_space_cover",
+            "description": "Whether the space is covered or uncovered",
+            "units": null,
+            "allowed_values": [
+              "covered",
+              "uncovered"
+            ]
+          },
+          {
+            "name": "parking_location",
+            "description": "Feature used to provide the parking space",
+            "units": null,
+            "allowed_values": [
+              "driveway",
+              "garage",
+              "carport",
+              "other"
+            ]
+          },
+          {
+            "name": "position_relative_to_front_setback",
+            "description": "Relative position of the space to the front setback line",
+            "units": null,
+            "allowed_values": [
+              "beyond_front_setback",
+              "within_front_setback"
+            ]
+          }
+        ],
+        "Constants": [],
+        "Conditions": [
+          {
+            "type": "mandatory",
+            "rule": "IF parking_space_cover == 'uncovered' AND parking_location == 'driveway' THEN position_relative_to_front_setback == 'beyond_front_setback'"
+          }
+        ],
+        "Exceptions": [],
+        "Relationships": [
+          {
+            "type": "used_in",
+            "targets": [
+              "Scenarios A, B, C, D"
+            ]
+          },
+          {
+            "type": "references",
+            "targets": [
+              "Legend item: 'Area that may not be used to satisfy required parking spaces' (details not provided here)"
+            ]
+          }
+        ]
+      },
+      {
+        "Qualifiers": {
+          "title": "Permissible garage configurations for main and detached 2nd dwelling units (examples)",
+          "scope": "Acceptable configurations for covered parking serving the main dwelling and a detached 2nd dwelling unit",
+          "applicability": [
+            "Interior lot example (illustrative)"
+          ],
+          "exclusions": [
+            "This set is presented as examples and may not be exhaustive"
+          ],
+          "notes": [
+            "The figure caption states 'Examples of site planning solutions...', indicating non-exhaustive illustrative compliance options.",
+            "Covered parking capacities shown are 1-car or 2-car, consistent with one covered space per dwelling in the examples; this is not explicitly codified here."
+          ]
+        },
+        "Variables": [
+          {
+            "name": "main_dwelling_garage",
+            "description": "Covered parking for the main dwelling",
+            "units": null,
+            "structure": {
+              "attachment": [
+                "attached",
+                "detached",
+                "shared_attached",
+                "shared_detached"
+              ],
+              "capacity_cars": "integer >= 0"
+            }
+          },
+          {
+            "name": "second_dwelling_garage",
+            "description": "Covered parking for the detached 2nd dwelling",
+            "units": null,
+            "structure": {
+              "attachment": [
+                "attached",
+                "detached",
+                "shared_attached",
+                "shared_detached"
+              ],
+              "capacity_cars": "integer >= 0"
+            }
+          },
+          {
+            "name": "shared_garage",
+            "description": "Whether covered parking is a single shared structure serving both dwellings",
+            "units": null,
+            "allowed_values": [
+              true,
+              false
+            ]
+          }
+        ],
+        "Constants": [
+          {
+            "name": "one_car_capacity",
+            "value": 1,
+            "units": "car",
+            "source": "Scenarios A and B",
+            "confidence": "confirmed"
+          },
+          {
+            "name": "two_car_capacity",
+            "value": 2,
+            "units": "cars",
+            "source": "Scenarios C and D",
+            "confidence": "confirmed"
+          }
+        ],
+        "Conditions": [
+          {
+            "type": "optional_configuration",
+            "name": "Scenario A",
+            "rule": "main_dwelling_garage.attachment == 'attached' AND main_dwelling_garage.capacity_cars == 1 AND second_dwelling_garage.attachment == 'detached' AND second_dwelling_garage.capacity_cars == 1 AND shared_garage == false",
+            "notes": [
+              "Detached 2nd unit garage may be in rear/side yards if 75' from front lot line (see detached garage location rule)."
+            ]
+          },
+          {
+            "type": "optional_configuration",
+            "name": "Scenario B",
+            "rule": "main_dwelling_garage.attachment == 'attached' AND main_dwelling_garage.capacity_cars == 1 AND second_dwelling_garage.attachment == 'attached' AND second_dwelling_garage.capacity_cars == 1 AND shared_garage == false",
+            "notes": [
+              "Attached 2nd unit garage must be within buildable area (not rear/side yards)."
+            ]
+          },
+          {
+            "type": "optional_configuration",
+            "name": "Scenario C",
+            "rule": "shared_garage == true AND main_dwelling_garage.attachment == 'shared_detached' AND second_dwelling_garage.attachment == 'shared_detached' AND main_dwelling_garage.capacity_cars + second_dwelling_garage.capacity_cars == 2",
+            "notes": [
+              "Shared detached 2-car garage may be in rear/side yards if 75' from front lot line."
+            ]
+          },
+          {
+            "type": "optional_configuration",
+            "name": "Scenario D",
+            "rule": "shared_garage == true AND main_dwelling_garage.attachment == 'shared_attached' AND second_dwelling_garage.attachment == 'shared_attached' AND main_dwelling_garage.capacity_cars + second_dwelling_garage.capacity_cars == 2",
+            "notes": [
+              "Shared attached 2-car garage must be within buildable area."
+            ]
+          }
+        ],
+        "Exceptions": [
+          {
+            "description": "Configurations are labeled as examples; other configurations may comply if they meet all applicable standards.",
+            "type": "non_exhaustive_examples"
+          }
+        ],
+        "Relationships": [
+          {
+            "type": "depends_on",
+            "targets": [
+              "Rule: Location allowances for detached garages relative to front lot line distance",
+              "Rule: Location requirements for attached garages",
+              "Rule: Use of driveway to satisfy uncovered parking spaces relative to front setback"
+            ]
+          }
+        ]
+      },
+      {
+        "Qualifiers": {
+          "title": "Minimum rear-yard dimension (value not legible in source image)",
+          "scope": "Rear-yard minimum dimension shown on interior lot examples",
+          "applicability": [
+            "All scenarios show a vertical dimension arrow in rear yard labeled '\u2014' min"
+          ],
+          "exclusions": [],
+          "notes": [
+            "The numerical value preceding 'min' is not legible in the provided scan; cannot be confirmed from this page."
+          ]
+        },
+        "Variables": [
+          {
+            "name": "rear_yard_minimum_dimension",
+            "description": "Minimum required rear-yard dimension",
+            "units": "ft",
+            "domain": "positive real",
+            "status": "unknown_value"
+          }
+        ],
+        "Constants": [],
+        "Conditions": [
+          {
+            "type": "mandatory",
+            "rule": "rear_yard_dimension >= rear_yard_minimum_dimension",
+            "enforceability": "cannot validate without confirmed value"
+          }
+        ],
+        "Exceptions": [
+          {
+            "description": "Value unreadable; must be sourced from clearer copy or governing code text before enforcement.",
+            "type": "data_unavailable"
+          }
+        ],
+        "Relationships": [
+          {
+            "type": "referenced_by",
+            "targets": [
+              "Scenarios A, B, C, D (rear-yard arrow labeled '\u2014' min.)"
+            ]
+          }
+        ]
+      },
+      {
+        "Qualifiers": {
+          "title": "Possible maximum floor area for 1-car garages (unconfirmed)",
+          "scope": "Garage floor area for single-car garages in the examples",
+          "applicability": [
+            "Small labels near 1-car garage symbols in Scenarios A and B"
+          ],
+          "exclusions": [],
+          "notes": [
+            "Small text appears to read '200 sf max' but is faint; cannot be confirmed from this image alone."
+          ]
+        },
+        "Variables": [
+          {
+            "name": "one_car_garage_floor_area",
+            "description": "Floor area of a single-car garage",
+            "units": "sf",
+            "domain": "nonnegative real"
+          }
+        ],
+        "Constants": [
+          {
+            "name": "one_car_garage_floor_area_max_candidate",
+            "value": 200,
+            "units": "sf",
+            "source": "Faint diagram label near 1-car garages in Scenarios A and B",
+            "confidence": "uncertain"
+          }
+        ],
+        "Conditions": [
+          {
+            "type": "mandatory_candidate",
+            "rule": "IF one_car_garage_floor_area_max_candidate is confirmed externally THEN one_car_garage_floor_area <= one_car_garage_floor_area_max_candidate",
+            "enforceability": "pending confirmation"
+          }
+        ],
+        "Exceptions": [
+          {
+            "description": "Do not enforce without independent confirmation of the 200 sf maximum from authoritative text.",
+            "type": "data_unavailable"
+          }
+        ],
+        "Relationships": [
+          {
+            "type": "referenced_by",
+            "targets": [
+              "Scenarios A and B (near '1-car' garage labels)"
+            ]
+          }
+        ]
+      },
+      {
+        "Qualifiers": {
+          "title": "Areas prohibited for satisfying required parking spaces (legend reference only)",
+          "scope": "Site areas that may not be counted toward required parking",
+          "applicability": [
+            "Legend item: 'Area that may not be used to satisfy required parking spaces'"
+          ],
+          "exclusions": [],
+          "notes": [
+            "The legend indicates such areas exist but does not define them in text or values on this page."
+          ]
+        },
+        "Variables": [
+          {
+            "name": "prohibited_parking_areas",
+            "description": "Mapped site areas where required parking cannot be located",
+            "units": null,
+            "domain": "set of plan areas",
+            "status": "unspecified_on_this_page"
+          }
+        ],
+        "Constants": [],
+        "Conditions": [
+          {
+            "type": "mandatory",
+            "rule": "Required parking spaces shall not be located within prohibited_parking_areas",
+            "enforceability": "requires external definition/mapping"
+          }
+        ],
+        "Exceptions": [
+          {
+            "description": "Prohibited areas not delineated here; must be obtained from full code or legend key mapping.",
+            "type": "data_unavailable"
+          }
+        ],
+        "Relationships": [
+          {
+            "type": "references",
+            "targets": [
+              "Rule: Use of driveway to satisfy uncovered parking spaces relative to front setback"
+            ]
+          }
+        ]
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "[\n  {\n    \"Qualifiers\": {\n      \"title\": \"Maximum floor area for detached 2nd dwelling unit\",\n      \"scope\": \"Site planning for detached second-dwelling units (accessory/secondary dwelling on the same lot as a main dwelling)\",\n      \"applicability\": [\n        \"Interior lot example (illustrative); applicability likely general but only interior-lot layout is shown\"\n      ],\n      \"exclusions\": [],\n      \"notes\": [\n        \"The label 'Detached 2nd dwelling unit 900 sf max' appears in all scenarios (A\u2013D), indicating a global cap for the detached 2nd unit on these examples.\"\n      ]\n    },\n    \"Variables\": [\n      {\n        \"name\": \"second_unit_floor_area\",\n        \"description\": \"Gross floor area of the detached second-dwelling unit\",\n        \"units\": \"sf\",\n        \"domain\": \"nonnegative real\"\n      }\n    ],\n    \"Constants\": [\n      {\n        \"name\": \"second_unit_floor_area_max\",\n        \"value\": 900,\n        \"units\": \"sf\",\n        \"source\": \"Figure labels in Scenarios A\u2013D\",\n        \"confidence\": \"confirmed\"\n      }\n    ],\n    \"Conditions\": [\n      {\n        \"type\": \"mandatory\",\n        \"rule\": \"second_unit_floor_area <= second_unit_floor_area_max\"\n      }\n    ],\n    \"Exceptions\": [],\n    \"Relationships\": [\n      {\n        \"type\": \"referenced_by\",\n        \"targets\": [\n          \"Scenarios A, B, C, D (the detached 2nd unit in each is labeled '900 sf max')\"\n        ]\n      }\n    ]\n  },\n  {\n    \"Qualifiers\": {\n      \"title\": \"Location allowances for detached garages relative to front lot line distance\",\n      \"scope\": \"Location of detached parking garages serving the main dwelling, second dwelling, or both\",\n      \"applicability\": [\n        \"Detached garages on interior lots (illustrative); condition likely general\"\n      ],\n      \"exclusions\": [\n        \"Attached garages (covered separately)\"\n      ],\n      \"notes\": [\n        \"Text in Scenarios A and C: 'Because it is detached and at least 75' from the front lot line, it may be located in the rear and side yards.'\"\n      ]\n    },\n    \"Variables\": [\n      {\n        \"name\": \"garage_attachment\",\n        \"description\": \"Attachment status of garage to a dwelling\",\n        \"units\": null,\n        \"allowed_values\": [\n          \"detached\",\n          \"attached\"\n        ]\n      },\n      {\n        \"name\": \"distance_from_front_lot_line\",\n        \"description\": \"Horizontal distance from the garage to the front lot line\",\n        \"units\": \"ft\",\n        \"domain\": \"nonnegative real\"\n      },\n      {\n        \"name\": \"garage_location_zone\",\n        \"description\": \"Yard or area where the detached garage is sited\",\n        \"units\": null,\n        \"allowed_values\": [\n          \"rear_yard\",\n          \"side_yard\",\n          \"buildable_area\",\n          \"front_yard\"\n        ]\n      }\n    ],\n    \"Constants\": [\n      {\n        \"name\": \"rear_side_yard_distance_threshold\",\n        \"value\": 75,\n        \"units\": \"ft\",\n        \"source\": \"Scenario A and C parenthetical text\",\n        \"confidence\": \"confirmed\"\n      }\n    ],\n    \"Conditions\": [\n      {\n        \"type\": \"conditional\",\n        \"rule\": \"IF garage_attachment == 'detached' AND distance_from_front_lot_line >= rear_side_yard_distance_threshold THEN garage_location_zone IN {'rear_yard','side_yard'}\"\n      }\n    ],\n    \"Exceptions\": [],\n    \"Relationships\": [\n      {\n        \"type\": \"used_in\",\n        \"targets\": [\n          \"Scenario A (1-car detached for 2nd unit)\",\n          \"Scenario C (shared 2-car detached for both dwellings)\"\n        ]\n      },\n      {\n        \"type\": \"complements\",\n        \"targets\": [\n          \"Rule: Location requirements for attached garages\"\n        ]\n      }\n    ]\n  },\n  {\n    \"Qualifiers\": {\n      \"title\": \"Location requirements for attached garages\",\n      \"scope\": \"Attached garages serving either the main dwelling or the 2nd dwelling\",\n      \"applicability\": [\n        \"Interior lot example (illustrative)\"\n      ],\n      \"exclusions\": [\n        \"Detached garages (covered separately)\"\n      ],\n      \"notes\": [\n        \"Scenario B parenthetical: 'Because attached, it must be located within the building area rather than in the rear or side yards.'\"\n      ]\n    },\n    \"Variables\": [\n      {\n        \"name\": \"garage_attachment\",\n        \"description\": \"Attachment status of garage to a dwelling\",\n        \"units\": null,\n        \"allowed_values\": [\n          \"attached\",\n          \"detached\"\n        ]\n      },\n      {\n        \"name\": \"garage_location_zone\",\n        \"description\": \"Placement relative to site yard/buildable area\",\n        \"units\": null,\n        \"allowed_values\": [\n          \"buildable_area\",\n          \"rear_yard\",\n          \"side_yard\",\n          \"front_yard\"\n        ]\n      }\n    ],\n    \"Constants\": [],\n    \"Conditions\": [\n      {\n        \"type\": \"mandatory\",\n        \"rule\": \"IF garage_attachment == 'attached' THEN garage_location_zone == 'buildable_area' AND garage_location_zone NOT IN {'rear_yard','side_yard'}\"\n      }\n    ],\n    \"Exceptions\": [],\n    \"Relationships\": [\n      {\n        \"type\": \"used_in\",\n        \"targets\": [\n          \"Scenario B (2nd unit has 1-car attached garage)\",\n          \"Scenario D (shared 2-car attached garage at the main dwelling)\"\n        ]\n      },\n      {\n        \"type\": \"complements\",\n        \"targets\": [\n          \"Rule: Location allowances for detached garages relative to front lot line distance\"\n        ]\n      }\n    ]\n  },\n  {\n    \"Qualifiers\": {\n      \"title\": \"Use of driveway to satisfy uncovered parking spaces relative to front setback\",\n      \"scope\": \"Uncovered parking spaces for the main dwelling and the detached 2nd dwelling\",\n      \"applicability\": [\n        \"Interior lot example (illustrative) in Scenarios A\u2013D\"\n      ],\n      \"exclusions\": [],\n      \"notes\": [\n        \"All scenarios state: 'Both dwellings use the driveway for their uncovered spaces (beyond front setback)'.\",\n        \"Directionality of 'beyond' (in front of vs. behind the front setback line) is not explicitly defined here; typical practice implies behind the front setback line.\"\n      ]\n    },\n    \"Variables\": [\n      {\n        \"name\": \"parking_space_cover\",\n        \"description\": \"Whether the space is covered or uncovered\",\n        \"units\": null,\n        \"allowed_values\": [\n          \"covered\",\n          \"uncovered\"\n        ]\n      },\n      {\n        \"name\": \"parking_location\",\n        \"description\": \"Feature used to provide the parking space\",\n        \"units\": null,\n        \"allowed_values\": [\n          \"driveway\",\n          \"garage\",\n          \"carport\",\n          \"other\"\n        ]\n      },\n      {\n        \"name\": \"position_relative_to_front_setback\",\n        \"description\": \"Relative position of the space to the front setback line\",\n        \"units\": null,\n        \"allowed_values\": [\n          \"beyond_front_setback\",\n          \"within_front_setback\"\n        ]\n      }\n    ],\n    \"Constants\": [],\n    \"Conditions\": [\n      {\n        \"type\": \"mandatory\",\n        \"rule\": \"IF parking_space_cover == 'uncovered' AND parking_location == 'driveway' THEN position_relative_to_front_setback == 'beyond_front_setback'\"\n      }\n    ],\n    \"Exceptions\": [],\n    \"Relationships\": [\n      {\n        \"type\": \"used_in\",\n        \"targets\": [\n          \"Scenarios A, B, C, D\"\n        ]\n      },\n      {\n        \"type\": \"references\",\n        \"targets\": [\n          \"Legend item: 'Area that may not be used to satisfy required parking spaces' (details not provided here)\"\n        ]\n      }\n    ]\n  },\n  {\n    \"Qualifiers\": {\n      \"title\": \"Permissible garage configurations for main and detached 2nd dwelling units (examples)\",\n      \"scope\": \"Acceptable configurations for covered parking serving the main dwelling and a detached 2nd dwelling unit\",\n      \"applicability\": [\n        \"Interior lot example (illustrative)\"\n      ],\n      \"exclusions\": [\n        \"This set is presented as examples and may not be exhaustive\"\n      ],\n      \"notes\": [\n        \"The figure caption states 'Examples of site planning solutions...', indicating non-exhaustive illustrative compliance options.\",\n        \"Covered parking capacities shown are 1-car or 2-car, consistent with one covered space per dwelling in the examples; this is not explicitly codified here.\"\n      ]\n    },\n    \"Variables\": [\n      {\n        \"name\": \"main_dwelling_garage\",\n        \"description\": \"Covered parking for the main dwelling\",\n        \"units\": null,\n        \"structure\": {\n          \"attachment\": [\n            \"attached\",\n            \"detached\",\n            \"shared_attached\",\n            \"shared_detached\"\n          ],\n          \"capacity_cars\": \"integer >= 0\"\n        }\n      },\n      {\n        \"name\": \"second_dwelling_garage\",\n        \"description\": \"Covered parking for the detached 2nd dwelling\",\n        \"units\": null,\n        \"structure\": {\n          \"attachment\": [\n            \"attached\",\n            \"detached\",\n            \"shared_attached\",\n            \"shared_detached\"\n          ],\n          \"capacity_cars\": \"integer >= 0\"\n        }\n      },\n      {\n        \"name\": \"shared_garage\",\n        \"description\": \"Whether covered parking is a single shared structure serving both dwellings\",\n        \"units\": null,\n        \"allowed_values\": [\n          true,\n          false\n        ]\n      }\n    ],\n    \"Constants\": [\n      {\n        \"name\": \"one_car_capacity\",\n        \"value\": 1,\n        \"units\": \"car\",\n        \"source\": \"Scenarios A and B\",\n        \"confidence\": \"confirmed\"\n      },\n      {\n        \"name\": \"two_car_capacity\",\n        \"value\": 2,\n        \"units\": \"cars\",\n        \"source\": \"Scenarios C and D\",\n        \"confidence\": \"confirmed\"\n      }\n    ],\n    \"Conditions\": [\n      {\n        \"type\": \"optional_configuration\",\n        \"name\": \"Scenario A\",\n        \"rule\": \"main_dwelling_garage.attachment == 'attached' AND main_dwelling_garage.capacity_cars == 1 AND second_dwelling_garage.attachment == 'detached' AND second_dwelling_garage.capacity_cars == 1 AND shared_garage == false\",\n        \"notes\": [\n          \"Detached 2nd unit garage may be in rear/side yards if 75' from front lot line (see detached garage location rule).\"\n        ]\n      },\n      {\n        \"type\": \"optional_configuration\",\n        \"name\": \"Scenario B\",\n        \"rule\": \"main_dwelling_garage.attachment == 'attached' AND main_dwelling_garage.capacity_cars == 1 AND second_dwelling_garage.attachment == 'attached' AND second_dwelling_garage.capacity_cars == 1 AND shared_garage == false\",\n        \"notes\": [\n          \"Attached 2nd unit garage must be within buildable area (not rear/side yards).\"\n        ]\n      },\n      {\n        \"type\": \"optional_configuration\",\n        \"name\": \"Scenario C\",\n        \"rule\": \"shared_garage == true AND main_dwelling_garage.attachment == 'shared_detached' AND second_dwelling_garage.attachment == 'shared_detached' AND main_dwelling_garage.capacity_cars + second_dwelling_garage.capacity_cars == 2\",\n        \"notes\": [\n          \"Shared detached 2-car garage may be in rear/side yards if 75' from front lot line.\"\n        ]\n      },\n      {\n        \"type\": \"optional_configuration\",\n        \"name\": \"Scenario D\",\n        \"rule\": \"shared_garage == true AND main_dwelling_garage.attachment == 'shared_attached' AND second_dwelling_garage.attachment == 'shared_attached' AND main_dwelling_garage.capacity_cars + second_dwelling_garage.capacity_cars == 2\",\n        \"notes\": [\n          \"Shared attached 2-car garage must be within buildable area.\"\n        ]\n      }\n    ],\n    \"Exceptions\": [\n      {\n        \"description\": \"Configurations are labeled as examples; other configurations may comply if they meet all applicable standards.\",\n        \"type\": \"non_exhaustive_examples\"\n      }\n    ],\n    \"Relationships\": [\n      {\n        \"type\": \"depends_on\",\n        \"targets\": [\n          \"Rule: Location allowances for detached garages relative to front lot line distance\",\n          \"Rule: Location requirements for attached garages\",\n          \"Rule: Use of driveway to satisfy uncovered parking spaces relative to front setback\"\n        ]\n      }\n    ]\n  },\n  {\n    \"Qualifiers\": {\n      \"title\": \"Minimum rear-yard dimension (value not legible in source image)\",\n      \"scope\": \"Rear-yard minimum dimension shown on interior lot examples\",\n      \"applicability\": [\n        \"All scenarios show a vertical dimension arrow in rear yard labeled '\u2014' min\"\n      ],\n      \"exclusions\": [],\n      \"notes\": [\n        \"The numerical value preceding 'min' is not legible in the provided scan; cannot be confirmed from this page.\"\n      ]\n    },\n    \"Variables\": [\n      {\n        \"name\": \"rear_yard_minimum_dimension\",\n        \"description\": \"Minimum required rear-yard dimension\",\n        \"units\": \"ft\",\n        \"domain\": \"positive real\",\n        \"status\": \"unknown_value\"\n      }\n    ],\n    \"Constants\": [],\n    \"Conditions\": [\n      {\n        \"type\": \"mandatory\",\n        \"rule\": \"rear_yard_dimension >= rear_yard_minimum_dimension\",\n        \"enforceability\": \"cannot validate without confirmed value\"\n      }\n    ],\n    \"Exceptions\": [\n      {\n        \"description\": \"Value unreadable; must be sourced from clearer copy or governing code text before enforcement.\",\n        \"type\": \"data_unavailable\"\n      }\n    ],\n    \"Relationships\": [\n      {\n        \"type\": \"referenced_by\",\n        \"targets\": [\n          \"Scenarios A, B, C, D (rear-yard arrow labeled '\u2014' min.)\"\n        ]\n      }\n    ]\n  },\n  {\n    \"Qualifiers\": {\n      \"title\": \"Possible maximum floor area for 1-car garages (unconfirmed)\",\n      \"scope\": \"Garage floor area for single-car garages in the examples\",\n      \"applicability\": [\n        \"Small labels near 1-car garage symbols in Scenarios A and B\"\n      ],\n      \"exclusions\": [],\n      \"notes\": [\n        \"Small text appears to read '200 sf max' but is faint; cannot be confirmed from this image alone.\"\n      ]\n    },\n    \"Variables\": [\n      {\n        \"name\": \"one_car_garage_floor_area\",\n        \"description\": \"Floor area of a single-car garage\",\n        \"units\": \"sf\",\n        \"domain\": \"nonnegative real\"\n      }\n    ],\n    \"Constants\": [\n      {\n        \"name\": \"one_car_garage_floor_area_max_candidate\",\n        \"value\": 200,\n        \"units\": \"sf\",\n        \"source\": \"Faint diagram label near 1-car garages in Scenarios A and B\",\n        \"confidence\": \"uncertain\"\n      }\n    ],\n    \"Conditions\": [\n      {\n        \"type\": \"mandatory_candidate\",\n        \"rule\": \"IF one_car_garage_floor_area_max_candidate is confirmed externally THEN one_car_garage_floor_area <= one_car_garage_floor_area_max_candidate\",\n        \"enforceability\": \"pending confirmation\"\n      }\n    ],\n    \"Exceptions\": [\n      {\n        \"description\": \"Do not enforce without independent confirmation of the 200 sf maximum from authoritative text.\",\n        \"type\": \"data_unavailable\"\n      }\n    ],\n    \"Relationships\": [\n      {\n        \"type\": \"referenced_by\",\n        \"targets\": [\n          \"Scenarios A and B (near '1-car' garage labels)\"\n        ]\n      }\n    ]\n  },\n  {\n    \"Qualifiers\": {\n      \"title\": \"Areas prohibited for satisfying required parking spaces (legend reference only)\",\n      \"scope\": \"Site areas that may not be counted toward required parking\",\n      \"applicability\": [\n        \"Legend item: 'Area that may not be used to satisfy required parking spaces'\"\n      ],\n      \"exclusions\": [],\n      \"notes\": [\n        \"The legend indicates such areas exist but does not define them in text or values on this page.\"\n      ]\n    },\n    \"Variables\": [\n      {\n        \"name\": \"prohibited_parking_areas\",\n        \"description\": \"Mapped site areas where required parking cannot be located\",\n        \"units\": null,\n        \"domain\": \"set of plan areas\",\n        \"status\": \"unspecified_on_this_page\"\n      }\n    ],\n    \"Constants\": [],\n    \"Conditions\": [\n      {\n        \"type\": \"mandatory\",\n        \"rule\": \"Required parking spaces shall not be located within prohibited_parking_areas\",\n        \"enforceability\": \"requires external definition/mapping\"\n      }\n    ],\n    \"Exceptions\": [\n      {\n        \"description\": \"Prohibited areas not delineated here; must be obtained from full code or legend key mapping.\",\n        \"type\": \"data_unavailable\"\n      }\n    ],\n    \"Relationships\": [\n      {\n        \"type\": \"references\",\n        \"targets\": [\n          \"Rule: Use of driveway to satisfy uncovered parking spaces relative to front setback\"\n        ]\n      }\n    ]\n  }\n]"
+  },
+  "timestamp": "2025-09-16 15:12:46",
+  "model": "openai/gpt-5",
+  "success": true
+}

@@ -1,0 +1,183 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_15.png",
+  "image_name": "Page_15.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Step 2: Determine which perimeter segments abut the house walls. These are closed segments, or sides.\n\nIn Fig 5 sides A, B, & C abut the house walls.\nThese are considered to be closed segments.\n\nStep 3: Determine the status (open/closed) of the remaining segments based on the design. If at least 50% of the facade area is open, then the segment or side is considered open.\n\nFor purposes of assessing the openess of the facade:\n\n\u2022 The height of the segment facades is measured from the top of the porch floor to the the point where the segment facade intersects with the top of the roof material.\n\n\u2022 The widths of the segment facades are measured from the same plane. Allowances may be made for structural supports that are not excessive.\n\nintersection\nfacade & top\nof roof material\n\nHeight = 8'\n\nPorch flr\n\nD\n7'\nOpen\n\nE\n14'\nClosed\n(because of decorative glass wall)\n\nF\n24'\nOpen\n\nG\n4'\nOpen\n\n9",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Floor plan diagram labeled as Fig 5 showing a house layout with segments A, B, and C marked as closed segments abutting house walls. The diagram shows dimensions and includes an angled section marked with measurements.",
+          "location": "upper right portion of page"
+        },
+        {
+          "type": "diagram",
+          "description": "Cross-sectional elevation diagrams showing four different facade segments (D, E, F, G) with measurements. Shows height measurement of 8' from porch floor to roof intersection, and widths of 7', 14', 24', and 4' respectively. Segments are labeled as Open, Closed, Open, Open from left to right.",
+          "location": "bottom half of page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Facade area open threshold",
+          "value_type": "Percentage",
+          "value": "50",
+          "unit": "%"
+        },
+        {
+          "parameter": "Segment D width",
+          "value_type": "Measurement",
+          "value": "7",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Segment E width",
+          "value_type": "Measurement",
+          "value": "14",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Segment F width",
+          "value_type": "Measurement",
+          "value": "24",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Segment G width",
+          "value_type": "Measurement",
+          "value": "4",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Facade height",
+          "value_type": "Measurement",
+          "value": "8",
+          "unit": "feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "",
+        "subheadings": [
+          "Step 2:",
+          "Step 3:"
+        ],
+        "sections": [
+          "Step 2",
+          "Step 3"
+        ]
+      },
+      "additional_notes": [
+        "Page number 9 appears at bottom",
+        "Diagram includes labels for segments A, B, C as closed segments",
+        "Cross-sectional diagrams show structural details including porch floor and roof intersection"
+      ],
+      "cross_references": [
+        "Fig 5"
+      ],
+      "conditions_and_qualifiers": {
+        "qualifiers": [
+          {
+            "id": "q1",
+            "text": "For purposes of assessing the openess of the facade",
+            "applies_to_conditions": [
+              "c1",
+              "c2"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q2",
+            "text": "based on the design",
+            "applies_to_conditions": [
+              "c3"
+            ],
+            "scope": "Local"
+          }
+        ],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "The height of the segment facades is measured from the top of the porch floor to the the point where the segment facade intersects with the top of the roof material",
+            "value_type": "Measurement",
+            "operator": "=",
+            "threshold_value": "measurement from porch floor to roof intersection",
+            "unit": "feet"
+          },
+          {
+            "id": "c2",
+            "text": "The widths of the segment facades are measured from the same plane. Allowances may be made for structural supports that are not excessive",
+            "value_type": "Measurement",
+            "operator": "=",
+            "threshold_value": "width measurement from same plane",
+            "unit": "feet"
+          },
+          {
+            "id": "c3",
+            "text": "If at least 50% of the facade area is open, then the segment or side is considered open",
+            "value_type": "Percentage",
+            "operator": ">=",
+            "threshold_value": "50",
+            "unit": "%"
+          },
+          {
+            "id": "c4",
+            "text": "sides A, B, & C abut the house walls. These are considered to be closed segments",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "true",
+            "unit": "None"
+          }
+        ],
+        "logical_relationships": [
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c3"
+            ],
+            "expression": "If at least 50% of the facade area is open, then the segment or side is considered open",
+            "evaluation_order": 1
+          }
+        ],
+        "execution_sequence": [
+          {
+            "step": 1,
+            "action": "Determine which perimeter segments abut the house walls",
+            "condition_ids": [
+              "c4"
+            ],
+            "qualifier_ids": [],
+            "dependencies": []
+          },
+          {
+            "step": 2,
+            "action": "Determine the status (open/closed) of the remaining segments",
+            "condition_ids": [
+              "c3"
+            ],
+            "qualifier_ids": [
+              "q2"
+            ],
+            "dependencies": [
+              1
+            ]
+          },
+          {
+            "step": 3,
+            "action": "Measure facade height and width according to specified criteria",
+            "condition_ids": [
+              "c1",
+              "c2"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": [
+              2
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:31:23",
+  "model_used": "anthropic/claude-sonnet-4"
+}

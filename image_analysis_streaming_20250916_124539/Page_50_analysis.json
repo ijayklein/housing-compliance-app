@@ -1,0 +1,53 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_50.png",
+  "image_name": "Page_50.png",
+  "analysis": {
+    "page": "44",
+    "heading": "2nd-dwelling units standards & site planning",
+    "content": "Lots that meet the minimum size may have an attached or detached 2nd-dwelling unit that is a separate unit and is subordinate to the main dwelling. 2nd dwelling units must comply with all regulations applying to the main dwelling except as follows:",
+    "figures": [
+      "Fig 41 A & B on p. 45",
+      "Fig 23 C & D"
+    ],
+    "tables": [
+      {
+        "title": "Min. lot size for 2nd dwelling unit by zone",
+        "data": [
+          [
+            "R-1",
+            "8,100 sf",
+            "9,720 sf"
+          ],
+          [
+            "R-1(7000)",
+            "9,450 sf",
+            "11,340 sf"
+          ],
+          [
+            "R-1(8000)",
+            "10,800 sf",
+            "12,960 sf"
+          ],
+          [
+            "R-1(10000)",
+            "13,500 sf",
+            "16,200 sf"
+          ],
+          [
+            "R-1(20000)",
+            "27,000 sf",
+            "32,400 sf"
+          ]
+        ]
+      }
+    ],
+    "codes": [
+      "18.12.070 (b)(1 & 2)",
+      "18.12.070 (c, d, e, & f)",
+      "18.12.080 (d, e, & f)"
+    ]
+  },
+  "timestamp": "2025-09-16 12:47:37",
+  "model": "anthropic/claude-3.5-sonnet",
+  "success": true
+}

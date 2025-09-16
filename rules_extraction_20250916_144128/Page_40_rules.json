@@ -1,0 +1,76 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_40.md",
+  "file_name": "Page_40.md",
+  "analysis": {
+    "extracted_rules": {
+      "rules": [
+        {
+          "title": "Parking space standards",
+          "qualifiers": {
+            "scope": "Parking regulations for residential neighborhoods",
+            "applicability": "All residential dwellings",
+            "exclusions": "Underground parking garages except by variance"
+          },
+          "variables": {
+            "dimensional": {
+              "uncovered_space_size": "8.5' x 18'",
+              "covered_space_size": "10' x 20' per space",
+              "two_car_garage_size": "20' x 20'",
+              "vertical_clearance": "7'"
+            },
+            "material": null,
+            "environmental": null,
+            "usage_parameters": {
+              "required_spaces_per_dwelling": 2,
+              "covered_space_requirement": 1,
+              "detached_structure_distance": "3' from main dwelling"
+            }
+          },
+          "constants": {
+            "numerical_values": {
+              "minimum_uncovered_space_width": "8.5'",
+              "minimum_uncovered_space_length": "18'",
+              "minimum_covered_space_width": "10'",
+              "minimum_covered_space_length": "20'",
+              "minimum_vertical_clearance": "7'"
+            },
+            "specs": null,
+            "standards": null,
+            "procedures": null
+          },
+          "conditions": {
+            "mandatory": [
+              "Two spaces are required on the lot per dwelling",
+              "One of the two spaces must be covered",
+              "Clear area for parking space must be free of other uses"
+            ],
+            "optional": [
+              "2nd space (uncovered) Tandem OK"
+            ],
+            "conditional_logic": [
+              "To be considered detached, a covered-parking structure must be a minimum of 3' from the main dwelling"
+            ],
+            "dependencies": null
+          },
+          "exceptions": {
+            "explicit_deviations": "No underground parking garages except by variance",
+            "alternatives": null,
+            "special_cases": "2nd dwelling units have same requirements"
+          },
+          "relationships": {
+            "hierarchical": null,
+            "cross_references": [
+              "Code Sections: 18.12.060, 18.83.090, 18.83.110(a), 18.12.040 (f), 18.12.080 (b)"
+            ],
+            "logical_dependencies": null
+          }
+        }
+      ]
+    },
+    "parse_error": false,
+    "raw_response": "```json\n{\n  \"rules\": [\n    {\n      \"title\": \"Parking space standards\",\n      \"qualifiers\": {\n        \"scope\": \"Parking regulations for residential neighborhoods\",\n        \"applicability\": \"All residential dwellings\",\n        \"exclusions\": \"Underground parking garages except by variance\"\n      },\n      \"variables\": {\n        \"dimensional\": {\n          \"uncovered_space_size\": \"8.5' x 18'\",\n          \"covered_space_size\": \"10' x 20' per space\",\n          \"two_car_garage_size\": \"20' x 20'\",\n          \"vertical_clearance\": \"7'\"\n        },\n        \"material\": null,\n        \"environmental\": null,\n        \"usage_parameters\": {\n          \"required_spaces_per_dwelling\": 2,\n          \"covered_space_requirement\": 1,\n          \"detached_structure_distance\": \"3' from main dwelling\"\n        }\n      },\n      \"constants\": {\n        \"numerical_values\": {\n          \"minimum_uncovered_space_width\": \"8.5'\",\n          \"minimum_uncovered_space_length\": \"18'\",\n          \"minimum_covered_space_width\": \"10'\",\n          \"minimum_covered_space_length\": \"20'\",\n          \"minimum_vertical_clearance\": \"7'\"\n        },\n        \"specs\": null,\n        \"standards\": null,\n        \"procedures\": null\n      },\n      \"conditions\": {\n        \"mandatory\": [\n          \"Two spaces are required on the lot per dwelling\",\n          \"One of the two spaces must be covered\",\n          \"Clear area for parking space must be free of other uses\"\n        ],\n        \"optional\": [\n          \"2nd space (uncovered) Tandem OK\"\n        ],\n        \"conditional_logic\": [\n          \"To be considered detached, a covered-parking structure must be a minimum of 3' from the main dwelling\"\n        ],\n        \"dependencies\": null\n      },\n      \"exceptions\": {\n        \"explicit_deviations\": \"No underground parking garages except by variance\",\n        \"alternatives\": null,\n        \"special_cases\": \"2nd dwelling units have same requirements\"\n      },\n      \"relationships\": {\n        \"hierarchical\": null,\n        \"cross_references\": [\n          \"Code Sections: 18.12.060, 18.83.090, 18.83.110(a), 18.12.040 (f), 18.12.080 (b)\"\n        ],\n        \"logical_dependencies\": null\n      }\n    }\n  ]\n}\n```"
+  },
+  "timestamp": "2025-09-16 14:43:15",
+  "model": "openai/gpt-4o",
+  "success": true
+}

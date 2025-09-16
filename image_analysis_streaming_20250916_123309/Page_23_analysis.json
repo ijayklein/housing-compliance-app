@@ -1,0 +1,19 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_23.png",
+  "image_name": "Page_23.png",
+  "analysis": {
+    "page_number": "unknown",
+    "main_heading": "PARSE_ERROR",
+    "text_content": "Failed to parse response: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)",
+    "tables": [],
+    "figures": [],
+    "zoning_rules": [],
+    "code_references": [],
+    "quality_notes": "JSON parsing failed: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)",
+    "raw_response": "```json\n{\n  \"page_number\": \"17\",\n  \"main_heading\": \"2nd & 3rd floor equivalency\",\n  \"text_content\": \"Areas higher than 17' and 26' above the first floor (that do not already count as floor area e.g., open atrium spaces and inaccessible attic spaces), count toward the gross floor area in the form of 2nd and 3rd floor equivalency regardless of the floor plan or usage of the space. Stairwells will be measured the same way that vaulted ceiling spaces are measured.\\n\\nIn the examples of Fig 12 below the highlighted areas count as follows:\\n\\nArea A\\n* once as 1st floor,\\n* again as 2nd floor, and\\n* a third time as 3rd-floor equivalency\\n\\nArea B\\n* once as 1st floor,\\n* again as 2nd-floor equivalency\\n\\nNote: 200 sf of 3rd floor equivalency may be exempted where roof pitch is 4:12 or steeper (see \\\"Height\\\" section).\",\n  \"tables\": [],\n  \"figures\": [\n    {\n      \"figure_number\": \"Fig 12\",\n      \"caption\": \"2nd & 3rd floor equivalency\",\n      \"description\": \"Two cross-section diagrams of a h",
+    "parse_error": true
+  },
+  "analysis_timestamp": "2025-09-16 12:33:27",
+  "model_used": "google/gemini-2.5-flash",
+  "success": false
+}

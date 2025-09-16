@@ -1,0 +1,158 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_32.md",
+  "file_name": "Page_32.md",
+  "analysis": {
+    "extracted_rules": {
+      "rules": [
+        {
+          "rule_id": "Rule_1",
+          "rule_name": "Primary Daylight Plane (Sides)",
+          "source_page": 32,
+          "analysis": {
+            "Qualifiers": {
+              "scope": "Defines an 'invisible tent' to contain development on a lot, intended to preserve privacy and exposure to natural light. Works in conjunction with setbacks and height limits.",
+              "applicability": "Regulates structures located within the buildable area.",
+              "exclusions": [
+                {
+                  "item": "Structures located in the rear and/or side yards.",
+                  "regulated_by": "Accessory-structure daylight plan (described on the next page)."
+                }
+              ]
+            },
+            "Variables": [
+              {
+                "name": "average_grade",
+                "type": "Dimensional",
+                "description": "The reference plane from which the daylight plane is measured. It is established using existing grade before any grading or fill."
+              },
+              {
+                "name": "existing_grade",
+                "type": "Dimensional",
+                "description": "The grade of the lot before any grading or fill. Used to determine 'average_grade'."
+              },
+              {
+                "name": "max_building_height",
+                "type": "Dimensional",
+                "description": "Maximum building height. A regulated parameter, indicated by a star symbol in the diagram, but its specific value or regulation is not defined in this text."
+              },
+              {
+                "name": "setbacks",
+                "type": "Dimensional",
+                "description": "A parameter that works in conjunction with the daylight plane to define the buildable envelope."
+              },
+              {
+                "name": "height_limits",
+                "type": "Dimensional",
+                "description": "A parameter that works in conjunction with the daylight plane to define the buildable envelope."
+              }
+            ],
+            "Constants": [
+              {
+                "name": "plane_angle",
+                "value": 45,
+                "unit": "degrees",
+                "description": "The angle of the primary daylight plane, measured from the vertical."
+              },
+              {
+                "name": "start_height",
+                "value": 10,
+                "unit": "feet",
+                "description": "The vertical distance from 'average grade' where the 45-degree plane begins."
+              },
+              {
+                "name": "side_measurement_origin",
+                "value": "Side lot line",
+                "description": "The horizontal starting point for measuring the side daylight plane."
+              },
+              {
+                "name": "partial_height_limit",
+                "value": 24,
+                "unit": "feet",
+                "description": "Maximum height for certain portions of the structure. The applicability is unclear."
+              }
+            ],
+            "Conditions": {
+              "mandatory": [
+                "Daylight plane must be measured from 'average grade'.",
+                "Side daylight plane must be measured upwards from the 'side lot line'.",
+                "'Average grade' must be established using 'existing grade' before any grading or fill."
+              ],
+              "conditional_logic": [
+                {
+                  "if": "structure is located within the buildable area",
+                  "then": "regulated by the primary daylight plane."
+                },
+                {
+                  "if": "structure is located in the rear and/or side yards",
+                  "then": "regulated by the accessory-structure daylight plan."
+                }
+              ]
+            },
+            "Exceptions": {
+              "notes": "No explicit exceptions to this rule are listed. The distinction between primary and accessory structures is handled by applicability qualifiers and conditional logic rather than as an exception."
+            },
+            "Relationships": {
+              "hierarchical": [
+                "The 'Primary Daylight Plane' is a component of a larger regulatory framework that also includes 'setbacks' and 'height limits'.",
+                "The general 'Daylight Plane' concept is divided into at least two types: 'Primary Daylight Plane' and 'Accessory-Structure Daylight Plan'."
+              ],
+              "cross_references": [
+                {
+                  "item": "Accessory-structure daylight plan",
+                  "reference": "Described on the next page."
+                },
+                {
+                  "item": "Average grade (definition and calculation)",
+                  "reference": "Figure 44, p. 42"
+                },
+                {
+                  "item": "Maximum allowed height (unspecified)",
+                  "reference": "Building Code"
+                },
+                {
+                  "item": "Related Code Sections",
+                  "references": [
+                    "18.12.040 (a) Table 2",
+                    "18.04",
+                    "18.12.050 (b) (2)",
+                    "18.12.040 (i)"
+                  ]
+                }
+              ],
+              "logical_dependencies": [
+                "The final buildable envelope ('invisible tent') is a function of the daylight plane, setbacks, and height limits combined.",
+                "The calculation of the daylight plane's position is dependent on the 'average_grade' variable."
+              ]
+            },
+            "Ambiguous_Language": [
+              {
+                "item": "Partial Height Limit Scope",
+                "description": "The callout '24' max. for portions...' is incomplete. The conditions under which this 24-foot maximum applies are unknown.",
+                "source_text": "24' max. for portions [unclear remainder of this note]"
+              },
+              {
+                "item": "Maximum Allowed Height Regulation",
+                "description": "The callout 'Max. allowed is [regulated] by Building Code' is partially illegible. The word 'regulated' is inferred, and the precise nature of the regulation is unclear.",
+                "source_text": "Max. allowed is [regulated] by Building Code"
+              },
+              {
+                "item": "Max. Building Height Symbol",
+                "description": "The diagram label 'Max. building height' is accompanied by a star symbol, which typically indicates a special note or definition, but no corresponding explanation is provided in the text.",
+                "source_text": "Max. building height (with star symbol)"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "parse_error": false,
+    "raw_response": "```json\n{\n  \"rules\": [\n    {\n      \"rule_id\": \"Rule_1\",\n      \"rule_name\": \"Primary Daylight Plane (Sides)\",\n      \"source_page\": 32,\n      \"analysis\": {\n        \"Qualifiers\": {\n          \"scope\": \"Defines an 'invisible tent' to contain development on a lot, intended to preserve privacy and exposure to natural light. Works in conjunction with setbacks and height limits.\",\n          \"applicability\": \"Regulates structures located within the buildable area.\",\n          \"exclusions\": [\n            {\n              \"item\": \"Structures located in the rear and/or side yards.\",\n              \"regulated_by\": \"Accessory-structure daylight plan (described on the next page).\"\n            }\n          ]\n        },\n        \"Variables\": [\n          {\n            \"name\": \"average_grade\",\n            \"type\": \"Dimensional\",\n            \"description\": \"The reference plane from which the daylight plane is measured. It is established using existing grade before any grading or fill.\"\n          },\n          {\n            \"name\": \"existing_grade\",\n            \"type\": \"Dimensional\",\n            \"description\": \"The grade of the lot before any grading or fill. Used to determine 'average_grade'.\"\n          },\n          {\n            \"name\": \"max_building_height\",\n            \"type\": \"Dimensional\",\n            \"description\": \"Maximum building height. A regulated parameter, indicated by a star symbol in the diagram, but its specific value or regulation is not defined in this text.\"\n          },\n          {\n            \"name\": \"setbacks\",\n            \"type\": \"Dimensional\",\n            \"description\": \"A parameter that works in conjunction with the daylight plane to define the buildable envelope.\"\n          },\n          {\n            \"name\": \"height_limits\",\n            \"type\": \"Dimensional\",\n            \"description\": \"A parameter that works in conjunction with the daylight plane to define the buildable envelope.\"\n          }\n        ],\n        \"Constants\": [\n          {\n            \"name\": \"plane_angle\",\n            \"value\": 45,\n            \"unit\": \"degrees\",\n            \"description\": \"The angle of the primary daylight plane, measured from the vertical.\"\n          },\n          {\n            \"name\": \"start_height\",\n            \"value\": 10,\n            \"unit\": \"feet\",\n            \"description\": \"The vertical distance from 'average grade' where the 45-degree plane begins.\"\n          },\n          {\n            \"name\": \"side_measurement_origin\",\n            \"value\": \"Side lot line\",\n            \"description\": \"The horizontal starting point for measuring the side daylight plane.\"\n          },\n          {\n            \"name\": \"partial_height_limit\",\n            \"value\": 24,\n            \"unit\": \"feet\",\n            \"description\": \"Maximum height for certain portions of the structure. The applicability is unclear.\"\n          }\n        ],\n        \"Conditions\": {\n          \"mandatory\": [\n            \"Daylight plane must be measured from 'average grade'.\",\n            \"Side daylight plane must be measured upwards from the 'side lot line'.\",\n            \"'Average grade' must be established using 'existing grade' before any grading or fill.\"\n          ],\n          \"conditional_logic\": [\n            {\n              \"if\": \"structure is located within the buildable area\",\n              \"then\": \"regulated by the primary daylight plane.\"\n            },\n            {\n              \"if\": \"structure is located in the rear and/or side yards\",\n              \"then\": \"regulated by the accessory-structure daylight plan.\"\n            }\n          ]\n        },\n        \"Exceptions\": {\n          \"notes\": \"No explicit exceptions to this rule are listed. The distinction between primary and accessory structures is handled by applicability qualifiers and conditional logic rather than as an exception.\"\n        },\n        \"Relationships\": {\n          \"hierarchical\": [\n            \"The 'Primary Daylight Plane' is a component of a larger regulatory framework that also includes 'setbacks' and 'height limits'.\",\n            \"The general 'Daylight Plane' concept is divided into at least two types: 'Primary Daylight Plane' and 'Accessory-Structure Daylight Plan'.\"\n          ],\n          \"cross_references\": [\n            {\n              \"item\": \"Accessory-structure daylight plan\",\n              \"reference\": \"Described on the next page.\"\n            },\n            {\n              \"item\": \"Average grade (definition and calculation)\",\n              \"reference\": \"Figure 44, p. 42\"\n            },\n            {\n              \"item\": \"Maximum allowed height (unspecified)\",\n              \"reference\": \"Building Code\"\n            },\n            {\n              \"item\": \"Related Code Sections\",\n              \"references\": [\n                \"18.12.040 (a) Table 2\",\n                \"18.04\",\n                \"18.12.050 (b) (2)\",\n                \"18.12.040 (i)\"\n              ]\n            }\n          ],\n          \"logical_dependencies\": [\n            \"The final buildable envelope ('invisible tent') is a function of the daylight plane, setbacks, and height limits combined.\",\n            \"The calculation of the daylight plane's position is dependent on the 'average_grade' variable.\"\n          ]\n        },\n        \"Ambiguous_Language\": [\n          {\n            \"item\": \"Partial Height Limit Scope\",\n            \"description\": \"The callout '24' max. for portions...' is incomplete. The conditions under which this 24-foot maximum applies are unknown.\",\n            \"source_text\": \"24' max. for portions [unclear remainder of this note]\"\n          },\n          {\n            \"item\": \"Maximum Allowed Height Regulation\",\n            \"description\": \"The callout 'Max. allowed is [regulated] by Building Code' is partially illegible. The word 'regulated' is inferred, and the precise nature of the regulation is unclear.\",\n            \"source_text\": \"Max. allowed is [regulated] by Building Code\"\n          },\n          {\n            \"item\": \"Max. Building Height Symbol\",\n            \"description\": \"The diagram label 'Max. building height' is accompanied by a star symbol, which typically indicates a special note or definition, but no corresponding explanation is provided in the text.\",\n            \"source_text\": \"Max. building height (with star symbol)\"\n          }\n        ]\n      }\n    }\n  ]\n}\n```",
+    "response_time": 36.26501512527466,
+    "input_tokens": 917,
+    "output_tokens": 3904,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 16:02:21",
+  "model": "google/gemini-2.5-pro",
+  "success": true
+}

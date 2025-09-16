@@ -1,0 +1,326 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_30.png",
+  "image_name": "Page_30.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Allowable setback encroachments summary\n\nFeature\tAlllowable encroachment\tCode Sec\tIllustration\nMain dwelling\n\u2022 1st floor portion at rear of structure \u2264 half width of structure\tto within 14' of rear lot line\t18.12.050 (a)(2)\tFig 18 on this page\n\u2022 1st floor extension of an existing front setback encroachment\tto within 14' of front lot line\t18.12.050 (a)(1)(A)\tFig 19 p. 25\n\u2022 1st floor extension of an existing interior-side setback encroachment\tto within 5' of interior-side lot line\t18.12.050 (a)(1)(B)\tFig 19 p. 25\n\u2022 1st floor extension of an existing street-side setback encroachment\tto within 10' of street-side lot line\t18.12.050 (a)(1)(C)\tFig 19 p. 25\n\u2022 Attached storage closets \u2264 6' in height & \u2264 25 sf\t4' into front & rear yards & 2' into side yards\nDetached accessory structures\n\u2022 that are 75' from front lot line and 20' from street-side lot line\tin rear or side yards\t18.12.080 (b)(3)\tFig 34 p. 39\n\u2022 that are for covered parking and on lots \u2264 95' deep and 25' from street-side lot line and in rear half of lot\tin rear or side yards\nPorches and entry features\n\u2022 1st floor balconies, uncovered porches, , stairways, and fire escapes\t6' into front & rear yard & 3' into the side yards\t18.12.050 (a)(3)(D)\n\u2022 1st floor only canopies & patio covers\trear or side yards\t18.12.050 (a)(3)(E)\nOther\n\u2022 Eaves & cornices\t2' into side & 4' into front & rear yards\t18.12.050 (a)(3)(A)\n\u2022 1st floor bay / greenhouse windows composed of a window surface & cantilevered with no floor joists.\t2' into front yard & 3' into rear yard\t18.12.050 (a)(3)(B)\n\u2022 Greenhouse windows only\t2' into side yards\n\u2022 Uncovered parking\tin rear or side yards except for 1st 10' of street side yard\t18.12.060 (.c)\tFig 34 p. 39\n\u2022 Pools & spas (not equipment)\tto within 6' of rear & interior-side lot lines\n\u2022 Fireplaces \u2264 5' wide\t2' into side yard\nExcavated features\n\u2022 Lightwells and stairwells\t3' into side yards & 4' into rear yard (cumulative length \u2264 15')\t18.12.090 (c)\tFig 39 p. 42\n\u2022 Below grade patios\t2' into side yards & 4' into rear yard (cumulative length \u2264 5')\tFig 40 p. 43\n\nAllowable rear encroachment\nFig 18 Allowable encroachment: rear yard\nRear yard encroachment\nA portion of the main dwelling (no wider than half the max. width of the dwelling), may encroach into the rear setback, at the ground floor only, as follows:\n\u2022 For all lots except back-to-back corner lots, up to 6', providing a minimum setback of 14' is maintained.\n\u2022 For back-to-back corner lots, up to 10', providing a minimum setback of 10' is maintained.\nNote:\n\u2022 Multiple protrusions are not permitted; addition must be contiguous with existing protrusion.\n\u2022 Only for legally constructed structures (no variance or an home-improvement exception (HIE)).\n\u2022 Only once in the life of the structure.\n\n",
+      "visual_elements": [
+        {
+          "type": "table",
+          "description": "A detailed table titled 'Allowable setback encroachments summary' listing features, allowable encroachments, code sections, and illustration references. It is divided into categories: Main dwelling, Detached accessory structures, Porches and entry features, Other, and Excavated features. Each row specifies a feature, the allowable encroachment measurement or condition, the relevant code section, and figure/page references.",
+          "location": "Left page, occupying most of the page"
+        },
+        {
+          "type": "diagram",
+          "description": "A schematic diagram illustrating 'Allowable rear encroachment: rear yard'. It shows a rectangular lot with labeled areas: 'Rear yard' at the top, 'Front yard' at the bottom, 'Interior-side yard' on both sides, and a central 'Buildable area'. Inside the buildable area is a shaded rectangle labeled 'New OR Existing main dwelling' with a smaller black rectangle on top labeled '1st story Addition'. Horizontal arrows indicate 'Half width of building max'. Vertical arrows indicate 'Setback that is to be maintained per notes above' and 'Allowable rear yard encroachment per notes above'.",
+          "location": "Right page, bottom half"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "1st floor portion at rear of structure",
+          "value_type": "Measurement",
+          "value": "within 14",
+          "unit": "feet"
+        },
+        {
+          "parameter": "1st floor extension of an existing front setback encroachment",
+          "value_type": "Measurement",
+          "value": "within 14",
+          "unit": "feet"
+        },
+        {
+          "parameter": "1st floor extension of an existing interior-side setback encroachment",
+          "value_type": "Measurement",
+          "value": "within 5",
+          "unit": "feet"
+        },
+        {
+          "parameter": "1st floor extension of an existing street-side setback encroachment",
+          "value_type": "Measurement",
+          "value": "within 10",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Attached storage closets height",
+          "value_type": "Measurement",
+          "value": "6",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Attached storage closets area",
+          "value_type": "Measurement",
+          "value": "25",
+          "unit": "square feet"
+        },
+        {
+          "parameter": "Detached accessory structures distance from front lot line",
+          "value_type": "Measurement",
+          "value": "75",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Detached accessory structures distance from street-side lot line",
+          "value_type": "Measurement",
+          "value": "20",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Covered parking and lots depth",
+          "value_type": "Measurement",
+          "value": "95",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Covered parking and lots distance from street-side lot line",
+          "value_type": "Measurement",
+          "value": "25",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Covered parking and lots location",
+          "value_type": "Text",
+          "value": "in rear half of lot",
+          "unit": "None"
+        },
+        {
+          "parameter": "1st floor balconies, uncovered porches, stairways, and fire escapes encroachment",
+          "value_type": "Measurement",
+          "value": "6 into front & rear yard & 3 into the side yards",
+          "unit": "feet"
+        },
+        {
+          "parameter": "1st floor only canopies & patio covers encroachment",
+          "value_type": "Text",
+          "value": "rear or side yards",
+          "unit": "None"
+        },
+        {
+          "parameter": "Eaves & cornices encroachment",
+          "value_type": "Measurement",
+          "value": "2 into side & 4 into front & rear yards",
+          "unit": "feet"
+        },
+        {
+          "parameter": "1st floor bay / greenhouse windows encroachment",
+          "value_type": "Measurement",
+          "value": "2 into front yard & 3 into rear yard",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Greenhouse windows only encroachment",
+          "value_type": "Measurement",
+          "value": "2 into side yards",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Uncovered parking encroachment",
+          "value_type": "Text",
+          "value": "in rear or side yards except for 1st 10' of street side yard",
+          "unit": "None"
+        },
+        {
+          "parameter": "Pools & spas (not equipment) encroachment",
+          "value_type": "Measurement",
+          "value": "to within 6 of rear & interior-side lot lines",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Fireplaces width",
+          "value_type": "Measurement",
+          "value": "5",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Fireplaces encroachment",
+          "value_type": "Measurement",
+          "value": "2 into side yard",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Lightwells and stairwells encroachment",
+          "value_type": "Measurement",
+          "value": "3 into side yards & 4 into rear yard",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Lightwells and stairwells cumulative length",
+          "value_type": "Measurement",
+          "value": "15",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Below grade patios encroachment",
+          "value_type": "Measurement",
+          "value": "2 into side yards & 4 into rear yard",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Below grade patios cumulative length",
+          "value_type": "Measurement",
+          "value": "5",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Rear yard encroachment for all lots except back-to-back corner lots",
+          "value_type": "Measurement",
+          "value": "up to 6",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum setback for all lots except back-to-back corner lots",
+          "value_type": "Measurement",
+          "value": "14",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Rear yard encroachment for back-to-back corner lots",
+          "value_type": "Measurement",
+          "value": "up to 10",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum setback for back-to-back corner lots",
+          "value_type": "Measurement",
+          "value": "10",
+          "unit": "feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Allowable setback encroachments summary",
+        "subheadings": [
+          "Main dwelling",
+          "Detached accessory structures",
+          "Porches and entry features",
+          "Other",
+          "Excavated features",
+          "Allowable rear encroachment"
+        ],
+        "sections": [
+          "Feature",
+          "Alllowable encroachment",
+          "Code Sec",
+          "Illustration",
+          "Rear yard encroachment",
+          "Note"
+        ]
+      },
+      "additional_notes": [
+        "Page number 24 at bottom left corner.",
+        "No handwritten annotations or stamps detected.",
+        "Text and figures are clear and legible."
+      ],
+      "cross_references": [
+        "Fig 18 on this page",
+        "Fig 19 p. 25",
+        "Fig 34 p. 39",
+        "Fig 39 p. 42",
+        "Fig 40 p. 43"
+      ],
+      "conditions_and_qualifiers": {
+        "qualifiers": [
+          {
+            "id": "q1",
+            "text": "A portion of the main dwelling (no wider than half the max. width of the dwelling), may encroach into the rear setback, at the ground floor only",
+            "applies_to_conditions": [
+              "c1",
+              "c2"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q2",
+            "text": "Multiple protrusions are not permitted; addition must be contiguous with existing protrusion.",
+            "applies_to_conditions": [
+              "c1",
+              "c2"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q3",
+            "text": "Only for legally constructed structures (no variance or an home-improvement exception (HIE)).",
+            "applies_to_conditions": [
+              "c1",
+              "c2"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q4",
+            "text": "Only once in the life of the structure.",
+            "applies_to_conditions": [
+              "c1",
+              "c2"
+            ],
+            "scope": "Specific"
+          }
+        ],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "For all lots except back-to-back corner lots, up to 6', providing a minimum setback of 14' is maintained.",
+            "value_type": "Range",
+            "operator": "<=",
+            "threshold_value": "6",
+            "unit": "feet"
+          },
+          {
+            "id": "c2",
+            "text": "For back-to-back corner lots, up to 10', providing a minimum setback of 10' is maintained.",
+            "value_type": "Range",
+            "operator": "<=",
+            "threshold_value": "10",
+            "unit": "feet"
+          }
+        ],
+        "logical_relationships": [
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c1"
+            ],
+            "expression": "If lot is not a back-to-back corner lot, then rear yard encroachment up to 6' with minimum setback 14' is allowed.",
+            "evaluation_order": 1
+          },
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c2"
+            ],
+            "expression": "If lot is a back-to-back corner lot, then rear yard encroachment up to 10' with minimum setback 10' is allowed.",
+            "evaluation_order": 2
+          }
+        ],
+        "execution_sequence": [
+          {
+            "step": 1,
+            "action": "Determine lot type (back-to-back corner lot or not).",
+            "condition_ids": [],
+            "qualifier_ids": [],
+            "dependencies": []
+          },
+          {
+            "step": 2,
+            "action": "Apply rear yard encroachment limits based on lot type according to conditions c1 or c2.",
+            "condition_ids": [
+              "c1",
+              "c2"
+            ],
+            "qualifier_ids": [
+              "q1",
+              "q2",
+              "q3",
+              "q4"
+            ],
+            "dependencies": [
+              1
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:27:41",
+  "model_used": "openai/gpt-4.1-mini"
+}

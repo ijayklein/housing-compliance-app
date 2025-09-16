@@ -1,0 +1,549 @@
+{% extends "base.html" %}
+
+{% block title %}Validation Mode - Housing Compliance System{% endblock %}
+
+{% block extra_head %}
+<style>
+.form-section {
+    border: 1px solid #dee2e6;
+    border-radius: 0.375rem;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    background: #f8f9fa;
+}
+.form-section h5 {
+    color: #495057;
+    border-bottom: 2px solid #28a745;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+.validation-result {
+    border-left: 4px solid #28a745;
+}
+.violation-item {
+    background: #f8d7da;
+    border-radius: 0.25rem;
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    border-left: 4px solid #dc3545;
+}
+.compliant-item {
+    background: #d1edff;
+    border-radius: 0.25rem;
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    border-left: 4px solid #28a745;
+}
+.warning-item {
+    background: #fff3cd;
+    border-radius: 0.25rem;
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    border-left: 4px solid #ffc107;
+}
+.compliance-meter {
+    height: 20px;
+    background: #e9ecef;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.compliance-bar {
+    height: 100%;
+    transition: width 0.3s ease;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <div>
+                <h2>
+                    <i class="fas fa-check-circle text-success me-2"></i>
+                    Validation Mode
+                </h2>
+                <p class="text-muted mb-0">Comprehensive compliance checking for existing projects</p>
+            </div>
+            <a href="{{ url_for('index') }}" class="btn btn-outline-secondary">
+                <i class="fas fa-arrow-left me-2"></i>Back to Home
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <!-- Input Form -->
+    <div class="col-lg-5">
+        <div class="card shadow-sm">
+            <div class="card-header bg-success text-white">
+                <h5 class="mb-0">
+                    <i class="fas fa-clipboard-list me-2"></i>Project Data
+                </h5>
+            </div>
+            <div class="card-body">
+                <form id="validationForm">
+                    <!-- Project Information -->
+                    <div class="form-section">
+                        <h5><i class="fas fa-info-circle me-2"></i>Project Information</h5>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="projectName" class="form-label">Project Name</label>
+                                <input type="text" class="form-control" id="projectName" placeholder="Enter project name">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="projectId" class="form-label">Project ID</label>
+                                <input type="text" class="form-control" id="projectId" placeholder="PR-2025-001">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Site Data -->
+                    <div class="form-section">
+                        <h5><i class="fas fa-map-marker-alt me-2"></i>Site Information</h5>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="zoneDistrict" class="form-label">Zone District</label>
+                                <select class="form-select" id="zoneDistrict" required>
+                                    <option value="">Select Zone</option>
+                                    {% for zone in zones %}
+                                    <option value="{{ zone }}">{{ zone }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="lotShape" class="form-label">Lot Shape</label>
+                                <select class="form-select" id="lotShape">
+                                    <option value="standard">Standard</option>
+                                    <option value="corner">Corner Lot</option>
+                                    <option value="flag">Flag Lot</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <label for="lotArea" class="form-label">Lot Area (sf)</label>
+                                <input type="number" class="form-control" id="lotArea" placeholder="7500" min="1000" required>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label for="lotWidth" class="form-label">Lot Width (ft)</label>
+                                <input type="number" class="form-control" id="lotWidth" placeholder="75" min="30" required>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label for="lotDepth" class="form-label">Lot Depth (ft)</label>
+                                <input type="number" class="form-control" id="lotDepth" placeholder="100" min="50" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Building Data -->
+                    <div class="form-section">
+                        <h5><i class="fas fa-building me-2"></i>Building Information</h5>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="buildingHeight" class="form-label">Building Height (ft)</label>
+                                <input type="number" class="form-control" id="buildingHeight" placeholder="28" min="8" max="50" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="grossFloorArea" class="form-label">Gross Floor Area (sf)</label>
+                                <input type="number" class="form-control" id="grossFloorArea" placeholder="3200" min="500" required>
+                            </div>
+                        </div>
+                        
+                        <h6 class="mt-3 mb-2">Setbacks (ft)</h6>
+                        <div class="row">
+                            <div class="col-md-3 mb-3">
+                                <label for="frontSetback" class="form-label">Front</label>
+                                <input type="number" class="form-control" id="frontSetback" placeholder="25" min="0" required>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label for="rearSetback" class="form-label">Rear</label>
+                                <input type="number" class="form-control" id="rearSetback" placeholder="30" min="0" required>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label for="sideSetbackLeft" class="form-label">Side Left</label>
+                                <input type="number" class="form-control" id="sideSetbackLeft" placeholder="8" min="0" required>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label for="sideSetbackRight" class="form-label">Side Right</label>
+                                <input type="number" class="form-control" id="sideSetbackRight" placeholder="10" min="0" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Parking Data -->
+                    <div class="form-section">
+                        <h5><i class="fas fa-car me-2"></i>Parking Information</h5>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="parkingSpaces" class="form-label">Parking Spaces</label>
+                                <input type="number" class="form-control" id="parkingSpaces" placeholder="2" min="0" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="coveredSpaces" class="form-label">Covered Spaces</label>
+                                <input type="number" class="form-control" id="coveredSpaces" placeholder="2" min="0">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="d-flex gap-2">
+                        <button type="button" class="btn btn-outline-info" id="loadTemplateBtn">
+                            <i class="fas fa-download me-2"></i>Load Template
+                        </button>
+                        <button type="submit" class="btn btn-success flex-fill">
+                            <i class="fas fa-search me-2"></i>Validate Project
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Results Panel -->
+    <div class="col-lg-7">
+        <div class="card shadow-sm">
+            <div class="card-header bg-info text-white">
+                <h5 class="mb-0">
+                    <i class="fas fa-clipboard-check me-2"></i>Validation Results
+                </h5>
+            </div>
+            <div class="card-body">
+                <div id="validationResults">
+                    <div class="text-center text-muted py-5">
+                        <i class="fas fa-clipboard-check fa-3x mb-3"></i>
+                        <h5>Ready for Validation</h5>
+                        <p>Fill out the project data and click "Validate Project" to check compliance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('validationForm');
+    const zoneSelect = document.getElementById('zoneDistrict');
+    const loadTemplateBtn = document.getElementById('loadTemplateBtn');
+    const resultsDiv = document.getElementById('validationResults');
+
+    // Zone selection handler
+    zoneSelect.addEventListener('change', function() {
+        if (this.value) {
+            loadZoneRequirements(this.value);
+        }
+    });
+
+    // Load template button
+    loadTemplateBtn.addEventListener('click', function() {
+        const zone = zoneSelect.value;
+        if (!zone) {
+            alert('Please select a zone district first');
+            return;
+        }
+        loadProjectTemplate(zone);
+    });
+
+    // Form submission
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        validateProject();
+    });
+
+    function loadZoneRequirements(zone) {
+        fetch(`/api/zone-requirements/${zone}`)
+            .then(response => response.json())
+            .then(data => {
+                // Update form placeholders with zone requirements
+                document.getElementById('lotArea').placeholder = data.min_area;
+                document.getElementById('lotWidth').placeholder = data.min_width;
+                document.getElementById('lotDepth').placeholder = data.min_depth;
+                document.getElementById('grossFloorArea').placeholder = Math.round(data.min_area * data.max_far);
+            })
+            .catch(error => console.error('Error loading zone requirements:', error));
+    }
+
+    function loadProjectTemplate(zone) {
+        fetch(`/api/project-template/${zone}`)
+            .then(response => response.json())
+            .then(data => {
+                // Populate form with template data
+                document.getElementById('projectName').value = `${zone} Validation Project`;
+                document.getElementById('projectId').value = `VAL-${new Date().getFullYear()}-${String(Math.floor(Math.random() * 1000)).padStart(3, '0')}`;
+                document.getElementById('lotArea').value = data.site_data.lot_area;
+                document.getElementById('lotWidth').value = data.site_data.lot_width;
+                document.getElementById('lotDepth').value = data.site_data.lot_depth;
+                document.getElementById('buildingHeight').value = data.building_data.building_height;
+                document.getElementById('grossFloorArea').value = data.building_data.gross_floor_area;
+                document.getElementById('frontSetback').value = data.building_data.setbacks.front_setback;
+                document.getElementById('rearSetback').value = data.building_data.setbacks.rear_setback;
+                document.getElementById('sideSetbackLeft').value = data.building_data.setbacks.side_setback_left;
+                document.getElementById('sideSetbackRight').value = data.building_data.setbacks.side_setback_right;
+                document.getElementById('parkingSpaces').value = data.parking_data.parking_spaces;
+                document.getElementById('coveredSpaces').value = data.parking_data.covered_spaces;
+                
+                showSuccess('Template loaded successfully!');
+            })
+            .catch(error => {
+                console.error('Error loading template:', error);
+                showError('Failed to load template');
+            });
+    }
+
+    function validateProject() {
+        // Collect form data
+        const projectData = {
+            project_info: {
+                project_name: document.getElementById('projectName').value || 'Unnamed Project',
+                project_id: document.getElementById('projectId').value || 'UNKNOWN'
+            },
+            site_data: {
+                zone_district: document.getElementById('zoneDistrict').value,
+                lot_area: parseInt(document.getElementById('lotArea').value) || 0,
+                lot_width: parseInt(document.getElementById('lotWidth').value) || 0,
+                lot_depth: parseInt(document.getElementById('lotDepth').value) || 0,
+                lot_shape: document.getElementById('lotShape').value || 'standard',
+                corner_lot: document.getElementById('lotShape').value === 'corner',
+                flag_lot: document.getElementById('lotShape').value === 'flag'
+            },
+            building_data: {
+                building_height: parseInt(document.getElementById('buildingHeight').value) || 0,
+                gross_floor_area: parseInt(document.getElementById('grossFloorArea').value) || 0,
+                setbacks: {
+                    front_setback: parseInt(document.getElementById('frontSetback').value) || 0,
+                    rear_setback: parseInt(document.getElementById('rearSetback').value) || 0,
+                    side_setback_left: parseInt(document.getElementById('sideSetbackLeft').value) || 0,
+                    side_setback_right: parseInt(document.getElementById('sideSetbackRight').value) || 0
+                }
+            },
+            parking_data: {
+                parking_spaces: parseInt(document.getElementById('parkingSpaces').value) || 0,
+                covered_spaces: parseInt(document.getElementById('coveredSpaces').value) || 0
+            }
+        };
+
+        // Validate required fields
+        if (!projectData.site_data.zone_district) {
+            showError('Please select a zone district');
+            return;
+        }
+
+        // Show loading
+        resultsDiv.innerHTML = `
+            <div class="text-center py-4">
+                <div class="spinner-border text-success" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <p class="mt-2">Validating project compliance...</p>
+            </div>
+        `;
+
+        // Send request
+        fetch('/api/validate-project', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(projectData)
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.error) {
+                showError(data.error);
+            } else {
+                displayValidationResults(data);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            showError('Failed to validate project');
+        });
+    }
+
+    function displayValidationResults(data) {
+        const stats = data.summary_stats;
+        const overallStatus = data.overall_status;
+        const canProceed = data.can_proceed;
+        
+        let html = `
+            <div class="validation-results">
+                <!-- Overall Status -->
+                <div class="alert alert-${overallStatus === 'COMPLIANT' ? 'success' : 'danger'} mb-4">
+                    <div class="row align-items-center">
+                        <div class="col-md-8">
+                            <h5 class="mb-1">
+                                <i class="fas fa-${overallStatus === 'COMPLIANT' ? 'check-circle' : 'exclamation-triangle'} me-2"></i>
+                                Project Status: ${overallStatus}
+                            </h5>
+                            <p class="mb-0">
+                                ${canProceed ? '✅ Project can proceed to submission' : '❌ Project requires revision before submission'}
+                            </p>
+                        </div>
+                        <div class="col-md-4 text-end">
+                            <div class="compliance-score">
+                                <h3 class="mb-0">${stats.compliance_percentage.toFixed(1)}%</h3>
+                                <small class="text-muted">Compliance Rate</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Compliance Meter -->
+                <div class="mb-4">
+                    <div class="d-flex justify-content-between mb-2">
+                        <span>Compliance Progress</span>
+                        <span>${stats.compliant_rules}/${stats.total_rules_checked} rules</span>
+                    </div>
+                    <div class="compliance-meter">
+                        <div class="compliance-bar bg-${stats.compliance_percentage >= 90 ? 'success' : stats.compliance_percentage >= 70 ? 'warning' : 'danger'}" 
+                             style="width: ${stats.compliance_percentage}%"></div>
+                    </div>
+                </div>
+
+                <!-- Summary Stats -->
+                <div class="row mb-4">
+                    <div class="col-md-3">
+                        <div class="card text-center">
+                            <div class="card-body py-2">
+                                <h4 class="text-success mb-0">${stats.compliant_rules}</h4>
+                                <small class="text-muted">Compliant</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card text-center">
+                            <div class="card-body py-2">
+                                <h4 class="text-danger mb-0">${stats.violations}</h4>
+                                <small class="text-muted">Violations</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card text-center">
+                            <div class="card-body py-2">
+                                <h4 class="text-warning mb-0">${stats.warnings}</h4>
+                                <small class="text-muted">Warnings</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card text-center">
+                            <div class="card-body py-2">
+                                <h4 class="text-danger mb-0">${stats.critical_violations}</h4>
+                                <small class="text-muted">Critical</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        `;
+
+        // Critical Violations
+        if (data.critical_violations && data.critical_violations.length > 0) {
+            html += `
+                <div class="card mb-3">
+                    <div class="card-header bg-danger text-white">
+                        <h6 class="mb-0"><i class="fas fa-exclamation-triangle me-2"></i>Critical Violations</h6>
+                    </div>
+                    <div class="card-body">
+            `;
+            
+            data.critical_violations.forEach(violation => {
+                html += `
+                    <div class="violation-item">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div>
+                                <strong>${violation.rule_title}</strong><br>
+                                <span class="text-danger">${violation.message}</span>
+                            </div>
+                            <span class="badge bg-danger">Critical</span>
+                        </div>
+                        <div class="mt-2">
+                            <small class="text-muted">Expected: ${violation.expected} | Actual: ${violation.actual}</small>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            html += '</div></div>';
+        }
+
+        // All Violations
+        if (data.all_violations && data.all_violations.length > 0) {
+            html += `
+                <div class="card mb-3">
+                    <div class="card-header">
+                        <h6 class="mb-0"><i class="fas fa-times-circle text-danger me-2"></i>All Violations</h6>
+                    </div>
+                    <div class="card-body">
+            `;
+            
+            data.all_violations.forEach(violation => {
+                const criticalClass = violation.criticality === 'CRITICAL' ? 'violation-item' : 'warning-item';
+                html += `
+                    <div class="${criticalClass}">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div>
+                                <strong>${violation.rule_title}</strong><br>
+                                <span>${violation.message}</span>
+                            </div>
+                            <span class="badge bg-${violation.criticality === 'CRITICAL' ? 'danger' : 'warning'}">${violation.criticality}</span>
+                        </div>
+                        <div class="mt-2">
+                            <small class="text-muted">Expected: ${violation.expected} | Actual: ${violation.actual}</small>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            html += '</div></div>';
+        }
+
+        // Compliant Items (show first few)
+        if (data.compliant_items && data.compliant_items.length > 0) {
+            html += `
+                <div class="card">
+                    <div class="card-header">
+                        <h6 class="mb-0"><i class="fas fa-check-circle text-success me-2"></i>Compliant Items</h6>
+                    </div>
+                    <div class="card-body">
+            `;
+            
+            data.compliant_items.slice(0, 5).forEach(item => {
+                html += `
+                    <div class="compliant-item">
+                        <strong>${item.rule_title}</strong><br>
+                        <span class="text-success">${item.message}</span>
+                    </div>
+                `;
+            });
+            
+            if (data.compliant_items.length > 5) {
+                html += `<p class="text-muted mb-0">... and ${data.compliant_items.length - 5} more compliant items</p>`;
+            }
+            
+            html += '</div></div>';
+        }
+
+        html += '</div>';
+        resultsDiv.innerHTML = html;
+    }
+
+    function showSuccess(message) {
+        // You could implement a toast notification here
+        console.log('Success:', message);
+    }
+
+    function showError(message) {
+        resultsDiv.innerHTML = `
+            <div class="alert alert-danger">
+                <i class="fas fa-exclamation-circle me-2"></i>
+                ${message}
+            </div>
+        `;
+    }
+});
+</script>
+{% endblock %}

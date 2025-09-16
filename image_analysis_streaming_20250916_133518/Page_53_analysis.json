@@ -1,0 +1,12 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_53.png",
+  "image_name": "Page_53.png",
+  "analysis": {
+    "raw_content": "# Grade\n\n## Table: Grade Measurement Definitions\n\n| When measuring | Use | Which is defined as | Illus. |\n|---|---|---|---|\n| The height of a structure on land with natural slope \u2264 10% | Existing Grade | for each building or structure, the lowest point of adjacent ground elevation prior to grading or fill | Fig. 44 on this page |\n| The height of a structure on land with natural slope > 10% | Grade | adjacent ground elevation of the finished or existing grade, whichever is lower--at any point of the structure | Fig. 45 on this page |\n| A daylight plane | Average grade | average of the grade at the midpoint of the building and the grade at the closest point on the abutting site | Figs 20-21 pp. 26-27 |\n\n## Figure Descriptions\n\n**Fig 44 Existing vs. Finished grade**\n- Shows a house illustration with labels for:\n  - \"Height is measured to the highest point of the tallest peak\"\n  - \"Finished grade (after fill)\"\n  - \"Existing grade (before fill)\"\n  - \"Lowest point of ground elevation before fill (existing grade) adjacent to the structure\"\n\n**Fig 45 Height limits for structures on slopes greater than 10%**\n- Shows a diagram with:\n  - \"30' above existing grade\"\n  - \"30' above finished\"\n  - Note: \"The structure must comply with the lower of the two limits at all points along the slope\"\n  - Shows buildings on a slope with \"Existing grade (before fill)\" labeled\n  - \"Height\" measurements indicated\n\n**Fig 46 Comparison of different grades**\n- Shows a geometric diagram with various angle measurements:\n  - 10%\n  - 20%\n  - 30%\n  - 40%\n  - Lines showing different grade percentages\n\nPage number: 47",
+    "content_length": 1607,
+    "parse_error": false
+  },
+  "timestamp": "2025-09-16 13:38:17",
+  "model": "anthropic/claude-sonnet-4",
+  "success": true
+}

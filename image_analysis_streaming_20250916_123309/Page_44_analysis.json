@@ -1,0 +1,19 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_44.png",
+  "image_name": "Page_44.png",
+  "analysis": {
+    "page_number": "unknown",
+    "main_heading": "PARSE_ERROR",
+    "text_content": "Failed to parse response: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)",
+    "tables": [],
+    "figures": [],
+    "zoning_rules": [],
+    "code_references": [],
+    "quality_notes": "JSON parsing failed: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)",
+    "raw_response": "```json\n{\n  \"page_number\": \"38\",\n  \"main_heading\": \"Attached garages/carports site planning\",\n  \"text_content\": \"Attached garages must comply with same setbacks as main dwelling.\\nNote: Uncovered spaces must be located beyond the required frontyard and beyond the first 10' of the street-side yard.\\nFig 33 Examples of site planning solutions for attached garages/carports\\nA 1-car garage with 2nd space (uncovered) located in the sideyard\\nB 1-car garage with 2nd space (uncovered) located in the driveway\\nC 2-car garage with no uncovered spaces\",\n  \"tables\": [],\n  \"figures\": [\n    {\n      \"figure_number\": \"Fig 33\",\n      \"caption\": \"Examples of site planning solutions for attached garages/carports\",\n      \"description\": \"Three diagrams illustrating different site planning solutions for attached garages/carports. Each diagram shows a lot with a main dwelling, a buildable area, and parking structures, along with various setbacks and yard types. A key defines symbols for Curb, Lot line, Side",
+    "parse_error": true
+  },
+  "analysis_timestamp": "2025-09-16 12:33:41",
+  "model_used": "google/gemini-2.5-flash",
+  "success": false
+}

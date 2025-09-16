@@ -1,0 +1,23 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_39.png",
+  "image_name": "Page_39.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "PARSE_ERROR",
+      "visual_elements": [],
+      "technical_specifications": [],
+      "structural_elements": {
+        "main_heading": "",
+        "subheadings": [],
+        "sections": []
+      },
+      "additional_notes": [
+        "Failed to parse LLM response: Expecting value: line 1 column 1 (char 0)"
+      ],
+      "cross_references": []
+    },
+    "raw_response": "The following information has been extracted from the provided images:\n\n**Noise-producing equipment site planning**\n\n*   May not be located in front, rear, or interior-side yards.\n*   May encroach into street-side yard up to 6' (Fig 27 C below).\n*   All service equip. must meet the City's Noise Ordinance in Chapter 9.10 of the Municipal Code.\n*   Replacement of equipment shall conform to this section where feasible.\n*   Must be insulated and housed, however, Planning Dept. can waive this requirement if equipment is located in buildable area and a combination of noise specifications, location, and/or other screening or buffering will assure compliance with the City's Noise Ordinance at the nearest lot line.\n\n**Fig 27 Examples of site planning solutions for noise-producing equipment**\n\n**A Pool equipment**\n*   Pool equip. is within buildable area even though there is room for it behind the garage/poolhouse in the required rear yard.\n*   Air conditioning equip. is located in an out-of-the-way niche maintaining the required 10' min. clearance for the driveway.\n\n**B Pool equipment & AC unit**\n*   Pool equip. is located within buildable area even though there is room for it next to the poolhouse in the required rear yard.\n*   Air conditioning equip. is located within buildable area behind the house. There is not enough room along the interior side of the house.\n\n**C Generator & AC unit**\n*   Air conditioning equip. is located in street side yard in compliance with the regulations. Note that it may not encroach into the front or rear yards.\n*   Generator is located within buildable area.\n\n**Key**\n*   **Curb** (represented by a solid line)\n*   **Lot line** (represented by a dashed line)\n*   **Sidewalk** (represented by a patterned rectangle)\n*   **Required setbacks** (represented by a dashed line)\n*   **Buildable area** (represented by a light grey shaded area with a dashed border)\n*   **Dwelling/parking** (represented by a dark grey shaded area)\n*   **P** Pool equip.\n*   **AC** Air conditioning equip.\n*   **G** Generator\n\n**Diagram A details:**\n*   A \"Combo garage / small poolhouse\" is shown in the rear yard.\n*   \"P\" (Pool equip.) is located in the rear yard within the buildable area.\n*   \"AC\" (Air conditioning equip.) is located in an interior-side yard, with a \"10' min. clear\" indicated from the street-side.\n*   A \"Main dwelling\" is shown.\n*   Labels for \"Rear yard\", \"Interior-side yard\", and \"Front yard\" are present.\n\n**Diagram B details:**\n*   A \"Larger poolhouse\" is shown in the rear yard.\n*   \"P\" (Pool equip.) is located in the rear yard within the buildable area, next to the poolhouse.\n*   \"AC\" (Air conditioning equip.) is located behind the \"Main dwelling\" within the buildable area, along an interior-side yard.\n*   A \"2-car attached garage\" is part of the \"Main dwelling\".\n*   Labels for \"Rear yard\", \"Interior-side yard\", and \"Front yard\" are present.\n\n**Diagram C details:**\n*   A \"Garage\" is shown.\n*   \"G\" (Generator) is located within the buildable area, behind the garage.\n*   \"AC\" (Air conditioning equip.) is located in the street-side yard, with a \"6' max.\" encroachment indicated.\n*   A \"Main dwelling\" is shown.\n*   Labels for \"Rear yard\", \"Interior-side yard\", \"Street-side yard\", and \"Front yard\" are present.\n\nThe page number is 33."
+  },
+  "analysis_timestamp": "2025-09-16 12:25:59",
+  "model_used": "google/gemini-2.5-flash"
+}

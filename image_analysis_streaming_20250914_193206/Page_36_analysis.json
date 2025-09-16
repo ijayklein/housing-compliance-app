@@ -1,0 +1,74 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_36.png",
+  "image_name": "Page_36.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Accessory\nstructures\n(other than 2nd-\ndwelling units)\n\nThe code accomo-\ndates a wide variety\nof choices regarding\naccessory structures\nwhile utilizing param-\neters like setbacks and\nthe daylight plane to\npreserve the charac-\nteristics of a residential\nneighborhood as well\nas privacy and day-\nlight to each lot.\n\nCode sections\nPage 30\u201331\n18.12.080\nPage 32\n18.12.080 (b) (4)\n\n30\n\nAccessory structure standards (non-dwelling)\n\nThere are no minimum lot size requirements for non-dwelling accessory structures.\nThe regulations are as follows:\n\nAll accessory structures...\n\u2022 Must have a use that is incidental to main dwelling\n\u2022 Must be detached and at least 3' from main dwelling\n\u2022 May NOT have a kitchen\n\u2022 Count toward the total lot coverage\n\u2022 If over 120 sf, require a building permit and count towards\n  total gross floor area\n\nAccessory structures located in the buildable area....\n\u2022 Are subject to the same height and daylight plane regula-\n  tions as the main dwelling\n\nAccessory structures located in the required setback.....\n\u2022 May not be located in the front yard\n\u2022 May not be located in the street-side yard\n\u2022 May not be located in the rear yard of a through lot\n\u2022 May not cover more than 50% of the rear yard\n\u2022 May not be used for sleeping or living\n\u2022 Are subject to the accessory-structure height and daylight\n  plane regulations (see Figs 25-26 on p. 32)\n\u2022 May NOT have a kitchen\n\u2022 Count toward the total lot coverage\n\u2022 If over 120 sf, require a building permit and count towards\n  total gross floor area\n\u2022 If over 200 sf, may have no more than two plumbing fixtures\n\nNote: Accessory structures\nless than 120 sf do not require\na building permit but must still\ncomply with all zoning regulations",
+      "visual_elements": [
+        {
+          "type": "text_box",
+          "description": "A grey rectangular box on the left side of the page containing the main title 'Accessory structures (other than 2nd-dwelling units)', a descriptive paragraph about the code's purpose, and 'Code sections' with page and section references.",
+          "location": "Left side, spanning top to bottom"
+        },
+        {
+          "type": "text_box",
+          "description": "A grey rectangular box in the middle-right of the page containing a general statement about minimum lot size requirements for non-dwelling accessory structures and an introductory sentence for the regulations.",
+          "location": "Top-middle, below main heading"
+        },
+        {
+          "type": "text_box",
+          "description": "A grey rectangular box at the bottom-right of the page containing a 'Note' about accessory structures less than 120 sf.",
+          "location": "Bottom-right"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Minimum distance from main dwelling (detached)",
+          "value": "3",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Building permit requirement threshold",
+          "value": "120",
+          "unit": "sf"
+        },
+        {
+          "parameter": "Maximum rear yard coverage by accessory structure",
+          "value": "50",
+          "unit": "percent"
+        },
+        {
+          "parameter": "Plumbing fixture limit for structures over 200 sf",
+          "value": "2",
+          "unit": "fixtures"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Accessory structure standards (non-dwelling)",
+        "subheadings": [
+          "All accessory structures...",
+          "Accessory structures located in the buildable area....",
+          "Accessory structures located in the required setback....."
+        ],
+        "sections": [
+          "Accessory structures (other than 2nd-dwelling units)",
+          "Code sections",
+          "Note: Accessory structures less than 120 sf do not require a building permit but must still comply with all zoning regulations"
+        ]
+      },
+      "additional_notes": [
+        "Page number '30' is present at the bottom left.",
+        "The term 'daylilght' appears to be a typo and should likely be 'daylight' in the 'Accessory structures located in the buildable area....' section."
+      ],
+      "cross_references": [
+        "Page 30\u201331",
+        "18.12.080",
+        "Page 32",
+        "18.12.080 (b) (4)",
+        "Figs 25-26 on p. 32"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-14 19:32:29",
+  "model_used": "google/gemini-2.5-flash"
+}

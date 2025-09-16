@@ -1,0 +1,93 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_32.md",
+  "file_name": "Page_32.md",
+  "analysis": {
+    "extracted_rules": {
+      "rules": [
+        {
+          "title": "Primary Daylight Plane (Sides)",
+          "qualifiers": {
+            "scope": "Regulates structures located within the buildable area.",
+            "applicability": "Structures located in the rear and/or side yards.",
+            "exclusions": "Accessory-structure daylight plan described on the next page."
+          },
+          "variables": {
+            "dimensional": [
+              {
+                "name": "Daylight plane angle",
+                "value": "45\u00b0"
+              },
+              {
+                "name": "Measurement from average grade",
+                "value": "10'"
+              }
+            ],
+            "material": [],
+            "environmental": [],
+            "usage": []
+          },
+          "constants": {
+            "numerical_values": [
+              {
+                "name": "Max building height",
+                "value": "24'"
+              }
+            ],
+            "specs": [
+              {
+                "name": "Average grade",
+                "description": "Established using existing grade\u2014before any grading or fill."
+              }
+            ],
+            "standards": [
+              {
+                "name": "Building Code",
+                "description": "Max. allowed is regulated by Building Code."
+              }
+            ],
+            "procedures": []
+          },
+          "conditions": {
+            "mandatory": [
+              "Daylight plane is measured from average grade.",
+              "Side daylight plane is measured (up) at lot line.",
+              "Rear daylight plane is measured (up) at rear setback."
+            ],
+            "optional": [],
+            "conditional_logic": [],
+            "dependencies": []
+          },
+          "exceptions": {
+            "explicit_deviations": [],
+            "alternatives": [],
+            "special_cases": []
+          },
+          "relationships": {
+            "hierarchical": [
+              {
+                "parent": "Primary daylight plane",
+                "child": "Accessory-structure daylight plan"
+              }
+            ],
+            "cross_references": [
+              {
+                "reference": "Figure 44",
+                "page": 42
+              }
+            ],
+            "logical_dependencies": []
+          }
+        }
+      ],
+      "ambiguous_language": [
+        "Max. allowed is [regulated] by Building Code",
+        "24' max. for portions [unclear remainder of this note]"
+      ]
+    },
+    "parse_error": false,
+    "raw_response": "```json\n{\n  \"rules\": [\n    {\n      \"title\": \"Primary Daylight Plane (Sides)\",\n      \"qualifiers\": {\n        \"scope\": \"Regulates structures located within the buildable area.\",\n        \"applicability\": \"Structures located in the rear and/or side yards.\",\n        \"exclusions\": \"Accessory-structure daylight plan described on the next page.\"\n      },\n      \"variables\": {\n        \"dimensional\": [\n          {\n            \"name\": \"Daylight plane angle\",\n            \"value\": \"45\u00b0\"\n          },\n          {\n            \"name\": \"Measurement from average grade\",\n            \"value\": \"10'\"\n          }\n        ],\n        \"material\": [],\n        \"environmental\": [],\n        \"usage\": []\n      },\n      \"constants\": {\n        \"numerical_values\": [\n          {\n            \"name\": \"Max building height\",\n            \"value\": \"24'\"\n          }\n        ],\n        \"specs\": [\n          {\n            \"name\": \"Average grade\",\n            \"description\": \"Established using existing grade\u2014before any grading or fill.\"\n          }\n        ],\n        \"standards\": [\n          {\n            \"name\": \"Building Code\",\n            \"description\": \"Max. allowed is regulated by Building Code.\"\n          }\n        ],\n        \"procedures\": []\n      },\n      \"conditions\": {\n        \"mandatory\": [\n          \"Daylight plane is measured from average grade.\",\n          \"Side daylight plane is measured (up) at lot line.\",\n          \"Rear daylight plane is measured (up) at rear setback.\"\n        ],\n        \"optional\": [],\n        \"conditional_logic\": [],\n        \"dependencies\": []\n      },\n      \"exceptions\": {\n        \"explicit_deviations\": [],\n        \"alternatives\": [],\n        \"special_cases\": []\n      },\n      \"relationships\": {\n        \"hierarchical\": [\n          {\n            \"parent\": \"Primary daylight plane\",\n            \"child\": \"Accessory-structure daylight plan\"\n          }\n        ],\n        \"cross_references\": [\n          {\n            \"reference\": \"Figure 44\",\n            \"page\": 42\n          }\n        ],\n        \"logical_dependencies\": []\n      }\n    }\n  ],\n  \"ambiguous_language\": [\n    \"Max. allowed is [regulated] by Building Code\",\n    \"24' max. for portions [unclear remainder of this note]\"\n  ]\n}\n```"
+  },
+  "timestamp": "2025-09-16 14:42:50",
+  "model": "openai/gpt-4o",
+  "success": true
+}

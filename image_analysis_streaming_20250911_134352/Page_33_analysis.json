@@ -1,0 +1,53 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_33.png",
+  "image_name": "Page_33.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Fig 21 Plan view showing how to determine average grade\n\nWhen measuring daylight plane, height is measured from the average of the grade at the midpoint of the building and the grade of the closest point on the abutting site.\n\nFor this side of this structure, the average grade is the average of the grades at these two points\n\nFor this side of this structure, the average grade is the average of the grades at these two points\n\nRear yard\nRear yard\nRear yard\n\nBuildable area\nBuildable area\n\nSubject House\n\nNeighbor\nNeighbor\n\nFront yard\nFront yard\nFront yard\n\nKey\n- Lot line\n- - - Required setbacks\nSidewalk\nBuildable area\nExisting house\n\nFig 22 Detail showing allowable eave protrusion\n\n2' max.\n\nwall plane\n\nThe daylight plane must clear the point where the wall plane intersects the top of the roof material.\n\nCertification of daylight plane compliance:\n\nUpon request by the building official any person building or making improvements to a structure shall provide a certification that the structure, as built, complies with the daylight plane provisions in Code Section 18.12.040(a). Such certification shall be prepared by a licensed engineer, architect, or surveyor, and shall be provided prior to frame inspection. (Sections 18.12.040(j)).\n\n27",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Plan view diagram showing three property lots with a subject house in the center, neighboring properties on either side, and measurements for determining average grade for daylight plane calculations. Shows buildable areas, setbacks, and grade measurement points.",
+          "location": "Left side of page, center"
+        },
+        {
+          "type": "diagram",
+          "description": "Detail cross-section showing allowable eave protrusion with daylight plane, wall plane, and roof intersection. Shows 2' maximum protrusion measurement.",
+          "location": "Upper right of page"
+        },
+        {
+          "type": "legend",
+          "description": "Key showing different line types and area designations: lot line (solid), required setbacks (dashed), sidewalk (hatched), buildable area (dotted outline), existing house (gray shaded)",
+          "location": "Bottom left of diagram"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Maximum eave protrusion",
+          "value": "2",
+          "unit": "feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "",
+        "subheadings": [
+          "Fig 21 Plan view showing how to determine average grade",
+          "Fig 22 Detail showing allowable eave protrusion",
+          "Certification of daylight plane compliance:"
+        ],
+        "sections": []
+      },
+      "additional_notes": [
+        "Page number 27 appears at bottom right",
+        "Diagrams include shaded areas to distinguish different zones and properties",
+        "Technical drawing style with precise line work and annotations"
+      ],
+      "cross_references": [
+        "Code Section 18.12.040(a)",
+        "Sections 18.12.040(j)"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-11 13:44:45",
+  "model_used": "anthropic/claude-sonnet-4"
+}

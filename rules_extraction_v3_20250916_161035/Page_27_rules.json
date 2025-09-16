@@ -1,0 +1,63 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_27.md",
+  "file_name": "Page_27.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "rule": "Contextual front setbacks",
+        "Qualifiers": {
+          "Scope": "Regulation for determining the required front setback of a property based on the existing setbacks of neighboring lots.",
+          "Applicability": "Applies to lots on a block where the calculated average of existing setbacks on the same side of the block is 30 feet or greater.",
+          "Exclusions": "The calculation process explicitly excludes the following lot types: \n- Flag lots\n- Lots with Multi-family use of 3 or more units\n- Corner lots that face a cross street"
+        },
+        "Variables": {
+          "Dimensional": "existing_setback_depth (ft), block_length (ft), calculated_average_setback (ft)",
+          "Material": "",
+          "Environmental": "",
+          "Usage": "lot_type (Single-Family, Multi-family, Flag, Corner), project_lot, number_of_units_on_lot"
+        },
+        "Constants": {
+          "Numerical Values": "Setback average threshold: 30 ft\nBlock length limit for special consideration: 600 ft\nLot count limit for long blocks: 10 lots\nMinimum lot count for calculation: > 3 lots\nLot count threshold for excluding smallest/largest setbacks: >= 5 lots\nMulti-family unit count for exclusion: >= 3 units",
+          "Specs": "",
+          "Standards": "",
+          "Procedures": "1. Count lots on the same side of the block. \n2. Apply block length limits if necessary. \n3. Exclude specified lot types (Flag, Multi-family 3+, Corner). \n4. Count remaining lots. \n5. If 5 or more lots remain, exclude the smallest and largest setbacks. \n6. Calculate the average of the final set of lots. \n7. Compare the average to the 30' threshold."
+        },
+        "Conditions": {
+          "Mandatory": "A contextual setback calculation can only be initiated if the block (or relevant 600' segment) has more than 3 lots, including the project lot.",
+          "Optional": "",
+          "Conditional Logic": "1. IF block_length > 600 ft, THEN the scope of the calculation is limited to lots within a 600 ft segment, up to a maximum of 10 lots.\n2. AFTER excluding Flag, Multi-family (3+), and Corner lots, IF number_of_remaining_lots >= 5, THEN the lots with the smallest and largest setbacks must also be excluded from the average calculation.\n3. The contextual setback rule applies IF AND ONLY IF the final calculated_average_setback >= 30 ft.",
+          "Dependencies": "The method of averaging (i.e., whether to exclude the smallest and largest setbacks) is dependent on the number of lots remaining after the initial exclusion step."
+        },
+        "Exceptions": {
+          "Explicit Deviations": "For blocks longer than 600 ft, the standard procedure of considering all lots on the block is deviated; consideration is limited to a 600 ft segment (max 10 lots).",
+          "Alternatives": "",
+          "Special Cases": "The case where 5 or more lots remain after initial exclusions triggers a special calculation method (dropping the smallest and largest setbacks)."
+        },
+        "Relationships": {
+          "Hierarchical": "The rule follows a strict procedural hierarchy:\n1. Initial block/lot count check.\n2. Application of long-block exception (if applicable).\n3. Exclusion of lots by type.\n4. Conditional exclusion of lots by dimension (smallest/largest).\n5. Final average calculation and comparison.",
+          "Cross-references": "The process description refers to 'Figure 15' as a visual example of the calculation.",
+          "Logical Dependencies": "The applicability of the entire rule is dependent on the final calculated average being >= 30 ft. The exclusion of smallest/largest setbacks is dependent on the lot count after initial type-based exclusions."
+        },
+        "Ambiguous Language": [
+          {
+            "text": "Is the number of remaining lots more or less than 5 or more?",
+            "interpretation": "This appears to be a transcription error. Based on the subsequent 'Yes' branch leading to the exclusion of smallest/largest setbacks, the intended question is 'Is the number of remaining lots 5 or more?'."
+          },
+          {
+            "text": "consider only lots within 600' (max. 10 lots)",
+            "interpretation": "This is ambiguous. It is unclear if this means a) the 600' segment can contain a maximum of 10 lots for the purpose of this rule, or b) if the segment contains more than 10 lots, only the first 10 should be considered. The exact method for selecting the 10 lots is not specified."
+          }
+        ]
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n  {\n    \"rule\": \"Contextual front setbacks\",\n    \"Qualifiers\": {\n      \"Scope\": \"Regulation for determining the required front setback of a property based on the existing setbacks of neighboring lots.\",\n      \"Applicability\": \"Applies to lots on a block where the calculated average of existing setbacks on the same side of the block is 30 feet or greater.\",\n      \"Exclusions\": \"The calculation process explicitly excludes the following lot types: \\n- Flag lots\\n- Lots with Multi-family use of 3 or more units\\n- Corner lots that face a cross street\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"existing_setback_depth (ft), block_length (ft), calculated_average_setback (ft)\",\n      \"Material\": \"\",\n      \"Environmental\": \"\",\n      \"Usage\": \"lot_type (Single-Family, Multi-family, Flag, Corner), project_lot, number_of_units_on_lot\"\n    },\n    \"Constants\": {\n      \"Numerical Values\": \"Setback average threshold: 30 ft\\nBlock length limit for special consideration: 600 ft\\nLot count limit for long blocks: 10 lots\\nMinimum lot count for calculation: > 3 lots\\nLot count threshold for excluding smallest/largest setbacks: >= 5 lots\\nMulti-family unit count for exclusion: >= 3 units\",\n      \"Specs\": \"\",\n      \"Standards\": \"\",\n      \"Procedures\": \"1. Count lots on the same side of the block. \\n2. Apply block length limits if necessary. \\n3. Exclude specified lot types (Flag, Multi-family 3+, Corner). \\n4. Count remaining lots. \\n5. If 5 or more lots remain, exclude the smallest and largest setbacks. \\n6. Calculate the average of the final set of lots. \\n7. Compare the average to the 30' threshold.\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"A contextual setback calculation can only be initiated if the block (or relevant 600' segment) has more than 3 lots, including the project lot.\",\n      \"Optional\": \"\",\n      \"Conditional Logic\": \"1. IF block_length > 600 ft, THEN the scope of the calculation is limited to lots within a 600 ft segment, up to a maximum of 10 lots.\\n2. AFTER excluding Flag, Multi-family (3+), and Corner lots, IF number_of_remaining_lots >= 5, THEN the lots with the smallest and largest setbacks must also be excluded from the average calculation.\\n3. The contextual setback rule applies IF AND ONLY IF the final calculated_average_setback >= 30 ft.\",\n      \"Dependencies\": \"The method of averaging (i.e., whether to exclude the smallest and largest setbacks) is dependent on the number of lots remaining after the initial exclusion step.\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"For blocks longer than 600 ft, the standard procedure of considering all lots on the block is deviated; consideration is limited to a 600 ft segment (max 10 lots).\",\n      \"Alternatives\": \"\",\n      \"Special Cases\": \"The case where 5 or more lots remain after initial exclusions triggers a special calculation method (dropping the smallest and largest setbacks).\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"The rule follows a strict procedural hierarchy:\\n1. Initial block/lot count check.\\n2. Application of long-block exception (if applicable).\\n3. Exclusion of lots by type.\\n4. Conditional exclusion of lots by dimension (smallest/largest).\\n5. Final average calculation and comparison.\",\n      \"Cross-references\": \"The process description refers to 'Figure 15' as a visual example of the calculation.\",\n      \"Logical Dependencies\": \"The applicability of the entire rule is dependent on the final calculated average being >= 30 ft. The exclusion of smallest/largest setbacks is dependent on the lot count after initial type-based exclusions.\"\n    },\n    \"Ambiguous Language\": [\n      {\n        \"text\": \"Is the number of remaining lots more or less than 5 or more?\",\n        \"interpretation\": \"This appears to be a transcription error. Based on the subsequent 'Yes' branch leading to the exclusion of smallest/largest setbacks, the intended question is 'Is the number of remaining lots 5 or more?'.\"\n      },\n      {\n        \"text\": \"consider only lots within 600' (max. 10 lots)\",\n        \"interpretation\": \"This is ambiguous. It is unclear if this means a) the 600' segment can contain a maximum of 10 lots for the purpose of this rule, or b) if the segment contains more than 10 lots, only the first 10 should be considered. The exact method for selecting the 10 lots is not specified.\"\n      }\n    ]\n  }\n]\n```",
+    "response_time": 26.00186514854431,
+    "input_tokens": 1113,
+    "output_tokens": 2824,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 16:12:21",
+  "model": "google/gemini-2.5-pro",
+  "success": true
+}

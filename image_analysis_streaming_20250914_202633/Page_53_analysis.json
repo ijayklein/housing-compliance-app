@@ -1,0 +1,156 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_53.png",
+  "image_name": "Page_53.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Grade\n\nWhen measuring | Use | Which is defined as | Illus.\n---|---|---|---\nThe height of a structure on land with natural slope \u2264 10% | Existing Grade | for each building or structure, the lowest point of adjacent ground elevation prior to grading or fill | Fig 44 on this page\nThe height of a structure on land with natural slope > 10% | Grade | adjacent ground elevation of the finished or existing grade, whichever is lower--at any point of the structure | Fig 45 on this page\nA daylight plane | Average grade | average of the grade at the midpoint of the building and the grade at the closest point on the abutting site | Figs 20-21 pp. 26-27\n\nFig 44 Existing vs. Finished grade\n\nHeight measured to top of roof material of the highest peak\nFinished grade (after fill)\nExisting grade (before fill)\nLowest point of ground elevation before fill (existing grade) adjacent to the structure\n\nFig 45 Height limits for structures on slopes greater than 10%\n30' above existing grade\n30' above finished\nExisting grade (before fill)\nHeight\nHeight\nThe structure must comply with the lower of the two limits at all points along the slope\n\nFig 46 Comparison of different grades",
+      "visual_elements": [
+        {
+          "type": "table",
+          "description": "A table with four columns: 'When measuring', 'Use', 'Which is defined as', and 'Illus.'. It lists three rows describing how to measure grade for structures on land with natural slope \u2264 10%, > 10%, and a daylight plane, including references to figures 44, 45, and 20-21 (pp. 26-27).",
+          "location": "Top left"
+        },
+        {
+          "type": "diagram",
+          "description": "Fig 44 Existing vs. Finished grade: A side elevation drawing of a house showing the height measured to the top of the roof material of the highest peak. It shows the finished grade (after fill), existing grade (before fill), and the lowest point of ground elevation before fill adjacent to the structure.",
+          "location": "Bottom left"
+        },
+        {
+          "type": "diagram",
+          "description": "Fig 45 Height limits for structures on slopes greater than 10%: A side elevation drawing of two houses on a slope with arrows indicating '30' above existing grade' and '30' above finished'. It shows existing grade (before fill) and height measurements. A note states the structure must comply with the lower of the two limits at all points along the slope.",
+          "location": "Top right"
+        },
+        {
+          "type": "chart",
+          "description": "Fig 46 Comparison of different grades: A graph with lines labeled 1:10 10%, 3:10 30%, 5:10 50%, and 10:10 100%, showing slope comparisons.",
+          "location": "Bottom right"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Natural slope for existing grade measurement",
+          "value_type": "Range",
+          "value": "\u2264 10%",
+          "unit": "percent"
+        },
+        {
+          "parameter": "Natural slope for grade measurement",
+          "value_type": "Range",
+          "value": "> 10%",
+          "unit": "percent"
+        },
+        {
+          "parameter": "Height limit above existing grade",
+          "value_type": "Measurement",
+          "value": "30",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Height limit above finished grade",
+          "value_type": "Measurement",
+          "value": "30",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Slope ratios in Fig 46",
+          "value_type": "List",
+          "value": [
+            "1:10 10%",
+            "3:10 30%",
+            "5:10 50%",
+            "10:10 100%"
+          ],
+          "unit": "ratio/percent"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Grade",
+        "subheadings": [],
+        "sections": []
+      },
+      "additional_notes": [
+        "Page number 47 at bottom right corner.",
+        "All text is clear and legible with no handwritten annotations or stamps.",
+        "The table uses bold font for column headers and some bold text in the 'Which is defined as' column for emphasis (e.g., 'lower--at any point of the structure')."
+      ],
+      "cross_references": [
+        "Fig 44 on this page",
+        "Fig 45 on this page",
+        "Figs 20-21 pp. 26-27"
+      ],
+      "conditions_and_qualifiers": {
+        "qualifiers": [
+          {
+            "id": "q1",
+            "text": "The structure must comply with the lower of the two limits at all points along the slope",
+            "applies_to_conditions": [
+              "c1",
+              "c2"
+            ],
+            "scope": "Specific"
+          }
+        ],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "Height limit 30' above existing grade",
+            "value_type": "Measurement",
+            "operator": "<=",
+            "threshold_value": "30",
+            "unit": "feet"
+          },
+          {
+            "id": "c2",
+            "text": "Height limit 30' above finished grade",
+            "value_type": "Measurement",
+            "operator": "<=",
+            "threshold_value": "30",
+            "unit": "feet"
+          }
+        ],
+        "logical_relationships": [
+          {
+            "operation": "AND",
+            "condition_ids": [
+              "c1",
+              "c2"
+            ],
+            "expression": "The structure must comply with the lower of the two limits at all points along the slope",
+            "evaluation_order": 1,
+            "ambiguity_note": "The exact logical operator is implied as AND with a minimum selection (lower of two limits), but not explicitly stated."
+          }
+        ],
+        "execution_sequence": [
+          {
+            "step": 1,
+            "action": "Determine the height limits based on existing grade and finished grade",
+            "condition_ids": [
+              "c1",
+              "c2"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 2,
+            "action": "Ensure the structure height complies with the lower of the two height limits at all points along the slope",
+            "condition_ids": [
+              "c1",
+              "c2"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": [
+              1
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:28:04",
+  "model_used": "openai/gpt-4.1-mini"
+}

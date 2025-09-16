@@ -1,0 +1,354 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_15.md",
+  "file_name": "Page_15.md",
+  "analysis": {
+    "extracted_rules": {
+      "rules": [
+        {
+          "id": "Step-2-Abutting-Walls-Closed",
+          "Qualifiers": {
+            "scope": "Classification of porch perimeter segments that abut the house walls.",
+            "applicability": "Per Figure 5 planning/porch perimeter segmentation where segments are identified by plan labels (e.g., A, B, C).",
+            "exclusions": "Segments that do not abut the house walls (handled under Step 3)."
+          },
+          "Variables": [
+            {
+              "name": "perimeter_segment_id",
+              "type": "string",
+              "units": null,
+              "description": "Identifier of a perimeter segment (e.g., A, B, C).",
+              "source": "Plan labels"
+            },
+            {
+              "name": "abuts_house_wall",
+              "type": "boolean",
+              "units": null,
+              "description": "True if the segment is contiguous with the house wall.",
+              "source": "Plan reading per Step 2"
+            },
+            {
+              "name": "segment_status",
+              "type": "enum",
+              "units": null,
+              "allowed_values": [
+                "open",
+                "closed"
+              ],
+              "description": "Derived classification of the segment as open or closed.",
+              "source": "Derived by rule conditions"
+            },
+            {
+              "name": "segment_length",
+              "type": "number",
+              "units": "ft",
+              "description": "Plan dimension for the segment length, when legible.",
+              "source": "Plan dimensions",
+              "sample_values": [
+                {
+                  "perimeter_segment_id": "B",
+                  "value": 8,
+                  "note": "Example from Figure 5 (non-normative)"
+                },
+                {
+                  "perimeter_segment_id": "C",
+                  "value": 10,
+                  "note": "Example from Figure 5 (non-normative)"
+                },
+                {
+                  "perimeter_segment_id": "A",
+                  "value": null,
+                  "note": "Dimension not legible in source; data incomplete"
+                }
+              ]
+            }
+          ],
+          "Constants": [
+            {
+              "name": "procedure_step_reference",
+              "value": "Step 2",
+              "units": null,
+              "description": "Determine which perimeter segments abut the house walls; these are closed segments (sides).",
+              "source": "Text: 'Determine which perimeter segments abut the house walls. These are closed segments, or sides.'"
+            }
+          ],
+          "Conditions": [
+            {
+              "type": "mandatory",
+              "if": "abuts_house_wall == true",
+              "then": "segment_status = 'closed'",
+              "else": null,
+              "notes": "All segments that abut house walls are automatically classified as closed."
+            }
+          ],
+          "Exceptions": [
+            {
+              "description": "Dimension not legible for Segment A in Figure 5.",
+              "type": "data_incompleteness",
+              "scope": "Example dataset only (non-normative)",
+              "ambiguity_flag": true,
+              "notes": "Lack of legible dimension does not affect the classification rule; it only affects example completeness."
+            }
+          ],
+          "Relationships": [
+            {
+              "type": "hierarchical",
+              "from": "Step-2-Abutting-Walls-Closed",
+              "to": "Step-3-Openness-50-Percent",
+              "description": "Step 3 applies only to segments not classified as closed under Step 2."
+            },
+            {
+              "type": "logical_dependency",
+              "from": "abuts_house_wall",
+              "to": "segment_status",
+              "description": "If a segment abuts the house wall, its status is closed."
+            }
+          ]
+        },
+        {
+          "id": "Step-3-Openness-50-Percent",
+          "Qualifiers": {
+            "scope": "Determination of open/closed status for perimeter segments that do not abut the house walls, based on facade openness.",
+            "applicability": "Remaining segments after Step 2 classification.",
+            "exclusions": "Segments identified as abutting house walls (closed by Step 2)."
+          },
+          "Variables": [
+            {
+              "name": "perimeter_segment_id",
+              "type": "string",
+              "units": null,
+              "description": "Identifier of a perimeter segment (e.g., D, E, F, G).",
+              "source": "Section/elevation diagram labels"
+            },
+            {
+              "name": "facade_height",
+              "type": "number",
+              "units": "ft",
+              "description": "Measured from the top of the porch floor to the point where the segment facade intersects with the top of the roof material.",
+              "source": "Measurement specification in text",
+              "sample_values": [
+                {
+                  "perimeter_segment_id": "*",
+                  "value": 8,
+                  "note": "Height shown as 8' in the section graphic (example; non-normative for all cases)"
+                }
+              ]
+            },
+            {
+              "name": "facade_width",
+              "type": "number",
+              "units": "ft",
+              "description": "Measured in the same plane as facade_height.",
+              "source": "Measurement specification in text",
+              "sample_values": [
+                {
+                  "perimeter_segment_id": "D",
+                  "value": 7,
+                  "note": "Example from section diagram"
+                },
+                {
+                  "perimeter_segment_id": "E",
+                  "value": 14,
+                  "note": "Example from section diagram"
+                },
+                {
+                  "perimeter_segment_id": "F",
+                  "value": 24,
+                  "note": "Example from section diagram"
+                },
+                {
+                  "perimeter_segment_id": "G",
+                  "value": 4,
+                  "note": "Example from section diagram"
+                }
+              ]
+            },
+            {
+              "name": "facade_area",
+              "type": "number",
+              "units": "sq ft",
+              "description": "Gross area of the facade segment defined by facade_height \u00d7 facade_width.",
+              "source": "Derived from measurement specifications"
+            },
+            {
+              "name": "open_area",
+              "type": "number",
+              "units": "sq ft",
+              "description": "Area within the facade that is open (voids). Allowances may be made to disregard structural supports that are not excessive.",
+              "source": "Implied by openness assessment and allowances note"
+            },
+            {
+              "name": "open_area_percentage",
+              "type": "number",
+              "units": "%",
+              "description": "Percentage of facade area that is open, computed as (open_area / facade_area) \u00d7 100.",
+              "source": "Openness threshold rule"
+            },
+            {
+              "name": "structural_supports_presence",
+              "type": "boolean",
+              "units": null,
+              "description": "Indicates presence of structural supports within the facade plane.",
+              "source": "Allowance note"
+            },
+            {
+              "name": "structural_supports_extent",
+              "type": "string",
+              "units": null,
+              "description": "Qualitative extent of structural supports (e.g., 'not excessive').",
+              "source": "Allowance note",
+              "allowed_values": [
+                "not excessive",
+                "excessive",
+                "unknown"
+              ]
+            },
+            {
+              "name": "decorative_glass_wall_present",
+              "type": "boolean",
+              "units": null,
+              "description": "True if a decorative glass wall encloses the facade segment.",
+              "source": "Example E rationale"
+            },
+            {
+              "name": "segment_status",
+              "type": "enum",
+              "units": null,
+              "allowed_values": [
+                "open",
+                "closed"
+              ],
+              "description": "Derived classification of the segment as open or closed.",
+              "source": "Derived by rule conditions",
+              "sample_values": [
+                {
+                  "perimeter_segment_id": "D",
+                  "value": "open",
+                  "note": "Example classification"
+                },
+                {
+                  "perimeter_segment_id": "E",
+                  "value": "closed",
+                  "note": "Closed because of decorative glass wall (example)"
+                },
+                {
+                  "perimeter_segment_id": "F",
+                  "value": "open",
+                  "note": "Example classification"
+                },
+                {
+                  "perimeter_segment_id": "G",
+                  "value": "open",
+                  "note": "Example classification"
+                }
+              ]
+            }
+          ],
+          "Constants": [
+            {
+              "name": "openness_threshold",
+              "value": 50,
+              "units": "%",
+              "description": "Minimum percentage of facade area that must be open for the segment to be considered 'open'.",
+              "source": "Text: 'If at least 50% of the facade area is open... the segment is considered open.'"
+            },
+            {
+              "name": "vertical_measurement_reference",
+              "value": "top_of_porch_floor_to_intersection_with_top_of_roof_material",
+              "units": null,
+              "description": "Definition of facade height measurement bounds.",
+              "source": "Measurement specification in text"
+            },
+            {
+              "name": "horizontal_measurement_reference",
+              "value": "same_plane_as_height",
+              "units": null,
+              "description": "Facade width measured in the same plane used for height.",
+              "source": "Measurement specification in text"
+            },
+            {
+              "name": "allowance_for_structural_supports",
+              "value": "allowances_may_be_made_if_not_excessive",
+              "units": null,
+              "description": "Allowance to disregard certain support obstructions if they are 'not excessive'.",
+              "source": "Measurement allowance note"
+            }
+          ],
+          "Conditions": [
+            {
+              "type": "mandatory",
+              "if": "open_area_percentage >= 50",
+              "then": "segment_status = 'open'",
+              "else": "segment_status = 'closed'",
+              "notes": "Threshold is inclusive ('at least 50%')."
+            },
+            {
+              "type": "conditional",
+              "if": "decorative_glass_wall_present == true",
+              "then": "open_area likely reduced; evaluate open_area_percentage; if < 50 then 'closed'",
+              "else": null,
+              "notes": "Example E indicates a decorative glass wall results in 'closed' status."
+            },
+            {
+              "type": "conditional",
+              "if": "structural_supports_presence == true AND structural_supports_extent == 'not excessive'",
+              "then": "Exclude structural supports from closed-area tally when computing open_area",
+              "else": "Include structural elements as obstructions when computing open_area",
+              "notes": "Subject to ambiguity in 'not excessive'."
+            }
+          ],
+          "Exceptions": [
+            {
+              "description": "Allowance for structural supports that are 'not excessive'.",
+              "type": "measurement_allowance",
+              "scope": "Computation of open_area and open_area_percentage",
+              "ambiguity_flag": true,
+              "notes": "The term 'not excessive' is subjective and lacks a quantitative threshold."
+            },
+            {
+              "description": "No explicit procedure provided to quantify open_area when mixed materials/partial enclosures exist.",
+              "type": "procedural_gap",
+              "scope": "Open area calculation methodology",
+              "ambiguity_flag": true,
+              "notes": "Guidance implies area-based calculation but does not define how to treat partial screens, rails, or glazing fractions."
+            }
+          ],
+          "Relationships": [
+            {
+              "type": "dependency",
+              "from": "Step-3-Openness-50-Percent",
+              "to": "Step-2-Abutting-Walls-Closed",
+              "description": "Only segments not classified as closed in Step 2 are evaluated under Step 3."
+            },
+            {
+              "type": "logical_dependency",
+              "from": "facade_height, facade_width",
+              "to": "facade_area",
+              "description": "facade_area = facade_height \u00d7 facade_width."
+            },
+            {
+              "type": "logical_dependency",
+              "from": "open_area, facade_area",
+              "to": "open_area_percentage",
+              "description": "open_area_percentage = (open_area / facade_area) \u00d7 100."
+            },
+            {
+              "type": "cross_reference",
+              "from": "Example segments D, E, F, G",
+              "to": "segment_status outcomes",
+              "description": "Examples demonstrate application of the 50% openness rule and treatment of decorative glass wall."
+            }
+          ]
+        }
+      ]
+    },
+    "parse_error": false,
+    "raw_response": "{\n  \"rules\": [\n    {\n      \"id\": \"Step-2-Abutting-Walls-Closed\",\n      \"Qualifiers\": {\n        \"scope\": \"Classification of porch perimeter segments that abut the house walls.\",\n        \"applicability\": \"Per Figure 5 planning/porch perimeter segmentation where segments are identified by plan labels (e.g., A, B, C).\",\n        \"exclusions\": \"Segments that do not abut the house walls (handled under Step 3).\"\n      },\n      \"Variables\": [\n        {\n          \"name\": \"perimeter_segment_id\",\n          \"type\": \"string\",\n          \"units\": null,\n          \"description\": \"Identifier of a perimeter segment (e.g., A, B, C).\",\n          \"source\": \"Plan labels\"\n        },\n        {\n          \"name\": \"abuts_house_wall\",\n          \"type\": \"boolean\",\n          \"units\": null,\n          \"description\": \"True if the segment is contiguous with the house wall.\",\n          \"source\": \"Plan reading per Step 2\"\n        },\n        {\n          \"name\": \"segment_status\",\n          \"type\": \"enum\",\n          \"units\": null,\n          \"allowed_values\": [\n            \"open\",\n            \"closed\"\n          ],\n          \"description\": \"Derived classification of the segment as open or closed.\",\n          \"source\": \"Derived by rule conditions\"\n        },\n        {\n          \"name\": \"segment_length\",\n          \"type\": \"number\",\n          \"units\": \"ft\",\n          \"description\": \"Plan dimension for the segment length, when legible.\",\n          \"source\": \"Plan dimensions\",\n          \"sample_values\": [\n            {\n              \"perimeter_segment_id\": \"B\",\n              \"value\": 8,\n              \"note\": \"Example from Figure 5 (non-normative)\"\n            },\n            {\n              \"perimeter_segment_id\": \"C\",\n              \"value\": 10,\n              \"note\": \"Example from Figure 5 (non-normative)\"\n            },\n            {\n              \"perimeter_segment_id\": \"A\",\n              \"value\": null,\n              \"note\": \"Dimension not legible in source; data incomplete\"\n            }\n          ]\n        }\n      ],\n      \"Constants\": [\n        {\n          \"name\": \"procedure_step_reference\",\n          \"value\": \"Step 2\",\n          \"units\": null,\n          \"description\": \"Determine which perimeter segments abut the house walls; these are closed segments (sides).\",\n          \"source\": \"Text: 'Determine which perimeter segments abut the house walls. These are closed segments, or sides.'\"\n        }\n      ],\n      \"Conditions\": [\n        {\n          \"type\": \"mandatory\",\n          \"if\": \"abuts_house_wall == true\",\n          \"then\": \"segment_status = 'closed'\",\n          \"else\": null,\n          \"notes\": \"All segments that abut house walls are automatically classified as closed.\"\n        }\n      ],\n      \"Exceptions\": [\n        {\n          \"description\": \"Dimension not legible for Segment A in Figure 5.\",\n          \"type\": \"data_incompleteness\",\n          \"scope\": \"Example dataset only (non-normative)\",\n          \"ambiguity_flag\": true,\n          \"notes\": \"Lack of legible dimension does not affect the classification rule; it only affects example completeness.\"\n        }\n      ],\n      \"Relationships\": [\n        {\n          \"type\": \"hierarchical\",\n          \"from\": \"Step-2-Abutting-Walls-Closed\",\n          \"to\": \"Step-3-Openness-50-Percent\",\n          \"description\": \"Step 3 applies only to segments not classified as closed under Step 2.\"\n        },\n        {\n          \"type\": \"logical_dependency\",\n          \"from\": \"abuts_house_wall\",\n          \"to\": \"segment_status\",\n          \"description\": \"If a segment abuts the house wall, its status is closed.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"Step-3-Openness-50-Percent\",\n      \"Qualifiers\": {\n        \"scope\": \"Determination of open/closed status for perimeter segments that do not abut the house walls, based on facade openness.\",\n        \"applicability\": \"Remaining segments after Step 2 classification.\",\n        \"exclusions\": \"Segments identified as abutting house walls (closed by Step 2).\"\n      },\n      \"Variables\": [\n        {\n          \"name\": \"perimeter_segment_id\",\n          \"type\": \"string\",\n          \"units\": null,\n          \"description\": \"Identifier of a perimeter segment (e.g., D, E, F, G).\",\n          \"source\": \"Section/elevation diagram labels\"\n        },\n        {\n          \"name\": \"facade_height\",\n          \"type\": \"number\",\n          \"units\": \"ft\",\n          \"description\": \"Measured from the top of the porch floor to the point where the segment facade intersects with the top of the roof material.\",\n          \"source\": \"Measurement specification in text\",\n          \"sample_values\": [\n            {\n              \"perimeter_segment_id\": \"*\",\n              \"value\": 8,\n              \"note\": \"Height shown as 8' in the section graphic (example; non-normative for all cases)\"\n            }\n          ]\n        },\n        {\n          \"name\": \"facade_width\",\n          \"type\": \"number\",\n          \"units\": \"ft\",\n          \"description\": \"Measured in the same plane as facade_height.\",\n          \"source\": \"Measurement specification in text\",\n          \"sample_values\": [\n            {\n              \"perimeter_segment_id\": \"D\",\n              \"value\": 7,\n              \"note\": \"Example from section diagram\"\n            },\n            {\n              \"perimeter_segment_id\": \"E\",\n              \"value\": 14,\n              \"note\": \"Example from section diagram\"\n            },\n            {\n              \"perimeter_segment_id\": \"F\",\n              \"value\": 24,\n              \"note\": \"Example from section diagram\"\n            },\n            {\n              \"perimeter_segment_id\": \"G\",\n              \"value\": 4,\n              \"note\": \"Example from section diagram\"\n            }\n          ]\n        },\n        {\n          \"name\": \"facade_area\",\n          \"type\": \"number\",\n          \"units\": \"sq ft\",\n          \"description\": \"Gross area of the facade segment defined by facade_height \u00d7 facade_width.\",\n          \"source\": \"Derived from measurement specifications\"\n        },\n        {\n          \"name\": \"open_area\",\n          \"type\": \"number\",\n          \"units\": \"sq ft\",\n          \"description\": \"Area within the facade that is open (voids). Allowances may be made to disregard structural supports that are not excessive.\",\n          \"source\": \"Implied by openness assessment and allowances note\"\n        },\n        {\n          \"name\": \"open_area_percentage\",\n          \"type\": \"number\",\n          \"units\": \"%\",\n          \"description\": \"Percentage of facade area that is open, computed as (open_area / facade_area) \u00d7 100.\",\n          \"source\": \"Openness threshold rule\"\n        },\n        {\n          \"name\": \"structural_supports_presence\",\n          \"type\": \"boolean\",\n          \"units\": null,\n          \"description\": \"Indicates presence of structural supports within the facade plane.\",\n          \"source\": \"Allowance note\"\n        },\n        {\n          \"name\": \"structural_supports_extent\",\n          \"type\": \"string\",\n          \"units\": null,\n          \"description\": \"Qualitative extent of structural supports (e.g., 'not excessive').\",\n          \"source\": \"Allowance note\",\n          \"allowed_values\": [\n            \"not excessive\",\n            \"excessive\",\n            \"unknown\"\n          ]\n        },\n        {\n          \"name\": \"decorative_glass_wall_present\",\n          \"type\": \"boolean\",\n          \"units\": null,\n          \"description\": \"True if a decorative glass wall encloses the facade segment.\",\n          \"source\": \"Example E rationale\"\n        },\n        {\n          \"name\": \"segment_status\",\n          \"type\": \"enum\",\n          \"units\": null,\n          \"allowed_values\": [\n            \"open\",\n            \"closed\"\n          ],\n          \"description\": \"Derived classification of the segment as open or closed.\",\n          \"source\": \"Derived by rule conditions\",\n          \"sample_values\": [\n            {\n              \"perimeter_segment_id\": \"D\",\n              \"value\": \"open\",\n              \"note\": \"Example classification\"\n            },\n            {\n              \"perimeter_segment_id\": \"E\",\n              \"value\": \"closed\",\n              \"note\": \"Closed because of decorative glass wall (example)\"\n            },\n            {\n              \"perimeter_segment_id\": \"F\",\n              \"value\": \"open\",\n              \"note\": \"Example classification\"\n            },\n            {\n              \"perimeter_segment_id\": \"G\",\n              \"value\": \"open\",\n              \"note\": \"Example classification\"\n            }\n          ]\n        }\n      ],\n      \"Constants\": [\n        {\n          \"name\": \"openness_threshold\",\n          \"value\": 50,\n          \"units\": \"%\",\n          \"description\": \"Minimum percentage of facade area that must be open for the segment to be considered 'open'.\",\n          \"source\": \"Text: 'If at least 50% of the facade area is open... the segment is considered open.'\"\n        },\n        {\n          \"name\": \"vertical_measurement_reference\",\n          \"value\": \"top_of_porch_floor_to_intersection_with_top_of_roof_material\",\n          \"units\": null,\n          \"description\": \"Definition of facade height measurement bounds.\",\n          \"source\": \"Measurement specification in text\"\n        },\n        {\n          \"name\": \"horizontal_measurement_reference\",\n          \"value\": \"same_plane_as_height\",\n          \"units\": null,\n          \"description\": \"Facade width measured in the same plane used for height.\",\n          \"source\": \"Measurement specification in text\"\n        },\n        {\n          \"name\": \"allowance_for_structural_supports\",\n          \"value\": \"allowances_may_be_made_if_not_excessive\",\n          \"units\": null,\n          \"description\": \"Allowance to disregard certain support obstructions if they are 'not excessive'.\",\n          \"source\": \"Measurement allowance note\"\n        }\n      ],\n      \"Conditions\": [\n        {\n          \"type\": \"mandatory\",\n          \"if\": \"open_area_percentage >= 50\",\n          \"then\": \"segment_status = 'open'\",\n          \"else\": \"segment_status = 'closed'\",\n          \"notes\": \"Threshold is inclusive ('at least 50%').\"\n        },\n        {\n          \"type\": \"conditional\",\n          \"if\": \"decorative_glass_wall_present == true\",\n          \"then\": \"open_area likely reduced; evaluate open_area_percentage; if < 50 then 'closed'\",\n          \"else\": null,\n          \"notes\": \"Example E indicates a decorative glass wall results in 'closed' status.\"\n        },\n        {\n          \"type\": \"conditional\",\n          \"if\": \"structural_supports_presence == true AND structural_supports_extent == 'not excessive'\",\n          \"then\": \"Exclude structural supports from closed-area tally when computing open_area\",\n          \"else\": \"Include structural elements as obstructions when computing open_area\",\n          \"notes\": \"Subject to ambiguity in 'not excessive'.\"\n        }\n      ],\n      \"Exceptions\": [\n        {\n          \"description\": \"Allowance for structural supports that are 'not excessive'.\",\n          \"type\": \"measurement_allowance\",\n          \"scope\": \"Computation of open_area and open_area_percentage\",\n          \"ambiguity_flag\": true,\n          \"notes\": \"The term 'not excessive' is subjective and lacks a quantitative threshold.\"\n        },\n        {\n          \"description\": \"No explicit procedure provided to quantify open_area when mixed materials/partial enclosures exist.\",\n          \"type\": \"procedural_gap\",\n          \"scope\": \"Open area calculation methodology\",\n          \"ambiguity_flag\": true,\n          \"notes\": \"Guidance implies area-based calculation but does not define how to treat partial screens, rails, or glazing fractions.\"\n        }\n      ],\n      \"Relationships\": [\n        {\n          \"type\": \"dependency\",\n          \"from\": \"Step-3-Openness-50-Percent\",\n          \"to\": \"Step-2-Abutting-Walls-Closed\",\n          \"description\": \"Only segments not classified as closed in Step 2 are evaluated under Step 3.\"\n        },\n        {\n          \"type\": \"logical_dependency\",\n          \"from\": \"facade_height, facade_width\",\n          \"to\": \"facade_area\",\n          \"description\": \"facade_area = facade_height \u00d7 facade_width.\"\n        },\n        {\n          \"type\": \"logical_dependency\",\n          \"from\": \"open_area, facade_area\",\n          \"to\": \"open_area_percentage\",\n          \"description\": \"open_area_percentage = (open_area / facade_area) \u00d7 100.\"\n        },\n        {\n          \"type\": \"cross_reference\",\n          \"from\": \"Example segments D, E, F, G\",\n          \"to\": \"segment_status outcomes\",\n          \"description\": \"Examples demonstrate application of the 50% openness rule and treatment of decorative glass wall.\"\n        }\n      ]\n    }\n  ]\n}",
+    "response_time": 138.39163494110107,
+    "input_tokens": 696,
+    "output_tokens": 6515,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 15:52:36",
+  "model": "openai/gpt-5",
+  "success": true
+}

@@ -1,0 +1,524 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_48.md",
+  "file_name": "Page_48.md",
+  "analysis": {
+    "extracted_rules": {
+      "rules": [
+        {
+          "rule_id": "LW-1",
+          "title": "Front-facing side prohibition",
+          "Qualifiers": {
+            "scope": "Excavated lightwells and stairwells associated with a dwelling/basement on a lot",
+            "applicability": "All proposed lightwells and stairwells attached to or serving the main dwelling",
+            "exclusions": "None stated"
+          },
+          "Variables": [
+            {
+              "name": "feature_side_orientation",
+              "description": "Which side of the structure the feature is located on relative to designated yards",
+              "type": "categorical",
+              "allowed_values": [
+                "front-facing",
+                "rear-facing",
+                "interior-side-facing",
+                "street-side-facing",
+                "other"
+              ]
+            }
+          ],
+          "Constants": [],
+          "Conditions": [
+            {
+              "type": "mandatory",
+              "statement": "Such features may not be located on the side of the structure that faces the front yard.",
+              "logic": {
+                "if": {
+                  "feature_side_orientation": "front-facing"
+                },
+                "then": {
+                  "feature_permitted": false
+                }
+              }
+            }
+          ],
+          "Exceptions": [],
+          "Relationships": {
+            "depends_on_rules": [],
+            "affects_rules": [],
+            "cross_references": [],
+            "hierarchy": "Location restriction within Light well & stairwell standards & site planning"
+          },
+          "Ambiguities": [
+            "Front yard designation may be ambiguous on corner lots or lots with multiple frontages unless defined elsewhere."
+          ]
+        },
+        {
+          "rule_id": "LW-2",
+          "title": "Maximum interior width",
+          "Qualifiers": {
+            "scope": "Excavated lightwells and stairwells openings",
+            "applicability": "Interior opening width of each individual feature",
+            "exclusions": "Encasing/retaining structure thickness excluded from measurement per note"
+          },
+          "Variables": [
+            {
+              "name": "interior_opening_width",
+              "description": "Clear interior width of the lightwell or stairwell opening",
+              "unit": "ft",
+              "type": "number"
+            }
+          ],
+          "Constants": [
+            {
+              "name": "max_interior_opening_width",
+              "value": 3,
+              "unit": "ft"
+            }
+          ],
+          "Conditions": [
+            {
+              "type": "mandatory",
+              "statement": "Maximum width (interior dimension) is 3'.",
+              "logic": {
+                "operator": "<=",
+                "left": "interior_opening_width",
+                "right": "max_interior_opening_width"
+              }
+            }
+          ],
+          "Exceptions": [],
+          "Relationships": {
+            "depends_on_rules": [
+              "LW-10"
+            ],
+            "affects_rules": [],
+            "cross_references": [
+              "Figure 39 labeling: '3' max width.'"
+            ],
+            "hierarchy": "Dimensional control"
+          },
+          "Ambiguities": []
+        },
+        {
+          "rule_id": "LW-3",
+          "title": "Total length of all features limited by basement perimeter",
+          "Qualifiers": {
+            "scope": "All excavated lightwells and stairwells associated with the structure",
+            "applicability": "Sum of interior lengths of openings of all such features, excluding encasing structure",
+            "exclusions": "Encasing/retaining structure not counted in length"
+          },
+          "Variables": [
+            {
+              "name": "basement_perimeter",
+              "description": "Total perimeter of the basement",
+              "unit": "ft",
+              "type": "number"
+            },
+            {
+              "name": "sum_all_features_length",
+              "description": "Sum of interior opening lengths of all excavated features (encroaching and non-encroaching)",
+              "unit": "ft",
+              "type": "number"
+            }
+          ],
+          "Constants": [
+            {
+              "name": "max_total_length_ratio",
+              "value": 30,
+              "unit": "percent"
+            }
+          ],
+          "Conditions": [
+            {
+              "type": "mandatory",
+              "statement": "Combined length of all excavated features may not exceed 30% of basement perimeter.",
+              "logic": {
+                "operator": "<=",
+                "left": "sum_all_features_length",
+                "right": {
+                  "operator": "*",
+                  "operands": [
+                    "basement_perimeter",
+                    {
+                      "value": 0.3,
+                      "unit": "ratio"
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "Exceptions": [],
+          "Relationships": {
+            "depends_on_rules": [
+              "LW-10"
+            ],
+            "affects_rules": [],
+            "cross_references": [
+              "Figure 39 formula: a + b + c + d (all features) may not exceed 30% of the perimeter of the basement"
+            ],
+            "hierarchy": "Aggregate dimensional control"
+          },
+          "Ambiguities": []
+        },
+        {
+          "rule_id": "LW-4",
+          "title": "Maximum encroachment into required side yard",
+          "Qualifiers": {
+            "scope": "Portions of lightwells and stairwells extending into required side yards",
+            "applicability": "Any encroachment into required side yard(s)",
+            "exclusions": "Not applicable where there is no required side yard"
+          },
+          "Variables": [
+            {
+              "name": "side_yard_encroachment_depth",
+              "description": "Perpendicular distance a feature extends into the required side yard from the required yard boundary or building envelope",
+              "unit": "ft",
+              "type": "number"
+            }
+          ],
+          "Constants": [
+            {
+              "name": "max_side_yard_encroachment",
+              "value": 3,
+              "unit": "ft"
+            }
+          ],
+          "Conditions": [
+            {
+              "type": "mandatory",
+              "statement": "Allowable encroachment into required side yard is 3' max.",
+              "logic": {
+                "operator": "<=",
+                "left": "side_yard_encroachment_depth",
+                "right": "max_side_yard_encroachment"
+              }
+            }
+          ],
+          "Exceptions": [],
+          "Relationships": {
+            "depends_on_rules": [
+              "LW-5",
+              "LW-10"
+            ],
+            "affects_rules": [
+              "LW-7"
+            ],
+            "cross_references": [
+              "Figure 39 labeling: '3' max., into side yard (Typ.)'"
+            ],
+            "hierarchy": "Yard encroachment control"
+          },
+          "Ambiguities": []
+        },
+        {
+          "rule_id": "LW-5",
+          "title": "Minimum distance from side lot line",
+          "Qualifiers": {
+            "scope": "Lightwells and stairwells located near side lot lines",
+            "applicability": "Any feature regardless of encroachment status",
+            "exclusions": "None stated"
+          },
+          "Variables": [
+            {
+              "name": "distance_to_side_lot_line",
+              "description": "Shortest horizontal distance from the feature edge (opening) to the side lot line",
+              "unit": "ft",
+              "type": "number"
+            }
+          ],
+          "Constants": [
+            {
+              "name": "min_distance_to_side_lot_line",
+              "value": 3,
+              "unit": "ft"
+            }
+          ],
+          "Conditions": [
+            {
+              "type": "mandatory",
+              "statement": "Feature must be a minimum of 3' from side lot line.",
+              "logic": {
+                "operator": ">=",
+                "left": "distance_to_side_lot_line",
+                "right": "min_distance_to_side_lot_line"
+              }
+            }
+          ],
+          "Exceptions": [],
+          "Relationships": {
+            "depends_on_rules": [
+              "LW-10"
+            ],
+            "affects_rules": [
+              "LW-4"
+            ],
+            "cross_references": [
+              "Figure 39 labeling: '3' min. from lot line (Typ.)'"
+            ],
+            "hierarchy": "Setback clearance requirement"
+          },
+          "Ambiguities": []
+        },
+        {
+          "rule_id": "LW-6",
+          "title": "Maximum encroachment into required rear yard",
+          "Qualifiers": {
+            "scope": "Portions of lightwells and stairwells extending into required rear yards",
+            "applicability": "Any encroachment into required rear yard",
+            "exclusions": "Not applicable where there is no required rear yard"
+          },
+          "Variables": [
+            {
+              "name": "rear_yard_encroachment_depth",
+              "description": "Perpendicular distance a feature extends into the required rear yard from the required yard boundary or building envelope",
+              "unit": "ft",
+              "type": "number"
+            }
+          ],
+          "Constants": [
+            {
+              "name": "max_rear_yard_encroachment",
+              "value": 4,
+              "unit": "ft"
+            }
+          ],
+          "Conditions": [
+            {
+              "type": "mandatory",
+              "statement": "Allowable encroachment into required rear yard is 4'.",
+              "logic": {
+                "operator": "<=",
+                "left": "rear_yard_encroachment_depth",
+                "right": "max_rear_yard_encroachment"
+              }
+            }
+          ],
+          "Exceptions": [],
+          "Relationships": {
+            "depends_on_rules": [
+              "LW-10"
+            ],
+            "affects_rules": [
+              "LW-7"
+            ],
+            "cross_references": [
+              "Figure 39 rear yard callout: '4''"
+            ],
+            "hierarchy": "Yard encroachment control"
+          },
+          "Ambiguities": []
+        },
+        {
+          "rule_id": "LW-7",
+          "title": "Total length of encroaching features limited",
+          "Qualifiers": {
+            "scope": "All portions of lightwells and stairwells that encroach into any required yard (side or rear) on all sides of the structure",
+            "applicability": "Sum of interior opening lengths of encroaching features only",
+            "exclusions": "Non-encroaching portions of features not counted toward the 15' limit"
+          },
+          "Variables": [
+            {
+              "name": "sum_encroaching_features_length",
+              "description": "Total combined interior opening length of all encroaching features or encroaching portions of features",
+              "unit": "ft",
+              "type": "number"
+            }
+          ],
+          "Constants": [
+            {
+              "name": "max_total_encroaching_length",
+              "value": 15,
+              "unit": "ft"
+            }
+          ],
+          "Conditions": [
+            {
+              "type": "mandatory",
+              "statement": "Combined length of all the excavated features or portions that encroach into required yards, on all sides, may not exceed 15'.",
+              "logic": {
+                "operator": "<=",
+                "left": "sum_encroaching_features_length",
+                "right": "max_total_encroaching_length"
+              }
+            }
+          ],
+          "Exceptions": [],
+          "Relationships": {
+            "depends_on_rules": [
+              "LW-4",
+              "LW-6",
+              "LW-10"
+            ],
+            "affects_rules": [],
+            "cross_references": [
+              "Figure 39 formula: a + b (encroaching features) may not exceed 15'"
+            ],
+            "hierarchy": "Aggregate encroachment control"
+          },
+          "Ambiguities": []
+        },
+        {
+          "rule_id": "LW-8",
+          "title": "Protection of neighboring trees",
+          "Qualifiers": {
+            "scope": "Construction, placement, and operation of excavated lightwells and stairwells",
+            "applicability": "All proposed features in proximity to neighboring trees",
+            "exclusions": "None stated"
+          },
+          "Variables": [
+            {
+              "name": "neighboring_trees_presence",
+              "description": "Presence of neighboring trees that could be affected by excavation or drainage",
+              "type": "boolean"
+            },
+            {
+              "name": "tree_impact_assessment",
+              "description": "Assessment outcome indicating whether the feature would be harmful to neighboring trees",
+              "type": "categorical",
+              "allowed_values": [
+                "no_harm",
+                "potential_harm",
+                "harm"
+              ]
+            }
+          ],
+          "Constants": [],
+          "Conditions": [
+            {
+              "type": "mandatory",
+              "statement": "Excavated features shall not be harmful to neighboring trees.",
+              "logic": {
+                "operator": "==",
+                "left": "tree_impact_assessment",
+                "right": "no_harm"
+              }
+            }
+          ],
+          "Exceptions": [],
+          "Relationships": {
+            "depends_on_rules": [],
+            "affects_rules": [],
+            "cross_references": [],
+            "hierarchy": "Environmental protection"
+          },
+          "Ambiguities": [
+            "The term 'harmful' is not defined; criteria and assessment methodology are unspecified."
+          ]
+        },
+        {
+          "rule_id": "LW-9",
+          "title": "Public Works approval for drainage",
+          "Qualifiers": {
+            "scope": "Drainage systems associated with excavated lightwells and stairwells",
+            "applicability": "Any drainage system handling runoff or groundwater for these features",
+            "exclusions": "None stated"
+          },
+          "Variables": [
+            {
+              "name": "drainage_system_present",
+              "description": "Indicates whether a drainage system is proposed/installed for the feature(s)",
+              "type": "boolean"
+            },
+            {
+              "name": "drainage_approval_status",
+              "description": "Approval status by the Public Works Department",
+              "type": "categorical",
+              "allowed_values": [
+                "approved",
+                "denied",
+                "pending",
+                "not_submitted"
+              ]
+            }
+          ],
+          "Constants": [],
+          "Conditions": [
+            {
+              "type": "mandatory",
+              "statement": "Public Works Department must approve drainage system.",
+              "logic": {
+                "if": {
+                  "drainage_system_present": true
+                },
+                "then": {
+                  "operator": "==",
+                  "left": "drainage_approval_status",
+                  "right": "approved"
+                }
+              }
+            }
+          ],
+          "Exceptions": [],
+          "Relationships": {
+            "depends_on_rules": [],
+            "affects_rules": [],
+            "cross_references": [],
+            "hierarchy": "Procedural approval requirement"
+          },
+          "Ambiguities": [
+            "Jurisdiction for the 'Public Works Department' and approval criteria are not specified."
+          ]
+        },
+        {
+          "rule_id": "LW-10",
+          "title": "Measurement standard for openings",
+          "Qualifiers": {
+            "scope": "All dimensional measurements of lightwell and stairwell openings stated in these standards",
+            "applicability": "Interior dimensions of openings; excludes encasing/retaining structure",
+            "exclusions": "Encasing structure dimensions are not included in measured values"
+          },
+          "Variables": [
+            {
+              "name": "measurement_basis",
+              "description": "Basis used for measuring dimensional constraints",
+              "type": "categorical",
+              "allowed_values": [
+                "interior_opening_only",
+                "including_encasing_structure"
+              ]
+            }
+          ],
+          "Constants": [],
+          "Conditions": [
+            {
+              "type": "mandatory",
+              "statement": "Measurements are based on interior dimension of opening and exclude encasing structure.",
+              "logic": {
+                "operator": "==",
+                "left": "measurement_basis",
+                "right": "interior_opening_only"
+              }
+            }
+          ],
+          "Exceptions": [],
+          "Relationships": {
+            "depends_on_rules": [],
+            "affects_rules": [
+              "LW-2",
+              "LW-3",
+              "LW-4",
+              "LW-5",
+              "LW-6",
+              "LW-7"
+            ],
+            "cross_references": [
+              "Note beneath formulas"
+            ],
+            "hierarchy": "Global measurement procedure"
+          },
+          "Ambiguities": []
+        }
+      ]
+    },
+    "parse_error": false,
+    "raw_response": "{\n  \"rules\": [\n    {\n      \"rule_id\": \"LW-1\",\n      \"title\": \"Front-facing side prohibition\",\n      \"Qualifiers\": {\n        \"scope\": \"Excavated lightwells and stairwells associated with a dwelling/basement on a lot\",\n        \"applicability\": \"All proposed lightwells and stairwells attached to or serving the main dwelling\",\n        \"exclusions\": \"None stated\"\n      },\n      \"Variables\": [\n        {\n          \"name\": \"feature_side_orientation\",\n          \"description\": \"Which side of the structure the feature is located on relative to designated yards\",\n          \"type\": \"categorical\",\n          \"allowed_values\": [\"front-facing\", \"rear-facing\", \"interior-side-facing\", \"street-side-facing\", \"other\"]\n        }\n      ],\n      \"Constants\": [],\n      \"Conditions\": [\n        {\n          \"type\": \"mandatory\",\n          \"statement\": \"Such features may not be located on the side of the structure that faces the front yard.\",\n          \"logic\": {\n            \"if\": {\n              \"feature_side_orientation\": \"front-facing\"\n            },\n            \"then\": {\n              \"feature_permitted\": false\n            }\n          }\n        }\n      ],\n      \"Exceptions\": [],\n      \"Relationships\": {\n        \"depends_on_rules\": [],\n        \"affects_rules\": [],\n        \"cross_references\": [],\n        \"hierarchy\": \"Location restriction within Light well & stairwell standards & site planning\"\n      },\n      \"Ambiguities\": [\n        \"Front yard designation may be ambiguous on corner lots or lots with multiple frontages unless defined elsewhere.\"\n      ]\n    },\n    {\n      \"rule_id\": \"LW-2\",\n      \"title\": \"Maximum interior width\",\n      \"Qualifiers\": {\n        \"scope\": \"Excavated lightwells and stairwells openings\",\n        \"applicability\": \"Interior opening width of each individual feature\",\n        \"exclusions\": \"Encasing/retaining structure thickness excluded from measurement per note\"\n      },\n      \"Variables\": [\n        {\n          \"name\": \"interior_opening_width\",\n          \"description\": \"Clear interior width of the lightwell or stairwell opening\",\n          \"unit\": \"ft\",\n          \"type\": \"number\"\n        }\n      ],\n      \"Constants\": [\n        {\n          \"name\": \"max_interior_opening_width\",\n          \"value\": 3,\n          \"unit\": \"ft\"\n        }\n      ],\n      \"Conditions\": [\n        {\n          \"type\": \"mandatory\",\n          \"statement\": \"Maximum width (interior dimension) is 3'.\",\n          \"logic\": {\n            \"operator\": \"<=\",\n            \"left\": \"interior_opening_width\",\n            \"right\": \"max_interior_opening_width\"\n          }\n        }\n      ],\n      \"Exceptions\": [],\n      \"Relationships\": {\n        \"depends_on_rules\": [\"LW-10\"],\n        \"affects_rules\": [],\n        \"cross_references\": [\"Figure 39 labeling: '3' max width.'\"],\n        \"hierarchy\": \"Dimensional control\"\n      },\n      \"Ambiguities\": []\n    },\n    {\n      \"rule_id\": \"LW-3\",\n      \"title\": \"Total length of all features limited by basement perimeter\",\n      \"Qualifiers\": {\n        \"scope\": \"All excavated lightwells and stairwells associated with the structure\",\n        \"applicability\": \"Sum of interior lengths of openings of all such features, excluding encasing structure\",\n        \"exclusions\": \"Encasing/retaining structure not counted in length\"\n      },\n      \"Variables\": [\n        {\n          \"name\": \"basement_perimeter\",\n          \"description\": \"Total perimeter of the basement\",\n          \"unit\": \"ft\",\n          \"type\": \"number\"\n        },\n        {\n          \"name\": \"sum_all_features_length\",\n          \"description\": \"Sum of interior opening lengths of all excavated features (encroaching and non-encroaching)\",\n          \"unit\": \"ft\",\n          \"type\": \"number\"\n        }\n      ],\n      \"Constants\": [\n        {\n          \"name\": \"max_total_length_ratio\",\n          \"value\": 30,\n          \"unit\": \"percent\"\n        }\n      ],\n      \"Conditions\": [\n        {\n          \"type\": \"mandatory\",\n          \"statement\": \"Combined length of all excavated features may not exceed 30% of basement perimeter.\",\n          \"logic\": {\n            \"operator\": \"<=\",\n            \"left\": \"sum_all_features_length\",\n            \"right\": {\n              \"operator\": \"*\",\n              \"operands\": [\n                \"basement_perimeter\",\n                {\n                  \"value\": 0.30,\n                  \"unit\": \"ratio\"\n                }\n              ]\n            }\n          }\n        }\n      ],\n      \"Exceptions\": [],\n      \"Relationships\": {\n        \"depends_on_rules\": [\"LW-10\"],\n        \"affects_rules\": [],\n        \"cross_references\": [\n          \"Figure 39 formula: a + b + c + d (all features) may not exceed 30% of the perimeter of the basement\"\n        ],\n        \"hierarchy\": \"Aggregate dimensional control\"\n      },\n      \"Ambiguities\": []\n    },\n    {\n      \"rule_id\": \"LW-4\",\n      \"title\": \"Maximum encroachment into required side yard\",\n      \"Qualifiers\": {\n        \"scope\": \"Portions of lightwells and stairwells extending into required side yards\",\n        \"applicability\": \"Any encroachment into required side yard(s)\",\n        \"exclusions\": \"Not applicable where there is no required side yard\"\n      },\n      \"Variables\": [\n        {\n          \"name\": \"side_yard_encroachment_depth\",\n          \"description\": \"Perpendicular distance a feature extends into the required side yard from the required yard boundary or building envelope\",\n          \"unit\": \"ft\",\n          \"type\": \"number\"\n        }\n      ],\n      \"Constants\": [\n        {\n          \"name\": \"max_side_yard_encroachment\",\n          \"value\": 3,\n          \"unit\": \"ft\"\n        }\n      ],\n      \"Conditions\": [\n        {\n          \"type\": \"mandatory\",\n          \"statement\": \"Allowable encroachment into required side yard is 3' max.\",\n          \"logic\": {\n            \"operator\": \"<=\",\n            \"left\": \"side_yard_encroachment_depth\",\n            \"right\": \"max_side_yard_encroachment\"\n          }\n        }\n      ],\n      \"Exceptions\": [],\n      \"Relationships\": {\n        \"depends_on_rules\": [\"LW-5\", \"LW-10\"],\n        \"affects_rules\": [\"LW-7\"],\n        \"cross_references\": [\"Figure 39 labeling: '3' max., into side yard (Typ.)'\"],\n        \"hierarchy\": \"Yard encroachment control\"\n      },\n      \"Ambiguities\": []\n    },\n    {\n      \"rule_id\": \"LW-5\",\n      \"title\": \"Minimum distance from side lot line\",\n      \"Qualifiers\": {\n        \"scope\": \"Lightwells and stairwells located near side lot lines\",\n        \"applicability\": \"Any feature regardless of encroachment status\",\n        \"exclusions\": \"None stated\"\n      },\n      \"Variables\": [\n        {\n          \"name\": \"distance_to_side_lot_line\",\n          \"description\": \"Shortest horizontal distance from the feature edge (opening) to the side lot line\",\n          \"unit\": \"ft\",\n          \"type\": \"number\"\n        }\n      ],\n      \"Constants\": [\n        {\n          \"name\": \"min_distance_to_side_lot_line\",\n          \"value\": 3,\n          \"unit\": \"ft\"\n        }\n      ],\n      \"Conditions\": [\n        {\n          \"type\": \"mandatory\",\n          \"statement\": \"Feature must be a minimum of 3' from side lot line.\",\n          \"logic\": {\n            \"operator\": \">=\",\n            \"left\": \"distance_to_side_lot_line\",\n            \"right\": \"min_distance_to_side_lot_line\"\n          }\n        }\n      ],\n      \"Exceptions\": [],\n      \"Relationships\": {\n        \"depends_on_rules\": [\"LW-10\"],\n        \"affects_rules\": [\"LW-4\"],\n        \"cross_references\": [\"Figure 39 labeling: '3' min. from lot line (Typ.)'\"],\n        \"hierarchy\": \"Setback clearance requirement\"\n      },\n      \"Ambiguities\": []\n    },\n    {\n      \"rule_id\": \"LW-6\",\n      \"title\": \"Maximum encroachment into required rear yard\",\n      \"Qualifiers\": {\n        \"scope\": \"Portions of lightwells and stairwells extending into required rear yards\",\n        \"applicability\": \"Any encroachment into required rear yard\",\n        \"exclusions\": \"Not applicable where there is no required rear yard\"\n      },\n      \"Variables\": [\n        {\n          \"name\": \"rear_yard_encroachment_depth\",\n          \"description\": \"Perpendicular distance a feature extends into the required rear yard from the required yard boundary or building envelope\",\n          \"unit\": \"ft\",\n          \"type\": \"number\"\n        }\n      ],\n      \"Constants\": [\n        {\n          \"name\": \"max_rear_yard_encroachment\",\n          \"value\": 4,\n          \"unit\": \"ft\"\n        }\n      ],\n      \"Conditions\": [\n        {\n          \"type\": \"mandatory\",\n          \"statement\": \"Allowable encroachment into required rear yard is 4'.\",\n          \"logic\": {\n            \"operator\": \"<=\",\n            \"left\": \"rear_yard_encroachment_depth\",\n            \"right\": \"max_rear_yard_encroachment\"\n          }\n        }\n      ],\n      \"Exceptions\": [],\n      \"Relationships\": {\n        \"depends_on_rules\": [\"LW-10\"],\n        \"affects_rules\": [\"LW-7\"],\n        \"cross_references\": [\"Figure 39 rear yard callout: '4''\"],\n        \"hierarchy\": \"Yard encroachment control\"\n      },\n      \"Ambiguities\": []\n    },\n    {\n      \"rule_id\": \"LW-7\",\n      \"title\": \"Total length of encroaching features limited\",\n      \"Qualifiers\": {\n        \"scope\": \"All portions of lightwells and stairwells that encroach into any required yard (side or rear) on all sides of the structure\",\n        \"applicability\": \"Sum of interior opening lengths of encroaching features only\",\n        \"exclusions\": \"Non-encroaching portions of features not counted toward the 15' limit\"\n      },\n      \"Variables\": [\n        {\n          \"name\": \"sum_encroaching_features_length\",\n          \"description\": \"Total combined interior opening length of all encroaching features or encroaching portions of features\",\n          \"unit\": \"ft\",\n          \"type\": \"number\"\n        }\n      ],\n      \"Constants\": [\n        {\n          \"name\": \"max_total_encroaching_length\",\n          \"value\": 15,\n          \"unit\": \"ft\"\n        }\n      ],\n      \"Conditions\": [\n        {\n          \"type\": \"mandatory\",\n          \"statement\": \"Combined length of all the excavated features or portions that encroach into required yards, on all sides, may not exceed 15'.\",\n          \"logic\": {\n            \"operator\": \"<=\",\n            \"left\": \"sum_encroaching_features_length\",\n            \"right\": \"max_total_encroaching_length\"\n          }\n        }\n      ],\n      \"Exceptions\": [],\n      \"Relationships\": {\n        \"depends_on_rules\": [\"LW-4\", \"LW-6\", \"LW-10\"],\n        \"affects_rules\": [],\n        \"cross_references\": [\n          \"Figure 39 formula: a + b (encroaching features) may not exceed 15'\"\n        ],\n        \"hierarchy\": \"Aggregate encroachment control\"\n      },\n      \"Ambiguities\": []\n    },\n    {\n      \"rule_id\": \"LW-8\",\n      \"title\": \"Protection of neighboring trees\",\n      \"Qualifiers\": {\n        \"scope\": \"Construction, placement, and operation of excavated lightwells and stairwells\",\n        \"applicability\": \"All proposed features in proximity to neighboring trees\",\n        \"exclusions\": \"None stated\"\n      },\n      \"Variables\": [\n        {\n          \"name\": \"neighboring_trees_presence\",\n          \"description\": \"Presence of neighboring trees that could be affected by excavation or drainage\",\n          \"type\": \"boolean\"\n        },\n        {\n          \"name\": \"tree_impact_assessment\",\n          \"description\": \"Assessment outcome indicating whether the feature would be harmful to neighboring trees\",\n          \"type\": \"categorical\",\n          \"allowed_values\": [\"no_harm\", \"potential_harm\", \"harm\"]\n        }\n      ],\n      \"Constants\": [],\n      \"Conditions\": [\n        {\n          \"type\": \"mandatory\",\n          \"statement\": \"Excavated features shall not be harmful to neighboring trees.\",\n          \"logic\": {\n            \"operator\": \"==\",\n            \"left\": \"tree_impact_assessment\",\n            \"right\": \"no_harm\"\n          }\n        }\n      ],\n      \"Exceptions\": [],\n      \"Relationships\": {\n        \"depends_on_rules\": [],\n        \"affects_rules\": [],\n        \"cross_references\": [],\n        \"hierarchy\": \"Environmental protection\"\n      },\n      \"Ambiguities\": [\n        \"The term 'harmful' is not defined; criteria and assessment methodology are unspecified.\"\n      ]\n    },\n    {\n      \"rule_id\": \"LW-9\",\n      \"title\": \"Public Works approval for drainage\",\n      \"Qualifiers\": {\n        \"scope\": \"Drainage systems associated with excavated lightwells and stairwells\",\n        \"applicability\": \"Any drainage system handling runoff or groundwater for these features\",\n        \"exclusions\": \"None stated\"\n      },\n      \"Variables\": [\n        {\n          \"name\": \"drainage_system_present\",\n          \"description\": \"Indicates whether a drainage system is proposed/installed for the feature(s)\",\n          \"type\": \"boolean\"\n        },\n        {\n          \"name\": \"drainage_approval_status\",\n          \"description\": \"Approval status by the Public Works Department\",\n          \"type\": \"categorical\",\n          \"allowed_values\": [\"approved\", \"denied\", \"pending\", \"not_submitted\"]\n        }\n      ],\n      \"Constants\": [],\n      \"Conditions\": [\n        {\n          \"type\": \"mandatory\",\n          \"statement\": \"Public Works Department must approve drainage system.\",\n          \"logic\": {\n            \"if\": {\n              \"drainage_system_present\": true\n            },\n            \"then\": {\n              \"operator\": \"==\",\n              \"left\": \"drainage_approval_status\",\n              \"right\": \"approved\"\n            }\n          }\n        }\n      ],\n      \"Exceptions\": [],\n      \"Relationships\": {\n        \"depends_on_rules\": [],\n        \"affects_rules\": [],\n        \"cross_references\": [],\n        \"hierarchy\": \"Procedural approval requirement\"\n      },\n      \"Ambiguities\": [\n        \"Jurisdiction for the 'Public Works Department' and approval criteria are not specified.\"\n      ]\n    },\n    {\n      \"rule_id\": \"LW-10\",\n      \"title\": \"Measurement standard for openings\",\n      \"Qualifiers\": {\n        \"scope\": \"All dimensional measurements of lightwell and stairwell openings stated in these standards\",\n        \"applicability\": \"Interior dimensions of openings; excludes encasing/retaining structure\",\n        \"exclusions\": \"Encasing structure dimensions are not included in measured values\"\n      },\n      \"Variables\": [\n        {\n          \"name\": \"measurement_basis\",\n          \"description\": \"Basis used for measuring dimensional constraints\",\n          \"type\": \"categorical\",\n          \"allowed_values\": [\"interior_opening_only\", \"including_encasing_structure\"]\n        }\n      ],\n      \"Constants\": [],\n      \"Conditions\": [\n        {\n          \"type\": \"mandatory\",\n          \"statement\": \"Measurements are based on interior dimension of opening and exclude encasing structure.\",\n          \"logic\": {\n            \"operator\": \"==\",\n            \"left\": \"measurement_basis\",\n            \"right\": \"interior_opening_only\"\n          }\n        }\n      ],\n      \"Exceptions\": [],\n      \"Relationships\": {\n        \"depends_on_rules\": [],\n        \"affects_rules\": [\"LW-2\", \"LW-3\", \"LW-4\", \"LW-5\", \"LW-6\", \"LW-7\"],\n        \"cross_references\": [\"Note beneath formulas\"],\n        \"hierarchy\": \"Global measurement procedure\"\n      },\n      \"Ambiguities\": []\n    }\n  ]\n}",
+    "response_time": 84.73248791694641,
+    "input_tokens": 880,
+    "output_tokens": 6746,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 15:55:32",
+  "model": "openai/gpt-5",
+  "success": true
+}

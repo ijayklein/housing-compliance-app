@@ -1,0 +1,41 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_18.png",
+  "image_name": "Page_18.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Fig 7 Entry feature with gabled roof\n\nNote: If the entryway is considered to be a vaulted entryway\nthe area will be counted as follows:\n* In this example, a portion of the entryway is recessed\nbeyond the house facade and roof. It is included in the\narea that counts.\n* The area is measured to the outside material of the entry-\nway feature.\n* The area counts TWICE toward gross floor area.\n\nIntersection of front\nfacade and top of\nroof material\nat ridge\n\nHeight\n\nGrade\n\nHeight\n\nGrade\n\nOutline of entry-\nway roof\n\nOutline of entryway\nfloor area that counts\nTWICE if entryway is\nvaulted\n\nIsometric View\n\nSide Elevation\n\nPorch Floor Plan\n\n12",
+      "visual_elements": [
+        {
+          "type": "figure",
+          "description": "A multi-part figure illustrating an entry feature with a gabled roof. It includes three distinct views: an Isometric View, a Side Elevation, and a Porch Floor Plan. The Isometric View shows a 3D perspective of a house entrance with a gabled roof, indicating 'Height' from 'Grade' to the roof ridge. The Side Elevation shows a 2D profile of the same entry feature, also indicating 'Height' from 'Grade' and pointing to the 'Intersection of front facade and top of roof material at ridge'. The Porch Floor Plan shows a top-down view of the entryway, with dashed lines indicating the 'Outline of entryway floor area that counts TWICE if entryway is vaulted' and the 'Outline of entry-way roof'.",
+          "location": "Middle of the page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Area counting for vaulted entryway",
+          "value": "TWICE",
+          "unit": "multiplier"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": null,
+        "subheadings": [
+          "Fig 7 Entry feature with gabled roof"
+        ],
+        "sections": [
+          "Note: If the entryway is considered to be a vaulted entryway the area will be counted as follows:",
+          "Isometric View",
+          "Side Elevation",
+          "Porch Floor Plan"
+        ]
+      },
+      "additional_notes": [
+        "Page number '12' is present at the bottom left corner."
+      ],
+      "cross_references": []
+    }
+  },
+  "analysis_timestamp": "2025-09-11 14:59:07",
+  "model_used": "google/gemini-2.5-flash"
+}

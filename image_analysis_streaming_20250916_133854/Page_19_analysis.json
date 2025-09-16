@@ -1,0 +1,12 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_19.png",
+  "image_name": "Page_19.png",
+  "analysis": {
+    "raw_content": "Here's the extracted information from the image, maintaining absolute precision:\n\n**Title:**\nFig 8 Entry feature with 2nd floor above\n\n**Notes/Regulations:**\n*   **Note:** The 2nd floor over a vaulted entry will count as usual. Therefore, the area will count three times toward gross floor area.\n*   **Note:** If the entryway is considered to be a vaulted entryway the area will be counted as follows:\n    *   In this example, a portion of the entryway is recessed beyond the house facade and roof. It is included in the area that counts.\n    *   The area is measured to the outside material of the entryway feature.\n    *   The area counts **TWICE** toward gross floor area.\n\n**Diagram Labels:**\n*   **Isometric View:**\n    *   Height\n    *   Grade\n*   **Side Elevation:**\n    *   Intersection of front facade and underside or bottom of 2nd floor\n    *   Top of 2nd floor\n    *   Bottom of 2nd floor\n    *   Height\n*   **Porch Floor Plan:**\n    *   Outline of entryway floor area that counts **TWICE** if entryway is vaulted\n\n**Page Number:**\n13",
+    "content_length": 1046,
+    "parse_error": false
+  },
+  "timestamp": "2025-09-16 13:39:00",
+  "model": "google/gemini-2.5-flash",
+  "success": true
+}

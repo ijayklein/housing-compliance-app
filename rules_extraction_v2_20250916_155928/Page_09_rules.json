@@ -1,0 +1,280 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_09.md",
+  "file_name": "Page_09.md",
+  "analysis": {
+    "extracted_rules": {
+      "file_analysis": {
+        "file_name": "Page 09",
+        "rules": [
+          {
+            "rule_id": "R1",
+            "rule_name": "Net Lot Area Calculation",
+            "description": "Defines the method for calculating the net lot area from the gross lot area. The net lot area is the basis for determining a lot's development potential.",
+            "qualifiers": {
+              "scope": "Calculation of lot area for determining development potential.",
+              "applicability": "All lots within the jurisdiction of Palo Alto.",
+              "exclusions_summary": "Specific areas must be excluded from the gross lot area, including: street right-of-ways, 'pole' portions of flag lots, and creek channels."
+            },
+            "variables": [
+              {
+                "name": "Gross Lot Area",
+                "type": "Dimensional",
+                "description": "The total size of the lot measured from lot line to lot line."
+              },
+              {
+                "name": "Net Lot Area",
+                "type": "Dimensional",
+                "description": "The area used as the basis for development potential. Formula: Net Lot Area = Gross Lot Area - SUM(Applicable Excluded Areas)."
+              },
+              {
+                "name": "Development Potential",
+                "type": "Usage Parameter",
+                "description": "A regulatory allowance for development, which is based on the Net Lot Area."
+              }
+            ],
+            "constants": [],
+            "conditions": [
+              {
+                "type": "Mandatory",
+                "statement": "Development potential is based on the net lot area."
+              },
+              {
+                "type": "Mandatory",
+                "statement": "If a lot contains any of the specified excludable areas, those areas must be subtracted from the gross lot area to establish the net lot area."
+              }
+            ],
+            "exceptions": [],
+            "relationships": {
+              "hierarchical": [
+                {
+                  "type": "Parent-Child",
+                  "parent": "R1",
+                  "child": "R1.1",
+                  "description": "The Street Right-of-Way Exclusion is a component of the Net Lot Area Calculation."
+                },
+                {
+                  "type": "Parent-Child",
+                  "parent": "R1",
+                  "child": "R1.2",
+                  "description": "The Flag Lot 'Pole' Exclusion is a component of the Net Lot Area Calculation."
+                },
+                {
+                  "type": "Parent-Child",
+                  "parent": "R1",
+                  "child": "R1.3",
+                  "description": "The Creek Channel Exclusion is a component of the Net Lot Area Calculation."
+                }
+              ],
+              "logical_dependencies": [
+                {
+                  "from": "Development Potential",
+                  "to": "Net Lot Area",
+                  "description": "The calculation of Development Potential is dependent on the value of Net Lot Area."
+                },
+                {
+                  "from": "Net Lot Area",
+                  "to": "Gross Lot Area",
+                  "description": "The calculation of Net Lot Area is dependent on the value of Gross Lot Area and any applicable exclusions."
+                }
+              ],
+              "cross_references": []
+            },
+            "sub_rules": [
+              {
+                "rule_id": "R1.1",
+                "rule_name": "Street Right-of-Way (ROW) Exclusion",
+                "description": "The portion of a lot that falls within a public street easement or public right-of-way (ROW) must be excluded from the gross lot area.",
+                "qualifiers": {
+                  "scope": "Exclusion of land area for Net Lot Area calculation.",
+                  "applicability": "Lots whose boundaries extend into a public street easement or public right-of-way (ROW).",
+                  "exclusions": []
+                },
+                "variables": [
+                  {
+                    "name": "Street ROW Area",
+                    "type": "Dimensional",
+                    "description": "The area of the lot located within the public ROW that must be subtracted."
+                  }
+                ],
+                "constants": [
+                  {
+                    "type": "Procedure",
+                    "name": "ROW Dimension Source",
+                    "value": "Dimensions for the public ROW are available at the Development Center."
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "Conditional",
+                    "statement": "IF a portion of the lot is within the public ROW, THEN that portion must be subtracted from the gross lot area."
+                  }
+                ],
+                "exceptions": [],
+                "relationships": {
+                  "hierarchical": [
+                    {
+                      "type": "Child-Parent",
+                      "child": "R1.1",
+                      "parent": "R1"
+                    }
+                  ],
+                  "cross_references": [
+                    {
+                      "type": "Figure",
+                      "reference": "Figure 1"
+                    },
+                    {
+                      "type": "Data Source",
+                      "reference": "Development Center"
+                    }
+                  ]
+                },
+                "ambiguous_language": [
+                  {
+                    "term": "not unusual",
+                    "context": "In some areas of Palo Alto, like Barron Park, it is not unusual for the lot to extend to the middle of the street.",
+                    "reason": "Imprecise frequency, descriptive rather than regulatory."
+                  }
+                ]
+              },
+              {
+                "rule_id": "R1.2",
+                "rule_name": "Flag Lot 'Pole' Exclusion",
+                "description": "The 'pole' portion of a flag lot must be excluded from the gross lot area.",
+                "qualifiers": {
+                  "scope": "Exclusion of land area for Net Lot Area calculation.",
+                  "applicability": "Flag lots where the 'pole' is part of the lot itself.",
+                  "exclusions": []
+                },
+                "variables": [
+                  {
+                    "name": "Pole Area",
+                    "type": "Dimensional",
+                    "description": "The area of the 'pole' portion of the flag lot that must be subtracted."
+                  }
+                ],
+                "constants": [],
+                "conditions": [
+                  {
+                    "type": "Conditional",
+                    "statement": "IF a lot is a flag lot with a 'pole', THEN the 'pole' portion must be subtracted from the gross lot size."
+                  }
+                ],
+                "exceptions": [
+                  {
+                    "case": "Private Access Easements",
+                    "statement": "Private access easements that provide access to lots are NOT subtracted from the lot on which they occur."
+                  }
+                ],
+                "relationships": {
+                  "hierarchical": [
+                    {
+                      "type": "Child-Parent",
+                      "child": "R1.2",
+                      "parent": "R1"
+                    }
+                  ],
+                  "cross_references": [
+                    {
+                      "type": "Figure",
+                      "reference": "Figure 2"
+                    }
+                  ]
+                }
+              },
+              {
+                "rule_id": "R1.3",
+                "rule_name": "Creek Channel Exclusion",
+                "description": "The portion of a lot within a creek channel must be excluded from the gross lot area.",
+                "qualifiers": {
+                  "scope": "Exclusion of land area for Net Lot Area calculation.",
+                  "applicability": "Lots with a creek and/or creek easement.",
+                  "exclusions": []
+                },
+                "variables": [
+                  {
+                    "name": "Creek Channel Area",
+                    "type": "Dimensional",
+                    "description": "The area of the lot within the defined creek channel that must be subtracted."
+                  },
+                  {
+                    "name": "Creek Channel Boundary",
+                    "type": "Environmental/Positional",
+                    "description": "The line defining the area to be excluded, determined by either an easement or the top-of-bank."
+                  }
+                ],
+                "constants": [
+                  {
+                    "type": "Standard",
+                    "name": "Primary Channel Definition",
+                    "value": "Santa Clara Valley Water District\u2019s easement"
+                  },
+                  {
+                    "type": "Standard",
+                    "name": "Alternative Channel Definition",
+                    "value": "top-of-bank"
+                  },
+                  {
+                    "type": "Procedure",
+                    "name": "Top-of-Bank Determination",
+                    "value": "Determining the top-of-bank may require a surveyor."
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "Conditional",
+                    "statement": "IF a portion of the lot is within a creek channel, THEN that portion must be subtracted from the gross lot size."
+                  },
+                  {
+                    "type": "Conditional Logic",
+                    "statement": "IF a Santa Clara Valley Water District easement exists, THEN the channel is defined by the easement, ELSE the channel is defined by the top-of-bank."
+                  }
+                ],
+                "exceptions": [],
+                "relationships": {
+                  "hierarchical": [
+                    {
+                      "type": "Child-Parent",
+                      "child": "R1.3",
+                      "parent": "R1"
+                    }
+                  ],
+                  "cross_references": [
+                    {
+                      "type": "Figure",
+                      "reference": "Figure 3"
+                    },
+                    {
+                      "type": "Data Source",
+                      "reference": "Santa Clara Valley Water District"
+                    },
+                    {
+                      "type": "Professional Service",
+                      "reference": "Surveyor"
+                    }
+                  ]
+                },
+                "ambiguous_language": [
+                  {
+                    "term": "top-of-bank",
+                    "context": "if there is no easement, the top-of-bank.",
+                    "reason": "Technical term not defined in the text; requires external expertise ('surveyor') for determination, which may lead to variability."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "parse_error": false,
+    "raw_response": "```json\n{\n  \"file_analysis\": {\n    \"file_name\": \"Page 09\",\n    \"rules\": [\n      {\n        \"rule_id\": \"R1\",\n        \"rule_name\": \"Net Lot Area Calculation\",\n        \"description\": \"Defines the method for calculating the net lot area from the gross lot area. The net lot area is the basis for determining a lot's development potential.\",\n        \"qualifiers\": {\n          \"scope\": \"Calculation of lot area for determining development potential.\",\n          \"applicability\": \"All lots within the jurisdiction of Palo Alto.\",\n          \"exclusions_summary\": \"Specific areas must be excluded from the gross lot area, including: street right-of-ways, 'pole' portions of flag lots, and creek channels.\"\n        },\n        \"variables\": [\n          {\n            \"name\": \"Gross Lot Area\",\n            \"type\": \"Dimensional\",\n            \"description\": \"The total size of the lot measured from lot line to lot line.\"\n          },\n          {\n            \"name\": \"Net Lot Area\",\n            \"type\": \"Dimensional\",\n            \"description\": \"The area used as the basis for development potential. Formula: Net Lot Area = Gross Lot Area - SUM(Applicable Excluded Areas).\"\n          },\n          {\n            \"name\": \"Development Potential\",\n            \"type\": \"Usage Parameter\",\n            \"description\": \"A regulatory allowance for development, which is based on the Net Lot Area.\"\n          }\n        ],\n        \"constants\": [],\n        \"conditions\": [\n          {\n            \"type\": \"Mandatory\",\n            \"statement\": \"Development potential is based on the net lot area.\"\n          },\n          {\n            \"type\": \"Mandatory\",\n            \"statement\": \"If a lot contains any of the specified excludable areas, those areas must be subtracted from the gross lot area to establish the net lot area.\"\n          }\n        ],\n        \"exceptions\": [],\n        \"relationships\": {\n          \"hierarchical\": [\n            {\n              \"type\": \"Parent-Child\",\n              \"parent\": \"R1\",\n              \"child\": \"R1.1\",\n              \"description\": \"The Street Right-of-Way Exclusion is a component of the Net Lot Area Calculation.\"\n            },\n            {\n              \"type\": \"Parent-Child\",\n              \"parent\": \"R1\",\n              \"child\": \"R1.2\",\n              \"description\": \"The Flag Lot 'Pole' Exclusion is a component of the Net Lot Area Calculation.\"\n            },\n            {\n              \"type\": \"Parent-Child\",\n              \"parent\": \"R1\",\n              \"child\": \"R1.3\",\n              \"description\": \"The Creek Channel Exclusion is a component of the Net Lot Area Calculation.\"\n            }\n          ],\n          \"logical_dependencies\": [\n            {\n              \"from\": \"Development Potential\",\n              \"to\": \"Net Lot Area\",\n              \"description\": \"The calculation of Development Potential is dependent on the value of Net Lot Area.\"\n            },\n            {\n              \"from\": \"Net Lot Area\",\n              \"to\": \"Gross Lot Area\",\n              \"description\": \"The calculation of Net Lot Area is dependent on the value of Gross Lot Area and any applicable exclusions.\"\n            }\n          ],\n          \"cross_references\": []\n        },\n        \"sub_rules\": [\n          {\n            \"rule_id\": \"R1.1\",\n            \"rule_name\": \"Street Right-of-Way (ROW) Exclusion\",\n            \"description\": \"The portion of a lot that falls within a public street easement or public right-of-way (ROW) must be excluded from the gross lot area.\",\n            \"qualifiers\": {\n              \"scope\": \"Exclusion of land area for Net Lot Area calculation.\",\n              \"applicability\": \"Lots whose boundaries extend into a public street easement or public right-of-way (ROW).\",\n              \"exclusions\": []\n            },\n            \"variables\": [\n              {\n                \"name\": \"Street ROW Area\",\n                \"type\": \"Dimensional\",\n                \"description\": \"The area of the lot located within the public ROW that must be subtracted.\"\n              }\n            ],\n            \"constants\": [\n              {\n                \"type\": \"Procedure\",\n                \"name\": \"ROW Dimension Source\",\n                \"value\": \"Dimensions for the public ROW are available at the Development Center.\"\n              }\n            ],\n            \"conditions\": [\n              {\n                \"type\": \"Conditional\",\n                \"statement\": \"IF a portion of the lot is within the public ROW, THEN that portion must be subtracted from the gross lot area.\"\n              }\n            ],\n            \"exceptions\": [],\n            \"relationships\": {\n              \"hierarchical\": [\n                {\n                  \"type\": \"Child-Parent\",\n                  \"child\": \"R1.1\",\n                  \"parent\": \"R1\"\n                }\n              ],\n              \"cross_references\": [\n                {\n                  \"type\": \"Figure\",\n                  \"reference\": \"Figure 1\"\n                },\n                {\n                  \"type\": \"Data Source\",\n                  \"reference\": \"Development Center\"\n                }\n              ]\n            },\n            \"ambiguous_language\": [\n              {\n                \"term\": \"not unusual\",\n                \"context\": \"In some areas of Palo Alto, like Barron Park, it is not unusual for the lot to extend to the middle of the street.\",\n                \"reason\": \"Imprecise frequency, descriptive rather than regulatory.\"\n              }\n            ]\n          },\n          {\n            \"rule_id\": \"R1.2\",\n            \"rule_name\": \"Flag Lot 'Pole' Exclusion\",\n            \"description\": \"The 'pole' portion of a flag lot must be excluded from the gross lot area.\",\n            \"qualifiers\": {\n              \"scope\": \"Exclusion of land area for Net Lot Area calculation.\",\n              \"applicability\": \"Flag lots where the 'pole' is part of the lot itself.\",\n              \"exclusions\": []\n            },\n            \"variables\": [\n              {\n                \"name\": \"Pole Area\",\n                \"type\": \"Dimensional\",\n                \"description\": \"The area of the 'pole' portion of the flag lot that must be subtracted.\"\n              }\n            ],\n            \"constants\": [],\n            \"conditions\": [\n              {\n                \"type\": \"Conditional\",\n                \"statement\": \"IF a lot is a flag lot with a 'pole', THEN the 'pole' portion must be subtracted from the gross lot size.\"\n              }\n            ],\n            \"exceptions\": [\n              {\n                \"case\": \"Private Access Easements\",\n                \"statement\": \"Private access easements that provide access to lots are NOT subtracted from the lot on which they occur.\"\n              }\n            ],\n            \"relationships\": {\n              \"hierarchical\": [\n                {\n                  \"type\": \"Child-Parent\",\n                  \"child\": \"R1.2\",\n                  \"parent\": \"R1\"\n                }\n              ],\n              \"cross_references\": [\n                {\n                  \"type\": \"Figure\",\n                  \"reference\": \"Figure 2\"\n                }\n              ]\n            }\n          },\n          {\n            \"rule_id\": \"R1.3\",\n            \"rule_name\": \"Creek Channel Exclusion\",\n            \"description\": \"The portion of a lot within a creek channel must be excluded from the gross lot area.\",\n            \"qualifiers\": {\n              \"scope\": \"Exclusion of land area for Net Lot Area calculation.\",\n              \"applicability\": \"Lots with a creek and/or creek easement.\",\n              \"exclusions\": []\n            },\n            \"variables\": [\n              {\n                \"name\": \"Creek Channel Area\",\n                \"type\": \"Dimensional\",\n                \"description\": \"The area of the lot within the defined creek channel that must be subtracted.\"\n              },\n              {\n                \"name\": \"Creek Channel Boundary\",\n                \"type\": \"Environmental/Positional\",\n                \"description\": \"The line defining the area to be excluded, determined by either an easement or the top-of-bank.\"\n              }\n            ],\n            \"constants\": [\n              {\n                \"type\": \"Standard\",\n                \"name\": \"Primary Channel Definition\",\n                \"value\": \"Santa Clara Valley Water District\u2019s easement\"\n              },\n              {\n                \"type\": \"Standard\",\n                \"name\": \"Alternative Channel Definition\",\n                \"value\": \"top-of-bank\"\n              },\n              {\n                \"type\": \"Procedure\",\n                \"name\": \"Top-of-Bank Determination\",\n                \"value\": \"Determining the top-of-bank may require a surveyor.\"\n              }\n            ],\n            \"conditions\": [\n              {\n                \"type\": \"Conditional\",\n                \"statement\": \"IF a portion of the lot is within a creek channel, THEN that portion must be subtracted from the gross lot size.\"\n              },\n              {\n                \"type\": \"Conditional Logic\",\n                \"statement\": \"IF a Santa Clara Valley Water District easement exists, THEN the channel is defined by the easement, ELSE the channel is defined by the top-of-bank.\"\n              }\n            ],\n            \"exceptions\": [],\n            \"relationships\": {\n              \"hierarchical\": [\n                {\n                  \"type\": \"Child-Parent\",\n                  \"child\": \"R1.3\",\n                  \"parent\": \"R1\"\n                }\n              ],\n              \"cross_references\": [\n                {\n                  \"type\": \"Figure\",\n                  \"reference\": \"Figure 3\"\n                },\n                {\n                  \"type\": \"Data Source\",\n                  \"reference\": \"Santa Clara Valley Water District\"\n                },\n                {\n                  \"type\": \"Professional Service\",\n                  \"reference\": \"Surveyor\"\n                }\n              ]\n            },\n            \"ambiguous_language\": [\n              {\n                \"term\": \"top-of-bank\",\n                \"context\": \"if there is no easement, the top-of-bank.\",\n                \"reason\": \"Technical term not defined in the text; requires external expertise ('surveyor') for determination, which may lead to variability.\"\n              }\n            ]\n          }\n        ]\n      }\n    ]\n  }\n}\n```",
+    "response_time": 51.97391605377197,
+    "input_tokens": 917,
+    "output_tokens": 6717,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 16:00:22",
+  "model": "google/gemini-2.5-pro",
+  "success": true
+}

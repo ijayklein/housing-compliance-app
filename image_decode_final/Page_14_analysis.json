@@ -1,0 +1,82 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_14.png",
+  "image_name": "Page_14.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Roofed porches on the 1st floor\n\nHow to determine if a porch is at least 50% open (using Fig 5 as an example)\n\nFig 5 Roofed 1st floor porch\n\nStep 1: Determine the perimeter of the porch and divide it into\nsegments that will allow a comparison of closed and\nopen segments.\n\nThe perimeter of the porch in Fig 5 is shown below. It is the sum of\nsegments A throug G. It is 70 linear feet.\n\n8",
+      "visual_elements": [
+        {
+          "type": "figure",
+          "description": "An isometric drawing of a house with a roofed porch on the first floor. The porch extends along the front and side of the house, supported by columns. The house has multiple windows and a pitched roof.",
+          "location": "Middle left"
+        },
+        {
+          "type": "diagram",
+          "description": "A top-down plan view of a porch, showing its perimeter divided into segments labeled A through F (G is mentioned in text but not explicitly labeled on the diagram). Dimensions are provided for several segments. The diagram shows the shape of the porch with an angled corner.",
+          "location": "Middle right"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Porch open percentage threshold",
+          "value": "50",
+          "unit": "%"
+        },
+        {
+          "parameter": "Segment A length",
+          "value": "3",
+          "unit": "ft"
+        },
+        {
+          "parameter": "Segment B length",
+          "value": "8",
+          "unit": "ft"
+        },
+        {
+          "parameter": "Segment C length",
+          "value": "10",
+          "unit": "ft"
+        },
+        {
+          "parameter": "Segment D length",
+          "value": "7",
+          "unit": "ft"
+        },
+        {
+          "parameter": "Segment E length",
+          "value": "14",
+          "unit": "ft"
+        },
+        {
+          "parameter": "Segment F length",
+          "value": "24",
+          "unit": "ft"
+        },
+        {
+          "parameter": "Total perimeter of porch (A through G)",
+          "value": "70",
+          "unit": "linear feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Roofed porches on the 1st floor",
+        "subheadings": [
+          "How to determine if a porch is at least 50% open (using Fig 5 as an example)"
+        ],
+        "sections": [
+          "Step 1:"
+        ]
+      },
+      "additional_notes": [
+        "Page number '8' is located at the bottom left.",
+        "A large grey rectangular block is present under the main heading, possibly a placeholder for an image or additional text that is not visible.",
+        "The text 'throug G' appears to be a typo and should likely be 'through G'."
+      ],
+      "cross_references": [
+        "Fig 5"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-11 14:59:07",
+  "model_used": "google/gemini-2.5-flash"
+}

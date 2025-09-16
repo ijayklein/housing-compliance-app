@@ -1,0 +1,23 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_17.png",
+  "image_name": "Page_17.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "PARSE_ERROR",
+      "visual_elements": [],
+      "technical_specifications": [],
+      "structural_elements": {
+        "main_heading": "",
+        "subheadings": [],
+        "sections": []
+      },
+      "additional_notes": [
+        "Failed to parse LLM response: Expecting value: line 1 column 1 (char 0)"
+      ],
+      "cross_references": []
+    },
+    "raw_response": "# Vaulted Entry Features\n\n## Definition\nEntry features that are greater than 12' high are called \"vaulted entry features\". The footprint of such features count twice toward gross floor area regardless of the design (including whether or not they are open).\n\n## Measurement Instructions\nHow to measure the height of an entry feature in order to determine whether or not it is considered to be a vaulted entry feature (using Fig 6 - 8 as examples)\n\n## Figure 6: Entry feature with shed roof\n\n### Diagram Components\nThe page contains three architectural views:\n- **Isometric View** (left diagram)\n- **Side Elevation** (center diagram) \n- **Porch Floor Plan** (right diagram)\n\n### Measurement Details\n**Note:** If the entryway is considered to be a vaulted entryway the area will be counted as follows:\n\n\u2022 In this example, a portion of the entryway is recessed beyond the house facade and roof. It is included in the area that counts.\n\n\u2022 The area is measured to the outside material of the entryway feature.\n\n\u2022 The area counts **TWICE** toward gross floor area.\n\n### Diagram Labels\n- Height (shown with arrows on isometric and side elevation views)\n- Grade (shown on isometric view)\n- Intersection of front facade and top of roof material (labeled on side elevation)\n- Outline of entryway roof (labeled on porch floor plan)\n- Outline of entryway floor area that counts **TWICE** if entryway is vaulted (labeled on porch floor plan)\n\n**Page Number:** 11"
+  },
+  "analysis_timestamp": "2025-09-16 12:29:36",
+  "model_used": "anthropic/claude-sonnet-4"
+}

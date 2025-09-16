@@ -1,0 +1,108 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_31.png",
+  "image_name": "Page_31.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Allowable extensions to existing encroachments\n\nFig 19 Allowable extensions of existing walls that encroach into required yards (on ground floor only)\n\nA Extension of existing side yard\nencroachment\nAn existing wall that encroaches into the\nrequired interior side yard setback but is at\nleast 5'-0\" from the property line, may be\nextended at the same setback, in one\ndirection only, at the ground floor only, for a\ndistance equal to the length of the existing\nwall or 20' whichever is less.\nNote: In the example below, two existing\nwalls are encroaching--only one of them\nmay be extended.\n\nRear yard\n\n15'\nmin.\n\nInterior-side yard\n\nInterior-side yard\n\nInterior-side\nyard\n\nB Extension of existing front yard\nencroachment\nAn existing wall that encroaches into the\nrequired front yard setback but is at least\n14'-0\" from the property line, may be\nextended at the same setback, in one\ndirection only, at the ground floor only, with\nboth of the following provisions:\n1) the length of the extension is no greater\nthan that of the existing encroaching wall,\n2) the combined length is no greater than\none-half the maximum width of the house.\n\nRear yard\n\nInterior-side yard\n\nInterior-side yard\n\nC Extension of existing street-side\nyard encroachment\nAn existing wall that encroaches into the\nrequired street side yard setback but is at\nleast 10'-0\" from the property line, may be\nextended at the same setback, in one\ndirection only, at the ground floor only, for a\ndistance equal to the length of the existing\nwall or 20' whichever is less.\n\nRear yard\n\nStreet-side yard\n\nNote:\n\u2022 Encroaching walls that\ndon't meet the minimim\nsetback given for each\ncase i.e., 5', 14, and 10',\nmay not be extended nor\nmay they may not be\nstepped back and then\nextended.\n\n\u2022 Multiple protrusions are\nnot permitted; addition\nmust be contiguous with\nexisting protrusion.\n\n\u2022 Only for structures that\nwere legally constructed,\nwithout a variance or an\nhome-improvement\nexception (HIE).\n\n\u2022 Only once in the life of the\nstructure.\n\n\u2022 Requires retention of the\nnon- complying wall.\n\nExceptions apply to special\nsetbacks as well.\n\nKey\n\nOnly one of the two\nencroaching walls may\nbe extended\n\nFront yard\n\n14'\nmin\n\nFront\nyard\n\n10'\nmin.\n\nFront yard\n\nLength of existing\nencroaching wall max.\n\nHalf the width of\nthe building max.\n\nLot line\n\nRequired setback:\n\nBuildable area\n\nSidewalk\n\nExisting house\n\nAddition\n\n25",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Three plan view diagrams (A, B, C) illustrating allowable extensions to existing encroachments into required yards. Each diagram shows a property layout with a 'Rear yard', 'Front yard', and 'Interior-side yard' or 'Street-side yard'. The diagrams depict an 'Existing house' (light grey) and an 'Addition' (dark grey) extending into setback areas. Dashed lines indicate 'Required setback' and solid lines indicate 'Lot line'. A patterned area represents 'Sidewalk' and a light grey area represents 'Buildable area'.",
+          "location": "Middle to bottom of the page"
+        },
+        {
+          "type": "diagram",
+          "description": "Diagram A: Shows an existing house with two walls encroaching into the interior-side yard. An arrow points to one of the encroaching walls with the text 'Only one of the two encroaching walls may be extended'. A dimension line indicates '5' min.' from the property line to the setback.",
+          "location": "Left side, middle of the page"
+        },
+        {
+          "type": "diagram",
+          "description": "Diagram B: Shows an existing house with a wall encroaching into the front yard. An addition is shown extending from the existing encroaching wall. Dimension lines indicate '14' min' from the property line to the setback, 'Length of existing encroaching wall max.' for the addition's length, and 'Half the width of the building max.' for the addition's width.",
+          "location": "Center, middle of the page"
+        },
+        {
+          "type": "diagram",
+          "description": "Diagram C: Shows an existing house with a wall encroaching into the street-side yard. An addition is shown extending from the existing encroaching wall. A dimension line indicates '10' min.' from the property line to the setback.",
+          "location": "Right side, middle of the page"
+        },
+        {
+          "type": "legend",
+          "description": "Key for the diagrams, defining line types and shaded areas:\n- Solid line: Lot line\n- Dashed line: Required setback\n- Light grey patterned area: Buildable area\n- Dark grey patterned area: Sidewalk\n- Light grey solid area: Existing house\n- Dark grey solid area: Addition",
+          "location": "Bottom right of the page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Minimum interior side yard setback for extension",
+          "value": "5",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Maximum extension length for side yard encroachment",
+          "value": "20",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum front yard setback for extension",
+          "value": "14",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Maximum extension length for front yard encroachment (provision 1)",
+          "value": "no greater than that of the existing encroaching wall",
+          "unit": null
+        },
+        {
+          "parameter": "Maximum combined length for front yard encroachment (provision 2)",
+          "value": "one-half the maximum width of the house",
+          "unit": null
+        },
+        {
+          "parameter": "Minimum street side yard setback for extension",
+          "value": "10",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Maximum extension length for street side yard encroachment",
+          "value": "20",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum setback for side yard (Note)",
+          "value": "5",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum setback for front yard (Note)",
+          "value": "14",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum setback for street side yard (Note)",
+          "value": "10",
+          "unit": "feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Allowable extensions to existing encroachments",
+        "subheadings": [
+          "A Extension of existing side yard encroachment",
+          "B Extension of existing front yard encroachment",
+          "C Extension of existing street-side yard encroachment",
+          "Note:",
+          "Key"
+        ],
+        "sections": [
+          "Fig 19"
+        ]
+      },
+      "additional_notes": [
+        "Page number '25' is present at the bottom right corner.",
+        "The text 'minimim' in the first bullet point under 'Note:' appears to be a typo and should likely be 'minimum'."
+      ],
+      "cross_references": []
+    }
+  },
+  "analysis_timestamp": "2025-09-14 19:32:29",
+  "model_used": "google/gemini-2.5-flash"
+}

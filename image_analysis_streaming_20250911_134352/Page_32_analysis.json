@@ -1,0 +1,65 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_32.png",
+  "image_name": "Page_32.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Daylight plane\n\nThe daylight plane in conjunction with the setbacks & height limits, create an invisible tent\n\nintended to contain development on the lot in a way that preserves privacy and exposure to natural light.\n\nCode sections\nPage 26\n18.12.040 (a) Table 2\nPage 27\n18.04\nPage 28\n18.12.040 (c) Table 2\nPage 29\n18.12.050 (b) (2)\n18.12.040 (i)\n\n26\n\nPrimary daylight plane (sides)\n\nThe primary daylight plane regulates structures located within the buildable area. Structures located in the rear and/or side yards are regulated by the accessory-structure daylight plane described on the next page.\n\nFig 20 Front elevation showing side primary daylight plane\n\nMax above-grade building height\n\n45\u00b0\n\n10' from grade to angle\n\nSide lot line\n\nAverage grade\n\nGrade at the nearest point on the adjacent lot\n\nExisting grade of the structure lot (midpoint of wall)\n\n24' max. for accessory\n\nMax. building height\n\nSide lot line\n\nNotes:\n\u2022 Daylight plane is measured from average grade.\n\u2022 Average grade is established using existing grade\u2014before any grading or fill (See Fig A4 p. 42)\n\u2022 Side daylight plane is measured (up) at lot line.\n\u2022 Rear daylight plane is measured (up) at rear setback.",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "3D isometric drawing of a rectangular building structure showing the invisible tent concept of daylight plane",
+          "location": "Left side panel, middle section"
+        },
+        {
+          "type": "diagram",
+          "description": "Technical elevation drawing showing front view of a two-story house with detailed measurements and daylight plane angles. Shows 45-degree angle from 10 feet above grade, side lot lines, maximum building heights, and various grade measurements. Includes chimney and detailed architectural features.",
+          "location": "Right side of page, main content area"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Daylight plane angle",
+          "value": "45",
+          "unit": "degrees"
+        },
+        {
+          "parameter": "Distance from grade to angle start",
+          "value": "10",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Maximum height for accessory structures",
+          "value": "24",
+          "unit": "feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Daylight plane",
+        "subheadings": [
+          "Primary daylight plane (sides)",
+          "Code sections",
+          "Notes"
+        ],
+        "sections": [
+          "Fig 20 Front elevation showing side primary daylight plane"
+        ]
+      },
+      "additional_notes": [
+        "Page number 26 appears at bottom left",
+        "Figure reference includes detailed architectural drawing with multiple measurement annotations",
+        "Diagram shows both conceptual 3D representation and technical elevation view"
+      ],
+      "cross_references": [
+        "Page 26 - 18.12.040 (a) Table 2",
+        "Page 27 - 18.04",
+        "Page 28 - 18.12.040 (c) Table 2",
+        "Page 29 - 18.12.050 (b) (2)",
+        "Page 29 - 18.12.040 (i)",
+        "See Fig A4 p. 42",
+        "accessory-structure daylight plane described on the next page"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-11 13:44:47",
+  "model_used": "anthropic/claude-sonnet-4"
+}

@@ -1,0 +1,234 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_40.md",
+  "file_name": "Page_40.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "rule": "Required Number of Parking Spaces",
+        "Qualifiers": {
+          "Scope": "On-lot parking for residential properties.",
+          "Applicability": "Applies per dwelling unit, including 2nd dwelling units.",
+          "Exclusions": "Non-residential properties."
+        },
+        "Variables": {
+          "dwelling_unit_type": "Primary dwelling, 2nd dwelling unit"
+        },
+        "Constants": {
+          "required_spaces_per_dwelling": "2"
+        },
+        "Conditions": {
+          "Mandatory": "Two spaces are required on the lot per dwelling."
+        },
+        "Exceptions": {},
+        "Relationships": {
+          "cross_reference_codes": "18.12.060, 18.83.090",
+          "logical_dependency": "This rule is the basis for other rules, such as 'Covered Parking Space Requirement' and 'Tandem Parking Allowance'."
+        }
+      },
+      {
+        "rule": "Parking Space Location Restrictions",
+        "Qualifiers": {
+          "Scope": "Location of required parking spaces on a residential lot.",
+          "Applicability": "All required parking spaces.",
+          "Exclusions": ""
+        },
+        "Variables": {
+          "yard_type": "required front yard, required street side yard"
+        },
+        "Constants": {
+          "prohibited_location_1": "required front yard",
+          "prohibited_location_2_setback": "10 ft",
+          "prohibited_location_2_yard": "required street side yard"
+        },
+        "Conditions": {
+          "Mandatory": "Parking spaces may NOT be located in the required front yard or within the first 10 ft of a required street side yard."
+        },
+        "Exceptions": {},
+        "Relationships": {
+          "cross_reference_codes": "18.12.060, 18.12.040 (f)"
+        }
+      },
+      {
+        "rule": "Underground Parking Garage Prohibition",
+        "Qualifiers": {
+          "Scope": "Construction of parking garages.",
+          "Applicability": "All residential lots.",
+          "Exclusions": "Above-ground parking garages."
+        },
+        "Variables": {
+          "garage_type": "underground"
+        },
+        "Constants": {},
+        "Conditions": {
+          "Mandatory": "Underground parking garages are prohibited."
+        },
+        "Exceptions": {
+          "special_case": "May be allowed by obtaining a variance."
+        },
+        "Relationships": {}
+      },
+      {
+        "rule": "Covered Parking Space Requirement",
+        "Qualifiers": {
+          "Scope": "Type of required parking spaces.",
+          "Applicability": "Applies to the two required spaces per dwelling.",
+          "Exclusions": ""
+        },
+        "Variables": {
+          "space_type": "covered, uncovered"
+        },
+        "Constants": {
+          "required_covered_spaces": "1",
+          "total_required_spaces": "2"
+        },
+        "Conditions": {
+          "Mandatory": "One of the two required spaces must be covered."
+        },
+        "Exceptions": {},
+        "Relationships": {
+          "hierarchical_dependency": "Child rule of 'Required Number of Parking Spaces'."
+        }
+      },
+      {
+        "rule": "Definition of Detached Covered-Parking Structure",
+        "Qualifiers": {
+          "Scope": "Classification of covered-parking structures relative to the main dwelling.",
+          "Applicability": "Applies when a covered-parking structure is intended to be classified as 'detached'.",
+          "Exclusions": "Attached structures."
+        },
+        "Variables": {
+          "structure_classification": "detached, attached"
+        },
+        "Constants": {
+          "minimum_separation_for_detached": "3 ft"
+        },
+        "Conditions": {
+          "Conditional Logic": "To be considered detached, a covered-parking structure must be a minimum of 3 feet from the main dwelling."
+        },
+        "Exceptions": {},
+        "Relationships": {
+          "cross_reference_codes": "18.12.060"
+        }
+      },
+      {
+        "rule": "Uncovered Parking Space Dimensions",
+        "Qualifiers": {
+          "Scope": "Minimum dimensions for parking spaces.",
+          "Applicability": "Uncovered parking spaces.",
+          "Exclusions": "Covered parking spaces."
+        },
+        "Variables": {
+          "dimension": "width, length"
+        },
+        "Constants": {
+          "minimum_width": "8.5 ft",
+          "minimum_length": "18 ft"
+        },
+        "Conditions": {
+          "Mandatory": "The specified minimum dimensions must be met."
+        },
+        "Exceptions": {},
+        "Relationships": {
+          "cross_reference_codes": "18.83.110(a)",
+          "visual_confirmation": "Figure 28"
+        }
+      },
+      {
+        "rule": "Covered Parking Space Internal Clearance",
+        "Qualifiers": {
+          "Scope": "Minimum clear internal dimensions for covered parking structures.",
+          "Applicability": "Garages, carports, or other covered parking structures.",
+          "Exclusions": "Uncovered parking spaces."
+        },
+        "Variables": {
+          "dimension": "width, length",
+          "number_of_spaces": "1, 2"
+        },
+        "Constants": {
+          "minimum_clearance_width_per_space": "10 ft",
+          "minimum_clearance_length_per_space": "20 ft",
+          "minimum_clearance_two_car_structure": "20 ft x 20 ft"
+        },
+        "Conditions": {
+          "Mandatory": "The specified minimum clear internal dimensions must be met for each space."
+        },
+        "Exceptions": {},
+        "Relationships": {
+          "cross_reference_codes": "18.83.110(a)",
+          "visual_confirmation": "Figure 28"
+        }
+      },
+      {
+        "rule": "Parking Structure Vertical Clearance",
+        "Qualifiers": {
+          "Scope": "Minimum vertical clearance for parking.",
+          "Applicability": "Covered parking structures (garages, carports).",
+          "Exclusions": "Uncovered parking spaces."
+        },
+        "Variables": {
+          "dimension": "vertical clearance"
+        },
+        "Constants": {
+          "minimum_vertical_clearance": "7 ft"
+        },
+        "Conditions": {
+          "Mandatory": "The specified minimum vertical clearance must be met."
+        },
+        "Exceptions": {},
+        "Relationships": {
+          "ambiguous_language": "The text does not explicitly limit this rule to covered spaces, but the context of 'clearance' and proximity to garage rules implies it. This should be verified."
+        }
+      },
+      {
+        "rule": "Parking Space Clear Area Usage",
+        "Qualifiers": {
+          "Scope": "Use of the required clear area within a parking space.",
+          "Applicability": "All required parking spaces, both covered and uncovered.",
+          "Exclusions": ""
+        },
+        "Variables": {
+          "prohibited_uses": "water heaters, clothes washers or dryer, bicycle parking facilities, etc."
+        },
+        "Constants": {},
+        "Conditions": {
+          "Mandatory": "The clear area required for a parking space must be free of other uses or obstructions."
+        },
+        "Exceptions": {},
+        "Relationships": {
+          "ambiguous_language": "The list of prohibited items is not exhaustive, as indicated by 'e.g.' and 'etc.'. This requires interpretation or a more definitive list from the code."
+        }
+      },
+      {
+        "rule": "Tandem Parking Allowance",
+        "Qualifiers": {
+          "Scope": "Arrangement of required parking spaces.",
+          "Applicability": "Lots with two required spaces where one is covered and one is uncovered.",
+          "Exclusions": "TBD. Applicability to lots where both spaces are covered or both are uncovered is not specified."
+        },
+        "Variables": {
+          "parking_arrangement": "tandem, side-by-side"
+        },
+        "Constants": {},
+        "Conditions": {
+          "Optional": "Tandem parking is permitted under specific conditions."
+        },
+        "Exceptions": {
+          "special_case": "Tandem parking is explicitly noted as 'OK' for the uncovered space when paired with a required covered space."
+        },
+        "Relationships": {
+          "source": "Figure 28 callout 'Tandem OK.'",
+          "logical_dependency": "This rule is an exception to the general assumption that each space must be independently accessible. It applies to the 'Required Number of Parking Spaces' and 'Covered Parking Space Requirement' rules."
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n  {\n    \"rule\": \"Required Number of Parking Spaces\",\n    \"Qualifiers\": {\n      \"Scope\": \"On-lot parking for residential properties.\",\n      \"Applicability\": \"Applies per dwelling unit, including 2nd dwelling units.\",\n      \"Exclusions\": \"Non-residential properties.\"\n    },\n    \"Variables\": {\n      \"dwelling_unit_type\": \"Primary dwelling, 2nd dwelling unit\"\n    },\n    \"Constants\": {\n      \"required_spaces_per_dwelling\": \"2\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"Two spaces are required on the lot per dwelling.\"\n    },\n    \"Exceptions\": {},\n    \"Relationships\": {\n      \"cross_reference_codes\": \"18.12.060, 18.83.090\",\n      \"logical_dependency\": \"This rule is the basis for other rules, such as 'Covered Parking Space Requirement' and 'Tandem Parking Allowance'.\"\n    }\n  },\n  {\n    \"rule\": \"Parking Space Location Restrictions\",\n    \"Qualifiers\": {\n      \"Scope\": \"Location of required parking spaces on a residential lot.\",\n      \"Applicability\": \"All required parking spaces.\",\n      \"Exclusions\": \"\"\n    },\n    \"Variables\": {\n      \"yard_type\": \"required front yard, required street side yard\"\n    },\n    \"Constants\": {\n      \"prohibited_location_1\": \"required front yard\",\n      \"prohibited_location_2_setback\": \"10 ft\",\n      \"prohibited_location_2_yard\": \"required street side yard\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"Parking spaces may NOT be located in the required front yard or within the first 10 ft of a required street side yard.\"\n    },\n    \"Exceptions\": {},\n    \"Relationships\": {\n      \"cross_reference_codes\": \"18.12.060, 18.12.040 (f)\"\n    }\n  },\n  {\n    \"rule\": \"Underground Parking Garage Prohibition\",\n    \"Qualifiers\": {\n      \"Scope\": \"Construction of parking garages.\",\n      \"Applicability\": \"All residential lots.\",\n      \"Exclusions\": \"Above-ground parking garages.\"\n    },\n    \"Variables\": {\n      \"garage_type\": \"underground\"\n    },\n    \"Constants\": {},\n    \"Conditions\": {\n      \"Mandatory\": \"Underground parking garages are prohibited.\"\n    },\n    \"Exceptions\": {\n      \"special_case\": \"May be allowed by obtaining a variance.\"\n    },\n    \"Relationships\": {}\n  },\n  {\n    \"rule\": \"Covered Parking Space Requirement\",\n    \"Qualifiers\": {\n      \"Scope\": \"Type of required parking spaces.\",\n      \"Applicability\": \"Applies to the two required spaces per dwelling.\",\n      \"Exclusions\": \"\"\n    },\n    \"Variables\": {\n      \"space_type\": \"covered, uncovered\"\n    },\n    \"Constants\": {\n      \"required_covered_spaces\": \"1\",\n      \"total_required_spaces\": \"2\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"One of the two required spaces must be covered.\"\n    },\n    \"Exceptions\": {},\n    \"Relationships\": {\n      \"hierarchical_dependency\": \"Child rule of 'Required Number of Parking Spaces'.\"\n    }\n  },\n  {\n    \"rule\": \"Definition of Detached Covered-Parking Structure\",\n    \"Qualifiers\": {\n      \"Scope\": \"Classification of covered-parking structures relative to the main dwelling.\",\n      \"Applicability\": \"Applies when a covered-parking structure is intended to be classified as 'detached'.\",\n      \"Exclusions\": \"Attached structures.\"\n    },\n    \"Variables\": {\n      \"structure_classification\": \"detached, attached\"\n    },\n    \"Constants\": {\n      \"minimum_separation_for_detached\": \"3 ft\"\n    },\n    \"Conditions\": {\n      \"Conditional Logic\": \"To be considered detached, a covered-parking structure must be a minimum of 3 feet from the main dwelling.\"\n    },\n    \"Exceptions\": {},\n    \"Relationships\": {\n      \"cross_reference_codes\": \"18.12.060\"\n    }\n  },\n  {\n    \"rule\": \"Uncovered Parking Space Dimensions\",\n    \"Qualifiers\": {\n      \"Scope\": \"Minimum dimensions for parking spaces.\",\n      \"Applicability\": \"Uncovered parking spaces.\",\n      \"Exclusions\": \"Covered parking spaces.\"\n    },\n    \"Variables\": {\n      \"dimension\": \"width, length\"\n    },\n    \"Constants\": {\n      \"minimum_width\": \"8.5 ft\",\n      \"minimum_length\": \"18 ft\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"The specified minimum dimensions must be met.\"\n    },\n    \"Exceptions\": {},\n    \"Relationships\": {\n      \"cross_reference_codes\": \"18.83.110(a)\",\n      \"visual_confirmation\": \"Figure 28\"\n    }\n  },\n  {\n    \"rule\": \"Covered Parking Space Internal Clearance\",\n    \"Qualifiers\": {\n      \"Scope\": \"Minimum clear internal dimensions for covered parking structures.\",\n      \"Applicability\": \"Garages, carports, or other covered parking structures.\",\n      \"Exclusions\": \"Uncovered parking spaces.\"\n    },\n    \"Variables\": {\n      \"dimension\": \"width, length\",\n      \"number_of_spaces\": \"1, 2\"\n    },\n    \"Constants\": {\n      \"minimum_clearance_width_per_space\": \"10 ft\",\n      \"minimum_clearance_length_per_space\": \"20 ft\",\n      \"minimum_clearance_two_car_structure\": \"20 ft x 20 ft\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"The specified minimum clear internal dimensions must be met for each space.\"\n    },\n    \"Exceptions\": {},\n    \"Relationships\": {\n      \"cross_reference_codes\": \"18.83.110(a)\",\n      \"visual_confirmation\": \"Figure 28\"\n    }\n  },\n  {\n    \"rule\": \"Parking Structure Vertical Clearance\",\n    \"Qualifiers\": {\n      \"Scope\": \"Minimum vertical clearance for parking.\",\n      \"Applicability\": \"Covered parking structures (garages, carports).\",\n      \"Exclusions\": \"Uncovered parking spaces.\"\n    },\n    \"Variables\": {\n      \"dimension\": \"vertical clearance\"\n    },\n    \"Constants\": {\n      \"minimum_vertical_clearance\": \"7 ft\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"The specified minimum vertical clearance must be met.\"\n    },\n    \"Exceptions\": {},\n    \"Relationships\": {\n      \"ambiguous_language\": \"The text does not explicitly limit this rule to covered spaces, but the context of 'clearance' and proximity to garage rules implies it. This should be verified.\"\n    }\n  },\n  {\n    \"rule\": \"Parking Space Clear Area Usage\",\n    \"Qualifiers\": {\n      \"Scope\": \"Use of the required clear area within a parking space.\",\n      \"Applicability\": \"All required parking spaces, both covered and uncovered.\",\n      \"Exclusions\": \"\"\n    },\n    \"Variables\": {\n      \"prohibited_uses\": \"water heaters, clothes washers or dryer, bicycle parking facilities, etc.\"\n    },\n    \"Constants\": {},\n    \"Conditions\": {\n      \"Mandatory\": \"The clear area required for a parking space must be free of other uses or obstructions.\"\n    },\n    \"Exceptions\": {},\n    \"Relationships\": {\n      \"ambiguous_language\": \"The list of prohibited items is not exhaustive, as indicated by 'e.g.' and 'etc.'. This requires interpretation or a more definitive list from the code.\"\n    }\n  },\n  {\n    \"rule\": \"Tandem Parking Allowance\",\n    \"Qualifiers\": {\n      \"Scope\": \"Arrangement of required parking spaces.\",\n      \"Applicability\": \"Lots with two required spaces where one is covered and one is uncovered.\",\n      \"Exclusions\": \"TBD. Applicability to lots where both spaces are covered or both are uncovered is not specified.\"\n    },\n    \"Variables\": {\n      \"parking_arrangement\": \"tandem, side-by-side\"\n    },\n    \"Constants\": {},\n    \"Conditions\": {\n      \"Optional\": \"Tandem parking is permitted under specific conditions.\"\n    },\n    \"Exceptions\": {\n      \"special_case\": \"Tandem parking is explicitly noted as 'OK' for the uncovered space when paired with a required covered space.\"\n    },\n    \"Relationships\": {\n      \"source\": \"Figure 28 callout 'Tandem OK.'\",\n      \"logical_dependency\": \"This rule is an exception to the general assumption that each space must be independently accessible. It applies to the 'Required Number of Parking Spaces' and 'Covered Parking Space Requirement' rules.\"\n    }\n  }\n]\n```",
+    "response_time": 53.00949001312256,
+    "input_tokens": 1036,
+    "output_tokens": 6796,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 16:14:05",
+  "model": "google/gemini-2.5-pro",
+  "success": true
+}

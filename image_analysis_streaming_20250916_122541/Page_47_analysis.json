@@ -1,0 +1,23 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_47.png",
+  "image_name": "Page_47.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "PARSE_ERROR",
+      "visual_elements": [],
+      "technical_specifications": [],
+      "structural_elements": {
+        "main_heading": "",
+        "subheadings": [],
+        "sections": []
+      },
+      "additional_notes": [
+        "Failed to parse LLM response: Expecting value: line 1 column 1 (char 0)"
+      ],
+      "cross_references": []
+    },
+    "raw_response": "**Other excavation considerations**\n\n**Architectural compatibility & landscape screening**\n* If a guard rail is required, it must be designed to be architecturally compatible with the residence.\n* Additionally, landscape screening may be required by the Planning Dept.\n\n**Tree protection**\n* A tree's root system extends well beyond the drip line and the roots are likely to be within the first 18\" below grade.\n* It is important to plan excavation in a manner that does not harm tree roots.\n* Prior to issuance of building permit, owner to provide evidence that encroaching features or portions of features will not harm trees of any species on subject or abutting lots.\n* Consult the city's Tree Technical Manual for other aspects of tree protection during construction.\n\n**Fig 37 Excavation, landscape screening, and guard rails**\n\n**Fig 38 Excavation and tree roots**\n\n**Image Text:**\nBasement\nExcav\nfeatur\n\n\"When planning a basement, consider the extent of excavation that will be required e.g., some excavation techniques require (for safety reasons) that the excavation to be at a 1:1 slope which may impact tree roots severely.\"\n\n**Page Number:** 41"
+  },
+  "analysis_timestamp": "2025-09-16 12:26:00",
+  "model_used": "google/gemini-2.5-flash"
+}

@@ -1,0 +1,85 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_53.png",
+  "image_name": "Page_53.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Grade\n\nWhen measuring    Use           Which is defined as                                                                 Illus.\n\nThe height of a  Existing      for each building or structure,                                                        Fig 44 on\nstructure on land with Grade         the lowest point of adjacent                                                      this page\nnatural slope \u2264 10%                 ground elevation prior to\n                                   grading or fill\n\nThe height of a                 Grade         adjacent ground elevation of\nstructure on land with                          the finished or existing grade,\nnatural slope > 10%                              whichever is lower--at any\n                                                 point of the structure\n\nA daylight plane              Average       average of the grade at the\n                             grade         midpoint of the building and\n                                          the grade at the closest point\n                                          on the abutting site\n\nFigs 20-21\npp. 26-27\n\nFig 44 Existing vs. Finished grade\n\n[Illustration of a house side elevation with dashed lines indicating ground levels and height measurements]\n\nHeight: measured to top of roof material of the highest peak\nFinished grade (after fill)\nExisting grade (before fill)\nLowest point of ground elevation before fill (existing grade) adjacent to the structure\n\nFig 45 Height limits for structures on slopes greater than 10%\n\n[Illustration of two houses on a slope with dashed lines indicating existing grade (before fill), finished grade, and height measurements]\n\n30' above existing grade\n30' above finished\nHeight\nHeight\nThe structure must comply with the lower of the two limits at all points along the slope\n\nFig 46 Comparison of different grades\n\n[Graph with lines labeled 1:10 10%, 3:10 30%, 5:10 50%, 10:10 100%]\n\n47",
+      "visual_elements": [
+        {
+          "type": "table",
+          "description": "A table with four columns labeled 'When measuring', 'Use', 'Which is defined as', and 'Illus.'. It defines how to measure grade for structures on land with natural slope \u2264 10%, > 10%, and defines a daylight plane with references to figures for illustration.",
+          "location": "Top left"
+        },
+        {
+          "type": "figure",
+          "description": "Side elevation drawing of a house showing existing grade (before fill), finished grade (after fill), and height measured to the top of roof material of the highest peak. Labels indicate the lowest point of ground elevation before fill adjacent to the structure.",
+          "location": "Bottom left"
+        },
+        {
+          "type": "figure",
+          "description": "Diagram showing two houses on a slope greater than 10%, with dashed lines indicating existing grade (before fill) and finished grade. Height limits are marked as 30' above existing grade and 30' above finished grade. A note states the structure must comply with the lower of the two limits at all points along the slope.",
+          "location": "Top right"
+        },
+        {
+          "type": "chart",
+          "description": "Graph comparing different grades with lines labeled 1:10 (10%), 3:10 (30%), 5:10 (50%), and 10:10 (100%). The graph uses a grid background to show slope steepness.",
+          "location": "Bottom right"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Natural slope for existing grade measurement",
+          "value": "\u2264 10",
+          "unit": "%"
+        },
+        {
+          "parameter": "Height limit above existing grade on slopes > 10%",
+          "value": "30",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Height limit above finished grade on slopes > 10%",
+          "value": "30",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Slope ratios in Fig 46",
+          "value": [
+            "1:10",
+            "3:10",
+            "5:10",
+            "10:10"
+          ],
+          "unit": "ratio"
+        },
+        {
+          "parameter": "Slope percentages in Fig 46",
+          "value": [
+            "10%",
+            "30%",
+            "50%",
+            "100%"
+          ],
+          "unit": "%"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Grade",
+        "subheadings": [],
+        "sections": []
+      },
+      "additional_notes": [
+        "All text is clear and legible.",
+        "No handwritten annotations or stamps present.",
+        "Page number 47 at bottom right corner."
+      ],
+      "cross_references": [
+        "Fig 44 on this page",
+        "Fig 45 on this page",
+        "Figs 20-21 pp. 26-27"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-14 19:41:42",
+  "model_used": "openai/gpt-4.1-mini"
+}

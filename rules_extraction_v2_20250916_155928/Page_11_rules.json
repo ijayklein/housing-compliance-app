@@ -1,0 +1,17 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_11.md",
+  "file_name": "Page_11.md",
+  "analysis": {
+    "parse_error": true,
+    "error": "JSON decode error: Expecting value: line 43 column 29 (char 1227)",
+    "raw_response": "```json\n{\n  \"fileAnalysis\": {\n    \"fileName\": \"Page 11 - What counts as floor area summary\",\n    \"ruleCount\": 17,\n    \"rules\": [\n      {\n        \"ruleId\": \"FAR-01\",\n        \"description\": \"Rule for unenclosed porches regarding floor area calculation.\",\n        \"Qualifiers\": {\n          \"scope\": \"Architectural Feature: Porch\",\n          \"applicability\": \"Floor area calculation\",\n          \"exclusions\": []\n        },\n        \"Variables\": [\n          {\n            \"name\": \"enclosure_status\",\n            \"type\": \"usage\",\n            \"description\": \"Whether the porch is enclosed or not.\"\n          }\n        ],\n        \"Constants\": [\n          {\n            \"name\": \"floorAreaMultiplier\",\n            \"value\": 0,\n            \"unit\": null,\n            \"description\": \"Does not count towards floor area.\"\n          }\n        ],\n        \"Conditions\": {\n          \"logic\": \"AND\",\n          \"clauses\": [\n            {\n              \"variable\": \"enclosure_status\",\n              \"operator\": \"==\",\n              \"value\": \"unenclosed\"\n            }\n          ],\n          \"textualDescription\": \"Porch is unenclosed.\"\n        },\n        \"Exceptions\": [],\n        \"Relationships\": {\n          \"hierarchical\": null,\n          \"crossReferences\":",
+    "attempted_json": "{\n  \"fileAnalysis\": {\n    \"fileName\": \"Page 11 - What counts as floor area summary\",\n    \"ruleCount\": 17,\n    \"rules\": [\n      {\n        \"ruleId\": \"FAR-01\",\n        \"description\": \"Rule for unenclosed porches regarding floor area calculation.\",\n        \"Qualifiers\": {\n          \"scope\": \"Architectural Feature: Porch\",\n          \"applicability\": \"Floor area calculation\",\n          \"exclusions\": []\n        },\n        \"Variables\": [\n          {\n            \"name\": \"enclosure_status\",\n            \"type\": \"usage\",\n            \"description\": \"Whether the porch is enclosed or not.\"\n          }\n        ],\n        \"Constants\": [\n          {\n            \"name\": \"floorAreaMultiplier\",\n            \"value\": 0,\n            \"unit\": null,\n            \"description\": \"Does not count towards floor area.\"\n          }\n        ],\n        \"Conditions\": {\n          \"logic\": \"AND\",\n          \"clauses\": [\n            {\n              \"variable\": \"enclosure_status\",\n              \"operator\": \"==\",\n              \"value\": \"unenclosed\"\n            }\n          ],\n          \"textualDescription\": \"Porch is unenclosed.\"\n        },\n        \"Exceptions\": [],\n        \"Relationships\": {\n          \"hierarchical\": null,\n          \"crossReferences\":",
+    "response_time": 62.80740404129028,
+    "input_tokens": 1053,
+    "output_tokens": 7997,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 16:00:33",
+  "model": "google/gemini-2.5-pro",
+  "success": false
+}

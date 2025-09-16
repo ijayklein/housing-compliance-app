@@ -1,0 +1,167 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_44.md",
+  "file_name": "Page_44.md",
+  "analysis": {
+    "extracted_rules": {
+      "source_document": {
+        "title": "Attached garages/carports site planning",
+        "page": "44 (content), 38 (printed number)"
+      },
+      "regulations": [
+        {
+          "rule_id": "RG-G44-01",
+          "rule_name": "Attached Garage/Carport Setbacks",
+          "Qualifiers": {
+            "scope": "Site planning regulations concerning the setbacks of attached garages and carports.",
+            "applicability": "Applies to 'Attached garages'.",
+            "exclusions": "None specified.",
+            "ambiguity_flags": [
+              "The rule text specifies 'Attached garages', but the page title is 'Attached garages/carports site planning'. It is ambiguous whether the rule applies equally to attached carports."
+            ]
+          },
+          "Variables": [
+            {
+              "name": "structure_type",
+              "type": "usage",
+              "description": "The type of structure being built.",
+              "values": [
+                "attached garage",
+                "attached carport"
+              ]
+            },
+            {
+              "name": "setback_type",
+              "type": "dimensional",
+              "description": "The specific yard setback being measured.",
+              "values": [
+                "front",
+                "rear",
+                "side",
+                "street-side"
+              ]
+            },
+            {
+              "name": "garage_setback_dimension",
+              "type": "dimensional",
+              "description": "The required setback for the attached garage/carport, which is dependent on the main dwelling's setback."
+            },
+            {
+              "name": "main_dwelling_setback_dimension",
+              "type": "dimensional",
+              "description": "The required setback for the main dwelling on the lot, which serves as the reference value."
+            }
+          ],
+          "Constants": [],
+          "Conditions": [
+            {
+              "type": "Mandatory",
+              "statement": "Attached garages must comply with the same setbacks as the main dwelling.",
+              "logical_representation": "FOR EACH setback_type IN ['front', 'rear', 'side', 'street-side'], garage_setback_dimension(setback_type) MUST_EQUAL main_dwelling_setback_dimension(setback_type)"
+            }
+          ],
+          "Exceptions": [
+            {
+              "type": "None Specified",
+              "description": "No explicit deviations or alternatives are mentioned in the text."
+            }
+          ],
+          "Relationships": {
+            "hierarchical": "This rule is a primary regulation under the topic 'Attached garages/carports site planning'.",
+            "cross_references": [
+              {
+                "to": "Main Dwelling Setback Regulations",
+                "description": "The rule requires referencing the setback specifications applicable to the 'main dwelling' on the same lot."
+              }
+            ],
+            "logical_dependencies": [
+              "Validation of an attached garage's setbacks is dependent on obtaining the setback requirements for the main dwelling."
+            ]
+          }
+        },
+        {
+          "rule_id": "RG-G44-02",
+          "rule_name": "Uncovered Parking Space Location",
+          "Qualifiers": {
+            "scope": "Siting of uncovered parking spaces on a residential lot.",
+            "applicability": "Applies to 'Uncovered spaces', which are understood to be parking spaces in this context.",
+            "exclusions": "The rule does not specify constraints for rear yards or interior side yards.",
+            "ambiguity_flags": [
+              "The phrasing '...beyond the required frontyard and beyond the first 10' of the street-side yard' is slightly ambiguous. The interpretation, supported by diagrammatic evidence ('No-parking area' on corner lot), is that these are two separate prohibited zones for any uncovered space. An alternative, less likely interpretation is that a space at the corner of a front and street-side yard must satisfy both conditions."
+            ]
+          },
+          "Variables": [
+            {
+              "name": "space_type",
+              "type": "usage",
+              "description": "The type of parking space.",
+              "values": [
+                "uncovered space"
+              ]
+            },
+            {
+              "name": "yard_type",
+              "type": "dimensional",
+              "description": "The type of yard where the space is located.",
+              "values": [
+                "frontyard",
+                "street-side yard"
+              ]
+            },
+            {
+              "name": "required_frontyard_depth",
+              "type": "dimensional",
+              "description": "The dimension of the required front yard setback, which defines a prohibited zone."
+            }
+          ],
+          "Constants": [
+            {
+              "name": "street_side_yard_no_parking_depth",
+              "type": "dimensional",
+              "value": 10,
+              "unit": "feet",
+              "description": "The depth of the prohibited zone for uncovered parking within a street-side yard, measured from the lot line."
+            }
+          ],
+          "Conditions": [
+            {
+              "type": "Mandatory",
+              "statement": "Uncovered spaces must be located beyond the required frontyard and beyond the first 10' of the street-side yard.",
+              "logical_representation": "location(uncovered_space) MUST NOT BE WITHIN area(required_frontyard) AND location(uncovered_space) MUST NOT BE WITHIN area(street_side_yard_first_10_feet)"
+            }
+          ],
+          "Exceptions": [
+            {
+              "type": "Compliant Alternatives Illustrated",
+              "description": "No formal exceptions are listed, but Figure 33 illustrates compliant locations for uncovered spaces, such as in a driveway (beyond the front setback) or in an interior side yard."
+            }
+          ],
+          "Relationships": {
+            "hierarchical": "This rule is a primary regulation under the topic 'Attached garages/carports site planning'.",
+            "cross_references": [
+              {
+                "to": "Zoning Setback Regulations",
+                "description": "Compliance requires referencing the 'required frontyard' setback dimension for the specific lot."
+              },
+              {
+                "to": "RG-G44-01",
+                "description": "This rule governs spaces that are often supplementary to enclosed garage spaces regulated by RG-G44-01."
+              }
+            ],
+            "logical_dependencies": [
+              "The examples in Figure 33 (A, B, C) imply a dependency on an unstated total parking requirement (e.g., 2 spaces per dwelling). The presence of uncovered spaces is shown to be contingent on the number of enclosed garage spaces (e.g., 1-car garages are shown with a 2nd uncovered space, while a 2-car garage is not)."
+            ]
+          }
+        }
+      ]
+    },
+    "parse_error": false,
+    "raw_response": "```json\n{\n  \"source_document\": {\n    \"title\": \"Attached garages/carports site planning\",\n    \"page\": \"44 (content), 38 (printed number)\"\n  },\n  \"regulations\": [\n    {\n      \"rule_id\": \"RG-G44-01\",\n      \"rule_name\": \"Attached Garage/Carport Setbacks\",\n      \"Qualifiers\": {\n        \"scope\": \"Site planning regulations concerning the setbacks of attached garages and carports.\",\n        \"applicability\": \"Applies to 'Attached garages'.\",\n        \"exclusions\": \"None specified.\",\n        \"ambiguity_flags\": [\n          \"The rule text specifies 'Attached garages', but the page title is 'Attached garages/carports site planning'. It is ambiguous whether the rule applies equally to attached carports.\"\n        ]\n      },\n      \"Variables\": [\n        {\n          \"name\": \"structure_type\",\n          \"type\": \"usage\",\n          \"description\": \"The type of structure being built.\",\n          \"values\": [\"attached garage\", \"attached carport\"]\n        },\n        {\n          \"name\": \"setback_type\",\n          \"type\": \"dimensional\",\n          \"description\": \"The specific yard setback being measured.\",\n          \"values\": [\"front\", \"rear\", \"side\", \"street-side\"]\n        },\n        {\n          \"name\": \"garage_setback_dimension\",\n          \"type\": \"dimensional\",\n          \"description\": \"The required setback for the attached garage/carport, which is dependent on the main dwelling's setback.\"\n        },\n        {\n          \"name\": \"main_dwelling_setback_dimension\",\n          \"type\": \"dimensional\",\n          \"description\": \"The required setback for the main dwelling on the lot, which serves as the reference value.\"\n        }\n      ],\n      \"Constants\": [],\n      \"Conditions\": [\n        {\n          \"type\": \"Mandatory\",\n          \"statement\": \"Attached garages must comply with the same setbacks as the main dwelling.\",\n          \"logical_representation\": \"FOR EACH setback_type IN ['front', 'rear', 'side', 'street-side'], garage_setback_dimension(setback_type) MUST_EQUAL main_dwelling_setback_dimension(setback_type)\"\n        }\n      ],\n      \"Exceptions\": [\n        {\n          \"type\": \"None Specified\",\n          \"description\": \"No explicit deviations or alternatives are mentioned in the text.\"\n        }\n      ],\n      \"Relationships\": {\n        \"hierarchical\": \"This rule is a primary regulation under the topic 'Attached garages/carports site planning'.\",\n        \"cross_references\": [\n          {\n            \"to\": \"Main Dwelling Setback Regulations\",\n            \"description\": \"The rule requires referencing the setback specifications applicable to the 'main dwelling' on the same lot.\"\n          }\n        ],\n        \"logical_dependencies\": [\n          \"Validation of an attached garage's setbacks is dependent on obtaining the setback requirements for the main dwelling.\"\n        ]\n      }\n    },\n    {\n      \"rule_id\": \"RG-G44-02\",\n      \"rule_name\": \"Uncovered Parking Space Location\",\n      \"Qualifiers\": {\n        \"scope\": \"Siting of uncovered parking spaces on a residential lot.\",\n        \"applicability\": \"Applies to 'Uncovered spaces', which are understood to be parking spaces in this context.\",\n        \"exclusions\": \"The rule does not specify constraints for rear yards or interior side yards.\",\n        \"ambiguity_flags\": [\n          \"The phrasing '...beyond the required frontyard and beyond the first 10' of the street-side yard' is slightly ambiguous. The interpretation, supported by diagrammatic evidence ('No-parking area' on corner lot), is that these are two separate prohibited zones for any uncovered space. An alternative, less likely interpretation is that a space at the corner of a front and street-side yard must satisfy both conditions.\"\n        ]\n      },\n      \"Variables\": [\n        {\n          \"name\": \"space_type\",\n          \"type\": \"usage\",\n          \"description\": \"The type of parking space.\",\n          \"values\": [\"uncovered space\"]\n        },\n        {\n          \"name\": \"yard_type\",\n          \"type\": \"dimensional\",\n          \"description\": \"The type of yard where the space is located.\",\n          \"values\": [\"frontyard\", \"street-side yard\"]\n        },\n        {\n          \"name\": \"required_frontyard_depth\",\n          \"type\": \"dimensional\",\n          \"description\": \"The dimension of the required front yard setback, which defines a prohibited zone.\"\n        }\n      ],\n      \"Constants\": [\n        {\n          \"name\": \"street_side_yard_no_parking_depth\",\n          \"type\": \"dimensional\",\n          \"value\": 10,\n          \"unit\": \"feet\",\n          \"description\": \"The depth of the prohibited zone for uncovered parking within a street-side yard, measured from the lot line.\"\n        }\n      ],\n      \"Conditions\": [\n        {\n          \"type\": \"Mandatory\",\n          \"statement\": \"Uncovered spaces must be located beyond the required frontyard and beyond the first 10' of the street-side yard.\",\n          \"logical_representation\": \"location(uncovered_space) MUST NOT BE WITHIN area(required_frontyard) AND location(uncovered_space) MUST NOT BE WITHIN area(street_side_yard_first_10_feet)\"\n        }\n      ],\n      \"Exceptions\": [\n        {\n          \"type\": \"Compliant Alternatives Illustrated\",\n          \"description\": \"No formal exceptions are listed, but Figure 33 illustrates compliant locations for uncovered spaces, such as in a driveway (beyond the front setback) or in an interior side yard.\"\n        }\n      ],\n      \"Relationships\": {\n        \"hierarchical\": \"This rule is a primary regulation under the topic 'Attached garages/carports site planning'.\",\n        \"cross_references\": [\n          {\n            \"to\": \"Zoning Setback Regulations\",\n            \"description\": \"Compliance requires referencing the 'required frontyard' setback dimension for the specific lot.\"\n          },\n          {\n            \"to\": \"RG-G44-01\",\n            \"description\": \"This rule governs spaces that are often supplementary to enclosed garage spaces regulated by RG-G44-01.\"\n          }\n        ],\n        \"logical_dependencies\": [\n          \"The examples in Figure 33 (A, B, C) imply a dependency on an unstated total parking requirement (e.g., 2 spaces per dwelling). The presence of uncovered spaces is shown to be contingent on the number of enclosed garage spaces (e.g., 1-car garages are shown with a 2nd uncovered space, while a 2-car garage is not).\"\n        ]\n      }\n    }\n  ]\n}\n```",
+    "response_time": 37.19881224632263,
+    "input_tokens": 706,
+    "output_tokens": 4331,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 16:03:39",
+  "model": "google/gemini-2.5-pro",
+  "success": true
+}

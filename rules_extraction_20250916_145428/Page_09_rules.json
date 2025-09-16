@@ -1,0 +1,242 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_09.md",
+  "file_name": "Page_09.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "Qualifiers": {
+          "scope": "City of Palo Alto, CA \u2014 Determination of net lot area for development potential",
+          "applicability": [
+            "All lots in Palo Alto when calculating development potential",
+            "For most lots, gross and net lot areas are equal; apply exclusions only where applicable features exist"
+          ],
+          "exclusions": []
+        },
+        "Variables": [
+          {
+            "name": "gross_lot_area",
+            "description": "Total lot area measured from lot line to lot line.",
+            "units": "area (units not specified in text; typical practice: square feet or square meters)"
+          },
+          {
+            "name": "net_lot_area",
+            "description": "Area used to determine development potential; computed by subtracting specified exclusions from gross lot area.",
+            "units": "area (consistent with gross_lot_area)"
+          },
+          {
+            "name": "area_within_public_ROW",
+            "description": "Portion of the lot that lies within the public street right-of-way (ROW) or public street easement (Figure 1, Area A).",
+            "units": "area"
+          },
+          {
+            "name": "flag_lot_pole_area",
+            "description": "The 'pole' portion of a flag lot that provides narrow access to the street (Figure 2, Area B).",
+            "units": "area"
+          },
+          {
+            "name": "creek_channel_area",
+            "description": "Portion of the lot within the creek channel as defined by the Santa Clara Valley Water District (SCVWD) easement, or if no easement, by the top-of-bank (Figure 3, Area C).",
+            "units": "area"
+          }
+        ],
+        "Constants": [
+          {
+            "name": "net_lot_area_equation",
+            "spec": "net_lot_area = gross_lot_area \u2212 (area_within_public_ROW + flag_lot_pole_area + creek_channel_area)"
+          },
+          {
+            "name": "development_potential_basis",
+            "spec": "Development potential is based on net lot area, not gross lot area."
+          }
+        ],
+        "Conditions": {
+          "mandatory": [
+            "Calculate development potential using net_lot_area.",
+            "Subtract all applicable excluded areas (public ROW overlap, flag-lot pole, creek channel area) from gross_lot_area to determine net_lot_area."
+          ],
+          "optional": [],
+          "conditional": [
+            {
+              "if": "No excluded areas are present on the lot",
+              "then": "net_lot_area = gross_lot_area"
+            }
+          ]
+        },
+        "Exceptions": [],
+        "Relationships": {
+          "depends_on": [
+            "Exclusion Area A: Public ROW overlap",
+            "Exclusion Area B: Flag-lot pole",
+            "Exclusion Area C: Creek channel/easement"
+          ],
+          "supplies_to": [],
+          "external_references": []
+        }
+      },
+      {
+        "Qualifiers": {
+          "scope": "Exclusion Area A \u2014 Public street right-of-way (ROW) overlap",
+          "applicability": [
+            "Lots whose legal boundaries extend into a public street ROW or public street easement",
+            "Includes areas in Palo Alto (e.g., Barron Park) where the lot may extend to the centerline of the street"
+          ],
+          "exclusions": []
+        },
+        "Variables": [
+          {
+            "name": "public_ROW_edge",
+            "description": "Edge line of the public street easement or public ROW used to define lot area for calculation purposes.",
+            "units": "length/geometry reference",
+            "source": "City of Palo Alto Development Center (ROW dimensions available)"
+          },
+          {
+            "name": "area_within_public_ROW",
+            "description": "Computed area of the portion of the lot that lies within the public ROW or street easement to be subtracted from gross lot area (Figure 1, Area A).",
+            "units": "area"
+          }
+        ],
+        "Constants": [
+          {
+            "name": "lot_area_reference_boundary",
+            "spec": "For lot area purposes, the lot is defined by the edge of the public street easement or public ROW, not by the legal lot line if it extends into the ROW."
+          }
+        ],
+        "Conditions": {
+          "mandatory": [
+            "Subtract the portion of the lot that lies within the public ROW or street easement from the gross lot area."
+          ],
+          "optional": [],
+          "conditional": [
+            {
+              "if": "Lot boundaries extend into the public ROW",
+              "then": "Determine public_ROW_edge per city records and compute area_within_public_ROW for subtraction",
+              "notes": "ROW dimensions must be obtained from the City of Palo Alto Development Center."
+            }
+          ]
+        },
+        "Exceptions": [],
+        "Relationships": {
+          "depends_on": [],
+          "supplies_to": [
+            "Net lot area calculation and development potential basis"
+          ],
+          "external_references": [
+            "City of Palo Alto Development Center \u2014 Public ROW dimensions"
+          ]
+        }
+      },
+      {
+        "Qualifiers": {
+          "scope": "Exclusion Area B \u2014 Flag-lot 'pole' portion",
+          "applicability": [
+            "Lots configured as flag lots where a narrow 'pole' or 'handle' connects the main lot area to the street"
+          ],
+          "exclusions": [
+            "Private access easements located on a lot that provide access to other lots (these are not subtracted from the lot on which they occur)"
+          ]
+        },
+        "Variables": [
+          {
+            "name": "flag_lot_pole_area",
+            "description": "Area of the narrow connection ('pole') of a flag lot to the street (Figure 2, Area B).",
+            "units": "area"
+          },
+          {
+            "name": "private_access_easements_area",
+            "description": "Area of private access easements located on the lot (not subtracted from this lot\u2019s area).",
+            "units": "area"
+          }
+        ],
+        "Constants": [
+          {
+            "name": "non_subtraction_of_private_access_easements",
+            "spec": "Private access easements that provide access to lots are NOT subtracted from the lot on which they occur."
+          }
+        ],
+        "Conditions": {
+          "mandatory": [
+            "Subtract the 'pole' portion of a flag lot from the gross lot area."
+          ],
+          "optional": [],
+          "conditional": []
+        },
+        "Exceptions": [
+          "Do not subtract private access easements from the lot on which they occur, even if used to access other lots."
+        ],
+        "Relationships": {
+          "depends_on": [],
+          "supplies_to": [
+            "Net lot area calculation and development potential basis"
+          ],
+          "external_references": []
+        }
+      },
+      {
+        "Qualifiers": {
+          "scope": "Exclusion Area C \u2014 Creek channel/easement area",
+          "applicability": [
+            "Lots with a creek, creek channel, and/or a recorded creek easement on or across the lot"
+          ],
+          "exclusions": []
+        },
+        "Variables": [
+          {
+            "name": "scvwd_easement_boundary",
+            "description": "Boundary of the Santa Clara Valley Water District easement, if present, which defines the creek channel area to be subtracted.",
+            "units": "length/geometry reference",
+            "source": "Santa Clara Valley Water District records"
+          },
+          {
+            "name": "top_of_bank_line",
+            "description": "The top-of-bank line used to define the creek channel where no SCVWD easement exists.",
+            "units": "length/geometry reference",
+            "source": "Field determination; may require a licensed surveyor"
+          },
+          {
+            "name": "creek_channel_area",
+            "description": "Area within the creek channel to be subtracted from the gross lot area (Figure 3, Area C).",
+            "units": "area"
+          }
+        ],
+        "Constants": [
+          {
+            "name": "creek_area_definition_hierarchy",
+            "spec": "Creek channel area is defined by the SCVWD easement; if there is no easement, use the top-of-bank."
+          }
+        ],
+        "Conditions": {
+          "mandatory": [
+            "Subtract the portion of the lot within the creek channel from the gross lot area."
+          ],
+          "optional": [],
+          "conditional": [
+            {
+              "if": "SCVWD easement is present",
+              "then": "Define creek_channel_area using the SCVWD easement boundary"
+            },
+            {
+              "if": "No SCVWD easement is present",
+              "then": "Define creek_channel_area using the top-of-bank",
+              "notes": "Determining the top-of-bank may require a surveyor."
+            }
+          ]
+        },
+        "Exceptions": [],
+        "Relationships": {
+          "depends_on": [],
+          "supplies_to": [
+            "Net lot area calculation and development potential basis"
+          ],
+          "external_references": [
+            "Santa Clara Valley Water District (SCVWD) \u2014 Easement records"
+          ]
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "[\n  {\n    \"Qualifiers\": {\n      \"scope\": \"City of Palo Alto, CA \u2014 Determination of net lot area for development potential\",\n      \"applicability\": [\n        \"All lots in Palo Alto when calculating development potential\",\n        \"For most lots, gross and net lot areas are equal; apply exclusions only where applicable features exist\"\n      ],\n      \"exclusions\": []\n    },\n    \"Variables\": [\n      {\n        \"name\": \"gross_lot_area\",\n        \"description\": \"Total lot area measured from lot line to lot line.\",\n        \"units\": \"area (units not specified in text; typical practice: square feet or square meters)\"\n      },\n      {\n        \"name\": \"net_lot_area\",\n        \"description\": \"Area used to determine development potential; computed by subtracting specified exclusions from gross lot area.\",\n        \"units\": \"area (consistent with gross_lot_area)\"\n      },\n      {\n        \"name\": \"area_within_public_ROW\",\n        \"description\": \"Portion of the lot that lies within the public street right-of-way (ROW) or public street easement (Figure 1, Area A).\",\n        \"units\": \"area\"\n      },\n      {\n        \"name\": \"flag_lot_pole_area\",\n        \"description\": \"The 'pole' portion of a flag lot that provides narrow access to the street (Figure 2, Area B).\",\n        \"units\": \"area\"\n      },\n      {\n        \"name\": \"creek_channel_area\",\n        \"description\": \"Portion of the lot within the creek channel as defined by the Santa Clara Valley Water District (SCVWD) easement, or if no easement, by the top-of-bank (Figure 3, Area C).\",\n        \"units\": \"area\"\n      }\n    ],\n    \"Constants\": [\n      {\n        \"name\": \"net_lot_area_equation\",\n        \"spec\": \"net_lot_area = gross_lot_area \u2212 (area_within_public_ROW + flag_lot_pole_area + creek_channel_area)\"\n      },\n      {\n        \"name\": \"development_potential_basis\",\n        \"spec\": \"Development potential is based on net lot area, not gross lot area.\"\n      }\n    ],\n    \"Conditions\": {\n      \"mandatory\": [\n        \"Calculate development potential using net_lot_area.\",\n        \"Subtract all applicable excluded areas (public ROW overlap, flag-lot pole, creek channel area) from gross_lot_area to determine net_lot_area.\"\n      ],\n      \"optional\": [],\n      \"conditional\": [\n        {\n          \"if\": \"No excluded areas are present on the lot\",\n          \"then\": \"net_lot_area = gross_lot_area\"\n        }\n      ]\n    },\n    \"Exceptions\": [],\n    \"Relationships\": {\n      \"depends_on\": [\n        \"Exclusion Area A: Public ROW overlap\",\n        \"Exclusion Area B: Flag-lot pole\",\n        \"Exclusion Area C: Creek channel/easement\"\n      ],\n      \"supplies_to\": [],\n      \"external_references\": []\n    }\n  },\n  {\n    \"Qualifiers\": {\n      \"scope\": \"Exclusion Area A \u2014 Public street right-of-way (ROW) overlap\",\n      \"applicability\": [\n        \"Lots whose legal boundaries extend into a public street ROW or public street easement\",\n        \"Includes areas in Palo Alto (e.g., Barron Park) where the lot may extend to the centerline of the street\"\n      ],\n      \"exclusions\": []\n    },\n    \"Variables\": [\n      {\n        \"name\": \"public_ROW_edge\",\n        \"description\": \"Edge line of the public street easement or public ROW used to define lot area for calculation purposes.\",\n        \"units\": \"length/geometry reference\",\n        \"source\": \"City of Palo Alto Development Center (ROW dimensions available)\"\n      },\n      {\n        \"name\": \"area_within_public_ROW\",\n        \"description\": \"Computed area of the portion of the lot that lies within the public ROW or street easement to be subtracted from gross lot area (Figure 1, Area A).\",\n        \"units\": \"area\"\n      }\n    ],\n    \"Constants\": [\n      {\n        \"name\": \"lot_area_reference_boundary\",\n        \"spec\": \"For lot area purposes, the lot is defined by the edge of the public street easement or public ROW, not by the legal lot line if it extends into the ROW.\"\n      }\n    ],\n    \"Conditions\": {\n      \"mandatory\": [\n        \"Subtract the portion of the lot that lies within the public ROW or street easement from the gross lot area.\"\n      ],\n      \"optional\": [],\n      \"conditional\": [\n        {\n          \"if\": \"Lot boundaries extend into the public ROW\",\n          \"then\": \"Determine public_ROW_edge per city records and compute area_within_public_ROW for subtraction\",\n          \"notes\": \"ROW dimensions must be obtained from the City of Palo Alto Development Center.\"\n        }\n      ]\n    },\n    \"Exceptions\": [],\n    \"Relationships\": {\n      \"depends_on\": [],\n      \"supplies_to\": [\n        \"Net lot area calculation and development potential basis\"\n      ],\n      \"external_references\": [\n        \"City of Palo Alto Development Center \u2014 Public ROW dimensions\"\n      ]\n    }\n  },\n  {\n    \"Qualifiers\": {\n      \"scope\": \"Exclusion Area B \u2014 Flag-lot 'pole' portion\",\n      \"applicability\": [\n        \"Lots configured as flag lots where a narrow 'pole' or 'handle' connects the main lot area to the street\"\n      ],\n      \"exclusions\": [\n        \"Private access easements located on a lot that provide access to other lots (these are not subtracted from the lot on which they occur)\"\n      ]\n    },\n    \"Variables\": [\n      {\n        \"name\": \"flag_lot_pole_area\",\n        \"description\": \"Area of the narrow connection ('pole') of a flag lot to the street (Figure 2, Area B).\",\n        \"units\": \"area\"\n      },\n      {\n        \"name\": \"private_access_easements_area\",\n        \"description\": \"Area of private access easements located on the lot (not subtracted from this lot\u2019s area).\",\n        \"units\": \"area\"\n      }\n    ],\n    \"Constants\": [\n      {\n        \"name\": \"non_subtraction_of_private_access_easements\",\n        \"spec\": \"Private access easements that provide access to lots are NOT subtracted from the lot on which they occur.\"\n      }\n    ],\n    \"Conditions\": {\n      \"mandatory\": [\n        \"Subtract the 'pole' portion of a flag lot from the gross lot area.\"\n      ],\n      \"optional\": [],\n      \"conditional\": []\n    },\n    \"Exceptions\": [\n      \"Do not subtract private access easements from the lot on which they occur, even if used to access other lots.\"\n    ],\n    \"Relationships\": {\n      \"depends_on\": [],\n      \"supplies_to\": [\n        \"Net lot area calculation and development potential basis\"\n      ],\n      \"external_references\": []\n    }\n  },\n  {\n    \"Qualifiers\": {\n      \"scope\": \"Exclusion Area C \u2014 Creek channel/easement area\",\n      \"applicability\": [\n        \"Lots with a creek, creek channel, and/or a recorded creek easement on or across the lot\"\n      ],\n      \"exclusions\": []\n    },\n    \"Variables\": [\n      {\n        \"name\": \"scvwd_easement_boundary\",\n        \"description\": \"Boundary of the Santa Clara Valley Water District easement, if present, which defines the creek channel area to be subtracted.\",\n        \"units\": \"length/geometry reference\",\n        \"source\": \"Santa Clara Valley Water District records\"\n      },\n      {\n        \"name\": \"top_of_bank_line\",\n        \"description\": \"The top-of-bank line used to define the creek channel where no SCVWD easement exists.\",\n        \"units\": \"length/geometry reference\",\n        \"source\": \"Field determination; may require a licensed surveyor\"\n      },\n      {\n        \"name\": \"creek_channel_area\",\n        \"description\": \"Area within the creek channel to be subtracted from the gross lot area (Figure 3, Area C).\",\n        \"units\": \"area\"\n      }\n    ],\n    \"Constants\": [\n      {\n        \"name\": \"creek_area_definition_hierarchy\",\n        \"spec\": \"Creek channel area is defined by the SCVWD easement; if there is no easement, use the top-of-bank.\"\n      }\n    ],\n    \"Conditions\": {\n      \"mandatory\": [\n        \"Subtract the portion of the lot within the creek channel from the gross lot area.\"\n      ],\n      \"optional\": [],\n      \"conditional\": [\n        {\n          \"if\": \"SCVWD easement is present\",\n          \"then\": \"Define creek_channel_area using the SCVWD easement boundary\"\n        },\n        {\n          \"if\": \"No SCVWD easement is present\",\n          \"then\": \"Define creek_channel_area using the top-of-bank\",\n          \"notes\": \"Determining the top-of-bank may require a surveyor.\"\n        }\n      ]\n    },\n    \"Exceptions\": [],\n    \"Relationships\": {\n      \"depends_on\": [],\n      \"supplies_to\": [\n        \"Net lot area calculation and development potential basis\"\n      ],\n      \"external_references\": [\n        \"Santa Clara Valley Water District (SCVWD) \u2014 Easement records\"\n      ]\n    }\n  }\n]"
+  },
+  "timestamp": "2025-09-16 14:55:37",
+  "model": "openai/gpt-5",
+  "success": true
+}

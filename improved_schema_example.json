@@ -1,0 +1,111 @@
+[
+  {
+    "id": "LS-1-IMPROVED",
+    "title": "Minimum & Maximum Lot Sizes by Zone",
+    "category": "Lot Size & Lot Area",
+    "summary": "Defines minimum and maximum lot sizes for each R-1 zone district.",
+    "logic": "CONDITIONAL_OR",
+    "requirements": [
+      {
+        "condition": "zone == 'R-1'",
+        "rule": "minimum 6,000 sf, maximum varies"
+      },
+      {
+        "condition": "zone == 'R-1(7000)'", 
+        "rule": "minimum 7,000 sf, maximum varies"
+      },
+      {
+        "condition": "zone == 'R-1(8000)'",
+        "rule": "minimum 8,000 sf, maximum varies"
+      },
+      {
+        "condition": "zone == 'R-1(10000)'",
+        "rule": "minimum 10,000 sf, maximum varies"
+      },
+      {
+        "condition": "zone == 'R-1(20000)'",
+        "rule": "minimum 20,000 sf, maximum varies"
+      }
+    ],
+    "includes": [],
+    "excludes": [],
+    "pages": [2],
+    "figures": [],
+    "citations": ["18.12.040 (a) Table 2"],
+    "notes": "Specific maximum values need to be extracted from the table - TODO clarify exact maximum values"
+  },
+  {
+    "id": "LS-2-IMPROVED",
+    "title": "Exceptions to Maximum Lot Size",
+    "category": "Lot Size & Lot Area", 
+    "summary": "Lists exceptions where maximum lot size requirements may be waived.",
+    "logic": "OR",
+    "requirements": [
+      "Where underlying lot lines must be removed to eliminate non-conformities and results in no net loss of housing",
+      "Where an adjacent substandard lot of less than 25' in width is combined with another lot and results in no net loss of housing", 
+      "Where the resultant number of lots increases or stays the same and results in no net loss of housing"
+    ],
+    "includes": [],
+    "excludes": [],
+    "pages": [2],
+    "figures": [],
+    "citations": ["18.12.040 (d)", "18.12.040 (c)"],
+    "notes": "Any ONE of these exceptions allows waiver of maximum lot size"
+  },
+  {
+    "id": "LS-4-IMPROVED",
+    "title": "Special Regulations for Substandard Lots",
+    "category": "Lot Size & Lot Area",
+    "summary": "Special building restrictions that apply to substandard lots.",
+    "logic": "CONDITIONAL_AND",
+    "condition": "lot is substandard (per LS-3)",
+    "requirements": [
+      "Maximum building height is single-story and 17' instead of 30'",
+      {
+        "condition": "lot width < 50'",
+        "rule": "required street-side yard is 10' instead of 16'"
+      },
+      {
+        "condition": "lot depth < 95'", 
+        "rule": "garage must be in rear half of lot instead of 75' back from front lot line"
+      }
+    ],
+    "includes": [],
+    "excludes": [],
+    "pages": [2],
+    "figures": ["Fig 15 C on p. 23"],
+    "citations": [],
+    "notes": ""
+  },
+  {
+    "id": "PK-1-IMPROVED",
+    "title": "Parking Space Standards",
+    "category": "Parking",
+    "summary": "Defines parking space requirements and dimensions for residential lots.",
+    "logic": "AND",
+    "requirements": [
+      "Two spaces are required on the lot per dwelling",
+      "Parking spaces may NOT be located in the required front yard or first 10 ft of required street side yard",
+      "2nd dwelling units have same parking requirements",
+      "No underground parking garages except by variance",
+      "One of the two spaces must be covered",
+      "To be considered detached, a covered-parking structure must be a minimum of 3' from the main dwelling",
+      "Minimum size for an uncovered space is 8.5' x 18'",
+      "Minimum clearance inside a covered parking structure to be 10' x 20' for each space",
+      "Two-car garage or carport to be 20' x 20' clear inside", 
+      "Minimum vertical clearance: 7'",
+      "Clear area for parking space must be free of other uses"
+    ],
+    "includes": [],
+    "excludes": [
+      "Water heaters, clothes washers or dryer, bicycle parking facilities in parking space clear area"
+    ],
+    "pages": [34],
+    "figures": ["Fig 28"],
+    "citations": ["18.12.060", "18.83.090"],
+    "notes": "All requirements must be satisfied simultaneously"
+  }
+]
+
+
+

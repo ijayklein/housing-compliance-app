@@ -1,0 +1,320 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_47.md",
+  "file_name": "Page_47.md",
+  "analysis": {
+    "extracted_rules": {
+      "rules": [
+        {
+          "id": "R1",
+          "title": "Guard rail architectural compatibility",
+          "section": "Architectural compatibility & landscape screening",
+          "Qualifiers": {
+            "scope": "Design of any guard rail that is required for the project.",
+            "applicability": [
+              "Applies when a guard rail is required by any applicable code, safety standard, or project condition."
+            ],
+            "exclusions": [],
+            "notes": [
+              "Context implies association with excavation and grade changes, but the requirement applies to the guard rail\u2019s design regardless of why the rail is required."
+            ],
+            "ambiguities": [
+              "The term \"architecturally compatible\" is not defined (ambiguous criteria).",
+              "The authority or standard used to determine compatibility is not specified.",
+              "The trigger for when a guard rail is required is not defined in this text (determined elsewhere)."
+            ]
+          },
+          "Variables": [
+            {
+              "name": "guard_rail_required",
+              "type": "usage",
+              "description": "Boolean status indicating whether a guard rail is required by applicable codes/conditions."
+            },
+            {
+              "name": "architectural_compatibility_parameters",
+              "type": "qualitative",
+              "description": "Project-specific attributes that establish compatibility with the residence (e.g., style, materials, color, detailing)."
+            },
+            {
+              "name": "residence_architectural_character",
+              "type": "qualitative",
+              "description": "The architectural style/character of the residence to which the guard rail must be compatible."
+            }
+          ],
+          "Constants": [],
+          "Conditions": [
+            {
+              "type": "mandatory",
+              "trigger": "IF guard_rail_required == true",
+              "requirement": "The guard rail must be designed to be architecturally compatible with the residence.",
+              "deadline": "Before design approval/permit issuance for elements including the guard rail.",
+              "responsible_party": "Applicant/Designer",
+              "enforcement": "Planning/Building review (implied)",
+              "source_text": "If a guard rail is required, it must be designed to be architecturally compatible with the residence."
+            }
+          ],
+          "Exceptions": [],
+          "Relationships": {
+            "depends_on": [
+              "External determination that a guard rail is required (e.g., building/safety code), not specified in this text."
+            ],
+            "cross_references": [],
+            "related_figures": [
+              "Figure 37"
+            ],
+            "linked_rules": []
+          }
+        },
+        {
+          "id": "R2",
+          "title": "Landscape screening requirement determination by Planning Dept.",
+          "section": "Architectural compatibility & landscape screening",
+          "Qualifiers": {
+            "scope": "Potential requirement to provide landscape screening as part of the project.",
+            "applicability": [
+              "Projects subject to Planning Department review."
+            ],
+            "exclusions": [],
+            "notes": [
+              "The presence, type, and extent of screening are to be determined by the Planning Department."
+            ],
+            "ambiguities": [
+              "Criteria for when screening is required are not provided.",
+              "Performance/specification standards for acceptable screening are not provided."
+            ]
+          },
+          "Variables": [
+            {
+              "name": "landscape_screening_required",
+              "type": "usage",
+              "description": "Boolean status indicating Planning Department requirement for landscape screening."
+            },
+            {
+              "name": "screening_specifications",
+              "type": "material/environmental",
+              "description": "Type, height, density, species, and placement of landscape screening as may be required.",
+              "unit": null
+            }
+          ],
+          "Constants": [],
+          "Conditions": [
+            {
+              "type": "conditional",
+              "trigger": "IF Planning Dept. determines landscape screening is required (landscape_screening_required == true)",
+              "requirement": "Provide landscape screening per Planning Dept. requirements.",
+              "deadline": "As conditioned by Planning Dept.; typically prior to permit issuance or certificate of occupancy (not specified here).",
+              "responsible_party": "Applicant/Owner",
+              "enforcement": "Planning Dept. review and conditions of approval",
+              "source_text": "Additionally, landscape screening may be required by the Planning Dept."
+            }
+          ],
+          "Exceptions": [],
+          "Relationships": {
+            "depends_on": [
+              "Planning Department discretionary determination."
+            ],
+            "cross_references": [],
+            "related_figures": [
+              "Figure 37"
+            ],
+            "linked_rules": []
+          }
+        },
+        {
+          "id": "R3",
+          "title": "Tree protection evidence prior to building permit issuance",
+          "section": "Tree protection",
+          "Qualifiers": {
+            "scope": "Evidence of non-harm to trees from encroaching features or portions of features.",
+            "applicability": [
+              "All trees of any species located on the subject lot.",
+              "All trees of any species located on abutting lots."
+            ],
+            "exclusions": [],
+            "notes": [
+              "Encroaching features may include excavation cuts, foundations, retaining structures, utilities, or other project elements extending into root zones."
+            ],
+            "ambiguities": [
+              "The term \"harm\" to trees is not defined (e.g., thresholds for root loss, canopy impacts, stability).",
+              "Acceptable forms and standard of \"evidence\" are not specified (e.g., arborist report).",
+              "The measurement method for \"encroaching features\" relative to trees/drip lines is not defined in this text."
+            ]
+          },
+          "Variables": [
+            {
+              "name": "encroachment_extent",
+              "type": "dimensional",
+              "description": "Horizontal and vertical proximity of project features to tree trunks/root zones/drip line.",
+              "unit": "ft or m"
+            },
+            {
+              "name": "tree_location",
+              "type": "environmental",
+              "description": "Location of trees on subject and abutting lots relative to proposed work."
+            },
+            {
+              "name": "drip_line_extent",
+              "type": "dimensional/environmental",
+              "description": "Plan-view extent of tree canopy drip line used as a proxy for root zone.",
+              "unit": "ft or m"
+            },
+            {
+              "name": "root_zone_depth",
+              "type": "dimensional/environmental",
+              "description": "Depth distribution of roots likely affected by excavation.",
+              "unit": "in"
+            },
+            {
+              "name": "harm_assessment",
+              "type": "qualitative/analytical",
+              "description": "Assessment outcome indicating whether features will harm trees (e.g., arborist determination)."
+            }
+          ],
+          "Constants": [
+            {
+              "name": "root_depth_likely_zone",
+              "value": 18,
+              "unit": "in",
+              "description": "Tree roots are likely to be within the first 18 inches below grade.",
+              "source_text": "the roots are likely to be within the first 18\u201d below grade."
+            },
+            {
+              "name": "root_spread_relative_to_drip_line",
+              "value": null,
+              "unit": null,
+              "description": "A tree\u2019s root system extends well beyond the drip line (qualitative constant).",
+              "source_text": "A tree\u2019s root system extends well beyond the drip line"
+            }
+          ],
+          "Conditions": [
+            {
+              "type": "mandatory",
+              "trigger": "Prior to issuance of building permit",
+              "requirement": "Owner must provide evidence that encroaching features or portions of features will not harm trees of any species on subject or abutting lots.",
+              "deadline": "Before building permit issuance",
+              "responsible_party": "Owner",
+              "evidence": "Evidence sufficient to demonstrate no harm (e.g., arborist report) \u2014 specific format not defined here.",
+              "enforcement": "Permitting authority (implied).",
+              "source_text": "Prior to issuance of building permit, owner to provide evidence that encroaching features or portions of features will not harm trees of any species on subject or abutting lots."
+            },
+            {
+              "type": "advisory",
+              "trigger": "Planning excavation work near trees",
+              "requirement": "Plan excavation in a manner that does not harm tree roots.",
+              "deadline": "During design and construction planning phases",
+              "responsible_party": "Designer/Contractor/Owner",
+              "source_text": "It is important to plan excavation in a manner that does not harm tree roots."
+            }
+          ],
+          "Exceptions": [],
+          "Relationships": {
+            "depends_on": [],
+            "cross_references": [
+              "City\u2019s Tree Technical Manual (for other aspects of tree protection during construction)"
+            ],
+            "related_figures": [
+              "Figure 38"
+            ],
+            "linked_rules": [
+              "R4"
+            ]
+          }
+        },
+        {
+          "id": "R4",
+          "title": "Excavation slope consideration (1:1) and tree root impacts",
+          "section": "Tree protection (Figure 38 note)",
+          "Qualifiers": {
+            "scope": "Planning basement/excavation methods where side slopes are required for safety.",
+            "applicability": [
+              "Projects using excavation techniques that require a 1:1 slope for safety reasons."
+            ],
+            "exclusions": [
+              "Techniques that do not require 1:1 slope or that use shoring systems with steeper/vertical cuts."
+            ],
+            "notes": [
+              "Larger excavation footprints from 1:1 slopes may encroach into tree root zones."
+            ],
+            "ambiguities": [
+              "Which excavation techniques require 1:1 slope is not specified.",
+              "The regulatory source mandating the 1:1 slope is not cited.",
+              "No explicit requirement to use 1:1 slope is stated in this text; it is presented as a consideration."
+            ]
+          },
+          "Variables": [
+            {
+              "name": "excavation_technique",
+              "type": "usage",
+              "description": "Selected excavation method and its required side slope for safety."
+            },
+            {
+              "name": "excavation_slope",
+              "type": "dimensional",
+              "description": "Side slope ratio of excavation (horizontal:vertical).",
+              "unit": "ratio"
+            },
+            {
+              "name": "tree_proximity_to_excavation",
+              "type": "dimensional/environmental",
+              "description": "Distance from excavation edge to nearby trees/drip lines.",
+              "unit": "ft or m"
+            }
+          ],
+          "Constants": [
+            {
+              "name": "required_excavation_slope_for_some_methods",
+              "value": "1:1",
+              "unit": "H:V ratio",
+              "description": "Some excavation techniques require a 1:1 slope for safety.",
+              "source_text": "some excavation techniques require (for safety reasons) that the excavation to be at a 1:1 slope"
+            }
+          ],
+          "Conditions": [
+            {
+              "type": "advisory",
+              "trigger": "IF excavation_technique requires excavation_slope == 1:1",
+              "requirement": "Consider and mitigate potential severe impacts to tree roots due to increased excavation footprint.",
+              "deadline": "During excavation planning and method selection",
+              "responsible_party": "Designer/Contractor/Owner",
+              "source_text": "When planning a basement, consider the extent of excavation that will be required e.g., some excavation techniques require (for safety reasons) that the excavation to be at a 1:1 slope which may impact tree roots severely."
+            }
+          ],
+          "Exceptions": [],
+          "Relationships": {
+            "depends_on": [
+              "Selection of excavation technique and associated safety requirements."
+            ],
+            "cross_references": [],
+            "related_figures": [
+              "Figure 38"
+            ],
+            "linked_rules": [
+              "R3"
+            ]
+          }
+        }
+      ],
+      "validation_summary": {
+        "detected_rule_count": 4,
+        "completeness_notes": [
+          "All explicit mandates and conditionals extracted.",
+          "Quantitative values captured: 18 in root depth (likely), 1:1 excavation slope (for some methods)."
+        ],
+        "ambiguity_flags": [
+          "Undefined criteria for 'architecturally compatible'.",
+          "Unspecified trigger and standards for landscape screening.",
+          "Undefined 'harm' and 'evidence' standards for tree protection.",
+          "Unspecified excavation techniques and authority for 1:1 slope requirement."
+        ],
+        "consistency_checks": [
+          "R3 tree protection relates to R4 excavation slope impacts; linked_rules established.",
+          "Guard rail requirement trigger intentionally external; marked as dependency."
+        ]
+      }
+    },
+    "parse_error": false,
+    "raw_response": "{\n  \"rules\": [\n    {\n      \"id\": \"R1\",\n      \"title\": \"Guard rail architectural compatibility\",\n      \"section\": \"Architectural compatibility & landscape screening\",\n      \"Qualifiers\": {\n        \"scope\": \"Design of any guard rail that is required for the project.\",\n        \"applicability\": [\n          \"Applies when a guard rail is required by any applicable code, safety standard, or project condition.\"\n        ],\n        \"exclusions\": [],\n        \"notes\": [\n          \"Context implies association with excavation and grade changes, but the requirement applies to the guard rail\u2019s design regardless of why the rail is required.\"\n        ],\n        \"ambiguities\": [\n          \"The term \\\"architecturally compatible\\\" is not defined (ambiguous criteria).\",\n          \"The authority or standard used to determine compatibility is not specified.\",\n          \"The trigger for when a guard rail is required is not defined in this text (determined elsewhere).\"\n        ]\n      },\n      \"Variables\": [\n        {\n          \"name\": \"guard_rail_required\",\n          \"type\": \"usage\",\n          \"description\": \"Boolean status indicating whether a guard rail is required by applicable codes/conditions.\"\n        },\n        {\n          \"name\": \"architectural_compatibility_parameters\",\n          \"type\": \"qualitative\",\n          \"description\": \"Project-specific attributes that establish compatibility with the residence (e.g., style, materials, color, detailing).\"\n        },\n        {\n          \"name\": \"residence_architectural_character\",\n          \"type\": \"qualitative\",\n          \"description\": \"The architectural style/character of the residence to which the guard rail must be compatible.\"\n        }\n      ],\n      \"Constants\": [],\n      \"Conditions\": [\n        {\n          \"type\": \"mandatory\",\n          \"trigger\": \"IF guard_rail_required == true\",\n          \"requirement\": \"The guard rail must be designed to be architecturally compatible with the residence.\",\n          \"deadline\": \"Before design approval/permit issuance for elements including the guard rail.\",\n          \"responsible_party\": \"Applicant/Designer\",\n          \"enforcement\": \"Planning/Building review (implied)\",\n          \"source_text\": \"If a guard rail is required, it must be designed to be architecturally compatible with the residence.\"\n        }\n      ],\n      \"Exceptions\": [],\n      \"Relationships\": {\n        \"depends_on\": [\n          \"External determination that a guard rail is required (e.g., building/safety code), not specified in this text.\"\n        ],\n        \"cross_references\": [],\n        \"related_figures\": [\n          \"Figure 37\"\n        ],\n        \"linked_rules\": []\n      }\n    },\n    {\n      \"id\": \"R2\",\n      \"title\": \"Landscape screening requirement determination by Planning Dept.\",\n      \"section\": \"Architectural compatibility & landscape screening\",\n      \"Qualifiers\": {\n        \"scope\": \"Potential requirement to provide landscape screening as part of the project.\",\n        \"applicability\": [\n          \"Projects subject to Planning Department review.\"\n        ],\n        \"exclusions\": [],\n        \"notes\": [\n          \"The presence, type, and extent of screening are to be determined by the Planning Department.\"\n        ],\n        \"ambiguities\": [\n          \"Criteria for when screening is required are not provided.\",\n          \"Performance/specification standards for acceptable screening are not provided.\"\n        ]\n      },\n      \"Variables\": [\n        {\n          \"name\": \"landscape_screening_required\",\n          \"type\": \"usage\",\n          \"description\": \"Boolean status indicating Planning Department requirement for landscape screening.\"\n        },\n        {\n          \"name\": \"screening_specifications\",\n          \"type\": \"material/environmental\",\n          \"description\": \"Type, height, density, species, and placement of landscape screening as may be required.\",\n          \"unit\": null\n        }\n      ],\n      \"Constants\": [],\n      \"Conditions\": [\n        {\n          \"type\": \"conditional\",\n          \"trigger\": \"IF Planning Dept. determines landscape screening is required (landscape_screening_required == true)\",\n          \"requirement\": \"Provide landscape screening per Planning Dept. requirements.\",\n          \"deadline\": \"As conditioned by Planning Dept.; typically prior to permit issuance or certificate of occupancy (not specified here).\",\n          \"responsible_party\": \"Applicant/Owner\",\n          \"enforcement\": \"Planning Dept. review and conditions of approval\",\n          \"source_text\": \"Additionally, landscape screening may be required by the Planning Dept.\"\n        }\n      ],\n      \"Exceptions\": [],\n      \"Relationships\": {\n        \"depends_on\": [\n          \"Planning Department discretionary determination.\"\n        ],\n        \"cross_references\": [],\n        \"related_figures\": [\n          \"Figure 37\"\n        ],\n        \"linked_rules\": []\n      }\n    },\n    {\n      \"id\": \"R3\",\n      \"title\": \"Tree protection evidence prior to building permit issuance\",\n      \"section\": \"Tree protection\",\n      \"Qualifiers\": {\n        \"scope\": \"Evidence of non-harm to trees from encroaching features or portions of features.\",\n        \"applicability\": [\n          \"All trees of any species located on the subject lot.\",\n          \"All trees of any species located on abutting lots.\"\n        ],\n        \"exclusions\": [],\n        \"notes\": [\n          \"Encroaching features may include excavation cuts, foundations, retaining structures, utilities, or other project elements extending into root zones.\"\n        ],\n        \"ambiguities\": [\n          \"The term \\\"harm\\\" to trees is not defined (e.g., thresholds for root loss, canopy impacts, stability).\",\n          \"Acceptable forms and standard of \\\"evidence\\\" are not specified (e.g., arborist report).\",\n          \"The measurement method for \\\"encroaching features\\\" relative to trees/drip lines is not defined in this text.\"\n        ]\n      },\n      \"Variables\": [\n        {\n          \"name\": \"encroachment_extent\",\n          \"type\": \"dimensional\",\n          \"description\": \"Horizontal and vertical proximity of project features to tree trunks/root zones/drip line.\",\n          \"unit\": \"ft or m\"\n        },\n        {\n          \"name\": \"tree_location\",\n          \"type\": \"environmental\",\n          \"description\": \"Location of trees on subject and abutting lots relative to proposed work.\"\n        },\n        {\n          \"name\": \"drip_line_extent\",\n          \"type\": \"dimensional/environmental\",\n          \"description\": \"Plan-view extent of tree canopy drip line used as a proxy for root zone.\",\n          \"unit\": \"ft or m\"\n        },\n        {\n          \"name\": \"root_zone_depth\",\n          \"type\": \"dimensional/environmental\",\n          \"description\": \"Depth distribution of roots likely affected by excavation.\",\n          \"unit\": \"in\"\n        },\n        {\n          \"name\": \"harm_assessment\",\n          \"type\": \"qualitative/analytical\",\n          \"description\": \"Assessment outcome indicating whether features will harm trees (e.g., arborist determination).\"\n        }\n      ],\n      \"Constants\": [\n        {\n          \"name\": \"root_depth_likely_zone\",\n          \"value\": 18,\n          \"unit\": \"in\",\n          \"description\": \"Tree roots are likely to be within the first 18 inches below grade.\",\n          \"source_text\": \"the roots are likely to be within the first 18\u201d below grade.\"\n        },\n        {\n          \"name\": \"root_spread_relative_to_drip_line\",\n          \"value\": null,\n          \"unit\": null,\n          \"description\": \"A tree\u2019s root system extends well beyond the drip line (qualitative constant).\",\n          \"source_text\": \"A tree\u2019s root system extends well beyond the drip line\"\n        }\n      ],\n      \"Conditions\": [\n        {\n          \"type\": \"mandatory\",\n          \"trigger\": \"Prior to issuance of building permit\",\n          \"requirement\": \"Owner must provide evidence that encroaching features or portions of features will not harm trees of any species on subject or abutting lots.\",\n          \"deadline\": \"Before building permit issuance\",\n          \"responsible_party\": \"Owner\",\n          \"evidence\": \"Evidence sufficient to demonstrate no harm (e.g., arborist report) \u2014 specific format not defined here.\",\n          \"enforcement\": \"Permitting authority (implied).\",\n          \"source_text\": \"Prior to issuance of building permit, owner to provide evidence that encroaching features or portions of features will not harm trees of any species on subject or abutting lots.\"\n        },\n        {\n          \"type\": \"advisory\",\n          \"trigger\": \"Planning excavation work near trees\",\n          \"requirement\": \"Plan excavation in a manner that does not harm tree roots.\",\n          \"deadline\": \"During design and construction planning phases\",\n          \"responsible_party\": \"Designer/Contractor/Owner\",\n          \"source_text\": \"It is important to plan excavation in a manner that does not harm tree roots.\"\n        }\n      ],\n      \"Exceptions\": [],\n      \"Relationships\": {\n        \"depends_on\": [],\n        \"cross_references\": [\n          \"City\u2019s Tree Technical Manual (for other aspects of tree protection during construction)\"\n        ],\n        \"related_figures\": [\n          \"Figure 38\"\n        ],\n        \"linked_rules\": [\n          \"R4\"\n        ]\n      }\n    },\n    {\n      \"id\": \"R4\",\n      \"title\": \"Excavation slope consideration (1:1) and tree root impacts\",\n      \"section\": \"Tree protection (Figure 38 note)\",\n      \"Qualifiers\": {\n        \"scope\": \"Planning basement/excavation methods where side slopes are required for safety.\",\n        \"applicability\": [\n          \"Projects using excavation techniques that require a 1:1 slope for safety reasons.\"\n        ],\n        \"exclusions\": [\n          \"Techniques that do not require 1:1 slope or that use shoring systems with steeper/vertical cuts.\"\n        ],\n        \"notes\": [\n          \"Larger excavation footprints from 1:1 slopes may encroach into tree root zones.\"\n        ],\n        \"ambiguities\": [\n          \"Which excavation techniques require 1:1 slope is not specified.\",\n          \"The regulatory source mandating the 1:1 slope is not cited.\",\n          \"No explicit requirement to use 1:1 slope is stated in this text; it is presented as a consideration.\"\n        ]\n      },\n      \"Variables\": [\n        {\n          \"name\": \"excavation_technique\",\n          \"type\": \"usage\",\n          \"description\": \"Selected excavation method and its required side slope for safety.\"\n        },\n        {\n          \"name\": \"excavation_slope\",\n          \"type\": \"dimensional\",\n          \"description\": \"Side slope ratio of excavation (horizontal:vertical).\",\n          \"unit\": \"ratio\"\n        },\n        {\n          \"name\": \"tree_proximity_to_excavation\",\n          \"type\": \"dimensional/environmental\",\n          \"description\": \"Distance from excavation edge to nearby trees/drip lines.\",\n          \"unit\": \"ft or m\"\n        }\n      ],\n      \"Constants\": [\n        {\n          \"name\": \"required_excavation_slope_for_some_methods\",\n          \"value\": \"1:1\",\n          \"unit\": \"H:V ratio\",\n          \"description\": \"Some excavation techniques require a 1:1 slope for safety.\",\n          \"source_text\": \"some excavation techniques require (for safety reasons) that the excavation to be at a 1:1 slope\"\n        }\n      ],\n      \"Conditions\": [\n        {\n          \"type\": \"advisory\",\n          \"trigger\": \"IF excavation_technique requires excavation_slope == 1:1\",\n          \"requirement\": \"Consider and mitigate potential severe impacts to tree roots due to increased excavation footprint.\",\n          \"deadline\": \"During excavation planning and method selection\",\n          \"responsible_party\": \"Designer/Contractor/Owner\",\n          \"source_text\": \"When planning a basement, consider the extent of excavation that will be required e.g., some excavation techniques require (for safety reasons) that the excavation to be at a 1:1 slope which may impact tree roots severely.\"\n        }\n      ],\n      \"Exceptions\": [],\n      \"Relationships\": {\n        \"depends_on\": [\n          \"Selection of excavation technique and associated safety requirements.\"\n        ],\n        \"cross_references\": [],\n        \"related_figures\": [\n          \"Figure 38\"\n        ],\n        \"linked_rules\": [\n          \"R3\"\n        ]\n      }\n    }\n  ],\n  \"validation_summary\": {\n    \"detected_rule_count\": 4,\n    \"completeness_notes\": [\n      \"All explicit mandates and conditionals extracted.\",\n      \"Quantitative values captured: 18 in root depth (likely), 1:1 excavation slope (for some methods).\"\n    ],\n    \"ambiguity_flags\": [\n      \"Undefined criteria for 'architecturally compatible'.\",\n      \"Unspecified trigger and standards for landscape screening.\",\n      \"Undefined 'harm' and 'evidence' standards for tree protection.\",\n      \"Unspecified excavation techniques and authority for 1:1 slope requirement.\"\n    ],\n    \"consistency_checks\": [\n      \"R3 tree protection relates to R4 excavation slope impacts; linked_rules established.\",\n      \"Guard rail requirement trigger intentionally external; marked as dependency.\"\n    ]\n  }\n}"
+  },
+  "timestamp": "2025-09-16 15:10:17",
+  "model": "openai/gpt-5",
+  "success": true
+}

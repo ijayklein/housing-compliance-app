@@ -1,0 +1,222 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_52.png",
+  "image_name": "Page_52.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Height\n&\ngrade\n\nHeight allowances enable a variety of architectural styles while preserving the residential scale of our neighborhoods as well as the privacy and natural light available to each lot.\n\nCode sections\nPage 46\n18.12.040 (a) Table 2\nPage 47\n18.04.030 (64) (b)\n\n46\n\nHeight\n\nStructure                                Max. height\n                                        to roof peak\n\nMain dwelling on a standard lot\nwith a roof slope \u226412:12               30'\n\nMain dwelling on a standard lot\nwith a roof slope \u226512:12               33'\n\nMain dwelling on a substandard\nor flag lot                            17'\n\nAccessory structure in rear or\nside yard                              12'\n\n2nd-dwelling units                     17'\n\nFig 42 Comparison of roof slopes\n\n33'                                    Height measured to top of roof material\n30'\n\n12 : 14    12 : 12    12 : 10    12 : 6    12 : 3\n\nHeight limit = 33'                     Height limit = 30'\n\nFig 43 Determining slope of roof\n\n12\"\nrun\n\n6\"\nrise\n\nRoof slope is the vertical rise in inches for every horizontal distance of twelve inches (called the \"run\"). It is expressed as rise:run or, in this example 6:12.\n\nNote: On a drawing this slope might also be represented as:\n\n1:2\n6     or     1\n\n2",
+      "visual_elements": [
+        {
+          "type": "table",
+          "description": "Height specifications table showing structure types and their maximum height to roof peak. Contains 5 rows with structure descriptions and corresponding height limits.",
+          "location": "middle of page"
+        },
+        {
+          "type": "diagram",
+          "description": "Fig 42 - Comparison of roof slopes showing 5 house silhouettes with different roof slopes (12:14, 12:12, 12:10, 12:6, 12:3) and their corresponding height limits of either 33' or 30'",
+          "location": "bottom of page"
+        },
+        {
+          "type": "diagram",
+          "description": "Fig 43 - Technical diagram showing how to determine roof slope with measurements of 12\" run and 6\" rise, illustrating the concept of rise over run calculation",
+          "location": "right side of page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Main dwelling on standard lot with roof slope \u226412:12",
+          "value_type": "Measurement",
+          "value": "30",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Main dwelling on standard lot with roof slope \u226512:12",
+          "value_type": "Measurement",
+          "value": "33",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Main dwelling on substandard or flag lot",
+          "value_type": "Measurement",
+          "value": "17",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Accessory structure in rear or side yard",
+          "value_type": "Measurement",
+          "value": "12",
+          "unit": "feet"
+        },
+        {
+          "parameter": "2nd-dwelling units",
+          "value_type": "Measurement",
+          "value": "17",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Roof slope measurement run",
+          "value_type": "Measurement",
+          "value": "12",
+          "unit": "inches"
+        },
+        {
+          "parameter": "Example roof slope rise",
+          "value_type": "Measurement",
+          "value": "6",
+          "unit": "inches"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Height & grade",
+        "subheadings": [
+          "Height"
+        ],
+        "sections": [
+          "Code sections"
+        ]
+      },
+      "additional_notes": [
+        "Page number 46 appears at bottom left",
+        "Gray sidebar on left contains introductory text and code section references",
+        "Figures 42 and 43 are referenced and labeled"
+      ],
+      "cross_references": [
+        "Page 46 - 18.12.040 (a) Table 2",
+        "Page 47 - 18.04.030 (64) (b)"
+      ],
+      "conditions_and_qualifiers": {
+        "qualifiers": [
+          {
+            "id": "q1",
+            "text": "on a standard lot",
+            "applies_to_conditions": [
+              "c1",
+              "c2"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q2",
+            "text": "on a substandard or flag lot",
+            "applies_to_conditions": [
+              "c3"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q3",
+            "text": "in rear or side yard",
+            "applies_to_conditions": [
+              "c4"
+            ],
+            "scope": "Specific"
+          }
+        ],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "with a roof slope \u226412:12",
+            "value_type": "Range",
+            "operator": "<=",
+            "threshold_value": "12:12",
+            "unit": "slope ratio"
+          },
+          {
+            "id": "c2",
+            "text": "with a roof slope \u226512:12",
+            "value_type": "Range",
+            "operator": ">=",
+            "threshold_value": "12:12",
+            "unit": "slope ratio"
+          },
+          {
+            "id": "c3",
+            "text": "Main dwelling on a substandard or flag lot",
+            "value_type": "Boolean",
+            "operator": "matches",
+            "threshold_value": "substandard or flag lot",
+            "unit": "lot type"
+          },
+          {
+            "id": "c4",
+            "text": "Accessory structure in rear or side yard",
+            "value_type": "Boolean",
+            "operator": "matches",
+            "threshold_value": "rear or side yard location",
+            "unit": "location type"
+          },
+          {
+            "id": "c5",
+            "text": "2nd-dwelling units",
+            "value_type": "Boolean",
+            "operator": "matches",
+            "threshold_value": "2nd-dwelling unit",
+            "unit": "structure type"
+          }
+        ],
+        "logical_relationships": [
+          {
+            "operation": "AND",
+            "condition_ids": [
+              "c1"
+            ],
+            "expression": "Main dwelling on a standard lot with a roof slope \u226412:12",
+            "evaluation_order": 1
+          },
+          {
+            "operation": "AND",
+            "condition_ids": [
+              "c2"
+            ],
+            "expression": "Main dwelling on a standard lot with a roof slope \u226512:12",
+            "evaluation_order": 2
+          }
+        ],
+        "execution_sequence": [
+          {
+            "step": 1,
+            "action": "Determine if structure is main dwelling on standard lot",
+            "condition_ids": [
+              "c1",
+              "c2"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 2,
+            "action": "Measure roof slope to determine height limit",
+            "condition_ids": [
+              "c1",
+              "c2"
+            ],
+            "qualifier_ids": [],
+            "dependencies": [
+              1
+            ]
+          },
+          {
+            "step": 3,
+            "action": "Apply appropriate height limit based on lot type and structure type",
+            "condition_ids": [
+              "c3",
+              "c4",
+              "c5"
+            ],
+            "qualifier_ids": [
+              "q2",
+              "q3"
+            ],
+            "dependencies": [
+              1,
+              2
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:33:01",
+  "model_used": "anthropic/claude-sonnet-4"
+}

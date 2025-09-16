@@ -1,0 +1,295 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_22.md",
+  "file_name": "Page_22.md",
+  "analysis": {
+    "extracted_rules": {
+      "rules": [
+        {
+          "Qualifiers": {
+            "scope": [
+              "Attic, closet, and perimeter spaces on accessible floors of a structure"
+            ],
+            "applicability": [
+              "All accessible floors",
+              "Counts toward Gross Floor Area (GFA) regardless of depiction on the floor plan",
+              "Counts toward GFA regardless of actual usage of the space"
+            ],
+            "exclusions": [
+              "Subject to exemption criteria specified in Rule 2 (historic homes attic exemption)"
+            ],
+            "notes": [
+              "Voluminous spaces contribute to GFA even if not used or not depicted on the floor plan"
+            ],
+            "ambiguity_flags": [
+              {
+                "text": "Meaning of 'accessible floors' is not defined (e.g., does it require permanent stair/elevator access or any access?).",
+                "impact": "Eligibility for counting could vary depending on access definition."
+              }
+            ]
+          },
+          "Variables": [
+            {
+              "name": "head_clearance",
+              "type": "number",
+              "unit": "ft",
+              "description": "Vertical clear height of the area being evaluated",
+              "measurement_method_ref": "M-001"
+            },
+            {
+              "name": "floor_accessible",
+              "type": "boolean",
+              "description": "Indicates whether the floor is considered accessible for the purpose of GFA counting",
+              "ambiguity": true,
+              "ambiguity_notes": "Accessibility criteria not defined; example suggests 'accessible via stairs'."
+            },
+            {
+              "name": "area_type",
+              "type": "enum",
+              "allowed_values": [
+                "attic",
+                "closet",
+                "perimeter"
+              ],
+              "description": "Type of space being evaluated"
+            },
+            {
+              "name": "floor_level",
+              "type": "string",
+              "allowed_values_example": [
+                "1st floor",
+                "2nd floor",
+                "3rd floor"
+              ],
+              "description": "Designated floor on which the area physically resides"
+            },
+            {
+              "name": "depicted_on_floor_plan",
+              "type": "boolean",
+              "description": "Whether the area is shown on the submitted floor plan",
+              "validation_note": "This variable does not affect counting under this rule."
+            },
+            {
+              "name": "actual_usage",
+              "type": "string",
+              "description": "Actual use of the space (e.g., storage, mechanical, circulation)",
+              "validation_note": "Usage does not affect counting under this rule."
+            }
+          ],
+          "Constants": [
+            {
+              "name": "HEAD_CLEARANCE_THRESHOLD",
+              "value": 5,
+              "unit": "ft",
+              "source": "Page 22 main rule text and Figure 11 dimension"
+            },
+            {
+              "name": "M-001",
+              "type": "procedure",
+              "description": "Measure head clearance vertically from top of floor to underside of the rafter.",
+              "source": "Figure 11 note"
+            },
+            {
+              "name": "CODE_REFERENCE_1",
+              "type": "external_standard",
+              "value": "18.04.030(a)(65)",
+              "description": "Referenced code section; details not provided in excerpt"
+            },
+            {
+              "name": "CODE_REFERENCE_2",
+              "type": "external_standard",
+              "value": "18.12.040(b) Table 3",
+              "description": "Referenced code section; details not provided in excerpt"
+            }
+          ],
+          "Conditions": [
+            {
+              "id": "C-1",
+              "type": "mandatory",
+              "logic": "IF floor_accessible == true AND head_clearance >= HEAD_CLEARANCE_THRESHOLD THEN include area in GFA_count",
+              "outcome": "Area is included in Gross Floor Area"
+            },
+            {
+              "id": "C-2",
+              "type": "mandatory",
+              "logic": "Assignment of included area to floor level equals the floor_level where the area physically resides.",
+              "outcome": "Counted area is attributed to its corresponding floor (e.g., 3rd floor areas count toward 3rd floor GFA; 2nd floor areas count toward 2nd floor GFA).",
+              "source": "Derived from Figure 11 examples (Areas A and B)"
+            },
+            {
+              "id": "C-3",
+              "type": "mandatory",
+              "logic": "depicted_on_floor_plan and actual_usage do not affect inclusion if C-1 is satisfied.",
+              "outcome": "Inclusion in GFA is independent of plan depiction and usage."
+            }
+          ],
+          "Exceptions": [
+            {
+              "id": "E-1",
+              "description": "Historic homes attic exemption may reduce counted area",
+              "reference_rule": "Rule 2",
+              "effect": "Allows up to 500 sf of qualifying unusable attic space to be excluded from GFA counting",
+              "applicability_scope": "Category 1 & 2 historic homes only"
+            }
+          ],
+          "Relationships": {
+            "hierarchical": [
+              {
+                "parent": "Rule 1",
+                "child": "M-001 measurement procedure"
+              }
+            ],
+            "cross_references": [
+              {
+                "reference": "Figure 11",
+                "description": "Illustrates counted areas A (3rd floor) and B (2nd floor) and the 5' head clearance threshold"
+              },
+              {
+                "reference": "18.04.030(a)(65)",
+                "type": "external_code"
+              },
+              {
+                "reference": "18.12.040(b) Table 3",
+                "type": "external_code"
+              },
+              {
+                "reference": "2nd & 3rd floor equivalency",
+                "type": "policy_note",
+                "description": "Mentioned as addressing how these areas count toward GFA; details not provided in excerpt"
+              }
+            ],
+            "logical_dependencies": [
+              {
+                "depends_on": "M-001",
+                "for": "Determining head_clearance"
+              }
+            ],
+            "overrides_and_exceptions": [
+              {
+                "overridden_by": "Rule 2",
+                "scope": "Qualifying unusable attic spaces in Category 1 & 2 historic homes up to 500 sf"
+              }
+            ]
+          }
+        },
+        {
+          "Qualifiers": {
+            "scope": [
+              "Exemption for unusable attic space"
+            ],
+            "applicability": [
+              "Category 1 historic homes",
+              "Category 2 historic homes"
+            ],
+            "exclusions": [
+              "Spaces that are not attic",
+              "Attic spaces deemed usable (i.e., not 'unusable')"
+            ],
+            "ambiguity_flags": [
+              {
+                "text": "Term 'unusable attic space' is not defined.",
+                "impact": "Unclear criteria for what qualifies as unusable may affect eligibility."
+              },
+              {
+                "text": "Whether the 500 sf cap is per building, per property, per project, or per attic is not specified.",
+                "impact": "Ambiguity in how the exemption limit is applied could lead to inconsistent application."
+              },
+              {
+                "text": "Criteria or authority for defining 'Category 1 & 2 historic homes' is not provided.",
+                "impact": "Requires external classification standard or documentation."
+              }
+            ]
+          },
+          "Variables": [
+            {
+              "name": "building_category",
+              "type": "enum",
+              "allowed_values": [
+                "Category 1 historic home",
+                "Category 2 historic home",
+                "Other"
+              ],
+              "description": "Historic classification of the building"
+            },
+            {
+              "name": "area_type",
+              "type": "enum",
+              "allowed_values": [
+                "attic"
+              ],
+              "description": "This exemption applies only to attic spaces"
+            },
+            {
+              "name": "usability_status",
+              "type": "enum",
+              "allowed_values": [
+                "usable",
+                "unusable"
+              ],
+              "description": "Determines whether the attic space qualifies for the exemption",
+              "ambiguity": true,
+              "ambiguity_notes": "No criteria for 'unusable' provided in excerpt."
+            },
+            {
+              "name": "exemptible_area",
+              "type": "number",
+              "unit": "square feet",
+              "description": "Portion of qualifying attic area proposed to be excluded from GFA",
+              "bounds": {
+                "min": 0,
+                "max": 500
+              }
+            }
+          ],
+          "Constants": [
+            {
+              "name": "ATTIC_EXEMPTION_CAP",
+              "value": 500,
+              "unit": "square feet",
+              "source": "Exemption note on Page 22"
+            }
+          ],
+          "Conditions": [
+            {
+              "id": "C-EX-1",
+              "type": "conditional_optional",
+              "logic": "IF building_category IN {'Category 1 historic home','Category 2 historic home'} AND area_type == 'attic' AND usability_status == 'unusable' THEN up to ATTIC_EXEMPTION_CAP may be excluded from GFA.",
+              "outcome": "Optional reduction of GFA count from Rule 1 by up to 500 sf.",
+              "notes": "Administrator may require documentation establishing 'unusable' status and historic category."
+            }
+          ],
+          "Exceptions": [],
+          "Relationships": {
+            "overrides_and_exceptions": [
+              {
+                "overrides": "Rule 1",
+                "scope": "Unusable attic space in Category 1 & 2 historic homes up to 500 sf"
+              }
+            ],
+            "dependencies": [
+              {
+                "depends_on": "Historic classification system defining Category 1 & 2",
+                "type": "external_policy_or_register",
+                "status": "Not provided in excerpt"
+              }
+            ],
+            "cross_references": [
+              {
+                "reference": "Page 22 Exemption note",
+                "description": "Source statement for the 500 sf exemption"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "parse_error": false,
+    "raw_response": "{\n  \"rules\": [\n    {\n      \"Qualifiers\": {\n        \"scope\": [\n          \"Attic, closet, and perimeter spaces on accessible floors of a structure\"\n        ],\n        \"applicability\": [\n          \"All accessible floors\",\n          \"Counts toward Gross Floor Area (GFA) regardless of depiction on the floor plan\",\n          \"Counts toward GFA regardless of actual usage of the space\"\n        ],\n        \"exclusions\": [\n          \"Subject to exemption criteria specified in Rule 2 (historic homes attic exemption)\"\n        ],\n        \"notes\": [\n          \"Voluminous spaces contribute to GFA even if not used or not depicted on the floor plan\"\n        ],\n        \"ambiguity_flags\": [\n          {\n            \"text\": \"Meaning of 'accessible floors' is not defined (e.g., does it require permanent stair/elevator access or any access?).\",\n            \"impact\": \"Eligibility for counting could vary depending on access definition.\"\n          }\n        ]\n      },\n      \"Variables\": [\n        {\n          \"name\": \"head_clearance\",\n          \"type\": \"number\",\n          \"unit\": \"ft\",\n          \"description\": \"Vertical clear height of the area being evaluated\",\n          \"measurement_method_ref\": \"M-001\"\n        },\n        {\n          \"name\": \"floor_accessible\",\n          \"type\": \"boolean\",\n          \"description\": \"Indicates whether the floor is considered accessible for the purpose of GFA counting\",\n          \"ambiguity\": true,\n          \"ambiguity_notes\": \"Accessibility criteria not defined; example suggests 'accessible via stairs'.\"\n        },\n        {\n          \"name\": \"area_type\",\n          \"type\": \"enum\",\n          \"allowed_values\": [\n            \"attic\",\n            \"closet\",\n            \"perimeter\"\n          ],\n          \"description\": \"Type of space being evaluated\"\n        },\n        {\n          \"name\": \"floor_level\",\n          \"type\": \"string\",\n          \"allowed_values_example\": [\n            \"1st floor\",\n            \"2nd floor\",\n            \"3rd floor\"\n          ],\n          \"description\": \"Designated floor on which the area physically resides\"\n        },\n        {\n          \"name\": \"depicted_on_floor_plan\",\n          \"type\": \"boolean\",\n          \"description\": \"Whether the area is shown on the submitted floor plan\",\n          \"validation_note\": \"This variable does not affect counting under this rule.\"\n        },\n        {\n          \"name\": \"actual_usage\",\n          \"type\": \"string\",\n          \"description\": \"Actual use of the space (e.g., storage, mechanical, circulation)\",\n          \"validation_note\": \"Usage does not affect counting under this rule.\"\n        }\n      ],\n      \"Constants\": [\n        {\n          \"name\": \"HEAD_CLEARANCE_THRESHOLD\",\n          \"value\": 5,\n          \"unit\": \"ft\",\n          \"source\": \"Page 22 main rule text and Figure 11 dimension\"\n        },\n        {\n          \"name\": \"M-001\",\n          \"type\": \"procedure\",\n          \"description\": \"Measure head clearance vertically from top of floor to underside of the rafter.\",\n          \"source\": \"Figure 11 note\"\n        },\n        {\n          \"name\": \"CODE_REFERENCE_1\",\n          \"type\": \"external_standard\",\n          \"value\": \"18.04.030(a)(65)\",\n          \"description\": \"Referenced code section; details not provided in excerpt\"\n        },\n        {\n          \"name\": \"CODE_REFERENCE_2\",\n          \"type\": \"external_standard\",\n          \"value\": \"18.12.040(b) Table 3\",\n          \"description\": \"Referenced code section; details not provided in excerpt\"\n        }\n      ],\n      \"Conditions\": [\n        {\n          \"id\": \"C-1\",\n          \"type\": \"mandatory\",\n          \"logic\": \"IF floor_accessible == true AND head_clearance >= HEAD_CLEARANCE_THRESHOLD THEN include area in GFA_count\",\n          \"outcome\": \"Area is included in Gross Floor Area\"\n        },\n        {\n          \"id\": \"C-2\",\n          \"type\": \"mandatory\",\n          \"logic\": \"Assignment of included area to floor level equals the floor_level where the area physically resides.\",\n          \"outcome\": \"Counted area is attributed to its corresponding floor (e.g., 3rd floor areas count toward 3rd floor GFA; 2nd floor areas count toward 2nd floor GFA).\",\n          \"source\": \"Derived from Figure 11 examples (Areas A and B)\"\n        },\n        {\n          \"id\": \"C-3\",\n          \"type\": \"mandatory\",\n          \"logic\": \"depicted_on_floor_plan and actual_usage do not affect inclusion if C-1 is satisfied.\",\n          \"outcome\": \"Inclusion in GFA is independent of plan depiction and usage.\"\n        }\n      ],\n      \"Exceptions\": [\n        {\n          \"id\": \"E-1\",\n          \"description\": \"Historic homes attic exemption may reduce counted area\",\n          \"reference_rule\": \"Rule 2\",\n          \"effect\": \"Allows up to 500 sf of qualifying unusable attic space to be excluded from GFA counting\",\n          \"applicability_scope\": \"Category 1 & 2 historic homes only\"\n        }\n      ],\n      \"Relationships\": {\n        \"hierarchical\": [\n          {\n            \"parent\": \"Rule 1\",\n            \"child\": \"M-001 measurement procedure\"\n          }\n        ],\n        \"cross_references\": [\n          {\n            \"reference\": \"Figure 11\",\n            \"description\": \"Illustrates counted areas A (3rd floor) and B (2nd floor) and the 5' head clearance threshold\"\n          },\n          {\n            \"reference\": \"18.04.030(a)(65)\",\n            \"type\": \"external_code\"\n          },\n          {\n            \"reference\": \"18.12.040(b) Table 3\",\n            \"type\": \"external_code\"\n          },\n          {\n            \"reference\": \"2nd & 3rd floor equivalency\",\n            \"type\": \"policy_note\",\n            \"description\": \"Mentioned as addressing how these areas count toward GFA; details not provided in excerpt\"\n          }\n        ],\n        \"logical_dependencies\": [\n          {\n            \"depends_on\": \"M-001\",\n            \"for\": \"Determining head_clearance\"\n          }\n        ],\n        \"overrides_and_exceptions\": [\n          {\n            \"overridden_by\": \"Rule 2\",\n            \"scope\": \"Qualifying unusable attic spaces in Category 1 & 2 historic homes up to 500 sf\"\n          }\n        ]\n      }\n    },\n    {\n      \"Qualifiers\": {\n        \"scope\": [\n          \"Exemption for unusable attic space\"\n        ],\n        \"applicability\": [\n          \"Category 1 historic homes\",\n          \"Category 2 historic homes\"\n        ],\n        \"exclusions\": [\n          \"Spaces that are not attic\",\n          \"Attic spaces deemed usable (i.e., not 'unusable')\"\n        ],\n        \"ambiguity_flags\": [\n          {\n            \"text\": \"Term 'unusable attic space' is not defined.\",\n            \"impact\": \"Unclear criteria for what qualifies as unusable may affect eligibility.\"\n          },\n          {\n            \"text\": \"Whether the 500 sf cap is per building, per property, per project, or per attic is not specified.\",\n            \"impact\": \"Ambiguity in how the exemption limit is applied could lead to inconsistent application.\"\n          },\n          {\n            \"text\": \"Criteria or authority for defining 'Category 1 & 2 historic homes' is not provided.\",\n            \"impact\": \"Requires external classification standard or documentation.\"\n          }\n        ]\n      },\n      \"Variables\": [\n        {\n          \"name\": \"building_category\",\n          \"type\": \"enum\",\n          \"allowed_values\": [\n            \"Category 1 historic home\",\n            \"Category 2 historic home\",\n            \"Other\"\n          ],\n          \"description\": \"Historic classification of the building\"\n        },\n        {\n          \"name\": \"area_type\",\n          \"type\": \"enum\",\n          \"allowed_values\": [\n            \"attic\"\n          ],\n          \"description\": \"This exemption applies only to attic spaces\"\n        },\n        {\n          \"name\": \"usability_status\",\n          \"type\": \"enum\",\n          \"allowed_values\": [\n            \"usable\",\n            \"unusable\"\n          ],\n          \"description\": \"Determines whether the attic space qualifies for the exemption\",\n          \"ambiguity\": true,\n          \"ambiguity_notes\": \"No criteria for 'unusable' provided in excerpt.\"\n        },\n        {\n          \"name\": \"exemptible_area\",\n          \"type\": \"number\",\n          \"unit\": \"square feet\",\n          \"description\": \"Portion of qualifying attic area proposed to be excluded from GFA\",\n          \"bounds\": {\n            \"min\": 0,\n            \"max\": 500\n          }\n        }\n      ],\n      \"Constants\": [\n        {\n          \"name\": \"ATTIC_EXEMPTION_CAP\",\n          \"value\": 500,\n          \"unit\": \"square feet\",\n          \"source\": \"Exemption note on Page 22\"\n        }\n      ],\n      \"Conditions\": [\n        {\n          \"id\": \"C-EX-1\",\n          \"type\": \"conditional_optional\",\n          \"logic\": \"IF building_category IN {'Category 1 historic home','Category 2 historic home'} AND area_type == 'attic' AND usability_status == 'unusable' THEN up to ATTIC_EXEMPTION_CAP may be excluded from GFA.\",\n          \"outcome\": \"Optional reduction of GFA count from Rule 1 by up to 500 sf.\",\n          \"notes\": \"Administrator may require documentation establishing 'unusable' status and historic category.\"\n        }\n      ],\n      \"Exceptions\": [],\n      \"Relationships\": {\n        \"overrides_and_exceptions\": [\n          {\n            \"overrides\": \"Rule 1\",\n            \"scope\": \"Unusable attic space in Category 1 & 2 historic homes up to 500 sf\"\n          }\n        ],\n        \"dependencies\": [\n          {\n            \"depends_on\": \"Historic classification system defining Category 1 & 2\",\n            \"type\": \"external_policy_or_register\",\n            \"status\": \"Not provided in excerpt\"\n          }\n        ],\n        \"cross_references\": [\n          {\n            \"reference\": \"Page 22 Exemption note\",\n            \"description\": \"Source statement for the 500 sf exemption\"\n          }\n        ]\n      }\n    }\n  ]\n}",
+    "response_time": 78.88411378860474,
+    "input_tokens": 739,
+    "output_tokens": 5768,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 15:51:36",
+  "model": "openai/gpt-5",
+  "success": true
+}

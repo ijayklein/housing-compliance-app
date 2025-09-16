@@ -1,0 +1,71 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_36.png",
+  "image_name": "Page_36.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Accessory structures\n(other than 2nd dwelling units)\n\nThe code accommodates a wide variety of choices regarding accessory structures while utilizing parameters like setbacks and the daylight plane to preserve the characteristics of a residential neighborhood as well as privacy and daylight to each lot.\n\nCode sections\nPage 30-31\n18.12.080\nPage 32\n18.12.080 (b) (4)\n\n30\n\nAccessory structure standards (non-dwelling)\n\nThere are no minimum lot size requirements for non-dwelling accessory structures. The regulations are as follows:\n\nAll accessory structures...\n\u2022 Must have a use that is incidental to main dwelling\n\u2022 Must be detached and at least 3' from main dwelling\n\u2022 May NOT have a kitchen\n\u2022 Count toward the total lot coverage\n\u2022 If over 120 sf, require a building permit and count towards total gross floor area\n\nAccessory structures located in the buildable area....\n\u2022 Are subject to the same height and daylight plane regulations as the main dwelling\n\nAccessory structures located in the required setback.....\n\u2022 May not be located in the front yard\n\u2022 May not be located in the street-side yard\n\u2022 May not be located in the rear yard of a through lot\n\u2022 May not cover more than 50% of the rear yard\n\u2022 May not be used for sleeping or living\n\u2022 Are subject to the accessory-structure height and daylight plane regulations (see Figs 25-26 on p. 32)\n\u2022 May NOT have a kitchen\n\u2022 Count toward the total lot coverage\n\u2022 If over 120 sf, require a building permit and count towards total gross floor area\n\u2022 If over 200 sf, may have no more than two plumbing fixtures\n\nNote: Accessory structures less than 120 sf do not require a building permit but must still comply with all zoning regulations",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Empty rectangular box/placeholder for a diagram or illustration",
+          "location": "Right side of page, middle section"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Minimum distance from main dwelling",
+          "value": "3",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Building permit threshold",
+          "value": "120",
+          "unit": "square feet"
+        },
+        {
+          "parameter": "Maximum rear yard coverage",
+          "value": "50",
+          "unit": "percent"
+        },
+        {
+          "parameter": "Maximum plumbing fixtures for structures over 200 sf",
+          "value": "2",
+          "unit": "fixtures"
+        },
+        {
+          "parameter": "Threshold for plumbing fixture limitation",
+          "value": "200",
+          "unit": "square feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Accessory structures (other than 2nd dwelling units)",
+        "subheadings": [
+          "Accessory structure standards (non-dwelling)",
+          "All accessory structures...",
+          "Accessory structures located in the buildable area....",
+          "Accessory structures located in the required setback....."
+        ],
+        "sections": [
+          "Code sections",
+          "Note"
+        ]
+      },
+      "additional_notes": [
+        "Page number 30 appears at bottom left",
+        "Gray sidebar on left contains introductory text and code section references",
+        "Gray box on right contains note about building permit requirements",
+        "Empty diagram box suggests this may be a template or the diagram was not included in this copy"
+      ],
+      "cross_references": [
+        "Page 30-31",
+        "18.12.080",
+        "Page 32",
+        "18.12.080 (b) (4)",
+        "Figs 25-26 on p. 32"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-11 13:44:56",
+  "model_used": "anthropic/claude-sonnet-4"
+}

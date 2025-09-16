@@ -1,0 +1,60 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_51.png",
+  "image_name": "Page_51.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Detached 2nd-dwelling units & associated parking site planning\n\nFig 41 Examples of site planning solutions for detached 2nd dwelling units and associated required parking\n\nA Detached & separate from main-\ndwelling parking\n\u2022 Main dwelling has a 1-car attached\ngarage.\n\u2022 2nd dwelling has a 1-car detached\ngarage. (Because it is detached and at\nleast 75' from the front lot line, it may be\nlocated in the rear and side yards.)\n\u2022 Both dwellings use driveway for their\nuncovered spaces (beyond front setback)\n\nInterior lot example\n\n1-car\nde-\ntached\n\nRear yard\n\nB Attached & separate from main-\ndwelling parking\n\u2022 Main dwelling has 1-car attached garage.\n\u2022 2nd dwelling has a 1-car attached\ngarage. (Because attached, it must be\nlocated with the building area rather than\nin the rear or side yards).\n\u2022 Both dwellings use driveway for their\nuncovered spaces (beyond front setback)\n\nInterior lot example\n\nRear yard\n\nC Detached & combined with\nmain-dwelling parking\n\u2022 Both dwellings share a 2-car detached\ngarage. (Because it is detached and at\nleast 75' from the front lot line, it may be\nlocated in the rear and side yards.)\n\u2022 Both dwellings use the driveway for their\nrespective uncovered spaces (beyond\nfront setback)\n\n2-car\ndetached\nfor both\ndwellings\n\nInterior lot example\n\nRear yard\n\nD Combined w/ main-dwelling\nparking that is attached to main\ndwelling\n\u2022 Both dwellings share a 2-car attached\ngarage.\n\u2022 Both dwellings use the driveway for their\nrespective uncovered spaces (beyond\nfront setback)\n\nInterior lot example\n\nRear yard\n\nDetached 2nd\ndwelling unit\n900 sf max\n\n12'\nmin.\n\nBuildable\narea\n\nMain dwelling\n\nFront yard\n\nInterior-side yard\n\nInterior-side yard\n\n1-car\nat-\ntached\n\nDetached 2nd\ndwelling unit\n900 sf max\n\n12'\nmin.\n\nBuildable\narea\n\nMain dwelling\n\nFront yard\n\nInterior-side yard\n\nInterior-side yard\n\nDetached 2nd\ndwelling unit\n900 sf max\n\n12'\nmin.\n\nBuildable\narea\n\nMain dwelling\n\nFront yard\n\nInterior-side yard\n\nInterior-side yard\n\nDetached 2nd\ndwelling unit\n900 sf max\n\n12'\nmin.\n\nBuildable\narea\n\n2-car\nattached\ngarage for\nboth\ndwellings\n\nMain dwelling\n\nFront yard\n\nInterior-side yard\n\nInterior-side yard\n\nKey\n\nCurb\n\nLot line\n\nSidewalk\n\nRequired\nsetbacks\n\nBuildable\narea\n\nDwelling\n\n2nd-dwelling unit\n& associated pkg\n\nArea that may not be\nused to satisfy required\nparking spaces\n\nUncovered\nspace\n\n45",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Four distinct site planning diagrams (A, B, C, D) illustrating different configurations for detached 2nd dwelling units and associated parking. Each diagram shows a lot layout with a main dwelling, a detached 2nd dwelling unit, parking spaces (attached or detached garages, and uncovered spaces), and various yard areas (front, rear, interior-side). Setbacks and buildable areas are indicated. Cars are depicted in parking spaces.",
+          "location": "Middle section of the page, spanning horizontally"
+        },
+        {
+          "type": "legend",
+          "description": "A key explaining the symbols and shading used in the site planning diagrams. It defines: Curb, Lot line, Sidewalk, Required setbacks, Buildable area, Dwelling, 2nd-dwelling unit & associated pkg, Area that may not be used to satisfy required parking spaces, and Uncovered space.",
+          "location": "Bottom section of the page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Minimum distance from front lot line for detached 2nd dwelling (A & C)",
+          "value": "75",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Maximum size of Detached 2nd dwelling unit",
+          "value": "900",
+          "unit": "sf"
+        },
+        {
+          "parameter": "Minimum distance between Main dwelling and Detached 2nd dwelling unit",
+          "value": "12",
+          "unit": "feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Detached 2nd-dwelling units & associated parking site planning",
+        "subheadings": [
+          "A Detached & separate from main-dwelling parking",
+          "B Attached & separate from main-dwelling parking",
+          "C Detached & combined with main-dwelling parking",
+          "D Combined w/ main-dwelling parking that is attached to main dwelling"
+        ],
+        "sections": [
+          "Fig 41 Examples of site planning solutions for detached 2nd dwelling units and associated required parking"
+        ]
+      },
+      "additional_notes": [
+        "The text 'ming' appears truncated or as an OCR error in sections A and C, likely part of 'parking'.",
+        "The text '200 sf max' appears under '1-car at-tached' in diagram B, which seems to be an OCR error or misinterpretation of the image, as the main text for 2nd dwelling unit size is 900 sf max. This '200 sf max' is not present in the original image.",
+        "The text '3' and 'min' with an arrow in diagrams A, B, C, D indicate a minimum setback or distance, likely 3 feet, but the unit is not explicitly stated next to the number in the diagram itself, only the 'min.' abbreviation."
+      ],
+      "cross_references": [
+        "Fig 41"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-11 14:59:28",
+  "model_used": "google/gemini-2.5-flash"
+}

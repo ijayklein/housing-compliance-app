@@ -1,0 +1,120 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_34.md",
+  "file_name": "Page_34.md",
+  "analysis": {
+    "extracted_rules": {
+      "rules": [
+        {
+          "title": "Primary daylight plane (rear)",
+          "qualifiers": {
+            "scope": "Rear primary daylight plane",
+            "applicability": "All structures",
+            "exclusions": "No front daylight plane"
+          },
+          "variables": {
+            "dimensional": [
+              {
+                "name": "side daylight plane measurement",
+                "value": "up",
+                "reference": "lot line"
+              },
+              {
+                "name": "rear daylight plane measurement",
+                "value": "up",
+                "reference": "rear setback"
+              }
+            ],
+            "material": [],
+            "environmental": [],
+            "usage": []
+          },
+          "constants": {
+            "numerical_values": [
+              {
+                "name": "max protrusion",
+                "value": "7.5",
+                "unit": "feet"
+              },
+              {
+                "name": "min separation",
+                "value": "5",
+                "unit": "feet"
+              },
+              {
+                "name": "angle of sloping daylight plane line",
+                "value": "60",
+                "unit": "degrees"
+              },
+              {
+                "name": "max protrusion height",
+                "value": "24",
+                "unit": "feet"
+              },
+              {
+                "name": "vertical dimension",
+                "value": "16",
+                "unit": "feet"
+              }
+            ],
+            "specs": [],
+            "standards": [],
+            "procedures": []
+          },
+          "conditions": {
+            "mandatory": [
+              {
+                "condition": "Max. building height",
+                "values": [
+                  {
+                    "value": "30",
+                    "unit": "feet",
+                    "condition": "roof slope < 12:12"
+                  },
+                  {
+                    "value": "33",
+                    "unit": "feet",
+                    "condition": "roof slope \u2265 12:12"
+                  },
+                  {
+                    "value": "17",
+                    "unit": "feet",
+                    "condition": "structures on substandard or flag lots"
+                  },
+                  {
+                    "value": "variable",
+                    "condition": "structures located in flood zones except on substandard and flag lots",
+                    "max_value": "33",
+                    "unit": "feet"
+                  }
+                ]
+              }
+            ],
+            "optional": [],
+            "conditional_logic": [],
+            "dependencies": []
+          },
+          "exceptions": {
+            "explicit_deviations": [],
+            "alternatives": [],
+            "special_cases": []
+          },
+          "relationships": {
+            "hierarchical": [],
+            "cross_references": [],
+            "logical_dependencies": [
+              {
+                "relationship": "Cumulative length of protrusions must not exceed 15' on any one side",
+                "note": "Rear protrusions subject to same rules as side protrusions"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "parse_error": false,
+    "raw_response": "```json\n{\n  \"rules\": [\n    {\n      \"title\": \"Primary daylight plane (rear)\",\n      \"qualifiers\": {\n        \"scope\": \"Rear primary daylight plane\",\n        \"applicability\": \"All structures\",\n        \"exclusions\": \"No front daylight plane\"\n      },\n      \"variables\": {\n        \"dimensional\": [\n          {\n            \"name\": \"side daylight plane measurement\",\n            \"value\": \"up\",\n            \"reference\": \"lot line\"\n          },\n          {\n            \"name\": \"rear daylight plane measurement\",\n            \"value\": \"up\",\n            \"reference\": \"rear setback\"\n          }\n        ],\n        \"material\": [],\n        \"environmental\": [],\n        \"usage\": []\n      },\n      \"constants\": {\n        \"numerical_values\": [\n          {\n            \"name\": \"max protrusion\",\n            \"value\": \"7.5\",\n            \"unit\": \"feet\"\n          },\n          {\n            \"name\": \"min separation\",\n            \"value\": \"5\",\n            \"unit\": \"feet\"\n          },\n          {\n            \"name\": \"angle of sloping daylight plane line\",\n            \"value\": \"60\",\n            \"unit\": \"degrees\"\n          },\n          {\n            \"name\": \"max protrusion height\",\n            \"value\": \"24\",\n            \"unit\": \"feet\"\n          },\n          {\n            \"name\": \"vertical dimension\",\n            \"value\": \"16\",\n            \"unit\": \"feet\"\n          }\n        ],\n        \"specs\": [],\n        \"standards\": [],\n        \"procedures\": []\n      },\n      \"conditions\": {\n        \"mandatory\": [\n          {\n            \"condition\": \"Max. building height\",\n            \"values\": [\n              {\n                \"value\": \"30\",\n                \"unit\": \"feet\",\n                \"condition\": \"roof slope < 12:12\"\n              },\n              {\n                \"value\": \"33\",\n                \"unit\": \"feet\",\n                \"condition\": \"roof slope \u2265 12:12\"\n              },\n              {\n                \"value\": \"17\",\n                \"unit\": \"feet\",\n                \"condition\": \"structures on substandard or flag lots\"\n              },\n              {\n                \"value\": \"variable\",\n                \"condition\": \"structures located in flood zones except on substandard and flag lots\",\n                \"max_value\": \"33\",\n                \"unit\": \"feet\"\n              }\n            ]\n          }\n        ],\n        \"optional\": [],\n        \"conditional_logic\": [],\n        \"dependencies\": []\n      },\n      \"exceptions\": {\n        \"explicit_deviations\": [],\n        \"alternatives\": [],\n        \"special_cases\": []\n      },\n      \"relationships\": {\n        \"hierarchical\": [],\n        \"cross_references\": [],\n        \"logical_dependencies\": [\n          {\n            \"relationship\": \"Cumulative length of protrusions must not exceed 15' on any one side\",\n            \"note\": \"Rear protrusions subject to same rules as side protrusions\"\n          }\n        ]\n      }\n    }\n  ]\n}\n```"
+  },
+  "timestamp": "2025-09-16 14:43:09",
+  "model": "openai/gpt-4o",
+  "success": true
+}

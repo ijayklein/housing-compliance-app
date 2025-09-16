@@ -1,0 +1,48 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_39.png",
+  "image_name": "Page_39.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Noise-producing equipment site planning\n\n\u2022 May not be located in front, rear, or interior-side yards.\n\u2022 May encroach into street-side yard up to 6' (Fig 27 c below)\n\u2022 All service equip. must meet the City's Noise Ordinance in Chapter 9.10 of the Municipal Code.\n\n\u2022 Replacement of equipment shall conform to this section where feasible.\n\u2022 Must be insulated and housed, however, Planning Dept. can waive this requirement if equipment is located in buildable area and a combination of noise specifications, location, and/or other screening or buffering will assure compliance with the City's Noise Ordinance at the nearest lot line.\n\nFig 27 Examples of site planning solutions for noise-producing equipment\n\nA Pool equipment\n\u2022 Pool equip. is within buildable area even though there is room for it behind the garage/poolhouse in the required rear yard.\n\u2022 Air conditioning equip. is located in an out-of-the-way niche maintaining the required 10' min. clearance for the driveway\n\nB Pool equipment & AC unit\n\u2022 Pool equip. is located within buildable area even though there is room for it next to the poolhouse in the required rear yard.\n\u2022 Air conditioning equip. is located within buildable area behind the house. There is not enough room along the interior side of the house.\n\nC Generator & AC unit\n\u2022 Air conditioning equip. is located in street side yard in compliance with the regulations. Note that it may not encroach into the front or rear yards.\n\u2022 Generator is located within buildable area.",
+      "visual_elements": [
+        {
+          "type": "figure",
+          "description": "Diagram showing three site planning examples labeled A, B, and C for noise-producing equipment. Each example depicts a lot with a main dwelling, buildable area, and placement of equipment. Example A shows a combo garage/small poolhouse with pool equipment (P) and air conditioning (AC) in the rear yard with a 10' minimum clearance. Example B shows a larger poolhouse with pool equipment (P), air conditioning (AC), and a 2-car attached garage within the buildable area. Example C shows a garage with generator (G) and air conditioning (AC) in the street side yard with a 6' maximum encroachment. The diagram includes labels for rear yard, front yard, interior-side yard, street-side yard, and buildable area. A key explains symbols for curb, lot line, sidewalk, required setbacks, buildable area, dwelling/parking, and equipment types (P, AC, G).",
+          "location": "Bottom half of the page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Street-side yard encroachment",
+          "value": "6",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum clearance for driveway near air conditioning equipment",
+          "value": "10",
+          "unit": "feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Noise-producing equipment site planning",
+        "subheadings": [
+          "A Pool equipment",
+          "B Pool equipment & AC unit",
+          "C Generator & AC unit"
+        ],
+        "sections": []
+      },
+      "additional_notes": [
+        "Page number 33 in bottom right corner.",
+        "No handwritten annotations or stamps detected.",
+        "Text and diagram are clear and legible."
+      ],
+      "cross_references": [
+        "City's Noise Ordinance in Chapter 9.10 of the Municipal Code",
+        "Fig 27 c below (referenced in bullet point about street-side yard encroachment)"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-14 19:41:21",
+  "model_used": "openai/gpt-4.1-mini"
+}

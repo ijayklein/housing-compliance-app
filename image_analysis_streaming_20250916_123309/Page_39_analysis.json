@@ -1,0 +1,19 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_39.png",
+  "image_name": "Page_39.png",
+  "analysis": {
+    "page_number": "unknown",
+    "main_heading": "PARSE_ERROR",
+    "text_content": "Failed to parse response: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)",
+    "tables": [],
+    "figures": [],
+    "zoning_rules": [],
+    "code_references": [],
+    "quality_notes": "JSON parsing failed: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)",
+    "raw_response": "```json\n{\n  \"page_number\": \"33\",\n  \"main_heading\": \"Noise-producing equipment site planning\",\n  \"text_content\": \"\u2022 May not be located in front, rear, or interior-side yards.\\n\u2022 May encroach into street-side yard up to 6' (Fig 27 C below)\\n\u2022 All service equip. must meet the City's Noise Ordinance in Chapter 9.10 of the Municipal Code.\\n\u2022 Replacement of equipment shall conform to this section where feasible.\\n\u2022 Must be insulated and housed, however, Planning Dept. can waive this requirement if equipment is located in buildable area and a combination of noise specifications, location, and/or other screening or buffering will assure compliance with the City's Noise Ordinance at the nearest lot line.\\nFig 27 Examples of site planning solutions for noise-producing equipment\\nA Pool equipment\\n\u2022 Pool equip. is within buildable area even though there is room for it behind the garage/poolhouse in the required rear yard.\\n\u2022 Air conditioning equip. is located in an out-of-theway niche maintaining",
+    "parse_error": true
+  },
+  "analysis_timestamp": "2025-09-16 12:33:37",
+  "model_used": "google/gemini-2.5-flash",
+  "success": false
+}

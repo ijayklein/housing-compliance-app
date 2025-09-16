@@ -1,0 +1,187 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_26.png",
+  "image_name": "Page_26.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Setbacks\nSetbacks apportion a lot into two parts:\n\u2022 buildable area (in the middle)\n\u2022 required yards (surrounding the building area).\nThese required yards, meant to be maintained as open space areas, are important as landscaping opportunities to keep our neighborhoods attractive as well as for the preservation of privacy.\n\nCode sections\nPage 20\n18.12.040 (a) Table 2\n18.12.040 (a,c,e,& i)\nPage 21\n18.04.040 (e)\nPage 22-23\n18.040.030 (84, 87, 91, 128, & 146)\nPage 24-25\nas shown in table\n\nStandard setbacks\nStandard setbacks apply in most cases.\n\nStandard setbacks by zone\n\nZone District | Front* | Rear | Interior Side | Street Side*\nR-1 | Contextual or 20 | 20 | 6 | 16\nR-1(7000) | Contextual or 20 | 20 | 8 | 16\nR-1(8000) | Contextual or 20 | 20' | 8 | 16\nR-1(10000) | Contextual or 20 | 20 | 8 | 16\nR-1(20000) | Contextual or 20 | 20 | 8 | 16\nFlag lot | 10 | 20 | see zone | na\nSubstandard lot | Contextual or 20 | 20 | see zone | 16\nSubstandard corner lot < 50' wide | Contextual or 20 | 20 | see zone | 10\n\n* For front setback, if contextual setback is greater than 30' then it applies \u2014 otherwise, the 20' setback applies.\n\n* For front & street side setbacks a special setback may apply. If both a contextual and special setback apply, the greater of the two setbacks is required.\n\nSpecial setbacks\nSpecial setbacks override standard setbacks unless a larger contextual setback applies.\n\nStreets w/special setbacks\nAlma St | Embarcadero Rd | Middlefield Rd\nArastradero Rd | Guinda St | Miranda Ave\nAsh St | Hamilton Ave | Newell Rd\nCalifornia Ave | Hanover St | Oak Hill Ave\nChanning Ave | Lincoln Ave | Page Mill Rd\nCharleston Rd | Loma Verde Ave | Park Blvd\nChurchill Ave | Louis Rd | Stanford Ave\nColorado Ave | Lytton Ave | University Ave\nEast Meadow Dr | Manuela Ave | West Meadow Dr\nEl Camino Real | Mesa Ave\n\nSpecial setback distances can be found on:\n\u2022 pages of the city's zone-map booklet (available both online and in hardback at the Development Center)\n\u2022 parcel reports from the city's GIS (available at the Development Center)",
+      "visual_elements": [
+        {
+          "type": "table",
+          "description": "Table titled 'Standard setbacks by zone' listing Zone Districts (R-1, R-1(7000), R-1(8000), R-1(10000), R-1(20000), Flag lot, Substandard lot, Substandard corner lot < 50' wide) with columns for Front, Rear, Interior Side, and Street Side setbacks. Values include 'Contextual or 20', numerical values (e.g., 20, 6, 8, 16), 'see zone', 'na', and 20'. Footnotes indicate special rules for front and street side setbacks.",
+          "location": "Middle left of the page"
+        },
+        {
+          "type": "list",
+          "description": "Two bulleted lists: one on the left side under 'Setbacks' explaining the apportionment of a lot into 'buildable area (in the middle)' and 'required yards (surrounding the building area)'; another bulleted list on the right side under 'Special setback distances can be found on:' listing sources for special setback distances including the city's zone-map booklet and parcel reports from the city's GIS.",
+          "location": "Left sidebar and bottom right of the page"
+        },
+        {
+          "type": "text blocks",
+          "description": "Two highlighted text blocks: 'Standard setbacks apply in most cases.' under 'Standard setbacks' heading and 'Special setbacks override standard setbacks unless a larger contextual setback applies.' under 'Special setbacks' heading.",
+          "location": "Top center and top right of the page"
+        },
+        {
+          "type": "list",
+          "description": "List of streets with special setbacks arranged in three columns, including streets such as Alma St, Embarcadero Rd, Middlefield Rd, Arastradero Rd, Guinda St, Miranda Ave, Ash St, Hamilton Ave, Newell Rd, California Ave, Hanover St, Oak Hill Ave, Channing Ave, Lincoln Ave, Page Mill Rd, Charleston Rd, Loma Verde Ave, Park Blvd, Churchill Ave, Louis Rd, Stanford Ave, Colorado Ave, Lytton Ave, University Ave, East Meadow Dr, Manuela Ave, West Meadow Dr, El Camino Real, Mesa Ave.",
+          "location": "Middle right of the page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Front setback",
+          "value_type": "Range|Text",
+          "value": "Contextual or 20 (feet), with footnote specifying if contextual setback is greater than 30 feet then it applies, otherwise 20 feet applies",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Rear setback",
+          "value_type": "Numerical",
+          "value": "20",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Interior Side setback",
+          "value_type": "Numerical|Text",
+          "value": "6, 8, or 'see zone' depending on zone district",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Street Side setback",
+          "value_type": "Numerical|Text",
+          "value": "10, 16, 'na', or 'see zone' depending on zone district",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Flag lot front setback",
+          "value_type": "Numerical",
+          "value": "10",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Substandard corner lot < 50' wide street side setback",
+          "value_type": "Numerical",
+          "value": "10",
+          "unit": "feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Setbacks",
+        "subheadings": [
+          "Standard setbacks",
+          "Special setbacks"
+        ],
+        "sections": [
+          "Code sections",
+          "Standard setbacks by zone",
+          "Streets w/special setbacks"
+        ]
+      },
+      "additional_notes": [
+        "Page number 20 indicated at bottom left corner.",
+        "Two footnotes marked with asterisk (*) clarify application of front and street side setbacks.",
+        "No handwritten annotations or stamps visible.",
+        "Layout includes a left sidebar with explanatory text and code references, two main columns for standard and special setbacks, and tables/lists arranged clearly.",
+        "Text is clear and legible with no noted quality issues."
+      ],
+      "cross_references": [
+        "Code sections referenced: Page 20 (18.12.040 (a) Table 2, 18.12.040 (a,c,e,& i)), Page 21 (18.04.040 (e)), Pages 22-23 (18.040.030 (84, 87, 91, 128, & 146)), Pages 24-25 (as shown in table).",
+        "Special setback distances can be found on pages of the city's zone-map booklet and parcel reports from the city's GIS available at the Development Center."
+      ],
+      "conditions_and_qualifiers": {
+        "qualifiers": [
+          {
+            "id": "q1",
+            "text": "For front setback, if contextual setback is greater than 30' then it applies \u2014 otherwise, the 20' setback applies.",
+            "applies_to_conditions": [
+              "c1"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q2",
+            "text": "For front & street side setbacks a special setback may apply. If both a contextual and special setback apply, the greater of the two setbacks is required.",
+            "applies_to_conditions": [
+              "c2",
+              "c3"
+            ],
+            "scope": "Specific"
+          }
+        ],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "Front setback is either contextual or 20 feet, whichever is greater if contextual is > 30 feet",
+            "value_type": "Numerical",
+            "operator": ">",
+            "threshold_value": "30",
+            "unit": "feet"
+          },
+          {
+            "id": "c2",
+            "text": "Special setback may apply for front setback",
+            "value_type": "Boolean",
+            "operator": "contains",
+            "threshold_value": "special setback",
+            "unit": "None"
+          },
+          {
+            "id": "c3",
+            "text": "Special setback may apply for street side setback",
+            "value_type": "Boolean",
+            "operator": "contains",
+            "threshold_value": "special setback",
+            "unit": "None"
+          }
+        ],
+        "logical_relationships": [
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c1"
+            ],
+            "expression": "If contextual setback is greater than 30 feet then it applies, otherwise 20 feet applies.",
+            "evaluation_order": 1
+          },
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c2",
+              "c3"
+            ],
+            "expression": "If both a contextual and special setback apply, the greater of the two setbacks is required.",
+            "evaluation_order": 2
+          }
+        ],
+        "execution_sequence": [
+          {
+            "step": 1,
+            "action": "Evaluate if front setback contextual value is greater than 30 feet to determine applicable front setback.",
+            "condition_ids": [
+              "c1"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 2,
+            "action": "Determine if special setbacks apply to front and street side setbacks and select the greater setback if both contextual and special setbacks apply.",
+            "condition_ids": [
+              "c2",
+              "c3"
+            ],
+            "qualifier_ids": [
+              "q2"
+            ],
+            "dependencies": [
+              1
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:13:49",
+  "model_used": "openai/gpt-4.1-mini"
+}

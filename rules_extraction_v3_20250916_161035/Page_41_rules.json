@@ -1,0 +1,54 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_41.md",
+  "file_name": "Page_41.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "rule": "Carport Standards",
+        "Qualifiers": {
+          "Scope": "Standards governing the dimensional requirements for carports, including open sides and vertical clearance.",
+          "Applicability": "Applies to the design and construction of carports, specifically covered parking spaces intended for vehicles.",
+          "Exclusions": ""
+        },
+        "Variables": {
+          "longitudinal_opening": "The length of the open side of the carport, measured parallel to the direction of the parked vehicle.",
+          "transverse_opening": "The width of the open front or entrance of the carport.",
+          "vertical_clearance": "The unobstructed height from the parking surface to the underside of the roof structure.",
+          "structural_supports": "The columns used to support the carport roof system."
+        },
+        "Constants": {
+          "min_longitudinal_opening_length": "20 feet",
+          "min_transverse_opening_width": "10 feet",
+          "min_vertical_clearance_height": "7 feet",
+          "number_of_corner_columns": "2"
+        },
+        "Conditions": {
+          "mandatory_longitudinal_opening": "The carport must have a minimum open length of 20 feet on at least one of its longitudinal sides.",
+          "mandatory_transverse_opening": "The carport must have a minimum open width of 10 feet at its front/entrance.",
+          "mandatory_vertical_clearance": "The carport must provide a minimum vertical clearance of 7 feet.",
+          "mandatory_structure": "The structure is depicted with 2 corner columns, implying a minimum requirement for structural support at the corners of the open sides.",
+          "ambiguity_flag": "The text 'One of 2 corner columns' is slightly ambiguous; it is interpreted as a requirement for exactly 2 columns for this specific configuration, but could imply a minimum of 2."
+        },
+        "Exceptions": {
+          "explicit_deviations": "",
+          "alternatives": "",
+          "special_cases": ""
+        },
+        "Relationships": {
+          "hierarchical": "The dimensional requirements for longitudinal opening, transverse opening, and vertical clearance are all sub-components of the main 'Carport Standards' rule.",
+          "cross_references": "The longitudinal opening dimension (20' min.) is specified in both Figure 29 (Plan View) and the Left Side Elevation of Figure 30. The transverse opening dimension (10' min) is specified in the Front Elevation of Figure 30. The vertical clearance (7' min.) is specified in both elevations of Figure 30.",
+          "logical_dependencies": "The vertical clearance measurement is dependent on the 'Driveway/parking surface' as the lower reference plane and the 'Bottom roof system' as the upper reference plane."
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n  {\n    \"rule\": \"Carport Standards\",\n    \"Qualifiers\": {\n      \"Scope\": \"Standards governing the dimensional requirements for carports, including open sides and vertical clearance.\",\n      \"Applicability\": \"Applies to the design and construction of carports, specifically covered parking spaces intended for vehicles.\",\n      \"Exclusions\": \"\"\n    },\n    \"Variables\": {\n      \"longitudinal_opening\": \"The length of the open side of the carport, measured parallel to the direction of the parked vehicle.\",\n      \"transverse_opening\": \"The width of the open front or entrance of the carport.\",\n      \"vertical_clearance\": \"The unobstructed height from the parking surface to the underside of the roof structure.\",\n      \"structural_supports\": \"The columns used to support the carport roof system.\"\n    },\n    \"Constants\": {\n      \"min_longitudinal_opening_length\": \"20 feet\",\n      \"min_transverse_opening_width\": \"10 feet\",\n      \"min_vertical_clearance_height\": \"7 feet\",\n      \"number_of_corner_columns\": \"2\"\n    },\n    \"Conditions\": {\n      \"mandatory_longitudinal_opening\": \"The carport must have a minimum open length of 20 feet on at least one of its longitudinal sides.\",\n      \"mandatory_transverse_opening\": \"The carport must have a minimum open width of 10 feet at its front/entrance.\",\n      \"mandatory_vertical_clearance\": \"The carport must provide a minimum vertical clearance of 7 feet.\",\n      \"mandatory_structure\": \"The structure is depicted with 2 corner columns, implying a minimum requirement for structural support at the corners of the open sides.\",\n      \"ambiguity_flag\": \"The text 'One of 2 corner columns' is slightly ambiguous; it is interpreted as a requirement for exactly 2 columns for this specific configuration, but could imply a minimum of 2.\"\n    },\n    \"Exceptions\": {\n      \"explicit_deviations\": \"\",\n      \"alternatives\": \"\",\n      \"special_cases\": \"\"\n    },\n    \"Relationships\": {\n      \"hierarchical\": \"The dimensional requirements for longitudinal opening, transverse opening, and vertical clearance are all sub-components of the main 'Carport Standards' rule.\",\n      \"cross_references\": \"The longitudinal opening dimension (20' min.) is specified in both Figure 29 (Plan View) and the Left Side Elevation of Figure 30. The transverse opening dimension (10' min) is specified in the Front Elevation of Figure 30. The vertical clearance (7' min.) is specified in both elevations of Figure 30.\",\n      \"logical_dependencies\": \"The vertical clearance measurement is dependent on the 'Driveway/parking surface' as the lower reference plane and the 'Bottom roof system' as the upper reference plane.\"\n    }\n  }\n]\n```",
+    "response_time": 29.638901948928833,
+    "input_tokens": 767,
+    "output_tokens": 3041,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 16:13:54",
+  "model": "google/gemini-2.5-pro",
+  "success": true
+}

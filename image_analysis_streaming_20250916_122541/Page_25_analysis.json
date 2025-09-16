@@ -1,0 +1,23 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_25.png",
+  "image_name": "Page_25.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "PARSE_ERROR",
+      "visual_elements": [],
+      "technical_specifications": [],
+      "structural_elements": {
+        "main_heading": "",
+        "subheadings": [],
+        "sections": []
+      },
+      "additional_notes": [
+        "Failed to parse LLM response: Expecting value: line 1 column 1 (char 0)"
+      ],
+      "cross_references": []
+    },
+    "raw_response": "Here's the extracted information from the image, maintaining absolute precision:\n\n**Title:** Fireplaces, chimneys, sheds, planters, and other projections\n\n**Rules/Regulations:**\n*   Fireplaces shall be included in the gross floor area (counted one time) regardless of configuration or design.\n*   Sheds, planters, and other projections that are higher than 5' count toward gross floor area regardless of configuration or design.\n\n**Figure Caption:**\n*   Fig 14 Fireplaces, chimneys, sheds, etc.\n\n**Notes/Specifications:**\n*   **Note:** In 2000, the city of Palo Alto passed an ordinance prohibiting the construction of new wood-burning fireplaces. For details about and possible prohibition, see the Chapter 9.06.030.\n*   Chimneys on the upper floors DO NOT COUNT.\n*   All configurations of fireplaces, chimneys, and buttresses COUNT ONCE towards the gross floor area.\n*   **Note:** Fireplaces not connected to the house are treated like accessory structures, they and count towards FAR if they are greater than 120 sf. They count towards lot coverage always, regardless of size.\n*   Miscellaneous appendages e.g., tool sheds, equipment enclosures, play houses, etc., that are greater than 5' in height, DO COUNT toward gross floor area. (Note: Neither appendages like this nor noise-producing equipment may be located in the required yards).\n\n**Page Number:** 19"
+  },
+  "analysis_timestamp": "2025-09-16 12:25:54",
+  "model_used": "google/gemini-2.5-flash"
+}

@@ -1,0 +1,153 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_18.png",
+  "image_name": "Page_18.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Fig 7 Entry feature with gabled roof\n\nIsometric View\n\nSide Elevation\n\nPorch Floor Plan\n\nIntersection of front\nfacade and top of\nroof material\nat ridge\n\nHeight\n\nGrade\n\nHeight\n\nGrade\n\nOutline of entry-\nway roof\n\nOutline of entryway\nfloor area that counts\nTWICE if entryway is\nvaulted\n\nNote: If the entryway is considered to be a vaulted entryway\nthe area will be counted as follows:\n\u2022 In this example, a portion of the entryway is recessed\nbeyond the house facade and roof. It is included in the\narea that counts.\n\u2022 The area is measured to the outside material of the entry-\nway feature.\n\u2022 The area counts TWICE toward gross floor area.\n\n12",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Three-view architectural drawing showing an entry feature with gabled roof. Includes isometric view (3D perspective), side elevation (profile view), and porch floor plan (top-down view). The isometric view shows a house with a protruding entry feature with gabled roof, windows, and dimensional arrows indicating height and grade measurements. The side elevation shows the same feature in profile with height and grade measurements marked. The porch floor plan shows the outline of the entryway roof and floor area with annotations.",
+          "location": "Center of page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Vaulted entryway area counting multiplier",
+          "value_type": "Text",
+          "value": "TWICE",
+          "unit": "None"
+        },
+        {
+          "parameter": "Page number",
+          "value_type": "Numerical",
+          "value": "12",
+          "unit": "None"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Fig 7 Entry feature with gabled roof",
+        "subheadings": [
+          "Isometric View",
+          "Side Elevation",
+          "Porch Floor Plan"
+        ],
+        "sections": [
+          "Note section with bullet points"
+        ]
+      },
+      "additional_notes": [
+        "Page appears to be from a technical manual with clear architectural drawings and measurement annotations"
+      ],
+      "cross_references": [
+        "Reference to gross floor area calculation methodology"
+      ],
+      "conditions_and_qualifiers": {
+        "qualifiers": [
+          {
+            "id": "q1",
+            "text": "If the entryway is considered to be a vaulted entryway",
+            "applies_to_conditions": [
+              "c1",
+              "c2",
+              "c3"
+            ],
+            "scope": "Specific"
+          }
+        ],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "a portion of the entryway is recessed beyond the house facade and roof",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "true",
+            "unit": "None"
+          },
+          {
+            "id": "c2",
+            "text": "The area is measured to the outside material of the entryway feature",
+            "value_type": "Text",
+            "operator": "matches",
+            "threshold_value": "outside material measurement",
+            "unit": "None"
+          },
+          {
+            "id": "c3",
+            "text": "The area counts TWICE toward gross floor area",
+            "value_type": "Numerical",
+            "operator": "=",
+            "threshold_value": "2",
+            "unit": "multiplier"
+          }
+        ],
+        "logical_relationships": [
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c1",
+              "c2",
+              "c3"
+            ],
+            "expression": "If the entryway is considered to be a vaulted entryway the area will be counted as follows",
+            "evaluation_order": 1
+          }
+        ],
+        "execution_sequence": [
+          {
+            "step": 1,
+            "action": "Determine if entryway qualifies as vaulted entryway",
+            "condition_ids": [],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 2,
+            "action": "Include recessed portion beyond house facade and roof in area calculation",
+            "condition_ids": [
+              "c1"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": [
+              1
+            ]
+          },
+          {
+            "step": 3,
+            "action": "Measure area to outside material of entryway feature",
+            "condition_ids": [
+              "c2"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": [
+              1
+            ]
+          },
+          {
+            "step": 4,
+            "action": "Apply double counting toward gross floor area",
+            "condition_ids": [
+              "c3"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": [
+              1,
+              2,
+              3
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:31:18",
+  "model_used": "anthropic/claude-sonnet-4"
+}

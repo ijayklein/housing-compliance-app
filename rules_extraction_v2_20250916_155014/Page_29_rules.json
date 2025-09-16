@@ -1,0 +1,361 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_29.md",
+  "file_name": "Page_29.md",
+  "analysis": {
+    "extracted_rules": {
+      "page": {
+        "title": "Determining setbacks on oddly shaped lots considerations",
+        "page_number": 23,
+        "figure_caption": "Figure 17 \u2014 Setbacks for oddly shaped lots",
+        "source_keys": [
+          "Curb",
+          "Lot line",
+          "Sidewalk",
+          "Required setbacks",
+          "Buildable area"
+        ]
+      },
+      "rules": [
+        {
+          "id": "A_FLAG_LOT",
+          "title": "Flag lot \u2014 front lot line determination and front setback",
+          "Qualifiers": {
+            "Scope": "Determination of front lot line and applicable front yard setback for flag lots.",
+            "Applicability": "Lots identified as flag lots; street present along at least one edge.",
+            "Exclusions": "Non-flag lots."
+          },
+          "Variables": [
+            {
+              "name": "street_edges",
+              "description": "Edges of the lot that are adjacent to a street.",
+              "units": "count",
+              "type": "integer"
+            },
+            {
+              "name": "lot_line_parallelism_to_street",
+              "description": "Degree of parallelism of each lot line to the street edge.",
+              "units": "qualitative/relative",
+              "type": "categorical"
+            },
+            {
+              "name": "lot_line_distance_to_street",
+              "description": "Perpendicular distance from each lot line to the nearest street edge.",
+              "units": "ft",
+              "type": "number"
+            }
+          ],
+          "Constants": [
+            {
+              "name": "flag_lot_front_setback",
+              "value": 10,
+              "units": "ft",
+              "source": "Figure A callout: 'Front setback is 10' instead of 20''",
+              "status": "mandatory"
+            },
+            {
+              "name": "default_front_setback_general",
+              "value": 20,
+              "units": "ft",
+              "source": "Figure A callout (comparative reference)",
+              "status": "implied"
+            }
+          ],
+          "Conditions": [
+            {
+              "type": "mandatory",
+              "if": "Lot is a flag lot",
+              "then": "Set front lot line as the lot line that is both closest and most parallel to the street.",
+              "notes": "Use both criteria: proximity (minimum perpendicular distance) and parallelism to the street alignment."
+            },
+            {
+              "type": "mandatory",
+              "if": "Lot is a flag lot",
+              "then": "Apply a front yard setback of 10 ft.",
+              "notes": "This supersedes the implied general 20 ft front setback."
+            }
+          ],
+          "Exceptions": [
+            {
+              "description": "Front setback reduced to 10 ft from the implied general 20 ft specifically for flag lots.",
+              "applies_when": "Lot is a flag lot"
+            }
+          ],
+          "Relationships": [
+            {
+              "type": "modifies_general_standard",
+              "target_rule": "GENERAL_FRONT_SETBACK (not provided on this page)",
+              "description": "Replaces the general front setback with 10 ft for flag lots."
+            }
+          ],
+          "Ambiguities": [
+            "The 'general' 20 ft front setback is implied by the phrase 'instead of 20'' and is not defined on this page.",
+            "In cases where multiple lot lines could be considered both 'closest' and 'most parallel', the selection method is not fully specified."
+          ]
+        },
+        {
+          "id": "B_CORNER_LOT",
+          "title": "Corner lot \u2014 street side yard setback",
+          "Qualifiers": {
+            "Scope": "Street side yard setback dimension for corner lots.",
+            "Applicability": "Lots with two street frontages forming a corner.",
+            "Exclusions": "Non-corner lots."
+          },
+          "Variables": [
+            {
+              "name": "street_frontages",
+              "description": "The two lot edges that abut streets on a corner lot.",
+              "units": "count",
+              "type": "integer"
+            }
+          ],
+          "Constants": [
+            {
+              "name": "corner_lot_street_side_setback",
+              "value": 16,
+              "units": "ft",
+              "source": "Figure B dimension label: '16''",
+              "status": "mandatory"
+            }
+          ],
+          "Conditions": [
+            {
+              "type": "mandatory",
+              "if": "Lot is a corner lot",
+              "then": "Provide a street side yard setback of 16 ft along the non-front street frontage."
+            }
+          ],
+          "Exceptions": [],
+          "Relationships": [
+            {
+              "type": "baseline_for",
+              "target_rule": "C_SUBSTANDARD_CORNER_LOT",
+              "description": "Provides baseline street side setback (16 ft) that is reduced for substandard corner lots."
+            }
+          ],
+          "Ambiguities": [
+            "Which street frontage is the 'front yard' versus the 'street side yard' is not specified on this page."
+          ]
+        },
+        {
+          "id": "C_SUBSTANDARD_CORNER_LOT",
+          "title": "Substandard corner lot with frontage < 50 ft \u2014 front lot line determination and reduced street side setback",
+          "Qualifiers": {
+            "Scope": "Front lot line determination and street side setback for corner lots with substandard frontage.",
+            "Applicability": "Corner lots where a frontage is less than 50 ft.",
+            "Exclusions": "Corner lots with frontage >= 50 ft; non-corner lots."
+          },
+          "Variables": [
+            {
+              "name": "frontage_length_street_1",
+              "description": "Length of frontage along the first street.",
+              "units": "ft",
+              "type": "number"
+            },
+            {
+              "name": "frontage_length_street_2",
+              "description": "Length of frontage along the second street.",
+              "units": "ft",
+              "type": "number"
+            },
+            {
+              "name": "shortest_frontage",
+              "description": "The shorter of the two street frontages.",
+              "units": "ft",
+              "type": "number",
+              "derived_from": [
+                "frontage_length_street_1",
+                "frontage_length_street_2"
+              ]
+            }
+          ],
+          "Constants": [
+            {
+              "name": "substandard_frontage_threshold",
+              "value": 50,
+              "units": "ft",
+              "source": "Figure C title: 'frontage < 50''",
+              "status": "mandatory_threshold"
+            },
+            {
+              "name": "reduced_street_side_setback_substandard_corner",
+              "value": 10,
+              "units": "ft",
+              "source": "Figure C callout and dimension: 'Street side setback is 10' instead of 16''",
+              "status": "mandatory"
+            },
+            {
+              "name": "corner_lot_street_side_setback_standard",
+              "value": 16,
+              "units": "ft",
+              "source": "Figure B and Figure C comparative reference",
+              "status": "baseline_reference"
+            }
+          ],
+          "Conditions": [
+            {
+              "type": "mandatory",
+              "if": "Lot is a corner lot with at least one frontage < 50 ft",
+              "then": "Designate the front lot line as the shortest of the two street frontages."
+            },
+            {
+              "type": "mandatory",
+              "if": "Lot is a substandard corner lot (frontage < 50 ft)",
+              "then": "Apply a street side yard setback of 10 ft.",
+              "notes": "This replaces the standard 16 ft street side setback applicable to corner lots."
+            }
+          ],
+          "Exceptions": [
+            {
+              "description": "Street side setback reduced from 16 ft to 10 ft due to substandard frontage.",
+              "applies_when": "Corner lot frontage < 50 ft"
+            }
+          ],
+          "Relationships": [
+            {
+              "type": "modifies",
+              "target_rule": "B_CORNER_LOT",
+              "description": "Overrides the 16 ft street side setback for qualifying substandard corner lots."
+            }
+          ],
+          "Ambiguities": [
+            "The phrase 'frontage < 50'' does not specify whether the threshold applies to the designated front frontage only or either street frontage.",
+            "Criteria for choosing which street is 'front' beyond 'shortest of the two frontages' are not further detailed."
+          ]
+        },
+        {
+          "id": "D_THROUGH_LOT",
+          "title": "Through lot \u2014 yard designations",
+          "Qualifiers": {
+            "Scope": "Yard designations for through lots.",
+            "Applicability": "Lots with streets on opposite, parallel sides.",
+            "Exclusions": "Lots without streets on opposite, parallel sides."
+          },
+          "Variables": [
+            {
+              "name": "opposite_street_edges",
+              "description": "Presence of streets along two opposite, parallel lot edges.",
+              "units": "boolean",
+              "type": "boolean"
+            }
+          ],
+          "Constants": [],
+          "Conditions": [
+            {
+              "type": "mandatory",
+              "if": "Lot is a through lot (streets on opposite, parallel sides)",
+              "then": "Provide interior side yards on the two non-street sides; designate one street-adjacent yard as front yard and the opposite as rear yard."
+            }
+          ],
+          "Exceptions": [],
+          "Relationships": [],
+          "Ambiguities": [
+            "Which of the two street-adjacent yards is designated 'front' versus 'rear' is not specified on this page.",
+            "No numeric setback distances are provided on this page for through lots."
+          ]
+        },
+        {
+          "id": "E_WEDGE_SHAPED_LOT",
+          "title": "Wedge-shaped lot \u2014 rear yard determination procedure",
+          "Qualifiers": {
+            "Scope": "Method to determine rear yard on wedge-shaped lots lacking a rear lot line.",
+            "Applicability": "Wedge-shaped lots that do not have a rear lot line.",
+            "Exclusions": "Lots with a definable rear lot line."
+          },
+          "Variables": [
+            {
+              "name": "side_lot_line_intersection_point",
+              "description": "The point where the two side lot lines intersect.",
+              "units": "geometric point",
+              "type": "geometry"
+            }
+          ],
+          "Constants": [
+            {
+              "name": "rear_yard_radius_for_wedge_lots",
+              "value": 20,
+              "units": "ft",
+              "source": "Figure E callout: 'The rear yard is determined by a 20' radius from intersection of side lot lines.'",
+              "status": "mandatory"
+            }
+          ],
+          "Conditions": [
+            {
+              "type": "mandatory",
+              "if": "Lot is wedge-shaped and lacks a rear lot line",
+              "then": "Determine the rear yard using a 20 ft radius from the intersection of the side lot lines.",
+              "notes": "Implement by constructing an arc centered at the side lot line intersection with a 20 ft radius; use this to define the rear yard area."
+            }
+          ],
+          "Exceptions": [
+            {
+              "description": "Wedge-shaped lots do not have rear lot lines, so the standard method of identifying a rear lot line does not apply.",
+              "applies_when": "Lot is wedge-shaped"
+            }
+          ],
+          "Relationships": [
+            {
+              "type": "overrides_method",
+              "target_rule": "Rear lot line determination rules for standard or polygonal lots",
+              "description": "Provides an alternative method for rear yard determination when no rear lot line exists."
+            }
+          ],
+          "Ambiguities": [
+            "The exact construction/use of the 20 ft radius (e.g., which portion of the arc defines the rear yard boundary) is not fully specified."
+          ]
+        },
+        {
+          "id": "G_POLYGON_LOT_GT4_SIDES",
+          "title": "Lots with more than 4 sides \u2014 rear lot line determination",
+          "Qualifiers": {
+            "Scope": "Method to identify the rear lot line on lots with more than four sides.",
+            "Applicability": "Lots with more than four sides that abut a street along one edge.",
+            "Exclusions": "Lots with four or fewer sides; wedge-shaped lots without a rear lot line."
+          },
+          "Variables": [
+            {
+              "name": "lot_sides_count",
+              "description": "Number of sides of the lot polygon.",
+              "units": "count",
+              "type": "integer"
+            },
+            {
+              "name": "distance_of_each_lot_line_to_street",
+              "description": "Perpendicular distance from each lot line to the street edge.",
+              "units": "ft",
+              "type": "number"
+            },
+            {
+              "name": "parallelism_of_lot_lines_to_street",
+              "description": "Relative parallelism between each lot line and the street alignment.",
+              "units": "qualitative/relative",
+              "type": "categorical"
+            }
+          ],
+          "Constants": [],
+          "Conditions": [
+            {
+              "type": "mandatory",
+              "if": "Lot has more than four sides and abuts a street along one edge",
+              "then": "Designate the rear lot line as the lot line that is farthest from and most parallel to the street."
+            }
+          ],
+          "Exceptions": [],
+          "Relationships": [],
+          "Ambiguities": [
+            "If multiple lot lines are equally 'farthest' or 'most parallel' to the street, tie-breaking criteria are not provided.",
+            "No numeric setback distances for the rear yard are provided on this page."
+          ]
+        }
+      ]
+    },
+    "parse_error": false,
+    "raw_response": "{\n  \"page\": {\n    \"title\": \"Determining setbacks on oddly shaped lots considerations\",\n    \"page_number\": 23,\n    \"figure_caption\": \"Figure 17 \u2014 Setbacks for oddly shaped lots\",\n    \"source_keys\": [\n      \"Curb\",\n      \"Lot line\",\n      \"Sidewalk\",\n      \"Required setbacks\",\n      \"Buildable area\"\n    ]\n  },\n  \"rules\": [\n    {\n      \"id\": \"A_FLAG_LOT\",\n      \"title\": \"Flag lot \u2014 front lot line determination and front setback\",\n      \"Qualifiers\": {\n        \"Scope\": \"Determination of front lot line and applicable front yard setback for flag lots.\",\n        \"Applicability\": \"Lots identified as flag lots; street present along at least one edge.\",\n        \"Exclusions\": \"Non-flag lots.\"\n      },\n      \"Variables\": [\n        {\n          \"name\": \"street_edges\",\n          \"description\": \"Edges of the lot that are adjacent to a street.\",\n          \"units\": \"count\",\n          \"type\": \"integer\"\n        },\n        {\n          \"name\": \"lot_line_parallelism_to_street\",\n          \"description\": \"Degree of parallelism of each lot line to the street edge.\",\n          \"units\": \"qualitative/relative\",\n          \"type\": \"categorical\"\n        },\n        {\n          \"name\": \"lot_line_distance_to_street\",\n          \"description\": \"Perpendicular distance from each lot line to the nearest street edge.\",\n          \"units\": \"ft\",\n          \"type\": \"number\"\n        }\n      ],\n      \"Constants\": [\n        {\n          \"name\": \"flag_lot_front_setback\",\n          \"value\": 10,\n          \"units\": \"ft\",\n          \"source\": \"Figure A callout: 'Front setback is 10' instead of 20''\",\n          \"status\": \"mandatory\"\n        },\n        {\n          \"name\": \"default_front_setback_general\",\n          \"value\": 20,\n          \"units\": \"ft\",\n          \"source\": \"Figure A callout (comparative reference)\",\n          \"status\": \"implied\"\n        }\n      ],\n      \"Conditions\": [\n        {\n          \"type\": \"mandatory\",\n          \"if\": \"Lot is a flag lot\",\n          \"then\": \"Set front lot line as the lot line that is both closest and most parallel to the street.\",\n          \"notes\": \"Use both criteria: proximity (minimum perpendicular distance) and parallelism to the street alignment.\"\n        },\n        {\n          \"type\": \"mandatory\",\n          \"if\": \"Lot is a flag lot\",\n          \"then\": \"Apply a front yard setback of 10 ft.\",\n          \"notes\": \"This supersedes the implied general 20 ft front setback.\"\n        }\n      ],\n      \"Exceptions\": [\n        {\n          \"description\": \"Front setback reduced to 10 ft from the implied general 20 ft specifically for flag lots.\",\n          \"applies_when\": \"Lot is a flag lot\"\n        }\n      ],\n      \"Relationships\": [\n        {\n          \"type\": \"modifies_general_standard\",\n          \"target_rule\": \"GENERAL_FRONT_SETBACK (not provided on this page)\",\n          \"description\": \"Replaces the general front setback with 10 ft for flag lots.\"\n        }\n      ],\n      \"Ambiguities\": [\n        \"The 'general' 20 ft front setback is implied by the phrase 'instead of 20'' and is not defined on this page.\",\n        \"In cases where multiple lot lines could be considered both 'closest' and 'most parallel', the selection method is not fully specified.\"\n      ]\n    },\n    {\n      \"id\": \"B_CORNER_LOT\",\n      \"title\": \"Corner lot \u2014 street side yard setback\",\n      \"Qualifiers\": {\n        \"Scope\": \"Street side yard setback dimension for corner lots.\",\n        \"Applicability\": \"Lots with two street frontages forming a corner.\",\n        \"Exclusions\": \"Non-corner lots.\"\n      },\n      \"Variables\": [\n        {\n          \"name\": \"street_frontages\",\n          \"description\": \"The two lot edges that abut streets on a corner lot.\",\n          \"units\": \"count\",\n          \"type\": \"integer\"\n        }\n      ],\n      \"Constants\": [\n        {\n          \"name\": \"corner_lot_street_side_setback\",\n          \"value\": 16,\n          \"units\": \"ft\",\n          \"source\": \"Figure B dimension label: '16''\",\n          \"status\": \"mandatory\"\n        }\n      ],\n      \"Conditions\": [\n        {\n          \"type\": \"mandatory\",\n          \"if\": \"Lot is a corner lot\",\n          \"then\": \"Provide a street side yard setback of 16 ft along the non-front street frontage.\"\n        }\n      ],\n      \"Exceptions\": [],\n      \"Relationships\": [\n        {\n          \"type\": \"baseline_for\",\n          \"target_rule\": \"C_SUBSTANDARD_CORNER_LOT\",\n          \"description\": \"Provides baseline street side setback (16 ft) that is reduced for substandard corner lots.\"\n        }\n      ],\n      \"Ambiguities\": [\n        \"Which street frontage is the 'front yard' versus the 'street side yard' is not specified on this page.\"\n      ]\n    },\n    {\n      \"id\": \"C_SUBSTANDARD_CORNER_LOT\",\n      \"title\": \"Substandard corner lot with frontage < 50 ft \u2014 front lot line determination and reduced street side setback\",\n      \"Qualifiers\": {\n        \"Scope\": \"Front lot line determination and street side setback for corner lots with substandard frontage.\",\n        \"Applicability\": \"Corner lots where a frontage is less than 50 ft.\",\n        \"Exclusions\": \"Corner lots with frontage >= 50 ft; non-corner lots.\"\n      },\n      \"Variables\": [\n        {\n          \"name\": \"frontage_length_street_1\",\n          \"description\": \"Length of frontage along the first street.\",\n          \"units\": \"ft\",\n          \"type\": \"number\"\n        },\n        {\n          \"name\": \"frontage_length_street_2\",\n          \"description\": \"Length of frontage along the second street.\",\n          \"units\": \"ft\",\n          \"type\": \"number\"\n        },\n        {\n          \"name\": \"shortest_frontage\",\n          \"description\": \"The shorter of the two street frontages.\",\n          \"units\": \"ft\",\n          \"type\": \"number\",\n          \"derived_from\": [\n            \"frontage_length_street_1\",\n            \"frontage_length_street_2\"\n          ]\n        }\n      ],\n      \"Constants\": [\n        {\n          \"name\": \"substandard_frontage_threshold\",\n          \"value\": 50,\n          \"units\": \"ft\",\n          \"source\": \"Figure C title: 'frontage < 50''\",\n          \"status\": \"mandatory_threshold\"\n        },\n        {\n          \"name\": \"reduced_street_side_setback_substandard_corner\",\n          \"value\": 10,\n          \"units\": \"ft\",\n          \"source\": \"Figure C callout and dimension: 'Street side setback is 10' instead of 16''\",\n          \"status\": \"mandatory\"\n        },\n        {\n          \"name\": \"corner_lot_street_side_setback_standard\",\n          \"value\": 16,\n          \"units\": \"ft\",\n          \"source\": \"Figure B and Figure C comparative reference\",\n          \"status\": \"baseline_reference\"\n        }\n      ],\n      \"Conditions\": [\n        {\n          \"type\": \"mandatory\",\n          \"if\": \"Lot is a corner lot with at least one frontage < 50 ft\",\n          \"then\": \"Designate the front lot line as the shortest of the two street frontages.\"\n        },\n        {\n          \"type\": \"mandatory\",\n          \"if\": \"Lot is a substandard corner lot (frontage < 50 ft)\",\n          \"then\": \"Apply a street side yard setback of 10 ft.\",\n          \"notes\": \"This replaces the standard 16 ft street side setback applicable to corner lots.\"\n        }\n      ],\n      \"Exceptions\": [\n        {\n          \"description\": \"Street side setback reduced from 16 ft to 10 ft due to substandard frontage.\",\n          \"applies_when\": \"Corner lot frontage < 50 ft\"\n        }\n      ],\n      \"Relationships\": [\n        {\n          \"type\": \"modifies\",\n          \"target_rule\": \"B_CORNER_LOT\",\n          \"description\": \"Overrides the 16 ft street side setback for qualifying substandard corner lots.\"\n        }\n      ],\n      \"Ambiguities\": [\n        \"The phrase 'frontage < 50'' does not specify whether the threshold applies to the designated front frontage only or either street frontage.\",\n        \"Criteria for choosing which street is 'front' beyond 'shortest of the two frontages' are not further detailed.\"\n      ]\n    },\n    {\n      \"id\": \"D_THROUGH_LOT\",\n      \"title\": \"Through lot \u2014 yard designations\",\n      \"Qualifiers\": {\n        \"Scope\": \"Yard designations for through lots.\",\n        \"Applicability\": \"Lots with streets on opposite, parallel sides.\",\n        \"Exclusions\": \"Lots without streets on opposite, parallel sides.\"\n      },\n      \"Variables\": [\n        {\n          \"name\": \"opposite_street_edges\",\n          \"description\": \"Presence of streets along two opposite, parallel lot edges.\",\n          \"units\": \"boolean\",\n          \"type\": \"boolean\"\n        }\n      ],\n      \"Constants\": [],\n      \"Conditions\": [\n        {\n          \"type\": \"mandatory\",\n          \"if\": \"Lot is a through lot (streets on opposite, parallel sides)\",\n          \"then\": \"Provide interior side yards on the two non-street sides; designate one street-adjacent yard as front yard and the opposite as rear yard.\"\n        }\n      ],\n      \"Exceptions\": [],\n      \"Relationships\": [],\n      \"Ambiguities\": [\n        \"Which of the two street-adjacent yards is designated 'front' versus 'rear' is not specified on this page.\",\n        \"No numeric setback distances are provided on this page for through lots.\"\n      ]\n    },\n    {\n      \"id\": \"E_WEDGE_SHAPED_LOT\",\n      \"title\": \"Wedge-shaped lot \u2014 rear yard determination procedure\",\n      \"Qualifiers\": {\n        \"Scope\": \"Method to determine rear yard on wedge-shaped lots lacking a rear lot line.\",\n        \"Applicability\": \"Wedge-shaped lots that do not have a rear lot line.\",\n        \"Exclusions\": \"Lots with a definable rear lot line.\"\n      },\n      \"Variables\": [\n        {\n          \"name\": \"side_lot_line_intersection_point\",\n          \"description\": \"The point where the two side lot lines intersect.\",\n          \"units\": \"geometric point\",\n          \"type\": \"geometry\"\n        }\n      ],\n      \"Constants\": [\n        {\n          \"name\": \"rear_yard_radius_for_wedge_lots\",\n          \"value\": 20,\n          \"units\": \"ft\",\n          \"source\": \"Figure E callout: 'The rear yard is determined by a 20' radius from intersection of side lot lines.'\",\n          \"status\": \"mandatory\"\n        }\n      ],\n      \"Conditions\": [\n        {\n          \"type\": \"mandatory\",\n          \"if\": \"Lot is wedge-shaped and lacks a rear lot line\",\n          \"then\": \"Determine the rear yard using a 20 ft radius from the intersection of the side lot lines.\",\n          \"notes\": \"Implement by constructing an arc centered at the side lot line intersection with a 20 ft radius; use this to define the rear yard area.\"\n        }\n      ],\n      \"Exceptions\": [\n        {\n          \"description\": \"Wedge-shaped lots do not have rear lot lines, so the standard method of identifying a rear lot line does not apply.\",\n          \"applies_when\": \"Lot is wedge-shaped\"\n        }\n      ],\n      \"Relationships\": [\n        {\n          \"type\": \"overrides_method\",\n          \"target_rule\": \"Rear lot line determination rules for standard or polygonal lots\",\n          \"description\": \"Provides an alternative method for rear yard determination when no rear lot line exists.\"\n        }\n      ],\n      \"Ambiguities\": [\n        \"The exact construction/use of the 20 ft radius (e.g., which portion of the arc defines the rear yard boundary) is not fully specified.\"\n      ]\n    },\n    {\n      \"id\": \"G_POLYGON_LOT_GT4_SIDES\",\n      \"title\": \"Lots with more than 4 sides \u2014 rear lot line determination\",\n      \"Qualifiers\": {\n        \"Scope\": \"Method to identify the rear lot line on lots with more than four sides.\",\n        \"Applicability\": \"Lots with more than four sides that abut a street along one edge.\",\n        \"Exclusions\": \"Lots with four or fewer sides; wedge-shaped lots without a rear lot line.\"\n      },\n      \"Variables\": [\n        {\n          \"name\": \"lot_sides_count\",\n          \"description\": \"Number of sides of the lot polygon.\",\n          \"units\": \"count\",\n          \"type\": \"integer\"\n        },\n        {\n          \"name\": \"distance_of_each_lot_line_to_street\",\n          \"description\": \"Perpendicular distance from each lot line to the street edge.\",\n          \"units\": \"ft\",\n          \"type\": \"number\"\n        },\n        {\n          \"name\": \"parallelism_of_lot_lines_to_street\",\n          \"description\": \"Relative parallelism between each lot line and the street alignment.\",\n          \"units\": \"qualitative/relative\",\n          \"type\": \"categorical\"\n        }\n      ],\n      \"Constants\": [],\n      \"Conditions\": [\n        {\n          \"type\": \"mandatory\",\n          \"if\": \"Lot has more than four sides and abuts a street along one edge\",\n          \"then\": \"Designate the rear lot line as the lot line that is farthest from and most parallel to the street.\"\n        }\n      ],\n      \"Exceptions\": [],\n      \"Relationships\": [],\n      \"Ambiguities\": [\n        \"If multiple lot lines are equally 'farthest' or 'most parallel' to the street, tie-breaking criteria are not provided.\",\n        \"No numeric setback distances for the rear yard are provided on this page.\"\n      ]\n    }\n  ]\n}",
+    "response_time": 186.5652289390564,
+    "input_tokens": 859,
+    "output_tokens": 7958,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 15:54:43",
+  "model": "openai/gpt-5",
+  "success": true
+}

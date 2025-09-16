@@ -1,0 +1,384 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_40.png",
+  "image_name": "Page_40.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Parking\n\nParking regulations af-\nfect the appearance of\nthe streetscapes in our\nresidential neighbor-\nhoods by minimizing\nthe number of cars\nparked on the street\nand in the front yards\nby requiring that there\nare parking spaces\navailable deeper into\nthe lot.\n\nCode sections\nPage 34\n18.12.060, 18.83.090\nPage 35\n18.83.090, 18.83.110(a)\nPage 36\n18.12.060\nPage 37\n18.12.040 (f)\nPage 38\n18.12.060\nPage 39\n18.12.080 (b)\n\n34\n\nParking space standards\n\n\u2022 Two spaces are required on the lot (per\ndwelling).\n\n\u2022 They may NOT be located in the\nrequired front yard or, first 10 ft of,\nrequired street side yard.\n\n\u2022 2nd dwelling units have same require-\nments.\n\n\u2022 No underground parking garages except\nby variance.\n\n\u2022 One of the two spaces must be covered.\n\n\u2022 To be considered detached, a covered-\nparking structure must be a minimum of\n3' from the main dwelling.\n\n\u2022 Minimim size for an uncovered space is\n8.5' x 18'.\n\n\u2022 Minimum clearance inside a covered\nparking structure to be 10' x 20' for\neach space. Therefore, a two-car garage\nor carport to be 20' x 20' clear inside.\n\n\u2022 Minimum vertical clearance: 7'.\n\n* Clear area for parking space must be free\nof other uses e.g., water heaters, clothes\nwashers or dryer, bicycle parking facili-\nties, etc.\n\nFig 28 Parking space dimensions for garage\nand uncovered space in plan view\n\n*\n10' min\ninside\nclearance\n\nRequired covered space\n20' min. inside clearance\n\n*\n\n2nd space (uncovered)\nTandem OK\n18' min.\nuncovered space\n\n*\n\n8.5' min\nuncovered\nspace",
+      "visual_elements": [
+        {
+          "type": "figure",
+          "description": "Figure 28: Parking space dimensions for garage and uncovered space in plan view. It shows two parking spaces, one covered and one uncovered, arranged in tandem. The covered space has a minimum inside clearance of 10' wide and 20' long. The uncovered space is 8.5' wide and 18' long. A vertical arrow with '20' min. inside clearance' points to the length of the covered space. Another vertical arrow with '18' min. uncovered space' points to the length of the uncovered space. A horizontal arrow with '10' min inside clearance' points to the width of the covered space. Another horizontal arrow with '8.5' min uncovered space' points to the width of the uncovered space. Asterisks are placed next to the 10' min inside clearance, 20' min inside clearance, and 8.5' min uncovered space dimensions, indicating a note or further detail.",
+          "location": "Right side, middle to bottom"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Minimum size for an uncovered space",
+          "value_type": "Measurement",
+          "value": "8.5 x 18",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum clearance inside a covered parking structure (single space)",
+          "value_type": "Measurement",
+          "value": "10 x 20",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum clearance inside a two-car garage or carport",
+          "value_type": "Measurement",
+          "value": "20 x 20",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum vertical clearance",
+          "value_type": "Measurement",
+          "value": "7",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Covered space minimum inside clearance (width)",
+          "value_type": "Measurement",
+          "value": "10",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Covered space minimum inside clearance (length)",
+          "value_type": "Measurement",
+          "value": "20",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Uncovered space minimum width",
+          "value_type": "Measurement",
+          "value": "8.5",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Uncovered space minimum length",
+          "value_type": "Measurement",
+          "value": "18",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum distance of covered-parking structure from main dwelling (if detached)",
+          "value_type": "Measurement",
+          "value": "3",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Maximum location in required front yard or street side yard",
+          "value_type": "Measurement",
+          "value": "10",
+          "unit": "feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Parking space standards",
+        "subheadings": [],
+        "sections": [
+          "Parking regulations affect the appearance of the streetscapes in our residential neighborhoods by minimizing the number of cars parked on the street and in the front yards by requiring that there are parking spaces available deeper into the lot.",
+          "Code sections"
+        ]
+      },
+      "additional_notes": [
+        "The page number '34' is located at the bottom left.",
+        "The left column with 'Parking' heading and descriptive text is shaded gray.",
+        "Asterisks are used to denote specific conditions or measurements in the text and the figure, implying a connection between them, though not explicitly stated as footnotes."
+      ],
+      "cross_references": [
+        "Page 34: 18.12.060, 18.83.090",
+        "Page 35: 18.83.090, 18.83.110(a)",
+        "Page 36: 18.12.060",
+        "Page 37: 18.12.040 (f)",
+        "Page 38: 18.12.060",
+        "Page 39: 18.12.080 (b)"
+      ],
+      "conditions_and_qualifiers": {
+        "qualifiers": [
+          {
+            "id": "q1",
+            "text": "(per dwelling)",
+            "applies_to_conditions": [
+              "c1"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q2",
+            "text": "except by variance",
+            "applies_to_conditions": [
+              "c4"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q3",
+            "text": "To be considered detached",
+            "applies_to_conditions": [
+              "c6"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q4",
+            "text": "for each space",
+            "applies_to_conditions": [
+              "c8"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q5",
+            "text": "Therefore, a two-car garage or carport to be 20' x 20' clear inside.",
+            "applies_to_conditions": [
+              "c9"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q6",
+            "text": "e.g., water heaters, clothes washers or dryer, bicycle parking facilities, etc.",
+            "applies_to_conditions": [
+              "c11"
+            ],
+            "scope": "Specific"
+          }
+        ],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "Two spaces are required on the lot",
+            "value_type": "Numerical",
+            "operator": "=",
+            "threshold_value": 2,
+            "unit": "spaces"
+          },
+          {
+            "id": "c2",
+            "text": "They may NOT be located in the required front yard",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "false",
+            "unit": "None"
+          },
+          {
+            "id": "c3",
+            "text": "They may NOT be located in the first 10 ft of, required street side yard",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "false",
+            "unit": "None"
+          },
+          {
+            "id": "c4",
+            "text": "No underground parking garages",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "false",
+            "unit": "None"
+          },
+          {
+            "id": "c5",
+            "text": "One of the two spaces must be covered",
+            "value_type": "Numerical",
+            "operator": "=",
+            "threshold_value": 1,
+            "unit": "covered space"
+          },
+          {
+            "id": "c6",
+            "text": "a covered-parking structure must be a minimum of 3' from the main dwelling",
+            "value_type": "Measurement",
+            "operator": ">=",
+            "threshold_value": 3,
+            "unit": "feet"
+          },
+          {
+            "id": "c7",
+            "text": "Minimim size for an uncovered space is 8.5' x 18'",
+            "value_type": "Measurement",
+            "operator": "=",
+            "threshold_value": "8.5' x 18'",
+            "unit": "feet"
+          },
+          {
+            "id": "c8",
+            "text": "Minimum clearance inside a covered parking structure to be 10' x 20'",
+            "value_type": "Measurement",
+            "operator": "=",
+            "threshold_value": "10' x 20'",
+            "unit": "feet"
+          },
+          {
+            "id": "c9",
+            "text": "a two-car garage or carport to be 20' x 20' clear inside",
+            "value_type": "Measurement",
+            "operator": "=",
+            "threshold_value": "20' x 20'",
+            "unit": "feet"
+          },
+          {
+            "id": "c10",
+            "text": "Minimum vertical clearance: 7'",
+            "value_type": "Measurement",
+            "operator": ">=",
+            "threshold_value": 7,
+            "unit": "feet"
+          },
+          {
+            "id": "c11",
+            "text": "Clear area for parking space must be free of other uses",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "true",
+            "unit": "None"
+          },
+          {
+            "id": "c12",
+            "text": "2nd dwelling units have same requirements",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "true",
+            "unit": "None"
+          }
+        ],
+        "logical_relationships": [
+          {
+            "operation": "AND",
+            "condition_ids": [
+              "c2",
+              "c3"
+            ],
+            "expression": "They may NOT be located in the required front yard OR, first 10 ft of, required street side yard.",
+            "evaluation_order": 1
+          }
+        ],
+        "execution_sequence": [
+          {
+            "step": 1,
+            "action": "Ensure two parking spaces are provided on the lot.",
+            "condition_ids": [
+              "c1"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 2,
+            "action": "Verify parking spaces are not located in the required front yard or within the first 10 ft of the required street side yard.",
+            "condition_ids": [
+              "c2",
+              "c3"
+            ],
+            "qualifier_ids": [],
+            "dependencies": []
+          },
+          {
+            "step": 3,
+            "action": "Apply the same parking requirements to 2nd dwelling units.",
+            "condition_ids": [
+              "c12"
+            ],
+            "qualifier_ids": [],
+            "dependencies": []
+          },
+          {
+            "step": 4,
+            "action": "Prohibit underground parking garages unless a variance is obtained.",
+            "condition_ids": [
+              "c4"
+            ],
+            "qualifier_ids": [
+              "q2"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 5,
+            "action": "Ensure at least one of the two required parking spaces is covered.",
+            "condition_ids": [
+              "c5"
+            ],
+            "qualifier_ids": [],
+            "dependencies": [
+              "1"
+            ]
+          },
+          {
+            "step": 6,
+            "action": "If a covered-parking structure is detached, ensure it is a minimum of 3' from the main dwelling.",
+            "condition_ids": [
+              "c6"
+            ],
+            "qualifier_ids": [
+              "q3"
+            ],
+            "dependencies": [
+              "5"
+            ]
+          },
+          {
+            "step": 7,
+            "action": "Verify the minimum size for an uncovered parking space is 8.5' x 18'.",
+            "condition_ids": [
+              "c7"
+            ],
+            "qualifier_ids": [],
+            "dependencies": []
+          },
+          {
+            "step": 8,
+            "action": "Ensure minimum clearance inside a covered parking structure is 10' x 20' for each space.",
+            "condition_ids": [
+              "c8"
+            ],
+            "qualifier_ids": [
+              "q4"
+            ],
+            "dependencies": [
+              "5"
+            ]
+          },
+          {
+            "step": 9,
+            "action": "If a two-car garage or carport, ensure it is 20' x 20' clear inside.",
+            "condition_ids": [
+              "c9"
+            ],
+            "qualifier_ids": [
+              "q5"
+            ],
+            "dependencies": [
+              "8"
+            ]
+          },
+          {
+            "step": 10,
+            "action": "Ensure minimum vertical clearance of 7' for parking spaces.",
+            "condition_ids": [
+              "c10"
+            ],
+            "qualifier_ids": [],
+            "dependencies": []
+          },
+          {
+            "step": 11,
+            "action": "Ensure the clear area for parking space is free of other uses.",
+            "condition_ids": [
+              "c11"
+            ],
+            "qualifier_ids": [
+              "q6"
+            ],
+            "dependencies": []
+          }
+        ]
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:24:37",
+  "model_used": "google/gemini-2.5-flash"
+}

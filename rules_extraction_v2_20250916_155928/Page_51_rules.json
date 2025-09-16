@@ -1,0 +1,270 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_51.md",
+  "file_name": "Page_51.md",
+  "analysis": {
+    "extracted_rules": {
+      "regulation_analysis": [
+        {
+          "rule_id": "Page51_Detached_2nd_Dwelling_Unit_Parking",
+          "rule_name": "Detached 2nd-dwelling units & associated parking site planning",
+          "source_file": "Page 51",
+          "Qualifiers": {
+            "scope": "Site planning for detached second dwelling units and their associated required parking.",
+            "applicability": [
+              "Applies to properties with a main dwelling and a detached second dwelling unit.",
+              "The provided examples are for an 'Interior lot'."
+            ],
+            "exclusions": [
+              {
+                "area": "Front setback",
+                "description": "The area within the front setback may not be used to satisfy required parking spaces (e.g., for uncovered spaces)."
+              }
+            ]
+          },
+          "Variables": [
+            {
+              "name": "second_dwelling_unit_area",
+              "type": "Dimensional",
+              "description": "The maximum floor area of the detached second dwelling unit."
+            },
+            {
+              "name": "garage_area",
+              "type": "Dimensional",
+              "description": "The maximum floor area of a single-car garage."
+            },
+            {
+              "name": "rear_yard_setback",
+              "type": "Dimensional",
+              "description": "Minimum required dimension in the rear yard."
+            },
+            {
+              "name": "parking_configuration",
+              "type": "Usage",
+              "description": "Describes how parking is arranged (e.g., attached, detached, separate, combined)."
+            }
+          ],
+          "Constants": [
+            {
+              "name": "max_second_dwelling_unit_area",
+              "value": 900,
+              "unit": "sf",
+              "spec": "max",
+              "description": "Maximum area for a detached 2nd dwelling unit."
+            },
+            {
+              "name": "max_single_car_garage_area",
+              "value": 200,
+              "unit": "sf",
+              "spec": "max",
+              "description": "Maximum area for a 1-car garage.",
+              "notes": [
+                "Ambiguous Language: Value is faint in the source text and noted as 'cannot be confirmed with certainty'."
+              ]
+            },
+            {
+              "name": "min_rear_yard_dimension",
+              "value": "Not Legible",
+              "unit": "feet",
+              "spec": "min",
+              "description": "Minimum dimension in the rear yard.",
+              "notes": [
+                "Ambiguous Language: The numerical value is not legible in the source scan."
+              ]
+            }
+          ],
+          "Conditions": [],
+          "Exceptions": [],
+          "Relationships": {
+            "hierarchical": "This rule contains four distinct sub-rules (scenarios) for parking configurations, which are presented as examples of site planning solutions.",
+            "sub_rules": [
+              {
+                "rule_id": "Page51_Scenario_A",
+                "rule_name": "A Detached & separate from main-dwelling parking",
+                "Qualifiers": {
+                  "scope": "Parking for main and second dwelling are in separate structures.",
+                  "applicability": [
+                    "Main dwelling has a 1-car attached garage.",
+                    "Second dwelling has a 1-car detached garage."
+                  ]
+                },
+                "Variables": [
+                  {
+                    "name": "detached_garage_location",
+                    "type": "Usage",
+                    "description": "Location of the detached garage for the second dwelling unit.",
+                    "allowed_values": [
+                      "rear yard",
+                      "side yards"
+                    ]
+                  },
+                  {
+                    "name": "distance_from_front_lot_line",
+                    "type": "Dimensional",
+                    "description": "Distance of the detached garage from the front lot line."
+                  }
+                ],
+                "Constants": [
+                  {
+                    "name": "detached_garage_placement_threshold",
+                    "value": 75,
+                    "unit": "feet",
+                    "spec": "at least",
+                    "description": "Minimum distance from the front lot line for a detached garage to be placed in rear/side yards."
+                  }
+                ],
+                "Conditions": [
+                  {
+                    "type": "Conditional Permission",
+                    "logic": "IF (detached_garage.distance_from_front_lot_line >= 75 feet) THEN (detached_garage.location MAY BE IN ['rear yard', 'side yards'])",
+                    "description": "A detached garage may be located in the rear and side yards if it is at least 75' from the front lot line."
+                  },
+                  {
+                    "type": "Mandatory",
+                    "logic": "uncovered_spaces.location MUST BE 'beyond front setback'",
+                    "description": "Both dwellings use the driveway for their uncovered spaces, which must be located beyond the front setback."
+                  }
+                ],
+                "Exceptions": [],
+                "Relationships": {
+                  "dependencies": "The permitted location of the second dwelling's detached garage is dependent on its distance from the front lot line."
+                }
+              },
+              {
+                "rule_id": "Page51_Scenario_B",
+                "rule_name": "B Attached & separate from main-dwelling parking",
+                "Qualifiers": {
+                  "scope": "Parking for the second dwelling is attached to the second dwelling unit itself.",
+                  "applicability": [
+                    "Main dwelling has a 1-car attached garage.",
+                    "Second dwelling has a 1-car garage attached to it."
+                  ]
+                },
+                "Variables": [
+                  {
+                    "name": "attached_garage_location",
+                    "type": "Usage",
+                    "description": "Location of the garage attached to the second dwelling unit.",
+                    "allowed_values": [
+                      "buildable area"
+                    ]
+                  }
+                ],
+                "Constants": [],
+                "Conditions": [
+                  {
+                    "type": "Mandatory Restriction",
+                    "logic": "IF (garage is attached to second_dwelling) THEN (garage.location MUST BE 'buildable area')",
+                    "description": "Because the garage is attached to the second dwelling, it must be located within the buildable area."
+                  },
+                  {
+                    "type": "Mandatory Restriction",
+                    "logic": "IF (garage is attached to second_dwelling) THEN (garage.location MUST NOT BE IN ['rear yard', 'side yards'])",
+                    "description": "An attached garage for the second dwelling cannot be located in the rear or side yards."
+                  },
+                  {
+                    "type": "Mandatory",
+                    "logic": "uncovered_spaces.location MUST BE 'beyond front setback'",
+                    "description": "Both dwellings use the driveway for their uncovered spaces, which must be located beyond the front setback."
+                  }
+                ],
+                "Exceptions": [],
+                "Relationships": {
+                  "dependencies": "The location of the second dwelling's garage is dependent on it being attached to the second dwelling unit."
+                }
+              },
+              {
+                "rule_id": "Page51_Scenario_C",
+                "rule_name": "C Detached & combined with main-dwelling parking",
+                "Qualifiers": {
+                  "scope": "Parking for both dwellings is combined in a single detached garage.",
+                  "applicability": [
+                    "Both dwellings share a 2-car detached garage."
+                  ]
+                },
+                "Variables": [
+                  {
+                    "name": "detached_garage_location",
+                    "type": "Usage",
+                    "description": "Location of the shared detached garage.",
+                    "allowed_values": [
+                      "rear yard",
+                      "side yards"
+                    ]
+                  },
+                  {
+                    "name": "distance_from_front_lot_line",
+                    "type": "Dimensional",
+                    "description": "Distance of the detached garage from the front lot line."
+                  }
+                ],
+                "Constants": [
+                  {
+                    "name": "detached_garage_placement_threshold",
+                    "value": 75,
+                    "unit": "feet",
+                    "spec": "at least",
+                    "description": "Minimum distance from the front lot line for a detached garage to be placed in rear/side yards."
+                  }
+                ],
+                "Conditions": [
+                  {
+                    "type": "Conditional Permission",
+                    "logic": "IF (detached_garage.distance_from_front_lot_line >= 75 feet) THEN (detached_garage.location MAY BE IN ['rear yard', 'side yards'])",
+                    "description": "A detached garage may be located in the rear and side yards if it is at least 75' from the front lot line."
+                  },
+                  {
+                    "type": "Mandatory",
+                    "logic": "uncovered_spaces.location MUST BE 'beyond front setback'",
+                    "description": "Both dwellings use the driveway for their respective uncovered spaces, which must be located beyond the front setback."
+                  }
+                ],
+                "Exceptions": [],
+                "Relationships": {
+                  "dependencies": "The permitted location of the shared detached garage is dependent on its distance from the front lot line.",
+                  "logical": "Parking is shared between the main dwelling and the second dwelling."
+                }
+              },
+              {
+                "rule_id": "Page51_Scenario_D",
+                "rule_name": "D Combined w/ main-dwelling parking that is attached to main dwelling",
+                "Qualifiers": {
+                  "scope": "Parking for both dwellings is combined in a garage attached to the main dwelling.",
+                  "applicability": [
+                    "Both dwellings share a 2-car garage attached to the main dwelling."
+                  ]
+                },
+                "Variables": [],
+                "Constants": [],
+                "Conditions": [
+                  {
+                    "type": "Mandatory",
+                    "logic": "garage.is_attached_to = 'main_dwelling'",
+                    "description": "The shared garage is attached to the main dwelling."
+                  },
+                  {
+                    "type": "Mandatory",
+                    "logic": "uncovered_spaces.location MUST BE 'beyond front setback'",
+                    "description": "Both dwellings use the driveway for their respective uncovered spaces, which must be located beyond the front setback."
+                  }
+                ],
+                "Exceptions": [],
+                "Relationships": {
+                  "logical": "Parking is shared between the main dwelling and the second dwelling and is physically integrated with the main dwelling structure."
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "parse_error": false,
+    "raw_response": "```json\n{\n  \"regulation_analysis\": [\n    {\n      \"rule_id\": \"Page51_Detached_2nd_Dwelling_Unit_Parking\",\n      \"rule_name\": \"Detached 2nd-dwelling units & associated parking site planning\",\n      \"source_file\": \"Page 51\",\n      \"Qualifiers\": {\n        \"scope\": \"Site planning for detached second dwelling units and their associated required parking.\",\n        \"applicability\": [\n          \"Applies to properties with a main dwelling and a detached second dwelling unit.\",\n          \"The provided examples are for an 'Interior lot'.\"\n        ],\n        \"exclusions\": [\n          {\n            \"area\": \"Front setback\",\n            \"description\": \"The area within the front setback may not be used to satisfy required parking spaces (e.g., for uncovered spaces).\"\n          }\n        ]\n      },\n      \"Variables\": [\n        {\n          \"name\": \"second_dwelling_unit_area\",\n          \"type\": \"Dimensional\",\n          \"description\": \"The maximum floor area of the detached second dwelling unit.\"\n        },\n        {\n          \"name\": \"garage_area\",\n          \"type\": \"Dimensional\",\n          \"description\": \"The maximum floor area of a single-car garage.\"\n        },\n        {\n          \"name\": \"rear_yard_setback\",\n          \"type\": \"Dimensional\",\n          \"description\": \"Minimum required dimension in the rear yard.\"\n        },\n        {\n          \"name\": \"parking_configuration\",\n          \"type\": \"Usage\",\n          \"description\": \"Describes how parking is arranged (e.g., attached, detached, separate, combined).\"\n        }\n      ],\n      \"Constants\": [\n        {\n          \"name\": \"max_second_dwelling_unit_area\",\n          \"value\": 900,\n          \"unit\": \"sf\",\n          \"spec\": \"max\",\n          \"description\": \"Maximum area for a detached 2nd dwelling unit.\"\n        },\n        {\n          \"name\": \"max_single_car_garage_area\",\n          \"value\": 200,\n          \"unit\": \"sf\",\n          \"spec\": \"max\",\n          \"description\": \"Maximum area for a 1-car garage.\",\n          \"notes\": [\n            \"Ambiguous Language: Value is faint in the source text and noted as 'cannot be confirmed with certainty'.\"\n          ]\n        },\n        {\n          \"name\": \"min_rear_yard_dimension\",\n          \"value\": \"Not Legible\",\n          \"unit\": \"feet\",\n          \"spec\": \"min\",\n          \"description\": \"Minimum dimension in the rear yard.\",\n          \"notes\": [\n            \"Ambiguous Language: The numerical value is not legible in the source scan.\"\n          ]\n        }\n      ],\n      \"Conditions\": [],\n      \"Exceptions\": [],\n      \"Relationships\": {\n        \"hierarchical\": \"This rule contains four distinct sub-rules (scenarios) for parking configurations, which are presented as examples of site planning solutions.\",\n        \"sub_rules\": [\n          {\n            \"rule_id\": \"Page51_Scenario_A\",\n            \"rule_name\": \"A Detached & separate from main-dwelling parking\",\n            \"Qualifiers\": {\n              \"scope\": \"Parking for main and second dwelling are in separate structures.\",\n              \"applicability\": [\n                \"Main dwelling has a 1-car attached garage.\",\n                \"Second dwelling has a 1-car detached garage.\"\n              ]\n            },\n            \"Variables\": [\n              {\n                \"name\": \"detached_garage_location\",\n                \"type\": \"Usage\",\n                \"description\": \"Location of the detached garage for the second dwelling unit.\",\n                \"allowed_values\": [\n                  \"rear yard\",\n                  \"side yards\"\n                ]\n              },\n              {\n                \"name\": \"distance_from_front_lot_line\",\n                \"type\": \"Dimensional\",\n                \"description\": \"Distance of the detached garage from the front lot line.\"\n              }\n            ],\n            \"Constants\": [\n              {\n                \"name\": \"detached_garage_placement_threshold\",\n                \"value\": 75,\n                \"unit\": \"feet\",\n                \"spec\": \"at least\",\n                \"description\": \"Minimum distance from the front lot line for a detached garage to be placed in rear/side yards.\"\n              }\n            ],\n            \"Conditions\": [\n              {\n                \"type\": \"Conditional Permission\",\n                \"logic\": \"IF (detached_garage.distance_from_front_lot_line >= 75 feet) THEN (detached_garage.location MAY BE IN ['rear yard', 'side yards'])\",\n                \"description\": \"A detached garage may be located in the rear and side yards if it is at least 75' from the front lot line.\"\n              },\n              {\n                \"type\": \"Mandatory\",\n                \"logic\": \"uncovered_spaces.location MUST BE 'beyond front setback'\",\n                \"description\": \"Both dwellings use the driveway for their uncovered spaces, which must be located beyond the front setback.\"\n              }\n            ],\n            \"Exceptions\": [],\n            \"Relationships\": {\n              \"dependencies\": \"The permitted location of the second dwelling's detached garage is dependent on its distance from the front lot line.\"\n            }\n          },\n          {\n            \"rule_id\": \"Page51_Scenario_B\",\n            \"rule_name\": \"B Attached & separate from main-dwelling parking\",\n            \"Qualifiers\": {\n              \"scope\": \"Parking for the second dwelling is attached to the second dwelling unit itself.\",\n              \"applicability\": [\n                \"Main dwelling has a 1-car attached garage.\",\n                \"Second dwelling has a 1-car garage attached to it.\"\n              ]\n            },\n            \"Variables\": [\n              {\n                \"name\": \"attached_garage_location\",\n                \"type\": \"Usage\",\n                \"description\": \"Location of the garage attached to the second dwelling unit.\",\n                \"allowed_values\": [\n                  \"buildable area\"\n                ]\n              }\n            ],\n            \"Constants\": [],\n            \"Conditions\": [\n              {\n                \"type\": \"Mandatory Restriction\",\n                \"logic\": \"IF (garage is attached to second_dwelling) THEN (garage.location MUST BE 'buildable area')\",\n                \"description\": \"Because the garage is attached to the second dwelling, it must be located within the buildable area.\"\n              },\n              {\n                \"type\": \"Mandatory Restriction\",\n                \"logic\": \"IF (garage is attached to second_dwelling) THEN (garage.location MUST NOT BE IN ['rear yard', 'side yards'])\",\n                \"description\": \"An attached garage for the second dwelling cannot be located in the rear or side yards.\"\n              },\n              {\n                \"type\": \"Mandatory\",\n                \"logic\": \"uncovered_spaces.location MUST BE 'beyond front setback'\",\n                \"description\": \"Both dwellings use the driveway for their uncovered spaces, which must be located beyond the front setback.\"\n              }\n            ],\n            \"Exceptions\": [],\n            \"Relationships\": {\n              \"dependencies\": \"The location of the second dwelling's garage is dependent on it being attached to the second dwelling unit.\"\n            }\n          },\n          {\n            \"rule_id\": \"Page51_Scenario_C\",\n            \"rule_name\": \"C Detached & combined with main-dwelling parking\",\n            \"Qualifiers\": {\n              \"scope\": \"Parking for both dwellings is combined in a single detached garage.\",\n              \"applicability\": [\n                \"Both dwellings share a 2-car detached garage.\"\n              ]\n            },\n            \"Variables\": [\n              {\n                \"name\": \"detached_garage_location\",\n                \"type\": \"Usage\",\n                \"description\": \"Location of the shared detached garage.\",\n                \"allowed_values\": [\n                  \"rear yard\",\n                  \"side yards\"\n                ]\n              },\n              {\n                \"name\": \"distance_from_front_lot_line\",\n                \"type\": \"Dimensional\",\n                \"description\": \"Distance of the detached garage from the front lot line.\"\n              }\n            ],\n            \"Constants\": [\n              {\n                \"name\": \"detached_garage_placement_threshold\",\n                \"value\": 75,\n                \"unit\": \"feet\",\n                \"spec\": \"at least\",\n                \"description\": \"Minimum distance from the front lot line for a detached garage to be placed in rear/side yards.\"\n              }\n            ],\n            \"Conditions\": [\n              {\n                \"type\": \"Conditional Permission\",\n                \"logic\": \"IF (detached_garage.distance_from_front_lot_line >= 75 feet) THEN (detached_garage.location MAY BE IN ['rear yard', 'side yards'])\",\n                \"description\": \"A detached garage may be located in the rear and side yards if it is at least 75' from the front lot line.\"\n              },\n              {\n                \"type\": \"Mandatory\",\n                \"logic\": \"uncovered_spaces.location MUST BE 'beyond front setback'\",\n                \"description\": \"Both dwellings use the driveway for their respective uncovered spaces, which must be located beyond the front setback.\"\n              }\n            ],\n            \"Exceptions\": [],\n            \"Relationships\": {\n              \"dependencies\": \"The permitted location of the shared detached garage is dependent on its distance from the front lot line.\",\n              \"logical\": \"Parking is shared between the main dwelling and the second dwelling.\"\n            }\n          },\n          {\n            \"rule_id\": \"Page51_Scenario_D\",\n            \"rule_name\": \"D Combined w/ main-dwelling parking that is attached to main dwelling\",\n            \"Qualifiers\": {\n              \"scope\": \"Parking for both dwellings is combined in a garage attached to the main dwelling.\",\n              \"applicability\": [\n                \"Both dwellings share a 2-car garage attached to the main dwelling.\"\n              ]\n            },\n            \"Variables\": [],\n            \"Constants\": [],\n            \"Conditions\": [\n              {\n                \"type\": \"Mandatory\",\n                \"logic\": \"garage.is_attached_to = 'main_dwelling'\",\n                \"description\": \"The shared garage is attached to the main dwelling.\"\n              },\n              {\n                \"type\": \"Mandatory\",\n                \"logic\": \"uncovered_spaces.location MUST BE 'beyond front setback'\",\n                \"description\": \"Both dwellings use the driveway for their respective uncovered spaces, which must be located beyond the front setback.\"\n              }\n            ],\n            \"Exceptions\": [],\n            \"Relationships\": {\n              \"logical\": \"Parking is shared between the main dwelling and the second dwelling and is physically integrated with the main dwelling structure.\"\n            }\n          }\n        ]\n      }\n    }\n  ]\n}\n```",
+    "response_time": 55.57931303977966,
+    "input_tokens": 1409,
+    "output_tokens": 7575,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 16:04:51",
+  "model": "google/gemini-2.5-pro",
+  "success": true
+}

@@ -1,0 +1,119 @@
+{
+  "file_path": "markdown_pages/Page_48.md",
+  "file_name": "Page_48.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "Title": "Light well & stairwell standards & site planning",
+        "Qualifiers": {
+          "Scope": "Light wells and stairwells in site planning",
+          "Applicability": "All structures with light wells and stairwells",
+          "Exclusions": "None specified"
+        },
+        "Variables": {
+          "Dimensional": [
+            {
+              "Name": "Maximum width",
+              "Value": "3'",
+              "Unit": "feet"
+            },
+            {
+              "Name": "Combined length of all excavated features",
+              "Value": "30%",
+              "Unit": "percentage of basement perimeter"
+            },
+            {
+              "Name": "Allowable encroachment into side yard",
+              "Value": "3'",
+              "Unit": "feet"
+            },
+            {
+              "Name": "Minimum distance from side lot line",
+              "Value": "3'",
+              "Unit": "feet"
+            },
+            {
+              "Name": "Allowable encroachment into rear yard",
+              "Value": "4'",
+              "Unit": "feet"
+            },
+            {
+              "Name": "Combined length of encroaching features",
+              "Value": "15'",
+              "Unit": "feet"
+            }
+          ],
+          "Material": [],
+          "Environmental": [],
+          "Usage": []
+        },
+        "Constants": {
+          "Numerical values": [
+            {
+              "Name": "Maximum width",
+              "Value": "3",
+              "Unit": "feet"
+            },
+            {
+              "Name": "Combined length of all features",
+              "Value": "30",
+              "Unit": "percentage of basement perimeter"
+            },
+            {
+              "Name": "Allowable encroachment into side yard",
+              "Value": "3",
+              "Unit": "feet"
+            },
+            {
+              "Name": "Minimum distance from side lot line",
+              "Value": "3",
+              "Unit": "feet"
+            },
+            {
+              "Name": "Allowable encroachment into rear yard",
+              "Value": "4",
+              "Unit": "feet"
+            },
+            {
+              "Name": "Combined length of encroaching features",
+              "Value": "15",
+              "Unit": "feet"
+            }
+          ],
+          "Specs": [],
+          "Standards": [],
+          "Procedures": [
+            "Public Works Department must approve drainage system"
+          ]
+        },
+        "Conditions": {
+          "Mandatory": [
+            "Features may not be located on the side of the structure that faces the front yard",
+            "Excavated features shall not be harmful to neighboring trees"
+          ],
+          "Optional": [],
+          "Conditional logic": [],
+          "Dependencies": []
+        },
+        "Exceptions": {
+          "Explicit deviations": [],
+          "Alternatives": [],
+          "Special cases": []
+        },
+        "Relationships": {
+          "Hierarchical": [],
+          "Cross-references": [],
+          "Logical dependencies": [
+            "a + b (encroaching features) may not exceed 15'",
+            "a + b + c + d (all features) may not exceed 30% of the perimeter of the basement"
+          ]
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n    {\n        \"Title\": \"Light well & stairwell standards & site planning\",\n        \"Qualifiers\": {\n            \"Scope\": \"Light wells and stairwells in site planning\",\n            \"Applicability\": \"All structures with light wells and stairwells\",\n            \"Exclusions\": \"None specified\"\n        },\n        \"Variables\": {\n            \"Dimensional\": [\n                {\n                    \"Name\": \"Maximum width\",\n                    \"Value\": \"3'\",\n                    \"Unit\": \"feet\"\n                },\n                {\n                    \"Name\": \"Combined length of all excavated features\",\n                    \"Value\": \"30%\",\n                    \"Unit\": \"percentage of basement perimeter\"\n                },\n                {\n                    \"Name\": \"Allowable encroachment into side yard\",\n                    \"Value\": \"3'\",\n                    \"Unit\": \"feet\"\n                },\n                {\n                    \"Name\": \"Minimum distance from side lot line\",\n                    \"Value\": \"3'\",\n                    \"Unit\": \"feet\"\n                },\n                {\n                    \"Name\": \"Allowable encroachment into rear yard\",\n                    \"Value\": \"4'\",\n                    \"Unit\": \"feet\"\n                },\n                {\n                    \"Name\": \"Combined length of encroaching features\",\n                    \"Value\": \"15'\",\n                    \"Unit\": \"feet\"\n                }\n            ],\n            \"Material\": [],\n            \"Environmental\": [],\n            \"Usage\": []\n        },\n        \"Constants\": {\n            \"Numerical values\": [\n                {\n                    \"Name\": \"Maximum width\",\n                    \"Value\": \"3\",\n                    \"Unit\": \"feet\"\n                },\n                {\n                    \"Name\": \"Combined length of all features\",\n                    \"Value\": \"30\",\n                    \"Unit\": \"percentage of basement perimeter\"\n                },\n                {\n                    \"Name\": \"Allowable encroachment into side yard\",\n                    \"Value\": \"3\",\n                    \"Unit\": \"feet\"\n                },\n                {\n                    \"Name\": \"Minimum distance from side lot line\",\n                    \"Value\": \"3\",\n                    \"Unit\": \"feet\"\n                },\n                {\n                    \"Name\": \"Allowable encroachment into rear yard\",\n                    \"Value\": \"4\",\n                    \"Unit\": \"feet\"\n                },\n                {\n                    \"Name\": \"Combined length of encroaching features\",\n                    \"Value\": \"15\",\n                    \"Unit\": \"feet\"\n                }\n            ],\n            \"Specs\": [],\n            \"Standards\": [],\n            \"Procedures\": [\n                \"Public Works Department must approve drainage system\"\n            ]\n        },\n        \"Conditions\": {\n            \"Mandatory\": [\n                \"Features may not be located on the side of the structure that faces the front yard\",\n                \"Excavated features shall not be harmful to neighboring trees\"\n            ],\n            \"Optional\": [],\n            \"Conditional logic\": [],\n            \"Dependencies\": []\n        },\n        \"Exceptions\": {\n            \"Explicit deviations\": [],\n            \"Alternatives\": [],\n            \"Special cases\": []\n        },\n        \"Relationships\": {\n            \"Hierarchical\": [],\n            \"Cross-references\": [],\n            \"Logical dependencies\": [\n                \"a + b (encroaching features) may not exceed 15'\",\n                \"a + b + c + d (all features) may not exceed 30% of the perimeter of the basement\"\n            ]\n        }\n    }\n]\n```"
+  },
+  "timestamp": "2025-09-16 15:45:11",
+  "model": "openai/gpt-4o",
+  "success": true
+}

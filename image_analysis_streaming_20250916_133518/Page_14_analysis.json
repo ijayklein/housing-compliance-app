@@ -1,0 +1,12 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_14.png",
+  "image_name": "Page_14.png",
+  "analysis": {
+    "raw_content": "Based on the photocopied page from this city planning technical manual, I can extract the following information with absolute precision:\n\n## Title\n**Roofed porches on the 1st floor**\n\n## Section Heading\n**How to determine if a porch is at least 50% open** (using Fig 5 as an example)\n\n## Figure Reference\n**Fig 5** Roofed 1st floor porch\n\n## Step 1 Instructions\n**Step 1:** Determine the perimeter of the porch and divide it into segments that will allow a comparison of closed and open segments.\n\n## Technical Specifications\nThe perimeter of the porch in **Fig 5** is shown below. It is the sum of segments **A** through **G**. It is **70 linear feet**.\n\n## Diagram Labels\nThe floor plan diagram contains the following labeled segments:\n- **A** (4')\n- **B** (8')\n- **C**\n- **D** (7')\n- **E** (14')\n- **F** (24')\n- **G** (4')\n\n## Page Number\n**8**\n\nThe page includes an isometric drawing of a two-story house with a roofed porch on the first floor, and a corresponding floor plan showing the dimensional breakdown of the porch perimeter segments.",
+    "content_length": 1046,
+    "parse_error": false
+  },
+  "timestamp": "2025-09-16 13:35:50",
+  "model": "anthropic/claude-sonnet-4",
+  "success": true
+}

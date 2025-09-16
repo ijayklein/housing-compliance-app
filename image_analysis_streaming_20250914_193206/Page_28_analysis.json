@@ -1,0 +1,70 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_28.png",
+  "image_name": "Page_28.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Setback considerations\n\nEasements\nSome easements affect setbacks i.e., setbacks must be measured\nfrom the edge of the easement regardless of the lot line as illustrat-\ned in Fig 16 on this page. Easements that affect setbacks are:\n\u2022 Creek easements\n\u2022 Public street easements\n\nNote: most public utility easements do not affect setbacks.\n\nSidewalks\nThe sidewalk may not indicate the lot line. Often, the street ease-\nment or public right-of-way extends for several feet beyond the\nsidewalk. Fig 16 on this page illustrates this common circum-\nstance and how the setbacks are affected i.e., they must be mea-\nsured from the lot line regardless of the sidewalk.\n\nOddly shaped lots\nFor some lots, the setbacks and required yards may not be obvious.\nFig 17 on page 23 indicates the appropriate site plan for lot shapes\nabout which questions often arise:\n\u2022 flag lot (Fig 17 A)\n\u2022 corner lot (Fig 17 B)\n\u2022 through lot (Fig 17 D)\n\u2022 wedge-shaped lot (Fig 17 E)\n\u2022 lot with more than four sides (Fig 17 F & G)\n\nFlag & substandard lots\nFig 17 on page 23 also illustrates examples of setbacks that have\nbeen reduced for smaller or oddly shaped lots e.g.,\n\u2022 the front setback of a flag lot (Fig 17 A)\n\u2022 the street-side yard setback for substandard corner lots that\nare less than 50' wide (Fig 17 C)\n\nFig 16 Setbacks: easements and sidewalks\n\nEasement\nCreek or public\naccess easement\ne.g., street or alley\n\nRear yard\n\nBuildable\narea\n\nInterior-side yard\n\nInterior-side yard\n\nFront yard\n\nSetbacks are measured from easement\nregardless of where the lot lines are\nlocated. (See section on Lot Size for more\ninformation about creek easements).\n\nSetbacks are measured from the lot lines\nregardless of where the sidewalks are\nlocated. (Note if the lot line is in the\n-middle of the street, then the setback is\nmeasured from the edge of the public\nstreet easement or right-of-way. (See\nsection on Lot Size for more information\nabout public street easements.)\n\nNote: The space between the sidewalk\nedge and the lot line is part of the public\nright of way. It may be 0' or more than\n15'. Please ask at the Development\nCenter.\n\nKey\n\nCurb\n\nLot line\n\nSidewalk\n\nRequired\nsetbacks\n\nBuildable\narea\n\nEasement\n\nNote: For informa-\ntion regarding creek\neasements, contact\nthe Santa Clara Valley\nWater District\n\n22",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "A diagram titled 'Fig 16 Setbacks: easements and sidewalks' illustrating a property lot with various setback considerations. The diagram shows a rectangular lot with a 'Buildable area' in the center, surrounded by 'Rear yard', 'Front yard', and 'Interior-side yard' on both sides. An 'Easement' area is depicted at the top, extending beyond the rear yard. A 'Sidewalk' is shown at the bottom, in front of the 'Front yard'. Arrows indicate the measurement of setbacks from the easement and lot lines. Text labels within the diagram explain different components like 'Easement', 'Creek or public access easement e.g., street or alley'. Callouts explain how setbacks are measured from easements and lot lines, and a note about the space between the sidewalk edge and lot line.",
+          "location": "Right side of the page, spanning from top to middle"
+        },
+        {
+          "type": "table",
+          "description": "A key for the diagram 'Fig 16 Setbacks: easements and sidewalks'. It defines symbols for 'Curb' (solid line), 'Lot line' (dashed line), 'Sidewalk' (hatched squares), 'Required setbacks' (thick grey line), 'Buildable area' (light grey shaded area), and 'Easement' (diagonal hatched lines).",
+          "location": "Bottom left of the diagram"
+        },
+        {
+          "type": "text box",
+          "description": "A grey rectangular box with white text stating 'Note: For information regarding creek easements, contact the Santa Clara Valley Water District'.",
+          "location": "Bottom right of the page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Sidewalk edge to lot line distance",
+          "value": "0",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Sidewalk edge to lot line distance",
+          "value": "15",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Substandard corner lot width",
+          "value": "50",
+          "unit": "feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Setback considerations",
+        "subheadings": [
+          "Easements",
+          "Sidewalks",
+          "Oddly shaped lots",
+          "Flag & substandard lots"
+        ],
+        "sections": []
+      },
+      "additional_notes": [
+        "Page number '22' is present at the bottom left corner.",
+        "The text '-middle of the street' in the setback measurement note appears to have a hyphenation or formatting issue."
+      ],
+      "cross_references": [
+        "Fig 16 on this page",
+        "Fig 17 on page 23",
+        "Fig 17 A",
+        "Fig 17 B",
+        "Fig 17 D",
+        "Fig 17 E",
+        "Fig 17 F & G",
+        "Fig 17 C",
+        "section on Lot Size"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-14 19:32:27",
+  "model_used": "google/gemini-2.5-flash"
+}

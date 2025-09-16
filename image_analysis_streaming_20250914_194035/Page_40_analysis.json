@@ -1,0 +1,92 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_40.png",
+  "image_name": "Page_40.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Parking\n\nParking regulations affect the appearance of the streetscapes in our residential neighborhoods by minimizing the number of cars parked on the street and in the front yards by requiring that there are parking spaces available deeper into the lot.\n\nCode sections\nPage 34\n18.12.060, 18.83.090\nPage 35\n18.83.090, 18.83.110(a)\nPage 36\n18.12.060\nPage 37\n18.12.040 (f)\nPage 38\n18.12.060\nPage 39\n18.12.080 (b)\n\nParking space standards\n\n\u2022 Two spaces are required on the lot (per dwelling).\n\u2022 They may NOT be located in the required front yard or, first 10 ft of, required street side yard.\n\u2022 2nd dwelling units have same requirements.\n\u2022 No underground parking garages except by variance.\n\u2022 One of the two spaces must be covered.\n\u2022 To be considered detached, a covered-parking structure must be a minimum of 3' from the main dwelling.\n\u2022 Minimim size for an uncovered space is 8.5' x 18'.\n\u2022 Minimum clearance inside a covered parking structure to be 10' x 20' for each space. Therefore, a two-car garage or carport to be 20' x 20' clear inside.\n\u2022 Minimum vertical clearance: 7'.\n\n* Clear area for parking space must be free of other uses e.g., water heaters, clothes washers or dryer, bicycle parking facilities, etc.\n\nFig 28 Parking space dimensions for garage and uncovered space in plan view",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Plan view diagram showing parking space dimensions for garage and uncovered space. The diagram depicts two cars parked in tandem, one in a covered space and one in an uncovered space behind it. Dimensions indicated include: 10' minimum inside clearance width for the garage, 20' minimum inside clearance length for the covered space, 8.5' minimum width for the uncovered space, and 18' minimum length for the uncovered space. Labels indicate 'Required covered space' for the garage and '2nd space (uncovered) Tandem OK' for the uncovered space.",
+          "location": "Right side of the page, middle to bottom"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Number of parking spaces required per dwelling",
+          "value": "2",
+          "unit": "spaces"
+        },
+        {
+          "parameter": "Minimum distance from main dwelling for detached covered parking structure",
+          "value": "3",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum size for uncovered parking space",
+          "value": "8.5 x 18",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum clearance inside covered parking structure per space",
+          "value": "10 x 20",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum size for two-car garage or carport clear inside",
+          "value": "20 x 20",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum vertical clearance",
+          "value": "7",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum inside clearance width for garage",
+          "value": "10",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum inside clearance length for covered space",
+          "value": "20",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum width for uncovered space",
+          "value": "8.5",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum length for uncovered space",
+          "value": "18",
+          "unit": "feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Parking space standards",
+        "subheadings": [],
+        "sections": [
+          "Code sections Page 34",
+          "Page 35",
+          "Page 36",
+          "Page 37",
+          "Page 38",
+          "Page 39"
+        ]
+      },
+      "additional_notes": [
+        "Asterisk (*) is used to denote the note about clear area for parking space must be free of other uses such as water heaters, clothes washers or dryer, bicycle parking facilities, etc.",
+        "The left sidebar contains a grey background with white text describing the impact of parking regulations on streetscapes and residential neighborhoods.",
+        "Page number '34' is located at the bottom left corner.",
+        "No handwritten annotations or stamps are present."
+      ],
+      "cross_references": [
+        "Code sections referenced: 18.12.060, 18.83.090, 18.83.110(a), 18.12.040(f), 18.12.080(b)",
+        "Pages referenced: 34, 35, 36, 37, 38, 39"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-14 19:41:29",
+  "model_used": "openai/gpt-4.1-mini"
+}

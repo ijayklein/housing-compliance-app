@@ -1,0 +1,67 @@
+{
+  "file_path": "markdown_pages/Page_18.md",
+  "file_name": "Page_18.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "Qualifiers": {
+          "Scope": "Entryway features with gabled roofs",
+          "Applicability": "Entryways that are vaulted and recessed beyond the house facade and roof",
+          "Exclusions": "Non-vaulted entryways or those not recessed"
+        },
+        "Variables": {
+          "Dimensional": [
+            "Height",
+            "Grade",
+            "Intersection of front facade and top of roof material at ridge"
+          ],
+          "Material": [
+            "Outside material of the entryway feature"
+          ],
+          "Environmental": [],
+          "Usage": [
+            "Gross floor area calculation"
+          ]
+        },
+        "Constants": {
+          "Numerical values": [],
+          "Specs": [],
+          "Standards": [],
+          "Procedures": [
+            "The area is measured to the outside material of the entryway feature",
+            "The area counts TWICE toward gross floor area if the entryway is vaulted"
+          ]
+        },
+        "Conditions": {
+          "Mandatory": [
+            "The area is measured to the outside material of the entryway feature"
+          ],
+          "Optional": [],
+          "Conditional logic": [
+            "If the entryway is considered to be a vaulted entryway, the area will be counted TWICE"
+          ],
+          "Dependencies": []
+        },
+        "Exceptions": {
+          "Explicit deviations": [],
+          "Alternatives": [],
+          "Special cases": [
+            "A portion of the entryway is recessed beyond the house facade and roof. It is included in the area that counts."
+          ]
+        },
+        "Relationships": {
+          "Hierarchical": [],
+          "Cross-references": [],
+          "Logical dependencies": [
+            "The area counts TWICE toward gross floor area if the entryway is vaulted"
+          ]
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n    {\n        \"Qualifiers\": {\n            \"Scope\": \"Entryway features with gabled roofs\",\n            \"Applicability\": \"Entryways that are vaulted and recessed beyond the house facade and roof\",\n            \"Exclusions\": \"Non-vaulted entryways or those not recessed\"\n        },\n        \"Variables\": {\n            \"Dimensional\": [\n                \"Height\",\n                \"Grade\",\n                \"Intersection of front facade and top of roof material at ridge\"\n            ],\n            \"Material\": [\n                \"Outside material of the entryway feature\"\n            ],\n            \"Environmental\": [],\n            \"Usage\": [\n                \"Gross floor area calculation\"\n            ]\n        },\n        \"Constants\": {\n            \"Numerical values\": [],\n            \"Specs\": [],\n            \"Standards\": [],\n            \"Procedures\": [\n                \"The area is measured to the outside material of the entryway feature\",\n                \"The area counts TWICE toward gross floor area if the entryway is vaulted\"\n            ]\n        },\n        \"Conditions\": {\n            \"Mandatory\": [\n                \"The area is measured to the outside material of the entryway feature\"\n            ],\n            \"Optional\": [],\n            \"Conditional logic\": [\n                \"If the entryway is considered to be a vaulted entryway, the area will be counted TWICE\"\n            ],\n            \"Dependencies\": []\n        },\n        \"Exceptions\": {\n            \"Explicit deviations\": [],\n            \"Alternatives\": [],\n            \"Special cases\": [\n                \"A portion of the entryway is recessed beyond the house facade and roof. It is included in the area that counts.\"\n            ]\n        },\n        \"Relationships\": {\n            \"Hierarchical\": [],\n            \"Cross-references\": [],\n            \"Logical dependencies\": [\n                \"The area counts TWICE toward gross floor area if the entryway is vaulted\"\n            ]\n        }\n    }\n]\n```"
+  },
+  "timestamp": "2025-09-16 15:43:27",
+  "model": "openai/gpt-4o",
+  "success": true
+}

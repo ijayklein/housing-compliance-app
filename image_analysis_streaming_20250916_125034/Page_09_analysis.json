@@ -1,0 +1,12 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_09.png",
+  "image_name": "Page_09.png",
+  "analysis": {
+    "parse_error": true,
+    "error": "JSON parse failed: Expecting value: line 1 column 1 (char 0)",
+    "raw_response": "Gross vs. net lot area\n\nGross lot area is the size of the lot\u2014from lot line to lot line. Development potential is based on the net lot area and while gross and net lot area are the same for most lots in Palo Alto, there are some lots for which portions must be excluded from the gross lot area to establish the net lot area.\n\nFig 2 Gross lot area exclusions: flag-lot \"poles\"\n* Flag lot accessed via private easement\n* Flag lot with \"pole\"\n* \"pole\" portion of a lot must be subtracted the gross lot s"
+  },
+  "timestamp": "2025-09-16 12:50:40",
+  "model": "google/gemini-2.5-flash",
+  "success": false
+}

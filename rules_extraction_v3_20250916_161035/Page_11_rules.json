@@ -1,0 +1,662 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_11.md",
+  "file_name": "Page_11.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "rule": "Floor Area Calculation for Unenclosed Porches",
+        "Qualifiers": {
+          "Scope": "Determination of what counts as floor area.",
+          "Applicability": "Applies to unenclosed porches.",
+          "Exclusions": "Enclosed porches, recessed porches, and other specified porch types."
+        },
+        "Variables": {
+          "Dimensional": "",
+          "Material": "",
+          "Environmental": "",
+          "Usage": "Porch enclosure status (unenclosed)."
+        },
+        "Constants": {
+          "Floor Area Multiplier": "0 (Does not count)"
+        },
+        "Conditions": {
+          "Mandatory": "The porch must be unenclosed.",
+          "Optional": "",
+          "Conditional Logic": "IF porch is unenclosed THEN its area is not counted towards the total floor area.",
+          "Dependencies": ""
+        },
+        "Exceptions": {
+          "Explicit Deviations": "",
+          "Alternatives": "",
+          "Special Cases": ""
+        },
+        "Relationships": {
+          "Hierarchical": "Parent Category: Porches & entry features",
+          "Cross-references": "Illustration: Figure 5 on pp. 8-10",
+          "Logical Dependencies": "This rule is mutually exclusive with the rule for 'Enclosed porches'."
+        }
+      },
+      {
+        "rule": "Floor Area Calculation for Enclosed Porches",
+        "Qualifiers": {
+          "Scope": "Determination of what counts as floor area.",
+          "Applicability": "Applies to enclosed porches.",
+          "Exclusions": "Unenclosed porches."
+        },
+        "Variables": {
+          "Dimensional": "",
+          "Material": "",
+          "Environmental": "",
+          "Usage": "Porch enclosure status (enclosed)."
+        },
+        "Constants": {
+          "Floor Area Multiplier": "1 (Counts once)"
+        },
+        "Conditions": {
+          "Mandatory": "The porch must be enclosed.",
+          "Optional": "",
+          "Conditional Logic": "IF porch is enclosed THEN its area is counted once towards the total floor area.",
+          "Dependencies": ""
+        },
+        "Exceptions": {
+          "Explicit Deviations": "",
+          "Alternatives": "",
+          "Special Cases": ""
+        },
+        "Relationships": {
+          "Hierarchical": "Parent Category: Porches & entry features",
+          "Cross-references": "Illustration: Figure 5 on pp. 8-10",
+          "Logical Dependencies": "This rule is mutually exclusive with the rule for 'Unenclosed porches'."
+        }
+      },
+      {
+        "rule": "Floor Area Calculation for Low-Height Entry Features",
+        "Qualifiers": {
+          "Scope": "Determination of what counts as floor area.",
+          "Applicability": "Applies to entry features with a height of 12 feet or less.",
+          "Exclusions": "Entry features taller than 12 feet."
+        },
+        "Variables": {
+          "Dimensional": "Height of the entry feature.",
+          "Material": "",
+          "Environmental": "",
+          "Usage": ""
+        },
+        "Constants": {
+          "Floor Area Multiplier": "0 (Does not count)",
+          "Height Threshold": "\u2264 12 feet"
+        },
+        "Conditions": {
+          "Mandatory": "",
+          "Optional": "",
+          "Conditional Logic": "IF entry feature height is \u2264 12' THEN its area is not counted.",
+          "Dependencies": ""
+        },
+        "Exceptions": {
+          "Explicit Deviations": "",
+          "Alternatives": "",
+          "Special Cases": ""
+        },
+        "Relationships": {
+          "Hierarchical": "Parent Category: Porches & entry features",
+          "Cross-references": "Illustration: Figs 6-8 on pp. 11-13",
+          "Logical Dependencies": "This rule is mutually exclusive with the rule for entry features > 12' in height."
+        }
+      },
+      {
+        "rule": "Floor Area Calculation for High-Height Entry Features",
+        "Qualifiers": {
+          "Scope": "Determination of what counts as floor area.",
+          "Applicability": "Applies to entry features with a height greater than 12 feet.",
+          "Exclusions": "Entry features 12 feet or less in height."
+        },
+        "Variables": {
+          "Dimensional": "Height of the entry feature.",
+          "Material": "",
+          "Environmental": "",
+          "Usage": ""
+        },
+        "Constants": {
+          "Floor Area Multiplier": "2 (Counts twice)",
+          "Height Threshold": "> 12 feet",
+          "Calculation Basis": "Footprint"
+        },
+        "Conditions": {
+          "Mandatory": "",
+          "Optional": "",
+          "Conditional Logic": "IF entry feature height is > 12' THEN its footprint area is counted twice.",
+          "Dependencies": ""
+        },
+        "Exceptions": {
+          "Explicit Deviations": "",
+          "Alternatives": "",
+          "Special Cases": ""
+        },
+        "Relationships": {
+          "Hierarchical": "Parent Category: Porches & entry features",
+          "Cross-references": "Illustration: Figs 6-8 on pp. 11-13",
+          "Logical Dependencies": "This rule is mutually exclusive with the rule for entry features \u2264 12' in height."
+        }
+      },
+      {
+        "rule": "Floor Area Calculation for 1st Floor Recessed Porches",
+        "Qualifiers": {
+          "Scope": "Determination of what counts as floor area.",
+          "Applicability": "Applies to recessed porches on the 1st floor that are open on an exterior side and have a limited depth.",
+          "Exclusions": "Porches on other floors, enclosed porches, or porches deeper than the specified limit."
+        },
+        "Variables": {
+          "Dimensional": "Depth of the porch, Floor level.",
+          "Material": "",
+          "Environmental": "",
+          "Usage": "Openness on an exterior side."
+        },
+        "Constants": {
+          "Floor Area Multiplier": "0 (Does not count)",
+          "Depth Threshold": "< 10 feet",
+          "Floor Level": "1st floor"
+        },
+        "Conditions": {
+          "Mandatory": "",
+          "Optional": "",
+          "Conditional Logic": "IF (floor level is 1st) AND (depth is < 10') AND (porch is open on an exterior side) THEN its area is not counted.",
+          "Dependencies": ""
+        },
+        "Exceptions": {
+          "Explicit Deviations": "",
+          "Alternatives": "",
+          "Special Cases": ""
+        },
+        "Relationships": {
+          "Hierarchical": "Parent Category: Porches & entry features",
+          "Cross-references": "Illustration: Figure 9 on p. 14",
+          "Logical Dependencies": ""
+        }
+      },
+      {
+        "rule": "Floor Area Calculation for 2nd Floor Roofed or Enclosed Features",
+        "Qualifiers": {
+          "Scope": "Determination of what counts as floor area.",
+          "Applicability": "Applies to 2nd floor roofed or enclosed porches, arcades, balconies, porticos, and breezeways.",
+          "Exclusions": "Features on other floors; features not listed."
+        },
+        "Variables": {
+          "Dimensional": "Floor level.",
+          "Material": "",
+          "Environmental": "",
+          "Usage": "Feature type (porch, arcade, balcony, portico, breezeway), Enclosure status (roofed or enclosed)."
+        },
+        "Constants": {
+          "Floor Area Multiplier": "1 (Counts once)",
+          "Floor Level": "2nd floor"
+        },
+        "Conditions": {
+          "Mandatory": "Feature must be on the 2nd floor and be one of the specified types (porch, arcade, etc.) and be roofed or enclosed.",
+          "Optional": "",
+          "Conditional Logic": "IF (floor level is 2nd) AND (feature type is in list) AND (feature is roofed or enclosed) THEN its area is counted once.",
+          "Dependencies": ""
+        },
+        "Exceptions": {
+          "Explicit Deviations": "",
+          "Alternatives": "",
+          "Special Cases": ""
+        },
+        "Relationships": {
+          "Hierarchical": "Parent Category: Porches & entry features",
+          "Cross-references": "Illustration: Figure 10 on p. 15",
+          "Logical Dependencies": ""
+        }
+      },
+      {
+        "rule": "Floor Area Calculation for Low-Height Attic Space",
+        "Qualifiers": {
+          "Scope": "Determination of what counts as floor area.",
+          "Applicability": "Applies to attic space where the vertical distance from the floor to the underside of the roof rafter is 5 feet or less.",
+          "Exclusions": "Attic space with a height greater than 5 feet."
+        },
+        "Variables": {
+          "Dimensional": "Height from floor to underside of roof rafter.",
+          "Material": "",
+          "Environmental": "",
+          "Usage": ""
+        },
+        "Constants": {
+          "Floor Area Multiplier": "0 (Does not count)",
+          "Height Threshold": "\u2264 5 feet"
+        },
+        "Conditions": {
+          "Mandatory": "",
+          "Optional": "",
+          "Conditional Logic": "IF attic height (floor to rafter) is \u2264 5' THEN its area is not counted.",
+          "Dependencies": ""
+        },
+        "Exceptions": {
+          "Explicit Deviations": "",
+          "Alternatives": "",
+          "Special Cases": ""
+        },
+        "Relationships": {
+          "Hierarchical": "Parent Category: Attics & equivalencies",
+          "Cross-references": "Illustration: Figure 11 on p. 16",
+          "Logical Dependencies": "Mutually exclusive with the rule for 2nd floor space where height is \u2265 5'."
+        }
+      },
+      {
+        "rule": "Floor Area Calculation for Standard 2nd Floor Space and Attics",
+        "Qualifiers": {
+          "Scope": "Determination of what counts as floor area.",
+          "Applicability": "Applies to all 2nd floor space, including attics, where head height is 5 feet or greater.",
+          "Exclusions": "Space with head height less than 5 feet."
+        },
+        "Variables": {
+          "Dimensional": "Head height (top of floor to bottom of rafter), Floor level.",
+          "Material": "",
+          "Environmental": "",
+          "Usage": ""
+        },
+        "Constants": {
+          "Floor Area Multiplier": "1 (Counts once)",
+          "Height Threshold": "\u2265 5 feet",
+          "Floor Level": "2nd floor"
+        },
+        "Conditions": {
+          "Mandatory": "",
+          "Optional": "",
+          "Conditional Logic": "IF (floor level is 2nd) AND (head height is \u2265 5') THEN its area is counted once.",
+          "Dependencies": ""
+        },
+        "Exceptions": {
+          "Explicit Deviations": "",
+          "Alternatives": "",
+          "Special Cases": ""
+        },
+        "Relationships": {
+          "Hierarchical": "Parent Category: Attics & equivalencies",
+          "Cross-references": "Illustration: Figure 11 on p. 16",
+          "Logical Dependencies": "Mutually exclusive with the rule for low-height attic space."
+        }
+      },
+      {
+        "rule": "Floor Area Calculation for 2nd Floor Equivalent (High Volume)",
+        "Qualifiers": {
+          "Scope": "Determination of what counts as floor area, with penalties for high-volume spaces.",
+          "Applicability": "Applies to areas where the height from the top of the first floor to the top of the roof material is greater than 17 feet.",
+          "Exclusions": "Areas where this height is \u2264 17 feet or \u2265 26 feet."
+        },
+        "Variables": {
+          "Dimensional": "Height from top of first floor to top of roof material.",
+          "Material": "",
+          "Environmental": "",
+          "Usage": ""
+        },
+        "Constants": {
+          "Floor Area Multiplier": "2 (Counts twice)",
+          "Height Threshold": "> 17 feet"
+        },
+        "Conditions": {
+          "Mandatory": "",
+          "Optional": "",
+          "Conditional Logic": "IF height from top of 1st floor to top of roof is > 17' (and < 26') THEN the area is counted twice.",
+          "Dependencies": ""
+        },
+        "Exceptions": {
+          "Explicit Deviations": "",
+          "Alternatives": "",
+          "Special Cases": ""
+        },
+        "Relationships": {
+          "Hierarchical": "Parent Category: Attics & equivalencies",
+          "Cross-references": "Illustration: Figure 12 on p. 17",
+          "Logical Dependencies": "Part of a tiered system with the '3rd floor equivalent' rule."
+        }
+      },
+      {
+        "rule": "Floor Area Calculation for 3rd Floor Equivalent (Very High Volume)",
+        "Qualifiers": {
+          "Scope": "Determination of what counts as floor area, with penalties for very high-volume spaces.",
+          "Applicability": "Applies to areas where the height from the top of the first floor to the top of the roof material is 26 feet or greater.",
+          "Exclusions": "Areas where this height is < 26 feet."
+        },
+        "Variables": {
+          "Dimensional": "Height from top of first floor to top of roof material.",
+          "Material": "",
+          "Environmental": "",
+          "Usage": ""
+        },
+        "Constants": {
+          "Floor Area Multiplier": "3 (Counts three times)",
+          "Height Threshold": "\u2265 26 feet"
+        },
+        "Conditions": {
+          "Mandatory": "",
+          "Optional": "",
+          "Conditional Logic": "IF height from top of 1st floor to top of roof is \u2265 26' THEN the area is counted three times.",
+          "Dependencies": ""
+        },
+        "Exceptions": {
+          "Explicit Deviations": "Two exemptions apply to this rule regarding roof pitch and historic homes.",
+          "Alternatives": "",
+          "Special Cases": ""
+        },
+        "Relationships": {
+          "Hierarchical": "Parent Category: Attics & equivalencies. This rule has two child exception rules.",
+          "Cross-references": "Illustration: Figure 12 on p. 17",
+          "Logical Dependencies": "Highest tier of the high-volume space calculation."
+        }
+      },
+      {
+        "rule": "Exemption to 3rd Floor Equivalent for Steep Roof Pitch",
+        "Qualifiers": {
+          "Scope": "Provides a partial exemption from the '3rd floor equivalent' calculation.",
+          "Applicability": "Applies to areas subject to the '3rd floor equivalent' rule where the roof pitch is 4:12 or greater.",
+          "Exclusions": "Roofs with a pitch less than 4:12."
+        },
+        "Variables": {
+          "Dimensional": "Roof pitch.",
+          "Material": "",
+          "Environmental": "",
+          "Usage": ""
+        },
+        "Constants": {
+          "Exempt Area": "200 sf",
+          "Roof Pitch Threshold": "\u2265 4:12"
+        },
+        "Conditions": {
+          "Mandatory": "",
+          "Optional": "",
+          "Conditional Logic": "IF (area is subject to 3rd floor equivalent rule) AND (roof pitch is \u2265 4:12) THEN 200 sf of that area is exempt from the calculation.",
+          "Dependencies": "Depends on the '3rd Floor Equivalent' rule being triggered."
+        },
+        "Exceptions": {
+          "Explicit Deviations": "This is an explicit deviation from the parent rule.",
+          "Alternatives": "",
+          "Special Cases": ""
+        },
+        "Relationships": {
+          "Hierarchical": "Child exception to the '3rd Floor Equivalent' rule.",
+          "Cross-references": "Illustration: [no illustration listed]",
+          "Logical Dependencies": ""
+        }
+      },
+      {
+        "rule": "Exemption for Unusable Attic in Historic Homes",
+        "Qualifiers": {
+          "Scope": "Provides a partial exemption for unusable attic space in historic homes.",
+          "Applicability": "Applies to unusable attic space in Category 1 & 2 historic homes.",
+          "Exclusions": "Non-historic homes, usable attic space."
+        },
+        "Variables": {
+          "Dimensional": "",
+          "Material": "Historic Home Category (1 or 2).",
+          "Environmental": "",
+          "Usage": "Usability of attic space."
+        },
+        "Constants": {
+          "Exempt Area": "500 sf"
+        },
+        "Conditions": {
+          "Mandatory": "",
+          "Optional": "",
+          "Conditional Logic": "IF (home is Category 1 or 2 historic) AND (attic space is unusable) THEN 500 sf is exempt.",
+          "Dependencies": "Applies in the context of the '3rd floor equivalent' calculation."
+        },
+        "Exceptions": {
+          "Explicit Deviations": "This is an explicit deviation from the parent rule.",
+          "Alternatives": "",
+          "Special Cases": "Flagged Ambiguous Language: The text links this to the '3rd floor equivalent' rule, but it could potentially be a general exemption. The current interpretation is that it's an exception to the 3rd floor equivalent rule only."
+        },
+        "Relationships": {
+          "Hierarchical": "Child exception to the '3rd Floor Equivalent' rule.",
+          "Cross-references": "Illustration: [no illustration listed]",
+          "Logical Dependencies": ""
+        }
+      },
+      {
+        "rule": "Floor Area Calculation for Compliant Basements",
+        "Qualifiers": {
+          "Scope": "Determination of what counts as floor area.",
+          "Applicability": "Applies to basements that comply with specific patio and lightwell requirements.",
+          "Exclusions": "Basements not in compliance with the specified regulation."
+        },
+        "Variables": {
+          "Dimensional": "",
+          "Material": "",
+          "Environmental": "",
+          "Usage": "Compliance with patio & lightwell requirements."
+        },
+        "Constants": {
+          "Floor Area Multiplier": "0 (Does not count)",
+          "Standard": "18.12.070"
+        },
+        "Conditions": {
+          "Mandatory": "",
+          "Optional": "",
+          "Conditional Logic": "IF basement complies with requirements of 18.12.070 THEN its area is not counted.",
+          "Dependencies": "Compliance is determined by regulation 18.12.070."
+        },
+        "Exceptions": {
+          "Explicit Deviations": "",
+          "Alternatives": "",
+          "Special Cases": ""
+        },
+        "Relationships": {
+          "Hierarchical": "Parent Category: Basements",
+          "Cross-references": "Illustration: Figs 35, 36, 39, 40 on pp. 39-43. Regulation: 18.12.070",
+          "Logical Dependencies": ""
+        }
+      },
+      {
+        "rule": "Floor Area Calculation for Basements in Historic Structures",
+        "Qualifiers": {
+          "Scope": "Determination of what counts as floor area.",
+          "Applicability": "Applies to basements of Category 1 & 2 historic homes or contributing structures in a historic district.",
+          "Exclusions": "Basements in non-historic structures."
+        },
+        "Variables": {
+          "Dimensional": "",
+          "Material": "Historic Home Category (1 or 2), Contributing structure status.",
+          "Environmental": "",
+          "Usage": ""
+        },
+        "Constants": {
+          "Floor Area Multiplier": "0 (Does not count)"
+        },
+        "Conditions": {
+          "Mandatory": "",
+          "Optional": "",
+          "Conditional Logic": "IF (home is Category 1 or 2 historic) OR (structure is a contributing structure in a historic district) THEN its basement area is not counted.",
+          "Dependencies": "Flagged Ambiguous Language: The phrase '(even if > 3')' implies this rule overrides another unstated rule about basement height, likely related to a 3-foot threshold."
+        },
+        "Exceptions": {
+          "Explicit Deviations": "This rule serves as an exception to a more general, unstated rule about basements.",
+          "Alternatives": "",
+          "Special Cases": ""
+        },
+        "Relationships": {
+          "Hierarchical": "Parent Category: Basements",
+          "Cross-references": "Illustration: [no illustration listed]",
+          "Logical Dependencies": "Overrides a general basement calculation rule that is not present in the text."
+        }
+      },
+      {
+        "rule": "Floor Area Calculation for Bay Windows",
+        "Qualifiers": {
+          "Scope": "Determination of what counts as floor area.",
+          "Applicability": "Applies to bay windows that meet a specific set of dimensional and material criteria.",
+          "Exclusions": "Bay windows that fail to meet any one of the specified criteria."
+        },
+        "Variables": {
+          "Dimensional": "Height above interior floor, Projection distance from wall.",
+          "Material": "Percentage of the bay window's surface that is windows.",
+          "Environmental": "",
+          "Usage": ""
+        },
+        "Constants": {
+          "Floor Area Multiplier": "0 (Does not count)",
+          "Height Above Floor Threshold": "\u2265 18 inches",
+          "Projection Threshold": "\u2264 2 feet",
+          "Window Area Threshold": "> 50%"
+        },
+        "Conditions": {
+          "Mandatory": "",
+          "Optional": "",
+          "Conditional Logic": "IF (height above floor \u2265 18\") AND (projection \u2264 2') AND (window area > 50%) THEN its area is not counted.",
+          "Dependencies": ""
+        },
+        "Exceptions": {
+          "Explicit Deviations": "",
+          "Alternatives": "",
+          "Special Cases": ""
+        },
+        "Relationships": {
+          "Hierarchical": "Parent Category: Other",
+          "Cross-references": "Illustration: Figure 13 on p. 18",
+          "Logical Dependencies": ""
+        }
+      },
+      {
+        "rule": "Floor Area Calculation for Architectural Appendages",
+        "Qualifiers": {
+          "Scope": "Determination of what counts as floor area.",
+          "Applicability": "Applies to the footprint of architectural appendages such as fireplaces or buttresses.",
+          "Exclusions": "Appendages not explicitly listed or similar."
+        },
+        "Variables": {
+          "Dimensional": "Footprint area.",
+          "Material": "",
+          "Environmental": "",
+          "Usage": "Feature type (fireplace, buttress)."
+        },
+        "Constants": {
+          "Floor Area Multiplier": "1 (Counts once)",
+          "Calculation Basis": "Footprint"
+        },
+        "Conditions": {
+          "Mandatory": "The footprint of a fireplace or buttress is counted once.",
+          "Optional": "",
+          "Conditional Logic": "",
+          "Dependencies": ""
+        },
+        "Exceptions": {
+          "Explicit Deviations": "",
+          "Alternatives": "",
+          "Special Cases": ""
+        },
+        "Relationships": {
+          "Hierarchical": "Parent Category: Other",
+          "Cross-references": "Illustration: Figure 14 on p. 19",
+          "Logical Dependencies": ""
+        }
+      },
+      {
+        "rule": "Floor Area Calculation for Large Accessory Structures",
+        "Qualifiers": {
+          "Scope": "Determination of what counts as floor area.",
+          "Applicability": "Applies to accessory structures with a floor area greater than 120 square feet.",
+          "Exclusions": "Accessory structures \u2264 120 sf, Garages, carports, porte cocheres."
+        },
+        "Variables": {
+          "Dimensional": "Area of the accessory structure.",
+          "Material": "",
+          "Environmental": "",
+          "Usage": ""
+        },
+        "Constants": {
+          "Floor Area Multiplier": "1 (Counts once)",
+          "Area Threshold": "> 120 sf"
+        },
+        "Conditions": {
+          "Mandatory": "",
+          "Optional": "",
+          "Conditional Logic": "IF accessory structure area is > 120 sf THEN its area is counted once.",
+          "Dependencies": ""
+        },
+        "Exceptions": {
+          "Explicit Deviations": "",
+          "Alternatives": "",
+          "Special Cases": ""
+        },
+        "Relationships": {
+          "Hierarchical": "Parent Category: Accessory structures",
+          "Cross-references": "Illustration: [no illustration listed]",
+          "Logical Dependencies": "An implied rule exists for structures \u2264 120 sf (which presumably do not count)."
+        }
+      },
+      {
+        "rule": "Floor Area Calculation for Garages and Carports",
+        "Qualifiers": {
+          "Scope": "Determination of what counts as floor area.",
+          "Applicability": "Applies to garages and carports.",
+          "Exclusions": "Other types of accessory structures like porte cocheres or general sheds."
+        },
+        "Variables": {
+          "Dimensional": "",
+          "Material": "",
+          "Environmental": "",
+          "Usage": "Structure type (garage, carport)."
+        },
+        "Constants": {
+          "Floor Area Multiplier": "1 (Counts once)"
+        },
+        "Conditions": {
+          "Mandatory": "The area of a garage or carport is counted once.",
+          "Optional": "",
+          "Conditional Logic": "",
+          "Dependencies": ""
+        },
+        "Exceptions": {
+          "Explicit Deviations": "",
+          "Alternatives": "",
+          "Special Cases": ""
+        },
+        "Relationships": {
+          "Hierarchical": "Parent Category: Accessory structures",
+          "Cross-references": "Illustration: [no illustration listed]",
+          "Logical Dependencies": ""
+        }
+      },
+      {
+        "rule": "Floor Area Calculation for Porte Cocheres",
+        "Qualifiers": {
+          "Scope": "Determination of what counts as floor area.",
+          "Applicability": "Applies to porte cocheres.",
+          "Exclusions": "Garages, carports, and other accessory structures."
+        },
+        "Variables": {
+          "Dimensional": "",
+          "Material": "",
+          "Environmental": "",
+          "Usage": "Structure type (porte cochere)."
+        },
+        "Constants": {
+          "Floor Area Multiplier": "0 (Does not count)"
+        },
+        "Conditions": {
+          "Mandatory": "The area of a porte cochere is not counted.",
+          "Optional": "",
+          "Conditional Logic": "",
+          "Dependencies": ""
+        },
+        "Exceptions": {
+          "Explicit Deviations": "",
+          "Alternatives": "",
+          "Special Cases": ""
+        },
+        "Relationships": {
+          "Hierarchical": "Parent Category: Accessory structures",
+          "Cross-references": "Illustration: [no illustration listed]",
+          "Logical Dependencies": ""
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n  {\n    \"rule\": \"Floor Area Calculation for Unenclosed Porches\",\n    \"Qualifiers\": {\n      \"Scope\": \"Determination of what counts as floor area.\",\n      \"Applicability\": \"Applies to unenclosed porches.\",\n      \"Exclusions\": \"Enclosed porches, recessed porches, and other specified porch types.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"\",\n      \"Material\": \"\",\n      \"Environmental\": \"\",\n      \"Usage\": \"Porch enclosure status (unenclosed).\"\n    },\n    \"Constants\": {\n      \"Floor Area Multiplier\": \"0 (Does not count)\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"The porch must be unenclosed.\",\n      \"Optional\": \"\",\n      \"Conditional Logic\": \"IF porch is unenclosed THEN its area is not counted towards the total floor area.\",\n      \"Dependencies\": \"\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"\",\n      \"Alternatives\": \"\",\n      \"Special Cases\": \"\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"Parent Category: Porches & entry features\",\n      \"Cross-references\": \"Illustration: Figure 5 on pp. 8-10\",\n      \"Logical Dependencies\": \"This rule is mutually exclusive with the rule for 'Enclosed porches'.\"\n    }\n  },\n  {\n    \"rule\": \"Floor Area Calculation for Enclosed Porches\",\n    \"Qualifiers\": {\n      \"Scope\": \"Determination of what counts as floor area.\",\n      \"Applicability\": \"Applies to enclosed porches.\",\n      \"Exclusions\": \"Unenclosed porches.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"\",\n      \"Material\": \"\",\n      \"Environmental\": \"\",\n      \"Usage\": \"Porch enclosure status (enclosed).\"\n    },\n    \"Constants\": {\n      \"Floor Area Multiplier\": \"1 (Counts once)\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"The porch must be enclosed.\",\n      \"Optional\": \"\",\n      \"Conditional Logic\": \"IF porch is enclosed THEN its area is counted once towards the total floor area.\",\n      \"Dependencies\": \"\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"\",\n      \"Alternatives\": \"\",\n      \"Special Cases\": \"\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"Parent Category: Porches & entry features\",\n      \"Cross-references\": \"Illustration: Figure 5 on pp. 8-10\",\n      \"Logical Dependencies\": \"This rule is mutually exclusive with the rule for 'Unenclosed porches'.\"\n    }\n  },\n  {\n    \"rule\": \"Floor Area Calculation for Low-Height Entry Features\",\n    \"Qualifiers\": {\n      \"Scope\": \"Determination of what counts as floor area.\",\n      \"Applicability\": \"Applies to entry features with a height of 12 feet or less.\",\n      \"Exclusions\": \"Entry features taller than 12 feet.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"Height of the entry feature.\",\n      \"Material\": \"\",\n      \"Environmental\": \"\",\n      \"Usage\": \"\"\n    },\n    \"Constants\": {\n      \"Floor Area Multiplier\": \"0 (Does not count)\",\n      \"Height Threshold\": \"\u2264 12 feet\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"\",\n      \"Optional\": \"\",\n      \"Conditional Logic\": \"IF entry feature height is \u2264 12' THEN its area is not counted.\",\n      \"Dependencies\": \"\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"\",\n      \"Alternatives\": \"\",\n      \"Special Cases\": \"\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"Parent Category: Porches & entry features\",\n      \"Cross-references\": \"Illustration: Figs 6-8 on pp. 11-13\",\n      \"Logical Dependencies\": \"This rule is mutually exclusive with the rule for entry features > 12' in height.\"\n    }\n  },\n  {\n    \"rule\": \"Floor Area Calculation for High-Height Entry Features\",\n    \"Qualifiers\": {\n      \"Scope\": \"Determination of what counts as floor area.\",\n      \"Applicability\": \"Applies to entry features with a height greater than 12 feet.\",\n      \"Exclusions\": \"Entry features 12 feet or less in height.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"Height of the entry feature.\",\n      \"Material\": \"\",\n      \"Environmental\": \"\",\n      \"Usage\": \"\"\n    },\n    \"Constants\": {\n      \"Floor Area Multiplier\": \"2 (Counts twice)\",\n      \"Height Threshold\": \"> 12 feet\",\n      \"Calculation Basis\": \"Footprint\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"\",\n      \"Optional\": \"\",\n      \"Conditional Logic\": \"IF entry feature height is > 12' THEN its footprint area is counted twice.\",\n      \"Dependencies\": \"\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"\",\n      \"Alternatives\": \"\",\n      \"Special Cases\": \"\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"Parent Category: Porches & entry features\",\n      \"Cross-references\": \"Illustration: Figs 6-8 on pp. 11-13\",\n      \"Logical Dependencies\": \"This rule is mutually exclusive with the rule for entry features \u2264 12' in height.\"\n    }\n  },\n  {\n    \"rule\": \"Floor Area Calculation for 1st Floor Recessed Porches\",\n    \"Qualifiers\": {\n      \"Scope\": \"Determination of what counts as floor area.\",\n      \"Applicability\": \"Applies to recessed porches on the 1st floor that are open on an exterior side and have a limited depth.\",\n      \"Exclusions\": \"Porches on other floors, enclosed porches, or porches deeper than the specified limit.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"Depth of the porch, Floor level.\",\n      \"Material\": \"\",\n      \"Environmental\": \"\",\n      \"Usage\": \"Openness on an exterior side.\"\n    },\n    \"Constants\": {\n      \"Floor Area Multiplier\": \"0 (Does not count)\",\n      \"Depth Threshold\": \"< 10 feet\",\n      \"Floor Level\": \"1st floor\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"\",\n      \"Optional\": \"\",\n      \"Conditional Logic\": \"IF (floor level is 1st) AND (depth is < 10') AND (porch is open on an exterior side) THEN its area is not counted.\",\n      \"Dependencies\": \"\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"\",\n      \"Alternatives\": \"\",\n      \"Special Cases\": \"\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"Parent Category: Porches & entry features\",\n      \"Cross-references\": \"Illustration: Figure 9 on p. 14\",\n      \"Logical Dependencies\": \"\"\n    }\n  },\n  {\n    \"rule\": \"Floor Area Calculation for 2nd Floor Roofed or Enclosed Features\",\n    \"Qualifiers\": {\n      \"Scope\": \"Determination of what counts as floor area.\",\n      \"Applicability\": \"Applies to 2nd floor roofed or enclosed porches, arcades, balconies, porticos, and breezeways.\",\n      \"Exclusions\": \"Features on other floors; features not listed.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"Floor level.\",\n      \"Material\": \"\",\n      \"Environmental\": \"\",\n      \"Usage\": \"Feature type (porch, arcade, balcony, portico, breezeway), Enclosure status (roofed or enclosed).\"\n    },\n    \"Constants\": {\n      \"Floor Area Multiplier\": \"1 (Counts once)\",\n      \"Floor Level\": \"2nd floor\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"Feature must be on the 2nd floor and be one of the specified types (porch, arcade, etc.) and be roofed or enclosed.\",\n      \"Optional\": \"\",\n      \"Conditional Logic\": \"IF (floor level is 2nd) AND (feature type is in list) AND (feature is roofed or enclosed) THEN its area is counted once.\",\n      \"Dependencies\": \"\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"\",\n      \"Alternatives\": \"\",\n      \"Special Cases\": \"\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"Parent Category: Porches & entry features\",\n      \"Cross-references\": \"Illustration: Figure 10 on p. 15\",\n      \"Logical Dependencies\": \"\"\n    }\n  },\n  {\n    \"rule\": \"Floor Area Calculation for Low-Height Attic Space\",\n    \"Qualifiers\": {\n      \"Scope\": \"Determination of what counts as floor area.\",\n      \"Applicability\": \"Applies to attic space where the vertical distance from the floor to the underside of the roof rafter is 5 feet or less.\",\n      \"Exclusions\": \"Attic space with a height greater than 5 feet.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"Height from floor to underside of roof rafter.\",\n      \"Material\": \"\",\n      \"Environmental\": \"\",\n      \"Usage\": \"\"\n    },\n    \"Constants\": {\n      \"Floor Area Multiplier\": \"0 (Does not count)\",\n      \"Height Threshold\": \"\u2264 5 feet\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"\",\n      \"Optional\": \"\",\n      \"Conditional Logic\": \"IF attic height (floor to rafter) is \u2264 5' THEN its area is not counted.\",\n      \"Dependencies\": \"\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"\",\n      \"Alternatives\": \"\",\n      \"Special Cases\": \"\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"Parent Category: Attics & equivalencies\",\n      \"Cross-references\": \"Illustration: Figure 11 on p. 16\",\n      \"Logical Dependencies\": \"Mutually exclusive with the rule for 2nd floor space where height is \u2265 5'.\"\n    }\n  },\n  {\n    \"rule\": \"Floor Area Calculation for Standard 2nd Floor Space and Attics\",\n    \"Qualifiers\": {\n      \"Scope\": \"Determination of what counts as floor area.\",\n      \"Applicability\": \"Applies to all 2nd floor space, including attics, where head height is 5 feet or greater.\",\n      \"Exclusions\": \"Space with head height less than 5 feet.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"Head height (top of floor to bottom of rafter), Floor level.\",\n      \"Material\": \"\",\n      \"Environmental\": \"\",\n      \"Usage\": \"\"\n    },\n    \"Constants\": {\n      \"Floor Area Multiplier\": \"1 (Counts once)\",\n      \"Height Threshold\": \"\u2265 5 feet\",\n      \"Floor Level\": \"2nd floor\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"\",\n      \"Optional\": \"\",\n      \"Conditional Logic\": \"IF (floor level is 2nd) AND (head height is \u2265 5') THEN its area is counted once.\",\n      \"Dependencies\": \"\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"\",\n      \"Alternatives\": \"\",\n      \"Special Cases\": \"\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"Parent Category: Attics & equivalencies\",\n      \"Cross-references\": \"Illustration: Figure 11 on p. 16\",\n      \"Logical Dependencies\": \"Mutually exclusive with the rule for low-height attic space.\"\n    }\n  },\n  {\n    \"rule\": \"Floor Area Calculation for 2nd Floor Equivalent (High Volume)\",\n    \"Qualifiers\": {\n      \"Scope\": \"Determination of what counts as floor area, with penalties for high-volume spaces.\",\n      \"Applicability\": \"Applies to areas where the height from the top of the first floor to the top of the roof material is greater than 17 feet.\",\n      \"Exclusions\": \"Areas where this height is \u2264 17 feet or \u2265 26 feet.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"Height from top of first floor to top of roof material.\",\n      \"Material\": \"\",\n      \"Environmental\": \"\",\n      \"Usage\": \"\"\n    },\n    \"Constants\": {\n      \"Floor Area Multiplier\": \"2 (Counts twice)\",\n      \"Height Threshold\": \"> 17 feet\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"\",\n      \"Optional\": \"\",\n      \"Conditional Logic\": \"IF height from top of 1st floor to top of roof is > 17' (and < 26') THEN the area is counted twice.\",\n      \"Dependencies\": \"\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"\",\n      \"Alternatives\": \"\",\n      \"Special Cases\": \"\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"Parent Category: Attics & equivalencies\",\n      \"Cross-references\": \"Illustration: Figure 12 on p. 17\",\n      \"Logical Dependencies\": \"Part of a tiered system with the '3rd floor equivalent' rule.\"\n    }\n  },\n  {\n    \"rule\": \"Floor Area Calculation for 3rd Floor Equivalent (Very High Volume)\",\n    \"Qualifiers\": {\n      \"Scope\": \"Determination of what counts as floor area, with penalties for very high-volume spaces.\",\n      \"Applicability\": \"Applies to areas where the height from the top of the first floor to the top of the roof material is 26 feet or greater.\",\n      \"Exclusions\": \"Areas where this height is < 26 feet.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"Height from top of first floor to top of roof material.\",\n      \"Material\": \"\",\n      \"Environmental\": \"\",\n      \"Usage\": \"\"\n    },\n    \"Constants\": {\n      \"Floor Area Multiplier\": \"3 (Counts three times)\",\n      \"Height Threshold\": \"\u2265 26 feet\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"\",\n      \"Optional\": \"\",\n      \"Conditional Logic\": \"IF height from top of 1st floor to top of roof is \u2265 26' THEN the area is counted three times.\",\n      \"Dependencies\": \"\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"Two exemptions apply to this rule regarding roof pitch and historic homes.\",\n      \"Alternatives\": \"\",\n      \"Special Cases\": \"\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"Parent Category: Attics & equivalencies. This rule has two child exception rules.\",\n      \"Cross-references\": \"Illustration: Figure 12 on p. 17\",\n      \"Logical Dependencies\": \"Highest tier of the high-volume space calculation.\"\n    }\n  },\n  {\n    \"rule\": \"Exemption to 3rd Floor Equivalent for Steep Roof Pitch\",\n    \"Qualifiers\": {\n      \"Scope\": \"Provides a partial exemption from the '3rd floor equivalent' calculation.\",\n      \"Applicability\": \"Applies to areas subject to the '3rd floor equivalent' rule where the roof pitch is 4:12 or greater.\",\n      \"Exclusions\": \"Roofs with a pitch less than 4:12.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"Roof pitch.\",\n      \"Material\": \"\",\n      \"Environmental\": \"\",\n      \"Usage\": \"\"\n    },\n    \"Constants\": {\n      \"Exempt Area\": \"200 sf\",\n      \"Roof Pitch Threshold\": \"\u2265 4:12\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"\",\n      \"Optional\": \"\",\n      \"Conditional Logic\": \"IF (area is subject to 3rd floor equivalent rule) AND (roof pitch is \u2265 4:12) THEN 200 sf of that area is exempt from the calculation.\",\n      \"Dependencies\": \"Depends on the '3rd Floor Equivalent' rule being triggered.\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"This is an explicit deviation from the parent rule.\",\n      \"Alternatives\": \"\",\n      \"Special Cases\": \"\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"Child exception to the '3rd Floor Equivalent' rule.\",\n      \"Cross-references\": \"Illustration: [no illustration listed]\",\n      \"Logical Dependencies\": \"\"\n    }\n  },\n  {\n    \"rule\": \"Exemption for Unusable Attic in Historic Homes\",\n    \"Qualifiers\": {\n      \"Scope\": \"Provides a partial exemption for unusable attic space in historic homes.\",\n      \"Applicability\": \"Applies to unusable attic space in Category 1 & 2 historic homes.\",\n      \"Exclusions\": \"Non-historic homes, usable attic space.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"\",\n      \"Material\": \"Historic Home Category (1 or 2).\",\n      \"Environmental\": \"\",\n      \"Usage\": \"Usability of attic space.\"\n    },\n    \"Constants\": {\n      \"Exempt Area\": \"500 sf\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"\",\n      \"Optional\": \"\",\n      \"Conditional Logic\": \"IF (home is Category 1 or 2 historic) AND (attic space is unusable) THEN 500 sf is exempt.\",\n      \"Dependencies\": \"Applies in the context of the '3rd floor equivalent' calculation.\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"This is an explicit deviation from the parent rule.\",\n      \"Alternatives\": \"\",\n      \"Special Cases\": \"Flagged Ambiguous Language: The text links this to the '3rd floor equivalent' rule, but it could potentially be a general exemption. The current interpretation is that it's an exception to the 3rd floor equivalent rule only.\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"Child exception to the '3rd Floor Equivalent' rule.\",\n      \"Cross-references\": \"Illustration: [no illustration listed]\",\n      \"Logical Dependencies\": \"\"\n    }\n  },\n  {\n    \"rule\": \"Floor Area Calculation for Compliant Basements\",\n    \"Qualifiers\": {\n      \"Scope\": \"Determination of what counts as floor area.\",\n      \"Applicability\": \"Applies to basements that comply with specific patio and lightwell requirements.\",\n      \"Exclusions\": \"Basements not in compliance with the specified regulation.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"\",\n      \"Material\": \"\",\n      \"Environmental\": \"\",\n      \"Usage\": \"Compliance with patio & lightwell requirements.\"\n    },\n    \"Constants\": {\n      \"Floor Area Multiplier\": \"0 (Does not count)\",\n      \"Standard\": \"18.12.070\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"\",\n      \"Optional\": \"\",\n      \"Conditional Logic\": \"IF basement complies with requirements of 18.12.070 THEN its area is not counted.\",\n      \"Dependencies\": \"Compliance is determined by regulation 18.12.070.\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"\",\n      \"Alternatives\": \"\",\n      \"Special Cases\": \"\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"Parent Category: Basements\",\n      \"Cross-references\": \"Illustration: Figs 35, 36, 39, 40 on pp. 39-43. Regulation: 18.12.070\",\n      \"Logical Dependencies\": \"\"\n    }\n  },\n  {\n    \"rule\": \"Floor Area Calculation for Basements in Historic Structures\",\n    \"Qualifiers\": {\n      \"Scope\": \"Determination of what counts as floor area.\",\n      \"Applicability\": \"Applies to basements of Category 1 & 2 historic homes or contributing structures in a historic district.\",\n      \"Exclusions\": \"Basements in non-historic structures.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"\",\n      \"Material\": \"Historic Home Category (1 or 2), Contributing structure status.\",\n      \"Environmental\": \"\",\n      \"Usage\": \"\"\n    },\n    \"Constants\": {\n      \"Floor Area Multiplier\": \"0 (Does not count)\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"\",\n      \"Optional\": \"\",\n      \"Conditional Logic\": \"IF (home is Category 1 or 2 historic) OR (structure is a contributing structure in a historic district) THEN its basement area is not counted.\",\n      \"Dependencies\": \"Flagged Ambiguous Language: The phrase '(even if > 3')' implies this rule overrides another unstated rule about basement height, likely related to a 3-foot threshold.\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"This rule serves as an exception to a more general, unstated rule about basements.\",\n      \"Alternatives\": \"\",\n      \"Special Cases\": \"\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"Parent Category: Basements\",\n      \"Cross-references\": \"Illustration: [no illustration listed]\",\n      \"Logical Dependencies\": \"Overrides a general basement calculation rule that is not present in the text.\"\n    }\n  },\n  {\n    \"rule\": \"Floor Area Calculation for Bay Windows\",\n    \"Qualifiers\": {\n      \"Scope\": \"Determination of what counts as floor area.\",\n      \"Applicability\": \"Applies to bay windows that meet a specific set of dimensional and material criteria.\",\n      \"Exclusions\": \"Bay windows that fail to meet any one of the specified criteria.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"Height above interior floor, Projection distance from wall.\",\n      \"Material\": \"Percentage of the bay window's surface that is windows.\",\n      \"Environmental\": \"\",\n      \"Usage\": \"\"\n    },\n    \"Constants\": {\n      \"Floor Area Multiplier\": \"0 (Does not count)\",\n      \"Height Above Floor Threshold\": \"\u2265 18 inches\",\n      \"Projection Threshold\": \"\u2264 2 feet\",\n      \"Window Area Threshold\": \"> 50%\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"\",\n      \"Optional\": \"\",\n      \"Conditional Logic\": \"IF (height above floor \u2265 18\\\") AND (projection \u2264 2') AND (window area > 50%) THEN its area is not counted.\",\n      \"Dependencies\": \"\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"\",\n      \"Alternatives\": \"\",\n      \"Special Cases\": \"\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"Parent Category: Other\",\n      \"Cross-references\": \"Illustration: Figure 13 on p. 18\",\n      \"Logical Dependencies\": \"\"\n    }\n  },\n  {\n    \"rule\": \"Floor Area Calculation for Architectural Appendages\",\n    \"Qualifiers\": {\n      \"Scope\": \"Determination of what counts as floor area.\",\n      \"Applicability\": \"Applies to the footprint of architectural appendages such as fireplaces or buttresses.\",\n      \"Exclusions\": \"Appendages not explicitly listed or similar.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"Footprint area.\",\n      \"Material\": \"\",\n      \"Environmental\": \"\",\n      \"Usage\": \"Feature type (fireplace, buttress).\"\n    },\n    \"Constants\": {\n      \"Floor Area Multiplier\": \"1 (Counts once)\",\n      \"Calculation Basis\": \"Footprint\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"The footprint of a fireplace or buttress is counted once.\",\n      \"Optional\": \"\",\n      \"Conditional Logic\": \"\",\n      \"Dependencies\": \"\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"\",\n      \"Alternatives\": \"\",\n      \"Special Cases\": \"\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"Parent Category: Other\",\n      \"Cross-references\": \"Illustration: Figure 14 on p. 19\",\n      \"Logical Dependencies\": \"\"\n    }\n  },\n  {\n    \"rule\": \"Floor Area Calculation for Large Accessory Structures\",\n    \"Qualifiers\": {\n      \"Scope\": \"Determination of what counts as floor area.\",\n      \"Applicability\": \"Applies to accessory structures with a floor area greater than 120 square feet.\",\n      \"Exclusions\": \"Accessory structures \u2264 120 sf, Garages, carports, porte cocheres.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"Area of the accessory structure.\",\n      \"Material\": \"\",\n      \"Environmental\": \"\",\n      \"Usage\": \"\"\n    },\n    \"Constants\": {\n      \"Floor Area Multiplier\": \"1 (Counts once)\",\n      \"Area Threshold\": \"> 120 sf\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"\",\n      \"Optional\": \"\",\n      \"Conditional Logic\": \"IF accessory structure area is > 120 sf THEN its area is counted once.\",\n      \"Dependencies\": \"\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"\",\n      \"Alternatives\": \"\",\n      \"Special Cases\": \"\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"Parent Category: Accessory structures\",\n      \"Cross-references\": \"Illustration: [no illustration listed]\",\n      \"Logical Dependencies\": \"An implied rule exists for structures \u2264 120 sf (which presumably do not count).\"\n    }\n  },\n  {\n    \"rule\": \"Floor Area Calculation for Garages and Carports\",\n    \"Qualifiers\": {\n      \"Scope\": \"Determination of what counts as floor area.\",\n      \"Applicability\": \"Applies to garages and carports.\",\n      \"Exclusions\": \"Other types of accessory structures like porte cocheres or general sheds.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"\",\n      \"Material\": \"\",\n      \"Environmental\": \"\",\n      \"Usage\": \"Structure type (garage, carport).\"\n    },\n    \"Constants\": {\n      \"Floor Area Multiplier\": \"1 (Counts once)\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"The area of a garage or carport is counted once.\",\n      \"Optional\": \"\",\n      \"Conditional Logic\": \"\",\n      \"Dependencies\": \"\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"\",\n      \"Alternatives\": \"\",\n      \"Special Cases\": \"\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"Parent Category: Accessory structures\",\n      \"Cross-references\": \"Illustration: [no illustration listed]\",\n      \"Logical Dependencies\": \"\"\n    }\n  },\n  {\n    \"rule\": \"Floor Area Calculation for Porte Cocheres\",\n    \"Qualifiers\": {\n      \"Scope\": \"Determination of what counts as floor area.\",\n      \"Applicability\": \"Applies to porte cocheres.\",\n      \"Exclusions\": \"Garages, carports, and other accessory structures.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"\",\n      \"Material\": \"\",\n      \"Environmental\": \"\",\n      \"Usage\": \"Structure type (porte cochere).\"\n    },\n    \"Constants\": {\n      \"Floor Area Multiplier\": \"0 (Does not count)\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"The area of a porte cochere is not counted.\",\n      \"Optional\": \"\",\n      \"Conditional Logic\": \"\",\n      \"Dependencies\": \"\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"\",\n      \"Alternatives\": \"\",\n      \"Special Cases\": \"\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"Parent Category: Accessory structures\",\n      \"Cross-references\": \"Illustration: [no illustration listed]\",\n      \"Logical Dependencies\": \"\"\n    }\n  }\n]\n```",
+    "response_time": 95.28354501724243,
+    "input_tokens": 1179,
+    "output_tokens": 12272,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 16:12:16",
+  "model": "google/gemini-2.5-pro",
+  "success": true
+}

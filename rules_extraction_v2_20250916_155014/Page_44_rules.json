@@ -1,0 +1,310 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_44.md",
+  "file_name": "Page_44.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "Qualifiers": {
+          "rule_name": "Attached garage setbacks equal to main dwelling",
+          "scope": "Setback compliance for attached garages (page titled for attached garages/carports; bullet text expressly mentions attached garages).",
+          "applicability": [
+            "Lots containing a main dwelling",
+            "Interior lots and corner lots"
+          ],
+          "exclusions": [
+            "No explicit exclusions stated",
+            "Coverage of attached carports is ambiguous because the title mentions carports but the bullet text mentions only garages"
+          ],
+          "ambiguous_language": [
+            "Title references 'attached garages/carports' while the operative rule text states 'Attached garages'; coverage of attached carports is unclear"
+          ]
+        },
+        "Variables": [
+          {
+            "name": "lot.type",
+            "description": "Lot configuration affecting applicable setback sides",
+            "type": "categorical",
+            "allowed_values": [
+              "interior",
+              "corner"
+            ],
+            "source": "derived"
+          },
+          {
+            "name": "main_dwelling.setback_front_min",
+            "description": "Required minimum front setback for the main dwelling",
+            "type": "numeric",
+            "units": "ft",
+            "source": "external_code_reference"
+          },
+          {
+            "name": "main_dwelling.setback_interior_side_min",
+            "description": "Required minimum interior side setback for the main dwelling",
+            "type": "numeric",
+            "units": "ft",
+            "source": "external_code_reference"
+          },
+          {
+            "name": "main_dwelling.setback_street_side_min",
+            "description": "Required minimum street-side setback for the main dwelling (corner lots only)",
+            "type": "numeric",
+            "units": "ft",
+            "applicable_when": {
+              "lot.type": "corner"
+            },
+            "source": "external_code_reference"
+          },
+          {
+            "name": "main_dwelling.setback_rear_min",
+            "description": "Required minimum rear setback for the main dwelling",
+            "type": "numeric",
+            "units": "ft",
+            "source": "external_code_reference"
+          },
+          {
+            "name": "garage_attached.setback_front",
+            "description": "Front setback of the attached garage",
+            "type": "numeric",
+            "units": "ft",
+            "source": "measured_plan_dimension"
+          },
+          {
+            "name": "garage_attached.setback_interior_side",
+            "description": "Interior side setback of the attached garage",
+            "type": "numeric",
+            "units": "ft",
+            "source": "measured_plan_dimension"
+          },
+          {
+            "name": "garage_attached.setback_street_side",
+            "description": "Street-side setback of the attached garage (corner lots only)",
+            "type": "numeric",
+            "units": "ft",
+            "applicable_when": {
+              "lot.type": "corner"
+            },
+            "source": "measured_plan_dimension"
+          },
+          {
+            "name": "garage_attached.setback_rear",
+            "description": "Rear setback of the attached garage",
+            "type": "numeric",
+            "units": "ft",
+            "source": "measured_plan_dimension"
+          }
+        ],
+        "Constants": [
+          {
+            "name": "standard_reference.main_dwelling_setbacks",
+            "value": "Use the setback standards required for the main dwelling as the baseline for attached garage compliance",
+            "units": null,
+            "description": "Cross-referenced standard defining the required setbacks for the principal dwelling",
+            "source": "This document references but does not include specific distances; obtain from primary zoning setback tables"
+          }
+        ],
+        "Conditions": {
+          "mandatory": true,
+          "logic": {
+            "all": [
+              {
+                "operator": ">=",
+                "left": "garage_attached.setback_front",
+                "right": "main_dwelling.setback_front_min"
+              },
+              {
+                "operator": ">=",
+                "left": "garage_attached.setback_interior_side",
+                "right": "main_dwelling.setback_interior_side_min"
+              },
+              {
+                "if": {
+                  "operator": "==",
+                  "left": "lot.type",
+                  "right": "corner"
+                },
+                "then_all": [
+                  {
+                    "operator": ">=",
+                    "left": "garage_attached.setback_street_side",
+                    "right": "main_dwelling.setback_street_side_min"
+                  }
+                ],
+                "else": "skip"
+              },
+              {
+                "operator": ">=",
+                "left": "garage_attached.setback_rear",
+                "right": "main_dwelling.setback_rear_min"
+              }
+            ]
+          },
+          "notes": [
+            "Interprets 'must comply with same setbacks as main dwelling' to mean attached garage must meet or exceed each minimum setback that applies to the main dwelling for the corresponding yard."
+          ],
+          "ambiguous_language": [
+            "Whether attached carports are included is unclear; enforcement currently scoped to attached garages only."
+          ]
+        },
+        "Exceptions": [],
+        "Relationships": {
+          "cross_references": [
+            {
+              "reference": "Main dwelling setback requirements",
+              "purpose": "Defines the numerical minimums the attached garage must meet"
+            }
+          ],
+          "hierarchical": [
+            "Attached garage is treated as part of the principal building mass for setback purposes"
+          ],
+          "logical_dependencies": [
+            {
+              "depends_on": "lot.type",
+              "affects": "whether street-side setback comparison is evaluated"
+            }
+          ]
+        }
+      },
+      {
+        "Qualifiers": {
+          "rule_name": "Uncovered parking location constraints (front yard and street-side yard)",
+          "scope": "Siting of uncovered parking spaces on a lot relative to front yard and street-side yard",
+          "applicability": [
+            "All lots proposing uncovered parking spaces (including spaces in side yards or driveways)",
+            "Interior lots (front yard provision applies)",
+            "Corner lots (front yard and street-side yard provisions apply)"
+          ],
+          "exclusions": [
+            "Covered/roofed parking spaces (garages, carports) are not governed by this rule"
+          ],
+          "ambiguous_language": [
+            "The term 'beyond' in 'beyond the required frontyard' could be interpreted as at or past the setback line (>=) or strictly past it (>).",
+            "The phrase 'beyond the first 10' of the street-side yard' is ambiguous as to whether location exactly at 10 ft is permitted."
+          ]
+        },
+        "Variables": [
+          {
+            "name": "lot.type",
+            "description": "Lot configuration affecting presence of street-side yard",
+            "type": "categorical",
+            "allowed_values": [
+              "interior",
+              "corner"
+            ],
+            "source": "derived"
+          },
+          {
+            "name": "yard.front.required_depth",
+            "description": "Required depth of the front yard measured from the front lot line",
+            "type": "numeric",
+            "units": "ft",
+            "source": "external_code_reference"
+          },
+          {
+            "name": "yard.street_side.exists",
+            "description": "Whether a street-side yard exists (corner lots typically yes)",
+            "type": "boolean",
+            "source": "derived_from_lot_geometry"
+          },
+          {
+            "name": "uncovered_space[i].distance_from_front_lot_line_min",
+            "description": "Minimum distance of each uncovered parking space from the front lot line (nearest point of the space)",
+            "type": "numeric",
+            "units": "ft",
+            "source": "measured_plan_dimension"
+          },
+          {
+            "name": "uncovered_space[i].distance_from_street_side_lot_line_min",
+            "description": "Minimum distance of each uncovered parking space from the street-side lot line (nearest point of the space)",
+            "type": "numeric",
+            "units": "ft",
+            "applicable_when": {
+              "yard.street_side.exists": true
+            },
+            "source": "measured_plan_dimension"
+          }
+        ],
+        "Constants": [
+          {
+            "name": "street_side_buffer_depth",
+            "value": 10,
+            "units": "ft",
+            "description": "Depth of prohibited zone from the street-side lot line for uncovered parking spaces",
+            "source": "Explicit note text"
+          }
+        ],
+        "Conditions": {
+          "mandatory": true,
+          "logic": {
+            "for_each": "uncovered_space[i]",
+            "all": [
+              {
+                "operator": ">=",
+                "left": "uncovered_space[i].distance_from_front_lot_line_min",
+                "right": "yard.front.required_depth",
+                "interpretation_note": "Treats 'beyond the required frontyard' as at or behind the front setback line; see ambiguous_language."
+              },
+              {
+                "if": {
+                  "operator": "==",
+                  "left": "yard.street_side.exists",
+                  "right": true
+                },
+                "then_all": [
+                  {
+                    "operator": ">",
+                    "left": "uncovered_space[i].distance_from_street_side_lot_line_min",
+                    "right": "street_side_buffer_depth",
+                    "interpretation_note": "Uses strict greater-than per 'beyond the first 10''; see ambiguous_language."
+                  }
+                ],
+                "else": "skip"
+              }
+            ]
+          },
+          "notes": [
+            "This rule effectively establishes a 'no-parking area' for uncovered spaces consisting of the entire required front yard and the first 10 ft of the street-side yard on corner lots.",
+            "Examples on the page show compliant placements: in the side yard and in a driveway located behind the front setback line."
+          ],
+          "ambiguous_language": [
+            "Whether a space exactly at the 10 ft line in the street-side yard is allowed is unclear.",
+            "Whether a space exactly at the front setback line is allowed is unclear; this implementation allows it (>=)."
+          ]
+        },
+        "Exceptions": [],
+        "Relationships": {
+          "cross_references": [
+            {
+              "reference": "Definition and measurement of 'required front yard'",
+              "purpose": "Determines the depth yard.front.required_depth"
+            },
+            {
+              "reference": "Definition and measurement of 'street-side yard'",
+              "purpose": "Determines presence and measurement baseline for the 10 ft buffer"
+            }
+          ],
+          "logical_dependencies": [
+            {
+              "depends_on": "yard.street_side.exists",
+              "affects": "whether the 10 ft street-side constraint is enforced"
+            }
+          ],
+          "derived_mappings": [
+            {
+              "name": "no_parking_area_for_uncovered_spaces",
+              "definition": "Union of the required front yard area and the first 10 ft strip of the street-side yard (where present)"
+            }
+          ]
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "[\n  {\n    \"Qualifiers\": {\n      \"rule_name\": \"Attached garage setbacks equal to main dwelling\",\n      \"scope\": \"Setback compliance for attached garages (page titled for attached garages/carports; bullet text expressly mentions attached garages).\",\n      \"applicability\": [\n        \"Lots containing a main dwelling\",\n        \"Interior lots and corner lots\"\n      ],\n      \"exclusions\": [\n        \"No explicit exclusions stated\",\n        \"Coverage of attached carports is ambiguous because the title mentions carports but the bullet text mentions only garages\"\n      ],\n      \"ambiguous_language\": [\n        \"Title references 'attached garages/carports' while the operative rule text states 'Attached garages'; coverage of attached carports is unclear\"\n      ]\n    },\n    \"Variables\": [\n      {\n        \"name\": \"lot.type\",\n        \"description\": \"Lot configuration affecting applicable setback sides\",\n        \"type\": \"categorical\",\n        \"allowed_values\": [\n          \"interior\",\n          \"corner\"\n        ],\n        \"source\": \"derived\"\n      },\n      {\n        \"name\": \"main_dwelling.setback_front_min\",\n        \"description\": \"Required minimum front setback for the main dwelling\",\n        \"type\": \"numeric\",\n        \"units\": \"ft\",\n        \"source\": \"external_code_reference\"\n      },\n      {\n        \"name\": \"main_dwelling.setback_interior_side_min\",\n        \"description\": \"Required minimum interior side setback for the main dwelling\",\n        \"type\": \"numeric\",\n        \"units\": \"ft\",\n        \"source\": \"external_code_reference\"\n      },\n      {\n        \"name\": \"main_dwelling.setback_street_side_min\",\n        \"description\": \"Required minimum street-side setback for the main dwelling (corner lots only)\",\n        \"type\": \"numeric\",\n        \"units\": \"ft\",\n        \"applicable_when\": {\n          \"lot.type\": \"corner\"\n        },\n        \"source\": \"external_code_reference\"\n      },\n      {\n        \"name\": \"main_dwelling.setback_rear_min\",\n        \"description\": \"Required minimum rear setback for the main dwelling\",\n        \"type\": \"numeric\",\n        \"units\": \"ft\",\n        \"source\": \"external_code_reference\"\n      },\n      {\n        \"name\": \"garage_attached.setback_front\",\n        \"description\": \"Front setback of the attached garage\",\n        \"type\": \"numeric\",\n        \"units\": \"ft\",\n        \"source\": \"measured_plan_dimension\"\n      },\n      {\n        \"name\": \"garage_attached.setback_interior_side\",\n        \"description\": \"Interior side setback of the attached garage\",\n        \"type\": \"numeric\",\n        \"units\": \"ft\",\n        \"source\": \"measured_plan_dimension\"\n      },\n      {\n        \"name\": \"garage_attached.setback_street_side\",\n        \"description\": \"Street-side setback of the attached garage (corner lots only)\",\n        \"type\": \"numeric\",\n        \"units\": \"ft\",\n        \"applicable_when\": {\n          \"lot.type\": \"corner\"\n        },\n        \"source\": \"measured_plan_dimension\"\n      },\n      {\n        \"name\": \"garage_attached.setback_rear\",\n        \"description\": \"Rear setback of the attached garage\",\n        \"type\": \"numeric\",\n        \"units\": \"ft\",\n        \"source\": \"measured_plan_dimension\"\n      }\n    ],\n    \"Constants\": [\n      {\n        \"name\": \"standard_reference.main_dwelling_setbacks\",\n        \"value\": \"Use the setback standards required for the main dwelling as the baseline for attached garage compliance\",\n        \"units\": null,\n        \"description\": \"Cross-referenced standard defining the required setbacks for the principal dwelling\",\n        \"source\": \"This document references but does not include specific distances; obtain from primary zoning setback tables\"\n      }\n    ],\n    \"Conditions\": {\n      \"mandatory\": true,\n      \"logic\": {\n        \"all\": [\n          {\n            \"operator\": \">=\",\n            \"left\": \"garage_attached.setback_front\",\n            \"right\": \"main_dwelling.setback_front_min\"\n          },\n          {\n            \"operator\": \">=\",\n            \"left\": \"garage_attached.setback_interior_side\",\n            \"right\": \"main_dwelling.setback_interior_side_min\"\n          },\n          {\n            \"if\": {\n              \"operator\": \"==\",\n              \"left\": \"lot.type\",\n              \"right\": \"corner\"\n            },\n            \"then_all\": [\n              {\n                \"operator\": \">=\",\n                \"left\": \"garage_attached.setback_street_side\",\n                \"right\": \"main_dwelling.setback_street_side_min\"\n              }\n            ],\n            \"else\": \"skip\"\n          },\n          {\n            \"operator\": \">=\",\n            \"left\": \"garage_attached.setback_rear\",\n            \"right\": \"main_dwelling.setback_rear_min\"\n          }\n        ]\n      },\n      \"notes\": [\n        \"Interprets 'must comply with same setbacks as main dwelling' to mean attached garage must meet or exceed each minimum setback that applies to the main dwelling for the corresponding yard.\"\n      ],\n      \"ambiguous_language\": [\n        \"Whether attached carports are included is unclear; enforcement currently scoped to attached garages only.\"\n      ]\n    },\n    \"Exceptions\": [],\n    \"Relationships\": {\n      \"cross_references\": [\n        {\n          \"reference\": \"Main dwelling setback requirements\",\n          \"purpose\": \"Defines the numerical minimums the attached garage must meet\"\n        }\n      ],\n      \"hierarchical\": [\n        \"Attached garage is treated as part of the principal building mass for setback purposes\"\n      ],\n      \"logical_dependencies\": [\n        {\n          \"depends_on\": \"lot.type\",\n          \"affects\": \"whether street-side setback comparison is evaluated\"\n        }\n      ]\n    }\n  },\n  {\n    \"Qualifiers\": {\n      \"rule_name\": \"Uncovered parking location constraints (front yard and street-side yard)\",\n      \"scope\": \"Siting of uncovered parking spaces on a lot relative to front yard and street-side yard\",\n      \"applicability\": [\n        \"All lots proposing uncovered parking spaces (including spaces in side yards or driveways)\",\n        \"Interior lots (front yard provision applies)\",\n        \"Corner lots (front yard and street-side yard provisions apply)\"\n      ],\n      \"exclusions\": [\n        \"Covered/roofed parking spaces (garages, carports) are not governed by this rule\"\n      ],\n      \"ambiguous_language\": [\n        \"The term 'beyond' in 'beyond the required frontyard' could be interpreted as at or past the setback line (>=) or strictly past it (>).\",\n        \"The phrase 'beyond the first 10' of the street-side yard' is ambiguous as to whether location exactly at 10 ft is permitted.\"\n      ]\n    },\n    \"Variables\": [\n      {\n        \"name\": \"lot.type\",\n        \"description\": \"Lot configuration affecting presence of street-side yard\",\n        \"type\": \"categorical\",\n        \"allowed_values\": [\n          \"interior\",\n          \"corner\"\n        ],\n        \"source\": \"derived\"\n      },\n      {\n        \"name\": \"yard.front.required_depth\",\n        \"description\": \"Required depth of the front yard measured from the front lot line\",\n        \"type\": \"numeric\",\n        \"units\": \"ft\",\n        \"source\": \"external_code_reference\"\n      },\n      {\n        \"name\": \"yard.street_side.exists\",\n        \"description\": \"Whether a street-side yard exists (corner lots typically yes)\",\n        \"type\": \"boolean\",\n        \"source\": \"derived_from_lot_geometry\"\n      },\n      {\n        \"name\": \"uncovered_space[i].distance_from_front_lot_line_min\",\n        \"description\": \"Minimum distance of each uncovered parking space from the front lot line (nearest point of the space)\",\n        \"type\": \"numeric\",\n        \"units\": \"ft\",\n        \"source\": \"measured_plan_dimension\"\n      },\n      {\n        \"name\": \"uncovered_space[i].distance_from_street_side_lot_line_min\",\n        \"description\": \"Minimum distance of each uncovered parking space from the street-side lot line (nearest point of the space)\",\n        \"type\": \"numeric\",\n        \"units\": \"ft\",\n        \"applicable_when\": {\n          \"yard.street_side.exists\": true\n        },\n        \"source\": \"measured_plan_dimension\"\n      }\n    ],\n    \"Constants\": [\n      {\n        \"name\": \"street_side_buffer_depth\",\n        \"value\": 10,\n        \"units\": \"ft\",\n        \"description\": \"Depth of prohibited zone from the street-side lot line for uncovered parking spaces\",\n        \"source\": \"Explicit note text\"\n      }\n    ],\n    \"Conditions\": {\n      \"mandatory\": true,\n      \"logic\": {\n        \"for_each\": \"uncovered_space[i]\",\n        \"all\": [\n          {\n            \"operator\": \">=\",\n            \"left\": \"uncovered_space[i].distance_from_front_lot_line_min\",\n            \"right\": \"yard.front.required_depth\",\n            \"interpretation_note\": \"Treats 'beyond the required frontyard' as at or behind the front setback line; see ambiguous_language.\"\n          },\n          {\n            \"if\": {\n              \"operator\": \"==\",\n              \"left\": \"yard.street_side.exists\",\n              \"right\": true\n            },\n            \"then_all\": [\n              {\n                \"operator\": \">\",\n                \"left\": \"uncovered_space[i].distance_from_street_side_lot_line_min\",\n                \"right\": \"street_side_buffer_depth\",\n                \"interpretation_note\": \"Uses strict greater-than per 'beyond the first 10''; see ambiguous_language.\"\n              }\n            ],\n            \"else\": \"skip\"\n          }\n        ]\n      },\n      \"notes\": [\n        \"This rule effectively establishes a 'no-parking area' for uncovered spaces consisting of the entire required front yard and the first 10 ft of the street-side yard on corner lots.\",\n        \"Examples on the page show compliant placements: in the side yard and in a driveway located behind the front setback line.\"\n      ],\n      \"ambiguous_language\": [\n        \"Whether a space exactly at the 10 ft line in the street-side yard is allowed is unclear.\",\n        \"Whether a space exactly at the front setback line is allowed is unclear; this implementation allows it (>=).\"\n      ]\n    },\n    \"Exceptions\": [],\n    \"Relationships\": {\n      \"cross_references\": [\n        {\n          \"reference\": \"Definition and measurement of 'required front yard'\",\n          \"purpose\": \"Determines the depth yard.front.required_depth\"\n        },\n        {\n          \"reference\": \"Definition and measurement of 'street-side yard'\",\n          \"purpose\": \"Determines presence and measurement baseline for the 10 ft buffer\"\n        }\n      ],\n      \"logical_dependencies\": [\n        {\n          \"depends_on\": \"yard.street_side.exists\",\n          \"affects\": \"whether the 10 ft street-side constraint is enforced\"\n        }\n      ],\n      \"derived_mappings\": [\n        {\n          \"name\": \"no_parking_area_for_uncovered_spaces\",\n          \"definition\": \"Union of the required front yard area and the first 10 ft strip of the street-side yard (where present)\"\n        }\n      ]\n    }\n  }\n]",
+    "response_time": 118.58465099334717,
+    "input_tokens": 697,
+    "output_tokens": 7594,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 15:55:31",
+  "model": "openai/gpt-5",
+  "success": true
+}

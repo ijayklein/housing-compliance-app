@@ -1,0 +1,43 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_13.png",
+  "image_name": "Page_13.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Fig 4 Types of porches and entry ways\n\nA Roofed porch\n\nB Roofed entry way\n(not vaulted)\n\nC Vaulted entry way\n\nD Combination porch & vaulted entry way\n\nSee how to measure height of porches & entry features in Figs 6-8 on pp. 11-13\n\nHeight greater than 12\" above grade (appears twice, right side of C and D)\nHeight less than 12\" above grade (appears once, right side of B)",
+      "visual_elements": [
+        {
+          "type": "figure",
+          "description": "Four architectural line drawings illustrating different types of porches and entry ways: A) Roofed porch showing a front porch with a roof supported by columns; B) Roofed entry way (not vaulted) showing a small covered entry with a door and windows above; C) Vaulted entry way showing a house front with a vaulted entry and dormer windows, with a height measurement labeled 'greater than 12\" above grade'; D) Combination porch & vaulted entry way showing a porch with arches and a vaulted entry tower, also labeled with height 'greater than 12\" above grade'.",
+          "location": "Top left (A), bottom left (B), top right (C), bottom right (D)"
+        },
+        {
+          "type": "text box",
+          "description": "Gray shaded box with white text instructing to see how to measure height of porches & entry features in Figs 6-8 on pages 11-13.",
+          "location": "Center of page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Height of porch or entry feature",
+          "value": "12",
+          "unit": "inches"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Fig 4 Types of porches and entry ways",
+        "subheadings": [],
+        "sections": []
+      },
+      "additional_notes": [
+        "No handwritten annotations or stamps present.",
+        "Page number '1' appears at bottom right corner.",
+        "Text and drawings are clear and legible."
+      ],
+      "cross_references": [
+        "See how to measure height of porches & entry features in Figs 6-8 on pp. 11-13"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-14 19:40:50",
+  "model_used": "openai/gpt-4.1-mini"
+}

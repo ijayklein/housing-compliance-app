@@ -1,0 +1,158 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_10.png",
+  "image_name": "Page_10.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Lot\ncoverage\n&\nfloor area\n\nThese terms are used to\ndescribe the amount of\ndevelopment on a lot.\n\nLot coverage describes\nhow much of the lot is\ncovered by structures\nbut doesn't evaluate the\nmass of those structures.\n\nGross floor area\ndescribes the mass\nof the structures by\nreflecting the cumulative\nsquare footage of all\nvisible levels.\n\nCode sections\nPage 4\u20135\n18.12.040 (a) Table 2\n18.12.040 (b) Table 3\n18.04.030 (a) (86)\n\n4\n\nLot coverage\n\nMaximum allowable\nAllowable lot coverage is expressed by a ratio\u201435% of\nthe lot size.\n\nExample calculation:\n\nFor a 7,000 sf lot, the allowable\nlot coverage would be:\n\n0.35 x 7,000 sf = 2,450 sf\n\nLot coverage includes:\n\n\u2022 footprints of all structures including main resi-\ndence, covered parking, tool sheds, covered pool\nequipment units, etc.\n\u2022 projecting elements such as balconies, stairways,\nporches, patio covers, etc.\n\u2022 decking that exceeds 30\u201d above grade.\n\u2022 for roof overhangs or eaves that exceed 4\u2019, the por-\ntion that is beyond 4\u2019.\n\u2022 swimming pools and spas that exceed 30\u201d\nabove grade.\n\nLot coverage excludes:\n\n\u2022 roof overhangs up to 4\u2019.\n\u2022 uncovered structures less than 30\u201d above grade.\n\nAn additional 5% coverage is permitted for covered\npatios, canopies and roof overhangs beyond 4 feet.\n\nNote: To qualify as a structure that is less than 30\ninches above grade, a porch or deck may only have\nopen railings above 30 inches\u2014no solid half walls.\n\nGross Floor area\n\nMaximum allowable\nAllowable gross floor area is expressed by a ratio\u2014the\nsum of 45% of the first 5,000 sf of lot area plus 30% of\nany portion of lot area in excess of 5,000 sf.\n\nExample calculation:\n\nFor a 7,000 sf lot, the allowable\ngross floor area would be:\n\n0.45 x 5,000 sf = 2,250 sf\n0.30 x 2,000 sf = 600 sf\n\nTotal\n= 2,850 sf\n\nGross floor area includes:\n\n\u2022 the sum of all the floors in a main structure mea-\nsured to the outside of the exterior stud walls.\n\u2022 stairwells at all floors and all areas that are greater\nthan 50% enclosed and covered.\n\u2022 covered parking and all accessory buildings which\nare greater than 120 square feet.\n\u2022 spaces that meet the criteria for second and third\nfloor equivalents.\n\nNote: The main house may not\nexceed 6,000 sf, regardless of\nthe size of the lot.",
+      "visual_elements": [
+        {
+          "type": "text_block",
+          "description": "A shaded rectangular block on the left side of the page containing introductory definitions and code section references.",
+          "location": "Left side, spanning top to bottom"
+        },
+        {
+          "type": "text_block",
+          "description": "A shaded rectangular block illustrating the Lot Coverage example calculation.",
+          "location": "Middle-left, below 'Example calculation:'"
+        },
+        {
+          "type": "text_block",
+          "description": "A shaded rectangular block illustrating the Gross Floor Area example calculation.",
+          "location": "Middle-right, below 'Example calculation:'"
+        },
+        {
+          "type": "text_block",
+          "description": "A shaded rectangular block containing a note about the maximum size of the main house.",
+          "location": "Bottom-right"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Maximum allowable lot coverage ratio",
+          "value": "35",
+          "unit": "%"
+        },
+        {
+          "parameter": "Example lot size (Lot Coverage)",
+          "value": "7000",
+          "unit": "sf"
+        },
+        {
+          "parameter": "Lot coverage calculation factor",
+          "value": "0.35",
+          "unit": "ratio"
+        },
+        {
+          "parameter": "Calculated allowable lot coverage",
+          "value": "2450",
+          "unit": "sf"
+        },
+        {
+          "parameter": "Decking/Pool/Spa height threshold for inclusion in lot coverage",
+          "value": "30",
+          "unit": "inches"
+        },
+        {
+          "parameter": "Roof overhang/eave threshold for inclusion in lot coverage",
+          "value": "4",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Additional lot coverage for covered patios/canopies/roof overhangs",
+          "value": "5",
+          "unit": "%"
+        },
+        {
+          "parameter": "Maximum allowable gross floor area ratio (first 5,000 sf)",
+          "value": "45",
+          "unit": "%"
+        },
+        {
+          "parameter": "Maximum allowable gross floor area ratio (excess over 5,000 sf)",
+          "value": "30",
+          "unit": "%"
+        },
+        {
+          "parameter": "Example lot size (Gross Floor Area)",
+          "value": "7000",
+          "unit": "sf"
+        },
+        {
+          "parameter": "Gross floor area calculation factor (first 5,000 sf)",
+          "value": "0.45",
+          "unit": "ratio"
+        },
+        {
+          "parameter": "Gross floor area calculation factor (excess 2,000 sf)",
+          "value": "0.30",
+          "unit": "ratio"
+        },
+        {
+          "parameter": "Calculated gross floor area (first 5,000 sf portion)",
+          "value": "2250",
+          "unit": "sf"
+        },
+        {
+          "parameter": "Calculated gross floor area (excess 2,000 sf portion)",
+          "value": "600",
+          "unit": "sf"
+        },
+        {
+          "parameter": "Total calculated allowable gross floor area",
+          "value": "2850",
+          "unit": "sf"
+        },
+        {
+          "parameter": "Stairwell enclosure/coverage threshold for inclusion in gross floor area",
+          "value": "50",
+          "unit": "%"
+        },
+        {
+          "parameter": "Covered parking/accessory building size threshold for inclusion in gross floor area",
+          "value": "120",
+          "unit": "square feet"
+        },
+        {
+          "parameter": "Maximum main house size",
+          "value": "6000",
+          "unit": "sf"
+        },
+        {
+          "parameter": "Porch/deck height threshold for 'less than 30 inches above grade' qualification",
+          "value": "30",
+          "unit": "inches"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": null,
+        "subheadings": [
+          "Lot coverage",
+          "Gross Floor area"
+        ],
+        "sections": [
+          "Lot coverage",
+          "Maximum allowable",
+          "Example calculation:",
+          "Lot coverage includes:",
+          "Lot coverage excludes:",
+          "Gross Floor area",
+          "Maximum allowable",
+          "Example calculation:",
+          "Gross floor area includes:",
+          "Code sections"
+        ]
+      },
+      "additional_notes": [
+        "Page number '4' is present at the bottom left."
+      ],
+      "cross_references": [
+        "Page 4\u20135",
+        "18.12.040 (a) Table 2",
+        "18.12.040 (b) Table 3",
+        "18.04.030 (a) (86)"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-11 14:59:12",
+  "model_used": "google/gemini-2.5-flash"
+}

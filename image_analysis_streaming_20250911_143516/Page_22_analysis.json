@@ -1,0 +1,94 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_22.png",
+  "image_name": "Page_22.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Attic\nspace &\nequivalen-\ncies\n\nAttic, closet, & perimeter spaces\n\nOn all accessible floors, areas with at least 5' of head clearance count toward the gross\nfloor area regardless of the floor plan or actual usage of the space.\n\nVoluminous spaces in a\nstructure contribute to\nthe mass even if these\nareas are not used\nor described in the\nfloor plan. The 2nd &\n3rd floor equivalency\naddresses how these\nareas count toward the\ngross floor area.\n\nIn Fig 11 below, the highlighted areas count as follows:\n\n\u2022 Area A of this 3rd floor (accessible via stairs), has 5' of head\n  clearance and counts as 3rd floor area.\n\u2022 Area B of this 2rd floor (accessible via stairs), has 5' of head\n  clearance and is included in the count of the, more obvious, 2nd\n  floor area.\n\nNote: 500 sf of unusable attic\nspace may be exempted for\nCategory 1 & 2 historic homes.\n\nNote:\nMeasurements are\nfrom top of floor to\nunderside of the rafter\n\nFig 11 Attic, closet, & perimeter spaces\n\nUnderside of\npical)\n\noor\n\n1st floor\n\nCode sections\n18.04.030(a)(65)\n18.12.040(b)Table 3\n\n16",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "A cross-section diagram of a house, labeled 'Fig 11 Attic, closet, & perimeter spaces'. It illustrates how spaces with at least 5' of head clearance are counted towards gross floor area. The diagram shows a foundation, a 1st floor, a 2nd floor, and an attic space under a pitched roof. A staircase provides access between floors. Two areas are highlighted with hatching: 'Area A' is the central portion of the attic, designated as 3rd floor area. 'Area B' is a perimeter space on the right side of the 2nd floor, situated under the sloped roof. A vertical dimension line on the left side indicates a height of '5'' from the floor to the sloped ceiling. Callout lines point to various parts of the structure, with labels on the right side being partially cut off. The label 'cc' is near the stairs.",
+          "location": "Center of the page, below the main text and bullet points."
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Minimum head clearance",
+          "value": "5",
+          "unit": "feet (') "
+        },
+        {
+          "parameter": "Floor equivalency",
+          "value": "2nd & 3rd",
+          "unit": "floor"
+        },
+        {
+          "parameter": "Exempted attic space",
+          "value": "500",
+          "unit": "sf"
+        },
+        {
+          "parameter": "Historic home exemption category",
+          "value": "1 & 2",
+          "unit": null
+        },
+        {
+          "parameter": "Figure number",
+          "value": "11",
+          "unit": null
+        },
+        {
+          "parameter": "Page number",
+          "value": "16",
+          "unit": null
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Attic, closet, & perimeter spaces",
+        "subheadings": [
+          "Attic space & equivalencies",
+          "Code sections"
+        ],
+        "sections": [
+          "16"
+        ]
+      },
+      "additional_notes": [
+        {
+          "note": "The page layout includes a dark grey vertical sidebar on the left with white text."
+        },
+        {
+          "note": "A key rule is highlighted within a light grey box at the top of the main content area."
+        },
+        {
+          "note": "There are two separate 'Note' boxes with dark grey backgrounds and white text. One provides an exemption rule for historic homes, and the other clarifies measurement points."
+        },
+        {
+          "note": "Text labels on the right side of the diagram are partially cut off due to the edge of the page. Visible fragments include 'Underside of', 'pical)' (likely 'typical'), and 'oor' (likely 'floor')."
+        },
+        {
+          "note": "The text 'cc' appears in a handwritten style near the stairs in the diagram; its meaning is not defined on the page."
+        },
+        {
+          "note": "The page number '16' is located at the bottom left of the page, below the sidebar."
+        }
+      ],
+      "cross_references": [
+        {
+          "reference": "Fig 11",
+          "description": "Refers to the diagram on the current page."
+        },
+        {
+          "reference": "Code sections 18.04.030(a)(65)",
+          "description": "Reference to an external code document or section."
+        },
+        {
+          "reference": "18.12.040(b)Table 3",
+          "description": "Reference to a table within an external code document or section."
+        }
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-11 14:35:51",
+  "model_used": "google/gemini-2.5-pro"
+}

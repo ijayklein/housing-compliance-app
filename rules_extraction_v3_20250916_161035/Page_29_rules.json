@@ -1,0 +1,205 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_29.md",
+  "file_name": "Page_29.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "rule": "Flag Lot Setback Determination",
+        "Qualifiers": {
+          "Scope": "Defines setbacks and the front lot line for flag lots.",
+          "Applicability": "Applies to lots configured as 'Flag lots'.",
+          "Exclusions": ""
+        },
+        "Variables": {
+          "Dimensional": "lot_shape: 'flag_lot'",
+          "Material": "",
+          "Environmental": "",
+          "Usage": ""
+        },
+        "Constants": {
+          "front_setback": "10 feet"
+        },
+        "Conditions": {
+          "Mandatory": "",
+          "Optional": "",
+          "Conditional Logic": "IF lot_shape IS 'flag_lot' THEN front_setback IS 10 feet.",
+          "Dependencies": "The front lot line must be determined before the front setback can be applied. The front lot line is defined as the lot line closest and most parallel to the street."
+        },
+        "Exceptions": {
+          "front_setback_exception": "The front setback is 10 feet, which is an exception to an implied standard of 20 feet mentioned in the text ('10\\' instead of 20\\')."
+        },
+        "Relationships": {
+          "Hierarchical": "This rule is a specific case under the general category of 'oddly shaped lots'.",
+          "Cross-references": "",
+          "Logical Dependencies": "The 10-foot front setback is dependent on the lot's classification as a 'Flag lot'."
+        }
+      },
+      {
+        "rule": "Corner Lot Setback Determination",
+        "Qualifiers": {
+          "Scope": "Defines the street side setback for standard corner lots.",
+          "Applicability": "Applies to lots with two adjacent street frontages, identified as 'Corner lots'.",
+          "Exclusions": "Does not apply to 'Substandard Corner lots' where a frontage is less than 50 feet."
+        },
+        "Variables": {
+          "Dimensional": "lot_shape: 'corner_lot'",
+          "Material": "",
+          "Environmental": "",
+          "Usage": ""
+        },
+        "Constants": {
+          "street_side_setback": "16 feet"
+        },
+        "Conditions": {
+          "Mandatory": "Lot must be a corner lot, with streets along two adjoining edges.",
+          "Optional": "",
+          "Conditional Logic": "",
+          "Dependencies": ""
+        },
+        "Exceptions": {
+          "special_cases": "A special case for substandard corner lots is defined in a separate rule."
+        },
+        "Relationships": {
+          "Hierarchical": "This rule is a specific case under the general category of 'oddly shaped lots'.",
+          "Cross-references": "This rule provides the baseline setback (16 feet) that is modified by the 'Substandard Corner Lot Setback Exception' rule.",
+          "Logical Dependencies": ""
+        }
+      },
+      {
+        "rule": "Substandard Corner Lot Setback Exception",
+        "Qualifiers": {
+          "Scope": "Defines an exception for the street side setback on substandard corner lots.",
+          "Applicability": "Applies to corner lots where one street frontage is less than 50 feet.",
+          "Exclusions": "Does not apply to corner lots where all street frontages are 50 feet or greater."
+        },
+        "Variables": {
+          "Dimensional": "frontage_width",
+          "Material": "",
+          "Environmental": "",
+          "Usage": ""
+        },
+        "Constants": {
+          "street_side_setback": "10 feet",
+          "frontage_threshold": "50 feet"
+        },
+        "Conditions": {
+          "Mandatory": "",
+          "Optional": "",
+          "Conditional Logic": "IF lot_shape IS 'corner_lot' AND frontage_width < 50 feet THEN street_side_setback = 10 feet.",
+          "Dependencies": "The front lot line is defined as the shortest of the two street frontages for this lot type."
+        },
+        "Exceptions": {
+          "setback_deviation": "The street side setback is reduced to 10 feet, deviating from the standard 16 feet for corner lots ('10\\' instead of 16\\')."
+        },
+        "Relationships": {
+          "Hierarchical": "This rule is a sub-case of the 'Corner Lot' rule.",
+          "Cross-references": "Directly references and modifies the 'Corner Lot Setback Determination' rule.",
+          "Logical Dependencies": "This rule's applicability is dependent on the 'frontage_width' variable being less than the 'frontage_threshold' constant."
+        }
+      },
+      {
+        "rule": "Through Lot Yard Identification",
+        "Qualifiers": {
+          "Scope": "Identifies the yard types for a through lot.",
+          "Applicability": "Applies to lots with street frontage on two opposite, parallel sides.",
+          "Exclusions": ""
+        },
+        "Variables": {
+          "Dimensional": "lot_shape: 'through_lot'",
+          "Material": "",
+          "Environmental": "",
+          "Usage": ""
+        },
+        "Constants": {
+          "front_setback": "TBD",
+          "rear_setback": "TBD"
+        },
+        "Conditions": {
+          "Mandatory": "Lot must have streets on opposite, parallel sides.",
+          "Optional": "",
+          "Conditional Logic": "",
+          "Dependencies": "ambiguous_language: The text does not specify the method for determining which street side is the 'Front yard' and which is the 'Rear yard', which is critical for applying setbacks."
+        },
+        "Exceptions": {
+          "special_cases": ""
+        },
+        "Relationships": {
+          "Hierarchical": "This rule is a specific case under the general category of 'oddly shaped lots'.",
+          "Cross-references": "",
+          "Logical Dependencies": ""
+        }
+      },
+      {
+        "rule": "Wedge Shaped Lot Rear Yard Determination",
+        "Qualifiers": {
+          "Scope": "Defines the method for determining the rear yard on a wedge-shaped lot, which lacks a rear lot line.",
+          "Applicability": "Applies to lots identified as 'Wedge shaped'.",
+          "Exclusions": ""
+        },
+        "Variables": {
+          "Dimensional": "lot_shape: 'wedge_shaped_lot'",
+          "Material": "",
+          "Environmental": "",
+          "Usage": ""
+        },
+        "Constants": {
+          "rear_yard_determination_radius": "20 feet"
+        },
+        "Conditions": {
+          "Mandatory": "",
+          "Optional": "",
+          "Conditional Logic": "",
+          "Dependencies": "The rear yard is determined by a procedure: creating a 20-foot radius from the intersection of the side lot lines."
+        },
+        "Exceptions": {
+          "definitional_exception": "Wedge shaped lots are defined as not having a rear lot line. The rear yard is established procedurally instead."
+        },
+        "Relationships": {
+          "Hierarchical": "This rule is a specific case under the general category of 'oddly shaped lots'.",
+          "Cross-references": "",
+          "Logical Dependencies": ""
+        }
+      },
+      {
+        "rule": "Rear Lot Line Determination for Lots with more than 4 sides",
+        "Qualifiers": {
+          "Scope": "Defines the method for determining the rear lot line on a lot with more than four sides.",
+          "Applicability": "Applies to lots with more than four sides (as depicted in Figures F and G).",
+          "Exclusions": ""
+        },
+        "Variables": {
+          "Dimensional": "number_of_sides: > 4",
+          "Material": "",
+          "Environmental": "",
+          "Usage": ""
+        },
+        "Constants": {
+          "specs": "The rear lot line is the lot line that is farthest from and most parallel to the street."
+        },
+        "Conditions": {
+          "Mandatory": "Lot must have more than 4 sides.",
+          "Optional": "",
+          "Conditional Logic": "",
+          "Dependencies": "This rule provides a procedure for identifying a specific lot line (the rear) based on its geometric relationship to the street."
+        },
+        "Exceptions": {
+          "special_cases": ""
+        },
+        "Relationships": {
+          "Hierarchical": "This rule is a specific case under the general category of 'oddly shaped lots'.",
+          "Cross-references": "This rule provides the procedure for lots such as those depicted in Figure F and Figure G.",
+          "Logical Dependencies": ""
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n  {\n    \"rule\": \"Flag Lot Setback Determination\",\n    \"Qualifiers\": {\n      \"Scope\": \"Defines setbacks and the front lot line for flag lots.\",\n      \"Applicability\": \"Applies to lots configured as 'Flag lots'.\",\n      \"Exclusions\": \"\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"lot_shape: 'flag_lot'\",\n      \"Material\": \"\",\n      \"Environmental\": \"\",\n      \"Usage\": \"\"\n    },\n    \"Constants\": {\n      \"front_setback\": \"10 feet\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"\",\n      \"Optional\": \"\",\n      \"Conditional Logic\": \"IF lot_shape IS 'flag_lot' THEN front_setback IS 10 feet.\",\n      \"Dependencies\": \"The front lot line must be determined before the front setback can be applied. The front lot line is defined as the lot line closest and most parallel to the street.\"\n    },\n    \"Exceptions\": {\n      \"front_setback_exception\": \"The front setback is 10 feet, which is an exception to an implied standard of 20 feet mentioned in the text ('10\\\\' instead of 20\\\\').\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"This rule is a specific case under the general category of 'oddly shaped lots'.\",\n      \"Cross-references\": \"\",\n      \"Logical Dependencies\": \"The 10-foot front setback is dependent on the lot's classification as a 'Flag lot'.\"\n    }\n  },\n  {\n    \"rule\": \"Corner Lot Setback Determination\",\n    \"Qualifiers\": {\n      \"Scope\": \"Defines the street side setback for standard corner lots.\",\n      \"Applicability\": \"Applies to lots with two adjacent street frontages, identified as 'Corner lots'.\",\n      \"Exclusions\": \"Does not apply to 'Substandard Corner lots' where a frontage is less than 50 feet.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"lot_shape: 'corner_lot'\",\n      \"Material\": \"\",\n      \"Environmental\": \"\",\n      \"Usage\": \"\"\n    },\n    \"Constants\": {\n      \"street_side_setback\": \"16 feet\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"Lot must be a corner lot, with streets along two adjoining edges.\",\n      \"Optional\": \"\",\n      \"Conditional Logic\": \"\",\n      \"Dependencies\": \"\"\n    },\n    \"Exceptions\": {\n      \"special_cases\": \"A special case for substandard corner lots is defined in a separate rule.\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"This rule is a specific case under the general category of 'oddly shaped lots'.\",\n      \"Cross-references\": \"This rule provides the baseline setback (16 feet) that is modified by the 'Substandard Corner Lot Setback Exception' rule.\",\n      \"Logical Dependencies\": \"\"\n    }\n  },\n  {\n    \"rule\": \"Substandard Corner Lot Setback Exception\",\n    \"Qualifiers\": {\n      \"Scope\": \"Defines an exception for the street side setback on substandard corner lots.\",\n      \"Applicability\": \"Applies to corner lots where one street frontage is less than 50 feet.\",\n      \"Exclusions\": \"Does not apply to corner lots where all street frontages are 50 feet or greater.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"frontage_width\",\n      \"Material\": \"\",\n      \"Environmental\": \"\",\n      \"Usage\": \"\"\n    },\n    \"Constants\": {\n      \"street_side_setback\": \"10 feet\",\n      \"frontage_threshold\": \"50 feet\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"\",\n      \"Optional\": \"\",\n      \"Conditional Logic\": \"IF lot_shape IS 'corner_lot' AND frontage_width < 50 feet THEN street_side_setback = 10 feet.\",\n      \"Dependencies\": \"The front lot line is defined as the shortest of the two street frontages for this lot type.\"\n    },\n    \"Exceptions\": {\n      \"setback_deviation\": \"The street side setback is reduced to 10 feet, deviating from the standard 16 feet for corner lots ('10\\\\' instead of 16\\\\').\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"This rule is a sub-case of the 'Corner Lot' rule.\",\n      \"Cross-references\": \"Directly references and modifies the 'Corner Lot Setback Determination' rule.\",\n      \"Logical Dependencies\": \"This rule's applicability is dependent on the 'frontage_width' variable being less than the 'frontage_threshold' constant.\"\n    }\n  },\n  {\n    \"rule\": \"Through Lot Yard Identification\",\n    \"Qualifiers\": {\n      \"Scope\": \"Identifies the yard types for a through lot.\",\n      \"Applicability\": \"Applies to lots with street frontage on two opposite, parallel sides.\",\n      \"Exclusions\": \"\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"lot_shape: 'through_lot'\",\n      \"Material\": \"\",\n      \"Environmental\": \"\",\n      \"Usage\": \"\"\n    },\n    \"Constants\": {\n      \"front_setback\": \"TBD\",\n      \"rear_setback\": \"TBD\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"Lot must have streets on opposite, parallel sides.\",\n      \"Optional\": \"\",\n      \"Conditional Logic\": \"\",\n      \"Dependencies\": \"ambiguous_language: The text does not specify the method for determining which street side is the 'Front yard' and which is the 'Rear yard', which is critical for applying setbacks.\"\n    },\n    \"Exceptions\": {\n      \"special_cases\": \"\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"This rule is a specific case under the general category of 'oddly shaped lots'.\",\n      \"Cross-references\": \"\",\n      \"Logical Dependencies\": \"\"\n    }\n  },\n  {\n    \"rule\": \"Wedge Shaped Lot Rear Yard Determination\",\n    \"Qualifiers\": {\n      \"Scope\": \"Defines the method for determining the rear yard on a wedge-shaped lot, which lacks a rear lot line.\",\n      \"Applicability\": \"Applies to lots identified as 'Wedge shaped'.\",\n      \"Exclusions\": \"\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"lot_shape: 'wedge_shaped_lot'\",\n      \"Material\": \"\",\n      \"Environmental\": \"\",\n      \"Usage\": \"\"\n    },\n    \"Constants\": {\n      \"rear_yard_determination_radius\": \"20 feet\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"\",\n      \"Optional\": \"\",\n      \"Conditional Logic\": \"\",\n      \"Dependencies\": \"The rear yard is determined by a procedure: creating a 20-foot radius from the intersection of the side lot lines.\"\n    },\n    \"Exceptions\": {\n      \"definitional_exception\": \"Wedge shaped lots are defined as not having a rear lot line. The rear yard is established procedurally instead.\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"This rule is a specific case under the general category of 'oddly shaped lots'.\",\n      \"Cross-references\": \"\",\n      \"Logical Dependencies\": \"\"\n    }\n  },\n  {\n    \"rule\": \"Rear Lot Line Determination for Lots with more than 4 sides\",\n    \"Qualifiers\": {\n      \"Scope\": \"Defines the method for determining the rear lot line on a lot with more than four sides.\",\n      \"Applicability\": \"Applies to lots with more than four sides (as depicted in Figures F and G).\",\n      \"Exclusions\": \"\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"number_of_sides: > 4\",\n      \"Material\": \"\",\n      \"Environmental\": \"\",\n      \"Usage\": \"\"\n    },\n    \"Constants\": {\n      \"specs\": \"The rear lot line is the lot line that is farthest from and most parallel to the street.\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"Lot must have more than 4 sides.\",\n      \"Optional\": \"\",\n      \"Conditional Logic\": \"\",\n      \"Dependencies\": \"This rule provides a procedure for identifying a specific lot line (the rear) based on its geometric relationship to the street.\"\n    },\n    \"Exceptions\": {\n      \"special_cases\": \"\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"This rule is a specific case under the general category of 'oddly shaped lots'.\",\n      \"Cross-references\": \"This rule provides the procedure for lots such as those depicted in Figure F and Figure G.\",\n      \"Logical Dependencies\": \"\"\n    }\n  }\n]\n```",
+    "response_time": 49.682311058044434,
+    "input_tokens": 1018,
+    "output_tokens": 6055,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 16:12:50",
+  "model": "google/gemini-2.5-pro",
+  "success": true
+}

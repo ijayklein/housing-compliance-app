@@ -1,0 +1,12 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_10.png",
+  "image_name": "Page_10.png",
+  "analysis": {
+    "parse_error": true,
+    "error": "JSON parse failed: Expecting value: line 1 column 1 (char 0)",
+    "raw_response": "**Lot coverage & floor area**\nThese terms are used to describe the amount of development on a lot.\n\n**Lot coverage** describes how much of the lot is covered by structures but doesn't evaluate the mass of those structures.\n\n**Gross floor area** describes the mass of the structures by reflecting the cumulative square footage of all visible levels.\n\n**Code sections**\nPage 4-5\n18.12.040 (a) Table 2\n18.12.040 (b) Table 3\n18.04.030 (a) (86)\n\n**Lot coverage**\n**Maximum allowable**\nAllowable lot covera"
+  },
+  "timestamp": "2025-09-16 12:50:41",
+  "model": "google/gemini-2.5-flash",
+  "success": false
+}

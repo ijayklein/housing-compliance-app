@@ -1,0 +1,12 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_43.png",
+  "image_name": "Page_43.png",
+  "analysis": {
+    "raw_content": "# Contextual Garage Placement\n\n## Key Rule\n**Contextual garage placement applies if, and only if, there is a predominant neighborhood pattern.**\n\n## How to Determine if Contextual Garage Placement Applies\n*(using Fig 32 below as an example)*\n\n### Note:\n\u2022 If block is more than 600' long, consider only lots with in 600' or the 10 lots closest to the subject lot\n\u2022 If subject lot is a corner lot, consider the pattern on the street that the subject garage faces\n\n### Process Steps:\n\n#### Step 1: Exclude the following types of lots:\n\u2022 Flag lot (C)\n\u2022 Multi-family use of 3+ units (G)\n\u2022 Corner lots (A & H)\n\nThe remaining lots including the subject lot, contribute to the determination.\n\n#### Additional Notes:\n\u2022 If block more than 600' long, consider only lots within 600' or 10 closest lots\n\u2022 If subject lot is a corner lot, consider the pattern on the street that the garage faces\n\n#### Step 2: Divide the remaining lots, including the subject lot, into two categories:\n\n**1. Front-half pattern lots**\n\u2022 lots with garage in front half of the lot (F)\n\n**2. Rear-half pattern lots**\n\u2022 lots with garage in the rear half of the lot (B & D) and\n\u2022 lots with no garage (E) (counts as a rear-pattern lot)\n\nDetermine which pattern category is predominant i.e., into which category more than half of the lots fall.\n\n### Application:\n**Front half** \u2192 [leads to front half designation]\n\n**Rear half** \u2192 The contextual garage placement regulation DOES apply. Projects on this block must place the garage in the rear half of the lot.\n\n## Fig 32: Example of a block on which the contextual garage placement regulation applies\n\n[The image shows a diagram of a city block with lots labeled A through H, showing houses and garages in different positions. The diagram illustrates the application of the contextual garage placement rules described above.]\n\n**Page number: 37**",
+    "content_length": 1856,
+    "parse_error": false
+  },
+  "timestamp": "2025-09-16 13:37:38",
+  "model": "anthropic/claude-sonnet-4",
+  "success": true
+}

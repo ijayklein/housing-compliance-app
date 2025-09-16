@@ -1,0 +1,125 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_33.md",
+  "file_name": "Page_33.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "rule": "Average Grade Calculation for Daylight Plane Height Measurement",
+        "Qualifiers": {
+          "Scope": "Determining the reference point (average grade) for measuring the height of a structure relative to the daylight plane.",
+          "Applicability": "Applies when measuring daylight plane height, as depicted in Figure 21.",
+          "Exclusions": "None specified in the provided text."
+        },
+        "Variables": {
+          "Dimensional": "height (of daylight plane); grade_at_midpoint_of_building; grade_at_closest_point_on_abutting_site; average_grade.",
+          "Material": "None specified.",
+          "Environmental": "grade",
+          "Usage": "None specified."
+        },
+        "Constants": {
+          "Numerical values": "None specified.",
+          "Specs": "None specified.",
+          "Standards": "None specified.",
+          "Procedures": "Calculate the average of two grade elevations: 1) the grade at the midpoint of the building side, and 2) the grade of the closest point on the abutting site."
+        },
+        "Conditions": {
+          "Mandatory": "This calculation method is mandatory for determining the measurement datum for daylight plane height.",
+          "Optional": "None specified.",
+          "Conditional logic": "IF measuring daylight plane height, THEN height is measured from the calculated average grade.",
+          "Dependencies": "Requires grade elevation data at two specific points: midpoint of the building and closest point on the abutting site."
+        },
+        "Exceptions": {
+          "Explicit deviations": "None specified.",
+          "Alternatives": "None specified.",
+          "Special cases": "Ambiguity Flag: The term 'closest point on the abutting site' could be ambiguous (e.g., horizontal vs. 3D distance). The term 'midpoint of the building' is assumed to be the midpoint of the side being evaluated based on figure context."
+        },
+        "Relationships": {
+          "Hierarchical": "This calculation is a sub-procedure for the overall process of daylight plane compliance verification.",
+          "Cross-references": "Implicitly related to daylight plane provisions mentioned in the certification rule (Code Section 18.12.040(a)).",
+          "Logical dependencies": "The result of this calculation (average grade) is a required input for measuring daylight plane height."
+        }
+      },
+      {
+        "rule": "Allowable Eave Protrusion and Daylight Plane Clearance",
+        "Qualifiers": {
+          "Scope": "Regulates the maximum protrusion of eaves from the wall plane and specifies clearance requirements relative to the daylight plane.",
+          "Applicability": "Applies to eaves on structures subject to daylight plane regulations, as shown in Figure 22.",
+          "Exclusions": "None specified in the provided text."
+        },
+        "Variables": {
+          "Dimensional": "eave_protrusion_distance (from wall plane).",
+          "Material": "roof material (as a location reference: 'top of the roof material').",
+          "Environmental": "None specified.",
+          "Usage": "None specified."
+        },
+        "Constants": {
+          "Numerical values": "Eave protrusion: 2 feet maximum.",
+          "Specs": "The daylight plane must clear the point where the wall plane intersects the top of the roof material.",
+          "Standards": "None specified.",
+          "Procedures": "None specified."
+        },
+        "Conditions": {
+          "Mandatory": "The 2-foot maximum eave protrusion is a mandatory limit. The daylight plane clearance requirement is also mandatory.",
+          "Optional": "None specified.",
+          "Conditional logic": "IF a structure has eaves, THEN their protrusion must be less than or equal to 2 feet AND the daylight plane must clear the specified intersection point.",
+          "Dependencies": "Compliance depends on the defined locations of the 'wall plane', 'daylight plane', and 'top of the roof material'."
+        },
+        "Exceptions": {
+          "Explicit deviations": "None specified.",
+          "Alternatives": "None specified.",
+          "Special cases": "None specified."
+        },
+        "Relationships": {
+          "Hierarchical": "This rule is a specific component of the overall daylight plane regulations.",
+          "Cross-references": "Implicitly related to the main daylight plane provisions (Code Section 18.12.040(a)).",
+          "Logical dependencies": "Compliance with this rule is a necessary condition for overall daylight plane compliance."
+        }
+      },
+      {
+        "rule": "Certification of Daylight Plane Compliance",
+        "Qualifiers": {
+          "Scope": "Defines the procedural requirement for providing a formal certification of compliance with daylight plane provisions.",
+          "Applicability": "Applies to any person building or making improvements to a structure.",
+          "Exclusions": "None specified in the provided text."
+        },
+        "Variables": {
+          "Dimensional": "None specified.",
+          "Material": "None specified.",
+          "Environmental": "None specified.",
+          "Usage": "requester (building official); provider (person building or making improvements); preparer (licensed engineer, architect, or surveyor); structure_status ('as built')."
+        },
+        "Constants": {
+          "Numerical values": "None specified.",
+          "Specs": "Certification must state that the structure, as built, complies with the daylight plane provisions in Code Section 18.12.040(a).",
+          "Standards": "Certification must be prepared by a licensed professional: engineer, architect, or surveyor.",
+          "Procedures": "1. Building official requests certification. 2. Builder/improver obtains certification from a licensed professional. 3. Certification is provided to the building official prior to frame inspection."
+        },
+        "Conditions": {
+          "Mandatory": "Providing the certification is mandatory once requested.",
+          "Optional": "The request for certification is at the discretion of the building official ('Upon request...').",
+          "Conditional logic": "IF the building official requests certification, THEN the builder/improver MUST provide a certification prepared by a licensed professional BEFORE the frame inspection can proceed.",
+          "Dependencies": "This procedure is contingent on a request from the building official. It is a prerequisite for passing the frame inspection."
+        },
+        "Exceptions": {
+          "Explicit deviations": "None specified.",
+          "Alternatives": "None specified.",
+          "Special cases": "None specified."
+        },
+        "Relationships": {
+          "Hierarchical": "This is an administrative/enforcement procedure for the daylight plane regulations.",
+          "Cross-references": "Explicitly references 'Code Section 18.12.040(a)' for the substantive provisions and 'Sections 18.12.040(j)' as the source of this procedural rule.",
+          "Logical dependencies": "Links physical compliance (e.g., Rule 1, Rule 2) with the administrative process. The certification must be provided before the 'frame inspection' construction milestone."
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n  {\n    \"rule\": \"Average Grade Calculation for Daylight Plane Height Measurement\",\n    \"Qualifiers\": {\n      \"Scope\": \"Determining the reference point (average grade) for measuring the height of a structure relative to the daylight plane.\",\n      \"Applicability\": \"Applies when measuring daylight plane height, as depicted in Figure 21.\",\n      \"Exclusions\": \"None specified in the provided text.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"height (of daylight plane); grade_at_midpoint_of_building; grade_at_closest_point_on_abutting_site; average_grade.\",\n      \"Material\": \"None specified.\",\n      \"Environmental\": \"grade\",\n      \"Usage\": \"None specified.\"\n    },\n    \"Constants\": {\n      \"Numerical values\": \"None specified.\",\n      \"Specs\": \"None specified.\",\n      \"Standards\": \"None specified.\",\n      \"Procedures\": \"Calculate the average of two grade elevations: 1) the grade at the midpoint of the building side, and 2) the grade of the closest point on the abutting site.\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"This calculation method is mandatory for determining the measurement datum for daylight plane height.\",\n      \"Optional\": \"None specified.\",\n      \"Conditional logic\": \"IF measuring daylight plane height, THEN height is measured from the calculated average grade.\",\n      \"Dependencies\": \"Requires grade elevation data at two specific points: midpoint of the building and closest point on the abutting site.\"\n    },\n    \"Exceptions\": {\n      \"Explicit deviations\": \"None specified.\",\n      \"Alternatives\": \"None specified.\",\n      \"Special cases\": \"Ambiguity Flag: The term 'closest point on the abutting site' could be ambiguous (e.g., horizontal vs. 3D distance). The term 'midpoint of the building' is assumed to be the midpoint of the side being evaluated based on figure context.\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"This calculation is a sub-procedure for the overall process of daylight plane compliance verification.\",\n      \"Cross-references\": \"Implicitly related to daylight plane provisions mentioned in the certification rule (Code Section 18.12.040(a)).\",\n      \"Logical dependencies\": \"The result of this calculation (average grade) is a required input for measuring daylight plane height.\"\n    }\n  },\n  {\n    \"rule\": \"Allowable Eave Protrusion and Daylight Plane Clearance\",\n    \"Qualifiers\": {\n      \"Scope\": \"Regulates the maximum protrusion of eaves from the wall plane and specifies clearance requirements relative to the daylight plane.\",\n      \"Applicability\": \"Applies to eaves on structures subject to daylight plane regulations, as shown in Figure 22.\",\n      \"Exclusions\": \"None specified in the provided text.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"eave_protrusion_distance (from wall plane).\",\n      \"Material\": \"roof material (as a location reference: 'top of the roof material').\",\n      \"Environmental\": \"None specified.\",\n      \"Usage\": \"None specified.\"\n    },\n    \"Constants\": {\n      \"Numerical values\": \"Eave protrusion: 2 feet maximum.\",\n      \"Specs\": \"The daylight plane must clear the point where the wall plane intersects the top of the roof material.\",\n      \"Standards\": \"None specified.\",\n      \"Procedures\": \"None specified.\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"The 2-foot maximum eave protrusion is a mandatory limit. The daylight plane clearance requirement is also mandatory.\",\n      \"Optional\": \"None specified.\",\n      \"Conditional logic\": \"IF a structure has eaves, THEN their protrusion must be less than or equal to 2 feet AND the daylight plane must clear the specified intersection point.\",\n      \"Dependencies\": \"Compliance depends on the defined locations of the 'wall plane', 'daylight plane', and 'top of the roof material'.\"\n    },\n    \"Exceptions\": {\n      \"Explicit deviations\": \"None specified.\",\n      \"Alternatives\": \"None specified.\",\n      \"Special cases\": \"None specified.\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"This rule is a specific component of the overall daylight plane regulations.\",\n      \"Cross-references\": \"Implicitly related to the main daylight plane provisions (Code Section 18.12.040(a)).\",\n      \"Logical dependencies\": \"Compliance with this rule is a necessary condition for overall daylight plane compliance.\"\n    }\n  },\n  {\n    \"rule\": \"Certification of Daylight Plane Compliance\",\n    \"Qualifiers\": {\n      \"Scope\": \"Defines the procedural requirement for providing a formal certification of compliance with daylight plane provisions.\",\n      \"Applicability\": \"Applies to any person building or making improvements to a structure.\",\n      \"Exclusions\": \"None specified in the provided text.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"None specified.\",\n      \"Material\": \"None specified.\",\n      \"Environmental\": \"None specified.\",\n      \"Usage\": \"requester (building official); provider (person building or making improvements); preparer (licensed engineer, architect, or surveyor); structure_status ('as built').\"\n    },\n    \"Constants\": {\n      \"Numerical values\": \"None specified.\",\n      \"Specs\": \"Certification must state that the structure, as built, complies with the daylight plane provisions in Code Section 18.12.040(a).\",\n      \"Standards\": \"Certification must be prepared by a licensed professional: engineer, architect, or surveyor.\",\n      \"Procedures\": \"1. Building official requests certification. 2. Builder/improver obtains certification from a licensed professional. 3. Certification is provided to the building official prior to frame inspection.\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"Providing the certification is mandatory once requested.\",\n      \"Optional\": \"The request for certification is at the discretion of the building official ('Upon request...').\",\n      \"Conditional logic\": \"IF the building official requests certification, THEN the builder/improver MUST provide a certification prepared by a licensed professional BEFORE the frame inspection can proceed.\",\n      \"Dependencies\": \"This procedure is contingent on a request from the building official. It is a prerequisite for passing the frame inspection.\"\n    },\n    \"Exceptions\": {\n      \"Explicit deviations\": \"None specified.\",\n      \"Alternatives\": \"None specified.\",\n      \"Special cases\": \"None specified.\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"This is an administrative/enforcement procedure for the daylight plane regulations.\",\n      \"Cross-references\": \"Explicitly references 'Code Section 18.12.040(a)' for the substantive provisions and 'Sections 18.12.040(j)' as the source of this procedural rule.\",\n      \"Logical dependencies\": \"Links physical compliance (e.g., Rule 1, Rule 2) with the administrative process. The certification must be provided before the 'frame inspection' construction milestone.\"\n    }\n  }\n]\n```",
+    "response_time": 56.97202014923096,
+    "input_tokens": 841,
+    "output_tokens": 6897,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 16:13:30",
+  "model": "google/gemini-2.5-pro",
+  "success": true
+}

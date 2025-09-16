@@ -1,0 +1,67 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_13.png",
+  "image_name": "Page_13.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Fig 4  Types of porches and entry ways\n\nA  Roofed porch\n\nB  Roofed entry way\n(not vaulted)\n\nC  Vaulted entry way\n\nD  Combination porch & vaulted entry way\n\nSee how to measure height of porches & entry features in Figs 6-8 on pp. 11-13\n\nHeight less than 12\" above grade\nHeight greater than 12\" above grade\nHeight greater than 12\" above grade",
+      "visual_elements": [
+        {
+          "type": "figure",
+          "description": "Four architectural line drawings illustrating different types of porches and entry ways: (A) Roofed porch showing a single-story porch with a roof supported by columns; (B) Roofed entry way (not vaulted) showing a house front with a small roofed entry door with height less than 12 inches above grade; (C) Vaulted entry way showing a house front with a vaulted entry door with height greater than 12 inches above grade; (D) Combination porch & vaulted entry way showing a porch with arches and a vaulted entry door with height greater than 12 inches above grade. Each drawing includes a vertical measurement line indicating height relative to grade, with annotations specifying \"Height less than 12\" above grade\" or \"Height greater than 12\" above grade.\"",
+          "location": "Centered on the page, with two drawings on top row (A left, C right) and two on bottom row (B left, D right)"
+        },
+        {
+          "type": "text box",
+          "description": "A grey shaded box containing the text: \"See how to measure height of porches & entry features in Figs 6-8 on pp. 11-13\"",
+          "location": "Center of the page, between the top and bottom rows of drawings"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Height of porch or entry feature",
+          "value_type": "Measurement",
+          "value": "12",
+          "unit": "inches"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Fig 4  Types of porches and entry ways",
+        "subheadings": [],
+        "sections": []
+      },
+      "additional_notes": [
+        "No handwritten annotations, stamps, or markings detected.",
+        "Page layout consists of four labeled architectural drawings arranged in two rows with a central text box.",
+        "Text is clear and legible with no quality issues."
+      ],
+      "cross_references": [
+        "See how to measure height of porches & entry features in Figs 6-8 on pp. 11-13"
+      ],
+      "conditions_and_qualifiers": {
+        "qualifiers": [],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "Height less than 12\" above grade",
+            "value_type": "Measurement",
+            "operator": "<",
+            "threshold_value": "12",
+            "unit": "inches"
+          },
+          {
+            "id": "c2",
+            "text": "Height greater than 12\" above grade",
+            "value_type": "Measurement",
+            "operator": ">",
+            "threshold_value": "12",
+            "unit": "inches"
+          }
+        ],
+        "logical_relationships": [],
+        "execution_sequence": []
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:26:46",
+  "model_used": "openai/gpt-4.1-mini"
+}

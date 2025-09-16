@@ -1,0 +1,66 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_14.png",
+  "image_name": "Page_14.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Roofed porches on the 1st floor\n\nHow to determine if a porch is at least 50% open (using Fig 5 as an example)\n\nFig 5  Roofed 1st floor porch\n\nStep 1:  Determine the perimeter of the porch and divide it into segments that will allow a comparison of closed and open segments.\n\nThe perimeter of the porch in Fig 5 is shown below. It is the sum of segments A through G. It is 70 linear feet.\n\n8",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "3D isometric drawing of a two-story house with a roofed porch on the first floor. The house shows detailed architectural features including windows, doors, railings, and structural elements.",
+          "location": "Left side of page, middle section"
+        },
+        {
+          "type": "diagram",
+          "description": "Floor plan/perimeter diagram showing the porch layout with labeled segments A through G. Includes dimensional annotations with letters D, E, F marking different measurements. Shows measurements including 8' for segment B and 24' for segment F.",
+          "location": "Right side of page, middle to bottom section"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Porch perimeter total",
+          "value": "70",
+          "unit": "linear feet"
+        },
+        {
+          "parameter": "Segment B dimension",
+          "value": "8",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Segment F dimension",
+          "value": "24",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum porch openness requirement",
+          "value": "50",
+          "unit": "percent"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Roofed porches on the 1st floor",
+        "subheadings": [
+          "How to determine if a porch is at least 50% open (using Fig 5 as an example)",
+          "Step 1:"
+        ],
+        "sections": [
+          "Fig 5"
+        ]
+      },
+      "additional_notes": [
+        "Page number 8 appears at bottom left",
+        "Gray header bar appears under main heading",
+        "Figure reference 'Fig 5' is italicized",
+        "Dimensional labels A through G are used to identify perimeter segments"
+      ],
+      "cross_references": [
+        "Reference to 'Fig 5 as an example' in subheading",
+        "Reference to 'Fig 5' in step explanation",
+        "Reference to segments 'A through G' in perimeter calculation"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-11 13:44:18",
+  "model_used": "anthropic/claude-sonnet-4"
+}

@@ -1,0 +1,23 @@
+{
+  "image_path": "pngs/Page_23.png",
+  "image_name": "Page_23.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "PARSE_ERROR",
+      "visual_elements": [],
+      "technical_specifications": [],
+      "structural_elements": {
+        "main_heading": "",
+        "subheadings": [],
+        "sections": []
+      },
+      "additional_notes": [
+        "Failed to parse LLM response: Expecting value: line 1 column 1 (char 0)"
+      ],
+      "cross_references": []
+    },
+    "raw_response": "API Response Error: Missing 'choices' field in response: {'error': {'message': 'Provider returned error', 'code': 400, 'metadata': {'raw': '{\"message\":\"messages.0.content.1.image.source.base64: image exceeds 5 MB maximum: 6923964 bytes > 5242880 bytes\"}', 'provider_name': 'Amazon Bedrock'}}, 'user_id': 'user_2w7iHcpOx7ok6ut9XTSiBGMgDVF'}"
+  },
+  "analysis_timestamp": "2025-09-11 14:12:27",
+  "model_used": "anthropic/claude-sonnet-4"
+}

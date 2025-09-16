@@ -1,0 +1,23 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_48.png",
+  "image_name": "Page_48.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "PARSE_ERROR",
+      "visual_elements": [],
+      "technical_specifications": [],
+      "structural_elements": {
+        "main_heading": "",
+        "subheadings": [],
+        "sections": []
+      },
+      "additional_notes": [
+        "Failed to parse LLM response: Expecting value: line 1 column 1 (char 0)"
+      ],
+      "cross_references": []
+    },
+    "raw_response": "Here's the extracted information from the image, maintaining absolute precision and avoiding any deductions:\n\n**Title:**\nLight well & stairwell standards & site planning\n\n**Figure Title:**\nFig 39 Examples of site plan w/light wells & stairwells\n\n**Bullet Points (Rules/Regulations/Specifications):**\n*   Such features may not be located on the side of the structure that faces the front yard.\n*   Maximum width (interior dimension) is 3'.\n*   The combined length (interior dimensions of the opening excluding encasing structure) of all the excavated features may not exceed 30% of basement perimeter.\n*   Allowable encroachment into required side yard is 3' max (however feature must be a minimum of 3' from side lot line).\n*   Allowable encroachment into required rear yard is 4'.\n*   The combined length (interior dimensions of the opening excluding encasing structure) of all the excavated features or portions of features that encroach into the required yards, on all sides of the structure, may not exceed 15'.\n*   Excavated features shall not be harmful to neighboring trees.\n*   Public Works Department must approve drainage system.\n\n**Lightwells & stairwells (Specific Calculations/Rules):**\n*   a + b (encroaching features) may not exceed 15'\n*   a + b + c + d (all features) may not exceed 30% of the perimeter of the basement\n\n**Note:**\nmeasurements are based on interior dimension of opening and exclude encasing structure.\n\n**Diagram Labels/Measurements:**\n*   Interior lot example\n*   Rear yard\n*   Interior-side yard (appears twice)\n*   Buildable area\n*   3' max. width (associated with a feature within the buildable area)\n*   Main dwelling\n*   3' max. width (associated with a feature encroaching into the interior-side yard)\n*   3' min. from lot line (Typ.)\n*   3' max. into side yard (Typ.)\n*   Front yard\n*   Labels 'c', 'd', 'a', 'b' are present on the diagram, indicating dimensions or features.\n\n**Key:**\n*   Curb (represented by a solid line)\n*   Lot line (represented by a dashed line)\n*   Sidewalk (represented by a patterned grey rectangle)\n*   Required setbacks (represented by a dashed line)\n*   Buildable area (represented by a light grey shaded area with a dashed border)\n*   Dwelling (represented by a darker grey shaded area)\n*   Lightwells & stairwells (represented by a black shaded area)\n*   Lightwells, & stairwells that encroa into the rec yards (represented by a white shaded area)\n\n**Page Number:**\n42"
+  },
+  "analysis_timestamp": "2025-09-16 12:26:01",
+  "model_used": "google/gemini-2.5-flash"
+}

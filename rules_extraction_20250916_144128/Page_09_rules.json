@@ -1,0 +1,96 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_09.md",
+  "file_name": "Page_09.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "Title": "Gross vs. net lot area",
+        "Rule": {
+          "Qualifiers": {
+            "Scope": "Lot area calculations in Palo Alto",
+            "Applicability": "All lots in Palo Alto",
+            "Exclusions": [
+              "Street right-of-way",
+              "Pole portion of a flag lot",
+              "Creek channel"
+            ]
+          },
+          "Variables": {
+            "Dimensional": [
+              {
+                "Name": "Gross lot area",
+                "Description": "Size of the lot from lot line to lot line"
+              },
+              {
+                "Name": "Net lot area",
+                "Description": "Gross lot area minus exclusions"
+              }
+            ],
+            "Material": [],
+            "Environmental": [],
+            "Usage": []
+          },
+          "Constants": {
+            "Numerical values": [],
+            "Specs": [
+              {
+                "Name": "Public ROW dimensions",
+                "Source": "Available at the Development Center"
+              },
+              {
+                "Name": "Creek channel definition",
+                "Source": "Santa Clara Valley Water District\u2019s easement or top-of-bank"
+              }
+            ],
+            "Standards": [],
+            "Procedures": [
+              "Subtract street right-of-way from gross lot area",
+              "Subtract pole portion of a flag lot from gross lot area",
+              "Subtract creek channel from gross lot area"
+            ]
+          },
+          "Conditions": {
+            "Mandatory": [
+              "Subtract areas defined as exclusions from gross lot area"
+            ],
+            "Optional": [],
+            "Conditional logic": [],
+            "Dependencies": [
+              "Determining the top-of-bank may require a surveyor"
+            ]
+          },
+          "Exceptions": {
+            "Explicit deviations": [],
+            "Alternatives": [],
+            "Special cases": [
+              "In some areas like Barron Park, lots may extend to the middle of the street, but the lot is defined by the edge of the public street easement or ROW"
+            ]
+          },
+          "Relationships": {
+            "Hierarchical": [],
+            "Cross-references": [
+              {
+                "Reference": "Figure 1",
+                "Description": "Street right-of-way exclusions"
+              },
+              {
+                "Reference": "Figure 2",
+                "Description": "Flag-lot pole exclusions"
+              },
+              {
+                "Reference": "Figure 3",
+                "Description": "Creek easement exclusions"
+              }
+            ],
+            "Logical dependencies": []
+          }
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n    {\n        \"Title\": \"Gross vs. net lot area\",\n        \"Rule\": {\n            \"Qualifiers\": {\n                \"Scope\": \"Lot area calculations in Palo Alto\",\n                \"Applicability\": \"All lots in Palo Alto\",\n                \"Exclusions\": [\n                    \"Street right-of-way\",\n                    \"Pole portion of a flag lot\",\n                    \"Creek channel\"\n                ]\n            },\n            \"Variables\": {\n                \"Dimensional\": [\n                    {\n                        \"Name\": \"Gross lot area\",\n                        \"Description\": \"Size of the lot from lot line to lot line\"\n                    },\n                    {\n                        \"Name\": \"Net lot area\",\n                        \"Description\": \"Gross lot area minus exclusions\"\n                    }\n                ],\n                \"Material\": [],\n                \"Environmental\": [],\n                \"Usage\": []\n            },\n            \"Constants\": {\n                \"Numerical values\": [],\n                \"Specs\": [\n                    {\n                        \"Name\": \"Public ROW dimensions\",\n                        \"Source\": \"Available at the Development Center\"\n                    },\n                    {\n                        \"Name\": \"Creek channel definition\",\n                        \"Source\": \"Santa Clara Valley Water District\u2019s easement or top-of-bank\"\n                    }\n                ],\n                \"Standards\": [],\n                \"Procedures\": [\n                    \"Subtract street right-of-way from gross lot area\",\n                    \"Subtract pole portion of a flag lot from gross lot area\",\n                    \"Subtract creek channel from gross lot area\"\n                ]\n            },\n            \"Conditions\": {\n                \"Mandatory\": [\n                    \"Subtract areas defined as exclusions from gross lot area\"\n                ],\n                \"Optional\": [],\n                \"Conditional logic\": [],\n                \"Dependencies\": [\n                    \"Determining the top-of-bank may require a surveyor\"\n                ]\n            },\n            \"Exceptions\": {\n                \"Explicit deviations\": [],\n                \"Alternatives\": [],\n                \"Special cases\": [\n                    \"In some areas like Barron Park, lots may extend to the middle of the street, but the lot is defined by the edge of the public street easement or ROW\"\n                ]\n            },\n            \"Relationships\": {\n                \"Hierarchical\": [],\n                \"Cross-references\": [\n                    {\n                        \"Reference\": \"Figure 1\",\n                        \"Description\": \"Street right-of-way exclusions\"\n                    },\n                    {\n                        \"Reference\": \"Figure 2\",\n                        \"Description\": \"Flag-lot pole exclusions\"\n                    },\n                    {\n                        \"Reference\": \"Figure 3\",\n                        \"Description\": \"Creek easement exclusions\"\n                    }\n                ],\n                \"Logical dependencies\": []\n            }\n        }\n    }\n]\n```"
+  },
+  "timestamp": "2025-09-16 14:41:55",
+  "model": "openai/gpt-4o",
+  "success": true
+}

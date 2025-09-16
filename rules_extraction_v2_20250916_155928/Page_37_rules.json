@@ -1,0 +1,292 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_37.md",
+  "file_name": "Page_37.md",
+  "analysis": {
+    "extracted_rules": {
+      "file_metadata": {
+        "title": "Accessory structures site planning",
+        "page_number": "31",
+        "figure": "Figure 24"
+      },
+      "rules": [
+        {
+          "rule_name": "Accessory Structure in Required Rear Yard",
+          "source_section": [
+            "Section A: Combo garage / small pool cabana (side by side)",
+            "Section B: Stand-alone pool cabana"
+          ],
+          "Qualifiers": {
+            "scope": "Accessory structures",
+            "applicability": "Structure is located in a required rear yard.",
+            "exclusions": [
+              "Does not apply to structures located within the buildable area.",
+              "The 75' distance requirement has a special allowance for garages (see 'Special Allowance for Garages' rule)."
+            ]
+          },
+          "Variables": {
+            "dimensional": [
+              {
+                "name": "distance_from_front_lot_line",
+                "type": "length",
+                "description": "Distance from the structure to the front lot line."
+              },
+              {
+                "name": "height",
+                "type": "length",
+                "description": "Height of the accessory structure."
+              },
+              {
+                "name": "area",
+                "type": "area",
+                "description": "Area of the accessory structure."
+              },
+              {
+                "name": "location_relative_to_lot_line",
+                "type": "enum",
+                "description": "Position of the structure relative to a lot line.",
+                "values": [
+                  "at_side_lot_line",
+                  "at_rear_lot_line",
+                  "not_at_lot_line"
+                ]
+              }
+            ],
+            "material": [
+              {
+                "name": "wall_rating",
+                "type": "spec",
+                "description": "Fire rating of the wall assembly."
+              },
+              {
+                "name": "roof_rating",
+                "type": "spec",
+                "description": "Fire rating of the roof assembly."
+              }
+            ],
+            "usage": [
+              {
+                "name": "plumbing_fixture_count",
+                "type": "integer",
+                "description": "Number of plumbing fixtures in the structure."
+              }
+            ]
+          },
+          "Constants": [
+            {
+              "name": "min_distance_from_front_lot_line",
+              "value": 75,
+              "unit": "feet"
+            },
+            {
+              "name": "max_height",
+              "value": 12,
+              "unit": "feet"
+            },
+            {
+              "name": "area_threshold_for_cup",
+              "value": 200,
+              "unit": "square feet"
+            },
+            {
+              "name": "plumbing_fixture_threshold_for_cup",
+              "value": 3,
+              "unit": "fixtures"
+            }
+          ],
+          "Conditions": {
+            "mandatory": [
+              "distance_from_front_lot_line >= 75 feet",
+              "height <= 12 feet",
+              "Must comply with accessory structure daylight plane."
+            ],
+            "conditional_logic": [
+              {
+                "if": "location_relative_to_lot_line IS 'at_side_lot_line' OR 'at_rear_lot_line'",
+                "then": "The wall on the lot line and the roof must be fire rated."
+              },
+              {
+                "if": "area > 200 square feet AND plumbing_fixture_count >= 3",
+                "then": "Requires a Conditional Use Permit (CUP)."
+              }
+            ],
+            "optional": [],
+            "ambiguous_language": [
+              {
+                "text": "Structure has 3 plumbing fixtures... so it requires a CUP.",
+                "interpretation": "Interpreted as a threshold of '>= 3' fixtures for requiring a CUP, as a rule applying only to exactly 3 fixtures is unlikely. The condition is combined with the area threshold."
+              }
+            ]
+          },
+          "Exceptions": [],
+          "Relationships": {
+            "hierarchical": "This rule is a primary regulation for accessory structures under the general title 'Accessory structures site planning'.",
+            "cross_references": [
+              {
+                "name": "Accessory structure daylight plane",
+                "reference": "Figs 25 & 26 on p. 32"
+              }
+            ],
+            "logical_dependencies": [
+              "This rule is subject to modification by the 'Special Allowance for Garages' rule."
+            ]
+          }
+        },
+        {
+          "rule_name": "Accessory Structure within Buildable Area",
+          "source_section": [
+            "Section C: Office above garage",
+            "Note (near Section C diagram)"
+          ],
+          "Qualifiers": {
+            "scope": "Accessory structures",
+            "applicability": "Structure is located within the buildable area of the lot.",
+            "exclusions": [
+              "Regulations for structures in the required yards (e.g., setbacks, height limits for yard structures) do not apply."
+            ]
+          },
+          "Variables": {
+            "dimensional": [
+              {
+                "name": "number_of_stories",
+                "type": "integer",
+                "description": "Number of stories in the structure."
+              }
+            ],
+            "material": [],
+            "usage": [
+              {
+                "name": "project_type",
+                "type": "enum",
+                "description": "The nature of the construction project.",
+                "values": [
+                  "new_2nd_floor_addition",
+                  "new_construction"
+                ]
+              }
+            ]
+          },
+          "Constants": [
+            {
+              "name": "max_stories_allowed",
+              "value": 2,
+              "unit": "stories"
+            },
+            {
+              "name": "required_review_process",
+              "value": "Individual Review (IR)"
+            },
+            {
+              "name": "reviewing_body",
+              "value": "Planning Department"
+            }
+          ],
+          "Conditions": {
+            "mandatory": [],
+            "conditional_logic": [
+              {
+                "if": "number_of_stories == 2",
+                "then": "Structure must be located within the buildable area."
+              },
+              {
+                "if": "number_of_stories == 2 OR project_type IS 'new_2nd_floor_addition'",
+                "then": "Project is subject to the Planning Department's Individual Review (IR)."
+              }
+            ],
+            "optional": [
+              "Structure may be two stories high (implying one story is also permitted)."
+            ],
+            "ambiguous_language": []
+          },
+          "Exceptions": [
+            {
+              "type": "explicit_deviation",
+              "description": "Structures under this rule do not have to comply with regulations for structures in the required yards."
+            }
+          ],
+          "Relationships": {
+            "hierarchical": "This rule is an alternative regulation for accessory structures under the general title 'Accessory structures site planning'.",
+            "cross_references": [],
+            "logical_dependencies": [
+              "The permission to be two stories high is dependent on the structure's location within the buildable area.",
+              "This rule set functions as an alternative to the 'Accessory Structure in Required Rear Yard' rule."
+            ]
+          }
+        },
+        {
+          "rule_name": "Special Allowance for Garages",
+          "source_section": [
+            "General notes on the page"
+          ],
+          "Qualifiers": {
+            "scope": "Garages and parking structures.",
+            "applicability": "Applies when a garage or parking structure is located in the rear/side yards on a lot that is not deep enough to maintain the 75' minimum distance from the front lot line.",
+            "exclusions": [
+              "Does not apply to non-parking accessory structures."
+            ]
+          },
+          "Variables": {
+            "dimensional": [
+              {
+                "name": "lot_depth_sufficiency",
+                "type": "boolean",
+                "description": "Whether the lot is deep enough to maintain the 75' distance."
+              }
+            ],
+            "material": [],
+            "usage": [
+              {
+                "name": "structure_use",
+                "type": "enum",
+                "description": "The primary use of the accessory structure.",
+                "values": [
+                  "parking",
+                  "non-parking"
+                ]
+              }
+            ]
+          },
+          "Constants": [
+            {
+              "name": "standard_min_distance_from_front_lot_line",
+              "value": 75,
+              "unit": "feet"
+            }
+          ],
+          "Conditions": {
+            "mandatory": [],
+            "conditional_logic": [
+              {
+                "if": "structure_use IS 'parking' AND lot_depth_sufficiency IS false",
+                "then": "The 75' minimum distance requirement from the front lot line is waived."
+              }
+            ],
+            "optional": [],
+            "ambiguous_language": []
+          },
+          "Exceptions": [
+            {
+              "type": "special_allowance",
+              "description": "Provides an exemption from the 75' minimum distance requirement for garages and parking structures."
+            }
+          ],
+          "Relationships": {
+            "hierarchical": "This is a special allowance that modifies a specific regulation for accessory structures.",
+            "cross_references": [],
+            "logical_dependencies": [
+              "This rule directly overrides the 'min_distance_from_front_lot_line' condition in the 'Accessory Structure in Required Rear Yard' rule for applicable structure types."
+            ]
+          }
+        }
+      ]
+    },
+    "parse_error": false,
+    "raw_response": "```json\n{\n  \"file_metadata\": {\n    \"title\": \"Accessory structures site planning\",\n    \"page_number\": \"31\",\n    \"figure\": \"Figure 24\"\n  },\n  \"rules\": [\n    {\n      \"rule_name\": \"Accessory Structure in Required Rear Yard\",\n      \"source_section\": [\n        \"Section A: Combo garage / small pool cabana (side by side)\",\n        \"Section B: Stand-alone pool cabana\"\n      ],\n      \"Qualifiers\": {\n        \"scope\": \"Accessory structures\",\n        \"applicability\": \"Structure is located in a required rear yard.\",\n        \"exclusions\": [\n          \"Does not apply to structures located within the buildable area.\",\n          \"The 75' distance requirement has a special allowance for garages (see 'Special Allowance for Garages' rule).\"\n        ]\n      },\n      \"Variables\": {\n        \"dimensional\": [\n          {\n            \"name\": \"distance_from_front_lot_line\",\n            \"type\": \"length\",\n            \"description\": \"Distance from the structure to the front lot line.\"\n          },\n          {\n            \"name\": \"height\",\n            \"type\": \"length\",\n            \"description\": \"Height of the accessory structure.\"\n          },\n          {\n            \"name\": \"area\",\n            \"type\": \"area\",\n            \"description\": \"Area of the accessory structure.\"\n          },\n          {\n            \"name\": \"location_relative_to_lot_line\",\n            \"type\": \"enum\",\n            \"description\": \"Position of the structure relative to a lot line.\",\n            \"values\": [\"at_side_lot_line\", \"at_rear_lot_line\", \"not_at_lot_line\"]\n          }\n        ],\n        \"material\": [\n          {\n            \"name\": \"wall_rating\",\n            \"type\": \"spec\",\n            \"description\": \"Fire rating of the wall assembly.\"\n          },\n          {\n            \"name\": \"roof_rating\",\n            \"type\": \"spec\",\n            \"description\": \"Fire rating of the roof assembly.\"\n          }\n        ],\n        \"usage\": [\n          {\n            \"name\": \"plumbing_fixture_count\",\n            \"type\": \"integer\",\n            \"description\": \"Number of plumbing fixtures in the structure.\"\n          }\n        ]\n      },\n      \"Constants\": [\n        {\n          \"name\": \"min_distance_from_front_lot_line\",\n          \"value\": 75,\n          \"unit\": \"feet\"\n        },\n        {\n          \"name\": \"max_height\",\n          \"value\": 12,\n          \"unit\": \"feet\"\n        },\n        {\n          \"name\": \"area_threshold_for_cup\",\n          \"value\": 200,\n          \"unit\": \"square feet\"\n        },\n        {\n          \"name\": \"plumbing_fixture_threshold_for_cup\",\n          \"value\": 3,\n          \"unit\": \"fixtures\"\n        }\n      ],\n      \"Conditions\": {\n        \"mandatory\": [\n          \"distance_from_front_lot_line >= 75 feet\",\n          \"height <= 12 feet\",\n          \"Must comply with accessory structure daylight plane.\"\n        ],\n        \"conditional_logic\": [\n          {\n            \"if\": \"location_relative_to_lot_line IS 'at_side_lot_line' OR 'at_rear_lot_line'\",\n            \"then\": \"The wall on the lot line and the roof must be fire rated.\"\n          },\n          {\n            \"if\": \"area > 200 square feet AND plumbing_fixture_count >= 3\",\n            \"then\": \"Requires a Conditional Use Permit (CUP).\"\n          }\n        ],\n        \"optional\": [],\n        \"ambiguous_language\": [\n          {\n            \"text\": \"Structure has 3 plumbing fixtures... so it requires a CUP.\",\n            \"interpretation\": \"Interpreted as a threshold of '>= 3' fixtures for requiring a CUP, as a rule applying only to exactly 3 fixtures is unlikely. The condition is combined with the area threshold.\"\n          }\n        ]\n      },\n      \"Exceptions\": [],\n      \"Relationships\": {\n        \"hierarchical\": \"This rule is a primary regulation for accessory structures under the general title 'Accessory structures site planning'.\",\n        \"cross_references\": [\n          {\n            \"name\": \"Accessory structure daylight plane\",\n            \"reference\": \"Figs 25 & 26 on p. 32\"\n          }\n        ],\n        \"logical_dependencies\": [\n          \"This rule is subject to modification by the 'Special Allowance for Garages' rule.\"\n        ]\n      }\n    },\n    {\n      \"rule_name\": \"Accessory Structure within Buildable Area\",\n      \"source_section\": [\n        \"Section C: Office above garage\",\n        \"Note (near Section C diagram)\"\n      ],\n      \"Qualifiers\": {\n        \"scope\": \"Accessory structures\",\n        \"applicability\": \"Structure is located within the buildable area of the lot.\",\n        \"exclusions\": [\n          \"Regulations for structures in the required yards (e.g., setbacks, height limits for yard structures) do not apply.\"\n        ]\n      },\n      \"Variables\": {\n        \"dimensional\": [\n          {\n            \"name\": \"number_of_stories\",\n            \"type\": \"integer\",\n            \"description\": \"Number of stories in the structure.\"\n          }\n        ],\n        \"material\": [],\n        \"usage\": [\n          {\n            \"name\": \"project_type\",\n            \"type\": \"enum\",\n            \"description\": \"The nature of the construction project.\",\n            \"values\": [\"new_2nd_floor_addition\", \"new_construction\"]\n          }\n        ]\n      },\n      \"Constants\": [\n        {\n          \"name\": \"max_stories_allowed\",\n          \"value\": 2,\n          \"unit\": \"stories\"\n        },\n        {\n          \"name\": \"required_review_process\",\n          \"value\": \"Individual Review (IR)\"\n        },\n        {\n          \"name\": \"reviewing_body\",\n          \"value\": \"Planning Department\"\n        }\n      ],\n      \"Conditions\": {\n        \"mandatory\": [],\n        \"conditional_logic\": [\n          {\n            \"if\": \"number_of_stories == 2\",\n            \"then\": \"Structure must be located within the buildable area.\"\n          },\n          {\n            \"if\": \"number_of_stories == 2 OR project_type IS 'new_2nd_floor_addition'\",\n            \"then\": \"Project is subject to the Planning Department's Individual Review (IR).\"\n          }\n        ],\n        \"optional\": [\n          \"Structure may be two stories high (implying one story is also permitted).\"\n        ],\n        \"ambiguous_language\": []\n      },\n      \"Exceptions\": [\n        {\n          \"type\": \"explicit_deviation\",\n          \"description\": \"Structures under this rule do not have to comply with regulations for structures in the required yards.\"\n        }\n      ],\n      \"Relationships\": {\n        \"hierarchical\": \"This rule is an alternative regulation for accessory structures under the general title 'Accessory structures site planning'.\",\n        \"cross_references\": [],\n        \"logical_dependencies\": [\n          \"The permission to be two stories high is dependent on the structure's location within the buildable area.\",\n          \"This rule set functions as an alternative to the 'Accessory Structure in Required Rear Yard' rule.\"\n        ]\n      }\n    },\n    {\n      \"rule_name\": \"Special Allowance for Garages\",\n      \"source_section\": [\n        \"General notes on the page\"\n      ],\n      \"Qualifiers\": {\n        \"scope\": \"Garages and parking structures.\",\n        \"applicability\": \"Applies when a garage or parking structure is located in the rear/side yards on a lot that is not deep enough to maintain the 75' minimum distance from the front lot line.\",\n        \"exclusions\": [\n          \"Does not apply to non-parking accessory structures.\"\n        ]\n      },\n      \"Variables\": {\n        \"dimensional\": [\n          {\n            \"name\": \"lot_depth_sufficiency\",\n            \"type\": \"boolean\",\n            \"description\": \"Whether the lot is deep enough to maintain the 75' distance.\"\n          }\n        ],\n        \"material\": [],\n        \"usage\": [\n          {\n            \"name\": \"structure_use\",\n            \"type\": \"enum\",\n            \"description\": \"The primary use of the accessory structure.\",\n            \"values\": [\"parking\", \"non-parking\"]\n          }\n        ]\n      },\n      \"Constants\": [\n        {\n          \"name\": \"standard_min_distance_from_front_lot_line\",\n          \"value\": 75,\n          \"unit\": \"feet\"\n        }\n      ],\n      \"Conditions\": {\n        \"mandatory\": [],\n        \"conditional_logic\": [\n          {\n            \"if\": \"structure_use IS 'parking' AND lot_depth_sufficiency IS false\",\n            \"then\": \"The 75' minimum distance requirement from the front lot line is waived.\"\n          }\n        ],\n        \"optional\": [],\n        \"ambiguous_language\": []\n      },\n      \"Exceptions\": [\n        {\n          \"type\": \"special_allowance\",\n          \"description\": \"Provides an exemption from the 75' minimum distance requirement for garages and parking structures.\"\n        }\n      ],\n      \"Relationships\": {\n        \"hierarchical\": \"This is a special allowance that modifies a specific regulation for accessory structures.\",\n        \"cross_references\": [],\n        \"logical_dependencies\": [\n          \"This rule directly overrides the 'min_distance_from_front_lot_line' condition in the 'Accessory Structure in Required Rear Yard' rule for applicable structure types.\"\n        ]\n      }\n    }\n  ]\n}\n```",
+    "response_time": 50.82862997055054,
+    "input_tokens": 1037,
+    "output_tokens": 6336,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 16:03:05",
+  "model": "google/gemini-2.5-pro",
+  "success": true
+}

@@ -1,0 +1,135 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_23.png",
+  "image_name": "Page_23.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "2nd & 3rd floor equivalency\n\nAreas higher than 17' and 26' above the first floor (that do not already count as floor area e.g., open atrium spaces and inaccessible attic spaces), count toward the gross floor area in the form of 2nd and 3rd floor equivalency regardless of the floor plan or usage of the space. Stairwells will be measured the same way that vaulted ceiling spaces are measured.\n\nIn the examples of Fig 12 below the highlighted areas count as follows:\n\nArea A\n\u2022 once as 1st floor,\n\u2022 again as 2nd floor, and\n\u2022 a third time as 3rd-floor equivalency\n\nArea B\n\u2022 once as 1st floor,\n\u2022 again as 2nd-floor equivalency\n\nNote: 200 sf of 3rd floor equivalency may be exempted where roof pitch is 4:12 or steeper (see \"Height\" section).\n\nFig 12 2nd & 3rd floor equivalency",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Two side-by-side cross-sectional diagrams of a building illustrating the areas counted as 2nd and 3rd floor equivalency. Both diagrams show a pitched roof with labeled height markers at 17' and 26' above the 1st floor. The left diagram highlights Area A and Area B with shaded regions: Area A counts once as 1st floor, again as 2nd floor, and a third time as 3rd-floor equivalency; Area B counts once as 1st floor and again as 2nd-floor equivalency. The inaccessible attic for vaulted ceiling is marked in the upper roof space. Widths of areas that count as 2nd-floor and 3rd-floor equivalency are indicated with double-headed arrows. The right diagram similarly shows the inaccessible attic for vaulted ceiling and vaulted ceiling space in Area B, with the same height markers and width annotations.",
+          "location": "Bottom half of the page"
+        },
+        {
+          "type": "text box",
+          "description": "A grey shaded note box stating: 'Note: 200 sf of 3rd floor equivalency may be exempted where roof pitch is 4:12 or steeper (see \"Height\" section).'",
+          "location": "Upper right quadrant of the page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Height thresholds for floor equivalency",
+          "value_type": "Measurement",
+          "value": [
+            "17'",
+            "26'"
+          ],
+          "unit": "feet"
+        },
+        {
+          "parameter": "Roof pitch exemption threshold",
+          "value_type": "Ratio",
+          "value": "4:12",
+          "unit": "pitch ratio"
+        },
+        {
+          "parameter": "Exempted 3rd floor equivalency area",
+          "value_type": "Measurement",
+          "value": "200",
+          "unit": "square feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "2nd & 3rd floor equivalency",
+        "subheadings": [],
+        "sections": []
+      },
+      "additional_notes": [
+        "Page number '17' located at bottom right corner.",
+        "No handwritten annotations or stamps detected.",
+        "Text and diagrams are clear and legible."
+      ],
+      "cross_references": [
+        "\"Height\" section referenced in the note about roof pitch exemption."
+      ],
+      "conditions_and_qualifiers": {
+        "qualifiers": [
+          {
+            "id": "q1",
+            "text": "Areas higher than 17' and 26' above the first floor (that do not already count as floor area e.g., open atrium spaces and inaccessible attic spaces)",
+            "applies_to_conditions": [
+              "c1",
+              "c2"
+            ],
+            "scope": "Global"
+          }
+        ],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "Areas count toward the gross floor area in the form of 2nd and 3rd floor equivalency regardless of the floor plan or usage of the space",
+            "value_type": "Boolean",
+            "operator": "contains",
+            "threshold_value": "true",
+            "unit": "None"
+          },
+          {
+            "id": "c2",
+            "text": "200 sf of 3rd floor equivalency may be exempted where roof pitch is 4:12 or steeper",
+            "value_type": "Measurement",
+            "operator": ">=",
+            "threshold_value": "4:12",
+            "unit": "pitch ratio"
+          }
+        ],
+        "logical_relationships": [
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c2"
+            ],
+            "expression": "IF roof pitch is 4:12 or steeper THEN 200 sf of 3rd floor equivalency may be exempted",
+            "evaluation_order": 1
+          }
+        ],
+        "execution_sequence": [
+          {
+            "step": 1,
+            "action": "Identify areas higher than 17' and 26' above the first floor that do not already count as floor area",
+            "condition_ids": [],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 2,
+            "action": "Count these areas toward gross floor area as 2nd and 3rd floor equivalency",
+            "condition_ids": [
+              "c1"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": [
+              1
+            ]
+          },
+          {
+            "step": 3,
+            "action": "Apply exemption of 200 sf of 3rd floor equivalency if roof pitch is 4:12 or steeper",
+            "condition_ids": [
+              "c2"
+            ],
+            "qualifier_ids": [],
+            "dependencies": [
+              2
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:27:02",
+  "model_used": "openai/gpt-4.1-mini"
+}

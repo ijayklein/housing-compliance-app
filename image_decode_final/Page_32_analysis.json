@@ -1,0 +1,63 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_32.png",
+  "image_name": "Page_32.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Daylight\nplane\n\nThe daylight plane in\nconjunction with the\nsetbacks & height\nlimits, create an\ninvisible tent\n\nintended to contain\ndevelopment on the lot\nin a way that preserves\nprivacy and exposure to\nnatural light.\n\nCode sections\nPage 26\n18.12.040 (a) Table 2\nPage 27\n18.04\nPage 28\n18.12.040 (c) Table 2\nPage 29\n18.12.050 (b) (2)\n18.12.040 (j)\n\n26\n\nPrimary daylight plane (sides)\n\nThe primary daylight plane regulates structures located within the buildable area.\nStructures located in the rear and/or side yards are regulated by the accessory-\nstructure daylight plan described on the next page.\n\nFig 20 Front elevation showing side primary daylight plane\n\nSide lot line\n\n10\u2032 from\naverage\ngrade\n\nAverage grade\n\nGrade at the nearest point\non the adjacent lot\n\nExisting grade of the structure\n(at midpoint of wall)\n\nMax. allowed is\nMin. required by\nBuilding Code\n\n45\u00b0\n\nNotes:\n\u2022 Daylight plane is measured from average grade.\n\u2022 Average grade is established using existing\ngrade\u2014before any grading or fill (See Fig 44 p. 42)\n\u2022 Side daylight plane is measured (up) at lot line.\n\u2022 Rear daylight plane is measured (up) at rear setback.\n\nSide lot line\n\n24\u2032 max. for protrusions\n\n*\nMax. building height",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "A conceptual diagram of an 'invisible tent' representing the daylight plane, shown as a wireframe rectangular prism with a sloped top.",
+          "location": "Left column, middle"
+        },
+        {
+          "type": "diagram",
+          "description": "A cross-sectional elevation diagram illustrating the 'side primary daylight plane' in relation to two residential structures and the ground. It shows a sloped line originating from the side lot line, indicating the daylight plane. Key measurements and angles are annotated. The diagram includes two houses, ground lines (average grade, grade at nearest point on adjacent lot, existing grade of structure), and vertical lines representing lot lines and building height limits. Dashed lines indicate the daylight plane and maximum building height.",
+          "location": "Right column, middle"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Daylight plane origin height from average grade",
+          "value": "10",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Daylight plane angle",
+          "value": "45",
+          "unit": "degrees"
+        },
+        {
+          "parameter": "Maximum height for protrusions",
+          "value": "24",
+          "unit": "feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Primary daylight plane (sides)",
+        "subheadings": [],
+        "sections": [
+          "Daylight plane (left column introductory text)",
+          "Code sections (left column)",
+          "Primary daylight plane (sides) (right column main content)",
+          "Fig 20 Front elevation showing side primary daylight plane (figure caption)",
+          "Notes (right column)"
+        ]
+      },
+      "additional_notes": [
+        "Page number '26' is present at the bottom left.",
+        "The asterisk (*) next to 'Max. building height' in the diagram is not explained on this page, suggesting a potential legend or further explanation elsewhere."
+      ],
+      "cross_references": [
+        "accessory-structure daylight plan described on the next page.",
+        "Fig 44 p. 42 (referenced in Notes section for average grade establishment)",
+        "Page 26 (Code sections: 18.12.040 (a) Table 2)",
+        "Page 27 (Code sections: 18.04)",
+        "Page 28 (Code sections: 18.12.040 (c) Table 2)",
+        "Page 29 (Code sections: 18.12.050 (b) (2), 18.12.040 (j))"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-11 14:59:16",
+  "model_used": "google/gemini-2.5-flash"
+}

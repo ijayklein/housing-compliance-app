@@ -1,0 +1,141 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_21.md",
+  "file_name": "Page_21.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "rule_id": "GFA_CALC_UPPER_FLOOR_OUTDOOR_AREAS",
+        "rule_name": "Gross Floor Area Calculation for Roofed Outdoor Areas on Upper Floors",
+        "source_page_title": "Balconies, decks, & outdoor areas on upper floors",
+        "source_document_page_number": 15,
+        "analysis": {
+          "Qualifiers": {
+            "scope": "Calculation of Gross Floor Area (GFA).",
+            "applicability": [
+              "Applies to balconies, decks, and other outdoor areas located on upper floors.",
+              "Applies to 'pop-out' balconies."
+            ],
+            "exclusions": [
+              "Outdoor areas on ground floor (implied).",
+              "Unroofed outdoor areas as defined by the eave comparison rule.",
+              "Arbors that are 'substantially open'."
+            ]
+          },
+          "Variables": [
+            {
+              "name": "is_on_upper_floor",
+              "type": "Positional",
+              "description": "Boolean indicating if the outdoor area is on a floor above the ground level."
+            },
+            {
+              "name": "is_roofed",
+              "type": "State",
+              "description": "A derived boolean state indicating if the outdoor area is considered roofed. This is determined by comparing eave depths."
+            },
+            {
+              "name": "eave_depth_over_area",
+              "type": "Dimensional",
+              "description": "The depth or width of the eave/overhang directly over the outdoor area in question.",
+              "unit": "length"
+            },
+            {
+              "name": "eave_depth_over_rest_of_building",
+              "type": "Dimensional",
+              "description": "The depth or width of the eave/overhang around the rest of the building.",
+              "unit": "length",
+              "ambiguity_flag": "The text and diagrams imply a uniform eave depth for 'the rest of the building'. It is not specified how to determine this value if the eave depth is variable (e.g., average, minimum, or a 'typical' predominant value)."
+            },
+            {
+              "name": "is_substantially_open_arbor",
+              "type": "State",
+              "description": "Boolean indicating if the structure covering the area is an arbor that is 'substantially open'.",
+              "ambiguity_flag": "The term 'substantially open' is not quantitatively defined (e.g., by a percentage of open area in the cover)."
+            },
+            {
+              "name": "design_of_area_sides",
+              "type": "Usage Parameter",
+              "description": "Whether the sides of the outdoor area are open or enclosed. This is explicitly stated as irrelevant if the area is considered roofed."
+            }
+          ],
+          "Constants": [
+            {
+              "name": "GFA Inclusion Rule",
+              "type": "Procedure",
+              "value": "Outdoor areas on upper levels that are roofed DO count toward gross floor area regardless of the design (including whether or not the sides are open)."
+            },
+            {
+              "name": "Roofed Definition Procedure",
+              "type": "Procedure",
+              "value": "An outdoor area on an upper floor is considered to be roofed if the eave over that area is deeper than the eave over the rest of the building."
+            }
+          ],
+          "Conditions": {
+            "description": "Conditional logic to determine if an upper-floor outdoor area counts towards Gross Floor Area (GFA).",
+            "logic_tree": {
+              "type": "IF",
+              "condition": "area.is_on_upper_floor == true",
+              "true_branch": {
+                "type": "IF",
+                "condition": "area.is_substantially_open_arbor == true",
+                "true_branch": {
+                  "outcome": "Area does NOT count toward GFA.",
+                  "source": "Roof Plan 1, Area B"
+                },
+                "false_branch": {
+                  "type": "IF",
+                  "condition": "area.eave_depth_over_area > area.eave_depth_over_rest_of_building",
+                  "true_branch": {
+                    "outcome": "Area IS considered roofed and COUNTS toward GFA.",
+                    "source": "Banner statement; Roof Plan 2, Area B"
+                  },
+                  "false_branch": {
+                    "outcome": "Area is considered open and does NOT count toward GFA.",
+                    "source": "Roof Plan 1, Area C (for equality); Implied for less than."
+                  }
+                }
+              },
+              "false_branch": {
+                "outcome": "This rule does not apply.",
+                "source": "Qualifier: 'on upper floors'"
+              }
+            }
+          },
+          "Exceptions": [
+            {
+              "case": "Arbor Structures",
+              "condition": "The structure is an arbor that is 'substantially open'.",
+              "outcome": "The area does not count toward GFA, bypassing the standard eave/overhang depth comparison.",
+              "source": "Roof Plan 1, Area B",
+              "ambiguity_flag": "The term 'substantially open' is not quantitatively defined, making automated validation difficult without a clear metric."
+            }
+          ],
+          "Relationships": {
+            "hierarchical": [
+              "The primary determination (inclusion in GFA) is dependent on a secondary determination (whether the area is 'roofed').",
+              "The 'roofed' determination is dependent on a comparison of two dimensional variables: 'eave_depth_over_area' and 'eave_depth_over_rest_of_building'."
+            ],
+            "cross_references": [
+              {
+                "type": "Illustrative Example",
+                "reference_id": "Figure 10",
+                "description": "Provides visual examples (Roof Plan 1 and Roof Plan 2) that illustrate the application of the rules for different eave configurations and structure types (arbor)."
+              }
+            ],
+            "logical_dependencies": [
+              "The final GFA calculation for an upper-floor outdoor area is logically dependent on the outcome of the conditional evaluation of its covering structure."
+            ]
+          }
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n  {\n    \"rule_id\": \"GFA_CALC_UPPER_FLOOR_OUTDOOR_AREAS\",\n    \"rule_name\": \"Gross Floor Area Calculation for Roofed Outdoor Areas on Upper Floors\",\n    \"source_page_title\": \"Balconies, decks, & outdoor areas on upper floors\",\n    \"source_document_page_number\": 15,\n    \"analysis\": {\n      \"Qualifiers\": {\n        \"scope\": \"Calculation of Gross Floor Area (GFA).\",\n        \"applicability\": [\n          \"Applies to balconies, decks, and other outdoor areas located on upper floors.\",\n          \"Applies to 'pop-out' balconies.\"\n        ],\n        \"exclusions\": [\n          \"Outdoor areas on ground floor (implied).\",\n          \"Unroofed outdoor areas as defined by the eave comparison rule.\",\n          \"Arbors that are 'substantially open'.\"\n        ]\n      },\n      \"Variables\": [\n        {\n          \"name\": \"is_on_upper_floor\",\n          \"type\": \"Positional\",\n          \"description\": \"Boolean indicating if the outdoor area is on a floor above the ground level.\"\n        },\n        {\n          \"name\": \"is_roofed\",\n          \"type\": \"State\",\n          \"description\": \"A derived boolean state indicating if the outdoor area is considered roofed. This is determined by comparing eave depths.\"\n        },\n        {\n          \"name\": \"eave_depth_over_area\",\n          \"type\": \"Dimensional\",\n          \"description\": \"The depth or width of the eave/overhang directly over the outdoor area in question.\",\n          \"unit\": \"length\"\n        },\n        {\n          \"name\": \"eave_depth_over_rest_of_building\",\n          \"type\": \"Dimensional\",\n          \"description\": \"The depth or width of the eave/overhang around the rest of the building.\",\n          \"unit\": \"length\",\n          \"ambiguity_flag\": \"The text and diagrams imply a uniform eave depth for 'the rest of the building'. It is not specified how to determine this value if the eave depth is variable (e.g., average, minimum, or a 'typical' predominant value).\"\n        },\n        {\n          \"name\": \"is_substantially_open_arbor\",\n          \"type\": \"State\",\n          \"description\": \"Boolean indicating if the structure covering the area is an arbor that is 'substantially open'.\",\n          \"ambiguity_flag\": \"The term 'substantially open' is not quantitatively defined (e.g., by a percentage of open area in the cover).\"\n        },\n        {\n          \"name\": \"design_of_area_sides\",\n          \"type\": \"Usage Parameter\",\n          \"description\": \"Whether the sides of the outdoor area are open or enclosed. This is explicitly stated as irrelevant if the area is considered roofed.\"\n        }\n      ],\n      \"Constants\": [\n        {\n          \"name\": \"GFA Inclusion Rule\",\n          \"type\": \"Procedure\",\n          \"value\": \"Outdoor areas on upper levels that are roofed DO count toward gross floor area regardless of the design (including whether or not the sides are open).\"\n        },\n        {\n          \"name\": \"Roofed Definition Procedure\",\n          \"type\": \"Procedure\",\n          \"value\": \"An outdoor area on an upper floor is considered to be roofed if the eave over that area is deeper than the eave over the rest of the building.\"\n        }\n      ],\n      \"Conditions\": {\n        \"description\": \"Conditional logic to determine if an upper-floor outdoor area counts towards Gross Floor Area (GFA).\",\n        \"logic_tree\": {\n          \"type\": \"IF\",\n          \"condition\": \"area.is_on_upper_floor == true\",\n          \"true_branch\": {\n            \"type\": \"IF\",\n            \"condition\": \"area.is_substantially_open_arbor == true\",\n            \"true_branch\": {\n              \"outcome\": \"Area does NOT count toward GFA.\",\n              \"source\": \"Roof Plan 1, Area B\"\n            },\n            \"false_branch\": {\n              \"type\": \"IF\",\n              \"condition\": \"area.eave_depth_over_area > area.eave_depth_over_rest_of_building\",\n              \"true_branch\": {\n                \"outcome\": \"Area IS considered roofed and COUNTS toward GFA.\",\n                \"source\": \"Banner statement; Roof Plan 2, Area B\"\n              },\n              \"false_branch\": {\n                \"outcome\": \"Area is considered open and does NOT count toward GFA.\",\n                \"source\": \"Roof Plan 1, Area C (for equality); Implied for less than.\"\n              }\n            }\n          },\n          \"false_branch\": {\n            \"outcome\": \"This rule does not apply.\",\n            \"source\": \"Qualifier: 'on upper floors'\"\n          }\n        }\n      },\n      \"Exceptions\": [\n        {\n          \"case\": \"Arbor Structures\",\n          \"condition\": \"The structure is an arbor that is 'substantially open'.\",\n          \"outcome\": \"The area does not count toward GFA, bypassing the standard eave/overhang depth comparison.\",\n          \"source\": \"Roof Plan 1, Area B\",\n          \"ambiguity_flag\": \"The term 'substantially open' is not quantitatively defined, making automated validation difficult without a clear metric.\"\n        }\n      ],\n      \"Relationships\": {\n        \"hierarchical\": [\n          \"The primary determination (inclusion in GFA) is dependent on a secondary determination (whether the area is 'roofed').\",\n          \"The 'roofed' determination is dependent on a comparison of two dimensional variables: 'eave_depth_over_area' and 'eave_depth_over_rest_of_building'.\"\n        ],\n        \"cross_references\": [\n          {\n            \"type\": \"Illustrative Example\",\n            \"reference_id\": \"Figure 10\",\n            \"description\": \"Provides visual examples (Roof Plan 1 and Roof Plan 2) that illustrate the application of the rules for different eave configurations and structure types (arbor).\"\n          }\n        ],\n        \"logical_dependencies\": [\n          \"The final GFA calculation for an upper-floor outdoor area is logically dependent on the outcome of the conditional evaluation of its covering structure.\"\n        ]\n      }\n    }\n  }\n]\n```",
+    "response_time": 38.4244647026062,
+    "input_tokens": 724,
+    "output_tokens": 4776,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 16:01:03",
+  "model": "google/gemini-2.5-pro",
+  "success": true
+}

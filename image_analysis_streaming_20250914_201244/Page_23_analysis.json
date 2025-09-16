@@ -1,0 +1,132 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_23.png",
+  "image_name": "Page_23.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "2nd & 3rd floor equivalency\n\nAreas higher than 17' and 26' above the first floor (that do not already count as floor area e.g., open atrium spaces and inaccessible attic spaces), count toward the gross floor area in the form of 2nd and 3rd floor equivalency regardless of the floor plan or usage of the space. Stairwells will be measured the same way that vaulted ceiling spaces are measured.\n\nIn the examples of Fig 12 below the highlighted areas count as follows:\n\nArea A\n\u2022 once as 1st floor,\n\u2022 again as 2nd floor, and\n\u2022 a third time as 3rd-floor equivalency\n\nArea B\n\u2022 once as 1st floor,\n\u2022 again as 2nd-floor equivalency\n\nNote: 200 sf of 3rd floor equivalency may be exempted where roof pitch is 4:12 or steeper (see \"Height\" section).\n\nFig 12 2nd & 3rd floor equivalency\n\nWidth of area that counts as 3rd-floor equivalency\n\nWidth of area that counts as 2nd-floor equivalency\n\nInaccessible attic (or vaulted ceiling)\n\nA\n\nB\n\n26'\n\n17'\n\nTop of roof material (Typical)\n\nTop of roof material (Typical)\n\nWidth of area that counts as 2nd floor\n\n1st flr\n\nWidth of area that counts as 3rd-floor equivalency\n\nWidth of area that counts as 2nd-floor equivalency\n\nInaccessible attic (or vaulted ceiling)\n\nA\n\nB\n\nVaulted ceiling space\n\n26'\n\n17'\n\nTop of finished floor (Typical)\n\n1st fl\n\n17",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Two side-by-side cross-sectional architectural diagrams of a building illustrating the measurement of floor area equivalency for 2nd and 3rd floors. Both diagrams show a pitched roof with labeled height markers at 17' and 26' above the first floor. Shaded areas labeled 'A' and 'B' indicate zones counted as 1st, 2nd, and 3rd floor equivalency. The diagrams highlight 'Inaccessible attic (or vaulted ceiling)' areas and stairwells. Arrows and dimension lines indicate widths of areas that count as 2nd-floor and 3rd-floor equivalency. The right diagram additionally labels a 'Vaulted ceiling space' within area B. Roof material and finished floor levels are marked as typical.",
+          "location": "Bottom half of the page"
+        },
+        {
+          "type": "text box",
+          "description": "A grey shaded note box stating: 'Note: 200 sf of 3rd floor equivalency may be exempted where roof pitch is 4:12 or steeper (see \"Height\" section).'",
+          "location": "Upper right quadrant of the page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Height above first floor for equivalency counting",
+          "value_type": "Measurement",
+          "value": "17 and 26",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Exemption for 3rd floor equivalency",
+          "value_type": "Measurement",
+          "value": "200",
+          "unit": "square feet"
+        },
+        {
+          "parameter": "Roof pitch for exemption",
+          "value_type": "Ratio",
+          "value": "4:12",
+          "unit": "pitch"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "2nd & 3rd floor equivalency",
+        "subheadings": [],
+        "sections": []
+      },
+      "additional_notes": [
+        "Page number 17 at bottom right corner.",
+        "No handwritten annotations or stamps detected.",
+        "Text and diagrams are clear and legible."
+      ],
+      "cross_references": [
+        "Reference to 'Height' section for roof pitch exemption details."
+      ],
+      "conditions_and_qualifiers": {
+        "qualifiers": [
+          {
+            "id": "q1",
+            "text": "Areas higher than 17' and 26' above the first floor (that do not already count as floor area e.g., open atrium spaces and inaccessible attic spaces)",
+            "applies_to_conditions": [
+              "c1",
+              "c2"
+            ],
+            "scope": "Global"
+          }
+        ],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "Areas count toward the gross floor area in the form of 2nd and 3rd floor equivalency regardless of the floor plan or usage of the space",
+            "value_type": "Boolean",
+            "operator": "contains",
+            "threshold_value": "true",
+            "unit": "None"
+          },
+          {
+            "id": "c2",
+            "text": "200 sf of 3rd floor equivalency may be exempted where roof pitch is 4:12 or steeper",
+            "value_type": "Measurement",
+            "operator": ">=",
+            "threshold_value": "4:12",
+            "unit": "pitch"
+          }
+        ],
+        "logical_relationships": [
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c2"
+            ],
+            "expression": "IF roof pitch is 4:12 or steeper THEN 200 sf of 3rd floor equivalency may be exempted",
+            "evaluation_order": 1
+          }
+        ],
+        "execution_sequence": [
+          {
+            "step": 1,
+            "action": "Determine if areas are higher than 17' and 26' above the first floor and do not already count as floor area",
+            "condition_ids": [
+              "c1"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 2,
+            "action": "Apply 2nd and 3rd floor equivalency counting to qualifying areas",
+            "condition_ids": [
+              "c1"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": [
+              1
+            ]
+          },
+          {
+            "step": 3,
+            "action": "Check roof pitch to determine if 200 sf exemption applies",
+            "condition_ids": [
+              "c2"
+            ],
+            "qualifier_ids": [],
+            "dependencies": []
+          }
+        ]
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:13:25",
+  "model_used": "openai/gpt-4.1-mini"
+}

@@ -1,0 +1,154 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_43.png",
+  "image_name": "Page_43.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Contextual garage placement\n\nContextual garage placement applies if, and only if, there is a predominant neighborhood pattern.\n\nHow to determine if contextual garage placement applies (using Fig 32 below as an example)\n\nNote:\n\u2022 If block is more than 600' long, consider only lots within 600' or the 10 lots closest to the subject lot\n\u2022 If subject lot is a corner lot, consider the pattern on the street that the subject garage faces\n\nExclude the following types of lots:\n\u2022 Flag lot (C)\n\u2022 Multi-family use of 3+ units (G)\n\u2022 Corner lots (A & H)\nThe remaining lots including the subject lot, contribute to the determination.\n\nNote:\n\u2022 If block more than 600' long, consider only lots within 600' or 10 closest lots.\n\u2022 If subject lot is a corner lot, consider the pattern on the street that the garage faces\n\nDivide the remaining lots, including the subject lot, into two categories:\n1. Front-half pattern lots\n\u2022 lots with garage in front half of the lot (F)\n2. Rear-half pattern lots\n\u2022 lots with garage in the rear half of the lot (B & D) and\n\u2022 lots with no garage (E) (counts as a rear-pattern lot)\nDetermine which pattern category is predominant i.e., into which category more than half of the lots fall.\n\nFront half\n\nRear half\n\nThe contextual garage placement regulation DOES apply. Projects on this block must place the garage in the rear half of the lot.\n\nFig 32 Example of a block on which the contextual garage placement regulation applies",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Flow diagram showing the process to determine if contextual garage placement applies. It starts with excluding certain lot types (Flag lot C, Multi-family use of 3+ units G, Corner lots A & H), then dividing remaining lots into Front-half pattern lots (lots with garage in front half of lot F) and Rear-half pattern lots (lots with garage in rear half B & D and lots with no garage E, counted as rear-pattern lot). The diagram shows arrows leading to 'Front half' and 'Rear half' boxes, and a concluding box stating that if rear half is predominant, the contextual garage placement regulation applies and garages must be placed in the rear half of the lot.",
+          "location": "Top-middle of the page"
+        },
+        {
+          "type": "figure",
+          "description": "Fig 32 is a block diagram illustrating lots labeled A through H. Lots A and H are marked with large X's indicating exclusion (corner lots). Lot C is also crossed out (flag lot). Lot G is labeled as 'Multiple garages' and excluded (multi-family use). Lots B and D have garages in the rear half, Lot E has no garage, Lot F (subject house) has garage in front half. The diagram visually supports the textual explanation of determining predominant garage placement pattern.",
+          "location": "Bottom of the page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Block length consideration",
+          "value_type": "Numerical|Measurement",
+          "value": "600",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Number of lots to consider if block is longer than 600 feet",
+          "value_type": "Numerical",
+          "value": "10",
+          "unit": "lots"
+        },
+        {
+          "parameter": "Garage placement pattern predominance",
+          "value_type": "Percentage|Text",
+          "value": "More than half of the lots fall into one pattern category",
+          "unit": "None"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Contextual garage placement",
+        "subheadings": [
+          "How to determine if contextual garage placement applies (using Fig 32 below as an example)",
+          "Note:"
+        ],
+        "sections": []
+      },
+      "additional_notes": [
+        "Page number 37 at bottom right corner",
+        "No handwritten annotations or stamps detected",
+        "Text and diagrams are clear and legible"
+      ],
+      "cross_references": [
+        "Fig 32 referenced in text and shown at bottom of page"
+      ],
+      "conditions_and_qualifiers": {
+        "qualifiers": [
+          {
+            "id": "q1",
+            "text": "If block is more than 600' long, consider only lots within 600' or the 10 lots closest to the subject lot",
+            "applies_to_conditions": [
+              "c1",
+              "c2"
+            ],
+            "scope": "Local"
+          },
+          {
+            "id": "q2",
+            "text": "If subject lot is a corner lot, consider the pattern on the street that the subject garage faces",
+            "applies_to_conditions": [
+              "c1",
+              "c2"
+            ],
+            "scope": "Local"
+          }
+        ],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "Exclude the following types of lots: Flag lot (C), Multi-family use of 3+ units (G), Corner lots (A & H)",
+            "value_type": "List",
+            "operator": "contains",
+            "threshold_value": "Flag lot, Multi-family 3+ units, Corner lots",
+            "unit": "None"
+          },
+          {
+            "id": "c2",
+            "text": "Determine which pattern category is predominant i.e., into which category more than half of the lots fall",
+            "value_type": "Percentage",
+            "operator": ">",
+            "threshold_value": "50",
+            "unit": "percent"
+          }
+        ],
+        "logical_relationships": [
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c2"
+            ],
+            "expression": "If more than half of the lots fall into rear-half pattern category, then the contextual garage placement regulation DOES apply",
+            "evaluation_order": 1
+          }
+        ],
+        "execution_sequence": [
+          {
+            "step": 1,
+            "action": "Exclude lots of types Flag lot (C), Multi-family use of 3+ units (G), Corner lots (A & H)",
+            "condition_ids": [
+              "c1"
+            ],
+            "qualifier_ids": [],
+            "dependencies": []
+          },
+          {
+            "step": 2,
+            "action": "Divide remaining lots including subject lot into front-half and rear-half pattern lots",
+            "condition_ids": [],
+            "qualifier_ids": [
+              "q1",
+              "q2"
+            ],
+            "dependencies": [
+              "1"
+            ]
+          },
+          {
+            "step": 3,
+            "action": "Determine predominant pattern category (more than half of lots)",
+            "condition_ids": [
+              "c2"
+            ],
+            "qualifier_ids": [],
+            "dependencies": [
+              "2"
+            ]
+          },
+          {
+            "step": 4,
+            "action": "If rear-half pattern is predominant, apply contextual garage placement regulation requiring garage placement in rear half of lot",
+            "condition_ids": [
+              "c2"
+            ],
+            "qualifier_ids": [],
+            "dependencies": [
+              "3"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:14:13",
+  "model_used": "openai/gpt-4.1-mini"
+}

@@ -1,0 +1,318 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_26.png",
+  "image_name": "Page_26.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Setbacks\n\nSetbacks apportion a lot into two parts:\n\u2022 buildable area (in the middle)\n\u2022 required yards (surrounding the building area).\n\nThese required yards, meant to be maintained as open space areas, are important as landscaping opportunities to keep our neighborhoods attractive as well as for the preservation of privacy.\n\nCode sections\nPage 20\n18.12.040 (a) Table 2\n18.12.040 (a,c,e,& f)\nPage 21\n18.04.040 (e)\nPage 22\u201423\n18.040.030 (84, 87, 91, 128, & 146)\nPage 24\u201425\nas shown in table\n\nStandard setbacks\n\nStandard setbacks apply in most cases.\n\nStandard setbacks by zone\n\nZone District | Front | Rear | Interior Side | Street Side\nR-1 | Contextual or 20 | 20 | 6 | 16\nR-1(7000) | Contextual or 20 | 20 | 8 | 16\nR-1(8000) | Contextual or 20 | 20' | 8 | 16\nR-1(10000) | Contextual or 20 | 20 | 8 | 16\nR-1(20000) | Contextual or 20 | 20 | 8 | 16\nFlag lot | 10 | 20 | see zone | na\nSubstandard lot | Contextual or 20 | 20 | see zone | 16\nSubstandard corner lot < 50' wide | Contextual or 20 | 20 | see zone | 10\n\n* For front setback, if contextual setback is greater than 30' then it applies \u2013 otherwise, the 20' setback applies.\n\n* For front & street side setbacks a special setback may apply. If both a contextual and special setback apply, the greater of the two setbacks is required.\n\nSpecial setbacks\n\nSpecial setbacks override standard setbacks unless a larger contextual setback applies.\n\nStreets w/special setbacks\n\nAlma St | Embarcadero Rd | Middlefield Rd\nArastradero Rd | Guinda St | Miranda Ave\nAsh St | Hamilton Ave | Newell Rd\nCalifornia Ave | Hanover St | Oak Hill Ave\nChanning Ave | Lincoln Ave | Page Mill Rd\nCharleston Rd | Loma Verde Ave | Park Blvd\nChurchill Ave | Louis Rd | Stanford Ave\nColorado Ave | Lytton Ave | University Ave\nEast Meadow Dr | Manuela Ave | West Meadow Dr\nEl Camino Real | Mesa Ave |\n\nSpecial setback distances can be found on:\n\u2022 pages of the city's zonemap booklet (available both online and in hardbook at the Development Center)\n\u2022 parcel reports from the city's GIS (available at the Development Center)",
+      "visual_elements": [
+        {
+          "type": "table",
+          "description": "Standard setbacks by zone table showing Zone District, Front, Rear, Interior Side, and Street Side setback requirements for various R-1 zones and special lot types",
+          "location": "middle of page"
+        },
+        {
+          "type": "table",
+          "description": "Streets with special setbacks organized in three columns listing street names alphabetically",
+          "location": "right side of page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "R-1 Front setback",
+          "value_type": "Text",
+          "value": "Contextual or 20",
+          "unit": "feet (implied)"
+        },
+        {
+          "parameter": "R-1 Rear setback",
+          "value_type": "Numerical",
+          "value": "20",
+          "unit": "feet (implied)"
+        },
+        {
+          "parameter": "R-1 Interior Side setback",
+          "value_type": "Numerical",
+          "value": "6",
+          "unit": "feet (implied)"
+        },
+        {
+          "parameter": "R-1 Street Side setback",
+          "value_type": "Numerical",
+          "value": "16",
+          "unit": "feet (implied)"
+        },
+        {
+          "parameter": "R-1(7000) Interior Side setback",
+          "value_type": "Numerical",
+          "value": "8",
+          "unit": "feet (implied)"
+        },
+        {
+          "parameter": "R-1(8000) Rear setback",
+          "value_type": "Numerical",
+          "value": "20'",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Flag lot Front setback",
+          "value_type": "Numerical",
+          "value": "10",
+          "unit": "feet (implied)"
+        },
+        {
+          "parameter": "Substandard corner lot width threshold",
+          "value_type": "Numerical",
+          "value": "50'",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Substandard corner lot Street Side setback",
+          "value_type": "Numerical",
+          "value": "10",
+          "unit": "feet (implied)"
+        },
+        {
+          "parameter": "Contextual setback threshold",
+          "value_type": "Numerical",
+          "value": "30'",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Default front setback",
+          "value_type": "Numerical",
+          "value": "20'",
+          "unit": "feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Setbacks",
+        "subheadings": [
+          "Standard setbacks",
+          "Special setbacks",
+          "Standard setbacks by zone",
+          "Streets w/special setbacks"
+        ],
+        "sections": [
+          "Code sections"
+        ]
+      },
+      "additional_notes": [
+        "Page appears to be from a zoning manual with clear formatting and legible text",
+        "Contains asterisk footnotes explaining special conditions",
+        "References to other pages and code sections provided"
+      ],
+      "cross_references": [
+        "Page 20 - 18.12.040 (a) Table 2",
+        "Page 21 - 18.12.040 (a,c,e,& f)",
+        "Page 21 - 18.04.040 (e)",
+        "Page 22\u201423 - 18.040.030 (84, 87, 91, 128, & 146)",
+        "Page 24\u201425 - as shown in table",
+        "city's zonemap booklet",
+        "Development Center",
+        "city's GIS"
+      ],
+      "conditions_and_qualifiers": {
+        "qualifiers": [
+          {
+            "id": "q1",
+            "text": "Standard setbacks apply in most cases",
+            "applies_to_conditions": [
+              "c1"
+            ],
+            "scope": "Global"
+          },
+          {
+            "id": "q2",
+            "text": "Special setbacks override standard setbacks unless a larger contextual setback applies",
+            "applies_to_conditions": [
+              "c2",
+              "c3"
+            ],
+            "scope": "Global"
+          },
+          {
+            "id": "q3",
+            "text": "For front setback, if contextual setback is greater than 30' then it applies \u2013 otherwise, the 20' setback applies",
+            "applies_to_conditions": [
+              "c4",
+              "c5"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q4",
+            "text": "For front & street side setbacks a special setback may apply",
+            "applies_to_conditions": [
+              "c6"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q5",
+            "text": "If both a contextual and special setback apply, the greater of the two setbacks is required",
+            "applies_to_conditions": [
+              "c7"
+            ],
+            "scope": "Specific"
+          }
+        ],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "Standard setbacks apply in most cases",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "true",
+            "unit": "N/A"
+          },
+          {
+            "id": "c2",
+            "text": "Special setbacks override standard setbacks",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "true",
+            "unit": "N/A"
+          },
+          {
+            "id": "c3",
+            "text": "larger contextual setback applies",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "false",
+            "unit": "N/A"
+          },
+          {
+            "id": "c4",
+            "text": "contextual setback is greater than 30'",
+            "value_type": "Numerical",
+            "operator": ">",
+            "threshold_value": "30",
+            "unit": "feet"
+          },
+          {
+            "id": "c5",
+            "text": "the 20' setback applies",
+            "value_type": "Numerical",
+            "operator": "=",
+            "threshold_value": "20",
+            "unit": "feet"
+          },
+          {
+            "id": "c6",
+            "text": "special setback may apply",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "true",
+            "unit": "N/A"
+          },
+          {
+            "id": "c7",
+            "text": "both a contextual and special setback apply",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "true",
+            "unit": "N/A"
+          }
+        ],
+        "logical_relationships": [
+          {
+            "operation": "IF-THEN-ELSE",
+            "condition_ids": [
+              "c4",
+              "c5"
+            ],
+            "expression": "For front setback, if contextual setback is greater than 30' then it applies \u2013 otherwise, the 20' setback applies",
+            "evaluation_order": 1
+          },
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c7"
+            ],
+            "expression": "If both a contextual and special setback apply, the greater of the two setbacks is required",
+            "evaluation_order": 2
+          },
+          {
+            "operation": "AND",
+            "condition_ids": [
+              "c2",
+              "c3"
+            ],
+            "expression": "Special setbacks override standard setbacks unless a larger contextual setback applies",
+            "evaluation_order": 3
+          }
+        ],
+        "execution_sequence": [
+          {
+            "step": 1,
+            "action": "Determine if standard setbacks apply",
+            "condition_ids": [
+              "c1"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 2,
+            "action": "Check if special setbacks override standard setbacks",
+            "condition_ids": [
+              "c2",
+              "c3"
+            ],
+            "qualifier_ids": [
+              "q2"
+            ],
+            "dependencies": [
+              1
+            ]
+          },
+          {
+            "step": 3,
+            "action": "Evaluate front setback requirements",
+            "condition_ids": [
+              "c4",
+              "c5"
+            ],
+            "qualifier_ids": [
+              "q3"
+            ],
+            "dependencies": [
+              1,
+              2
+            ]
+          },
+          {
+            "step": 4,
+            "action": "Check for special setback applicability on front and street side",
+            "condition_ids": [
+              "c6"
+            ],
+            "qualifier_ids": [
+              "q4"
+            ],
+            "dependencies": [
+              3
+            ]
+          },
+          {
+            "step": 5,
+            "action": "Apply greater setback when both contextual and special apply",
+            "condition_ids": [
+              "c7"
+            ],
+            "qualifier_ids": [
+              "q5"
+            ],
+            "dependencies": [
+              4
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:32:25",
+  "model_used": "anthropic/claude-sonnet-4"
+}

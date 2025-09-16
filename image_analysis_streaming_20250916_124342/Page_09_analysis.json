@@ -1,0 +1,19 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_09.png",
+  "image_name": "Page_09.png",
+  "analysis": {
+    "page_number": "unknown",
+    "main_heading": "PARSE_ERROR",
+    "text_content": "Failed to parse response: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)",
+    "tables": [],
+    "figures": [],
+    "zoning_rules": [],
+    "code_references": [],
+    "quality_notes": "JSON parsing failed: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)",
+    "raw_response": "{\n  \"page\": \"3\",\n  \"heading\": \"Gross vs. net lot area\",\n  \"content\": \"Gross lot area is the size of the lot\u2014from lot line to lot line. Development potential is based on the net lot area and while gross and net lot area are the same for most lots in Palo Alto, there are some lots for which portions must be excluded from the gross lot area to establish the net lot area. Areas excluded from the gross lot size are: Street right-of-way (Area A of Fig 1 on this page), 'Pole' portion of a flag lot (Area B of Fig 2 on this page), Creek channel (Area C of Fig 3 on this page)\",\n  \"figures\": [\n    \"Fig 1: Gross lot area exclusions: street easements\",\n    \"Fig 2: Gross lot area exclusions: flag-lot 'poles'\",\n    \"Fig 3: Gross lot area exclusions: creek easements\"\n  ],\n  \"tables\": [],\n  \"codes\": []\n}",
+    "parse_error": true
+  },
+  "analysis_timestamp": "2025-09-16 12:43:55",
+  "model_used": "anthropic/claude-3.5-sonnet",
+  "success": false
+}

@@ -1,0 +1,23 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_14.png",
+  "image_name": "Page_14.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "PARSE_ERROR",
+      "visual_elements": [],
+      "technical_specifications": [],
+      "structural_elements": {
+        "main_heading": "",
+        "subheadings": [],
+        "sections": []
+      },
+      "additional_notes": [
+        "Failed to parse LLM response: Expecting value: line 1 column 1 (char 0)"
+      ],
+      "cross_references": []
+    },
+    "raw_response": "Based on the photocopied page from this city planning technical manual, I can extract the following information with absolute precision:\n\n## Title: Roofed porches on the 1st floor\n\n### Section: How to determine if a porch is at least 50% open\n*(using Fig 5 as an example)*\n\n**Fig 5** Roofed 1st floor porch\n\n**Step 1:** Determine the perimeter of the porch and divide it into segments that will allow a comparison of closed and open segments.\n\nThe perimeter of the porch in *Fig 5* is shown below. It is the sum of segments **A** through **G**. It is 70 linear feet.\n\n### Diagram measurements shown:\n- Segment A: 5'\n- Segment B: 8' \n- Segment C: 6'\n- Segment D: 7'\n- Segment E: 14'\n- Segment F: 24'\n- Segment G: 4'\n\n**Page number:** 8\n\nThe page includes an isometric drawing of a house with a roofed porch and a corresponding floor plan diagram showing the labeled segments A through G with their respective measurements."
+  },
+  "analysis_timestamp": "2025-09-16 12:29:33",
+  "model_used": "anthropic/claude-sonnet-4"
+}

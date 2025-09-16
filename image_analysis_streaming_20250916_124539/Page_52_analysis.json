@@ -1,0 +1,23 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_52.png",
+  "image_name": "Page_52.png",
+  "analysis": {
+    "page": "46",
+    "heading": "Height & grade",
+    "content": "Height allowances enable a variety of architectural styles while preserving the residential scale of our neighborhoods as well as the privacy and natural light available to each lot.",
+    "figures": [
+      "Fig 42 Comparison of roof slopes - Shows different roof slopes from 12:14 to 12:3 with height limits of 33' and 30'",
+      "Fig 43 Determining slope of roof - Diagram showing 12' horizontal measurement and vertical rise"
+    ],
+    "tables": [
+      "Structure height table showing maximum heights:\nMain dwelling on standard lot with roof slope >12:12: 30'\nMain dwelling on standard lot with roof slope \u226512:12: 33'\nMain dwelling on substandard or flag lot: 17'\nAccessory structure in rear or side yard: 12'\n2nd-dwelling units: 17'"
+    ],
+    "codes": [
+      "18.12.040 (a) Table 2",
+      "18.04.030 (64) (b)"
+    ]
+  },
+  "timestamp": "2025-09-16 12:47:41",
+  "model": "anthropic/claude-3.5-sonnet",
+  "success": true
+}

@@ -1,0 +1,19 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_24.png",
+  "image_name": "Page_24.png",
+  "analysis": {
+    "page_number": "unknown",
+    "main_heading": "PARSE_ERROR",
+    "text_content": "Failed to parse response: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)",
+    "tables": [],
+    "figures": [],
+    "zoning_rules": [],
+    "code_references": [],
+    "quality_notes": "JSON parsing failed: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)",
+    "raw_response": "```json\n{\n  \"page_number\": \"18\",\n  \"main_heading\": \"Bay windows\",\n  \"text_content\": \"Projections\\nArchitectural relief features such as bay windows are pleasant additions to a house design and are encouraged. If they meet certain design criteria they do not count toward gross floor area.\\nBay windows that meet the design criteria below are considered to be decorative architectural features and do NOT count toward gross floor area.\\nDesign criteria for bay windows that do not count:\\n* Bottom of feature must be at least 18\\\" above the floor joists\\n* Exterior supports must be features like corbels and/or brackets rather than solid walls\\n* At least 50% of the surface is glass\\nNote: Bay windows that extend higher than the structure's roof are considered to be dormers and count toward gross floor area.\\nCode sections\\n18.04.030(a)(65)\\n18.12.040(b)Table 3\\nA\\nDoes NOT count\\nB\\nCounts because floor joists continue into the bay window\\nC & D\\nCount because of exterior skirt wall (angled o",
+    "parse_error": true
+  },
+  "analysis_timestamp": "2025-09-16 12:33:25",
+  "model_used": "google/gemini-2.5-flash",
+  "success": false
+}

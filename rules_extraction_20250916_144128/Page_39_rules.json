@@ -1,0 +1,172 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_39.md",
+  "file_name": "Page_39.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "Title": "Noise-producing equipment site planning",
+        "Rules": [
+          {
+            "Qualifiers": {
+              "Scope": "Site planning for noise-producing equipment",
+              "Applicability": "All noise-producing equipment",
+              "Exclusions": "None specified"
+            },
+            "Variables": {
+              "Dimensional": {
+                "Street-side yard encroachment": "6 feet"
+              },
+              "Material": "Insulation and housing of equipment",
+              "Environmental": "Compliance with City\u2019s Noise Ordinance",
+              "Usage": "Replacement of equipment"
+            },
+            "Constants": {
+              "Numerical values": {
+                "Driveway clearance": "10 feet minimum"
+              },
+              "Standards": "City\u2019s Noise Ordinance in Chapter 9.10 of the Municipal Code",
+              "Procedures": "Planning Dept. waiver process"
+            },
+            "Conditions": {
+              "Mandatory": [
+                "Equipment may not be located in front, rear, or interior-side yards",
+                "All service equipment must meet the City\u2019s Noise Ordinance"
+              ],
+              "Optional": "Planning Dept. can waive insulation and housing requirement",
+              "Conditional logic": "Replacement of equipment shall conform to this section where feasible",
+              "Dependencies": "Waiver based on noise specifications, location, and/or other screening or buffering"
+            },
+            "Exceptions": {
+              "Explicit deviations": "Equipment may encroach into street-side yard up to 6 feet",
+              "Alternatives": "Waiver of insulation and housing requirement",
+              "Special cases": "None specified"
+            },
+            "Relationships": {
+              "Hierarchical": "General rules apply to all noise-producing equipment",
+              "Cross-references": "Figure 27 for site planning solutions",
+              "Logical dependencies": "Compliance with City\u2019s Noise Ordinance at the nearest lot line"
+            }
+          },
+          {
+            "Title": "Figure A \u2014 Pool equipment",
+            "Qualifiers": {
+              "Scope": "Placement of pool equipment",
+              "Applicability": "Pool equipment within buildable area",
+              "Exclusions": "None specified"
+            },
+            "Variables": {
+              "Dimensional": {
+                "Driveway clearance": "10 feet minimum"
+              },
+              "Material": "None specified",
+              "Environmental": "None specified",
+              "Usage": "None specified"
+            },
+            "Constants": {
+              "Numerical values": {
+                "Driveway clearance": "10 feet minimum"
+              },
+              "Standards": "None specified",
+              "Procedures": "None specified"
+            },
+            "Conditions": {
+              "Mandatory": "Pool equipment must be within buildable area",
+              "Optional": "None specified",
+              "Conditional logic": "None specified",
+              "Dependencies": "None specified"
+            },
+            "Exceptions": {
+              "Explicit deviations": "None specified",
+              "Alternatives": "None specified",
+              "Special cases": "None specified"
+            },
+            "Relationships": {
+              "Hierarchical": "None specified",
+              "Cross-references": "None specified",
+              "Logical dependencies": "None specified"
+            }
+          },
+          {
+            "Title": "Figure B \u2014 Pool equipment & AC unit",
+            "Qualifiers": {
+              "Scope": "Placement of pool equipment and AC unit",
+              "Applicability": "Pool equipment and AC unit within buildable area",
+              "Exclusions": "None specified"
+            },
+            "Variables": {
+              "Dimensional": "None specified",
+              "Material": "None specified",
+              "Environmental": "None specified",
+              "Usage": "None specified"
+            },
+            "Constants": {
+              "Numerical values": "None specified",
+              "Standards": "None specified",
+              "Procedures": "None specified"
+            },
+            "Conditions": {
+              "Mandatory": "Pool equipment and AC unit must be within buildable area",
+              "Optional": "None specified",
+              "Conditional logic": "None specified",
+              "Dependencies": "None specified"
+            },
+            "Exceptions": {
+              "Explicit deviations": "None specified",
+              "Alternatives": "None specified",
+              "Special cases": "None specified"
+            },
+            "Relationships": {
+              "Hierarchical": "None specified",
+              "Cross-references": "None specified",
+              "Logical dependencies": "None specified"
+            }
+          },
+          {
+            "Title": "Figure C \u2014 Generator & AC unit",
+            "Qualifiers": {
+              "Scope": "Placement of generator and AC unit",
+              "Applicability": "Generator and AC unit within buildable area",
+              "Exclusions": "None specified"
+            },
+            "Variables": {
+              "Dimensional": {
+                "Street-side yard encroachment": "6 feet maximum"
+              },
+              "Material": "None specified",
+              "Environmental": "None specified",
+              "Usage": "None specified"
+            },
+            "Constants": {
+              "Numerical values": {
+                "Street-side yard encroachment": "6 feet maximum"
+              },
+              "Standards": "None specified",
+              "Procedures": "None specified"
+            },
+            "Conditions": {
+              "Mandatory": "AC unit must be in compliance with regulations",
+              "Optional": "None specified",
+              "Conditional logic": "None specified",
+              "Dependencies": "None specified"
+            },
+            "Exceptions": {
+              "Explicit deviations": "None specified",
+              "Alternatives": "None specified",
+              "Special cases": "None specified"
+            },
+            "Relationships": {
+              "Hierarchical": "None specified",
+              "Cross-references": "None specified",
+              "Logical dependencies": "None specified"
+            }
+          }
+        ]
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n    {\n        \"Title\": \"Noise-producing equipment site planning\",\n        \"Rules\": [\n            {\n                \"Qualifiers\": {\n                    \"Scope\": \"Site planning for noise-producing equipment\",\n                    \"Applicability\": \"All noise-producing equipment\",\n                    \"Exclusions\": \"None specified\"\n                },\n                \"Variables\": {\n                    \"Dimensional\": {\n                        \"Street-side yard encroachment\": \"6 feet\"\n                    },\n                    \"Material\": \"Insulation and housing of equipment\",\n                    \"Environmental\": \"Compliance with City\u2019s Noise Ordinance\",\n                    \"Usage\": \"Replacement of equipment\"\n                },\n                \"Constants\": {\n                    \"Numerical values\": {\n                        \"Driveway clearance\": \"10 feet minimum\"\n                    },\n                    \"Standards\": \"City\u2019s Noise Ordinance in Chapter 9.10 of the Municipal Code\",\n                    \"Procedures\": \"Planning Dept. waiver process\"\n                },\n                \"Conditions\": {\n                    \"Mandatory\": [\n                        \"Equipment may not be located in front, rear, or interior-side yards\",\n                        \"All service equipment must meet the City\u2019s Noise Ordinance\"\n                    ],\n                    \"Optional\": \"Planning Dept. can waive insulation and housing requirement\",\n                    \"Conditional logic\": \"Replacement of equipment shall conform to this section where feasible\",\n                    \"Dependencies\": \"Waiver based on noise specifications, location, and/or other screening or buffering\"\n                },\n                \"Exceptions\": {\n                    \"Explicit deviations\": \"Equipment may encroach into street-side yard up to 6 feet\",\n                    \"Alternatives\": \"Waiver of insulation and housing requirement\",\n                    \"Special cases\": \"None specified\"\n                },\n                \"Relationships\": {\n                    \"Hierarchical\": \"General rules apply to all noise-producing equipment\",\n                    \"Cross-references\": \"Figure 27 for site planning solutions\",\n                    \"Logical dependencies\": \"Compliance with City\u2019s Noise Ordinance at the nearest lot line\"\n                }\n            },\n            {\n                \"Title\": \"Figure A \u2014 Pool equipment\",\n                \"Qualifiers\": {\n                    \"Scope\": \"Placement of pool equipment\",\n                    \"Applicability\": \"Pool equipment within buildable area\",\n                    \"Exclusions\": \"None specified\"\n                },\n                \"Variables\": {\n                    \"Dimensional\": {\n                        \"Driveway clearance\": \"10 feet minimum\"\n                    },\n                    \"Material\": \"None specified\",\n                    \"Environmental\": \"None specified\",\n                    \"Usage\": \"None specified\"\n                },\n                \"Constants\": {\n                    \"Numerical values\": {\n                        \"Driveway clearance\": \"10 feet minimum\"\n                    },\n                    \"Standards\": \"None specified\",\n                    \"Procedures\": \"None specified\"\n                },\n                \"Conditions\": {\n                    \"Mandatory\": \"Pool equipment must be within buildable area\",\n                    \"Optional\": \"None specified\",\n                    \"Conditional logic\": \"None specified\",\n                    \"Dependencies\": \"None specified\"\n                },\n                \"Exceptions\": {\n                    \"Explicit deviations\": \"None specified\",\n                    \"Alternatives\": \"None specified\",\n                    \"Special cases\": \"None specified\"\n                },\n                \"Relationships\": {\n                    \"Hierarchical\": \"None specified\",\n                    \"Cross-references\": \"None specified\",\n                    \"Logical dependencies\": \"None specified\"\n                }\n            },\n            {\n                \"Title\": \"Figure B \u2014 Pool equipment & AC unit\",\n                \"Qualifiers\": {\n                    \"Scope\": \"Placement of pool equipment and AC unit\",\n                    \"Applicability\": \"Pool equipment and AC unit within buildable area\",\n                    \"Exclusions\": \"None specified\"\n                },\n                \"Variables\": {\n                    \"Dimensional\": \"None specified\",\n                    \"Material\": \"None specified\",\n                    \"Environmental\": \"None specified\",\n                    \"Usage\": \"None specified\"\n                },\n                \"Constants\": {\n                    \"Numerical values\": \"None specified\",\n                    \"Standards\": \"None specified\",\n                    \"Procedures\": \"None specified\"\n                },\n                \"Conditions\": {\n                    \"Mandatory\": \"Pool equipment and AC unit must be within buildable area\",\n                    \"Optional\": \"None specified\",\n                    \"Conditional logic\": \"None specified\",\n                    \"Dependencies\": \"None specified\"\n                },\n                \"Exceptions\": {\n                    \"Explicit deviations\": \"None specified\",\n                    \"Alternatives\": \"None specified\",\n                    \"Special cases\": \"None specified\"\n                },\n                \"Relationships\": {\n                    \"Hierarchical\": \"None specified\",\n                    \"Cross-references\": \"None specified\",\n                    \"Logical dependencies\": \"None specified\"\n                }\n            },\n            {\n                \"Title\": \"Figure C \u2014 Generator & AC unit\",\n                \"Qualifiers\": {\n                    \"Scope\": \"Placement of generator and AC unit\",\n                    \"Applicability\": \"Generator and AC unit within buildable area\",\n                    \"Exclusions\": \"None specified\"\n                },\n                \"Variables\": {\n                    \"Dimensional\": {\n                        \"Street-side yard encroachment\": \"6 feet maximum\"\n                    },\n                    \"Material\": \"None specified\",\n                    \"Environmental\": \"None specified\",\n                    \"Usage\": \"None specified\"\n                },\n                \"Constants\": {\n                    \"Numerical values\": {\n                        \"Street-side yard encroachment\": \"6 feet maximum\"\n                    },\n                    \"Standards\": \"None specified\",\n                    \"Procedures\": \"None specified\"\n                },\n                \"Conditions\": {\n                    \"Mandatory\": \"AC unit must be in compliance with regulations\",\n                    \"Optional\": \"None specified\",\n                    \"Conditional logic\": \"None specified\",\n                    \"Dependencies\": \"None specified\"\n                },\n                \"Exceptions\": {\n                    \"Explicit deviations\": \"None specified\",\n                    \"Alternatives\": \"None specified\",\n                    \"Special cases\": \"None specified\"\n                },\n                \"Relationships\": {\n                    \"Hierarchical\": \"None specified\",\n                    \"Cross-references\": \"None specified\",\n                    \"Logical dependencies\": \"None specified\"\n                }\n            }\n        ]\n    }\n]\n```"
+  },
+  "timestamp": "2025-09-16 14:43:17",
+  "model": "openai/gpt-4o",
+  "success": true
+}

@@ -1,0 +1,19 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_19.png",
+  "image_name": "Page_19.png",
+  "analysis": {
+    "page_number": "unknown",
+    "main_heading": "PARSE_ERROR",
+    "text_content": "Failed to parse response: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)",
+    "tables": [],
+    "figures": [],
+    "zoning_rules": [],
+    "code_references": [],
+    "quality_notes": "JSON parsing failed: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)",
+    "raw_response": "```json\n{\n  \"page_number\": \"13\",\n  \"main_heading\": null,\n  \"text_content\": \"Note: The 2nd floor over a vaulted entry will count as usual. Therefore, the area will count three times toward gross floor area.\\nNote: If the entryway is considered to be a vaulted entryway the area will be counted as follows:\\n* In this example, a portion of the entryway is recessed beyond the house facade and roof. It is included in the area that counts.\\n* The area is measured to the outside material of the entry-way feature.\\n* The area counts TWICE toward gross floor area.\",\n  \"tables\": [],\n  \"figures\": [\n    {\n      \"figure_number\": \"Fig 8\",\n      \"caption\": \"Entry feature with 2nd floor above\",\n      \"description\": \"Three diagrams illustrating how to calculate the gross floor area for an entry feature with a second floor above. The first diagram is an isometric view of a house entrance with a second floor overhang, showing 'Height' and 'Grade'. The second diagram is a side elevation view, showing the '",
+    "parse_error": true
+  },
+  "analysis_timestamp": "2025-09-16 12:33:22",
+  "model_used": "google/gemini-2.5-flash",
+  "success": false
+}

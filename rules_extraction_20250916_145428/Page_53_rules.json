@@ -1,0 +1,221 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_53.md",
+  "file_name": "Page_53.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "Qualifiers": {
+          "Scope": "Measuring the height of a building or structure on land with natural slope less than or equal to 10 percent.",
+          "Applicability": "Each building or structure on a site where the natural slope is \u2264 10%.",
+          "Exclusions": [
+            "Fill or grading is excluded from the reference grade; the measurement references existing ground prior to grading or fill."
+          ],
+          "References": {
+            "Figures": [
+              "Figure 44 (Existing vs. Finished grade)"
+            ],
+            "TableRow": "Row 1",
+            "PageTitle": "Grade"
+          },
+          "Ambiguity_Flags": [
+            "Figure 44 label includes 'Height measured to [illegible] highest point'\u2014the exact top measurement point is not fully legible (likely the highest point of the structure/roof)."
+          ]
+        },
+        "Variables": {
+          "natural_slope_percent": {
+            "description": "Natural slope of the land prior to grading or fill.",
+            "unit": "percent"
+          },
+          "existing_grade_elevation_lowest_adjacent": {
+            "description": "Lowest point of adjacent ground elevation prior to grading or fill for the subject building/structure.",
+            "unit": "elevation units (site datum)"
+          },
+          "height_measurement_top_point": {
+            "description": "Top point to which height is measured.",
+            "status": "ambiguous",
+            "note": "Text suggests 'highest point' but is not fully legible in Figure 44."
+          }
+        },
+        "Constants": {
+          "slope_threshold": {
+            "value": 10,
+            "unit": "percent",
+            "comparison": "\u2264"
+          },
+          "reference_grade_definition": "Existing Grade = for each building or structure, the lowest point of adjacent ground elevation prior to grading or fill."
+        },
+        "Conditions": [
+          {
+            "if": "natural_slope_percent \u2264 10%",
+            "then": [
+              "Set reference_grade = existing_grade_elevation_lowest_adjacent (pre-fill).",
+              "Measure building/structure height from reference_grade to the top measurement point (see ambiguity)."
+            ],
+            "type": "mandatory"
+          }
+        ],
+        "Exceptions": [],
+        "Relationships": [
+          {
+            "type": "hierarchical",
+            "description": "Measurement regime selection is based on natural slope threshold (\u2264 10%)."
+          },
+          {
+            "type": "definition",
+            "description": "Existing Grade is defined independently of any subsequent fill or grading."
+          },
+          {
+            "type": "cross-reference",
+            "description": "Illustrated by Figure 44 on the same page."
+          }
+        ]
+      },
+      {
+        "Qualifiers": {
+          "Scope": "Measuring the height of a building or structure on land with natural slope greater than 10 percent and applying height limits on sloping sites.",
+          "Applicability": "Any building or structure at any point along its extent where the site\u2019s natural slope is > 10%.",
+          "Exclusions": [],
+          "References": {
+            "Figures": [
+              "Figure 45 (Height limits for structures on slopes greater than 10%)"
+            ],
+            "TableRow": "Row 2",
+            "PageTitle": "Grade"
+          }
+        },
+        "Variables": {
+          "natural_slope_percent": {
+            "description": "Natural slope of the land prior to grading or fill.",
+            "unit": "percent"
+          },
+          "existing_grade_elevation_at_point": {
+            "description": "Existing (pre-fill) adjacent ground elevation at a given point along the structure.",
+            "unit": "elevation units (site datum)"
+          },
+          "finished_grade_elevation_at_point": {
+            "description": "Finished (post-fill) adjacent ground elevation at a given point along the structure.",
+            "unit": "elevation units (site datum)"
+          },
+          "reference_grade_at_point": {
+            "description": "Lower of existing or finished adjacent ground elevation at the given point (per-point evaluation).",
+            "unit": "elevation units (site datum)",
+            "formula": "reference_grade_at_point = min(existing_grade_elevation_at_point, finished_grade_elevation_at_point)"
+          },
+          "structure_height_at_point": {
+            "description": "Vertical height of the structure measured at the given point from the reference grade to the top measurement point.",
+            "unit": "feet"
+          }
+        },
+        "Constants": {
+          "slope_threshold": {
+            "value": 10,
+            "unit": "percent",
+            "comparison": ">"
+          },
+          "grade_definition": "Grade = adjacent ground elevation of the finished or existing grade, whichever is lower\u2014at any point of the structure.",
+          "height_limit_above_existing": {
+            "value": 30,
+            "unit": "feet",
+            "reference": "existing grade"
+          },
+          "height_limit_above_finished": {
+            "value": 30,
+            "unit": "feet",
+            "reference": "finished grade"
+          },
+          "controlling_limit_rule": "The structure must comply with the lower of the two limits (30' above existing grade, 30' above finished grade) at all points along the slope.",
+          "equivalency_note": "Because both limits are 30', the controlling surface equals 30' above the lower of existing or finished grade at each point."
+        },
+        "Conditions": [
+          {
+            "if": "natural_slope_percent > 10%",
+            "then": [
+              "At each point along the structure, set reference_grade_at_point = min(existing_grade_elevation_at_point, finished_grade_elevation_at_point).",
+              "Maximum allowed structure height at that point = 30 feet above reference_grade_at_point.",
+              "Ensure the structure complies with this limit at all points along the slope."
+            ],
+            "type": "mandatory"
+          }
+        ],
+        "Exceptions": [],
+        "Relationships": [
+          {
+            "type": "logical-dependency",
+            "description": "Per-point evaluation depends on both existing and finished grade elevations; the lower controls."
+          },
+          {
+            "type": "equivalence",
+            "description": "Limiting height surface defined as min(existing+30', finished+30') is equivalent to 30' above min(existing, finished)."
+          },
+          {
+            "type": "cross-reference",
+            "description": "Illustrated by Figure 45 with callouts '30' above existing grade', '30' above finished', and compliance with lower limit along the slope."
+          },
+          {
+            "type": "hierarchical",
+            "description": "Measurement regime selection is based on natural slope threshold (> 10%)."
+          }
+        ]
+      },
+      {
+        "Qualifiers": {
+          "Scope": "Determining the reference grade for calculating a daylight plane.",
+          "Applicability": "Daylight plane measurements for buildings abutting another site.",
+          "Exclusions": [],
+          "References": {
+            "Figures": [
+              "Figures 20\u201321 (pp. 26\u201327) for daylight plane illustration",
+              "Figure 46 (Comparison of different grades; interior labels not fully legible)"
+            ],
+            "TableRow": "Row 3",
+            "PageTitle": "Grade"
+          }
+        },
+        "Variables": {
+          "grade_at_building_midpoint": {
+            "description": "Grade at the midpoint of the building (on the subject site).",
+            "unit": "elevation units (site datum)"
+          },
+          "grade_at_closest_point_on_abutting_site": {
+            "description": "Grade at the closest point on the abutting site.",
+            "unit": "elevation units (site datum)"
+          },
+          "average_grade_for_daylight_plane": {
+            "description": "Average grade used as the reference for the daylight plane.",
+            "unit": "elevation units (site datum)",
+            "formula": "average_grade_for_daylight_plane = (grade_at_building_midpoint + grade_at_closest_point_on_abutting_site) / 2"
+          }
+        },
+        "Constants": {
+          "definition_average_grade": "Average grade = average of the grade at the midpoint of the building and the grade at the closest point on the abutting site."
+        },
+        "Conditions": [
+          {
+            "if": "Measuring a daylight plane",
+            "then": [
+              "Compute average_grade_for_daylight_plane as the mean of the midpoint grade and the closest abutting-site grade.",
+              "Use average_grade_for_daylight_plane as the reference grade for daylight plane calculations."
+            ],
+            "type": "mandatory"
+          }
+        ],
+        "Exceptions": [],
+        "Relationships": [
+          {
+            "type": "cross-reference",
+            "description": "Illustrated by Figures 20\u201321 (pp. 26\u201327)."
+          },
+          {
+            "type": "dependency",
+            "description": "Relies on grades from two distinct locations: the building midpoint and the closest point on the abutting site."
+          }
+        ]
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "[\n  {\n    \"Qualifiers\": {\n      \"Scope\": \"Measuring the height of a building or structure on land with natural slope less than or equal to 10 percent.\",\n      \"Applicability\": \"Each building or structure on a site where the natural slope is \u2264 10%.\",\n      \"Exclusions\": [\n        \"Fill or grading is excluded from the reference grade; the measurement references existing ground prior to grading or fill.\"\n      ],\n      \"References\": {\n        \"Figures\": [\n          \"Figure 44 (Existing vs. Finished grade)\"\n        ],\n        \"TableRow\": \"Row 1\",\n        \"PageTitle\": \"Grade\"\n      },\n      \"Ambiguity_Flags\": [\n        \"Figure 44 label includes 'Height measured to [illegible] highest point'\u2014the exact top measurement point is not fully legible (likely the highest point of the structure/roof).\"\n      ]\n    },\n    \"Variables\": {\n      \"natural_slope_percent\": {\n        \"description\": \"Natural slope of the land prior to grading or fill.\",\n        \"unit\": \"percent\"\n      },\n      \"existing_grade_elevation_lowest_adjacent\": {\n        \"description\": \"Lowest point of adjacent ground elevation prior to grading or fill for the subject building/structure.\",\n        \"unit\": \"elevation units (site datum)\"\n      },\n      \"height_measurement_top_point\": {\n        \"description\": \"Top point to which height is measured.\",\n        \"status\": \"ambiguous\",\n        \"note\": \"Text suggests 'highest point' but is not fully legible in Figure 44.\"\n      }\n    },\n    \"Constants\": {\n      \"slope_threshold\": {\n        \"value\": 10,\n        \"unit\": \"percent\",\n        \"comparison\": \"\u2264\"\n      },\n      \"reference_grade_definition\": \"Existing Grade = for each building or structure, the lowest point of adjacent ground elevation prior to grading or fill.\"\n    },\n    \"Conditions\": [\n      {\n        \"if\": \"natural_slope_percent \u2264 10%\",\n        \"then\": [\n          \"Set reference_grade = existing_grade_elevation_lowest_adjacent (pre-fill).\",\n          \"Measure building/structure height from reference_grade to the top measurement point (see ambiguity).\"\n        ],\n        \"type\": \"mandatory\"\n      }\n    ],\n    \"Exceptions\": [],\n    \"Relationships\": [\n      {\n        \"type\": \"hierarchical\",\n        \"description\": \"Measurement regime selection is based on natural slope threshold (\u2264 10%).\"\n      },\n      {\n        \"type\": \"definition\",\n        \"description\": \"Existing Grade is defined independently of any subsequent fill or grading.\"\n      },\n      {\n        \"type\": \"cross-reference\",\n        \"description\": \"Illustrated by Figure 44 on the same page.\"\n      }\n    ]\n  },\n  {\n    \"Qualifiers\": {\n      \"Scope\": \"Measuring the height of a building or structure on land with natural slope greater than 10 percent and applying height limits on sloping sites.\",\n      \"Applicability\": \"Any building or structure at any point along its extent where the site\u2019s natural slope is > 10%.\",\n      \"Exclusions\": [],\n      \"References\": {\n        \"Figures\": [\n          \"Figure 45 (Height limits for structures on slopes greater than 10%)\"\n        ],\n        \"TableRow\": \"Row 2\",\n        \"PageTitle\": \"Grade\"\n      }\n    },\n    \"Variables\": {\n      \"natural_slope_percent\": {\n        \"description\": \"Natural slope of the land prior to grading or fill.\",\n        \"unit\": \"percent\"\n      },\n      \"existing_grade_elevation_at_point\": {\n        \"description\": \"Existing (pre-fill) adjacent ground elevation at a given point along the structure.\",\n        \"unit\": \"elevation units (site datum)\"\n      },\n      \"finished_grade_elevation_at_point\": {\n        \"description\": \"Finished (post-fill) adjacent ground elevation at a given point along the structure.\",\n        \"unit\": \"elevation units (site datum)\"\n      },\n      \"reference_grade_at_point\": {\n        \"description\": \"Lower of existing or finished adjacent ground elevation at the given point (per-point evaluation).\",\n        \"unit\": \"elevation units (site datum)\",\n        \"formula\": \"reference_grade_at_point = min(existing_grade_elevation_at_point, finished_grade_elevation_at_point)\"\n      },\n      \"structure_height_at_point\": {\n        \"description\": \"Vertical height of the structure measured at the given point from the reference grade to the top measurement point.\",\n        \"unit\": \"feet\"\n      }\n    },\n    \"Constants\": {\n      \"slope_threshold\": {\n        \"value\": 10,\n        \"unit\": \"percent\",\n        \"comparison\": \">\"\n      },\n      \"grade_definition\": \"Grade = adjacent ground elevation of the finished or existing grade, whichever is lower\u2014at any point of the structure.\",\n      \"height_limit_above_existing\": {\n        \"value\": 30,\n        \"unit\": \"feet\",\n        \"reference\": \"existing grade\"\n      },\n      \"height_limit_above_finished\": {\n        \"value\": 30,\n        \"unit\": \"feet\",\n        \"reference\": \"finished grade\"\n      },\n      \"controlling_limit_rule\": \"The structure must comply with the lower of the two limits (30' above existing grade, 30' above finished grade) at all points along the slope.\",\n      \"equivalency_note\": \"Because both limits are 30', the controlling surface equals 30' above the lower of existing or finished grade at each point.\"\n    },\n    \"Conditions\": [\n      {\n        \"if\": \"natural_slope_percent > 10%\",\n        \"then\": [\n          \"At each point along the structure, set reference_grade_at_point = min(existing_grade_elevation_at_point, finished_grade_elevation_at_point).\",\n          \"Maximum allowed structure height at that point = 30 feet above reference_grade_at_point.\",\n          \"Ensure the structure complies with this limit at all points along the slope.\"\n        ],\n        \"type\": \"mandatory\"\n      }\n    ],\n    \"Exceptions\": [],\n    \"Relationships\": [\n      {\n        \"type\": \"logical-dependency\",\n        \"description\": \"Per-point evaluation depends on both existing and finished grade elevations; the lower controls.\"\n      },\n      {\n        \"type\": \"equivalence\",\n        \"description\": \"Limiting height surface defined as min(existing+30', finished+30') is equivalent to 30' above min(existing, finished).\"\n      },\n      {\n        \"type\": \"cross-reference\",\n        \"description\": \"Illustrated by Figure 45 with callouts '30' above existing grade', '30' above finished', and compliance with lower limit along the slope.\"\n      },\n      {\n        \"type\": \"hierarchical\",\n        \"description\": \"Measurement regime selection is based on natural slope threshold (> 10%).\"\n      }\n    ]\n  },\n  {\n    \"Qualifiers\": {\n      \"Scope\": \"Determining the reference grade for calculating a daylight plane.\",\n      \"Applicability\": \"Daylight plane measurements for buildings abutting another site.\",\n      \"Exclusions\": [],\n      \"References\": {\n        \"Figures\": [\n          \"Figures 20\u201321 (pp. 26\u201327) for daylight plane illustration\",\n          \"Figure 46 (Comparison of different grades; interior labels not fully legible)\"\n        ],\n        \"TableRow\": \"Row 3\",\n        \"PageTitle\": \"Grade\"\n      }\n    },\n    \"Variables\": {\n      \"grade_at_building_midpoint\": {\n        \"description\": \"Grade at the midpoint of the building (on the subject site).\",\n        \"unit\": \"elevation units (site datum)\"\n      },\n      \"grade_at_closest_point_on_abutting_site\": {\n        \"description\": \"Grade at the closest point on the abutting site.\",\n        \"unit\": \"elevation units (site datum)\"\n      },\n      \"average_grade_for_daylight_plane\": {\n        \"description\": \"Average grade used as the reference for the daylight plane.\",\n        \"unit\": \"elevation units (site datum)\",\n        \"formula\": \"average_grade_for_daylight_plane = (grade_at_building_midpoint + grade_at_closest_point_on_abutting_site) / 2\"\n      }\n    },\n    \"Constants\": {\n      \"definition_average_grade\": \"Average grade = average of the grade at the midpoint of the building and the grade at the closest point on the abutting site.\"\n    },\n    \"Conditions\": [\n      {\n        \"if\": \"Measuring a daylight plane\",\n        \"then\": [\n          \"Compute average_grade_for_daylight_plane as the mean of the midpoint grade and the closest abutting-site grade.\",\n          \"Use average_grade_for_daylight_plane as the reference grade for daylight plane calculations.\"\n        ],\n        \"type\": \"mandatory\"\n      }\n    ],\n    \"Exceptions\": [],\n    \"Relationships\": [\n      {\n        \"type\": \"cross-reference\",\n        \"description\": \"Illustrated by Figures 20\u201321 (pp. 26\u201327).\"\n      },\n      {\n        \"type\": \"dependency\",\n        \"description\": \"Relies on grades from two distinct locations: the building midpoint and the closest point on the abutting site.\"\n      }\n    ]\n  }\n]"
+  },
+  "timestamp": "2025-09-16 15:12:59",
+  "model": "openai/gpt-5",
+  "success": true
+}

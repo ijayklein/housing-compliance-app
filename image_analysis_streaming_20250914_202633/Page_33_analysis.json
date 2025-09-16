@@ -1,0 +1,140 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_33.png",
+  "image_name": "Page_33.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Fig 21 Plan view showing how to determine average grade\n\nWhen measuring daylight plane, height is measured from the average of the grade at the midpoint of the building and the grade of the closest point on the abutting site.\n\nFor this side of this structure, the average grade is the average of the grades at these two points\n\nRear yard\n\nInterior side yard\n\nNeighbor\n\nFront yard\n\nBuildable area\n\nSubject House\n\nFor this side of this structure, the average grade is the average of the grades at these two points\n\nRear yard\n\nInterior side yard\n\nNeighbor\n\nFront yard\n\nKey\n- Lot line\n- - - Required setbacks\n[pattern] Sidewalk\n[pattern] Buildable area\n[solid gray] Existing house\n\nFig 22 Detail showing allowable eave protrusion\n\nwall plane\n\n2' max\n\nThe daylight plane must clear the point where the wall plane intersects the top of the roof material\n\nCertification of daylight plane compliance:\n\nUpon request by the building official any person building or making improvements to a structure shall provide a certification that the structure, as built, complies with the daylight plane provisions in Code Section 18.12.040(a). Such certification shall be prepared by a licensed engineer, architect, or surveyor, and shall be provided prior to frame inspection. (Sections 18.12.040(j)).",
+      "visual_elements": [
+        {
+          "type": "figure",
+          "description": "Plan view diagram showing three adjacent lots with buildable areas, sidewalks, existing houses, and required setbacks. The diagram illustrates how to determine average grade by averaging the grades at two points on each side of the subject house. Labels include 'Rear yard', 'Front yard', 'Interior side yard', 'Neighbor', 'Subject House', and arrows pointing to the two points used for averaging grade on each side of the structure.",
+          "location": "Left half of the page"
+        },
+        {
+          "type": "figure",
+          "description": "Detail diagram showing allowable eave protrusion with a roof section and a dashed daylight plane line intersecting the wall plane. The diagram specifies a maximum protrusion of 2 feet and notes that the daylight plane must clear the point where the wall plane intersects the top of the roof material.",
+          "location": "Top right quadrant of the page"
+        },
+        {
+          "type": "text box",
+          "description": "Certification of daylight plane compliance text box explaining the requirement for certification by a licensed engineer, architect, or surveyor upon request by the building official, referencing Code Section 18.12.040(a) and 18.12.040(j).",
+          "location": "Bottom right quadrant of the page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Maximum allowable eave protrusion",
+          "value_type": "Measurement",
+          "value": "2",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Code Section for daylight plane compliance",
+          "value_type": "Text",
+          "value": "18.12.040(a)",
+          "unit": "None"
+        },
+        {
+          "parameter": "Code Section for certification requirement",
+          "value_type": "Text",
+          "value": "18.12.040(j)",
+          "unit": "None"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": null,
+        "subheadings": [
+          "Fig 21 Plan view showing how to determine average grade",
+          "Fig 22 Detail showing allowable eave protrusion",
+          "Certification of daylight plane compliance:"
+        ],
+        "sections": []
+      },
+      "additional_notes": [
+        "Page number 27 at bottom right corner",
+        "No handwritten annotations or stamps detected",
+        "Text and diagrams are clear and legible"
+      ],
+      "cross_references": [
+        "Code Section 18.12.040(a)",
+        "Code Section 18.12.040(j)"
+      ],
+      "conditions_and_qualifiers": {
+        "qualifiers": [
+          {
+            "id": "q1",
+            "text": "When measuring daylight plane, height is measured from the average of the grade at the midpoint of the building and the grade of the closest point on the abutting site.",
+            "applies_to_conditions": [
+              "c1"
+            ],
+            "scope": "Specific"
+          }
+        ],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "The daylight plane must clear the point where the wall plane intersects the top of the roof material",
+            "value_type": "Boolean",
+            "operator": "must clear",
+            "threshold_value": "true",
+            "unit": "None"
+          },
+          {
+            "id": "c2",
+            "text": "Allowable eave protrusion maximum 2 feet",
+            "value_type": "Measurement",
+            "operator": "<=",
+            "threshold_value": "2",
+            "unit": "feet"
+          }
+        ],
+        "logical_relationships": [
+          {
+            "operation": "AND",
+            "condition_ids": [
+              "c1",
+              "c2"
+            ],
+            "expression": "The daylight plane must clear the roof intersection point AND the eave protrusion must be less than or equal to 2 feet",
+            "evaluation_order": 1
+          }
+        ],
+        "execution_sequence": [
+          {
+            "step": 1,
+            "action": "Measure height from average grade at midpoint of building and closest point on abutting site",
+            "condition_ids": [],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 2,
+            "action": "Verify daylight plane clearance at roof intersection point",
+            "condition_ids": [
+              "c1"
+            ],
+            "qualifier_ids": [],
+            "dependencies": [
+              1
+            ]
+          },
+          {
+            "step": 3,
+            "action": "Confirm eave protrusion does not exceed 2 feet",
+            "condition_ids": [
+              "c2"
+            ],
+            "qualifier_ids": [],
+            "dependencies": [
+              1
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:27:17",
+  "model_used": "openai/gpt-4.1-mini"
+}

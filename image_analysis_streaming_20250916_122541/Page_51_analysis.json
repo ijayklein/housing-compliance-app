@@ -1,0 +1,23 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_51.png",
+  "image_name": "Page_51.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "PARSE_ERROR",
+      "visual_elements": [],
+      "technical_specifications": [],
+      "structural_elements": {
+        "main_heading": "",
+        "subheadings": [],
+        "sections": []
+      },
+      "additional_notes": [
+        "Failed to parse LLM response: Expecting value: line 1 column 1 (char 0)"
+      ],
+      "cross_references": []
+    },
+    "raw_response": "Here's the extracted information from the images, focusing on crucial zoning rules, regulations, and technical specifications, with absolute precision:\n\n**Title:** Detached 2nd-dwelling units & associated parking site planning\n\n**Figure:** Fig 41 Examples of site planning solutions for detached 2nd dwelling units and associated required parking\n\n**A Detached & separate from main-dwelling parking**\n*   Main dwelling has a 1-car attached garage.\n*   2nd dwelling has a 1-car detached garage. (Because it is detached and at least 75' from the front lot line, it may be located in the rear and side yards.)\n*   Both dwellings use driveway for their uncovered spaces (beyond front setback).\n*   **Interior lot example diagram details:**\n    *   Detached 2nd dwelling unit: 900 sf max.\n    *   Minimum distance between Detached 2nd dwelling unit and Main dwelling: 12'.\n    *   1-car detached garage for 2nd dwelling unit.\n    *   1-car attached garage for Main dwelling.\n    *   Minimum setback from interior-side yard for 1-car detached garage: 3'.\n\n**B Attached & separate from main-dwelling parking**\n*   Main dwelling has 1-car attached garage.\n*   2nd dwelling has a 1-car attached garage. (Because attached, it must be located with the building area rather than in the rear or side yards).\n*   Both dwellings use driveway for their uncovered spaces (beyond front setback).\n*   **Interior lot example diagram details:**\n    *   Detached 2nd dwelling unit: 900 sf max.\n    *   Minimum distance between Detached 2nd dwelling unit and Main dwelling: 12'.\n    *   1-car attached garage for 2nd dwelling unit.\n    *   1-car attached garage for Main dwelling.\n\n**C Detached & combined with main-dwelling parking**\n*   Both dwellings share a 2-car detached garage. (Because it is detached and at least 75' from the front lot line, it may be located in the rear and side yards.)\n*   Both dwellings use the driveway for their respective uncovered spaces (beyond front setback).\n*   **Interior lot example diagram details:**\n    *   Detached 2nd dwelling unit: 900 sf max.\n    *   Minimum distance between Detached 2nd dwelling unit and Main dwelling: 12'.\n    *   2-car detached garage for both dwellings.\n    *   Minimum setback from interior-side yard for 2-car detached garage: 3'.\n\n**D Combined w/ main-dwelling parking that is attached to main dwelling**\n*   Both dwellings share a 2-car attached garage.\n*   Both dwellings use the driveway for their respective uncovered spaces (beyond front setback).\n*   **Interior lot example diagram details:**\n    *   Detached 2nd dwelling unit: 900 sf max.\n    *   Minimum distance between Detached 2nd dwelling unit and Main dwelling: 12'.\n    *   2-car attached garage for both dwellings.\n\n**Key**\n*   Curb (line)\n*   Lot line (dashed line)\n*   Sidewalk (patterned area)\n*   Required setbacks (dashed outline)\n*   Buildable area (light gray shaded area with dashed outline)\n*   Dwelling (gray shaded area)\n*   2nd-dwelling unit & associated pkg (dark gray shaded area)\n*   Area that may not be used to satisfy required parking spaces (white area)\n*   Uncovered space (car icon)\n\n**Page Number:** 45"
+  },
+  "analysis_timestamp": "2025-09-16 12:26:03",
+  "model_used": "google/gemini-2.5-flash"
+}

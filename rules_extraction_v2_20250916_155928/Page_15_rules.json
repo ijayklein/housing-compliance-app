@@ -1,0 +1,204 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_15.md",
+  "file_name": "Page_15.md",
+  "analysis": {
+    "extracted_rules": {
+      "validation_data": {
+        "source_page": 15,
+        "rules": [
+          {
+            "rule_id": "PERIMETER_SEGMENT_ABUTTING_WALL",
+            "rule_name": "Classification of Perimeter Segments Abutting House Walls",
+            "description": "This rule defines how to classify porch perimeter segments that are directly adjacent to the main house structure.",
+            "qualifiers": {
+              "scope": "Applies to perimeter segments of a porch.",
+              "applicability": "Used to identify and classify 'closed' segments as the first step in a multi-step process."
+            },
+            "variables": [],
+            "constants": {
+              "classification": "closed",
+              "examples": [
+                {
+                  "segment_id": "A",
+                  "status": "closed",
+                  "notes": "Dimension not legible in the source image."
+                },
+                {
+                  "segment_id": "B",
+                  "status": "closed",
+                  "dimension": {
+                    "value": 8,
+                    "unit": "feet"
+                  }
+                },
+                {
+                  "segment_id": "C",
+                  "status": "closed",
+                  "dimension": {
+                    "value": 10,
+                    "unit": "feet"
+                  }
+                }
+              ]
+            },
+            "conditions": {
+              "mandatory": [
+                {
+                  "description": "A perimeter segment that abuts a house wall must be classified as a 'closed segment'.",
+                  "logic": "IF (segment.abuts_house_wall) THEN segment.status = 'closed'"
+                }
+              ]
+            },
+            "exceptions": [],
+            "relationships": {
+              "hierarchical": "This is 'Step 2' in the documented procedure.",
+              "cross_references": [
+                "Figure 5"
+              ],
+              "logical_dependencies": [
+                "This rule is a prerequisite for 'Step 3', which deals with the remaining segments."
+              ]
+            }
+          },
+          {
+            "rule_id": "PERIMETER_SEGMENT_FACADE_OPENNESS",
+            "rule_name": "Classification of Perimeter Segments Based on Facade Openness",
+            "description": "This rule defines the criteria for classifying non-abutting perimeter segments as 'open' or 'closed' based on the percentage of open area in their facade.",
+            "qualifiers": {
+              "scope": "Applies to perimeter segments that do not abut a house wall.",
+              "applicability": "Used to determine the 'open' or 'closed' status of remaining segments based on their design."
+            },
+            "variables": [
+              {
+                "name": "facade_area",
+                "type": "dimensional",
+                "description": "Total area of the segment's facade, calculated from its height and width."
+              },
+              {
+                "name": "open_area",
+                "type": "dimensional",
+                "description": "The portion of the facade area that is physically open to the air."
+              },
+              {
+                "name": "openness_ratio",
+                "type": "calculated",
+                "description": "The ratio of open_area to facade_area.",
+                "formula": "open_area / facade_area"
+              },
+              {
+                "name": "facade_material",
+                "type": "material",
+                "description": "The material composition of the facade, which affects its 'open' status.",
+                "example": "A 'decorative glass wall' is considered 'closed', not 'open'."
+              }
+            ],
+            "constants": {
+              "threshold": {
+                "name": "openness_threshold",
+                "value": 0.5,
+                "description": "A segment is considered 'open' if its openness_ratio is greater than or equal to this value."
+              },
+              "examples": [
+                {
+                  "segment_id": "D",
+                  "width": "7'",
+                  "status": "Open"
+                },
+                {
+                  "segment_id": "E",
+                  "width": "14'",
+                  "status": "Closed",
+                  "reason": "Contains a decorative glass wall."
+                },
+                {
+                  "segment_id": "F",
+                  "width": "24'",
+                  "status": "Open"
+                },
+                {
+                  "segment_id": "G",
+                  "width": "4'",
+                  "status": "Open"
+                }
+              ]
+            },
+            "conditions": {
+              "conditional_logic": [
+                {
+                  "description": "If at least 50% of the facade area is open, the segment is considered 'open'. Otherwise, it is 'closed'.",
+                  "logic": "IF (openness_ratio >= 0.50) THEN segment.status = 'open' ELSE segment.status = 'closed'"
+                }
+              ]
+            },
+            "exceptions": [],
+            "relationships": {
+              "hierarchical": "This is 'Step 3' in the documented procedure.",
+              "logical_dependencies": [
+                "This rule is dependent on the output of 'PERIMETER_SEGMENT_ABUTTING_WALL' to identify the segments it applies to.",
+                "Calculation of 'facade_area' is dependent on the 'FACADE_MEASUREMENT_PROCEDURE'."
+              ],
+              "sub_rules": [
+                {
+                  "procedure_id": "FACADE_MEASUREMENT_PROCEDURE",
+                  "procedure_name": "Procedure for Measuring Facade Area",
+                  "description": "Defines the specific method for measuring the height and width of a facade segment to calculate its area for the openness assessment.",
+                  "qualifiers": {
+                    "scope": "For purposes of assessing the openness of the facade."
+                  },
+                  "variables": [
+                    {
+                      "name": "facade_height",
+                      "type": "dimensional",
+                      "description": "The vertical dimension of the segment facade."
+                    },
+                    {
+                      "name": "facade_width",
+                      "type": "dimensional",
+                      "description": "The horizontal dimension of the segment facade."
+                    }
+                  ],
+                  "constants": {
+                    "procedures": [
+                      {
+                        "parameter": "facade_height",
+                        "method": "Measure from the top of the porch floor to the point where the segment facade intersects with the top of the roof material.",
+                        "example_value": {
+                          "value": 8,
+                          "unit": "feet"
+                        }
+                      },
+                      {
+                        "parameter": "facade_width",
+                        "method": "Measure from the same plane as the height.",
+                        "ambiguous_language": "The phrase 'from the same plane' is imprecise and may require clarification for consistent automated validation."
+                      }
+                    ]
+                  },
+                  "exceptions": {
+                    "special_cases": [
+                      {
+                        "case": "Structural Supports",
+                        "rule": "Allowances may be made for structural supports that are part of the facade.",
+                        "condition": "The supports must not be 'excessive'.",
+                        "ambiguous_language": "The term 'not excessive' is subjective and not quantitatively defined, posing a challenge for automated validation."
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "parse_error": false,
+    "raw_response": "```json\n{\n  \"validation_data\": {\n    \"source_page\": 15,\n    \"rules\": [\n      {\n        \"rule_id\": \"PERIMETER_SEGMENT_ABUTTING_WALL\",\n        \"rule_name\": \"Classification of Perimeter Segments Abutting House Walls\",\n        \"description\": \"This rule defines how to classify porch perimeter segments that are directly adjacent to the main house structure.\",\n        \"qualifiers\": {\n          \"scope\": \"Applies to perimeter segments of a porch.\",\n          \"applicability\": \"Used to identify and classify 'closed' segments as the first step in a multi-step process.\"\n        },\n        \"variables\": [],\n        \"constants\": {\n          \"classification\": \"closed\",\n          \"examples\": [\n            {\n              \"segment_id\": \"A\",\n              \"status\": \"closed\",\n              \"notes\": \"Dimension not legible in the source image.\"\n            },\n            {\n              \"segment_id\": \"B\",\n              \"status\": \"closed\",\n              \"dimension\": {\n                \"value\": 8,\n                \"unit\": \"feet\"\n              }\n            },\n            {\n              \"segment_id\": \"C\",\n              \"status\": \"closed\",\n              \"dimension\": {\n                \"value\": 10,\n                \"unit\": \"feet\"\n              }\n            }\n          ]\n        },\n        \"conditions\": {\n          \"mandatory\": [\n            {\n              \"description\": \"A perimeter segment that abuts a house wall must be classified as a 'closed segment'.\",\n              \"logic\": \"IF (segment.abuts_house_wall) THEN segment.status = 'closed'\"\n            }\n          ]\n        },\n        \"exceptions\": [],\n        \"relationships\": {\n          \"hierarchical\": \"This is 'Step 2' in the documented procedure.\",\n          \"cross_references\": [\n            \"Figure 5\"\n          ],\n          \"logical_dependencies\": [\n            \"This rule is a prerequisite for 'Step 3', which deals with the remaining segments.\"\n          ]\n        }\n      },\n      {\n        \"rule_id\": \"PERIMETER_SEGMENT_FACADE_OPENNESS\",\n        \"rule_name\": \"Classification of Perimeter Segments Based on Facade Openness\",\n        \"description\": \"This rule defines the criteria for classifying non-abutting perimeter segments as 'open' or 'closed' based on the percentage of open area in their facade.\",\n        \"qualifiers\": {\n          \"scope\": \"Applies to perimeter segments that do not abut a house wall.\",\n          \"applicability\": \"Used to determine the 'open' or 'closed' status of remaining segments based on their design.\"\n        },\n        \"variables\": [\n          {\n            \"name\": \"facade_area\",\n            \"type\": \"dimensional\",\n            \"description\": \"Total area of the segment's facade, calculated from its height and width.\"\n          },\n          {\n            \"name\": \"open_area\",\n            \"type\": \"dimensional\",\n            \"description\": \"The portion of the facade area that is physically open to the air.\"\n          },\n          {\n            \"name\": \"openness_ratio\",\n            \"type\": \"calculated\",\n            \"description\": \"The ratio of open_area to facade_area.\",\n            \"formula\": \"open_area / facade_area\"\n          },\n          {\n            \"name\": \"facade_material\",\n            \"type\": \"material\",\n            \"description\": \"The material composition of the facade, which affects its 'open' status.\",\n            \"example\": \"A 'decorative glass wall' is considered 'closed', not 'open'.\"\n          }\n        ],\n        \"constants\": {\n          \"threshold\": {\n            \"name\": \"openness_threshold\",\n            \"value\": 0.50,\n            \"description\": \"A segment is considered 'open' if its openness_ratio is greater than or equal to this value.\"\n          },\n          \"examples\": [\n            {\n              \"segment_id\": \"D\",\n              \"width\": \"7'\",\n              \"status\": \"Open\"\n            },\n            {\n              \"segment_id\": \"E\",\n              \"width\": \"14'\",\n              \"status\": \"Closed\",\n              \"reason\": \"Contains a decorative glass wall.\"\n            },\n            {\n              \"segment_id\": \"F\",\n              \"width\": \"24'\",\n              \"status\": \"Open\"\n            },\n            {\n              \"segment_id\": \"G\",\n              \"width\": \"4'\",\n              \"status\": \"Open\"\n            }\n          ]\n        },\n        \"conditions\": {\n          \"conditional_logic\": [\n            {\n              \"description\": \"If at least 50% of the facade area is open, the segment is considered 'open'. Otherwise, it is 'closed'.\",\n              \"logic\": \"IF (openness_ratio >= 0.50) THEN segment.status = 'open' ELSE segment.status = 'closed'\"\n            }\n          ]\n        },\n        \"exceptions\": [],\n        \"relationships\": {\n          \"hierarchical\": \"This is 'Step 3' in the documented procedure.\",\n          \"logical_dependencies\": [\n            \"This rule is dependent on the output of 'PERIMETER_SEGMENT_ABUTTING_WALL' to identify the segments it applies to.\",\n            \"Calculation of 'facade_area' is dependent on the 'FACADE_MEASUREMENT_PROCEDURE'.\"\n          ],\n          \"sub_rules\": [\n            {\n              \"procedure_id\": \"FACADE_MEASUREMENT_PROCEDURE\",\n              \"procedure_name\": \"Procedure for Measuring Facade Area\",\n              \"description\": \"Defines the specific method for measuring the height and width of a facade segment to calculate its area for the openness assessment.\",\n              \"qualifiers\": {\n                \"scope\": \"For purposes of assessing the openness of the facade.\"\n              },\n              \"variables\": [\n                {\n                  \"name\": \"facade_height\",\n                  \"type\": \"dimensional\",\n                  \"description\": \"The vertical dimension of the segment facade.\"\n                },\n                {\n                  \"name\": \"facade_width\",\n                  \"type\": \"dimensional\",\n                  \"description\": \"The horizontal dimension of the segment facade.\"\n                }\n              ],\n              \"constants\": {\n                \"procedures\": [\n                  {\n                    \"parameter\": \"facade_height\",\n                    \"method\": \"Measure from the top of the porch floor to the point where the segment facade intersects with the top of the roof material.\",\n                    \"example_value\": {\n                      \"value\": 8,\n                      \"unit\": \"feet\"\n                    }\n                  },\n                  {\n                    \"parameter\": \"facade_width\",\n                    \"method\": \"Measure from the same plane as the height.\",\n                    \"ambiguous_language\": \"The phrase 'from the same plane' is imprecise and may require clarification for consistent automated validation.\"\n                  }\n                ]\n              },\n              \"exceptions\": {\n                \"special_cases\": [\n                  {\n                    \"case\": \"Structural Supports\",\n                    \"rule\": \"Allowances may be made for structural supports that are part of the facade.\",\n                    \"condition\": \"The supports must not be 'excessive'.\",\n                    \"ambiguous_language\": \"The term 'not excessive' is subjective and not quantitatively defined, posing a challenge for automated validation.\"\n                  }\n                ]\n              }\n            }\n          ]\n        }\n      }\n    ]\n  }\n}\n```",
+    "response_time": 38.19857883453369,
+    "input_tokens": 701,
+    "output_tokens": 4419,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 16:00:08",
+  "model": "google/gemini-2.5-pro",
+  "success": true
+}

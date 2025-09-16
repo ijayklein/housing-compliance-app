@@ -1,0 +1,52 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_23.md",
+  "file_name": "Page_23.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "rule": "2nd & 3rd floor equivalency",
+        "Qualifiers": {
+          "Scope": "Calculation of gross floor area (GFA).",
+          "Applicability": "Applies to high-volume spaces within a building, measured vertically from the top of the first finished floor.",
+          "Exclusions": "The rule applies to areas that 'do not already count as floor area'. Ambiguity Flag: The text provides 'open atrium spaces and inaccessible attic spaces' as examples of spaces that do not already count, which is confusing as the rule's purpose is to make such high-volume spaces count towards GFA."
+        },
+        "Variables": {
+          "Dimensional": "height_above_first_floor, area_of_high_volume_space, roof_pitch, width_of_area",
+          "Material": "roof_material",
+          "Environmental": "",
+          "Usage": "usage_of_the_space, floor_plan. The rule applies 'regardless of the floor plan or usage of the space'. Specific types/usages mentioned: stairwell, inaccessible attic, vaulted ceiling."
+        },
+        "Constants": {
+          "Numerical": "17' (height threshold for 2nd floor equivalency), 26' (height threshold for 3rd floor equivalency), 200 sf (maximum exemptible area for 3rd floor equivalency), 4:12 (minimum roof pitch for exemption).",
+          "Specs": "Measurement Datum: 'Top of finished floor (Typical)' is the reference point for height measurements.",
+          "Procedures": "Stairwells are to be measured using the same method as vaulted ceiling spaces."
+        },
+        "Conditions": {
+          "Mandatory": "Areas higher than 17' above the first floor must be counted as 2nd floor equivalency GFA. Areas higher than 26' above the first floor must be counted as 3rd floor equivalency GFA.",
+          "Optional": "An exemption for 3rd floor equivalency area 'may be' taken if conditions are met.",
+          "Conditional Logic": "IF (Area Height > 17' AND Area does not already count as floor area) THEN the area's horizontal projection counts as 2nd floor equivalency. IF (Area Height > 26' AND Area does not already count as floor area) THEN the area's horizontal projection counts as 3rd floor equivalency. IF (Roof Pitch >= 4:12) THEN an exemption of up to 200 sf of 3rd floor equivalency area is permitted.",
+          "Dependencies": "The 200 sf exemption is dependent on the roof pitch value."
+        },
+        "Exceptions": {
+          "Explicit Deviations": "A 200 sf exemption from the calculated 3rd floor equivalency area is permitted.",
+          "Alternatives": "",
+          "Special Cases": "The exemption is a special case that applies only when the roof pitch is 4:12 or steeper."
+        },
+        "Relationships": {
+          "Hierarchical": "This rule defines a component (equivalency area) that is added to a parent calculation (gross floor area). The 3rd floor equivalency area (space > 26') is a subset of the space that is also subject to the 2nd floor equivalency rule (space > 17'). As per Example A, a single high-volume area can be counted for both 2nd and 3rd floor equivalency.",
+          "Cross-references": "Refers to 'Figure 12' for visual examples and clarification. The exemption note refers to the 'Height' section for further details.",
+          "Logical Dependencies": "Calculation of equivalency area is dependent on exceeding specific height thresholds measured from the first floor. The availability of the 200 sf exemption is logically dependent on meeting the minimum roof pitch requirement."
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n  {\n    \"rule\": \"2nd & 3rd floor equivalency\",\n    \"Qualifiers\": {\n      \"Scope\": \"Calculation of gross floor area (GFA).\",\n      \"Applicability\": \"Applies to high-volume spaces within a building, measured vertically from the top of the first finished floor.\",\n      \"Exclusions\": \"The rule applies to areas that 'do not already count as floor area'. Ambiguity Flag: The text provides 'open atrium spaces and inaccessible attic spaces' as examples of spaces that do not already count, which is confusing as the rule's purpose is to make such high-volume spaces count towards GFA.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"height_above_first_floor, area_of_high_volume_space, roof_pitch, width_of_area\",\n      \"Material\": \"roof_material\",\n      \"Environmental\": \"\",\n      \"Usage\": \"usage_of_the_space, floor_plan. The rule applies 'regardless of the floor plan or usage of the space'. Specific types/usages mentioned: stairwell, inaccessible attic, vaulted ceiling.\"\n    },\n    \"Constants\": {\n      \"Numerical\": \"17' (height threshold for 2nd floor equivalency), 26' (height threshold for 3rd floor equivalency), 200 sf (maximum exemptible area for 3rd floor equivalency), 4:12 (minimum roof pitch for exemption).\",\n      \"Specs\": \"Measurement Datum: 'Top of finished floor (Typical)' is the reference point for height measurements.\",\n      \"Procedures\": \"Stairwells are to be measured using the same method as vaulted ceiling spaces.\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"Areas higher than 17' above the first floor must be counted as 2nd floor equivalency GFA. Areas higher than 26' above the first floor must be counted as 3rd floor equivalency GFA.\",\n      \"Optional\": \"An exemption for 3rd floor equivalency area 'may be' taken if conditions are met.\",\n      \"Conditional Logic\": \"IF (Area Height > 17' AND Area does not already count as floor area) THEN the area's horizontal projection counts as 2nd floor equivalency. IF (Area Height > 26' AND Area does not already count as floor area) THEN the area's horizontal projection counts as 3rd floor equivalency. IF (Roof Pitch >= 4:12) THEN an exemption of up to 200 sf of 3rd floor equivalency area is permitted.\",\n      \"Dependencies\": \"The 200 sf exemption is dependent on the roof pitch value.\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"A 200 sf exemption from the calculated 3rd floor equivalency area is permitted.\",\n      \"Alternatives\": \"\",\n      \"Special Cases\": \"The exemption is a special case that applies only when the roof pitch is 4:12 or steeper.\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"This rule defines a component (equivalency area) that is added to a parent calculation (gross floor area). The 3rd floor equivalency area (space > 26') is a subset of the space that is also subject to the 2nd floor equivalency rule (space > 17'). As per Example A, a single high-volume area can be counted for both 2nd and 3rd floor equivalency.\",\n      \"Cross-references\": \"Refers to 'Figure 12' for visual examples and clarification. The exemption note refers to the 'Height' section for further details.\",\n      \"Logical Dependencies\": \"Calculation of equivalency area is dependent on exceeding specific height thresholds measured from the first floor. The availability of the 200 sf exemption is logically dependent on meeting the minimum roof pitch requirement.\"\n    }\n  }\n]\n```",
+    "response_time": 29.948431253433228,
+    "input_tokens": 936,
+    "output_tokens": 3387,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 16:12:11",
+  "model": "google/gemini-2.5-pro",
+  "success": true
+}

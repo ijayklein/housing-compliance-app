@@ -1,0 +1,246 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_41.png",
+  "image_name": "Page_41.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Carport standards\n\nFig 29 Parking space dimensions for carport in plan view\n\nopen\n\nOne of\n2 corner\ncolumns\n\n20' min. open\n\nDriveway/\nparking\nsurface\n\nPlan View\n\nFig 30 Parking space dimensions for covered space in elevation\n\nOne of 2 corner\ncolumns\n\nBottom roof\nsystem\n\n7' min.\nopen\n\n20' min. open\n\nLeft Side Elevation\n\nOne of 2 corner\ncolumns\n\nBottom roof\nsystem\n\n10' min\nopen\n\n7' min.\nopen\n\nFront Elevation\n\n35",
+      "visual_elements": [
+        {
+          "type": "figure",
+          "description": "Figure 29: A plan view diagram illustrating the minimum dimensions for a carport parking space. It shows a car parked within a rectangular space, with a 'Driveway/parking surface' indicated at the entrance. Dimensions for the width and length of the open space are provided.",
+          "location": "Middle left"
+        },
+        {
+          "type": "figure",
+          "description": "Figure 30: Two elevation diagrams illustrating the minimum dimensions for a covered parking space (carport). The top diagram shows a 'Left Side Elevation' with a car parked under a sloped roof supported by columns. The bottom diagram shows a 'Front Elevation' of the same carport, also with a car and sloped roof. Both diagrams include dimensions for height and open space.",
+          "location": "Middle right"
+        },
+        {
+          "type": "diagram",
+          "description": "Diagram within Fig 29 showing a top-down view of a car within a parking space. It indicates 'One of 2 corner columns' at the top left and bottom left corners of the parking space. The space is open on one side, labeled 'open'.",
+          "location": "Middle left, within Fig 29"
+        },
+        {
+          "type": "diagram",
+          "description": "Top diagram within Fig 30, 'Left Side Elevation', showing a car under a carport. It indicates 'One of 2 corner columns' and 'Bottom roof system'. The roof is sloped. The space is open on the side, with a dimension for the horizontal open space and vertical open space.",
+          "location": "Top right, within Fig 30"
+        },
+        {
+          "type": "diagram",
+          "description": "Bottom diagram within Fig 30, 'Front Elevation', showing a car under a carport. It indicates 'One of 2 corner columns' and 'Bottom roof system'. The roof is sloped. The space is open at the front, with a dimension for the horizontal open space and vertical open space.",
+          "location": "Bottom right, within Fig 30"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Carport parking space length (plan view)",
+          "value_type": "Measurement",
+          "value": "20",
+          "unit": "ft min. open"
+        },
+        {
+          "parameter": "Carport parking space width (plan view)",
+          "value_type": "Text",
+          "value": "open",
+          "unit": "None"
+        },
+        {
+          "parameter": "Covered space horizontal open dimension (left side elevation)",
+          "value_type": "Measurement",
+          "value": "20",
+          "unit": "ft min. open"
+        },
+        {
+          "parameter": "Covered space vertical open dimension (left side elevation)",
+          "value_type": "Measurement",
+          "value": "7",
+          "unit": "ft min. open"
+        },
+        {
+          "parameter": "Covered space horizontal open dimension (front elevation)",
+          "value_type": "Measurement",
+          "value": "10",
+          "unit": "ft min. open"
+        },
+        {
+          "parameter": "Covered space vertical open dimension (front elevation)",
+          "value_type": "Measurement",
+          "value": "7",
+          "unit": "ft min. open"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Carport standards",
+        "subheadings": [],
+        "sections": [
+          "Fig 29 Parking space dimensions for carport in plan view",
+          "Fig 30 Parking space dimensions for covered space in elevation"
+        ]
+      },
+      "additional_notes": [],
+      "cross_references": [],
+      "conditions_and_qualifiers": {
+        "qualifiers": [
+          {
+            "id": "q1",
+            "text": "for carport in plan view",
+            "applies_to_conditions": [
+              "c1",
+              "c2"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q2",
+            "text": "for covered space in elevation",
+            "applies_to_conditions": [
+              "c3",
+              "c4",
+              "c5",
+              "c6"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q3",
+            "text": "Left Side Elevation",
+            "applies_to_conditions": [
+              "c3",
+              "c4"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q4",
+            "text": "Front Elevation",
+            "applies_to_conditions": [
+              "c5",
+              "c6"
+            ],
+            "scope": "Specific"
+          }
+        ],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "20' min. open",
+            "value_type": "Measurement",
+            "operator": ">=",
+            "threshold_value": "20",
+            "unit": "ft"
+          },
+          {
+            "id": "c2",
+            "text": "open",
+            "value_type": "Text",
+            "operator": "matches",
+            "threshold_value": "open",
+            "unit": "None"
+          },
+          {
+            "id": "c3",
+            "text": "20' min. open",
+            "value_type": "Measurement",
+            "operator": ">=",
+            "threshold_value": "20",
+            "unit": "ft"
+          },
+          {
+            "id": "c4",
+            "text": "7' min. open",
+            "value_type": "Measurement",
+            "operator": ">=",
+            "threshold_value": "7",
+            "unit": "ft"
+          },
+          {
+            "id": "c5",
+            "text": "10' min open",
+            "value_type": "Measurement",
+            "operator": ">=",
+            "threshold_value": "10",
+            "unit": "ft"
+          },
+          {
+            "id": "c6",
+            "text": "7' min. open",
+            "value_type": "Measurement",
+            "operator": ">=",
+            "threshold_value": "7",
+            "unit": "ft"
+          }
+        ],
+        "logical_relationships": [
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "q1"
+            ],
+            "expression": "IF 'for carport in plan view' THEN (parking space length >= 20 ft AND parking space width is 'open')",
+            "evaluation_order": 1
+          },
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "q2",
+              "q3"
+            ],
+            "expression": "IF 'for covered space in elevation' AND 'Left Side Elevation' THEN (horizontal open dimension >= 20 ft AND vertical open dimension >= 7 ft)",
+            "evaluation_order": 2
+          },
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "q2",
+              "q4"
+            ],
+            "expression": "IF 'for covered space in elevation' AND 'Front Elevation' THEN (horizontal open dimension >= 10 ft AND vertical open dimension >= 7 ft)",
+            "evaluation_order": 3
+          }
+        ],
+        "execution_sequence": [
+          {
+            "step": 1,
+            "action": "Evaluate parking space dimensions for carport in plan view.",
+            "condition_ids": [
+              "c1",
+              "c2"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 2,
+            "action": "Evaluate parking space dimensions for covered space in Left Side Elevation.",
+            "condition_ids": [
+              "c3",
+              "c4"
+            ],
+            "qualifier_ids": [
+              "q2",
+              "q3"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 3,
+            "action": "Evaluate parking space dimensions for covered space in Front Elevation.",
+            "condition_ids": [
+              "c5",
+              "c6"
+            ],
+            "qualifier_ids": [
+              "q2",
+              "q4"
+            ],
+            "dependencies": []
+          }
+        ]
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:24:35",
+  "model_used": "google/gemini-2.5-flash"
+}

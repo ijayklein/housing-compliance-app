@@ -1,0 +1,146 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_19.md",
+  "file_name": "Page_19.md",
+  "analysis": {
+    "extracted_rules": {
+      "regulations": [
+        {
+          "id": "R1",
+          "qualifiers": {
+            "scope": "Computation of gross floor area attributable to an entryway that is considered a vaulted entryway.",
+            "applicability": "Applies when an entryway is designated/qualifies as a 'vaulted entryway'. Includes portions of the entryway recessed beyond the house facade and roof if they lie within the entryway feature boundary.",
+            "exclusions": "Does not apply to non-vaulted entryways (those should be counted per standard gross floor area rules).",
+            "notes": [
+              "Measurement is to the outside material of the entry-way feature.",
+              "The outline of the entryway floor area that counts twice is defined in the porch floor plan."
+            ],
+            "ambiguous_language": [
+              "Vaulted entryway is not defined in this excerpt (criteria for classification are unspecified).",
+              "Outside material of the entry-way feature is not precisely defined (which component/material surface governs the boundary).",
+              "Extent of 'portion of the entryway recessed beyond the house facade and roof' lacks a definitive boundary rule; inclusion rule is example-based, not formal."
+            ]
+          },
+          "variables": [
+            {
+              "name": "is_vaulted_entryway",
+              "description": "Boolean indicating whether the entryway qualifies as a vaulted entryway.",
+              "type": "boolean"
+            },
+            {
+              "name": "entryway_floor_area",
+              "description": "Plan area of the entryway footprint that is subject to counting under this rule; measured to the outside face of the entryway feature.",
+              "type": "number",
+              "units": "area (e.g., square feet or square meters)",
+              "measurement_method": "Measure to the outside material of the entry-way feature; include recessed portions beyond facade and roof if within the entry feature boundary."
+            }
+          ],
+          "constants": [
+            {
+              "name": "vaulted_entry_count_multiplier",
+              "value": 2,
+              "units": "multiplier",
+              "specs_standards_procedures": "Area counts twice toward gross floor area when the entryway is considered vaulted."
+            }
+          ],
+          "conditions": [
+            {
+              "type": "mandatory",
+              "logic": "IF is_vaulted_entryway = true THEN counted_gross_floor_area_contribution = entryway_floor_area * vaulted_entry_count_multiplier"
+            },
+            {
+              "type": "mandatory",
+              "logic": "Measure entryway_floor_area to the outside material of the entry-way feature."
+            },
+            {
+              "type": "mandatory",
+              "logic": "Include in entryway_floor_area the portion of the entryway recessed beyond the house facade and roof, provided it is within the entryway feature boundary."
+            }
+          ],
+          "exceptions": [],
+          "relationships": {
+            "hierarchical": "Base rule for vaulted entryway area counting.",
+            "dependencies": [],
+            "cross_references": [
+              "R2 (Second floor over a vaulted entryway) builds on R1 by adding standard second-floor counting to derive a total of three times for overlapping area."
+            ]
+          }
+        },
+        {
+          "id": "R2",
+          "qualifiers": {
+            "scope": "Computation of gross floor area where a second floor exists above a vaulted entryway.",
+            "applicability": "Applies when there is a second floor located above an entryway that qualifies as a vaulted entryway.",
+            "exclusions": "Does not apply if there is no second floor above the vaulted entryway, or if the entryway is not vaulted.",
+            "notes": [
+              "The second floor over a vaulted entry counts as usual (standard gross floor area counting).",
+              "The figure describes an 'Entry feature with 2nd floor above.'"
+            ],
+            "ambiguous_language": [
+              "Counts 'as usual' is not defined in this excerpt; assumes standard gross floor area counting rules apply to the second floor.",
+              "The phrase 'Therefore, the area will count three times toward gross floor area' implies the overlapping plan area of entryway and second floor is triple-counted; treatment of partial overlap is not explicitly stated."
+            ]
+          },
+          "variables": [
+            {
+              "name": "is_vaulted_entryway",
+              "description": "Boolean indicating whether the entryway qualifies as a vaulted entryway (from R1).",
+              "type": "boolean"
+            },
+            {
+              "name": "is_second_floor_above_entry",
+              "description": "Boolean indicating whether a second floor is located above the entryway footprint.",
+              "type": "boolean"
+            },
+            {
+              "name": "overlap_area_entry_second_floor",
+              "description": "Plan area that is common to (a) the vaulted entryway footprint and (b) the second-floor footprint directly above.",
+              "type": "number",
+              "units": "area (e.g., square feet or square meters)",
+              "measurement_method": "Intersection of the entryway footprint (measured per R1 to outside material) and the second-floor footprint directly above."
+            }
+          ],
+          "constants": [
+            {
+              "name": "second_floor_count_multiplier",
+              "value": 1,
+              "units": "multiplier",
+              "specs_standards_procedures": "Second-floor gross floor area counts per standard rules ('as usual')."
+            },
+            {
+              "name": "implied_total_multiplier_for_overlap",
+              "value": 3,
+              "units": "multiplier",
+              "specs_standards_procedures": "Where a second floor is over a vaulted entry, the overlapping area contributes three times toward gross floor area: twice for the vaulted entry (R1) plus once for the second floor."
+            }
+          ],
+          "conditions": [
+            {
+              "type": "conditional",
+              "logic": "IF is_vaulted_entryway = true AND is_second_floor_above_entry = true THEN counted_gross_floor_area_contribution_for_overlap = overlap_area_entry_second_floor * 3"
+            },
+            {
+              "type": "conditional",
+              "logic": "IF is_vaulted_entryway = true AND is_second_floor_above_entry = true AND entryway_floor_area > overlap_area_entry_second_floor THEN non_overlapped_entry_area_contribution = (entryway_floor_area - overlap_area_entry_second_floor) * 2",
+              "note": "This handles cases where the second floor does not fully cover the vaulted entry; not explicitly stated in the text and therefore flagged as potentially ambiguous."
+            }
+          ],
+          "exceptions": [],
+          "relationships": {
+            "hierarchical": "Augments R1 by adding second-floor counting over the vaulted entry.",
+            "dependencies": [
+              "Depends on R1 for determination of vaulted entryway status and measurement of entryway footprint."
+            ],
+            "cross_references": [
+              "R1: Vaulted entryway counts twice; R2 adds one additional count for the second floor above."
+            ]
+          }
+        }
+      ]
+    },
+    "parse_error": false,
+    "raw_response": "{\n  \"regulations\": [\n    {\n      \"id\": \"R1\",\n      \"qualifiers\": {\n        \"scope\": \"Computation of gross floor area attributable to an entryway that is considered a vaulted entryway.\",\n        \"applicability\": \"Applies when an entryway is designated/qualifies as a 'vaulted entryway'. Includes portions of the entryway recessed beyond the house facade and roof if they lie within the entryway feature boundary.\",\n        \"exclusions\": \"Does not apply to non-vaulted entryways (those should be counted per standard gross floor area rules).\",\n        \"notes\": [\n          \"Measurement is to the outside material of the entry-way feature.\",\n          \"The outline of the entryway floor area that counts twice is defined in the porch floor plan.\"\n        ],\n        \"ambiguous_language\": [\n          \"Vaulted entryway is not defined in this excerpt (criteria for classification are unspecified).\",\n          \"Outside material of the entry-way feature is not precisely defined (which component/material surface governs the boundary).\",\n          \"Extent of 'portion of the entryway recessed beyond the house facade and roof' lacks a definitive boundary rule; inclusion rule is example-based, not formal.\"\n        ]\n      },\n      \"variables\": [\n        {\n          \"name\": \"is_vaulted_entryway\",\n          \"description\": \"Boolean indicating whether the entryway qualifies as a vaulted entryway.\",\n          \"type\": \"boolean\"\n        },\n        {\n          \"name\": \"entryway_floor_area\",\n          \"description\": \"Plan area of the entryway footprint that is subject to counting under this rule; measured to the outside face of the entryway feature.\",\n          \"type\": \"number\",\n          \"units\": \"area (e.g., square feet or square meters)\",\n          \"measurement_method\": \"Measure to the outside material of the entry-way feature; include recessed portions beyond facade and roof if within the entry feature boundary.\"\n        }\n      ],\n      \"constants\": [\n        {\n          \"name\": \"vaulted_entry_count_multiplier\",\n          \"value\": 2,\n          \"units\": \"multiplier\",\n          \"specs_standards_procedures\": \"Area counts twice toward gross floor area when the entryway is considered vaulted.\"\n        }\n      ],\n      \"conditions\": [\n        {\n          \"type\": \"mandatory\",\n          \"logic\": \"IF is_vaulted_entryway = true THEN counted_gross_floor_area_contribution = entryway_floor_area * vaulted_entry_count_multiplier\"\n        },\n        {\n          \"type\": \"mandatory\",\n          \"logic\": \"Measure entryway_floor_area to the outside material of the entry-way feature.\"\n        },\n        {\n          \"type\": \"mandatory\",\n          \"logic\": \"Include in entryway_floor_area the portion of the entryway recessed beyond the house facade and roof, provided it is within the entryway feature boundary.\"\n        }\n      ],\n      \"exceptions\": [],\n      \"relationships\": {\n        \"hierarchical\": \"Base rule for vaulted entryway area counting.\",\n        \"dependencies\": [],\n        \"cross_references\": [\n          \"R2 (Second floor over a vaulted entryway) builds on R1 by adding standard second-floor counting to derive a total of three times for overlapping area.\"\n        ]\n      }\n    },\n    {\n      \"id\": \"R2\",\n      \"qualifiers\": {\n        \"scope\": \"Computation of gross floor area where a second floor exists above a vaulted entryway.\",\n        \"applicability\": \"Applies when there is a second floor located above an entryway that qualifies as a vaulted entryway.\",\n        \"exclusions\": \"Does not apply if there is no second floor above the vaulted entryway, or if the entryway is not vaulted.\",\n        \"notes\": [\n          \"The second floor over a vaulted entry counts as usual (standard gross floor area counting).\",\n          \"The figure describes an 'Entry feature with 2nd floor above.'\"\n        ],\n        \"ambiguous_language\": [\n          \"Counts 'as usual' is not defined in this excerpt; assumes standard gross floor area counting rules apply to the second floor.\",\n          \"The phrase 'Therefore, the area will count three times toward gross floor area' implies the overlapping plan area of entryway and second floor is triple-counted; treatment of partial overlap is not explicitly stated.\"\n        ]\n      },\n      \"variables\": [\n        {\n          \"name\": \"is_vaulted_entryway\",\n          \"description\": \"Boolean indicating whether the entryway qualifies as a vaulted entryway (from R1).\",\n          \"type\": \"boolean\"\n        },\n        {\n          \"name\": \"is_second_floor_above_entry\",\n          \"description\": \"Boolean indicating whether a second floor is located above the entryway footprint.\",\n          \"type\": \"boolean\"\n        },\n        {\n          \"name\": \"overlap_area_entry_second_floor\",\n          \"description\": \"Plan area that is common to (a) the vaulted entryway footprint and (b) the second-floor footprint directly above.\",\n          \"type\": \"number\",\n          \"units\": \"area (e.g., square feet or square meters)\",\n          \"measurement_method\": \"Intersection of the entryway footprint (measured per R1 to outside material) and the second-floor footprint directly above.\"\n        }\n      ],\n      \"constants\": [\n        {\n          \"name\": \"second_floor_count_multiplier\",\n          \"value\": 1,\n          \"units\": \"multiplier\",\n          \"specs_standards_procedures\": \"Second-floor gross floor area counts per standard rules ('as usual').\"\n        },\n        {\n          \"name\": \"implied_total_multiplier_for_overlap\",\n          \"value\": 3,\n          \"units\": \"multiplier\",\n          \"specs_standards_procedures\": \"Where a second floor is over a vaulted entry, the overlapping area contributes three times toward gross floor area: twice for the vaulted entry (R1) plus once for the second floor.\"\n        }\n      ],\n      \"conditions\": [\n        {\n          \"type\": \"conditional\",\n          \"logic\": \"IF is_vaulted_entryway = true AND is_second_floor_above_entry = true THEN counted_gross_floor_area_contribution_for_overlap = overlap_area_entry_second_floor * 3\"\n        },\n        {\n          \"type\": \"conditional\",\n          \"logic\": \"IF is_vaulted_entryway = true AND is_second_floor_above_entry = true AND entryway_floor_area > overlap_area_entry_second_floor THEN non_overlapped_entry_area_contribution = (entryway_floor_area - overlap_area_entry_second_floor) * 2\",\n          \"note\": \"This handles cases where the second floor does not fully cover the vaulted entry; not explicitly stated in the text and therefore flagged as potentially ambiguous.\"\n        }\n      ],\n      \"exceptions\": [],\n      \"relationships\": {\n        \"hierarchical\": \"Augments R1 by adding second-floor counting over the vaulted entry.\",\n        \"dependencies\": [\n          \"Depends on R1 for determination of vaulted entryway status and measurement of entryway footprint.\"\n        ],\n        \"cross_references\": [\n          \"R1: Vaulted entryway counts twice; R2 adds one additional count for the second floor above.\"\n        ]\n      }\n    }\n  ]\n}"
+  },
+  "timestamp": "2025-09-16 14:58:16",
+  "model": "openai/gpt-5",
+  "success": true
+}

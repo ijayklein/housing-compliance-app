@@ -1,0 +1,70 @@
+{
+  "file_path": "markdown_pages/Page_39.md",
+  "file_name": "Page_39.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "Title": "Noise-producing equipment site planning",
+        "Rules": [
+          {
+            "Qualifiers": {
+              "Scope": "Noise-producing equipment",
+              "Applicability": "All service equipment",
+              "Exclusions": "None explicitly mentioned"
+            },
+            "Variables": {
+              "Dimensional": {
+                "Encroachment": "6' into street-side yard",
+                "Driveway clearance": "10' min."
+              },
+              "Material": "Insulation and housing",
+              "Environmental": "Compliance with City\u2019s Noise Ordinance",
+              "Usage": "Replacement of equipment"
+            },
+            "Constants": {
+              "Standards": "City\u2019s Noise Ordinance in Chapter 9.10 of the Municipal Code",
+              "Procedures": "Conform to section where feasible"
+            },
+            "Conditions": {
+              "Mandatory": [
+                "May not be located in front, rear, or interior-side yards",
+                "Must be insulated and housed"
+              ],
+              "Optional": [
+                "Planning Dept. can waive insulation and housing requirement"
+              ],
+              "Conditional logic": [
+                "If equipment is located in buildable area and a combination of noise specifications, location, and/or other screening or buffering will assure compliance"
+              ],
+              "Dependencies": [
+                "Compliance with City\u2019s Noise Ordinance at the nearest lot line"
+              ]
+            },
+            "Exceptions": {
+              "Explicit deviations": "Planning Dept. can waive insulation and housing requirement",
+              "Alternatives": "Combination of noise specifications, location, and/or other screening or buffering",
+              "Special cases": "None explicitly mentioned"
+            },
+            "Relationships": {
+              "Hierarchical": [
+                "General rules apply to all service equipment",
+                "Specific conditions for street-side yard encroachment"
+              ],
+              "Cross-references": [
+                "Figure 27 C for street-side yard encroachment"
+              ],
+              "Logical dependencies": [
+                "Compliance with City\u2019s Noise Ordinance depends on location and noise specifications"
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n    {\n        \"Title\": \"Noise-producing equipment site planning\",\n        \"Rules\": [\n            {\n                \"Qualifiers\": {\n                    \"Scope\": \"Noise-producing equipment\",\n                    \"Applicability\": \"All service equipment\",\n                    \"Exclusions\": \"None explicitly mentioned\"\n                },\n                \"Variables\": {\n                    \"Dimensional\": {\n                        \"Encroachment\": \"6' into street-side yard\",\n                        \"Driveway clearance\": \"10' min.\"\n                    },\n                    \"Material\": \"Insulation and housing\",\n                    \"Environmental\": \"Compliance with City\u2019s Noise Ordinance\",\n                    \"Usage\": \"Replacement of equipment\"\n                },\n                \"Constants\": {\n                    \"Standards\": \"City\u2019s Noise Ordinance in Chapter 9.10 of the Municipal Code\",\n                    \"Procedures\": \"Conform to section where feasible\"\n                },\n                \"Conditions\": {\n                    \"Mandatory\": [\n                        \"May not be located in front, rear, or interior-side yards\",\n                        \"Must be insulated and housed\"\n                    ],\n                    \"Optional\": [\n                        \"Planning Dept. can waive insulation and housing requirement\"\n                    ],\n                    \"Conditional logic\": [\n                        \"If equipment is located in buildable area and a combination of noise specifications, location, and/or other screening or buffering will assure compliance\"\n                    ],\n                    \"Dependencies\": [\n                        \"Compliance with City\u2019s Noise Ordinance at the nearest lot line\"\n                    ]\n                },\n                \"Exceptions\": {\n                    \"Explicit deviations\": \"Planning Dept. can waive insulation and housing requirement\",\n                    \"Alternatives\": \"Combination of noise specifications, location, and/or other screening or buffering\",\n                    \"Special cases\": \"None explicitly mentioned\"\n                },\n                \"Relationships\": {\n                    \"Hierarchical\": [\n                        \"General rules apply to all service equipment\",\n                        \"Specific conditions for street-side yard encroachment\"\n                    ],\n                    \"Cross-references\": [\n                        \"Figure 27 C for street-side yard encroachment\"\n                    ],\n                    \"Logical dependencies\": [\n                        \"Compliance with City\u2019s Noise Ordinance depends on location and noise specifications\"\n                    ]\n                }\n            }\n        ]\n    }\n]\n```"
+  },
+  "timestamp": "2025-09-16 15:44:53",
+  "model": "openai/gpt-4o",
+  "success": true
+}

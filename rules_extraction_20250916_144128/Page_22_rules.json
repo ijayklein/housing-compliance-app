@@ -1,0 +1,87 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_22.md",
+  "file_name": "Page_22.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "Rule": 1,
+        "Qualifiers": {
+          "Scope": "Attic, closet, & perimeter spaces",
+          "Applicability": "All accessible floors",
+          "Exclusions": "None specified"
+        },
+        "Variables": {
+          "Dimensional": {
+            "Head clearance": "5 feet"
+          },
+          "Material": "Not specified",
+          "Environmental": "Not specified",
+          "Usage": "Gross floor area calculation"
+        },
+        "Constants": {
+          "Numerical values": "None specified",
+          "Specs": "Measurements are from top of floor to underside of the rafter",
+          "Standards": "Code Sections 18.04.030(a)(65), 18.12.040(b)Table 3",
+          "Procedures": "None specified"
+        },
+        "Conditions": {
+          "Mandatory": "Areas with at least 5' of head clearance count toward the gross floor area",
+          "Optional": "None specified",
+          "Conditional logic": "None specified",
+          "Dependencies": "None specified"
+        },
+        "Exceptions": {
+          "Explicit deviations": "500 sf of unusable attic space may be exempted for Category 1 & 2 historic homes",
+          "Alternatives": "None specified",
+          "Special cases": "None specified"
+        },
+        "Relationships": {
+          "Hierarchical": "None specified",
+          "Cross-references": "Figure 11",
+          "Logical dependencies": "None specified"
+        }
+      },
+      {
+        "Rule": 2,
+        "Qualifiers": {
+          "Scope": "Voluminous spaces in a structure",
+          "Applicability": "2nd & 3rd floor equivalency",
+          "Exclusions": "None specified"
+        },
+        "Variables": {
+          "Dimensional": "None specified",
+          "Material": "Not specified",
+          "Environmental": "Not specified",
+          "Usage": "Contribution to gross floor area"
+        },
+        "Constants": {
+          "Numerical values": "None specified",
+          "Specs": "None specified",
+          "Standards": "Code Sections 18.04.030(a)(65), 18.12.040(b)Table 3",
+          "Procedures": "None specified"
+        },
+        "Conditions": {
+          "Mandatory": "Voluminous spaces contribute to the mass even if not used or described in the floor plan",
+          "Optional": "None specified",
+          "Conditional logic": "None specified",
+          "Dependencies": "None specified"
+        },
+        "Exceptions": {
+          "Explicit deviations": "None specified",
+          "Alternatives": "None specified",
+          "Special cases": "None specified"
+        },
+        "Relationships": {
+          "Hierarchical": "None specified",
+          "Cross-references": "None specified",
+          "Logical dependencies": "None specified"
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n  {\n    \"Rule\": 1,\n    \"Qualifiers\": {\n      \"Scope\": \"Attic, closet, & perimeter spaces\",\n      \"Applicability\": \"All accessible floors\",\n      \"Exclusions\": \"None specified\"\n    },\n    \"Variables\": {\n      \"Dimensional\": {\n        \"Head clearance\": \"5 feet\"\n      },\n      \"Material\": \"Not specified\",\n      \"Environmental\": \"Not specified\",\n      \"Usage\": \"Gross floor area calculation\"\n    },\n    \"Constants\": {\n      \"Numerical values\": \"None specified\",\n      \"Specs\": \"Measurements are from top of floor to underside of the rafter\",\n      \"Standards\": \"Code Sections 18.04.030(a)(65), 18.12.040(b)Table 3\",\n      \"Procedures\": \"None specified\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"Areas with at least 5' of head clearance count toward the gross floor area\",\n      \"Optional\": \"None specified\",\n      \"Conditional logic\": \"None specified\",\n      \"Dependencies\": \"None specified\"\n    },\n    \"Exceptions\": {\n      \"Explicit deviations\": \"500 sf of unusable attic space may be exempted for Category 1 & 2 historic homes\",\n      \"Alternatives\": \"None specified\",\n      \"Special cases\": \"None specified\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"None specified\",\n      \"Cross-references\": \"Figure 11\",\n      \"Logical dependencies\": \"None specified\"\n    }\n  },\n  {\n    \"Rule\": 2,\n    \"Qualifiers\": {\n      \"Scope\": \"Voluminous spaces in a structure\",\n      \"Applicability\": \"2nd & 3rd floor equivalency\",\n      \"Exclusions\": \"None specified\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"None specified\",\n      \"Material\": \"Not specified\",\n      \"Environmental\": \"Not specified\",\n      \"Usage\": \"Contribution to gross floor area\"\n    },\n    \"Constants\": {\n      \"Numerical values\": \"None specified\",\n      \"Specs\": \"None specified\",\n      \"Standards\": \"Code Sections 18.04.030(a)(65), 18.12.040(b)Table 3\",\n      \"Procedures\": \"None specified\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"Voluminous spaces contribute to the mass even if not used or described in the floor plan\",\n      \"Optional\": \"None specified\",\n      \"Conditional logic\": \"None specified\",\n      \"Dependencies\": \"None specified\"\n    },\n    \"Exceptions\": {\n      \"Explicit deviations\": \"None specified\",\n      \"Alternatives\": \"None specified\",\n      \"Special cases\": \"None specified\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"None specified\",\n      \"Cross-references\": \"None specified\",\n      \"Logical dependencies\": \"None specified\"\n    }\n  }\n]\n```"
+  },
+  "timestamp": "2025-09-16 14:42:21",
+  "model": "openai/gpt-4o",
+  "success": true
+}

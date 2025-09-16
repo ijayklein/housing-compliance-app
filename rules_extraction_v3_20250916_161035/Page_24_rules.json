@@ -1,0 +1,53 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_24.md",
+  "file_name": "Page_24.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "rule": "Bay Window Exclusion from Gross Floor Area Calculation",
+        "Qualifiers": {
+          "Scope": "Defines the criteria under which a bay window is considered a decorative architectural feature and is excluded from the calculation of gross floor area.",
+          "Applicability": "Applies to bay windows as architectural relief features in residential house designs.",
+          "Exclusions": "Excludes features that extend higher than the structure\u2019s roof (classified as dormers). Excludes features where floor joists continue into the bay. Excludes features with solid exterior support walls (e.g., skirt walls). Excludes features with less than 50% glass surface."
+        },
+        "Variables": {
+          "Dimensional": "1. Height of the bay window's bottom relative to the floor joists. 2. Percentage of the bay window's surface area that is glass. 3. Projection distance from the building facade.",
+          "Material": "1. Glazing (glass). 2. Type of exterior support (e.g., corbels, brackets).",
+          "Environmental": "",
+          "Usage Parameters": "The feature must be classified as a 'bay window' and not a 'dormer'."
+        },
+        "Constants": {
+          "Numerical Values": "Minimum height above floor joists: 18 inches. Minimum glass surface percentage: 50%. Maximum projection from facade: 2 feet.",
+          "Specs": "Exterior supports must be features like corbels and/or brackets. (Ambiguity Flag: The term 'like' is not strictly defined). Solid walls or skirt walls are explicitly disallowed as supports for excluded features.",
+          "Standards": "Code Sections: 18.04.030(a)(65), 18.12.040(b)Table 3.",
+          "Procedures": "To be excluded from gross floor area, all specified design criteria must be met."
+        },
+        "Conditions": {
+          "Mandatory": "All three design criteria must be met simultaneously for the exclusion to apply: 1. Bottom of feature must be at least 18 inches above the floor joists. 2. Exterior supports must be non-solid features like corbels/brackets. 3. At least 50% of the surface must be glass. (Ambiguity Flag: 'surface' is not precisely defined, but examples suggest vertical faces).",
+          "Optional": "The use of qualifying bay windows is described as 'encouraged' but is not a requirement for a building design.",
+          "Conditional Logic": "IF (Height >= 18\" AND Support != Solid AND GlassArea >= 50%) THEN (Feature does NOT count toward gross floor area). ELSE (Feature counts toward gross floor area).",
+          "Dependencies": "The exclusion from gross floor area is dependent on satisfying a set of dimensional, material, and structural support conditions."
+        },
+        "Exceptions": {
+          "Explicit Deviations": "The rule itself is an explicit deviation, allowing qualifying bay windows to be omitted from the standard gross floor area calculation.",
+          "Alternatives": "",
+          "Special Cases": "A bay window that extends higher than the structure\u2019s roof is re-classified as a 'dormer' and is always counted toward gross floor area, overriding the bay window exclusion criteria."
+        },
+        "Relationships": {
+          "Hierarchical": "This rule is a specific provision within the broader regulations for calculating 'gross floor area'. The design criteria are sub-rules of the main bay window exclusion rule.",
+          "Cross-references": "Refers to Code Sections 18.04.030(a)(65) and 18.12.040(b)Table 3. Refers to Figure 13 for the '2 ft max' projection dimension.",
+          "Logical Dependencies": "The final calculation outcome (counts vs. does not count) is dependent on a logical AND of all mandatory conditions. Failure to meet any single condition invalidates the exclusion."
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n  {\n    \"rule\": \"Bay Window Exclusion from Gross Floor Area Calculation\",\n    \"Qualifiers\": {\n      \"Scope\": \"Defines the criteria under which a bay window is considered a decorative architectural feature and is excluded from the calculation of gross floor area.\",\n      \"Applicability\": \"Applies to bay windows as architectural relief features in residential house designs.\",\n      \"Exclusions\": \"Excludes features that extend higher than the structure\u2019s roof (classified as dormers). Excludes features where floor joists continue into the bay. Excludes features with solid exterior support walls (e.g., skirt walls). Excludes features with less than 50% glass surface.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"1. Height of the bay window's bottom relative to the floor joists. 2. Percentage of the bay window's surface area that is glass. 3. Projection distance from the building facade.\",\n      \"Material\": \"1. Glazing (glass). 2. Type of exterior support (e.g., corbels, brackets).\",\n      \"Environmental\": \"\",\n      \"Usage Parameters\": \"The feature must be classified as a 'bay window' and not a 'dormer'.\"\n    },\n    \"Constants\": {\n      \"Numerical Values\": \"Minimum height above floor joists: 18 inches. Minimum glass surface percentage: 50%. Maximum projection from facade: 2 feet.\",\n      \"Specs\": \"Exterior supports must be features like corbels and/or brackets. (Ambiguity Flag: The term 'like' is not strictly defined). Solid walls or skirt walls are explicitly disallowed as supports for excluded features.\",\n      \"Standards\": \"Code Sections: 18.04.030(a)(65), 18.12.040(b)Table 3.\",\n      \"Procedures\": \"To be excluded from gross floor area, all specified design criteria must be met.\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"All three design criteria must be met simultaneously for the exclusion to apply: 1. Bottom of feature must be at least 18 inches above the floor joists. 2. Exterior supports must be non-solid features like corbels/brackets. 3. At least 50% of the surface must be glass. (Ambiguity Flag: 'surface' is not precisely defined, but examples suggest vertical faces).\",\n      \"Optional\": \"The use of qualifying bay windows is described as 'encouraged' but is not a requirement for a building design.\",\n      \"Conditional Logic\": \"IF (Height >= 18\\\" AND Support != Solid AND GlassArea >= 50%) THEN (Feature does NOT count toward gross floor area). ELSE (Feature counts toward gross floor area).\",\n      \"Dependencies\": \"The exclusion from gross floor area is dependent on satisfying a set of dimensional, material, and structural support conditions.\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"The rule itself is an explicit deviation, allowing qualifying bay windows to be omitted from the standard gross floor area calculation.\",\n      \"Alternatives\": \"\",\n      \"Special Cases\": \"A bay window that extends higher than the structure\u2019s roof is re-classified as a 'dormer' and is always counted toward gross floor area, overriding the bay window exclusion criteria.\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"This rule is a specific provision within the broader regulations for calculating 'gross floor area'. The design criteria are sub-rules of the main bay window exclusion rule.\",\n      \"Cross-references\": \"Refers to Code Sections 18.04.030(a)(65) and 18.12.040(b)Table 3. Refers to Figure 13 for the '2 ft max' projection dimension.\",\n      \"Logical Dependencies\": \"The final calculation outcome (counts vs. does not count) is dependent on a logical AND of all mandatory conditions. Failure to meet any single condition invalidates the exclusion.\"\n    }\n  }\n]\n```",
+    "response_time": 47.20229911804199,
+    "input_tokens": 856,
+    "output_tokens": 4787,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 16:12:33",
+  "model": "google/gemini-2.5-pro",
+  "success": true
+}

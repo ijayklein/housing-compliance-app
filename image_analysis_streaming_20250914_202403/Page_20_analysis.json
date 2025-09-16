@@ -1,0 +1,174 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_20.png",
+  "image_name": "Page_20.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Recessed porches on the 1st floor\n\nRecessed porches on the ground floor do NOT count toward\ngross floor area if ALL the following criteria apply:\n\u2022 Depth of porch is less than 10' and,\n\u2022 Porch ceiling is below 2nd floor and,\n\u2022 Exterior side is substantially open.\n\nFig 9 Recessed porches on the 1st floor\n\nNote: It is the city's policy to consider\none-story construction to be construction\nless than 17' above finished floor. If the\nporch space is higher, the area will count\nagain as 2nd story equivalency.\n\n2nd floor line\nPorch ceiling\nbelow 2nd floor\n\n2nd floor line\n\nA This example complies with all three\ncriteria and does NOT count toward\ngross floor area\n\nDepth < 10'\n\nHeight extends past\n2nd floor line\n\nB This example violates two of the three criteria.\n\u2022 the porch depth is greater than 10' and\n\u2022 the porch ceiling is above the 2nd floor\nTherefore it DOES count toward gross floor area and\nif it is higher than 17' it will count twice (see note).\n\nDepth \u2265 10'\n\n14",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "An isometric architectural drawing showing a house with a recessed porch on the ground floor. The porch is depicted with a depth less than 10 feet and its ceiling is clearly below the 2nd floor line. An arrow points to the porch ceiling with the label 'Porch ceiling below 2nd floor'. Another arrow indicates the depth of the porch with the label 'Depth < 10''. This diagram is labeled 'A' and described as an example that complies with all three criteria and does NOT count toward gross floor area.",
+          "location": "Middle left"
+        },
+        {
+          "type": "diagram",
+          "description": "An isometric architectural drawing showing a house with a recessed porch on the ground floor. The porch is depicted with a depth greater than or equal to 10 feet and its ceiling extends past the 2nd floor line. An arrow indicates the height extending past the 2nd floor line with the label 'Height extends past 2nd floor line'. Another arrow indicates the depth of the porch with the label 'Depth \u2265 10''. This diagram is labeled 'B' and described as an example that violates two of the three criteria, specifically that the porch depth is greater than 10' and the porch ceiling is above the 2nd floor. It states that this porch DOES count toward gross floor area and if it is higher than 17' it will count twice.",
+          "location": "Middle right"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Porch depth for non-counting",
+          "value_type": "Measurement",
+          "value": "10",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Height threshold for 2nd story equivalency",
+          "value_type": "Measurement",
+          "value": "17",
+          "unit": "feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Recessed porches on the 1st floor",
+        "subheadings": [],
+        "sections": [
+          "Recessed porches on the ground floor do NOT count toward gross floor area if ALL the following criteria apply:",
+          "Note: It is the city's policy to consider one-story construction to be construction less than 17' above finished floor. If the porch space is higher, the area will count again as 2nd story equivalency.",
+          "Fig 9 Recessed porches on the 1st floor"
+        ]
+      },
+      "additional_notes": [
+        "Page number '14' is located at the bottom left."
+      ],
+      "cross_references": [
+        "see note"
+      ],
+      "conditions_and_qualifiers": {
+        "qualifiers": [
+          {
+            "id": "q1",
+            "text": "Recessed porches on the ground floor",
+            "applies_to_conditions": [
+              "c1",
+              "c2",
+              "c3"
+            ],
+            "scope": "Local"
+          },
+          {
+            "id": "q2",
+            "text": "ALL the following criteria apply",
+            "applies_to_conditions": [
+              "c1",
+              "c2",
+              "c3"
+            ],
+            "scope": "Local"
+          },
+          {
+            "id": "q3",
+            "text": "It is the city's policy to consider one-story construction to be construction less than 17' above finished floor.",
+            "applies_to_conditions": [
+              "c4"
+            ],
+            "scope": "Global"
+          },
+          {
+            "id": "q4",
+            "text": "If the porch space is higher",
+            "applies_to_conditions": [
+              "c4"
+            ],
+            "scope": "Local"
+          }
+        ],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "Depth of porch is less than 10'",
+            "value_type": "Measurement",
+            "operator": "<",
+            "threshold_value": "10",
+            "unit": "feet"
+          },
+          {
+            "id": "c2",
+            "text": "Porch ceiling is below 2nd floor",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "true",
+            "unit": "None"
+          },
+          {
+            "id": "c3",
+            "text": "Exterior side is substantially open",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "true",
+            "unit": "None"
+          },
+          {
+            "id": "c4",
+            "text": "porch space is higher than 17'",
+            "value_type": "Measurement",
+            "operator": ">",
+            "threshold_value": "17",
+            "unit": "feet"
+          }
+        ],
+        "logical_relationships": [
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c1",
+              "c2",
+              "c3"
+            ],
+            "expression": "if (c1 AND c2 AND c3) THEN Recessed porches on the ground floor do NOT count toward gross floor area",
+            "evaluation_order": 1
+          },
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c4"
+            ],
+            "expression": "IF (c4) THEN the area will count again as 2nd story equivalency",
+            "evaluation_order": 2
+          }
+        ],
+        "execution_sequence": [
+          {
+            "step": 1,
+            "action": "Evaluate if a recessed porch on the ground floor meets the criteria for not counting towards gross floor area.",
+            "condition_ids": [
+              "c1",
+              "c2",
+              "c3"
+            ],
+            "qualifier_ids": [
+              "q1",
+              "q2"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 2,
+            "action": "If the porch space is higher than 17' (regardless of whether it counted towards gross floor area initially), apply 2nd story equivalency.",
+            "condition_ids": [
+              "c4"
+            ],
+            "qualifier_ids": [
+              "q3",
+              "q4"
+            ],
+            "dependencies": []
+          }
+        ]
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:24:13",
+  "model_used": "google/gemini-2.5-flash"
+}

@@ -1,0 +1,12 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_17.png",
+  "image_name": "Page_17.png",
+  "analysis": {
+    "parse_error": true,
+    "error": "JSON parse failed: Expecting value: line 1 column 1 (char 0)",
+    "raw_response": "Vaulted entry features\n\nEntry features that are greater than 12' high are called \"vaulted entry features\". The footprint of such features count twice toward gross floor area regardless of the design (including whether or not they are open).\n\nHow to measure the height of an entry feature in order to determine whether or not it is considered to be a vaulted entry feature (using Fig 6 - 8 as examples)\n\nFig 6 Entry feature with shed roof\n\nNote: If the entryway is considered to be a vaulted entryway "
+  },
+  "timestamp": "2025-09-16 12:50:48",
+  "model": "google/gemini-2.5-flash",
+  "success": false
+}

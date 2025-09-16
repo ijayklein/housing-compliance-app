@@ -1,0 +1,19 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_53.png",
+  "image_name": "Page_53.png",
+  "analysis": {
+    "page_number": "unknown",
+    "main_heading": "PARSE_ERROR",
+    "text_content": "Failed to parse response: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)",
+    "tables": [],
+    "figures": [],
+    "zoning_rules": [],
+    "code_references": [],
+    "quality_notes": "JSON parsing failed: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)",
+    "raw_response": "```json\n{\n  \"page_number\": \"47\",\n  \"main_heading\": \"Grade\",\n  \"text_content\": \"Grade\\nWhen measuring\\nUse\\nWhich is defined as\\nIllus.\\nThe height of a structure on land with natural slope \u2264 10%\\nExisting Grade\\nfor each building or structure, the lowest point of adjacent ground elevation prior to grading or fill\\nFig 44 on this page\\nThe height of a structure on land with natural slope > 10%\\nGrade\\nadjacent ground elevation of the finished or existing grade, whichever is lower--at any point of the structure\\nFig 45 on this page\\nA daylight plane\\nAverage grade\\naverage of the grade at the midpoint of the building and the grade at the closest point on the abutting site\\nFigs 20-21 pp. 26-27\\nFig 45 Height limits for structures on slopes greater than 10%\\n30' above existing grade\\n30' above finished\\nThe structure must comply with the lower of the two limits at all points along the slope\\nHeight\\nHeight\\nFig 44 Existing vs. Finished grade\\nHeight: measured to top of roof material of th",
+    "parse_error": true
+  },
+  "analysis_timestamp": "2025-09-16 12:33:49",
+  "model_used": "google/gemini-2.5-flash",
+  "success": false
+}

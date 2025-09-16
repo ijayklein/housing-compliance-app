@@ -1,0 +1,114 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_46.md",
+  "file_name": "Page_46.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "rule": "Basement Area Exclusion from Floor Area",
+        "Qualifiers": {
+          "Scope": "Basements below grade",
+          "Applicability": "Basements that do not contribute to the apparent mass of a building",
+          "Exclusions": "Basements that are above grade or contribute to the building mass"
+        },
+        "Variables": {
+          "Dimensional": "Below grade",
+          "Usage": "Habitable or non-habitable"
+        },
+        "Constants": {
+          "Procedures": "Basement area need not be included in total floor area if below grade"
+        },
+        "Conditions": {
+          "Mandatory": "Basement must be below grade"
+        },
+        "Exceptions": {
+          "Explicit deviations": "None"
+        },
+        "Relationships": {
+          "Cross-references": "None"
+        }
+      },
+      {
+        "rule": "Basement Standards",
+        "Qualifiers": {
+          "Scope": "Basement construction",
+          "Applicability": "All new basement constructions",
+          "Exclusions": "Basements in special flood hazard areas"
+        },
+        "Variables": {
+          "Dimensional": "Building footprint, required yards"
+        },
+        "Constants": {
+          "Standards": [
+            "May not be located in special flood hazard areas",
+            "May not extend beyond building footprint",
+            "May not encroach into required yards, except where main dwelling is permitted to extend into rear yard"
+          ]
+        },
+        "Conditions": {
+          "Mandatory": [
+            "Basement location outside special flood hazard areas",
+            "Basement within building footprint",
+            "No encroachment into required yards unless permitted"
+          ]
+        },
+        "Exceptions": {
+          "Special cases": "Main dwelling permitted to extend into rear yard"
+        },
+        "Relationships": {
+          "Cross-references": "None"
+        }
+      },
+      {
+        "rule": "Floor Area Ratio (FAR) Note for Basements",
+        "Qualifiers": {
+          "Scope": "Basements and floor area calculation",
+          "Applicability": "Basements with first floor no more than 3' above grade",
+          "Exclusions": "Basements with first floor more than 3' above grade"
+        },
+        "Variables": {
+          "Dimensional": "First floor height above grade"
+        },
+        "Constants": {
+          "Numerical values": "3' above grade"
+        },
+        "Conditions": {
+          "Mandatory": "First floor no more than 3' above grade"
+        },
+        "Exceptions": {
+          "Explicit deviations": "None"
+        },
+        "Relationships": {
+          "Cross-references": "None"
+        }
+      },
+      {
+        "rule": "Excavated Features",
+        "Qualifiers": {
+          "Scope": "Excavated features",
+          "Applicability": "Light wells, stairwells, below-grade patios",
+          "Exclusions": "None"
+        },
+        "Variables": {
+          "Dimensional": "Size/dimensional limits described in Figs 39\u201340 on pp. 42\u201343"
+        },
+        "Constants": {
+          "Standards": "Excavation will not affect grade or measurement of floor area if standards are met"
+        },
+        "Conditions": {
+          "Mandatory": "Standards described in Figs 39\u201340 on pp. 42\u201343 must be met"
+        },
+        "Exceptions": {
+          "Explicit deviations": "None"
+        },
+        "Relationships": {
+          "Cross-references": "Pages 42 and 43 for standards"
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n    {\n        \"rule\": \"Basement Area Exclusion from Floor Area\",\n        \"Qualifiers\": {\n            \"Scope\": \"Basements below grade\",\n            \"Applicability\": \"Basements that do not contribute to the apparent mass of a building\",\n            \"Exclusions\": \"Basements that are above grade or contribute to the building mass\"\n        },\n        \"Variables\": {\n            \"Dimensional\": \"Below grade\",\n            \"Usage\": \"Habitable or non-habitable\"\n        },\n        \"Constants\": {\n            \"Procedures\": \"Basement area need not be included in total floor area if below grade\"\n        },\n        \"Conditions\": {\n            \"Mandatory\": \"Basement must be below grade\"\n        },\n        \"Exceptions\": {\n            \"Explicit deviations\": \"None\"\n        },\n        \"Relationships\": {\n            \"Cross-references\": \"None\"\n        }\n    },\n    {\n        \"rule\": \"Basement Standards\",\n        \"Qualifiers\": {\n            \"Scope\": \"Basement construction\",\n            \"Applicability\": \"All new basement constructions\",\n            \"Exclusions\": \"Basements in special flood hazard areas\"\n        },\n        \"Variables\": {\n            \"Dimensional\": \"Building footprint, required yards\"\n        },\n        \"Constants\": {\n            \"Standards\": [\n                \"May not be located in special flood hazard areas\",\n                \"May not extend beyond building footprint\",\n                \"May not encroach into required yards, except where main dwelling is permitted to extend into rear yard\"\n            ]\n        },\n        \"Conditions\": {\n            \"Mandatory\": [\n                \"Basement location outside special flood hazard areas\",\n                \"Basement within building footprint\",\n                \"No encroachment into required yards unless permitted\"\n            ]\n        },\n        \"Exceptions\": {\n            \"Special cases\": \"Main dwelling permitted to extend into rear yard\"\n        },\n        \"Relationships\": {\n            \"Cross-references\": \"None\"\n        }\n    },\n    {\n        \"rule\": \"Floor Area Ratio (FAR) Note for Basements\",\n        \"Qualifiers\": {\n            \"Scope\": \"Basements and floor area calculation\",\n            \"Applicability\": \"Basements with first floor no more than 3' above grade\",\n            \"Exclusions\": \"Basements with first floor more than 3' above grade\"\n        },\n        \"Variables\": {\n            \"Dimensional\": \"First floor height above grade\"\n        },\n        \"Constants\": {\n            \"Numerical values\": \"3' above grade\"\n        },\n        \"Conditions\": {\n            \"Mandatory\": \"First floor no more than 3' above grade\"\n        },\n        \"Exceptions\": {\n            \"Explicit deviations\": \"None\"\n        },\n        \"Relationships\": {\n            \"Cross-references\": \"None\"\n        }\n    },\n    {\n        \"rule\": \"Excavated Features\",\n        \"Qualifiers\": {\n            \"Scope\": \"Excavated features\",\n            \"Applicability\": \"Light wells, stairwells, below-grade patios\",\n            \"Exclusions\": \"None\"\n        },\n        \"Variables\": {\n            \"Dimensional\": \"Size/dimensional limits described in Figs 39\u201340 on pp. 42\u201343\"\n        },\n        \"Constants\": {\n            \"Standards\": \"Excavation will not affect grade or measurement of floor area if standards are met\"\n        },\n        \"Conditions\": {\n            \"Mandatory\": \"Standards described in Figs 39\u201340 on pp. 42\u201343 must be met\"\n        },\n        \"Exceptions\": {\n            \"Explicit deviations\": \"None\"\n        },\n        \"Relationships\": {\n            \"Cross-references\": \"Pages 42 and 43 for standards\"\n        }\n    }\n]\n```"
+  },
+  "timestamp": "2025-09-16 14:43:32",
+  "model": "openai/gpt-4o",
+  "success": true
+}

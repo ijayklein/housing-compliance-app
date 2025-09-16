@@ -1,0 +1,279 @@
+{
+  "file_path": "markdown_pages/Page_30.md",
+  "file_name": "Page_30.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "rule": "Main dwelling setback encroachments",
+        "Qualifiers": {
+          "Scope": "Main dwelling",
+          "Applicability": "1st floor portions and extensions",
+          "Exclusions": null
+        },
+        "Variables": {
+          "Dimensional": {
+            "rear lot line": "14'",
+            "front lot line": "14'",
+            "interior-side lot line": "5'",
+            "street-side lot line": "10'"
+          },
+          "Material": null,
+          "Environmental": null,
+          "Usage": null
+        },
+        "Constants": {
+          "Numerical values": {
+            "structure width": "half width",
+            "storage closet height": "6'",
+            "storage closet area": "25 sf"
+          },
+          "Specs": null,
+          "Standards": null,
+          "Procedures": null
+        },
+        "Conditions": {
+          "Mandatory": "1st floor portion at rear of structure",
+          "Optional": null,
+          "Conditional logic": null,
+          "Dependencies": null
+        },
+        "Exceptions": {
+          "Explicit deviations": null,
+          "Alternatives": null,
+          "Special cases": null
+        },
+        "Relationships": {
+          "Hierarchical": null,
+          "Cross-references": {
+            "Code Sec": "18.12.050",
+            "Illustration": "Figure 18"
+          },
+          "Logical dependencies": null
+        }
+      },
+      {
+        "rule": "Detached accessory structures",
+        "Qualifiers": {
+          "Scope": "Detached accessory structures",
+          "Applicability": "Structures 75' from front lot line and 20' from street-side lot line",
+          "Exclusions": null
+        },
+        "Variables": {
+          "Dimensional": {
+            "front lot line": "75'",
+            "street-side lot line": "20'"
+          },
+          "Material": null,
+          "Environmental": null,
+          "Usage": null
+        },
+        "Constants": {
+          "Numerical values": null,
+          "Specs": null,
+          "Standards": null,
+          "Procedures": null
+        },
+        "Conditions": {
+          "Mandatory": "In rear or side yards",
+          "Optional": null,
+          "Conditional logic": null,
+          "Dependencies": null
+        },
+        "Exceptions": {
+          "Explicit deviations": null,
+          "Alternatives": null,
+          "Special cases": null
+        },
+        "Relationships": {
+          "Hierarchical": null,
+          "Cross-references": {
+            "Code Sec": "18.12.080 (b)(3)",
+            "Illustration": "Figure 34"
+          },
+          "Logical dependencies": null
+        }
+      },
+      {
+        "rule": "Porches and entry features",
+        "Qualifiers": {
+          "Scope": "Porches and entry features",
+          "Applicability": "1st floor balconies, uncovered porches, stairways, and fire escapes",
+          "Exclusions": null
+        },
+        "Variables": {
+          "Dimensional": {
+            "front & rear yard": "6'",
+            "side yards": "3'"
+          },
+          "Material": null,
+          "Environmental": null,
+          "Usage": null
+        },
+        "Constants": {
+          "Numerical values": null,
+          "Specs": null,
+          "Standards": null,
+          "Procedures": null
+        },
+        "Conditions": {
+          "Mandatory": null,
+          "Optional": null,
+          "Conditional logic": null,
+          "Dependencies": null
+        },
+        "Exceptions": {
+          "Explicit deviations": null,
+          "Alternatives": null,
+          "Special cases": null
+        },
+        "Relationships": {
+          "Hierarchical": null,
+          "Cross-references": {
+            "Code Sec": "18.12.050 (a)(3)(D)",
+            "Illustration": null
+          },
+          "Logical dependencies": null
+        }
+      },
+      {
+        "rule": "Other encroachments",
+        "Qualifiers": {
+          "Scope": "Other encroachments",
+          "Applicability": "Eaves & cornices, bay/greenhouse windows, uncovered parking, pools & spas, fireplaces",
+          "Exclusions": null
+        },
+        "Variables": {
+          "Dimensional": {
+            "side yard": "2'",
+            "front & rear yards": "4'",
+            "front yard": "2'",
+            "rear yard": "3'",
+            "rear & interior-side lot lines": "6'"
+          },
+          "Material": null,
+          "Environmental": null,
+          "Usage": null
+        },
+        "Constants": {
+          "Numerical values": {
+            "fireplace width": "5'"
+          },
+          "Specs": null,
+          "Standards": null,
+          "Procedures": null
+        },
+        "Conditions": {
+          "Mandatory": null,
+          "Optional": null,
+          "Conditional logic": null,
+          "Dependencies": null
+        },
+        "Exceptions": {
+          "Explicit deviations": null,
+          "Alternatives": null,
+          "Special cases": null
+        },
+        "Relationships": {
+          "Hierarchical": null,
+          "Cross-references": {
+            "Code Sec": "18.12.050",
+            "Illustration": null
+          },
+          "Logical dependencies": null
+        }
+      },
+      {
+        "rule": "Excavated features",
+        "Qualifiers": {
+          "Scope": "Excavated features",
+          "Applicability": "Lightwells, stairwells, below grade patios",
+          "Exclusions": null
+        },
+        "Variables": {
+          "Dimensional": {
+            "side yards": "3'",
+            "rear yard": "4'",
+            "cumulative length": "15'",
+            "below grade patios cumulative length": "5'"
+          },
+          "Material": null,
+          "Environmental": null,
+          "Usage": null
+        },
+        "Constants": {
+          "Numerical values": null,
+          "Specs": null,
+          "Standards": null,
+          "Procedures": null
+        },
+        "Conditions": {
+          "Mandatory": null,
+          "Optional": null,
+          "Conditional logic": null,
+          "Dependencies": null
+        },
+        "Exceptions": {
+          "Explicit deviations": null,
+          "Alternatives": null,
+          "Special cases": null
+        },
+        "Relationships": {
+          "Hierarchical": null,
+          "Cross-references": {
+            "Code Sec": "18.12.090 (c)",
+            "Illustration": "Figure 39"
+          },
+          "Logical dependencies": null
+        }
+      },
+      {
+        "rule": "Rear yard encroachment",
+        "Qualifiers": {
+          "Scope": "Rear yard encroachment",
+          "Applicability": "Main dwelling portion no wider than half the max. width of the dwelling",
+          "Exclusions": "Back-to-back corner lots"
+        },
+        "Variables": {
+          "Dimensional": {
+            "rear setback": "6'",
+            "minimum setback": "14'",
+            "back-to-back corner lots setback": "10'"
+          },
+          "Material": null,
+          "Environmental": null,
+          "Usage": null
+        },
+        "Constants": {
+          "Numerical values": null,
+          "Specs": null,
+          "Standards": null,
+          "Procedures": null
+        },
+        "Conditions": {
+          "Mandatory": "Contiguous with existing protrusion",
+          "Optional": null,
+          "Conditional logic": null,
+          "Dependencies": "Legally constructed structures"
+        },
+        "Exceptions": {
+          "Explicit deviations": null,
+          "Alternatives": null,
+          "Special cases": "Only once in the life of the structure"
+        },
+        "Relationships": {
+          "Hierarchical": null,
+          "Cross-references": {
+            "Code Sec": null,
+            "Illustration": "Figure 18"
+          },
+          "Logical dependencies": null
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n    {\n        \"rule\": \"Main dwelling setback encroachments\",\n        \"Qualifiers\": {\n            \"Scope\": \"Main dwelling\",\n            \"Applicability\": \"1st floor portions and extensions\",\n            \"Exclusions\": null\n        },\n        \"Variables\": {\n            \"Dimensional\": {\n                \"rear lot line\": \"14'\",\n                \"front lot line\": \"14'\",\n                \"interior-side lot line\": \"5'\",\n                \"street-side lot line\": \"10'\"\n            },\n            \"Material\": null,\n            \"Environmental\": null,\n            \"Usage\": null\n        },\n        \"Constants\": {\n            \"Numerical values\": {\n                \"structure width\": \"half width\",\n                \"storage closet height\": \"6'\",\n                \"storage closet area\": \"25 sf\"\n            },\n            \"Specs\": null,\n            \"Standards\": null,\n            \"Procedures\": null\n        },\n        \"Conditions\": {\n            \"Mandatory\": \"1st floor portion at rear of structure\",\n            \"Optional\": null,\n            \"Conditional logic\": null,\n            \"Dependencies\": null\n        },\n        \"Exceptions\": {\n            \"Explicit deviations\": null,\n            \"Alternatives\": null,\n            \"Special cases\": null\n        },\n        \"Relationships\": {\n            \"Hierarchical\": null,\n            \"Cross-references\": {\n                \"Code Sec\": \"18.12.050\",\n                \"Illustration\": \"Figure 18\"\n            },\n            \"Logical dependencies\": null\n        }\n    },\n    {\n        \"rule\": \"Detached accessory structures\",\n        \"Qualifiers\": {\n            \"Scope\": \"Detached accessory structures\",\n            \"Applicability\": \"Structures 75' from front lot line and 20' from street-side lot line\",\n            \"Exclusions\": null\n        },\n        \"Variables\": {\n            \"Dimensional\": {\n                \"front lot line\": \"75'\",\n                \"street-side lot line\": \"20'\"\n            },\n            \"Material\": null,\n            \"Environmental\": null,\n            \"Usage\": null\n        },\n        \"Constants\": {\n            \"Numerical values\": null,\n            \"Specs\": null,\n            \"Standards\": null,\n            \"Procedures\": null\n        },\n        \"Conditions\": {\n            \"Mandatory\": \"In rear or side yards\",\n            \"Optional\": null,\n            \"Conditional logic\": null,\n            \"Dependencies\": null\n        },\n        \"Exceptions\": {\n            \"Explicit deviations\": null,\n            \"Alternatives\": null,\n            \"Special cases\": null\n        },\n        \"Relationships\": {\n            \"Hierarchical\": null,\n            \"Cross-references\": {\n                \"Code Sec\": \"18.12.080 (b)(3)\",\n                \"Illustration\": \"Figure 34\"\n            },\n            \"Logical dependencies\": null\n        }\n    },\n    {\n        \"rule\": \"Porches and entry features\",\n        \"Qualifiers\": {\n            \"Scope\": \"Porches and entry features\",\n            \"Applicability\": \"1st floor balconies, uncovered porches, stairways, and fire escapes\",\n            \"Exclusions\": null\n        },\n        \"Variables\": {\n            \"Dimensional\": {\n                \"front & rear yard\": \"6'\",\n                \"side yards\": \"3'\"\n            },\n            \"Material\": null,\n            \"Environmental\": null,\n            \"Usage\": null\n        },\n        \"Constants\": {\n            \"Numerical values\": null,\n            \"Specs\": null,\n            \"Standards\": null,\n            \"Procedures\": null\n        },\n        \"Conditions\": {\n            \"Mandatory\": null,\n            \"Optional\": null,\n            \"Conditional logic\": null,\n            \"Dependencies\": null\n        },\n        \"Exceptions\": {\n            \"Explicit deviations\": null,\n            \"Alternatives\": null,\n            \"Special cases\": null\n        },\n        \"Relationships\": {\n            \"Hierarchical\": null,\n            \"Cross-references\": {\n                \"Code Sec\": \"18.12.050 (a)(3)(D)\",\n                \"Illustration\": null\n            },\n            \"Logical dependencies\": null\n        }\n    },\n    {\n        \"rule\": \"Other encroachments\",\n        \"Qualifiers\": {\n            \"Scope\": \"Other encroachments\",\n            \"Applicability\": \"Eaves & cornices, bay/greenhouse windows, uncovered parking, pools & spas, fireplaces\",\n            \"Exclusions\": null\n        },\n        \"Variables\": {\n            \"Dimensional\": {\n                \"side yard\": \"2'\",\n                \"front & rear yards\": \"4'\",\n                \"front yard\": \"2'\",\n                \"rear yard\": \"3'\",\n                \"rear & interior-side lot lines\": \"6'\"\n            },\n            \"Material\": null,\n            \"Environmental\": null,\n            \"Usage\": null\n        },\n        \"Constants\": {\n            \"Numerical values\": {\n                \"fireplace width\": \"5'\"\n            },\n            \"Specs\": null,\n            \"Standards\": null,\n            \"Procedures\": null\n        },\n        \"Conditions\": {\n            \"Mandatory\": null,\n            \"Optional\": null,\n            \"Conditional logic\": null,\n            \"Dependencies\": null\n        },\n        \"Exceptions\": {\n            \"Explicit deviations\": null,\n            \"Alternatives\": null,\n            \"Special cases\": null\n        },\n        \"Relationships\": {\n            \"Hierarchical\": null,\n            \"Cross-references\": {\n                \"Code Sec\": \"18.12.050\",\n                \"Illustration\": null\n            },\n            \"Logical dependencies\": null\n        }\n    },\n    {\n        \"rule\": \"Excavated features\",\n        \"Qualifiers\": {\n            \"Scope\": \"Excavated features\",\n            \"Applicability\": \"Lightwells, stairwells, below grade patios\",\n            \"Exclusions\": null\n        },\n        \"Variables\": {\n            \"Dimensional\": {\n                \"side yards\": \"3'\",\n                \"rear yard\": \"4'\",\n                \"cumulative length\": \"15'\",\n                \"below grade patios cumulative length\": \"5'\"\n            },\n            \"Material\": null,\n            \"Environmental\": null,\n            \"Usage\": null\n        },\n        \"Constants\": {\n            \"Numerical values\": null,\n            \"Specs\": null,\n            \"Standards\": null,\n            \"Procedures\": null\n        },\n        \"Conditions\": {\n            \"Mandatory\": null,\n            \"Optional\": null,\n            \"Conditional logic\": null,\n            \"Dependencies\": null\n        },\n        \"Exceptions\": {\n            \"Explicit deviations\": null,\n            \"Alternatives\": null,\n            \"Special cases\": null\n        },\n        \"Relationships\": {\n            \"Hierarchical\": null,\n            \"Cross-references\": {\n                \"Code Sec\": \"18.12.090 (c)\",\n                \"Illustration\": \"Figure 39\"\n            },\n            \"Logical dependencies\": null\n        }\n    },\n    {\n        \"rule\": \"Rear yard encroachment\",\n        \"Qualifiers\": {\n            \"Scope\": \"Rear yard encroachment\",\n            \"Applicability\": \"Main dwelling portion no wider than half the max. width of the dwelling\",\n            \"Exclusions\": \"Back-to-back corner lots\"\n        },\n        \"Variables\": {\n            \"Dimensional\": {\n                \"rear setback\": \"6'\",\n                \"minimum setback\": \"14'\",\n                \"back-to-back corner lots setback\": \"10'\"\n            },\n            \"Material\": null,\n            \"Environmental\": null,\n            \"Usage\": null\n        },\n        \"Constants\": {\n            \"Numerical values\": null,\n            \"Specs\": null,\n            \"Standards\": null,\n            \"Procedures\": null\n        },\n        \"Conditions\": {\n            \"Mandatory\": \"Contiguous with existing protrusion\",\n            \"Optional\": null,\n            \"Conditional logic\": null,\n            \"Dependencies\": \"Legally constructed structures\"\n        },\n        \"Exceptions\": {\n            \"Explicit deviations\": null,\n            \"Alternatives\": null,\n            \"Special cases\": \"Only once in the life of the structure\"\n        },\n        \"Relationships\": {\n            \"Hierarchical\": null,\n            \"Cross-references\": {\n                \"Code Sec\": null,\n                \"Illustration\": \"Figure 18\"\n            },\n            \"Logical dependencies\": null\n        }\n    }\n]\n```"
+  },
+  "timestamp": "2025-09-16 15:43:49",
+  "model": "openai/gpt-4o",
+  "success": true
+}

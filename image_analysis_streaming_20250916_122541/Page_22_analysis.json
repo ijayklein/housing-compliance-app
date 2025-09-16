@@ -1,0 +1,23 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_22.png",
+  "image_name": "Page_22.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "PARSE_ERROR",
+      "visual_elements": [],
+      "technical_specifications": [],
+      "structural_elements": {
+        "main_heading": "",
+        "subheadings": [],
+        "sections": []
+      },
+      "additional_notes": [
+        "Failed to parse LLM response: Expecting value: line 1 column 1 (char 0)"
+      ],
+      "cross_references": []
+    },
+    "raw_response": "Here's the extracted information from the images, focusing on crucial zoning rules, regulations, and technical specifications, with absolute precision:\n\n**Title:** Attic space & equivalencies / Attic, closet, & perimeter spaces\n\n**General Rule:**\nOn all accessible floors, areas with at least 5' of head clearance count toward the gross floor area regardless of the floor plan or actual usage of the space.\n\n**Contextual Information:**\nVoluminous spaces in a structure contribute to the mass even if these areas are not used or described in the floor plan. The 2nd & 3rd floor equivalency addresses how these areas count toward the gross floor area.\n\n**Specific Rules (from Fig 11):**\n*   **Area A:** This 3rd floor area (accessible via stairs) has 5' of head clearance and counts as 3rd floor area.\n*   **Area B:** This 2nd floor area (accessible via stairs) has 5' of head clearance and is included in the count of the, more obvious, 2nd floor area.\n\n**Exemption Note:**\n500 sf of unusable attic space may be exempted for Category 1 & 2 historic homes.\n\n**Measurement Note:**\nMeasurements are from top of floor to underside of the rafter.\n\n**Diagram Labels:**\n*   A (highlighted area in the attic)\n*   B (highlighted area on the second floor)\n*   5' (indicated head clearance)\n*   CC (indicated on the stairs)\n*   1st floor (indicated at the ground level)\n*   Underside of pical) (partially visible text pointing to the underside of the roof structure)\n*   oor (partially visible text)\n\n**Code Sections:**\n*   18.04.030(a)(65)\n*   18.12.040(b)Table 3\n\n**Page Number:**\n16"
+  },
+  "analysis_timestamp": "2025-09-16 12:25:51",
+  "model_used": "google/gemini-2.5-flash"
+}

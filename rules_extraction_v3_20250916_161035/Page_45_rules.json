@@ -1,0 +1,255 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_45.md",
+  "file_name": "Page_45.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "rule": "Siting of Detached Garages and Carports (General Rule)",
+        "Qualifiers": {
+          "Scope": "Site planning regulations for detached accessory parking structures.",
+          "Applicability": "Applies to detached garages and carports on lots that are 95' deep or more.",
+          "Exclusions": "Does not apply to attached garages/carports. Does not apply to lots less than 95' deep (see separate rule). Does not apply to uncovered parking spaces."
+        },
+        "Variables": {
+          "Dimensional": "Location in yard (rear or interior side); Distance from front lot line; Distance from street-side lot line.",
+          "Material": "",
+          "Environmental": "",
+          "Usage Parameters": ""
+        },
+        "Constants": {
+          "Numerical Values": "75' (minimum distance from front lot line); 20' (minimum distance from street-side lot line).",
+          "Specs, Standards, Procedures": ""
+        },
+        "Conditions": {
+          "Mandatory": "Structure must be located in the rear or interior side yard.",
+          "Optional": "",
+          "Conditional Logic": "IF a detached garage or carport is located in the rear or interior side yard, THEN it must be at least 75' from the front lot line AND at least 20' from the street-side lot line.",
+          "Dependencies": "Using this rule subjects the structure to the 'Stricter Daylight Plane' rule."
+        },
+        "Exceptions": {
+          "Explicit Deviations": "An exception exists for lots less than 95' deep, allowing placement in the rear half of the lot instead of the 75' setback.",
+          "Alternatives": "",
+          "Special Cases": ""
+        },
+        "Relationships": {
+          "Hierarchical": "This is the primary siting rule, with the 'Shallow Lot' rule acting as a specific exception.",
+          "Cross-references": "Subject to 'Stricter Daylight Plane' rule (See Figs 25\u201326 p. 32).",
+          "Logical Dependencies": "Triggers the 'Stricter Daylight Plane' rule. Is mutually exclusive with the 'Shallow Lot' rule."
+        }
+      },
+      {
+        "rule": "Siting of Detached Garages/Carports on Shallow Lots",
+        "Qualifiers": {
+          "Scope": "An exception to the general siting rule for detached parking structures on shallow lots.",
+          "Applicability": "Applies to detached garages and carports on lots that are less than 95' deep.",
+          "Exclusions": "Does not apply to lots 95' deep or greater."
+        },
+        "Variables": {
+          "Dimensional": "Lot depth; Location on lot (rear half); Location in yard (rear or interior side).",
+          "Material": "",
+          "Environmental": "",
+          "Usage Parameters": ""
+        },
+        "Constants": {
+          "Numerical Values": "95' (maximum lot depth for this rule to apply).",
+          "Specs, Standards, Procedures": "Placement in 'rear half of the lot' or 'midpoint'."
+        },
+        "Conditions": {
+          "Mandatory": "Structure must be located in the rear or interior side yard.",
+          "Optional": "",
+          "Conditional Logic": "IF lot depth is less than 95', THEN a detached garage/carport may be located in the rear or interior side yard IF it is placed in the rear half of the lot.",
+          "Dependencies": "Using this rule subjects the structure to the 'Stricter Daylight Plane' rule."
+        },
+        "Exceptions": {
+          "Explicit Deviations": "This entire rule is an explicit deviation from the general 75' setback requirement.",
+          "Alternatives": "",
+          "Special Cases": ""
+        },
+        "Relationships": {
+          "Hierarchical": "This is a special case/exception to the 'Siting of Detached Garages and Carports (General Rule)'.",
+          "Cross-references": "Subject to 'Stricter Daylight Plane' rule (See Figs 25\u201326 p. 32).",
+          "Logical Dependencies": "Triggers the 'Stricter Daylight Plane' rule. Is mutually exclusive with the general 75' setback rule."
+        }
+      },
+      {
+        "rule": "Stricter Daylight Plane for Setback Exceptions",
+        "Qualifiers": {
+          "Scope": "Height and massing regulation for structures using specific setback rules.",
+          "Applicability": "Applies to any garage or carport that takes advantage of the setback exceptions (either the 75'/20' rule or the shallow lot rule).",
+          "Exclusions": "Does not apply to structures that meet standard (non-exception) setbacks."
+        },
+        "Variables": {
+          "Dimensional": "Daylight plane profile.",
+          "Material": "",
+          "Environmental": "",
+          "Usage Parameters": ""
+        },
+        "Constants": {
+          "Numerical Values": "",
+          "Specs, Standards, Procedures": "Subject to a 'stricter daylight plane'. **Flagged: Ambiguous Language** - 'stricter' is not defined on this page."
+        },
+        "Conditions": {
+          "Mandatory": "",
+          "Optional": "",
+          "Conditional Logic": "IF a garage or carport uses the setback exception, THEN it is subject to this stricter daylight plane.",
+          "Dependencies": ""
+        },
+        "Exceptions": {
+          "Explicit Deviations": "",
+          "Alternatives": "",
+          "Special Cases": ""
+        },
+        "Relationships": {
+          "Hierarchical": "",
+          "Cross-references": "Definition of 'stricter daylight plane' is located in 'Figs 25\u201326 p. 32'.",
+          "Logical Dependencies": "This rule is activated by compliance with either the 'General Rule' for siting or the 'Shallow Lot' rule."
+        }
+      },
+      {
+        "rule": "Siting of Uncovered Parking Spaces",
+        "Qualifiers": {
+          "Scope": "Location requirements for open-air, uncovered parking spaces.",
+          "Applicability": "Applies to uncovered parking spaces.",
+          "Exclusions": "Does not apply to covered structures like garages or carports."
+        },
+        "Variables": {
+          "Dimensional": "Location relative to front-yard setback; Location relative to street-side yard.",
+          "Material": "",
+          "Environmental": "",
+          "Usage Parameters": ""
+        },
+        "Constants": {
+          "Numerical Values": "10' (no-parking area measured from the street-side yard).",
+          "Specs, Standards, Procedures": ""
+        },
+        "Conditions": {
+          "Mandatory": "Uncovered spaces must be located 'beyond the required front-yard' AND 'beyond the first 10' of the street-side yard'.",
+          "Optional": "",
+          "Conditional Logic": "",
+          "Dependencies": ""
+        },
+        "Exceptions": {
+          "Explicit Deviations": "",
+          "Alternatives": "",
+          "Special Cases": ""
+        },
+        "Relationships": {
+          "Hierarchical": "",
+          "Cross-references": "",
+          "Logical Dependencies": "Provides the location criteria for uncovered parking, which enables the 'Garage Size Substitution' rule."
+        }
+      },
+      {
+        "rule": "Fire-Rated Construction for Garages at Lot Line",
+        "Qualifiers": {
+          "Scope": "Construction requirements for garages built with zero setback to a lot line.",
+          "Applicability": "Applies to garages located 'at the lot line'.",
+          "Exclusions": "Does not apply to carports. Does not apply to garages set back from the lot line."
+        },
+        "Variables": {
+          "Dimensional": "Distance from lot line (must be 0).",
+          "Material": "Wall fire-rating; Roof materials.",
+          "Environmental": "",
+          "Usage Parameters": ""
+        },
+        "Constants": {
+          "Numerical Values": "",
+          "Specs, Standards, Procedures": "Must comply with 'Uniform Building Code (UBC)' requirements for fire-rated walls & roof materials."
+        },
+        "Conditions": {
+          "Mandatory": "",
+          "Optional": "",
+          "Conditional Logic": "IF a garage is built at the lot line, THEN its walls and roof must comply with UBC fire-rating requirements.",
+          "Dependencies": ""
+        },
+        "Exceptions": {
+          "Explicit Deviations": "",
+          "Alternatives": "An alternative is to build an open-sided carport set back 3' (see 'Setback for Open-Sided Carports' rule).",
+          "Special Cases": ""
+        },
+        "Relationships": {
+          "Hierarchical": "",
+          "Cross-references": "Refers to external standard: 'Uniform Building Code (UBC)'.",
+          "Logical Dependencies": "This is a conditional requirement based on a specific siting choice (0' setback)."
+        }
+      },
+      {
+        "rule": "Setback for Open-Sided Carports",
+        "Qualifiers": {
+          "Scope": "Minimum setback requirements for open-sided carports from lot lines.",
+          "Applicability": "Applies to carports with open sides.",
+          "Exclusions": "Does not apply to enclosed garages."
+        },
+        "Variables": {
+          "Dimensional": "Distance from any lot line.",
+          "Material": "",
+          "Environmental": "",
+          "Usage Parameters": "Structure type must be 'carport with open sides'."
+        },
+        "Constants": {
+          "Numerical Values": "3' (minimum distance from any lot line).",
+          "Specs, Standards, Procedures": ""
+        },
+        "Conditions": {
+          "Mandatory": "",
+          "Optional": "",
+          "Conditional Logic": "IF structure is a carport with open sides, THEN it must be at least 3' from any lot line.",
+          "Dependencies": ""
+        },
+        "Exceptions": {
+          "Explicit Deviations": "",
+          "Alternatives": "This rule provides an alternative to building a fire-rated structure on the lot line.",
+          "Special Cases": ""
+        },
+        "Relationships": {
+          "Hierarchical": "",
+          "Cross-references": "",
+          "Logical Dependencies": "Acts as an alternative to the 'Fire-Rated Construction' rule for parking structures near a lot line."
+        }
+      },
+      {
+        "rule": "Garage Size Substitution",
+        "Qualifiers": {
+          "Scope": "Allows for substitution of a smaller garage if sufficient uncovered parking is available.",
+          "Applicability": "Applies to lots where a 2-car garage is being considered.",
+          "Exclusions": "Not applicable if there is no room for compliant uncovered parking."
+        },
+        "Variables": {
+          "Dimensional": "",
+          "Material": "",
+          "Environmental": "",
+          "Usage Parameters": "Garage size (1-car or 2-car); Availability of uncovered parking space."
+        },
+        "Constants": {
+          "Numerical Values": "1-car; 2-car.",
+          "Specs, Standards, Procedures": "Uncovered spaces can be arranged in tandem ('tandem OK')."
+        },
+        "Conditions": {
+          "Mandatory": "",
+          "Optional": "A 1-car garage MAY be substituted for a 2-car garage.",
+          "Conditional Logic": "IF there is room for uncovered parking in the driveway, THEN a 1-car garage may be substituted for a 2-car garage.",
+          "Dependencies": ""
+        },
+        "Exceptions": {
+          "Explicit Deviations": "",
+          "Alternatives": "",
+          "Special Cases": ""
+        },
+        "Relationships": {
+          "Hierarchical": "",
+          "Cross-references": "Applies to examples A, B, and C on the page.",
+          "Logical Dependencies": "This rule is dependent on the ability to provide uncovered parking that complies with the 'Siting of Uncovered Parking Spaces' rule."
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n  {\n    \"rule\": \"Siting of Detached Garages and Carports (General Rule)\",\n    \"Qualifiers\": {\n      \"Scope\": \"Site planning regulations for detached accessory parking structures.\",\n      \"Applicability\": \"Applies to detached garages and carports on lots that are 95' deep or more.\",\n      \"Exclusions\": \"Does not apply to attached garages/carports. Does not apply to lots less than 95' deep (see separate rule). Does not apply to uncovered parking spaces.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"Location in yard (rear or interior side); Distance from front lot line; Distance from street-side lot line.\",\n      \"Material\": \"\",\n      \"Environmental\": \"\",\n      \"Usage Parameters\": \"\"\n    },\n    \"Constants\": {\n      \"Numerical Values\": \"75' (minimum distance from front lot line); 20' (minimum distance from street-side lot line).\",\n      \"Specs, Standards, Procedures\": \"\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"Structure must be located in the rear or interior side yard.\",\n      \"Optional\": \"\",\n      \"Conditional Logic\": \"IF a detached garage or carport is located in the rear or interior side yard, THEN it must be at least 75' from the front lot line AND at least 20' from the street-side lot line.\",\n      \"Dependencies\": \"Using this rule subjects the structure to the 'Stricter Daylight Plane' rule.\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"An exception exists for lots less than 95' deep, allowing placement in the rear half of the lot instead of the 75' setback.\",\n      \"Alternatives\": \"\",\n      \"Special Cases\": \"\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"This is the primary siting rule, with the 'Shallow Lot' rule acting as a specific exception.\",\n      \"Cross-references\": \"Subject to 'Stricter Daylight Plane' rule (See Figs 25\u201326 p. 32).\",\n      \"Logical Dependencies\": \"Triggers the 'Stricter Daylight Plane' rule. Is mutually exclusive with the 'Shallow Lot' rule.\"\n    }\n  },\n  {\n    \"rule\": \"Siting of Detached Garages/Carports on Shallow Lots\",\n    \"Qualifiers\": {\n      \"Scope\": \"An exception to the general siting rule for detached parking structures on shallow lots.\",\n      \"Applicability\": \"Applies to detached garages and carports on lots that are less than 95' deep.\",\n      \"Exclusions\": \"Does not apply to lots 95' deep or greater.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"Lot depth; Location on lot (rear half); Location in yard (rear or interior side).\",\n      \"Material\": \"\",\n      \"Environmental\": \"\",\n      \"Usage Parameters\": \"\"\n    },\n    \"Constants\": {\n      \"Numerical Values\": \"95' (maximum lot depth for this rule to apply).\",\n      \"Specs, Standards, Procedures\": \"Placement in 'rear half of the lot' or 'midpoint'.\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"Structure must be located in the rear or interior side yard.\",\n      \"Optional\": \"\",\n      \"Conditional Logic\": \"IF lot depth is less than 95', THEN a detached garage/carport may be located in the rear or interior side yard IF it is placed in the rear half of the lot.\",\n      \"Dependencies\": \"Using this rule subjects the structure to the 'Stricter Daylight Plane' rule.\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"This entire rule is an explicit deviation from the general 75' setback requirement.\",\n      \"Alternatives\": \"\",\n      \"Special Cases\": \"\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"This is a special case/exception to the 'Siting of Detached Garages and Carports (General Rule)'.\",\n      \"Cross-references\": \"Subject to 'Stricter Daylight Plane' rule (See Figs 25\u201326 p. 32).\",\n      \"Logical Dependencies\": \"Triggers the 'Stricter Daylight Plane' rule. Is mutually exclusive with the general 75' setback rule.\"\n    }\n  },\n  {\n    \"rule\": \"Stricter Daylight Plane for Setback Exceptions\",\n    \"Qualifiers\": {\n      \"Scope\": \"Height and massing regulation for structures using specific setback rules.\",\n      \"Applicability\": \"Applies to any garage or carport that takes advantage of the setback exceptions (either the 75'/20' rule or the shallow lot rule).\",\n      \"Exclusions\": \"Does not apply to structures that meet standard (non-exception) setbacks.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"Daylight plane profile.\",\n      \"Material\": \"\",\n      \"Environmental\": \"\",\n      \"Usage Parameters\": \"\"\n    },\n    \"Constants\": {\n      \"Numerical Values\": \"\",\n      \"Specs, Standards, Procedures\": \"Subject to a 'stricter daylight plane'. **Flagged: Ambiguous Language** - 'stricter' is not defined on this page.\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"\",\n      \"Optional\": \"\",\n      \"Conditional Logic\": \"IF a garage or carport uses the setback exception, THEN it is subject to this stricter daylight plane.\",\n      \"Dependencies\": \"\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"\",\n      \"Alternatives\": \"\",\n      \"Special Cases\": \"\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"\",\n      \"Cross-references\": \"Definition of 'stricter daylight plane' is located in 'Figs 25\u201326 p. 32'.\",\n      \"Logical Dependencies\": \"This rule is activated by compliance with either the 'General Rule' for siting or the 'Shallow Lot' rule.\"\n    }\n  },\n  {\n    \"rule\": \"Siting of Uncovered Parking Spaces\",\n    \"Qualifiers\": {\n      \"Scope\": \"Location requirements for open-air, uncovered parking spaces.\",\n      \"Applicability\": \"Applies to uncovered parking spaces.\",\n      \"Exclusions\": \"Does not apply to covered structures like garages or carports.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"Location relative to front-yard setback; Location relative to street-side yard.\",\n      \"Material\": \"\",\n      \"Environmental\": \"\",\n      \"Usage Parameters\": \"\"\n    },\n    \"Constants\": {\n      \"Numerical Values\": \"10' (no-parking area measured from the street-side yard).\",\n      \"Specs, Standards, Procedures\": \"\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"Uncovered spaces must be located 'beyond the required front-yard' AND 'beyond the first 10' of the street-side yard'.\",\n      \"Optional\": \"\",\n      \"Conditional Logic\": \"\",\n      \"Dependencies\": \"\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"\",\n      \"Alternatives\": \"\",\n      \"Special Cases\": \"\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"\",\n      \"Cross-references\": \"\",\n      \"Logical Dependencies\": \"Provides the location criteria for uncovered parking, which enables the 'Garage Size Substitution' rule.\"\n    }\n  },\n  {\n    \"rule\": \"Fire-Rated Construction for Garages at Lot Line\",\n    \"Qualifiers\": {\n      \"Scope\": \"Construction requirements for garages built with zero setback to a lot line.\",\n      \"Applicability\": \"Applies to garages located 'at the lot line'.\",\n      \"Exclusions\": \"Does not apply to carports. Does not apply to garages set back from the lot line.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"Distance from lot line (must be 0).\",\n      \"Material\": \"Wall fire-rating; Roof materials.\",\n      \"Environmental\": \"\",\n      \"Usage Parameters\": \"\"\n    },\n    \"Constants\": {\n      \"Numerical Values\": \"\",\n      \"Specs, Standards, Procedures\": \"Must comply with 'Uniform Building Code (UBC)' requirements for fire-rated walls & roof materials.\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"\",\n      \"Optional\": \"\",\n      \"Conditional Logic\": \"IF a garage is built at the lot line, THEN its walls and roof must comply with UBC fire-rating requirements.\",\n      \"Dependencies\": \"\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"\",\n      \"Alternatives\": \"An alternative is to build an open-sided carport set back 3' (see 'Setback for Open-Sided Carports' rule).\",\n      \"Special Cases\": \"\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"\",\n      \"Cross-references\": \"Refers to external standard: 'Uniform Building Code (UBC)'.\",\n      \"Logical Dependencies\": \"This is a conditional requirement based on a specific siting choice (0' setback).\"\n    }\n  },\n  {\n    \"rule\": \"Setback for Open-Sided Carports\",\n    \"Qualifiers\": {\n      \"Scope\": \"Minimum setback requirements for open-sided carports from lot lines.\",\n      \"Applicability\": \"Applies to carports with open sides.\",\n      \"Exclusions\": \"Does not apply to enclosed garages.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"Distance from any lot line.\",\n      \"Material\": \"\",\n      \"Environmental\": \"\",\n      \"Usage Parameters\": \"Structure type must be 'carport with open sides'.\"\n    },\n    \"Constants\": {\n      \"Numerical Values\": \"3' (minimum distance from any lot line).\",\n      \"Specs, Standards, Procedures\": \"\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"\",\n      \"Optional\": \"\",\n      \"Conditional Logic\": \"IF structure is a carport with open sides, THEN it must be at least 3' from any lot line.\",\n      \"Dependencies\": \"\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"\",\n      \"Alternatives\": \"This rule provides an alternative to building a fire-rated structure on the lot line.\",\n      \"Special Cases\": \"\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"\",\n      \"Cross-references\": \"\",\n      \"Logical Dependencies\": \"Acts as an alternative to the 'Fire-Rated Construction' rule for parking structures near a lot line.\"\n    }\n  },\n  {\n    \"rule\": \"Garage Size Substitution\",\n    \"Qualifiers\": {\n      \"Scope\": \"Allows for substitution of a smaller garage if sufficient uncovered parking is available.\",\n      \"Applicability\": \"Applies to lots where a 2-car garage is being considered.\",\n      \"Exclusions\": \"Not applicable if there is no room for compliant uncovered parking.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"\",\n      \"Material\": \"\",\n      \"Environmental\": \"\",\n      \"Usage Parameters\": \"Garage size (1-car or 2-car); Availability of uncovered parking space.\"\n    },\n    \"Constants\": {\n      \"Numerical Values\": \"1-car; 2-car.\",\n      \"Specs, Standards, Procedures\": \"Uncovered spaces can be arranged in tandem ('tandem OK').\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"\",\n      \"Optional\": \"A 1-car garage MAY be substituted for a 2-car garage.\",\n      \"Conditional Logic\": \"IF there is room for uncovered parking in the driveway, THEN a 1-car garage may be substituted for a 2-car garage.\",\n      \"Dependencies\": \"\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"\",\n      \"Alternatives\": \"\",\n      \"Special Cases\": \"\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"\",\n      \"Cross-references\": \"Applies to examples A, B, and C on the page.\",\n      \"Logical Dependencies\": \"This rule is dependent on the ability to provide uncovered parking that complies with the 'Siting of Uncovered Parking Spaces' rule.\"\n    }\n  }\n]\n```",
+    "response_time": 52.230530738830566,
+    "input_tokens": 1177,
+    "output_tokens": 5908,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 16:14:31",
+  "model": "google/gemini-2.5-pro",
+  "success": true
+}

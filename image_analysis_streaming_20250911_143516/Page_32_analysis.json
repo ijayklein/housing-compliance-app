@@ -1,0 +1,84 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_32.png",
+  "image_name": "Page_32.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Daylight\nplane\n\nPrimary daylight plane (sides)\n\nThe daylight plane in\nconjunction with the\nsetbacks & height\nlimits, create an\ninvisible tent\n\nThe primary daylight plane regulates structures located within the buildable area.\nStructures located in the rear and/or side yards are regulated by the accessory-\nstructure daylight plan described on the next page.\n\nFig 20 Front elevation showing side primary daylight plane\n\nintended to contain\ndevelopment on the lot\nin a way that preserves\nprivacy and exposure to\nnatural light.\n\nCode sections\nPage 26\n18.12.040 (a) Table 2\nPage 27\n18.04\nPage 28\n18.12.040 (c) Table 2\nPage 29\n18.12.050 (b) (2)\n18.12.040 (j)\n\n26\n\nMax. allowed is\nMin. required by\nBuilding Code\n\n45\u00b0\n\n10' from\naverage\ngrade\n\nSide lot line\n\nAverage grade\n\nGrade at the nearest point\non the adjacent lot\n\nExisting grade of the structure\n(at midpoint of wall)\n\nNotes:\n\n\u2022 Daylight plane is measured from average grade.\n\n\u2022 Average grade is established using existing\n  grade\u2014before any grading or fill (See Fig 44 p. 42)\n\n\u2022 Side daylight plane is measured (up) at lot line.\n\n\u2022 Rear daylight plane is measured (up) at rear setback.\n\nSide lot line\n\n24' max. for protrusions\n\n*\n\nMax. building height",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "A small, white line-art diagram on a grey background depicting a simple 3D wireframe of a house-shaped structure with a gambrel roof, referred to as an 'invisible tent'.",
+          "location": "Middle of the left sidebar"
+        },
+        {
+          "type": "figure",
+          "description": "Figure 20: 'Front elevation showing side primary daylight plane'. This is a detailed architectural diagram showing the front elevation of two adjacent houses on sloped ground. It illustrates the concept of the daylight plane. Key elements shown include: a dashed line representing the daylight plane originating 10 feet above average grade at the side lot line and extending upwards at a 45-degree angle into the property. Vertical lines indicate the 'Side lot line'. Dimension lines show '24' max. for protrusions' and 'Max. building height'. Labels point to 'Average grade', 'Grade at the nearest point on the adjacent lot', and 'Existing grade of the structure (at midpoint of wall)'. A label near a chimney indicates 'Max. allowed is Min. required by Building Code'. An asterisk is next to the 'Max. building height' label.",
+          "location": "Center and right side of the page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Daylight plane start height",
+          "value": "10",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Daylight plane angle",
+          "value": "45",
+          "unit": "degrees"
+        },
+        {
+          "parameter": "Maximum height for protrusions",
+          "value": "24",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Figure Number",
+          "value": "20",
+          "unit": null
+        },
+        {
+          "parameter": "Page Number",
+          "value": "26",
+          "unit": null
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Primary daylight plane (sides)",
+        "subheadings": [
+          "Daylight plane",
+          "Code sections",
+          "Notes:"
+        ],
+        "sections": [
+          "18.12.040 (a) Table 2",
+          "18.04",
+          "18.12.040 (c) Table 2",
+          "18.12.050 (b) (2)",
+          "18.12.040 (j)"
+        ]
+      },
+      "additional_notes": [
+        "The page has a two-column layout: a narrow, grey-background sidebar on the left and a wider main content area on the right.",
+        "The page number '26' is located at the bottom of the left sidebar.",
+        "An asterisk (*) is present next to the 'Max. building height' dimension line, but no corresponding footnote or explanation is provided on the page.",
+        "The image is a clean, high-quality digital or photocopied page with no handwritten annotations or stamps."
+      ],
+      "cross_references": [
+        "accessory-structure daylight plan described on the next page.",
+        "Page 26",
+        "18.12.040 (a) Table 2",
+        "Page 27",
+        "18.04",
+        "Page 28",
+        "18.12.040 (c) Table 2",
+        "Page 29",
+        "18.12.050 (b) (2)",
+        "18.12.040 (j)",
+        "(See Fig 44 p. 42)"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-11 14:36:13",
+  "model_used": "google/gemini-2.5-pro"
+}

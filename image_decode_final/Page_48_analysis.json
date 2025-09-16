@@ -1,0 +1,82 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_48.png",
+  "image_name": "Page_48.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Light well & stairwell standards\n& site planning\n\nFig 39 Examples of site plan w/light wells & stairwells\n\nInterior lot example\n\nRear yard\n\n\u2022 Such features may not be located on the side of the struc-\nture that faces the front yard.\n\n\u2022 Maximum width (interior dimension) is 3'.\n\n\u2022 The combined length (interior dimensions of the opening\nexcluding encasing structure) of all the excavated features\nmay not exceed 30% of basement perimeter.\n\n\u2022 Allowable encroachment into required side yard is 3' max\n(however feature must be a minimum of 3' from side lot\nline).\n\n\u2022 Allowable encroachment into required rear yard is 4'.\n\n\u2022 The combined length (interior dimensions of the opening\nexcluding encasing structure) of all the excavated features\nor portions of features that encroach into the required\nyards, on all sides of the structure, may not exceed 15'.\n\n\u2022 Excavated features shall not be harmful to neighboring\ntrees.\n\n\u2022 Public Works Department must approve drainage system.\n\n3' max.\nwidth.\n\n3' min.\nfrom lot\nline (Typ.)\n\nInterior-side yard\n\nBuildable area\n\nMain dwelling\n\n3' max.\ninto side\nyard (Typ.)\n\nFront yard\n\nInterior-side yard\n\nKey\n\nCurb\nLot line\nSidewalk\nRequired\nsetbacks\nBuildable\narea\nDwelling\nLightwells\n& stairwells\nLightwells,\n& stairwells\nthat encroa\ninto the rec\nyards\n\nLightwells & stairwells\n\u2022 a + b (encroaching features) may not exceed 15'\n\u2022 a + b + c + d (all features) may not exceed 30% of\nthe perimeter of the basement\n\nNote: measurments are based on interior dimension of\nopening and exclude encasing structure.\n\n42",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "A site plan illustrating an 'Interior lot example' with a 'Rear yard' and 'Front yard'. It shows a 'Buildable area' (light grey dashed outline) containing a 'Main dwelling' (dark grey solid shape). Two lightwells/stairwells are depicted: one (black solid shape) encroaching into the interior-side yard, labeled with 'c' for its length and '3' max. width' for its width, and another (white solid shape) also in the interior-side yard, labeled with 'd' for its length. The diagram includes dimensions for setbacks and encroachments: '3' min. from lot line (Typ.)' and '3' max. into side yard (Typ.)'. The interior-side yard is labeled on both sides of the main dwelling. The diagram also shows a lightwell/stairwell (black solid shape) on the other interior-side yard, labeled with 'b' for its length, and another (white solid shape) on the rear of the dwelling, labeled with 'a' for its length. A '3' max width' label is associated with the lightwell/stairwell on the rear of the dwelling.",
+          "location": "Right side, spanning top to bottom"
+        },
+        {
+          "type": "key",
+          "description": "A legend for the site plan diagram, defining various line types and shaded areas:\n- Solid black line: Curb\n- Dashed black line: Lot line\n- Grey checkered pattern: Sidewalk\n- Dashed black line with small dashes: Required setbacks\n- Light grey shaded area with dashed outline: Buildable area\n- Dark grey shaded area: Dwelling\n- Black shaded area: Lightwells & stairwells\n- White shaded area: Lightwells, & stairwells that encroach into the required yards",
+          "location": "Bottom right of the page, below the diagram"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Maximum width of light well/stairwell (interior dimension)",
+          "value": "3",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Combined length of excavated features (excluding encasing structure) relative to basement perimeter",
+          "value": "30",
+          "unit": "percent"
+        },
+        {
+          "parameter": "Allowable encroachment into required side yard",
+          "value": "3",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum distance of feature from side lot line",
+          "value": "3",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Allowable encroachment into required rear yard",
+          "value": "4",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Combined length of excavated features or portions that encroach into required yards (all sides)",
+          "value": "15",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Combined length of encroaching features (a + b)",
+          "value": "15",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Combined length of all features (a + b + c + d) relative to basement perimeter",
+          "value": "30",
+          "unit": "percent"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Light well & stairwell standards & site planning",
+        "subheadings": [
+          "Lightwells & stairwells"
+        ],
+        "sections": [
+          "Fig 39 Examples of site plan w/light wells & stairwells",
+          "Key",
+          "Note: measurments are based on interior dimension of opening and exclude encasing structure."
+        ]
+      },
+      "additional_notes": [
+        "Page number '42' is present at the bottom left."
+      ],
+      "cross_references": [
+        "Fig 39 Examples of site plan w/light wells & stairwells"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-11 14:59:25",
+  "model_used": "google/gemini-2.5-flash"
+}

@@ -1,0 +1,357 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_23.md",
+  "file_name": "Page_23.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "Qualifiers": {
+          "title": "2nd floor equivalency counting",
+          "scope": "Counting of gross floor area (GFA) attributable to vertical volumes above the 1st-floor finished floor (spaces open to below, vaulted spaces, inaccessible attics, stairwells measured as vaulted).",
+          "applicability": [
+            "Applies to portions of building volumes that are higher than 17 ft above the top of finished floor (TFF) of the 1st floor.",
+            "Applies only to space/volume that does not already count as floor area.",
+            "Applies regardless of the floor plan configuration or usage of the space."
+          ],
+          "exclusions": [
+            "Any area already counted as floor area (no double counting)."
+          ],
+          "ambiguous_language": [
+            "\u201cAreas higher than 17' above the first floor\u201d \u2014 unclear whether height is measured to the underside of roof/ceiling, top of roof material, or another datum. Figure callouts suggest TFF-to-roof/ceiling, but this should be confirmed.",
+            "\u201cDo not already count as floor area e.g., open atrium spaces and inaccessible attic spaces\u201d \u2014 e.g. indicates examples; the full set of qualifying spaces is not enumerated.",
+            "\u201cWidth of area that counts ...\u201d \u2014 precise horizontal projection method and edge limits are not explicitly defined in text."
+          ]
+        },
+        "Variables": {
+          "height_above_first_floor_ft": {
+            "units": "ft",
+            "description": "Vertical distance from the 1st-floor TFF to the overhead surface defining the volume (roof/ceiling/structure)."
+          },
+          "counts_as_floor_area_already": {
+            "units": "boolean",
+            "description": "Whether the area is already included in floor area calculations."
+          },
+          "plan_projected_area_over_17ft_sf": {
+            "units": "sf",
+            "description": "Horizontal plan-projected area of space where height_above_first_floor_ft > 17 ft."
+          },
+          "space_category": {
+            "units": "enum",
+            "description": "Space type for context. Allowed: open_atrium, inaccessible_attic, vaulted_ceiling, stairwell, other."
+          }
+        },
+        "Constants": {
+          "second_floor_equivalency_height_threshold_ft": {
+            "value": 17,
+            "units": "ft",
+            "spec": "Threshold elevation above 1st-floor TFF that triggers 2nd-floor equivalency counting."
+          },
+          "first_floor_reference_surface": {
+            "value": "Top of finished floor (TFF) of 1st floor",
+            "units": "n/a",
+            "spec": "Reference datum for vertical measurements."
+          }
+        },
+        "Conditions": [
+          {
+            "mandatory": true,
+            "if": [
+              {
+                "var": "height_above_first_floor_ft",
+                "op": ">",
+                "value": 17
+              },
+              {
+                "var": "counts_as_floor_area_already",
+                "op": "==",
+                "value": false
+              }
+            ],
+            "then": [
+              {
+                "action": "count_toward_gfa",
+                "count_as": "2nd_floor_equivalency",
+                "area_source": "plan_projected_area_over_17ft_sf",
+                "notes": "Counts in addition to the 1st-floor area beneath."
+              }
+            ]
+          },
+          {
+            "mandatory": true,
+            "if": [],
+            "then": [
+              {
+                "action": "ignore_space_usage",
+                "notes": "Counting is independent of floor plan or usage of the space."
+              }
+            ]
+          }
+        ],
+        "Exceptions": [],
+        "Relationships": [
+          {
+            "type": "measurement_equivalence",
+            "details": "Stairwells are measured the same way as vaulted ceiling spaces for equivalency purposes.",
+            "depends_on": "Rule: Stairwells measured as vaulted spaces"
+          },
+          {
+            "type": "additive_logic",
+            "details": "2nd-floor equivalency may stack with 3rd-floor equivalency where the same plan area exceeds both thresholds.",
+            "related_rule": "3rd floor equivalency counting"
+          },
+          {
+            "type": "figure_reference",
+            "details": "Figure 12 illustrates Area B (1st + 2nd floor equivalency) and baseline widths."
+          }
+        ]
+      },
+      {
+        "Qualifiers": {
+          "title": "3rd floor equivalency counting",
+          "scope": "Counting of additional gross floor area (GFA) for vertical volumes that exceed a higher threshold above the 1st-floor finished floor.",
+          "applicability": [
+            "Applies to portions of building volumes that are higher than 26 ft above the 1st-floor TFF.",
+            "Applies only to space/volume that does not already count as floor area.",
+            "Applies regardless of the floor plan configuration or usage of the space."
+          ],
+          "exclusions": [
+            "Any area already counted as floor area (no double counting)."
+          ],
+          "ambiguous_language": [
+            "Same ambiguities regarding reference datum and projection limits as for the 17 ft threshold.",
+            "Implicit stacking with 2nd-floor equivalency is inferred from examples; text implies additive counting but does not explicitly state procedural order."
+          ]
+        },
+        "Variables": {
+          "height_above_first_floor_ft": {
+            "units": "ft",
+            "description": "Vertical distance from the 1st-floor TFF to the overhead surface defining the volume (roof/ceiling/structure)."
+          },
+          "counts_as_floor_area_already": {
+            "units": "boolean",
+            "description": "Whether the area is already included in floor area calculations."
+          },
+          "plan_projected_area_over_26ft_sf": {
+            "units": "sf",
+            "description": "Horizontal plan-projected area of space where height_above_first_floor_ft > 26 ft."
+          }
+        },
+        "Constants": {
+          "third_floor_equivalency_height_threshold_ft": {
+            "value": 26,
+            "units": "ft",
+            "spec": "Threshold elevation above 1st-floor TFF that triggers 3rd-floor equivalency counting."
+          },
+          "first_floor_reference_surface": {
+            "value": "Top of finished floor (TFF) of 1st floor",
+            "units": "n/a",
+            "spec": "Reference datum for vertical measurements."
+          }
+        },
+        "Conditions": [
+          {
+            "mandatory": true,
+            "if": [
+              {
+                "var": "height_above_first_floor_ft",
+                "op": ">",
+                "value": 26
+              },
+              {
+                "var": "counts_as_floor_area_already",
+                "op": "==",
+                "value": false
+              }
+            ],
+            "then": [
+              {
+                "action": "count_toward_gfa",
+                "count_as": "3rd_floor_equivalency",
+                "area_source": "plan_projected_area_over_26ft_sf",
+                "notes": "Counts in addition to the same area\u2019s 1st-floor and 2nd-floor equivalency counts."
+              }
+            ]
+          }
+        ],
+        "Exceptions": [
+          {
+            "type": "exemption",
+            "scope": "3rd_floor_equivalency_only",
+            "details": "Up to 200 sf of 3rd-floor equivalency may be exempted where roof pitch is 4:12 or steeper.",
+            "conditions_reference": "See Exemption rule for steep roofs",
+            "ambiguous_language": "\u201cMay be exempted\u201d implies discretionary approval; administrative process not detailed."
+          }
+        ],
+        "Relationships": [
+          {
+            "type": "additive_logic",
+            "details": "3rd-floor equivalency is additive with 2nd-floor equivalency where the same footprint exceeds both 17 ft and 26 ft.",
+            "depends_on": "2nd floor equivalency counting"
+          },
+          {
+            "type": "measurement_equivalence",
+            "details": "Stairwells measured as vaulted spaces.",
+            "depends_on": "Rule: Stairwells measured as vaulted spaces"
+          },
+          {
+            "type": "figure_reference",
+            "details": "Figure 12 illustrates Area A (1st + 2nd + 3rd floor equivalency)."
+          }
+        ]
+      },
+      {
+        "Qualifiers": {
+          "title": "Stairwells measured as vaulted ceiling spaces",
+          "scope": "Measurement method equivalence for determining 2nd/3rd floor equivalency areas.",
+          "applicability": [
+            "Applies to stairwells wherever they contribute to height-above-1st-floor volumes."
+          ],
+          "exclusions": [],
+          "ambiguous_language": [
+            "Extent of stairwell shaft to be included (e.g., above landing enclosures, under intermediate landings) is not specified; treat the stairwell void consistently with how vaulted ceiling volume is delineated."
+          ]
+        },
+        "Variables": {
+          "stairwell_void_area_sf": {
+            "units": "sf",
+            "description": "Plan-projected area of the stairwell void relevant to equivalency calculation."
+          },
+          "height_above_first_floor_ft": {
+            "units": "ft",
+            "description": "Vertical distance from the 1st-floor TFF to the overhead surface within/over the stairwell."
+          }
+        },
+        "Constants": {
+          "measurement_method": {
+            "value": "same_as_vaulted_ceiling_spaces",
+            "units": "n/a",
+            "spec": "Use the same rules for defining plan-projected area over height thresholds."
+          }
+        },
+        "Conditions": [
+          {
+            "mandatory": true,
+            "if": [],
+            "then": [
+              {
+                "action": "apply_measurement_method",
+                "details": "When evaluating stairwells for equivalency, use the vaulted ceiling measurement approach for thresholds at 17 ft and 26 ft."
+              }
+            ]
+          }
+        ],
+        "Exceptions": [],
+        "Relationships": [
+          {
+            "type": "applies_to",
+            "details": "This measurement method applies to both 2nd and 3rd floor equivalency rules.",
+            "related_rules": [
+              "2nd floor equivalency counting",
+              "3rd floor equivalency counting"
+            ]
+          }
+        ]
+      },
+      {
+        "Qualifiers": {
+          "title": "Exemption for 3rd floor equivalency with steep roofs",
+          "scope": "Optional reduction of 3rd-floor equivalency area from GFA when a minimum roof pitch is met.",
+          "applicability": [
+            "Applies only to the portion of area counted as 3rd-floor equivalency.",
+            "Applies only where the building\u2019s roof pitch is 4:12 or steeper."
+          ],
+          "exclusions": [
+            "Does not apply to 2nd-floor equivalency.",
+            "Does not apply when roof pitch is shallower than 4:12."
+          ],
+          "ambiguous_language": [
+            "\u201cMay be exempted\u201d implies discretionary approval or application by right not specified.",
+            "Scope of application (per building vs per lot vs per roof segment) is not explicit; assumed to be per building unless clarified in the Height section.",
+            "Treatment of multiple discrete 3rd-floor equivalency areas relative to the 200 sf cap is not specified; assumed total combined cap of 200 sf."
+          ]
+        },
+        "Variables": {
+          "roof_pitch_rise_run": {
+            "units": "rise:run",
+            "description": "Roof pitch expressed as inches of rise per 12 inches of run (e.g., 4:12)."
+          },
+          "third_floor_equivalency_area_total_sf": {
+            "units": "sf",
+            "description": "Total area counted as 3rd-floor equivalency before exemption."
+          },
+          "exemption_area_requested_sf": {
+            "units": "sf",
+            "description": "Area of 3rd-floor equivalency the applicant seeks to exempt."
+          }
+        },
+        "Constants": {
+          "roof_pitch_threshold_rise_run": {
+            "value": "4:12",
+            "units": "rise:run",
+            "spec": "Minimum roof pitch required to qualify for the exemption."
+          },
+          "roof_pitch_threshold_decimal_slope": {
+            "value": 0.3333,
+            "units": "ratio",
+            "spec": "Decimal slope equivalent of 4:12 for computational use (approximate)."
+          },
+          "third_floor_equivalency_exemption_cap_sf": {
+            "value": 200,
+            "units": "sf",
+            "spec": "Maximum 3rd-floor equivalency area that may be exempted."
+          }
+        },
+        "Conditions": [
+          {
+            "mandatory": false,
+            "if": [
+              {
+                "var": "roof_pitch_rise_run",
+                "op": ">=",
+                "value": "4:12",
+                "interpretation": "Compare as slope; 4:12 or steeper qualifies."
+              },
+              {
+                "var": "third_floor_equivalency_area_total_sf",
+                "op": ">",
+                "value": 0
+              }
+            ],
+            "then": [
+              {
+                "action": "allow_exemption",
+                "amount_sf": {
+                  "formula": "min(exemption_area_requested_sf, third_floor_equivalency_exemption_cap_sf, third_floor_equivalency_area_total_sf)"
+                },
+                "applies_to": "3rd_floor_equivalency_only",
+                "notes": "Exempted amount is subtracted from GFA."
+              }
+            ]
+          }
+        ],
+        "Exceptions": [
+          {
+            "type": "not_applicable",
+            "details": "If roof pitch is less than 4:12, no 3rd-floor equivalency exemption is allowed."
+          }
+        ],
+        "Relationships": [
+          {
+            "type": "modifies",
+            "details": "Modifies the outcome of the 3rd-floor equivalency counting by reducing up to 200 sf from GFA.",
+            "related_rule": "3rd floor equivalency counting"
+          },
+          {
+            "type": "cross_reference",
+            "details": "See \u201cHeight\u201d section for additional definitions/procedures related to roof pitch.",
+            "target_section": "Height"
+          }
+        ]
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "[\n  {\n    \"Qualifiers\": {\n      \"title\": \"2nd floor equivalency counting\",\n      \"scope\": \"Counting of gross floor area (GFA) attributable to vertical volumes above the 1st-floor finished floor (spaces open to below, vaulted spaces, inaccessible attics, stairwells measured as vaulted).\",\n      \"applicability\": [\n        \"Applies to portions of building volumes that are higher than 17 ft above the top of finished floor (TFF) of the 1st floor.\",\n        \"Applies only to space/volume that does not already count as floor area.\",\n        \"Applies regardless of the floor plan configuration or usage of the space.\"\n      ],\n      \"exclusions\": [\n        \"Any area already counted as floor area (no double counting).\"\n      ],\n      \"ambiguous_language\": [\n        \"\u201cAreas higher than 17' above the first floor\u201d \u2014 unclear whether height is measured to the underside of roof/ceiling, top of roof material, or another datum. Figure callouts suggest TFF-to-roof/ceiling, but this should be confirmed.\",\n        \"\u201cDo not already count as floor area e.g., open atrium spaces and inaccessible attic spaces\u201d \u2014 e.g. indicates examples; the full set of qualifying spaces is not enumerated.\",\n        \"\u201cWidth of area that counts ...\u201d \u2014 precise horizontal projection method and edge limits are not explicitly defined in text.\"\n      ]\n    },\n    \"Variables\": {\n      \"height_above_first_floor_ft\": {\n        \"units\": \"ft\",\n        \"description\": \"Vertical distance from the 1st-floor TFF to the overhead surface defining the volume (roof/ceiling/structure).\"\n      },\n      \"counts_as_floor_area_already\": {\n        \"units\": \"boolean\",\n        \"description\": \"Whether the area is already included in floor area calculations.\"\n      },\n      \"plan_projected_area_over_17ft_sf\": {\n        \"units\": \"sf\",\n        \"description\": \"Horizontal plan-projected area of space where height_above_first_floor_ft > 17 ft.\"\n      },\n      \"space_category\": {\n        \"units\": \"enum\",\n        \"description\": \"Space type for context. Allowed: open_atrium, inaccessible_attic, vaulted_ceiling, stairwell, other.\"\n      }\n    },\n    \"Constants\": {\n      \"second_floor_equivalency_height_threshold_ft\": {\n        \"value\": 17,\n        \"units\": \"ft\",\n        \"spec\": \"Threshold elevation above 1st-floor TFF that triggers 2nd-floor equivalency counting.\"\n      },\n      \"first_floor_reference_surface\": {\n        \"value\": \"Top of finished floor (TFF) of 1st floor\",\n        \"units\": \"n/a\",\n        \"spec\": \"Reference datum for vertical measurements.\"\n      }\n    },\n    \"Conditions\": [\n      {\n        \"mandatory\": true,\n        \"if\": [\n          {\n            \"var\": \"height_above_first_floor_ft\",\n            \"op\": \">\",\n            \"value\": 17\n          },\n          {\n            \"var\": \"counts_as_floor_area_already\",\n            \"op\": \"==\",\n            \"value\": false\n          }\n        ],\n        \"then\": [\n          {\n            \"action\": \"count_toward_gfa\",\n            \"count_as\": \"2nd_floor_equivalency\",\n            \"area_source\": \"plan_projected_area_over_17ft_sf\",\n            \"notes\": \"Counts in addition to the 1st-floor area beneath.\"\n          }\n        ]\n      },\n      {\n        \"mandatory\": true,\n        \"if\": [],\n        \"then\": [\n          {\n            \"action\": \"ignore_space_usage\",\n            \"notes\": \"Counting is independent of floor plan or usage of the space.\"\n          }\n        ]\n      }\n    ],\n    \"Exceptions\": [],\n    \"Relationships\": [\n      {\n        \"type\": \"measurement_equivalence\",\n        \"details\": \"Stairwells are measured the same way as vaulted ceiling spaces for equivalency purposes.\",\n        \"depends_on\": \"Rule: Stairwells measured as vaulted spaces\"\n      },\n      {\n        \"type\": \"additive_logic\",\n        \"details\": \"2nd-floor equivalency may stack with 3rd-floor equivalency where the same plan area exceeds both thresholds.\",\n        \"related_rule\": \"3rd floor equivalency counting\"\n      },\n      {\n        \"type\": \"figure_reference\",\n        \"details\": \"Figure 12 illustrates Area B (1st + 2nd floor equivalency) and baseline widths.\"\n      }\n    ]\n  },\n  {\n    \"Qualifiers\": {\n      \"title\": \"3rd floor equivalency counting\",\n      \"scope\": \"Counting of additional gross floor area (GFA) for vertical volumes that exceed a higher threshold above the 1st-floor finished floor.\",\n      \"applicability\": [\n        \"Applies to portions of building volumes that are higher than 26 ft above the 1st-floor TFF.\",\n        \"Applies only to space/volume that does not already count as floor area.\",\n        \"Applies regardless of the floor plan configuration or usage of the space.\"\n      ],\n      \"exclusions\": [\n        \"Any area already counted as floor area (no double counting).\"\n      ],\n      \"ambiguous_language\": [\n        \"Same ambiguities regarding reference datum and projection limits as for the 17 ft threshold.\",\n        \"Implicit stacking with 2nd-floor equivalency is inferred from examples; text implies additive counting but does not explicitly state procedural order.\"\n      ]\n    },\n    \"Variables\": {\n      \"height_above_first_floor_ft\": {\n        \"units\": \"ft\",\n        \"description\": \"Vertical distance from the 1st-floor TFF to the overhead surface defining the volume (roof/ceiling/structure).\"\n      },\n      \"counts_as_floor_area_already\": {\n        \"units\": \"boolean\",\n        \"description\": \"Whether the area is already included in floor area calculations.\"\n      },\n      \"plan_projected_area_over_26ft_sf\": {\n        \"units\": \"sf\",\n        \"description\": \"Horizontal plan-projected area of space where height_above_first_floor_ft > 26 ft.\"\n      }\n    },\n    \"Constants\": {\n      \"third_floor_equivalency_height_threshold_ft\": {\n        \"value\": 26,\n        \"units\": \"ft\",\n        \"spec\": \"Threshold elevation above 1st-floor TFF that triggers 3rd-floor equivalency counting.\"\n      },\n      \"first_floor_reference_surface\": {\n        \"value\": \"Top of finished floor (TFF) of 1st floor\",\n        \"units\": \"n/a\",\n        \"spec\": \"Reference datum for vertical measurements.\"\n      }\n    },\n    \"Conditions\": [\n      {\n        \"mandatory\": true,\n        \"if\": [\n          {\n            \"var\": \"height_above_first_floor_ft\",\n            \"op\": \">\",\n            \"value\": 26\n          },\n          {\n            \"var\": \"counts_as_floor_area_already\",\n            \"op\": \"==\",\n            \"value\": false\n          }\n        ],\n        \"then\": [\n          {\n            \"action\": \"count_toward_gfa\",\n            \"count_as\": \"3rd_floor_equivalency\",\n            \"area_source\": \"plan_projected_area_over_26ft_sf\",\n            \"notes\": \"Counts in addition to the same area\u2019s 1st-floor and 2nd-floor equivalency counts.\"\n          }\n        ]\n      }\n    ],\n    \"Exceptions\": [\n      {\n        \"type\": \"exemption\",\n        \"scope\": \"3rd_floor_equivalency_only\",\n        \"details\": \"Up to 200 sf of 3rd-floor equivalency may be exempted where roof pitch is 4:12 or steeper.\",\n        \"conditions_reference\": \"See Exemption rule for steep roofs\",\n        \"ambiguous_language\": \"\u201cMay be exempted\u201d implies discretionary approval; administrative process not detailed.\"\n      }\n    ],\n    \"Relationships\": [\n      {\n        \"type\": \"additive_logic\",\n        \"details\": \"3rd-floor equivalency is additive with 2nd-floor equivalency where the same footprint exceeds both 17 ft and 26 ft.\",\n        \"depends_on\": \"2nd floor equivalency counting\"\n      },\n      {\n        \"type\": \"measurement_equivalence\",\n        \"details\": \"Stairwells measured as vaulted spaces.\",\n        \"depends_on\": \"Rule: Stairwells measured as vaulted spaces\"\n      },\n      {\n        \"type\": \"figure_reference\",\n        \"details\": \"Figure 12 illustrates Area A (1st + 2nd + 3rd floor equivalency).\"\n      }\n    ]\n  },\n  {\n    \"Qualifiers\": {\n      \"title\": \"Stairwells measured as vaulted ceiling spaces\",\n      \"scope\": \"Measurement method equivalence for determining 2nd/3rd floor equivalency areas.\",\n      \"applicability\": [\n        \"Applies to stairwells wherever they contribute to height-above-1st-floor volumes.\"\n      ],\n      \"exclusions\": [],\n      \"ambiguous_language\": [\n        \"Extent of stairwell shaft to be included (e.g., above landing enclosures, under intermediate landings) is not specified; treat the stairwell void consistently with how vaulted ceiling volume is delineated.\"\n      ]\n    },\n    \"Variables\": {\n      \"stairwell_void_area_sf\": {\n        \"units\": \"sf\",\n        \"description\": \"Plan-projected area of the stairwell void relevant to equivalency calculation.\"\n      },\n      \"height_above_first_floor_ft\": {\n        \"units\": \"ft\",\n        \"description\": \"Vertical distance from the 1st-floor TFF to the overhead surface within/over the stairwell.\"\n      }\n    },\n    \"Constants\": {\n      \"measurement_method\": {\n        \"value\": \"same_as_vaulted_ceiling_spaces\",\n        \"units\": \"n/a\",\n        \"spec\": \"Use the same rules for defining plan-projected area over height thresholds.\"\n      }\n    },\n    \"Conditions\": [\n      {\n        \"mandatory\": true,\n        \"if\": [],\n        \"then\": [\n          {\n            \"action\": \"apply_measurement_method\",\n            \"details\": \"When evaluating stairwells for equivalency, use the vaulted ceiling measurement approach for thresholds at 17 ft and 26 ft.\"\n          }\n        ]\n      }\n    ],\n    \"Exceptions\": [],\n    \"Relationships\": [\n      {\n        \"type\": \"applies_to\",\n        \"details\": \"This measurement method applies to both 2nd and 3rd floor equivalency rules.\",\n        \"related_rules\": [\n          \"2nd floor equivalency counting\",\n          \"3rd floor equivalency counting\"\n        ]\n      }\n    ]\n  },\n  {\n    \"Qualifiers\": {\n      \"title\": \"Exemption for 3rd floor equivalency with steep roofs\",\n      \"scope\": \"Optional reduction of 3rd-floor equivalency area from GFA when a minimum roof pitch is met.\",\n      \"applicability\": [\n        \"Applies only to the portion of area counted as 3rd-floor equivalency.\",\n        \"Applies only where the building\u2019s roof pitch is 4:12 or steeper.\"\n      ],\n      \"exclusions\": [\n        \"Does not apply to 2nd-floor equivalency.\",\n        \"Does not apply when roof pitch is shallower than 4:12.\"\n      ],\n      \"ambiguous_language\": [\n        \"\u201cMay be exempted\u201d implies discretionary approval or application by right not specified.\",\n        \"Scope of application (per building vs per lot vs per roof segment) is not explicit; assumed to be per building unless clarified in the Height section.\",\n        \"Treatment of multiple discrete 3rd-floor equivalency areas relative to the 200 sf cap is not specified; assumed total combined cap of 200 sf.\"\n      ]\n    },\n    \"Variables\": {\n      \"roof_pitch_rise_run\": {\n        \"units\": \"rise:run\",\n        \"description\": \"Roof pitch expressed as inches of rise per 12 inches of run (e.g., 4:12).\"\n      },\n      \"third_floor_equivalency_area_total_sf\": {\n        \"units\": \"sf\",\n        \"description\": \"Total area counted as 3rd-floor equivalency before exemption.\"\n      },\n      \"exemption_area_requested_sf\": {\n        \"units\": \"sf\",\n        \"description\": \"Area of 3rd-floor equivalency the applicant seeks to exempt.\"\n      }\n    },\n    \"Constants\": {\n      \"roof_pitch_threshold_rise_run\": {\n        \"value\": \"4:12\",\n        \"units\": \"rise:run\",\n        \"spec\": \"Minimum roof pitch required to qualify for the exemption.\"\n      },\n      \"roof_pitch_threshold_decimal_slope\": {\n        \"value\": 0.3333,\n        \"units\": \"ratio\",\n        \"spec\": \"Decimal slope equivalent of 4:12 for computational use (approximate).\"\n      },\n      \"third_floor_equivalency_exemption_cap_sf\": {\n        \"value\": 200,\n        \"units\": \"sf\",\n        \"spec\": \"Maximum 3rd-floor equivalency area that may be exempted.\"\n      }\n    },\n    \"Conditions\": [\n      {\n        \"mandatory\": false,\n        \"if\": [\n          {\n            \"var\": \"roof_pitch_rise_run\",\n            \"op\": \">=\",\n            \"value\": \"4:12\",\n            \"interpretation\": \"Compare as slope; 4:12 or steeper qualifies.\"\n          },\n          {\n            \"var\": \"third_floor_equivalency_area_total_sf\",\n            \"op\": \">\",\n            \"value\": 0\n          }\n        ],\n        \"then\": [\n          {\n            \"action\": \"allow_exemption\",\n            \"amount_sf\": {\n              \"formula\": \"min(exemption_area_requested_sf, third_floor_equivalency_exemption_cap_sf, third_floor_equivalency_area_total_sf)\"\n            },\n            \"applies_to\": \"3rd_floor_equivalency_only\",\n            \"notes\": \"Exempted amount is subtracted from GFA.\"\n          }\n        ]\n      }\n    ],\n    \"Exceptions\": [\n      {\n        \"type\": \"not_applicable\",\n        \"details\": \"If roof pitch is less than 4:12, no 3rd-floor equivalency exemption is allowed.\"\n      }\n    ],\n    \"Relationships\": [\n      {\n        \"type\": \"modifies\",\n        \"details\": \"Modifies the outcome of the 3rd-floor equivalency counting by reducing up to 200 sf from GFA.\",\n        \"related_rule\": \"3rd floor equivalency counting\"\n      },\n      {\n        \"type\": \"cross_reference\",\n        \"details\": \"See \u201cHeight\u201d section for additional definitions/procedures related to roof pitch.\",\n        \"target_section\": \"Height\"\n      }\n    ]\n  }\n]"
+  },
+  "timestamp": "2025-09-16 15:00:11",
+  "model": "openai/gpt-5",
+  "success": true
+}

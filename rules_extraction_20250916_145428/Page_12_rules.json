@@ -1,0 +1,426 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_12.md",
+  "file_name": "Page_12.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "Qualifiers": {
+          "scope": "Assessment of Gross Floor Area (GFA)",
+          "applicability": [
+            "Porches",
+            "Entry features",
+            "Balconies",
+            "Outdoor areas associated with dwelling facades"
+          ],
+          "exclusions": [
+            "Elements outside the categories enumerated on this page"
+          ],
+          "notes": [
+            "This page organizes features into categories for GFA counting purposes."
+          ],
+          "code_references": [
+            "18.04.030(a)(65)",
+            "18.04.030(q)([illegible])",
+            "18.04.030([illegible])",
+            "18.12.040(b) Table 3"
+          ]
+        },
+        "Variables": {
+          "feature.type": {
+            "domain": [
+              "porch",
+              "entry_feature",
+              "balcony",
+              "outdoor_area"
+            ],
+            "description": "Feature classification prior to applying category-specific rules."
+          },
+          "feature.roofed": {
+            "type": "boolean"
+          },
+          "feature.floor_level": {
+            "domain": [
+              "first_floor",
+              "upper_floors"
+            ]
+          },
+          "feature.height_from_grade_ft": {
+            "type": "number",
+            "units": "feet"
+          },
+          "feature.recessed": {
+            "type": "boolean"
+          },
+          "feature.openness_of_sides": {
+            "type": "qualitative_or_percentage",
+            "description": "Degree to which side walls/surfaces are open to exterior"
+          },
+          "feature.depth_ft": {
+            "type": "number",
+            "units": "feet"
+          },
+          "gfa.count_multiplier": {
+            "type": "integer",
+            "allowed_values": [
+              0,
+              1,
+              2
+            ],
+            "description": "How many times the feature\u2019s area is counted toward GFA"
+          }
+        },
+        "Constants": {
+          "height_threshold_entry_low_ft": {
+            "value": 12,
+            "units": "feet",
+            "applies_to": "Roofed entry features on the first floor"
+          },
+          "height_threshold_recessed_porch_high_ft": {
+            "value": 17,
+            "units": "feet",
+            "applies_to": "Recessed porches on the first floor"
+          },
+          "count_values": {
+            "DO_NOT_COUNT": 0,
+            "COUNT_ONCE": 1,
+            "COUNT_TWICE": 2
+          }
+        },
+        "Conditions": [
+          {
+            "category": "Non-roofed porches/entryways/balconies/etc.",
+            "trigger": {
+              "all": [
+                {
+                  "var": "feature.roofed",
+                  "op": "==",
+                  "val": false
+                }
+              ]
+            },
+            "outcome": {
+              "gfa.count_multiplier": 0
+            },
+            "notes": [
+              "Text states 'generally do not count' implying potential exceptions elsewhere."
+            ],
+            "citations": []
+          },
+          {
+            "category": "Roofed porches on the first floor",
+            "trigger": {
+              "all": [
+                {
+                  "var": "feature.type",
+                  "op": "==",
+                  "val": "porch"
+                },
+                {
+                  "var": "feature.roofed",
+                  "op": "==",
+                  "val": true
+                },
+                {
+                  "var": "feature.floor_level",
+                  "op": "==",
+                  "val": "first_floor"
+                }
+              ]
+            },
+            "logic": [
+              "Whether the porch counts toward GFA depends on feature.openness_of_sides (thresholds not provided)."
+            ],
+            "outcome_if_counts": {
+              "gfa.count_multiplier": 1
+            },
+            "invariances": [
+              "Outcome is independent of feature.height_from_grade_ft ('regardless of the height')."
+            ],
+            "citations": [
+              "Figure 4 A & D on p.7",
+              "Figure 5 on p.8"
+            ]
+          },
+          {
+            "category": "Roofed entry features on the first floor, less than 12 ft high from grade",
+            "trigger": {
+              "all": [
+                {
+                  "var": "feature.type",
+                  "op": "==",
+                  "val": "entry_feature"
+                },
+                {
+                  "var": "feature.roofed",
+                  "op": "==",
+                  "val": true
+                },
+                {
+                  "var": "feature.floor_level",
+                  "op": "==",
+                  "val": "first_floor"
+                },
+                {
+                  "var": "feature.height_from_grade_ft",
+                  "op": "<",
+                  "val": 12
+                }
+              ]
+            },
+            "outcome": {
+              "gfa.count_multiplier": 1
+            },
+            "invariances": [
+              "Outcome is independent of design and feature.openness_of_sides."
+            ],
+            "citations": [
+              "Figure 4 B on p.7"
+            ]
+          },
+          {
+            "category": "Roofed entry features on the first floor, more than 12 ft high from grade (vaulted entry feature)",
+            "trigger": {
+              "all": [
+                {
+                  "var": "feature.type",
+                  "op": "==",
+                  "val": "entry_feature"
+                },
+                {
+                  "var": "feature.roofed",
+                  "op": "==",
+                  "val": true
+                },
+                {
+                  "var": "feature.floor_level",
+                  "op": "==",
+                  "val": "first_floor"
+                },
+                {
+                  "var": "feature.height_from_grade_ft",
+                  "op": ">",
+                  "val": 12
+                }
+              ]
+            },
+            "outcome": {
+              "gfa.count_multiplier": 2
+            },
+            "invariances": [
+              "Outcome is independent of design and feature.openness_of_sides."
+            ],
+            "citations": [
+              "Figure 4 C & D on p.7",
+              "Figure 6, 7, & 8 on pp. 11\u201313"
+            ]
+          },
+          {
+            "category": "Recessed porches on the first floor",
+            "trigger": {
+              "all": [
+                {
+                  "var": "feature.type",
+                  "op": "==",
+                  "val": "porch"
+                },
+                {
+                  "var": "feature.recessed",
+                  "op": "==",
+                  "val": true
+                },
+                {
+                  "var": "feature.floor_level",
+                  "op": "==",
+                  "val": "first_floor"
+                }
+              ]
+            },
+            "logic": [
+              "Whether the porch counts toward GFA depends on feature.height_from_grade_ft, feature.depth_ft, and feature.openness_of_sides (specific thresholds not provided)."
+            ],
+            "outcome_if_counts_and_height_lt_17ft": {
+              "condition": {
+                "var": "feature.height_from_grade_ft",
+                "op": "<",
+                "val": 17
+              },
+              "gfa.count_multiplier": 1
+            },
+            "outcome_if_counts_and_height_gt_17ft": {
+              "condition": {
+                "var": "feature.height_from_grade_ft",
+                "op": ">",
+                "val": 17
+              },
+              "gfa.count_multiplier": 2
+            },
+            "citations": [
+              "Figure 9 on p.14"
+            ]
+          },
+          {
+            "category": "Roofed balconies/outdoor areas on upper floors",
+            "trigger": {
+              "all": [
+                {
+                  "var": "feature.type",
+                  "op": "in",
+                  "val": [
+                    "balcony",
+                    "outdoor_area"
+                  ]
+                },
+                {
+                  "var": "feature.roofed",
+                  "op": "==",
+                  "val": true
+                },
+                {
+                  "var": "feature.floor_level",
+                  "op": "==",
+                  "val": "upper_floors"
+                }
+              ]
+            },
+            "outcome": {
+              "gfa.count_multiplier": 1
+            },
+            "invariances": [
+              "Outcome is independent of design and feature.openness_of_sides."
+            ],
+            "citations": [
+              "Figure 10 on p.15"
+            ]
+          }
+        ],
+        "Exceptions": [
+          {
+            "type": "ambiguity",
+            "description": "Non-roofed features 'generally do not count' implies unspecified exceptions; the exceptions are not provided on this page."
+          },
+          {
+            "type": "ambiguity",
+            "description": "Criteria/thresholds for 'openness of the sides' are not defined; cannot deterministically evaluate without external definitions."
+          },
+          {
+            "type": "ambiguity",
+            "description": "For recessed porches, specific thresholds for height, depth, and openness that trigger counting are not provided."
+          },
+          {
+            "type": "boundary_condition_unspecified",
+            "description": "Exactly 12 ft height for roofed entry features is not specified (rules cover '< 12 ft' and '> 12 ft' only)."
+          },
+          {
+            "type": "boundary_condition_unspecified",
+            "description": "Exactly 17 ft height for recessed porches is not specified (rules cover '< 17 ft' and '> 17 ft' only)."
+          },
+          {
+            "type": "terminology",
+            "description": "The term 'upper floors' is not explicitly defined (e.g., whether mezzanines or rooftop levels are included)."
+          }
+        ],
+        "Relationships": {
+          "hierarchical": [
+            "Feature classification (porch vs entry_feature vs balcony/outdoor_area) precedes application of category-specific GFA counting rules.",
+            "Within entry features on first floor, height_from_grade_ft bifurcates outcomes (<12 ft vs >12 ft).",
+            "Within recessed porches, height_from_grade_ft bifurcates count outcome if the porch is determined to count."
+          ],
+          "cross_references": {
+            "figures": [
+              "Figure 4 A, B, C, D (p.7)",
+              "Figure 5 (p.8)",
+              "Figure 6 (p.11)",
+              "Figure 7 (p.12)",
+              "Figure 8 (p.13)",
+              "Figure 9 (p.14)",
+              "Figure 10 (p.15)"
+            ],
+            "code_sections": [
+              "18.04.030(a)(65)",
+              "18.04.030(q)([illegible])",
+              "18.04.030([illegible])",
+              "18.12.040(b) Table 3"
+            ],
+            "notes": [
+              "Two code references contain illegible subsection identifiers; exact cross-reference should be confirmed from source."
+            ]
+          },
+          "logical_dependencies": [
+            "gfa.count_multiplier for roofed porches on first floor depends on feature.openness_of_sides only (height is irrelevant).",
+            "gfa.count_multiplier for roofed entry features on first floor depends on feature.height_from_grade_ft only (design/openness are irrelevant).",
+            "For recessed porches on first floor, a prior determination ('counts or not') depends on height, depth, and openness; only after it 'counts' does height determine 1x vs 2x."
+          ]
+        }
+      },
+      {
+        "Qualifiers": {
+          "scope": "Classification rule used to distinguish porch vs entry feature for GFA categorization",
+          "applicability": [
+            "Any covered or uncovered feature serving as an entry or porch-like area"
+          ],
+          "exclusions": [],
+          "code_references": [],
+          "notes": [
+            "This classification affects which counting rule applies in GFA assessment."
+          ]
+        },
+        "Variables": {
+          "feature.intended_uses": {
+            "type": "set_of_activities",
+            "examples": [
+              "entering",
+              "leaving",
+              "sitting",
+              "socializing",
+              "storage",
+              "circulation"
+            ]
+          },
+          "feature.can_accommodate_more_than_entry_exit": {
+            "type": "boolean",
+            "derivation": "True if the feature can clearly accommodate activities beyond entering and leaving the house."
+          },
+          "feature.type": {
+            "domain": [
+              "porch",
+              "entry_feature"
+            ]
+          }
+        },
+        "Constants": {},
+        "Conditions": [
+          {
+            "rule": "Porch vs entry feature distinction",
+            "logic": [
+              "IF feature.can_accommodate_more_than_entry_exit == true THEN feature.type = 'porch'",
+              "ELSE feature.type = 'entry_feature'"
+            ],
+            "citations": [
+              "Right-side callout box"
+            ]
+          }
+        ],
+        "Exceptions": [
+          {
+            "type": "ambiguity",
+            "description": "The phrase 'can clearly accommodate' is subjective; no objective dimensional or furnishing criteria are provided."
+          }
+        ],
+        "Relationships": {
+          "dependencies": [
+            "This classification must be resolved before applying any of the GFA counting conditions for porches or entry features."
+          ],
+          "cross_references": [],
+          "impacts": [
+            "Determines whether the 12 ft and 17 ft thresholds and 'openness' criteria apply under the correct category."
+          ]
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "[\n  {\n    \"Qualifiers\": {\n      \"scope\": \"Assessment of Gross Floor Area (GFA)\",\n      \"applicability\": [\n        \"Porches\",\n        \"Entry features\",\n        \"Balconies\",\n        \"Outdoor areas associated with dwelling facades\"\n      ],\n      \"exclusions\": [\n        \"Elements outside the categories enumerated on this page\"\n      ],\n      \"notes\": [\n        \"This page organizes features into categories for GFA counting purposes.\"\n      ],\n      \"code_references\": [\n        \"18.04.030(a)(65)\",\n        \"18.04.030(q)([illegible])\",\n        \"18.04.030([illegible])\",\n        \"18.12.040(b) Table 3\"\n      ]\n    },\n    \"Variables\": {\n      \"feature.type\": {\n        \"domain\": [\n          \"porch\",\n          \"entry_feature\",\n          \"balcony\",\n          \"outdoor_area\"\n        ],\n        \"description\": \"Feature classification prior to applying category-specific rules.\"\n      },\n      \"feature.roofed\": {\n        \"type\": \"boolean\"\n      },\n      \"feature.floor_level\": {\n        \"domain\": [\n          \"first_floor\",\n          \"upper_floors\"\n        ]\n      },\n      \"feature.height_from_grade_ft\": {\n        \"type\": \"number\",\n        \"units\": \"feet\"\n      },\n      \"feature.recessed\": {\n        \"type\": \"boolean\"\n      },\n      \"feature.openness_of_sides\": {\n        \"type\": \"qualitative_or_percentage\",\n        \"description\": \"Degree to which side walls/surfaces are open to exterior\"\n      },\n      \"feature.depth_ft\": {\n        \"type\": \"number\",\n        \"units\": \"feet\"\n      },\n      \"gfa.count_multiplier\": {\n        \"type\": \"integer\",\n        \"allowed_values\": [\n          0,\n          1,\n          2\n        ],\n        \"description\": \"How many times the feature\u2019s area is counted toward GFA\"\n      }\n    },\n    \"Constants\": {\n      \"height_threshold_entry_low_ft\": {\n        \"value\": 12,\n        \"units\": \"feet\",\n        \"applies_to\": \"Roofed entry features on the first floor\"\n      },\n      \"height_threshold_recessed_porch_high_ft\": {\n        \"value\": 17,\n        \"units\": \"feet\",\n        \"applies_to\": \"Recessed porches on the first floor\"\n      },\n      \"count_values\": {\n        \"DO_NOT_COUNT\": 0,\n        \"COUNT_ONCE\": 1,\n        \"COUNT_TWICE\": 2\n      }\n    },\n    \"Conditions\": [\n      {\n        \"category\": \"Non-roofed porches/entryways/balconies/etc.\",\n        \"trigger\": {\n          \"all\": [\n            {\n              \"var\": \"feature.roofed\",\n              \"op\": \"==\",\n              \"val\": false\n            }\n          ]\n        },\n        \"outcome\": {\n          \"gfa.count_multiplier\": 0\n        },\n        \"notes\": [\n          \"Text states 'generally do not count' implying potential exceptions elsewhere.\"\n        ],\n        \"citations\": []\n      },\n      {\n        \"category\": \"Roofed porches on the first floor\",\n        \"trigger\": {\n          \"all\": [\n            {\n              \"var\": \"feature.type\",\n              \"op\": \"==\",\n              \"val\": \"porch\"\n            },\n            {\n              \"var\": \"feature.roofed\",\n              \"op\": \"==\",\n              \"val\": true\n            },\n            {\n              \"var\": \"feature.floor_level\",\n              \"op\": \"==\",\n              \"val\": \"first_floor\"\n            }\n          ]\n        },\n        \"logic\": [\n          \"Whether the porch counts toward GFA depends on feature.openness_of_sides (thresholds not provided).\"\n        ],\n        \"outcome_if_counts\": {\n          \"gfa.count_multiplier\": 1\n        },\n        \"invariances\": [\n          \"Outcome is independent of feature.height_from_grade_ft ('regardless of the height').\"\n        ],\n        \"citations\": [\n          \"Figure 4 A & D on p.7\",\n          \"Figure 5 on p.8\"\n        ]\n      },\n      {\n        \"category\": \"Roofed entry features on the first floor, less than 12 ft high from grade\",\n        \"trigger\": {\n          \"all\": [\n            {\n              \"var\": \"feature.type\",\n              \"op\": \"==\",\n              \"val\": \"entry_feature\"\n            },\n            {\n              \"var\": \"feature.roofed\",\n              \"op\": \"==\",\n              \"val\": true\n            },\n            {\n              \"var\": \"feature.floor_level\",\n              \"op\": \"==\",\n              \"val\": \"first_floor\"\n            },\n            {\n              \"var\": \"feature.height_from_grade_ft\",\n              \"op\": \"<\",\n              \"val\": 12\n            }\n          ]\n        },\n        \"outcome\": {\n          \"gfa.count_multiplier\": 1\n        },\n        \"invariances\": [\n          \"Outcome is independent of design and feature.openness_of_sides.\"\n        ],\n        \"citations\": [\n          \"Figure 4 B on p.7\"\n        ]\n      },\n      {\n        \"category\": \"Roofed entry features on the first floor, more than 12 ft high from grade (vaulted entry feature)\",\n        \"trigger\": {\n          \"all\": [\n            {\n              \"var\": \"feature.type\",\n              \"op\": \"==\",\n              \"val\": \"entry_feature\"\n            },\n            {\n              \"var\": \"feature.roofed\",\n              \"op\": \"==\",\n              \"val\": true\n            },\n            {\n              \"var\": \"feature.floor_level\",\n              \"op\": \"==\",\n              \"val\": \"first_floor\"\n            },\n            {\n              \"var\": \"feature.height_from_grade_ft\",\n              \"op\": \">\",\n              \"val\": 12\n            }\n          ]\n        },\n        \"outcome\": {\n          \"gfa.count_multiplier\": 2\n        },\n        \"invariances\": [\n          \"Outcome is independent of design and feature.openness_of_sides.\"\n        ],\n        \"citations\": [\n          \"Figure 4 C & D on p.7\",\n          \"Figure 6, 7, & 8 on pp. 11\u201313\"\n        ]\n      },\n      {\n        \"category\": \"Recessed porches on the first floor\",\n        \"trigger\": {\n          \"all\": [\n            {\n              \"var\": \"feature.type\",\n              \"op\": \"==\",\n              \"val\": \"porch\"\n            },\n            {\n              \"var\": \"feature.recessed\",\n              \"op\": \"==\",\n              \"val\": true\n            },\n            {\n              \"var\": \"feature.floor_level\",\n              \"op\": \"==\",\n              \"val\": \"first_floor\"\n            }\n          ]\n        },\n        \"logic\": [\n          \"Whether the porch counts toward GFA depends on feature.height_from_grade_ft, feature.depth_ft, and feature.openness_of_sides (specific thresholds not provided).\"\n        ],\n        \"outcome_if_counts_and_height_lt_17ft\": {\n          \"condition\": {\n            \"var\": \"feature.height_from_grade_ft\",\n            \"op\": \"<\",\n            \"val\": 17\n          },\n          \"gfa.count_multiplier\": 1\n        },\n        \"outcome_if_counts_and_height_gt_17ft\": {\n          \"condition\": {\n            \"var\": \"feature.height_from_grade_ft\",\n            \"op\": \">\",\n            \"val\": 17\n          },\n          \"gfa.count_multiplier\": 2\n        },\n        \"citations\": [\n          \"Figure 9 on p.14\"\n        ]\n      },\n      {\n        \"category\": \"Roofed balconies/outdoor areas on upper floors\",\n        \"trigger\": {\n          \"all\": [\n            {\n              \"var\": \"feature.type\",\n              \"op\": \"in\",\n              \"val\": [\n                \"balcony\",\n                \"outdoor_area\"\n              ]\n            },\n            {\n              \"var\": \"feature.roofed\",\n              \"op\": \"==\",\n              \"val\": true\n            },\n            {\n              \"var\": \"feature.floor_level\",\n              \"op\": \"==\",\n              \"val\": \"upper_floors\"\n            }\n          ]\n        },\n        \"outcome\": {\n          \"gfa.count_multiplier\": 1\n        },\n        \"invariances\": [\n          \"Outcome is independent of design and feature.openness_of_sides.\"\n        ],\n        \"citations\": [\n          \"Figure 10 on p.15\"\n        ]\n      }\n    ],\n    \"Exceptions\": [\n      {\n        \"type\": \"ambiguity\",\n        \"description\": \"Non-roofed features 'generally do not count' implies unspecified exceptions; the exceptions are not provided on this page.\"\n      },\n      {\n        \"type\": \"ambiguity\",\n        \"description\": \"Criteria/thresholds for 'openness of the sides' are not defined; cannot deterministically evaluate without external definitions.\"\n      },\n      {\n        \"type\": \"ambiguity\",\n        \"description\": \"For recessed porches, specific thresholds for height, depth, and openness that trigger counting are not provided.\"\n      },\n      {\n        \"type\": \"boundary_condition_unspecified\",\n        \"description\": \"Exactly 12 ft height for roofed entry features is not specified (rules cover '< 12 ft' and '> 12 ft' only).\"\n      },\n      {\n        \"type\": \"boundary_condition_unspecified\",\n        \"description\": \"Exactly 17 ft height for recessed porches is not specified (rules cover '< 17 ft' and '> 17 ft' only).\"\n      },\n      {\n        \"type\": \"terminology\",\n        \"description\": \"The term 'upper floors' is not explicitly defined (e.g., whether mezzanines or rooftop levels are included).\"\n      }\n    ],\n    \"Relationships\": {\n      \"hierarchical\": [\n        \"Feature classification (porch vs entry_feature vs balcony/outdoor_area) precedes application of category-specific GFA counting rules.\",\n        \"Within entry features on first floor, height_from_grade_ft bifurcates outcomes (<12 ft vs >12 ft).\",\n        \"Within recessed porches, height_from_grade_ft bifurcates count outcome if the porch is determined to count.\"\n      ],\n      \"cross_references\": {\n        \"figures\": [\n          \"Figure 4 A, B, C, D (p.7)\",\n          \"Figure 5 (p.8)\",\n          \"Figure 6 (p.11)\",\n          \"Figure 7 (p.12)\",\n          \"Figure 8 (p.13)\",\n          \"Figure 9 (p.14)\",\n          \"Figure 10 (p.15)\"\n        ],\n        \"code_sections\": [\n          \"18.04.030(a)(65)\",\n          \"18.04.030(q)([illegible])\",\n          \"18.04.030([illegible])\",\n          \"18.12.040(b) Table 3\"\n        ],\n        \"notes\": [\n          \"Two code references contain illegible subsection identifiers; exact cross-reference should be confirmed from source.\"\n        ]\n      },\n      \"logical_dependencies\": [\n        \"gfa.count_multiplier for roofed porches on first floor depends on feature.openness_of_sides only (height is irrelevant).\",\n        \"gfa.count_multiplier for roofed entry features on first floor depends on feature.height_from_grade_ft only (design/openness are irrelevant).\",\n        \"For recessed porches on first floor, a prior determination ('counts or not') depends on height, depth, and openness; only after it 'counts' does height determine 1x vs 2x.\"\n      ]\n    }\n  },\n  {\n    \"Qualifiers\": {\n      \"scope\": \"Classification rule used to distinguish porch vs entry feature for GFA categorization\",\n      \"applicability\": [\n        \"Any covered or uncovered feature serving as an entry or porch-like area\"\n      ],\n      \"exclusions\": [],\n      \"code_references\": [],\n      \"notes\": [\n        \"This classification affects which counting rule applies in GFA assessment.\"\n      ]\n    },\n    \"Variables\": {\n      \"feature.intended_uses\": {\n        \"type\": \"set_of_activities\",\n        \"examples\": [\n          \"entering\",\n          \"leaving\",\n          \"sitting\",\n          \"socializing\",\n          \"storage\",\n          \"circulation\"\n        ]\n      },\n      \"feature.can_accommodate_more_than_entry_exit\": {\n        \"type\": \"boolean\",\n        \"derivation\": \"True if the feature can clearly accommodate activities beyond entering and leaving the house.\"\n      },\n      \"feature.type\": {\n        \"domain\": [\n          \"porch\",\n          \"entry_feature\"\n        ]\n      }\n    },\n    \"Constants\": {},\n    \"Conditions\": [\n      {\n        \"rule\": \"Porch vs entry feature distinction\",\n        \"logic\": [\n          \"IF feature.can_accommodate_more_than_entry_exit == true THEN feature.type = 'porch'\",\n          \"ELSE feature.type = 'entry_feature'\"\n        ],\n        \"citations\": [\n          \"Right-side callout box\"\n        ]\n      }\n    ],\n    \"Exceptions\": [\n      {\n        \"type\": \"ambiguity\",\n        \"description\": \"The phrase 'can clearly accommodate' is subjective; no objective dimensional or furnishing criteria are provided.\"\n      }\n    ],\n    \"Relationships\": {\n      \"dependencies\": [\n        \"This classification must be resolved before applying any of the GFA counting conditions for porches or entry features.\"\n      ],\n      \"cross_references\": [],\n      \"impacts\": [\n        \"Determines whether the 12 ft and 17 ft thresholds and 'openness' criteria apply under the correct category.\"\n      ]\n    }\n  }\n]"
+  },
+  "timestamp": "2025-09-16 14:56:31",
+  "model": "openai/gpt-5",
+  "success": true
+}

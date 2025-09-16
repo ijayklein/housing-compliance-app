@@ -1,0 +1,228 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_40.png",
+  "image_name": "Page_40.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Parking\n\nParking regulations affect the appearance of the streetscapes in our residential neighborhoods by minimizing the number of cars parked on the street and in the front yards by requiring that there are parking spaces available deeper into the lot.\n\nCode sections\nPage 34\n18.12.060, 18.83.090\nPage 35\n18.83.090, 18.83.110(a)\nPage 36\n18.12.060\nPage 37\n18.12.040 (f)\nPage 38\n18.12.060\nPage 39\n18.12.080 (b)\n\nParking space standards\n\n\u2022 Two spaces are required on the lot (per dwelling).\n\u2022 They may NOT be located in the required front yard or, first 10 ft of, required street side yard.\n\u2022 2nd dwelling units have same requirements.\n\u2022 No underground parking garages except by variance.\n\u2022 One of the two spaces must be covered.\n\u2022 To be considered detached, a covered-parking structure must be a minimum of 3' from the main dwelling.\n\u2022 Minimim size for an uncovered space is 8.5' x 18'.\n\u2022 Minimum clearance inside a covered parking structure to be 10' x 20' for each space. Therefore, a two-car garage or carport to be 20' x 20' clear inside.\n\u2022 Minimum vertical clearance: 7'.\n\n* Clear area for parking space must be free of other uses e.g., water heaters, clothes washers or dryer, bicycle parking facilities, etc.",
+      "visual_elements": [
+        {
+          "type": "figure",
+          "description": "Fig 28 Parking space dimensions for garage and uncovered space in plan view. The figure shows a top-down schematic of two parking spaces arranged in tandem. The upper space is a covered space with dimensions labeled as 10' minimum inside clearance width and 20' minimum inside clearance length. The lower space is an uncovered space with a minimum width of 8.5' and a length of 18'. Labels indicate 'Required covered space' for the upper space and '2nd space (uncovered) Tandem OK' for the lower space. The diagram includes two cars drawn in the spaces to illustrate the parking layout.",
+          "location": "Right side of the page, middle to bottom"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Number of parking spaces required",
+          "value_type": "Numerical",
+          "value": "2",
+          "unit": "spaces per dwelling"
+        },
+        {
+          "parameter": "Prohibited location for parking spaces",
+          "value_type": "Text",
+          "value": "May NOT be located in the required front yard or first 10 ft of required street side yard",
+          "unit": "None"
+        },
+        {
+          "parameter": "Minimum distance for detached covered parking structure from main dwelling",
+          "value_type": "Measurement",
+          "value": "3",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum size for uncovered parking space",
+          "value_type": "Measurement",
+          "value": "8.5 x 18",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum clearance inside covered parking structure per space",
+          "value_type": "Measurement",
+          "value": "10 x 20",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum total clear inside size for two-car garage or carport",
+          "value_type": "Measurement",
+          "value": "20 x 20",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum vertical clearance",
+          "value_type": "Measurement",
+          "value": "7",
+          "unit": "feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Parking space standards",
+        "subheadings": [],
+        "sections": []
+      },
+      "additional_notes": [
+        "Asterisk (*) marks are used to highlight the note about clear area for parking space being free of other uses such as water heaters, clothes washers or dryer, bicycle parking facilities, etc.",
+        "Page number 34 is noted at bottom left corner.",
+        "The left sidebar contains a vertical block of text describing the impact of parking regulations on streetscapes and lists relevant code sections by page number.",
+        "No handwritten annotations or stamps detected."
+      ],
+      "cross_references": [
+        "Code sections referenced: 18.12.060, 18.83.090, 18.83.110(a), 18.12.040 (f), 18.12.080 (b) across pages 34 to 39"
+      ],
+      "conditions_and_qualifiers": {
+        "qualifiers": [
+          {
+            "id": "q1",
+            "text": "Clear area for parking space must be free of other uses e.g., water heaters, clothes washers or dryer, bicycle parking facilities, etc.",
+            "applies_to_conditions": [
+              "c4",
+              "c5",
+              "c6"
+            ],
+            "scope": "Specific"
+          }
+        ],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "Two spaces are required on the lot (per dwelling).",
+            "value_type": "Numerical",
+            "operator": "=",
+            "threshold_value": "2",
+            "unit": "spaces"
+          },
+          {
+            "id": "c2",
+            "text": "They may NOT be located in the required front yard or, first 10 ft of, required street side yard.",
+            "value_type": "Measurement",
+            "operator": "<",
+            "threshold_value": "10",
+            "unit": "feet"
+          },
+          {
+            "id": "c3",
+            "text": "No underground parking garages except by variance.",
+            "value_type": "Boolean",
+            "operator": "!=",
+            "threshold_value": "underground parking garages allowed",
+            "unit": "None"
+          },
+          {
+            "id": "c4",
+            "text": "Minimum clearance inside a covered parking structure to be 10' x 20' for each space.",
+            "value_type": "Measurement",
+            "operator": ">=",
+            "threshold_value": "10 x 20",
+            "unit": "feet"
+          },
+          {
+            "id": "c5",
+            "text": "Minimum vertical clearance: 7'.",
+            "value_type": "Measurement",
+            "operator": ">=",
+            "threshold_value": "7",
+            "unit": "feet"
+          },
+          {
+            "id": "c6",
+            "text": "Minimum size for an uncovered space is 8.5' x 18'.",
+            "value_type": "Measurement",
+            "operator": ">=",
+            "threshold_value": "8.5 x 18",
+            "unit": "feet"
+          }
+        ],
+        "logical_relationships": [
+          {
+            "operation": "AND",
+            "condition_ids": [
+              "c1",
+              "c2",
+              "c3",
+              "c4",
+              "c5",
+              "c6"
+            ],
+            "expression": "Two spaces are required on the lot AND they may NOT be located in the required front yard or first 10 ft of required street side yard AND no underground parking garages except by variance AND minimum clearance inside a covered parking structure to be 10' x 20' for each space AND minimum vertical clearance 7' AND minimum size for an uncovered space is 8.5' x 18'.",
+            "evaluation_order": 1,
+            "ambiguity_note": "Logical relationship is inferred as AND since all conditions are listed as requirements; no explicit logical operators stated."
+          }
+        ],
+        "execution_sequence": [
+          {
+            "step": 1,
+            "action": "Verify that two parking spaces are provided on the lot per dwelling.",
+            "condition_ids": [
+              "c1"
+            ],
+            "qualifier_ids": [],
+            "dependencies": []
+          },
+          {
+            "step": 2,
+            "action": "Ensure parking spaces are not located in the required front yard or first 10 ft of required street side yard.",
+            "condition_ids": [
+              "c2"
+            ],
+            "qualifier_ids": [],
+            "dependencies": [
+              1
+            ]
+          },
+          {
+            "step": 3,
+            "action": "Confirm no underground parking garages unless variance is granted.",
+            "condition_ids": [
+              "c3"
+            ],
+            "qualifier_ids": [],
+            "dependencies": [
+              2
+            ]
+          },
+          {
+            "step": 4,
+            "action": "Check minimum clearance inside covered parking structure per space is at least 10' x 20'.",
+            "condition_ids": [
+              "c4"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": [
+              3
+            ]
+          },
+          {
+            "step": 5,
+            "action": "Verify minimum vertical clearance is at least 7 feet.",
+            "condition_ids": [
+              "c5"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": [
+              4
+            ]
+          },
+          {
+            "step": 6,
+            "action": "Verify minimum size for uncovered parking space is at least 8.5' x 18'.",
+            "condition_ids": [
+              "c6"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": [
+              5
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:14:04",
+  "model_used": "openai/gpt-4.1-mini"
+}

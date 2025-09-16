@@ -1,0 +1,304 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_34.png",
+  "image_name": "Page_34.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Primary daylight plane (rear)\n\nFig 23 Side elevation showing Rear primary daylight plane\n\n7.5\u2032 max.\neach\nprotrusion\n\n5' min.\nseparation\n\n7.5\u2032 max.\neach\nprotrusion\n\nNote: There is no\nfront daylight plane.\n\n24' max. for protrusions\n\n\u2605Max building. height is:\n\u2022 30\u2032 for structures w/roof slope < 12:12\n\u2022 33' for structures w/roof slope > 12:12\n\u2022 17' for structures on substandard or flag lots\nregardless of flood plane\n\u2022 variable for structures located in flood zones\nexcept on substandard and flag lots - up to 33'\n\n\u2605Cumulative length of protrusions must\nnot exceed 15' on any one side.\nRear protrusions subject to same rules\nas side protrusions\n\nSetback line\n\n60\u00b0\n\n16'\n\n24' max. for protrusions\n\nMax. bldg. height\n\nRear yard\n\nRear lot line\n\nNotes:\n\u2022 Side daylight plane is\nmeasured (up) at lot line.\n\u2022 Rear daylight plane is\nmeasured (up) at rear\nsetback.\n\n28",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "A side elevation diagram of a two-story house with a gabled roof and dormers, illustrating the concept of a 'Primary daylight plane (rear)'. The diagram shows various setback lines, height restrictions, and protrusion limits. A dashed line representing the daylight plane originates from the rear setback line at a 60-degree angle. Dimensions for maximum protrusion length (7.5' each), minimum separation between protrusions (5'), maximum height for protrusions (24'), and a general maximum building height are indicated. The ground is depicted with hatching, and a 'Rear yard' area is labeled between the 'Setback line' and 'Rear lot line'.",
+          "location": "Middle of the page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Max protrusion length (each)",
+          "value_type": "Measurement",
+          "value": "7.5",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Min separation between protrusions",
+          "value_type": "Measurement",
+          "value": "5",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Max height for protrusions",
+          "value_type": "Measurement",
+          "value": "24",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Daylight plane angle",
+          "value_type": "Numerical",
+          "value": "60",
+          "unit": "degrees"
+        },
+        {
+          "parameter": "Max building height for structures with roof slope < 12:12",
+          "value_type": "Measurement",
+          "value": "30",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Max building height for structures with roof slope > 12:12",
+          "value_type": "Measurement",
+          "value": "33",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Max building height for structures on substandard or flag lots (regardless of flood plane)",
+          "value_type": "Measurement",
+          "value": "17",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Max building height for structures in flood zones (except on substandard and flag lots)",
+          "value_type": "Range",
+          "value": "up to 33",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Cumulative length of protrusions on any one side",
+          "value_type": "Measurement",
+          "value": "15",
+          "unit": "feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Primary daylight plane (rear)",
+        "subheadings": [],
+        "sections": [
+          "Fig 23 Side elevation showing Rear primary daylight plane",
+          "Notes:",
+          "\u2605Max building. height is:",
+          "\u2605Cumulative length of protrusions must not exceed 15' on any one side."
+        ]
+      },
+      "additional_notes": [
+        "Page number '28' is located at the bottom left corner."
+      ],
+      "cross_references": [],
+      "conditions_and_qualifiers": {
+        "qualifiers": [
+          {
+            "id": "q1",
+            "text": "for structures w/roof slope < 12:12",
+            "applies_to_conditions": [
+              "c1"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q2",
+            "text": "for structures w/roof slope > 12:12",
+            "applies_to_conditions": [
+              "c2"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q3",
+            "text": "for structures on substandard or flag lots regardless of flood plane",
+            "applies_to_conditions": [
+              "c3"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q4",
+            "text": "for structures located in flood zones except on substandard and flag lots",
+            "applies_to_conditions": [
+              "c4"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q5",
+            "text": "on any one side",
+            "applies_to_conditions": [
+              "c5"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q6",
+            "text": "Rear protrusions subject to same rules as side protrusions",
+            "applies_to_conditions": [],
+            "scope": "Global"
+          }
+        ],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "Max building. height is: 30\u2032",
+            "value_type": "Measurement",
+            "operator": "=",
+            "threshold_value": "30",
+            "unit": "feet"
+          },
+          {
+            "id": "c2",
+            "text": "Max building. height is: 33'",
+            "value_type": "Measurement",
+            "operator": "=",
+            "threshold_value": "33",
+            "unit": "feet"
+          },
+          {
+            "id": "c3",
+            "text": "Max building. height is: 17'",
+            "value_type": "Measurement",
+            "operator": "=",
+            "threshold_value": "17",
+            "unit": "feet"
+          },
+          {
+            "id": "c4",
+            "text": "Max building. height is: variable ... up to 33'",
+            "value_type": "Range",
+            "operator": "<=",
+            "threshold_value": "33",
+            "unit": "feet"
+          },
+          {
+            "id": "c5",
+            "text": "Cumulative length of protrusions must not exceed 15'",
+            "value_type": "Measurement",
+            "operator": "<=",
+            "threshold_value": "15",
+            "unit": "feet"
+          },
+          {
+            "id": "c6",
+            "text": "Max. each protrusion: 7.5'",
+            "value_type": "Measurement",
+            "operator": "<=",
+            "threshold_value": "7.5",
+            "unit": "feet"
+          },
+          {
+            "id": "c7",
+            "text": "Min. separation: 5'",
+            "value_type": "Measurement",
+            "operator": ">=",
+            "threshold_value": "5",
+            "unit": "feet"
+          },
+          {
+            "id": "c8",
+            "text": "Max. for protrusions: 24'",
+            "value_type": "Measurement",
+            "operator": "<=",
+            "threshold_value": "24",
+            "unit": "feet"
+          }
+        ],
+        "logical_relationships": [
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c1"
+            ],
+            "expression": "IF roof slope < 12:12 THEN Max building height is 30'",
+            "evaluation_order": 1
+          },
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c2"
+            ],
+            "expression": "IF roof slope > 12:12 THEN Max building height is 33'",
+            "evaluation_order": 2
+          },
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c3"
+            ],
+            "expression": "IF structure is on substandard or flag lots (regardless of flood plane) THEN Max building height is 17'",
+            "evaluation_order": 3
+          },
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c4"
+            ],
+            "expression": "IF structure is located in flood zones (except on substandard and flag lots) THEN Max building height is variable up to 33'",
+            "evaluation_order": 4
+          }
+        ],
+        "execution_sequence": [
+          {
+            "step": 1,
+            "action": "Determine Max building height based on roof slope and lot type.",
+            "condition_ids": [
+              "c1",
+              "c2",
+              "c3",
+              "c4"
+            ],
+            "qualifier_ids": [
+              "q1",
+              "q2",
+              "q3",
+              "q4"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 2,
+            "action": "Ensure individual protrusion length does not exceed maximum.",
+            "condition_ids": [
+              "c6"
+            ],
+            "qualifier_ids": [],
+            "dependencies": []
+          },
+          {
+            "step": 3,
+            "action": "Ensure minimum separation between protrusions.",
+            "condition_ids": [
+              "c7"
+            ],
+            "qualifier_ids": [],
+            "dependencies": []
+          },
+          {
+            "step": 4,
+            "action": "Ensure cumulative length of protrusions on any one side does not exceed maximum.",
+            "condition_ids": [
+              "c5"
+            ],
+            "qualifier_ids": [
+              "q5"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 5,
+            "action": "Ensure maximum height for protrusions is not exceeded.",
+            "condition_ids": [
+              "c8"
+            ],
+            "qualifier_ids": [],
+            "dependencies": []
+          },
+          {
+            "step": 6,
+            "action": "Apply rules for rear protrusions as per side protrusions.",
+            "condition_ids": [],
+            "qualifier_ids": [
+              "q6"
+            ],
+            "dependencies": []
+          }
+        ]
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:24:28",
+  "model_used": "google/gemini-2.5-flash"
+}

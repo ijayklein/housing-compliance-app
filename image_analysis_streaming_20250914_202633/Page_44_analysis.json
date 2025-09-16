@@ -1,0 +1,71 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_44.png",
+  "image_name": "Page_44.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Attached garages/carports site planning\n\n\u2022 Attached garages must comply with same setbacks as main dwelling.\n\nNote: Uncovered spaces must be located beyond the required frontyard and beyond the first 10' of the street-side yard.\n\nFig 33 Examples of site planning solutions for attached garages/carports\n\nA 1-car garage with 2nd space (uncovered) located in the sideyard\n\nB 1-car garage with 2nd space (uncovered) located in the driveway\n\nC 2-car garage with no uncovered spaces\n\nKey\nCurb\nLot line\nSidewalk\nRequired setbacks\nBuildable area\nDwelling\nParking structure\nNo-parking area\nUncovered space",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Three side-by-side site plan examples illustrating attached garages/carports configurations on different lot types. Each example shows a lot with labeled areas: 'Buildable area' (shaded light gray), 'Main dwelling' (darker gray), and parking structures (black boxes labeled '1-car attached' or '2-car attached'). The diagrams include lot lines, curbs, sidewalks, required setbacks (dashed lines), no-parking areas (hatched lines), and uncovered spaces (depicted with a car icon). The first two diagrams are labeled 'Interior lot example' and the third 'Corner lot example'. Each diagram shows front yard, rear yard, interior-side yard, and street-side yard boundaries. A 10' measurement is indicated on the street-side yard in the corner lot example. The diagrams correspond to three scenarios: A) 1-car garage with a second uncovered space in the sideyard, B) 1-car garage with a second uncovered space in the driveway, and C) 2-car garage with no uncovered spaces.",
+          "location": "Bottom half of the page"
+        },
+        {
+          "type": "text box",
+          "description": "Gray shaded box containing a note: 'Note: Uncovered spaces must be located beyond the required frontyard and beyond the first 10' of the street-side yard.'",
+          "location": "Upper right quadrant of the page"
+        },
+        {
+          "type": "key/legend",
+          "description": "Legend explaining symbols used in the diagrams: solid line for curb, dashed line for lot line, shaded rectangles for sidewalk, dashed lines for required setbacks, dashed box for buildable area, solid gray for dwelling, solid black for parking structure, hatched area for no-parking area, and a car icon for uncovered space.",
+          "location": "Right side, middle of the page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Distance beyond first street-side yard for uncovered spaces",
+          "value_type": "Measurement",
+          "value": "10",
+          "unit": "feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Attached garages/carports site planning",
+        "subheadings": [],
+        "sections": []
+      },
+      "additional_notes": [
+        "Page number 38 at bottom left corner.",
+        "No handwritten annotations or stamps detected.",
+        "Text and diagrams are clear and legible."
+      ],
+      "cross_references": [
+        "Fig 33 referenced as the figure illustrating examples of site planning solutions for attached garages/carports."
+      ],
+      "conditions_and_qualifiers": {
+        "qualifiers": [
+          {
+            "id": "q1",
+            "text": "Attached garages must comply with same setbacks as main dwelling.",
+            "applies_to_conditions": [],
+            "scope": "Global"
+          }
+        ],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "Uncovered spaces must be located beyond the required frontyard and beyond the first 10' of the street-side yard.",
+            "value_type": "Measurement",
+            "operator": ">",
+            "threshold_value": "10",
+            "unit": "feet"
+          }
+        ],
+        "logical_relationships": [],
+        "execution_sequence": []
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:27:35",
+  "model_used": "openai/gpt-4.1-mini"
+}

@@ -1,0 +1,12 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_15.png",
+  "image_name": "Page_15.png",
+  "analysis": {
+    "raw_content": "Extracted content (verbatim where legible)\n\nPage number: 9\n\nStep 2:\n- Determine which perimeter segments abut the house walls. These are closed segments, or sides.\n- Note on plan: In Fig 5 sides A, B, & C abut the house walls. These are considered to be closed segments.\n- Plan labels and dimensions visible:\n  - B: 8'\n  - C: 10'\n  - A: dimension not legible in the image (unclear)\n\nStep 3:\n- Determine the status (open/closed) of the remaining segments based on the design. If at least 50% of the facade area is open, then the segment or side is considered open.\n\nFor purposes of assessing the openness of the facade:\n- The height of the segment facades is measured from the top of the porch floor to the the point where the segment facade intersects with the top of the roof material.\n- The widths of the segment facades are measured from the same plane. Allowances may be made for structural supports that are not excessive.\n\nSection/elevation diagrams (facade segments):\n- D \u2014 width: 7' \u2014 Open\n- E \u2014 width: 14' \u2014 Closed (because of decorative glass wall)\n- F \u2014 width: 24' \u2014 Open\n- G \u2014 width: 4' \u2014 Open\n\nAdditional labels on the section graphic:\n- Intersection facade & top of roof material\n- Height = 8'\n- Porch flr",
+    "content_length": 1219,
+    "parse_error": false
+  },
+  "timestamp": "2025-09-16 14:07:29",
+  "model": "openai/gpt-5",
+  "success": true
+}

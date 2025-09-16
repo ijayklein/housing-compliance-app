@@ -1,0 +1,63 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_37.png",
+  "image_name": "Page_37.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Accessory structures site planning\n\nNote: Site planning for accessory buildings differs from that for parking structures in one way. A special allowance enables garages to be located in the rear/side yards even when the lot is not deep enough to maintain the 7.5' minimum distance from the front lot line. This does not apply to non-parking accessory structures.\n\nFig 24 Examples of site planning solutions for accessory structures\n\nA Combo garage/small pool cabana (side by side)\n\u2022 Structure is located in rear yard so it must:\n  a. be at least 7.5' from the front lot line\n  b. be no more than 12' high\n  c. comply with accessory-structure daylight plane. (Figs 25 & 26 on p. 32)\n\u2022 Structure is located right at the side lot line so that wall and the roof must be fire rated.\n\u2022 Structure has 2 plumbing fixtures.\n\nB Stand-alone pool cabana\n\u2022 Structure is located in rear yard so it must:\n  a. be at least 7.5' from the front lot line\n  b. be no more than 12' high\n  c. comply with accessory-structure daylight plane. (Figs 25 & 26 on p. 32)\n\u2022 Structure is located right at the rear lot line so that wall and the roof must be fire rated.\n\u2022 Structure has 3 plumbing fixtures\u2014 sink, toilet, and shower and is greater than 200 sf, so it requires a CUP.\n\nC Office above garage\n\u2022 Structure is located within the buildable area, so it doesn't have to comply with regulations for structures in the required yards and it may be two stories high.\n\u2022 Structure has 2 plumbing fixtures.\n\u2022 Structure is new 2nd floor addition and therefore subject to the Planning Department's Individual Review (IR).\n\nNote: Because this structure is 2 stories, it must be located within the buildable area regardless of the distances from the lot lines and is subject to Individual Review (IR)\n\nKey\n_____ Curb\n_____ lot line\n\u25a1\u25a1\u25a1\u25a1 Sidewalk\n- - - Required setbacks\n-\u00b7-\u00b7- Buildable area\n\u25a0 Dwelling/parking\n\u25a0 Accessory structure\n\n31",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Three site plan diagrams showing different accessory structure configurations. Each shows a lot layout with main dwelling, accessory structures, and various measurements. Diagram A shows a combo garage/small pool house with rear yard pool. Diagram B shows a larger pool cabana with rear yard pool and 2-car attached garage. Diagram C shows an office above garage configuration on a corner lot. All diagrams include measurements like 'Min 7.5'' and show front yard, rear yard, and side yard areas with different line types indicating curb, lot lines, sidewalks, setbacks, and buildable areas.",
+          "location": "Center and bottom portion of page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Minimum distance from front lot line",
+          "value": "7.5",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Maximum height for rear yard structures",
+          "value": "12",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum area requiring CUP",
+          "value": "200",
+          "unit": "square feet"
+        },
+        {
+          "parameter": "Minimum setback shown in diagrams",
+          "value": "7.5",
+          "unit": "feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Accessory structures site planning",
+        "subheadings": [
+          "Fig 24 Examples of site planning solutions for accessory structures",
+          "A Combo garage/small pool cabana (side by side)",
+          "B Stand-alone pool cabana",
+          "C Office above garage",
+          "Key"
+        ],
+        "sections": [
+          "A",
+          "B",
+          "C"
+        ]
+      },
+      "additional_notes": [
+        "Page number 31 appears at bottom right",
+        "Image quality is clear and legible throughout"
+      ],
+      "cross_references": [
+        "Figs 25 & 26 on p. 32",
+        "Planning Department's Individual Review (IR)"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-11 13:44:59",
+  "model_used": "anthropic/claude-sonnet-4"
+}

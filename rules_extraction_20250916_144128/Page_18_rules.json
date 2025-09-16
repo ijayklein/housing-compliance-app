@@ -1,0 +1,95 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_18.md",
+  "file_name": "Page_18.md",
+  "analysis": {
+    "extracted_rules": {
+      "rules": [
+        {
+          "qualifiers": {
+            "scope": "Entryway features with gabled roofs",
+            "applicability": "Entryways that are recessed beyond the house facade and roof",
+            "exclusions": "Entryways that are not vaulted or not recessed"
+          },
+          "variables": {
+            "dimensional": [
+              {
+                "name": "Height",
+                "description": "Height of the entry feature from grade to ridge"
+              },
+              {
+                "name": "Grade",
+                "description": "Ground level at the base of the entry feature"
+              },
+              {
+                "name": "Intersection",
+                "description": "Intersection of front facade and top of roof material at ridge"
+              },
+              {
+                "name": "Porch Floor Plan",
+                "description": "Outline of entryway roof and floor area"
+              }
+            ],
+            "material": [
+              {
+                "name": "Outside Material",
+                "description": "Material used on the outside of the entryway feature"
+              }
+            ],
+            "environmental": [],
+            "usage": [
+              {
+                "name": "Vaulted Entryway",
+                "description": "Entryway that is considered vaulted"
+              }
+            ]
+          },
+          "constants": {
+            "numerical_values": [],
+            "specs": [],
+            "standards": [],
+            "procedures": [
+              {
+                "name": "Area Measurement",
+                "description": "The area is measured to the outside material of the entryway feature"
+              }
+            ]
+          },
+          "conditions": {
+            "mandatory": [
+              {
+                "description": "The area of the entryway counts TWICE toward gross floor area if it is vaulted"
+              }
+            ],
+            "optional": [],
+            "conditional_logic": [
+              {
+                "condition": "If the entryway is considered to be a vaulted entryway",
+                "outcome": "The area will be counted TWICE toward gross floor area"
+              }
+            ],
+            "dependencies": []
+          },
+          "exceptions": {
+            "explicit_deviations": [],
+            "alternatives": [],
+            "special_cases": [
+              {
+                "description": "A portion of the entryway is recessed beyond the house facade and roof. It is included in the area that counts."
+              }
+            ]
+          },
+          "relationships": {
+            "hierarchical": [],
+            "cross_references": [],
+            "logical_dependencies": []
+          }
+        }
+      ]
+    },
+    "parse_error": false,
+    "raw_response": "```json\n{\n  \"rules\": [\n    {\n      \"qualifiers\": {\n        \"scope\": \"Entryway features with gabled roofs\",\n        \"applicability\": \"Entryways that are recessed beyond the house facade and roof\",\n        \"exclusions\": \"Entryways that are not vaulted or not recessed\"\n      },\n      \"variables\": {\n        \"dimensional\": [\n          {\n            \"name\": \"Height\",\n            \"description\": \"Height of the entry feature from grade to ridge\"\n          },\n          {\n            \"name\": \"Grade\",\n            \"description\": \"Ground level at the base of the entry feature\"\n          },\n          {\n            \"name\": \"Intersection\",\n            \"description\": \"Intersection of front facade and top of roof material at ridge\"\n          },\n          {\n            \"name\": \"Porch Floor Plan\",\n            \"description\": \"Outline of entryway roof and floor area\"\n          }\n        ],\n        \"material\": [\n          {\n            \"name\": \"Outside Material\",\n            \"description\": \"Material used on the outside of the entryway feature\"\n          }\n        ],\n        \"environmental\": [],\n        \"usage\": [\n          {\n            \"name\": \"Vaulted Entryway\",\n            \"description\": \"Entryway that is considered vaulted\"\n          }\n        ]\n      },\n      \"constants\": {\n        \"numerical_values\": [],\n        \"specs\": [],\n        \"standards\": [],\n        \"procedures\": [\n          {\n            \"name\": \"Area Measurement\",\n            \"description\": \"The area is measured to the outside material of the entryway feature\"\n          }\n        ]\n      },\n      \"conditions\": {\n        \"mandatory\": [\n          {\n            \"description\": \"The area of the entryway counts TWICE toward gross floor area if it is vaulted\"\n          }\n        ],\n        \"optional\": [],\n        \"conditional_logic\": [\n          {\n            \"condition\": \"If the entryway is considered to be a vaulted entryway\",\n            \"outcome\": \"The area will be counted TWICE toward gross floor area\"\n          }\n        ],\n        \"dependencies\": []\n      },\n      \"exceptions\": {\n        \"explicit_deviations\": [],\n        \"alternatives\": [],\n        \"special_cases\": [\n          {\n            \"description\": \"A portion of the entryway is recessed beyond the house facade and roof. It is included in the area that counts.\"\n          }\n        ]\n      },\n      \"relationships\": {\n        \"hierarchical\": [],\n        \"cross_references\": [],\n        \"logical_dependencies\": []\n      }\n    }\n  ]\n}\n```"
+  },
+  "timestamp": "2025-09-16 14:42:14",
+  "model": "openai/gpt-4o",
+  "success": true
+}

@@ -1,0 +1,71 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_47.png",
+  "image_name": "Page_47.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Other excavation considerations\n\nArchitectural compatibility & landscape screening\n\n\u2022 If a guard rail is required, it must be designed to be archi-\n  tecturally compatible with the residence.\n\n\u2022 Additionally, landscape screening may be required by the\n  Planning Dept.\n\nTree protection\n\n\u2022 A tree's root system extends well beyond the drip line and the\n  roots are likely to be within the first 18\" below grade.\n\n\u2022 It is important to plan excavation in a manner that does not\n  harm tree roots.\n\n\u2022 Prior to issuance of building permit, owner to provide evidence\n  that encroaching features or portions of features will not harm\n  trees of any species on subject or abutting lots.\n\n\u2022 Consult the city's Tree Technical Manual for other aspects of\n  tree protection during construction.\n\n\nFig 37 Excavation, landscape screening, and guard rails\n\nFig 38 Excavation and tree roots\n\nBasement\n\nExcav\nfeatur\n\nWhen planning a basement, consider the\nextent of excavation that will be required e.g.,\nsome excavation techniques require (for safety\nreasons) that the excavation to be at a 1:1\nslope which may impact tree roots severely.\n\n41",
+      "visual_elements": [
+        {
+          "type": "figure",
+          "description": "Figure 37 is a cross-section diagram showing the side of a house with horizontal siding, a window, and a basement foundation. The ground is depicted with hatching. The caption is 'Fig 37 Excavation, landscape screening, and guard rails'.",
+          "location": "Bottom left"
+        },
+        {
+          "type": "figure",
+          "description": "Figure 38 is a cross-section diagram illustrating the potential conflict between building excavation and a tree's root system. It shows a house foundation labeled 'Basement' next to a large deciduous tree with an extensive underground root system. A diagonal dashed line, representing a 1:1 excavation slope, cuts through the tree's roots. The excavation area is partially labeled 'Excav featur'. An annotation explains that a 1:1 excavation slope can severely impact tree roots. The caption is 'Fig 38 Excavation and tree roots'.",
+          "location": "Bottom right"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Tree root depth",
+          "value": "18",
+          "unit": "inches"
+        },
+        {
+          "parameter": "Excavation slope",
+          "value": "1:1",
+          "unit": "ratio"
+        },
+        {
+          "parameter": "Figure number",
+          "value": "37",
+          "unit": null
+        },
+        {
+          "parameter": "Figure number",
+          "value": "38",
+          "unit": null
+        },
+        {
+          "parameter": "Page number",
+          "value": "41",
+          "unit": null
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Other excavation considerations",
+        "subheadings": [
+          "Architectural compatibility & landscape screening",
+          "Tree protection"
+        ],
+        "sections": [
+          "Fig 37",
+          "Fig 38"
+        ]
+      },
+      "additional_notes": [
+        "The page has a two-column layout for the main text sections.",
+        "The page number '41' is located in the bottom right corner.",
+        "In Figure 38, a text label is partially cut off and reads 'Excav featur', likely intended to be 'Excavation feature'.",
+        "There is an annotation in a text box within Figure 38 explaining the impact of a 1:1 excavation slope on tree roots."
+      ],
+      "cross_references": [
+        "Planning Dept.",
+        "city's Tree Technical Manual"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-11 14:36:37",
+  "model_used": "google/gemini-2.5-pro"
+}

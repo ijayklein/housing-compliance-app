@@ -1,0 +1,130 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_14.md",
+  "file_name": "Page_14.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "Qualifiers": {
+          "Scope": "Roofed porches on the 1st floor",
+          "Applicability": "Procedure to determine if a porch is at least 50% open (using Figure 5 as an example)",
+          "Exclusions": "None stated"
+        },
+        "Variables": {
+          "PerimeterSegments": [
+            {
+              "label": "A",
+              "length": {
+                "value": 2,
+                "unit": "ft"
+              }
+            },
+            {
+              "label": "B",
+              "length": {
+                "value": 8,
+                "unit": "ft"
+              }
+            },
+            {
+              "label": "C",
+              "length": {
+                "value": 10,
+                "unit": "ft"
+              }
+            },
+            {
+              "label": "D",
+              "length": {
+                "value": 7,
+                "unit": "ft"
+              }
+            },
+            {
+              "label": "E",
+              "length": {
+                "value": 14,
+                "unit": "ft"
+              }
+            },
+            {
+              "label": "F",
+              "length": {
+                "value": 24,
+                "unit": "ft"
+              }
+            },
+            {
+              "label": "G",
+              "length": {
+                "value": 2,
+                "unit": "ft"
+              }
+            }
+          ],
+          "PerimeterTotalReported": {
+            "value": 70,
+            "unit": "ft"
+          },
+          "PerimeterTotalComputed": {
+            "value": 67,
+            "unit": "ft"
+          },
+          "SegmentClassification": {
+            "description": "Each perimeter segment to be classified as 'open' or 'closed' for comparison",
+            "status": "Not provided on this page"
+          }
+        },
+        "Constants": {
+          "OpennessThreshold": {
+            "value": 50,
+            "unit": "%"
+          },
+          "Procedure": {
+            "Step": 1,
+            "description": "Determine the perimeter of the porch and divide it into segments that will allow a comparison of closed and open segments."
+          }
+        },
+        "Conditions": {
+          "Mandatory": [
+            "Complete Step 1 to enable comparison of closed and open segments for openness determination."
+          ],
+          "Optional": [],
+          "Conditional": [
+            "Comparison of closed and open segments requires classification criteria for 'open' vs 'closed' segments, which are not included on this page."
+          ],
+          "Ambiguities": [
+            "Criteria for classifying segments as 'open' or 'closed' are not defined on this page.",
+            "The phrase 'at least 50% open' is referenced without an explicit formula; Step 1 implies perimeter-based measurement but this is not explicitly stated."
+          ]
+        },
+        "Exceptions": [],
+        "Relationships": {
+          "Hierarchical": [
+            "This is Step 1 within a multi-step method for evaluating the 50% openness criterion."
+          ],
+          "CrossReferences": [
+            "Figure 5: Roofed 1st floor porch (example referenced for measurements and segmentation)"
+          ],
+          "LogicalDependencies": [
+            "Total perimeter must be established before comparing lengths of open vs closed segments."
+          ],
+          "Equations": [
+            "perimeter_total = sum(lengths of segments A through G)"
+          ],
+          "ConsistencyFindings": [
+            "Sum of segments A (2 ft) + B (8 ft) + C (10 ft) + D (7 ft) + E (14 ft) + F (24 ft) + G (2 ft) = 67 ft, which does not match the reported perimeter total of 70 ft."
+          ]
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "[\n  {\n    \"Qualifiers\": {\n      \"Scope\": \"Roofed porches on the 1st floor\",\n      \"Applicability\": \"Procedure to determine if a porch is at least 50% open (using Figure 5 as an example)\",\n      \"Exclusions\": \"None stated\"\n    },\n    \"Variables\": {\n      \"PerimeterSegments\": [\n        { \"label\": \"A\", \"length\": { \"value\": 2, \"unit\": \"ft\" } },\n        { \"label\": \"B\", \"length\": { \"value\": 8, \"unit\": \"ft\" } },\n        { \"label\": \"C\", \"length\": { \"value\": 10, \"unit\": \"ft\" } },\n        { \"label\": \"D\", \"length\": { \"value\": 7, \"unit\": \"ft\" } },\n        { \"label\": \"E\", \"length\": { \"value\": 14, \"unit\": \"ft\" } },\n        { \"label\": \"F\", \"length\": { \"value\": 24, \"unit\": \"ft\" } },\n        { \"label\": \"G\", \"length\": { \"value\": 2, \"unit\": \"ft\" } }\n      ],\n      \"PerimeterTotalReported\": { \"value\": 70, \"unit\": \"ft\" },\n      \"PerimeterTotalComputed\": { \"value\": 67, \"unit\": \"ft\" },\n      \"SegmentClassification\": {\n        \"description\": \"Each perimeter segment to be classified as 'open' or 'closed' for comparison\",\n        \"status\": \"Not provided on this page\"\n      }\n    },\n    \"Constants\": {\n      \"OpennessThreshold\": { \"value\": 50, \"unit\": \"%\" },\n      \"Procedure\": {\n        \"Step\": 1,\n        \"description\": \"Determine the perimeter of the porch and divide it into segments that will allow a comparison of closed and open segments.\"\n      }\n    },\n    \"Conditions\": {\n      \"Mandatory\": [\n        \"Complete Step 1 to enable comparison of closed and open segments for openness determination.\"\n      ],\n      \"Optional\": [],\n      \"Conditional\": [\n        \"Comparison of closed and open segments requires classification criteria for 'open' vs 'closed' segments, which are not included on this page.\"\n      ],\n      \"Ambiguities\": [\n        \"Criteria for classifying segments as 'open' or 'closed' are not defined on this page.\",\n        \"The phrase 'at least 50% open' is referenced without an explicit formula; Step 1 implies perimeter-based measurement but this is not explicitly stated.\"\n      ]\n    },\n    \"Exceptions\": [],\n    \"Relationships\": {\n      \"Hierarchical\": [\n        \"This is Step 1 within a multi-step method for evaluating the 50% openness criterion.\"\n      ],\n      \"CrossReferences\": [\n        \"Figure 5: Roofed 1st floor porch (example referenced for measurements and segmentation)\"\n      ],\n      \"LogicalDependencies\": [\n        \"Total perimeter must be established before comparing lengths of open vs closed segments.\"\n      ],\n      \"Equations\": [\n        \"perimeter_total = sum(lengths of segments A through G)\"\n      ],\n      \"ConsistencyFindings\": [\n        \"Sum of segments A (2 ft) + B (8 ft) + C (10 ft) + D (7 ft) + E (14 ft) + F (24 ft) + G (2 ft) = 67 ft, which does not match the reported perimeter total of 70 ft.\"\n      ]\n    }\n  }\n]",
+    "response_time": 66.34832620620728,
+    "input_tokens": 579,
+    "output_tokens": 3563,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 15:51:24",
+  "model": "openai/gpt-5",
+  "success": true
+}

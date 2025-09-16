@@ -1,0 +1,398 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_08.png",
+  "image_name": "Page_08.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Lot size\nThe characteristics of a lot determine its development potential and chief among these characteristics is the area of the lot.\nFor example, to assure continuity in the appearance of the streetscape throughout our neighborhoods and city, the allowable building size is based on a percentage of the lot area.\n\nCode sections\nPage 2\n18.12.040 (a) Table 2\n18.12.040 (d)\n18.12.040 (c)\nPage 3\n18.04.030 (a) (85)\n\nMinimum & maximum lot sizes\nAs Palo Alto developed and grew through annexation, each subdivision evolved with unique characteristics e.g., the size of the lots within the subdivision. Five R-1 zones reflect and preserve traditional lotting patterns with criteria for minimum and maximum lot sizes.\n\nMin. & max. lot sizes by zone\nThe subdivision ordinance requires a new lot to have\nA) width \u2265 60' AND depth \u2265 100' AND\nB) lot area (in sf) per the following:\n\nZone District | Minimum | Maximum\nR-1 | 6,000 | 9,999\nR-1(7000) | 7,000 | 13,999\nR-1(8000) | 8,000 | 15,999\nR-1(10000) | 10,000 | 19,999\nR-1(20000) | 20,000 | 39,999\n\nExceptions to the max. lot size\n\u2022 Where underlying lot lines must be removed to eliminate non-conformities and results in no net loss of housing.\n\u2022 Where an adjacent substandard lot of less than 25' in width is combined with another lot and results in no net loss of housing.\n\u2022 Where the resultant number of lots increases or stays the same and results in no net loss of housing.\n\nSubstandard lots\nEven within each R-1 zone there are a variety of lot sizes. Smaller lots that meet the following criteria are considered to be substandard.\n\nSubstandard lot sizes by zone\nA sub-standard lot is one with\nA) width < 50' OR depth < 83' AND\nB) area \u2264 the following (83% of min. lot size):\n\nZone District | Typical lot | Flag lot\nR-1 | 4,980 | 5,976\nR-1(7000) | 5,810 | 6,972\nR-1(8000) | 6,640 | 7,968\nR-1(10000) | 8,300 | 9,960\nR-1(20000) | 16,600 | 19,920\n\nSpecial regulations for substandard lots\n\u2022 Maximum building height is single-story and 17' instead of 30'\n\u2022 For lots less than 50' wide, the required street-side yard is 10' instead of 16'. (Fig 15 C on p. 23)\n\u2022 For lots less than 95' deep, the requirements for locating a garage in the rear or side yards are that it be in the rear half of the lot instead of 75' back from the front lot line.\n\nNote: Determining where lot lines are on the ground may require a boundary survey.",
+      "visual_elements": [
+        {
+          "type": "table",
+          "description": "Table titled 'Min. & max. lot sizes by zone' showing Zone Districts R-1, R-1(7000), R-1(8000), R-1(10000), R-1(20000) with corresponding Minimum and Maximum lot sizes in square feet. Minimum values range from 6,000 to 20,000 and Maximum values range from 9,999 to 39,999.",
+          "location": "middle left page"
+        },
+        {
+          "type": "table",
+          "description": "Table titled 'Substandard lot sizes by zone' listing Zone Districts R-1, R-1(7000), R-1(8000), R-1(10000), R-1(20000) with Typical lot and Flag lot sizes in square feet. Typical lot sizes range from 4,980 to 16,600 and Flag lot sizes range from 5,976 to 19,920.",
+          "location": "middle right page"
+        },
+        {
+          "type": "text box",
+          "description": "Gray shaded box with white text labeled 'Note:' stating 'Determining where lot lines are on the ground may require a boundary survey.'",
+          "location": "bottom right page"
+        },
+        {
+          "type": "sidebar",
+          "description": "Vertical gray sidebar on left side of left page containing introductory text about lot size characteristics and code sections references.",
+          "location": "left margin of left page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Minimum lot width",
+          "value_type": "Measurement",
+          "value": "60",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum lot depth",
+          "value_type": "Measurement",
+          "value": "100",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum lot area by zone (R-1)",
+          "value_type": "Measurement",
+          "value": "6,000",
+          "unit": "square feet"
+        },
+        {
+          "parameter": "Maximum lot area by zone (R-1)",
+          "value_type": "Measurement",
+          "value": "9,999",
+          "unit": "square feet"
+        },
+        {
+          "parameter": "Minimum lot area by zone (R-1(7000))",
+          "value_type": "Measurement",
+          "value": "7,000",
+          "unit": "square feet"
+        },
+        {
+          "parameter": "Maximum lot area by zone (R-1(7000))",
+          "value_type": "Measurement",
+          "value": "13,999",
+          "unit": "square feet"
+        },
+        {
+          "parameter": "Minimum lot area by zone (R-1(8000))",
+          "value_type": "Measurement",
+          "value": "8,000",
+          "unit": "square feet"
+        },
+        {
+          "parameter": "Maximum lot area by zone (R-1(8000))",
+          "value_type": "Measurement",
+          "value": "15,999",
+          "unit": "square feet"
+        },
+        {
+          "parameter": "Minimum lot area by zone (R-1(10000))",
+          "value_type": "Measurement",
+          "value": "10,000",
+          "unit": "square feet"
+        },
+        {
+          "parameter": "Maximum lot area by zone (R-1(10000))",
+          "value_type": "Measurement",
+          "value": "19,999",
+          "unit": "square feet"
+        },
+        {
+          "parameter": "Minimum lot area by zone (R-1(20000))",
+          "value_type": "Measurement",
+          "value": "20,000",
+          "unit": "square feet"
+        },
+        {
+          "parameter": "Maximum lot area by zone (R-1(20000))",
+          "value_type": "Measurement",
+          "value": "39,999",
+          "unit": "square feet"
+        },
+        {
+          "parameter": "Substandard lot width threshold",
+          "value_type": "Measurement",
+          "value": "50",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Substandard lot depth threshold",
+          "value_type": "Measurement",
+          "value": "83",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Substandard lot area threshold",
+          "value_type": "Percentage",
+          "value": "83",
+          "unit": "percent of minimum lot size"
+        },
+        {
+          "parameter": "Typical substandard lot size by zone (R-1)",
+          "value_type": "Measurement",
+          "value": "4,980",
+          "unit": "square feet"
+        },
+        {
+          "parameter": "Flag substandard lot size by zone (R-1)",
+          "value_type": "Measurement",
+          "value": "5,976",
+          "unit": "square feet"
+        },
+        {
+          "parameter": "Typical substandard lot size by zone (R-1(7000))",
+          "value_type": "Measurement",
+          "value": "5,810",
+          "unit": "square feet"
+        },
+        {
+          "parameter": "Flag substandard lot size by zone (R-1(7000))",
+          "value_type": "Measurement",
+          "value": "6,972",
+          "unit": "square feet"
+        },
+        {
+          "parameter": "Typical substandard lot size by zone (R-1(8000))",
+          "value_type": "Measurement",
+          "value": "6,640",
+          "unit": "square feet"
+        },
+        {
+          "parameter": "Flag substandard lot size by zone (R-1(8000))",
+          "value_type": "Measurement",
+          "value": "7,968",
+          "unit": "square feet"
+        },
+        {
+          "parameter": "Typical substandard lot size by zone (R-1(10000))",
+          "value_type": "Measurement",
+          "value": "8,300",
+          "unit": "square feet"
+        },
+        {
+          "parameter": "Flag substandard lot size by zone (R-1(10000))",
+          "value_type": "Measurement",
+          "value": "9,960",
+          "unit": "square feet"
+        },
+        {
+          "parameter": "Typical substandard lot size by zone (R-1(20000))",
+          "value_type": "Measurement",
+          "value": "16,600",
+          "unit": "square feet"
+        },
+        {
+          "parameter": "Flag substandard lot size by zone (R-1(20000))",
+          "value_type": "Measurement",
+          "value": "19,920",
+          "unit": "square feet"
+        },
+        {
+          "parameter": "Maximum building height for substandard lots",
+          "value_type": "Measurement",
+          "value": "17",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Standard maximum building height",
+          "value_type": "Measurement",
+          "value": "30",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Required street-side yard width for lots less than 50' wide",
+          "value_type": "Measurement",
+          "value": "10",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Standard street-side yard width",
+          "value_type": "Measurement",
+          "value": "16",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Garage location requirement for lots less than 95' deep",
+          "value_type": "Measurement",
+          "value": "rear half of the lot instead of 75' back from the front lot line",
+          "unit": "feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Minimum & maximum lot sizes",
+        "subheadings": [
+          "Min. & max. lot sizes by zone",
+          "Exceptions to the max. lot size",
+          "Substandard lots",
+          "Substandard lot sizes by zone",
+          "Special regulations for substandard lots"
+        ],
+        "sections": [
+          "Lot size",
+          "Code sections",
+          "Minimum & maximum lot sizes",
+          "Min. & max. lot sizes by zone",
+          "Exceptions to the max. lot size",
+          "Substandard lots",
+          "Substandard lot sizes by zone",
+          "Special regulations for substandard lots",
+          "Note"
+        ]
+      },
+      "additional_notes": [
+        "Page number '2' located bottom left corner.",
+        "Gray sidebar on left page with introductory text and code section references.",
+        "Note box at bottom right page emphasizes boundary survey requirement.",
+        "No handwritten annotations or stamps detected.",
+        "Text is clear and legible with no quality issues."
+      ],
+      "cross_references": [
+        "Fig 15 C on p. 23",
+        "Code sections Page 2: 18.12.040 (a) Table 2, 18.12.040 (d), 18.12.040 (c)",
+        "Code sections Page 3: 18.04.030 (a) (85)"
+      ],
+      "conditions_and_qualifiers": {
+        "qualifiers": [
+          {
+            "id": "q1",
+            "text": "As Palo Alto developed and grew through annexation, each subdivision evolved with unique characteristics e.g., the size of the lots within the subdivision.",
+            "applies_to_conditions": [
+              "c1",
+              "c2",
+              "c3",
+              "c4",
+              "c5"
+            ],
+            "scope": "Global"
+          },
+          {
+            "id": "q2",
+            "text": "The subdivision ordinance requires a new lot to have",
+            "applies_to_conditions": [
+              "c1",
+              "c2"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q3",
+            "text": "Smaller lots that meet the following criteria are considered to be substandard.",
+            "applies_to_conditions": [
+              "c3",
+              "c4",
+              "c5"
+            ],
+            "scope": "Specific"
+          }
+        ],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "width \u2265 60' AND depth \u2265 100'",
+            "value_type": "Measurement",
+            "operator": "AND",
+            "threshold_value": "width 60 feet, depth 100 feet",
+            "unit": "feet"
+          },
+          {
+            "id": "c2",
+            "text": "lot area (in sf) per the following minimum and maximum values by zone",
+            "value_type": "Range",
+            "operator": ">= and <=",
+            "threshold_value": "varies by zone (see table)",
+            "unit": "square feet"
+          },
+          {
+            "id": "c3",
+            "text": "width < 50' OR depth < 83'",
+            "value_type": "Measurement",
+            "operator": "OR",
+            "threshold_value": "width 50 feet, depth 83 feet",
+            "unit": "feet"
+          },
+          {
+            "id": "c4",
+            "text": "area \u2264 the following (83% of min. lot size)",
+            "value_type": "Percentage",
+            "operator": "<=",
+            "threshold_value": "83",
+            "unit": "percent of minimum lot size"
+          },
+          {
+            "id": "c5",
+            "text": "Maximum building height is single-story and 17' instead of 30'",
+            "value_type": "Measurement",
+            "operator": "<=",
+            "threshold_value": "17",
+            "unit": "feet"
+          }
+        ],
+        "logical_relationships": [
+          {
+            "operation": "AND",
+            "condition_ids": [
+              "c1",
+              "c2"
+            ],
+            "expression": "width \u2265 60' AND depth \u2265 100' AND lot area within min and max by zone",
+            "evaluation_order": 1
+          },
+          {
+            "operation": "AND",
+            "condition_ids": [
+              "c3",
+              "c4"
+            ],
+            "expression": "(width < 50' OR depth < 83') AND area \u2264 83% of min. lot size",
+            "evaluation_order": 2
+          }
+        ],
+        "execution_sequence": [
+          {
+            "step": 1,
+            "action": "Evaluate if new lot meets minimum width and depth requirements",
+            "condition_ids": [
+              "c1"
+            ],
+            "qualifier_ids": [
+              "q2"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 2,
+            "action": "Check if lot area is within minimum and maximum limits by zone",
+            "condition_ids": [
+              "c2"
+            ],
+            "qualifier_ids": [
+              "q2"
+            ],
+            "dependencies": [
+              1
+            ]
+          },
+          {
+            "step": 3,
+            "action": "Determine if lot qualifies as substandard based on width, depth, and area thresholds",
+            "condition_ids": [
+              "c3",
+              "c4"
+            ],
+            "qualifier_ids": [
+              "q3"
+            ],
+            "dependencies": [
+              2
+            ]
+          },
+          {
+            "step": 4,
+            "action": "Apply special regulations for substandard lots including building height and yard requirements",
+            "condition_ids": [
+              "c5"
+            ],
+            "qualifier_ids": [
+              "q3"
+            ],
+            "dependencies": [
+              3
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:27:41",
+  "model_used": "openai/gpt-4.1-mini"
+}

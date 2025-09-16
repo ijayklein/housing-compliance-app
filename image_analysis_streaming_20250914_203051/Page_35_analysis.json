@@ -1,0 +1,207 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_35.png",
+  "image_name": "Page_35.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Allowable daylight plane protrusions summary\n\nFeature                                    Allowable protrusion                           Illustration\n\nTelevision and radio antennas              up to 15' above maximum building\n                                          height\n\nChimneys and flues < 5' wide              may extend beyond the daylight plane to        Fig 20 on p. 26\n                                          meet minimum required clearance of\n                                          Building Code (Chapter 16.04)\n\nDormers, roof decks, gabels, or similar    each feature \u2264 7.5' long and cumulative       Fig 20 on p. 26 &\narchitectural features                     length of all features \u2264 15' with min 5'      Fig 23 on p. 28\n                                          separation between features (on each\n                                          side); height \u2264 24';\n\nCornices, eaves, and similar architectural max 2'                                         Fig 22 on p. 27\nfeatures (excluding flat or continuous walls\nor enclosures usable for interior space)\n\n29",
+      "visual_elements": [
+        {
+          "type": "table",
+          "description": "A three-column table showing Feature, Allowable protrusion, and Illustration columns. The table contains four rows of data about different building features and their allowable protrusions from daylight planes.",
+          "location": "center of page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Television and radio antennas protrusion",
+          "value_type": "Measurement",
+          "value": "15",
+          "unit": "feet above maximum building height"
+        },
+        {
+          "parameter": "Chimneys and flues width threshold",
+          "value_type": "Measurement",
+          "value": "5",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Dormers individual feature length",
+          "value_type": "Measurement",
+          "value": "7.5",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Dormers cumulative length",
+          "value_type": "Measurement",
+          "value": "15",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Dormers minimum separation",
+          "value_type": "Measurement",
+          "value": "5",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Dormers maximum height",
+          "value_type": "Measurement",
+          "value": "24",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Cornices and eaves maximum protrusion",
+          "value_type": "Measurement",
+          "value": "2",
+          "unit": "feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Allowable daylight plane protrusions summary",
+        "subheadings": [],
+        "sections": []
+      },
+      "additional_notes": [
+        "Page number 29 appears at bottom right",
+        "Document appears to be a photocopied page from a technical manual"
+      ],
+      "cross_references": [
+        "Building Code (Chapter 16.04)",
+        "Fig 20 on p. 26",
+        "Fig 23 on p. 28",
+        "Fig 22 on p. 27"
+      ],
+      "conditions_and_qualifiers": {
+        "qualifiers": [
+          {
+            "id": "q1",
+            "text": "< 5' wide",
+            "applies_to_conditions": [
+              "c1"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q2",
+            "text": "excluding flat or continuous walls or enclosures usable for interior space",
+            "applies_to_conditions": [
+              "c4"
+            ],
+            "scope": "Specific"
+          }
+        ],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "may extend beyond the daylight plane to meet minimum required clearance of Building Code (Chapter 16.04)",
+            "value_type": "Text",
+            "operator": "meets",
+            "threshold_value": "minimum required clearance of Building Code (Chapter 16.04)",
+            "unit": "N/A"
+          },
+          {
+            "id": "c2",
+            "text": "each feature \u2264 7.5' long",
+            "value_type": "Measurement",
+            "operator": "<=",
+            "threshold_value": "7.5",
+            "unit": "feet"
+          },
+          {
+            "id": "c3",
+            "text": "cumulative length of all features \u2264 15'",
+            "value_type": "Measurement",
+            "operator": "<=",
+            "threshold_value": "15",
+            "unit": "feet"
+          },
+          {
+            "id": "c4",
+            "text": "min 5' separation between features (on each side)",
+            "value_type": "Measurement",
+            "operator": ">=",
+            "threshold_value": "5",
+            "unit": "feet"
+          },
+          {
+            "id": "c5",
+            "text": "height \u2264 24'",
+            "value_type": "Measurement",
+            "operator": "<=",
+            "threshold_value": "24",
+            "unit": "feet"
+          },
+          {
+            "id": "c6",
+            "text": "max 2'",
+            "value_type": "Measurement",
+            "operator": "<=",
+            "threshold_value": "2",
+            "unit": "feet"
+          }
+        ],
+        "logical_relationships": [
+          {
+            "operation": "AND",
+            "condition_ids": [
+              "c2",
+              "c3",
+              "c4",
+              "c5"
+            ],
+            "expression": "each feature \u2264 7.5' long and cumulative length of all features \u2264 15' with min 5' separation between features (on each side); height \u2264 24'",
+            "evaluation_order": 1
+          }
+        ],
+        "execution_sequence": [
+          {
+            "step": 1,
+            "action": "Verify chimney or flue width is less than 5 feet",
+            "condition_ids": [],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 2,
+            "action": "Check compliance with Building Code clearance requirements for chimneys and flues",
+            "condition_ids": [
+              "c1"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": [
+              "1"
+            ]
+          },
+          {
+            "step": 3,
+            "action": "Evaluate all dimensional requirements for dormers and similar features",
+            "condition_ids": [
+              "c2",
+              "c3",
+              "c4",
+              "c5"
+            ],
+            "qualifier_ids": [],
+            "dependencies": []
+          },
+          {
+            "step": 4,
+            "action": "Verify cornices and eaves do not exceed maximum protrusion and meet exclusion criteria",
+            "condition_ids": [
+              "c6"
+            ],
+            "qualifier_ids": [
+              "q2"
+            ],
+            "dependencies": []
+          }
+        ]
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:32:09",
+  "model_used": "anthropic/claude-sonnet-4"
+}

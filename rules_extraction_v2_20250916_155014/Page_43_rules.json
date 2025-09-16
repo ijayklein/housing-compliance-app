@@ -1,0 +1,298 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_43.md",
+  "file_name": "Page_43.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "Qualifiers": {
+          "Scope": "Contextual garage placement regulation governing where a project's garage must be placed on the lot, based on neighborhood context along the subject street segment.",
+          "Applicability": [
+            "Applies if, and only if, there is a predominant neighborhood pattern of garage placement (front-half or rear-half pattern) among analyzed lots, determined per the specified procedure.",
+            "If the subject lot is a corner lot, analysis considers the pattern on the street that the subject garage faces."
+          ],
+          "Exclusions": [
+            "Flag lots (designation C) are excluded from the analysis dataset.",
+            "Lots with multi-family use of 3 or more units (designation G) are excluded from the analysis dataset.",
+            "Corner lots (designations A and H) are excluded from the analysis dataset. Ambiguity: whether the subject lot is also excluded if it is a corner lot conflicts with the instruction that the subject lot contributes."
+          ],
+          "Notes": [
+            "If the block is more than 600 ft long, limit the analysis to lots within 600 ft of the subject lot or to the 10 lots closest to the subject lot (selection method not specified)."
+          ],
+          "Ambiguities": [
+            "Corner lot treatment: Step 1 excludes corner lots but also states 'including the subject lot'; unclear if a corner subject lot is excluded or included.",
+            "Long block sampling: 'within 600 ft' or '10 closest lots' is presented as an 'or' without a decision rule.",
+            "Measurement basis for 'front half' vs 'rear half' is not explicitly defined (e.g., along lot depth from the front property line)."
+          ]
+        },
+        "Variables": {
+          "block_length_ft": {
+            "type": "number",
+            "units": "ft",
+            "description": "Total block length along the subject street frontage."
+          },
+          "subject_is_corner_lot": {
+            "type": "boolean"
+          },
+          "subject_facing_street": {
+            "type": "string",
+            "description": "Street that the subject garage faces (used when subject_is_corner_lot is true)."
+          },
+          "analysis_set_selection_method": {
+            "type": "enum",
+            "allowed": [
+              "within_600ft",
+              "closest_10"
+            ],
+            "description": "Applicable only if block_length_ft > 600; selection method is ambiguous per text."
+          },
+          "exclude_subject_if_corner": {
+            "type": "boolean",
+            "description": "Policy toggle due to ambiguity: whether to exclude the subject lot from analysis when it is a corner lot."
+          },
+          "lot_records": {
+            "type": "array",
+            "items": {
+              "lot_id": {
+                "type": "string"
+              },
+              "distance_from_subject_ft": {
+                "type": "number",
+                "units": "ft"
+              },
+              "is_flag_lot": {
+                "type": "boolean"
+              },
+              "multifamily_units": {
+                "type": "integer"
+              },
+              "is_corner_lot": {
+                "type": "boolean"
+              },
+              "has_garage": {
+                "type": "boolean"
+              },
+              "garage_location": {
+                "type": "enum",
+                "allowed": [
+                  "front_half",
+                  "rear_half",
+                  "none"
+                ],
+                "description": "'none' when has_garage is false."
+              },
+              "street_faced": {
+                "type": "string",
+                "description": "For corner lots, the street the garage faces if applicable."
+              },
+              "included_in_analysis": {
+                "type": "boolean",
+                "description": "Computed per scope and exclusions."
+              }
+            }
+          },
+          "counts": {
+            "front_pattern_count": {
+              "type": "integer"
+            },
+            "rear_pattern_count": {
+              "type": "integer"
+            },
+            "total_analyzed_lots": {
+              "type": "integer"
+            }
+          },
+          "predominant_category": {
+            "type": "enum",
+            "allowed": [
+              "front_pattern",
+              "rear_pattern",
+              "none"
+            ]
+          }
+        },
+        "Constants": {
+          "block_length_threshold_ft": 600,
+          "closest_lots_threshold": 10,
+          "predominance_threshold": {
+            "relation": ">",
+            "value": 0.5,
+            "units": "fraction_of_total_analyzed_lots"
+          },
+          "category_definitions": {
+            "front_pattern": "Lots with garage in the front half of the lot.",
+            "rear_pattern": "Lots with garage in the rear half of the lot, and lots with no garage (counted as rear-pattern)."
+          },
+          "procedural_references": {
+            "figure": "Figure 32",
+            "pages": [
+              "43",
+              "37"
+            ],
+            "example_note": "Example shows rear-half pattern leading to applicability and a requirement to place the garage in the rear half."
+          }
+        },
+        "Conditions": [
+          {
+            "id": "step0_scope",
+            "type": "mandatory",
+            "logic": "Define the analysis set of lots along the subject street.",
+            "details": [
+              "If block_length_ft <= 600, consider all lots on the block along the subject street.",
+              "If block_length_ft > 600, select either: (a) lots within 600 ft of the subject lot along the subject street, or (b) the 10 lots closest to the subject lot along the subject street. The selection is set by analysis_set_selection_method."
+            ],
+            "dependencies": []
+          },
+          {
+            "id": "step0_corner_subject_street",
+            "type": "conditional",
+            "condition": "subject_is_corner_lot == true",
+            "logic": "Restrict the analysis to the street that the subject garage faces (subject_facing_street).",
+            "dependencies": [
+              "step0_scope"
+            ]
+          },
+          {
+            "id": "step1_exclusions",
+            "type": "mandatory",
+            "logic": "Exclude certain lots from the analysis set.",
+            "details": [
+              "Exclude any lot where is_flag_lot == true.",
+              "Exclude any lot where multifamily_units >= 3.",
+              "Exclude any lot where is_corner_lot == true, unless the lot is the subject lot and exclude_subject_if_corner == false (ambiguity)."
+            ],
+            "dependencies": [
+              "step0_scope",
+              "step0_corner_subject_street"
+            ]
+          },
+          {
+            "id": "step2_categorize",
+            "type": "mandatory",
+            "logic": "Categorize each included lot into a pattern category.",
+            "details": [
+              "If has_garage == true and garage_location == 'front_half' => assign to front_pattern.",
+              "If has_garage == true and garage_location == 'rear_half' => assign to rear_pattern.",
+              "If has_garage == false or garage_location == 'none' => assign to rear_pattern."
+            ],
+            "dependencies": [
+              "step1_exclusions"
+            ]
+          },
+          {
+            "id": "step3_predominance",
+            "type": "mandatory",
+            "logic": "Determine if a predominant category exists.",
+            "details": [
+              "front_pattern_count = number of lots assigned to front_pattern.",
+              "rear_pattern_count = number of lots assigned to rear_pattern.",
+              "total_analyzed_lots = front_pattern_count + rear_pattern_count.",
+              "If front_pattern_count / total_analyzed_lots > 0.5, predominant_category = 'front_pattern'.",
+              "Else if rear_pattern_count / total_analyzed_lots > 0.5, predominant_category = 'rear_pattern'.",
+              "Else predominant_category = 'none' (no predominant pattern)."
+            ],
+            "dependencies": [
+              "step2_categorize"
+            ]
+          },
+          {
+            "id": "step4_applicability",
+            "type": "mandatory",
+            "logic": "Set regulation applicability based on predominance.",
+            "details": [
+              "If predominant_category in ['front_pattern', 'rear_pattern'] => contextual garage placement regulation applies.",
+              "If predominant_category == 'none' => contextual garage placement regulation does not apply."
+            ],
+            "dependencies": [
+              "step3_predominance"
+            ]
+          },
+          {
+            "id": "step5_project_requirement",
+            "type": "mandatory_if_applies",
+            "condition": "Regulation applies per step4_applicability",
+            "logic": "Assign project garage placement requirement to match predominant category.",
+            "details": [
+              "If predominant_category == 'front_pattern' => project must place the garage in the front half of the lot.",
+              "If predominant_category == 'rear_pattern' => project must place the garage in the rear half of the lot."
+            ],
+            "dependencies": [
+              "step4_applicability"
+            ]
+          },
+          {
+            "id": "example_outcome",
+            "type": "informative",
+            "logic": "Example from Figure 32: predominant_category == 'rear_pattern' => regulation applies => project garages must be in the rear half."
+          }
+        ],
+        "Exceptions": [
+          {
+            "case": "Lots with no garage",
+            "treatment": "Count as rear_pattern during categorization."
+          },
+          {
+            "case": "Subject lot is a corner lot",
+            "treatment": "Analyze only the pattern on the street the subject garage faces; inclusion of the subject lot itself when it is a corner lot is ambiguous."
+          },
+          {
+            "case": "Block length > 600 ft",
+            "treatment": "Limit analysis either to lots within 600 ft of the subject lot or to the 10 closest lots; the method must be selected due to ambiguity."
+          }
+        ],
+        "Relationships": [
+          {
+            "from": "Scope definition (step0_scope, step0_corner_subject_street)",
+            "to": "Exclusions (step1_exclusions)",
+            "type": "hierarchical",
+            "description": "Scope establishes candidate lots; exclusions refine the analysis set."
+          },
+          {
+            "from": "Exclusions (step1_exclusions)",
+            "to": "Categorization (step2_categorize)",
+            "type": "logical_dependency",
+            "description": "Only non-excluded lots are categorized into front or rear pattern."
+          },
+          {
+            "from": "Categorization (step2_categorize)",
+            "to": "Predominance determination (step3_predominance)",
+            "type": "logical_dependency",
+            "description": "Pattern counts determine whether a category exceeds 50%."
+          },
+          {
+            "from": "Predominance determination (step3_predominance)",
+            "to": "Applicability (step4_applicability)",
+            "type": "iff",
+            "description": "Regulation applies if and only if one category is predominant (>50%)."
+          },
+          {
+            "from": "Applicability (step4_applicability)",
+            "to": "Project requirement (step5_project_requirement)",
+            "type": "conditional",
+            "description": "If applicable, the project's garage placement must match the predominant category."
+          },
+          {
+            "from": "Long block rule and 10-lot alternative",
+            "to": "Scope definition",
+            "type": "modifier",
+            "description": "For blocks longer than 600 ft, the analysis set is reduced by distance or count."
+          },
+          {
+            "from": "Corner subject street consideration",
+            "to": "Scope definition",
+            "type": "modifier",
+            "description": "When subject is a corner lot, the analysis is confined to the street the subject garage faces."
+          }
+        ]
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "[\n  {\n    \"Qualifiers\": {\n      \"Scope\": \"Contextual garage placement regulation governing where a project's garage must be placed on the lot, based on neighborhood context along the subject street segment.\",\n      \"Applicability\": [\n        \"Applies if, and only if, there is a predominant neighborhood pattern of garage placement (front-half or rear-half pattern) among analyzed lots, determined per the specified procedure.\",\n        \"If the subject lot is a corner lot, analysis considers the pattern on the street that the subject garage faces.\"\n      ],\n      \"Exclusions\": [\n        \"Flag lots (designation C) are excluded from the analysis dataset.\",\n        \"Lots with multi-family use of 3 or more units (designation G) are excluded from the analysis dataset.\",\n        \"Corner lots (designations A and H) are excluded from the analysis dataset. Ambiguity: whether the subject lot is also excluded if it is a corner lot conflicts with the instruction that the subject lot contributes.\"\n      ],\n      \"Notes\": [\n        \"If the block is more than 600 ft long, limit the analysis to lots within 600 ft of the subject lot or to the 10 lots closest to the subject lot (selection method not specified).\"\n      ],\n      \"Ambiguities\": [\n        \"Corner lot treatment: Step 1 excludes corner lots but also states 'including the subject lot'; unclear if a corner subject lot is excluded or included.\",\n        \"Long block sampling: 'within 600 ft' or '10 closest lots' is presented as an 'or' without a decision rule.\",\n        \"Measurement basis for 'front half' vs 'rear half' is not explicitly defined (e.g., along lot depth from the front property line).\"\n      ]\n    },\n    \"Variables\": {\n      \"block_length_ft\": {\n        \"type\": \"number\",\n        \"units\": \"ft\",\n        \"description\": \"Total block length along the subject street frontage.\"\n      },\n      \"subject_is_corner_lot\": {\n        \"type\": \"boolean\"\n      },\n      \"subject_facing_street\": {\n        \"type\": \"string\",\n        \"description\": \"Street that the subject garage faces (used when subject_is_corner_lot is true).\"\n      },\n      \"analysis_set_selection_method\": {\n        \"type\": \"enum\",\n        \"allowed\": [\n          \"within_600ft\",\n          \"closest_10\"\n        ],\n        \"description\": \"Applicable only if block_length_ft > 600; selection method is ambiguous per text.\"\n      },\n      \"exclude_subject_if_corner\": {\n        \"type\": \"boolean\",\n        \"description\": \"Policy toggle due to ambiguity: whether to exclude the subject lot from analysis when it is a corner lot.\"\n      },\n      \"lot_records\": {\n        \"type\": \"array\",\n        \"items\": {\n          \"lot_id\": {\n            \"type\": \"string\"\n          },\n          \"distance_from_subject_ft\": {\n            \"type\": \"number\",\n            \"units\": \"ft\"\n          },\n          \"is_flag_lot\": {\n            \"type\": \"boolean\"\n          },\n          \"multifamily_units\": {\n            \"type\": \"integer\"\n          },\n          \"is_corner_lot\": {\n            \"type\": \"boolean\"\n          },\n          \"has_garage\": {\n            \"type\": \"boolean\"\n          },\n          \"garage_location\": {\n            \"type\": \"enum\",\n            \"allowed\": [\n              \"front_half\",\n              \"rear_half\",\n              \"none\"\n            ],\n            \"description\": \"'none' when has_garage is false.\"\n          },\n          \"street_faced\": {\n            \"type\": \"string\",\n            \"description\": \"For corner lots, the street the garage faces if applicable.\"\n          },\n          \"included_in_analysis\": {\n            \"type\": \"boolean\",\n            \"description\": \"Computed per scope and exclusions.\"\n          }\n        }\n      },\n      \"counts\": {\n        \"front_pattern_count\": {\n          \"type\": \"integer\"\n        },\n        \"rear_pattern_count\": {\n          \"type\": \"integer\"\n        },\n        \"total_analyzed_lots\": {\n          \"type\": \"integer\"\n        }\n      },\n      \"predominant_category\": {\n        \"type\": \"enum\",\n        \"allowed\": [\n          \"front_pattern\",\n          \"rear_pattern\",\n          \"none\"\n        ]\n      }\n    },\n    \"Constants\": {\n      \"block_length_threshold_ft\": 600,\n      \"closest_lots_threshold\": 10,\n      \"predominance_threshold\": {\n        \"relation\": \">\",\n        \"value\": 0.5,\n        \"units\": \"fraction_of_total_analyzed_lots\"\n      },\n      \"category_definitions\": {\n        \"front_pattern\": \"Lots with garage in the front half of the lot.\",\n        \"rear_pattern\": \"Lots with garage in the rear half of the lot, and lots with no garage (counted as rear-pattern).\"\n      },\n      \"procedural_references\": {\n        \"figure\": \"Figure 32\",\n        \"pages\": [\n          \"43\",\n          \"37\"\n        ],\n        \"example_note\": \"Example shows rear-half pattern leading to applicability and a requirement to place the garage in the rear half.\"\n      }\n    },\n    \"Conditions\": [\n      {\n        \"id\": \"step0_scope\",\n        \"type\": \"mandatory\",\n        \"logic\": \"Define the analysis set of lots along the subject street.\",\n        \"details\": [\n          \"If block_length_ft <= 600, consider all lots on the block along the subject street.\",\n          \"If block_length_ft > 600, select either: (a) lots within 600 ft of the subject lot along the subject street, or (b) the 10 lots closest to the subject lot along the subject street. The selection is set by analysis_set_selection_method.\"\n        ],\n        \"dependencies\": []\n      },\n      {\n        \"id\": \"step0_corner_subject_street\",\n        \"type\": \"conditional\",\n        \"condition\": \"subject_is_corner_lot == true\",\n        \"logic\": \"Restrict the analysis to the street that the subject garage faces (subject_facing_street).\",\n        \"dependencies\": [\n          \"step0_scope\"\n        ]\n      },\n      {\n        \"id\": \"step1_exclusions\",\n        \"type\": \"mandatory\",\n        \"logic\": \"Exclude certain lots from the analysis set.\",\n        \"details\": [\n          \"Exclude any lot where is_flag_lot == true.\",\n          \"Exclude any lot where multifamily_units >= 3.\",\n          \"Exclude any lot where is_corner_lot == true, unless the lot is the subject lot and exclude_subject_if_corner == false (ambiguity).\"\n        ],\n        \"dependencies\": [\n          \"step0_scope\",\n          \"step0_corner_subject_street\"\n        ]\n      },\n      {\n        \"id\": \"step2_categorize\",\n        \"type\": \"mandatory\",\n        \"logic\": \"Categorize each included lot into a pattern category.\",\n        \"details\": [\n          \"If has_garage == true and garage_location == 'front_half' => assign to front_pattern.\",\n          \"If has_garage == true and garage_location == 'rear_half' => assign to rear_pattern.\",\n          \"If has_garage == false or garage_location == 'none' => assign to rear_pattern.\"\n        ],\n        \"dependencies\": [\n          \"step1_exclusions\"\n        ]\n      },\n      {\n        \"id\": \"step3_predominance\",\n        \"type\": \"mandatory\",\n        \"logic\": \"Determine if a predominant category exists.\",\n        \"details\": [\n          \"front_pattern_count = number of lots assigned to front_pattern.\",\n          \"rear_pattern_count = number of lots assigned to rear_pattern.\",\n          \"total_analyzed_lots = front_pattern_count + rear_pattern_count.\",\n          \"If front_pattern_count / total_analyzed_lots > 0.5, predominant_category = 'front_pattern'.\",\n          \"Else if rear_pattern_count / total_analyzed_lots > 0.5, predominant_category = 'rear_pattern'.\",\n          \"Else predominant_category = 'none' (no predominant pattern).\"\n        ],\n        \"dependencies\": [\n          \"step2_categorize\"\n        ]\n      },\n      {\n        \"id\": \"step4_applicability\",\n        \"type\": \"mandatory\",\n        \"logic\": \"Set regulation applicability based on predominance.\",\n        \"details\": [\n          \"If predominant_category in ['front_pattern', 'rear_pattern'] => contextual garage placement regulation applies.\",\n          \"If predominant_category == 'none' => contextual garage placement regulation does not apply.\"\n        ],\n        \"dependencies\": [\n          \"step3_predominance\"\n        ]\n      },\n      {\n        \"id\": \"step5_project_requirement\",\n        \"type\": \"mandatory_if_applies\",\n        \"condition\": \"Regulation applies per step4_applicability\",\n        \"logic\": \"Assign project garage placement requirement to match predominant category.\",\n        \"details\": [\n          \"If predominant_category == 'front_pattern' => project must place the garage in the front half of the lot.\",\n          \"If predominant_category == 'rear_pattern' => project must place the garage in the rear half of the lot.\"\n        ],\n        \"dependencies\": [\n          \"step4_applicability\"\n        ]\n      },\n      {\n        \"id\": \"example_outcome\",\n        \"type\": \"informative\",\n        \"logic\": \"Example from Figure 32: predominant_category == 'rear_pattern' => regulation applies => project garages must be in the rear half.\"\n      }\n    ],\n    \"Exceptions\": [\n      {\n        \"case\": \"Lots with no garage\",\n        \"treatment\": \"Count as rear_pattern during categorization.\"\n      },\n      {\n        \"case\": \"Subject lot is a corner lot\",\n        \"treatment\": \"Analyze only the pattern on the street the subject garage faces; inclusion of the subject lot itself when it is a corner lot is ambiguous.\"\n      },\n      {\n        \"case\": \"Block length > 600 ft\",\n        \"treatment\": \"Limit analysis either to lots within 600 ft of the subject lot or to the 10 closest lots; the method must be selected due to ambiguity.\"\n      }\n    ],\n    \"Relationships\": [\n      {\n        \"from\": \"Scope definition (step0_scope, step0_corner_subject_street)\",\n        \"to\": \"Exclusions (step1_exclusions)\",\n        \"type\": \"hierarchical\",\n        \"description\": \"Scope establishes candidate lots; exclusions refine the analysis set.\"\n      },\n      {\n        \"from\": \"Exclusions (step1_exclusions)\",\n        \"to\": \"Categorization (step2_categorize)\",\n        \"type\": \"logical_dependency\",\n        \"description\": \"Only non-excluded lots are categorized into front or rear pattern.\"\n      },\n      {\n        \"from\": \"Categorization (step2_categorize)\",\n        \"to\": \"Predominance determination (step3_predominance)\",\n        \"type\": \"logical_dependency\",\n        \"description\": \"Pattern counts determine whether a category exceeds 50%.\"\n      },\n      {\n        \"from\": \"Predominance determination (step3_predominance)\",\n        \"to\": \"Applicability (step4_applicability)\",\n        \"type\": \"iff\",\n        \"description\": \"Regulation applies if and only if one category is predominant (>50%).\"\n      },\n      {\n        \"from\": \"Applicability (step4_applicability)\",\n        \"to\": \"Project requirement (step5_project_requirement)\",\n        \"type\": \"conditional\",\n        \"description\": \"If applicable, the project's garage placement must match the predominant category.\"\n      },\n      {\n        \"from\": \"Long block rule and 10-lot alternative\",\n        \"to\": \"Scope definition\",\n        \"type\": \"modifier\",\n        \"description\": \"For blocks longer than 600 ft, the analysis set is reduced by distance or count.\"\n      },\n      {\n        \"from\": \"Corner subject street consideration\",\n        \"to\": \"Scope definition\",\n        \"type\": \"modifier\",\n        \"description\": \"When subject is a corner lot, the analysis is confined to the street the subject garage faces.\"\n      }\n    ]\n  }\n]",
+    "response_time": 172.9511740207672,
+    "input_tokens": 703,
+    "output_tokens": 7840,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 15:56:11",
+  "model": "openai/gpt-5",
+  "success": true
+}

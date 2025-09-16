@@ -1,0 +1,422 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_52.md",
+  "file_name": "Page_52.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "RuleId": "R1-MainDwelling-StandardLot-SlopeLT12_12",
+        "Qualifiers": {
+          "Scope": "Maximum building height for main dwelling units on standard lots",
+          "Applicability": [
+            "Applies to main dwelling (primary residence) located on a standard lot",
+            "Height measured to the roof peak and specifically to the top of roof material per Figure 42"
+          ],
+          "Exclusions": [
+            "Does not apply to substandard or flag lots",
+            "Does not apply to accessory structures or 2nd-dwelling units"
+          ],
+          "AmbiguityNotes": [
+            "The term 'standard lot' is not defined on this page; rely on external code definitions.",
+            "Measurement point is described both as 'to roof peak' and 'to top of roof material'; assumed to mean the topmost point of the roofing material at the peak.",
+            "Figure 42 roof slope labels (e.g., '12:14') appear inconsistent with the stated rise:run convention; use the textual rule for compliance."
+          ]
+        },
+        "Variables": {
+          "structure_type": {
+            "type": "enum",
+            "allowed": [
+              "main_dwelling"
+            ],
+            "value": "main_dwelling"
+          },
+          "lot_type": {
+            "type": "enum",
+            "allowed": [
+              "standard",
+              "substandard",
+              "flag"
+            ],
+            "value": "standard"
+          },
+          "roof_slope_rise_in_per_12in_run": {
+            "type": "number",
+            "units": "in per 12 in run",
+            "description": "Vertical rise in inches for every 12 inches of horizontal run (rise:12)."
+          },
+          "height_to_roof_peak": {
+            "type": "number",
+            "units": "ft",
+            "description": "Vertical distance from grade to the highest point of roofing material at the roof peak."
+          }
+        },
+        "Constants": {
+          "max_height_to_roof_peak": {
+            "value": 30,
+            "units": "ft"
+          },
+          "roof_slope_threshold_rise_per_12in_run": {
+            "value": 12,
+            "units": "in per 12 in run",
+            "description": "Equivalent to a slope ratio of 12:12 (rise:run)."
+          },
+          "measurement_reference": "Height measured to top of roof material (Figure 42)",
+          "roof_slope_definition": "Roof slope is the vertical rise in inches for every horizontal distance of twelve inches (the run). Expressed as rise:run (e.g., 6:12)."
+        },
+        "Conditions": [
+          {
+            "type": "mandatory",
+            "logic": "IF structure_type == 'main_dwelling' AND lot_type == 'standard' AND roof_slope_rise_in_per_12in_run < 12 THEN height_to_roof_peak <= 30 ft"
+          }
+        ],
+        "Exceptions": [],
+        "Relationships": {
+          "MutualExclusivity": [
+            "Mutually exclusive with R2 for standard lots (slope threshold split).",
+            "Mutually exclusive with R3 (different lot type) and with R4/R5 (different structure types)."
+          ],
+          "CrossReferences": [
+            {
+              "code": "18.12.040(a) Table 2",
+              "page": 46
+            },
+            {
+              "code": "18.04.030(64)(b)",
+              "page": 47
+            }
+          ],
+          "Figures": [
+            {
+              "id": "Figure 42",
+              "note": "Height measured to top of roof material; comparison of roof slopes."
+            },
+            {
+              "id": "Figure 43",
+              "note": "Determining slope of roof; slope expressed as rise:run over a 12-inch run."
+            }
+          ],
+          "Dependencies": [
+            "Depends on correct determination of roof slope per Figure 43."
+          ]
+        }
+      },
+      {
+        "RuleId": "R2-MainDwelling-StandardLot-SlopeGE12_12",
+        "Qualifiers": {
+          "Scope": "Maximum building height for main dwelling units on standard lots",
+          "Applicability": [
+            "Applies to main dwelling (primary residence) located on a standard lot",
+            "Roof slope must be greater than or equal to 12:12 (rise:run)",
+            "Height measured to the roof peak and specifically to the top of roof material per Figure 42"
+          ],
+          "Exclusions": [
+            "Does not apply to substandard or flag lots",
+            "Does not apply to accessory structures or 2nd-dwelling units"
+          ],
+          "AmbiguityNotes": [
+            "The term 'standard lot' is not defined on this page; rely on external code definitions.",
+            "Measurement point phrasing differs between 'roof peak' and 'top of roof material'; assumed equivalent at the peak.",
+            "Figure 42 labels appear inconsistent with the rise:run convention; use the textual rule (\u226512:12) for compliance."
+          ]
+        },
+        "Variables": {
+          "structure_type": {
+            "type": "enum",
+            "allowed": [
+              "main_dwelling"
+            ],
+            "value": "main_dwelling"
+          },
+          "lot_type": {
+            "type": "enum",
+            "allowed": [
+              "standard",
+              "substandard",
+              "flag"
+            ],
+            "value": "standard"
+          },
+          "roof_slope_rise_in_per_12in_run": {
+            "type": "number",
+            "units": "in per 12 in run",
+            "description": "Vertical rise in inches for every 12 inches of horizontal run (rise:12)."
+          },
+          "height_to_roof_peak": {
+            "type": "number",
+            "units": "ft",
+            "description": "Vertical distance from grade to the highest point of roofing material at the roof peak."
+          }
+        },
+        "Constants": {
+          "max_height_to_roof_peak": {
+            "value": 33,
+            "units": "ft"
+          },
+          "roof_slope_threshold_rise_per_12in_run": {
+            "value": 12,
+            "units": "in per 12 in run",
+            "comparison": ">= threshold"
+          },
+          "measurement_reference": "Height measured to top of roof material (Figure 42)",
+          "roof_slope_definition": "Roof slope is the vertical rise in inches for every horizontal distance of twelve inches (the run). Expressed as rise:run (e.g., 6:12)."
+        },
+        "Conditions": [
+          {
+            "type": "mandatory",
+            "logic": "IF structure_type == 'main_dwelling' AND lot_type == 'standard' AND roof_slope_rise_in_per_12in_run >= 12 THEN height_to_roof_peak <= 33 ft"
+          }
+        ],
+        "Exceptions": [],
+        "Relationships": {
+          "MutualExclusivity": [
+            "Mutually exclusive with R1 for standard lots (slope threshold split).",
+            "Mutually exclusive with R3 (different lot type) and with R4/R5 (different structure types)."
+          ],
+          "CrossReferences": [
+            {
+              "code": "18.12.040(a) Table 2",
+              "page": 46
+            },
+            {
+              "code": "18.04.030(64)(b)",
+              "page": 47
+            }
+          ],
+          "Figures": [
+            {
+              "id": "Figure 42",
+              "note": "Height measured to top of roof material; comparison of roof slopes."
+            },
+            {
+              "id": "Figure 43",
+              "note": "Determining slope of roof; slope expressed as rise:run over a 12-inch run."
+            }
+          ],
+          "Dependencies": [
+            "Depends on correct determination of roof slope per Figure 43."
+          ]
+        }
+      },
+      {
+        "RuleId": "R3-MainDwelling-SubstandardOrFlagLot",
+        "Qualifiers": {
+          "Scope": "Maximum building height for main dwelling units on substandard or flag lots",
+          "Applicability": [
+            "Applies to main dwelling (primary residence) on substandard lots or flag lots",
+            "Height measured to the roof peak and specifically to the top of roof material per Figure 42"
+          ],
+          "Exclusions": [
+            "Does not apply to standard lots",
+            "Does not apply to accessory structures or 2nd-dwelling units"
+          ],
+          "AmbiguityNotes": [
+            "Definitions of 'substandard lot' and 'flag lot' are not provided on this page; rely on external code definitions.",
+            "No slope-based differentiation is provided for substandard/flag lots; assumed to be a flat cap regardless of roof slope.",
+            "Measurement point phrasing differs between 'roof peak' and 'top of roof material'; assumed equivalent at the peak."
+          ]
+        },
+        "Variables": {
+          "structure_type": {
+            "type": "enum",
+            "allowed": [
+              "main_dwelling"
+            ],
+            "value": "main_dwelling"
+          },
+          "lot_type": {
+            "type": "enum",
+            "allowed": [
+              "standard",
+              "substandard",
+              "flag"
+            ],
+            "value": "substandard_or_flag"
+          },
+          "height_to_roof_peak": {
+            "type": "number",
+            "units": "ft",
+            "description": "Vertical distance from grade to the highest point of roofing material at the roof peak."
+          }
+        },
+        "Constants": {
+          "max_height_to_roof_peak": {
+            "value": 17,
+            "units": "ft"
+          },
+          "measurement_reference": "Height measured to top of roof material (Figure 42)"
+        },
+        "Conditions": [
+          {
+            "type": "mandatory",
+            "logic": "IF structure_type == 'main_dwelling' AND lot_type IN ['substandard','flag'] THEN height_to_roof_peak <= 17 ft"
+          }
+        ],
+        "Exceptions": [],
+        "Relationships": {
+          "MutualExclusivity": [
+            "Mutually exclusive with R1 and R2 (which only apply to standard lots).",
+            "Mutually exclusive with R4 (accessory structures) and R5 (2nd-dwelling units)."
+          ],
+          "CrossReferences": [
+            {
+              "code": "18.12.040(a) Table 2",
+              "page": 46
+            },
+            {
+              "code": "18.04.030(64)(b)",
+              "page": 47
+            }
+          ],
+          "Figures": [
+            {
+              "id": "Figure 42",
+              "note": "Height measured to top of roof material."
+            }
+          ]
+        }
+      },
+      {
+        "RuleId": "R4-AccessoryStructure-RearOrSideYard",
+        "Qualifiers": {
+          "Scope": "Maximum building height for accessory structures located in rear or side yards",
+          "Applicability": [
+            "Applies to accessory structures located in the rear yard or side yard",
+            "Height measured to the roof peak and specifically to the top of roof material per Figure 42"
+          ],
+          "Exclusions": [
+            "Does not apply to accessory structures located in other yard areas (e.g., front yard) unless specified elsewhere",
+            "Does not apply to main dwellings or 2nd-dwelling units"
+          ],
+          "AmbiguityNotes": [
+            "What qualifies as an 'accessory structure' is not defined on this page; rely on external code definitions.",
+            "Location constraint is explicit (rear or side yard); height rules for other locations are not provided here.",
+            "Measurement point phrasing differs between 'roof peak' and 'top of roof material'; assumed equivalent at the peak."
+          ]
+        },
+        "Variables": {
+          "structure_type": {
+            "type": "enum",
+            "allowed": [
+              "accessory_structure"
+            ],
+            "value": "accessory_structure"
+          },
+          "yard_location": {
+            "type": "enum",
+            "allowed": [
+              "rear",
+              "side",
+              "front",
+              "other"
+            ],
+            "description": "Location of the accessory structure on the lot."
+          },
+          "height_to_roof_peak": {
+            "type": "number",
+            "units": "ft",
+            "description": "Vertical distance from grade to the highest point of roofing material at the roof peak."
+          }
+        },
+        "Constants": {
+          "max_height_to_roof_peak": {
+            "value": 12,
+            "units": "ft"
+          },
+          "measurement_reference": "Height measured to top of roof material (Figure 42)"
+        },
+        "Conditions": [
+          {
+            "type": "mandatory",
+            "logic": "IF structure_type == 'accessory_structure' AND yard_location IN ['rear','side'] THEN height_to_roof_peak <= 12 ft"
+          }
+        ],
+        "Exceptions": [],
+        "Relationships": {
+          "MutualExclusivity": [
+            "Mutually exclusive with R1/R2/R3 (main dwellings) and R5 (2nd-dwelling units)."
+          ],
+          "CrossReferences": [
+            {
+              "code": "18.12.040(a) Table 2",
+              "page": 46
+            }
+          ],
+          "Figures": [
+            {
+              "id": "Figure 42",
+              "note": "Height measured to top of roof material."
+            }
+          ]
+        }
+      },
+      {
+        "RuleId": "R5-SecondDwellingUnits",
+        "Qualifiers": {
+          "Scope": "Maximum building height for 2nd-dwelling units",
+          "Applicability": [
+            "Applies to second-dwelling units (often referred to as ADUs/accessory dwelling units, if so defined in code)",
+            "Height measured to the roof peak and specifically to the top of roof material per Figure 42"
+          ],
+          "Exclusions": [
+            "Does not apply to main dwellings or non-dwelling accessory structures"
+          ],
+          "AmbiguityNotes": [
+            "The term '2nd-dwelling units' is not explicitly defined here; confirm whether this equals ADUs per local code.",
+            "Measurement point phrasing differs between 'roof peak' and 'top of roof material'; assumed equivalent at the peak.",
+            "Lot type (standard vs substandard/flag) is not specified; assumed to apply to all lots unless otherwise limited by code."
+          ]
+        },
+        "Variables": {
+          "structure_type": {
+            "type": "enum",
+            "allowed": [
+              "second_dwelling_unit",
+              "ADU"
+            ],
+            "value": "second_dwelling_unit"
+          },
+          "height_to_roof_peak": {
+            "type": "number",
+            "units": "ft",
+            "description": "Vertical distance from grade to the highest point of roofing material at the roof peak."
+          }
+        },
+        "Constants": {
+          "max_height_to_roof_peak": {
+            "value": 17,
+            "units": "ft"
+          },
+          "measurement_reference": "Height measured to top of roof material (Figure 42)"
+        },
+        "Conditions": [
+          {
+            "type": "mandatory",
+            "logic": "IF structure_type IN ['second_dwelling_unit','ADU'] THEN height_to_roof_peak <= 17 ft"
+          }
+        ],
+        "Exceptions": [],
+        "Relationships": {
+          "MutualExclusivity": [
+            "Mutually exclusive with R1/R2/R3 (main dwellings) and R4 (accessory non-dwelling structures)."
+          ],
+          "CrossReferences": [
+            {
+              "code": "18.12.040(a) Table 2",
+              "page": 46
+            }
+          ],
+          "Figures": [
+            {
+              "id": "Figure 42",
+              "note": "Height measured to top of roof material."
+            }
+          ]
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "[\n  {\n    \"RuleId\": \"R1-MainDwelling-StandardLot-SlopeLT12_12\",\n    \"Qualifiers\": {\n      \"Scope\": \"Maximum building height for main dwelling units on standard lots\",\n      \"Applicability\": [\n        \"Applies to main dwelling (primary residence) located on a standard lot\",\n        \"Height measured to the roof peak and specifically to the top of roof material per Figure 42\"\n      ],\n      \"Exclusions\": [\n        \"Does not apply to substandard or flag lots\",\n        \"Does not apply to accessory structures or 2nd-dwelling units\"\n      ],\n      \"AmbiguityNotes\": [\n        \"The term 'standard lot' is not defined on this page; rely on external code definitions.\",\n        \"Measurement point is described both as 'to roof peak' and 'to top of roof material'; assumed to mean the topmost point of the roofing material at the peak.\",\n        \"Figure 42 roof slope labels (e.g., '12:14') appear inconsistent with the stated rise:run convention; use the textual rule for compliance.\"\n      ]\n    },\n    \"Variables\": {\n      \"structure_type\": {\n        \"type\": \"enum\",\n        \"allowed\": [\n          \"main_dwelling\"\n        ],\n        \"value\": \"main_dwelling\"\n      },\n      \"lot_type\": {\n        \"type\": \"enum\",\n        \"allowed\": [\n          \"standard\",\n          \"substandard\",\n          \"flag\"\n        ],\n        \"value\": \"standard\"\n      },\n      \"roof_slope_rise_in_per_12in_run\": {\n        \"type\": \"number\",\n        \"units\": \"in per 12 in run\",\n        \"description\": \"Vertical rise in inches for every 12 inches of horizontal run (rise:12).\"\n      },\n      \"height_to_roof_peak\": {\n        \"type\": \"number\",\n        \"units\": \"ft\",\n        \"description\": \"Vertical distance from grade to the highest point of roofing material at the roof peak.\"\n      }\n    },\n    \"Constants\": {\n      \"max_height_to_roof_peak\": {\n        \"value\": 30,\n        \"units\": \"ft\"\n      },\n      \"roof_slope_threshold_rise_per_12in_run\": {\n        \"value\": 12,\n        \"units\": \"in per 12 in run\",\n        \"description\": \"Equivalent to a slope ratio of 12:12 (rise:run).\"\n      },\n      \"measurement_reference\": \"Height measured to top of roof material (Figure 42)\",\n      \"roof_slope_definition\": \"Roof slope is the vertical rise in inches for every horizontal distance of twelve inches (the run). Expressed as rise:run (e.g., 6:12).\"\n    },\n    \"Conditions\": [\n      {\n        \"type\": \"mandatory\",\n        \"logic\": \"IF structure_type == 'main_dwelling' AND lot_type == 'standard' AND roof_slope_rise_in_per_12in_run < 12 THEN height_to_roof_peak <= 30 ft\"\n      }\n    ],\n    \"Exceptions\": [],\n    \"Relationships\": {\n      \"MutualExclusivity\": [\n        \"Mutually exclusive with R2 for standard lots (slope threshold split).\",\n        \"Mutually exclusive with R3 (different lot type) and with R4/R5 (different structure types).\"\n      ],\n      \"CrossReferences\": [\n        {\n          \"code\": \"18.12.040(a) Table 2\",\n          \"page\": 46\n        },\n        {\n          \"code\": \"18.04.030(64)(b)\",\n          \"page\": 47\n        }\n      ],\n      \"Figures\": [\n        {\n          \"id\": \"Figure 42\",\n          \"note\": \"Height measured to top of roof material; comparison of roof slopes.\"\n        },\n        {\n          \"id\": \"Figure 43\",\n          \"note\": \"Determining slope of roof; slope expressed as rise:run over a 12-inch run.\"\n        }\n      ],\n      \"Dependencies\": [\n        \"Depends on correct determination of roof slope per Figure 43.\"\n      ]\n    }\n  },\n  {\n    \"RuleId\": \"R2-MainDwelling-StandardLot-SlopeGE12_12\",\n    \"Qualifiers\": {\n      \"Scope\": \"Maximum building height for main dwelling units on standard lots\",\n      \"Applicability\": [\n        \"Applies to main dwelling (primary residence) located on a standard lot\",\n        \"Roof slope must be greater than or equal to 12:12 (rise:run)\",\n        \"Height measured to the roof peak and specifically to the top of roof material per Figure 42\"\n      ],\n      \"Exclusions\": [\n        \"Does not apply to substandard or flag lots\",\n        \"Does not apply to accessory structures or 2nd-dwelling units\"\n      ],\n      \"AmbiguityNotes\": [\n        \"The term 'standard lot' is not defined on this page; rely on external code definitions.\",\n        \"Measurement point phrasing differs between 'roof peak' and 'top of roof material'; assumed equivalent at the peak.\",\n        \"Figure 42 labels appear inconsistent with the rise:run convention; use the textual rule (\u226512:12) for compliance.\"\n      ]\n    },\n    \"Variables\": {\n      \"structure_type\": {\n        \"type\": \"enum\",\n        \"allowed\": [\n          \"main_dwelling\"\n        ],\n        \"value\": \"main_dwelling\"\n      },\n      \"lot_type\": {\n        \"type\": \"enum\",\n        \"allowed\": [\n          \"standard\",\n          \"substandard\",\n          \"flag\"\n        ],\n        \"value\": \"standard\"\n      },\n      \"roof_slope_rise_in_per_12in_run\": {\n        \"type\": \"number\",\n        \"units\": \"in per 12 in run\",\n        \"description\": \"Vertical rise in inches for every 12 inches of horizontal run (rise:12).\"\n      },\n      \"height_to_roof_peak\": {\n        \"type\": \"number\",\n        \"units\": \"ft\",\n        \"description\": \"Vertical distance from grade to the highest point of roofing material at the roof peak.\"\n      }\n    },\n    \"Constants\": {\n      \"max_height_to_roof_peak\": {\n        \"value\": 33,\n        \"units\": \"ft\"\n      },\n      \"roof_slope_threshold_rise_per_12in_run\": {\n        \"value\": 12,\n        \"units\": \"in per 12 in run\",\n        \"comparison\": \">= threshold\"\n      },\n      \"measurement_reference\": \"Height measured to top of roof material (Figure 42)\",\n      \"roof_slope_definition\": \"Roof slope is the vertical rise in inches for every horizontal distance of twelve inches (the run). Expressed as rise:run (e.g., 6:12).\"\n    },\n    \"Conditions\": [\n      {\n        \"type\": \"mandatory\",\n        \"logic\": \"IF structure_type == 'main_dwelling' AND lot_type == 'standard' AND roof_slope_rise_in_per_12in_run >= 12 THEN height_to_roof_peak <= 33 ft\"\n      }\n    ],\n    \"Exceptions\": [],\n    \"Relationships\": {\n      \"MutualExclusivity\": [\n        \"Mutually exclusive with R1 for standard lots (slope threshold split).\",\n        \"Mutually exclusive with R3 (different lot type) and with R4/R5 (different structure types).\"\n      ],\n      \"CrossReferences\": [\n        {\n          \"code\": \"18.12.040(a) Table 2\",\n          \"page\": 46\n        },\n        {\n          \"code\": \"18.04.030(64)(b)\",\n          \"page\": 47\n        }\n      ],\n      \"Figures\": [\n        {\n          \"id\": \"Figure 42\",\n          \"note\": \"Height measured to top of roof material; comparison of roof slopes.\"\n        },\n        {\n          \"id\": \"Figure 43\",\n          \"note\": \"Determining slope of roof; slope expressed as rise:run over a 12-inch run.\"\n        }\n      ],\n      \"Dependencies\": [\n        \"Depends on correct determination of roof slope per Figure 43.\"\n      ]\n    }\n  },\n  {\n    \"RuleId\": \"R3-MainDwelling-SubstandardOrFlagLot\",\n    \"Qualifiers\": {\n      \"Scope\": \"Maximum building height for main dwelling units on substandard or flag lots\",\n      \"Applicability\": [\n        \"Applies to main dwelling (primary residence) on substandard lots or flag lots\",\n        \"Height measured to the roof peak and specifically to the top of roof material per Figure 42\"\n      ],\n      \"Exclusions\": [\n        \"Does not apply to standard lots\",\n        \"Does not apply to accessory structures or 2nd-dwelling units\"\n      ],\n      \"AmbiguityNotes\": [\n        \"Definitions of 'substandard lot' and 'flag lot' are not provided on this page; rely on external code definitions.\",\n        \"No slope-based differentiation is provided for substandard/flag lots; assumed to be a flat cap regardless of roof slope.\",\n        \"Measurement point phrasing differs between 'roof peak' and 'top of roof material'; assumed equivalent at the peak.\"\n      ]\n    },\n    \"Variables\": {\n      \"structure_type\": {\n        \"type\": \"enum\",\n        \"allowed\": [\n          \"main_dwelling\"\n        ],\n        \"value\": \"main_dwelling\"\n      },\n      \"lot_type\": {\n        \"type\": \"enum\",\n        \"allowed\": [\n          \"standard\",\n          \"substandard\",\n          \"flag\"\n        ],\n        \"value\": \"substandard_or_flag\"\n      },\n      \"height_to_roof_peak\": {\n        \"type\": \"number\",\n        \"units\": \"ft\",\n        \"description\": \"Vertical distance from grade to the highest point of roofing material at the roof peak.\"\n      }\n    },\n    \"Constants\": {\n      \"max_height_to_roof_peak\": {\n        \"value\": 17,\n        \"units\": \"ft\"\n      },\n      \"measurement_reference\": \"Height measured to top of roof material (Figure 42)\"\n    },\n    \"Conditions\": [\n      {\n        \"type\": \"mandatory\",\n        \"logic\": \"IF structure_type == 'main_dwelling' AND lot_type IN ['substandard','flag'] THEN height_to_roof_peak <= 17 ft\"\n      }\n    ],\n    \"Exceptions\": [],\n    \"Relationships\": {\n      \"MutualExclusivity\": [\n        \"Mutually exclusive with R1 and R2 (which only apply to standard lots).\",\n        \"Mutually exclusive with R4 (accessory structures) and R5 (2nd-dwelling units).\"\n      ],\n      \"CrossReferences\": [\n        {\n          \"code\": \"18.12.040(a) Table 2\",\n          \"page\": 46\n        },\n        {\n          \"code\": \"18.04.030(64)(b)\",\n          \"page\": 47\n        }\n      ],\n      \"Figures\": [\n        {\n          \"id\": \"Figure 42\",\n          \"note\": \"Height measured to top of roof material.\"\n        }\n      ]\n    }\n  },\n  {\n    \"RuleId\": \"R4-AccessoryStructure-RearOrSideYard\",\n    \"Qualifiers\": {\n      \"Scope\": \"Maximum building height for accessory structures located in rear or side yards\",\n      \"Applicability\": [\n        \"Applies to accessory structures located in the rear yard or side yard\",\n        \"Height measured to the roof peak and specifically to the top of roof material per Figure 42\"\n      ],\n      \"Exclusions\": [\n        \"Does not apply to accessory structures located in other yard areas (e.g., front yard) unless specified elsewhere\",\n        \"Does not apply to main dwellings or 2nd-dwelling units\"\n      ],\n      \"AmbiguityNotes\": [\n        \"What qualifies as an 'accessory structure' is not defined on this page; rely on external code definitions.\",\n        \"Location constraint is explicit (rear or side yard); height rules for other locations are not provided here.\",\n        \"Measurement point phrasing differs between 'roof peak' and 'top of roof material'; assumed equivalent at the peak.\"\n      ]\n    },\n    \"Variables\": {\n      \"structure_type\": {\n        \"type\": \"enum\",\n        \"allowed\": [\n          \"accessory_structure\"\n        ],\n        \"value\": \"accessory_structure\"\n      },\n      \"yard_location\": {\n        \"type\": \"enum\",\n        \"allowed\": [\n          \"rear\",\n          \"side\",\n          \"front\",\n          \"other\"\n        ],\n        \"description\": \"Location of the accessory structure on the lot.\"\n      },\n      \"height_to_roof_peak\": {\n        \"type\": \"number\",\n        \"units\": \"ft\",\n        \"description\": \"Vertical distance from grade to the highest point of roofing material at the roof peak.\"\n      }\n    },\n    \"Constants\": {\n      \"max_height_to_roof_peak\": {\n        \"value\": 12,\n        \"units\": \"ft\"\n      },\n      \"measurement_reference\": \"Height measured to top of roof material (Figure 42)\"\n    },\n    \"Conditions\": [\n      {\n        \"type\": \"mandatory\",\n        \"logic\": \"IF structure_type == 'accessory_structure' AND yard_location IN ['rear','side'] THEN height_to_roof_peak <= 12 ft\"\n      }\n    ],\n    \"Exceptions\": [],\n    \"Relationships\": {\n      \"MutualExclusivity\": [\n        \"Mutually exclusive with R1/R2/R3 (main dwellings) and R5 (2nd-dwelling units).\"\n      ],\n      \"CrossReferences\": [\n        {\n          \"code\": \"18.12.040(a) Table 2\",\n          \"page\": 46\n        }\n      ],\n      \"Figures\": [\n        {\n          \"id\": \"Figure 42\",\n          \"note\": \"Height measured to top of roof material.\"\n        }\n      ]\n    }\n  },\n  {\n    \"RuleId\": \"R5-SecondDwellingUnits\",\n    \"Qualifiers\": {\n      \"Scope\": \"Maximum building height for 2nd-dwelling units\",\n      \"Applicability\": [\n        \"Applies to second-dwelling units (often referred to as ADUs/accessory dwelling units, if so defined in code)\",\n        \"Height measured to the roof peak and specifically to the top of roof material per Figure 42\"\n      ],\n      \"Exclusions\": [\n        \"Does not apply to main dwellings or non-dwelling accessory structures\"\n      ],\n      \"AmbiguityNotes\": [\n        \"The term '2nd-dwelling units' is not explicitly defined here; confirm whether this equals ADUs per local code.\",\n        \"Measurement point phrasing differs between 'roof peak' and 'top of roof material'; assumed equivalent at the peak.\",\n        \"Lot type (standard vs substandard/flag) is not specified; assumed to apply to all lots unless otherwise limited by code.\"\n      ]\n    },\n    \"Variables\": {\n      \"structure_type\": {\n        \"type\": \"enum\",\n        \"allowed\": [\n          \"second_dwelling_unit\",\n          \"ADU\"\n        ],\n        \"value\": \"second_dwelling_unit\"\n      },\n      \"height_to_roof_peak\": {\n        \"type\": \"number\",\n        \"units\": \"ft\",\n        \"description\": \"Vertical distance from grade to the highest point of roofing material at the roof peak.\"\n      }\n    },\n    \"Constants\": {\n      \"max_height_to_roof_peak\": {\n        \"value\": 17,\n        \"units\": \"ft\"\n      },\n      \"measurement_reference\": \"Height measured to top of roof material (Figure 42)\"\n    },\n    \"Conditions\": [\n      {\n        \"type\": \"mandatory\",\n        \"logic\": \"IF structure_type IN ['second_dwelling_unit','ADU'] THEN height_to_roof_peak <= 17 ft\"\n      }\n    ],\n    \"Exceptions\": [],\n    \"Relationships\": {\n      \"MutualExclusivity\": [\n        \"Mutually exclusive with R1/R2/R3 (main dwellings) and R4 (accessory non-dwelling structures).\"\n      ],\n      \"CrossReferences\": [\n        {\n          \"code\": \"18.12.040(a) Table 2\",\n          \"page\": 46\n        }\n      ],\n      \"Figures\": [\n        {\n          \"id\": \"Figure 42\",\n          \"note\": \"Height measured to top of roof material.\"\n        }\n      ]\n    }\n  }\n]"
+  },
+  "timestamp": "2025-09-16 15:13:24",
+  "model": "openai/gpt-5",
+  "success": true
+}

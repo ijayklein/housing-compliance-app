@@ -1,0 +1,81 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_21.png",
+  "image_name": "Page_21.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Balconies, decks, & outdoor areas on upper floors\n\nOutdoor areas on upper levels that are roofed DO count toward gross floor area regardless of the design\n(including whether or not the sides are open).\n\nAn outdoor area on an upper floor is considered to be\nroofed if the eave over that area is deeper than the eave\nover the rest of the building. This may be illustrated by\ncomparing Roof Plans 1 & 2 of Fig 10.\n\nFig 10 Balconies\n\nRoof plan 1\nRoof plan 2\n\nNote: Pop-out balconies are\nsubject to the same evaluation.\n\nRoof Plan 1 Area A: Counts because it is roofed\n             Area B: Does not count because this arbor is substantially open\n             Area C: Does not count because the overhang is the same size as the over-\n                      hang around the rest of the house and is considered to be open\n\nWidth of overhang\nover the balcony\n\nWidth of overhang around\nthe rest of the house\n\nC       B       A\n\nRoof Plan 2 Area A: Counts because it is roofed\n             Area B: Counts because the overhang here is greater than the overhang\n                      around the rest of the house, and considered to be roofed\n             Area C: Does not count because it is open\n\nWidth of overhang\nover the balcony\n\nWidth of overhang around\nthe rest of the house\n\nB\nC       A\n\n15",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "An isometric, greyscale drawing of the upper portion of a modern-style building, labeled 'Fig 10 Balconies'. It shows a second-story outdoor area with a partial solid roof and a partial slatted arbor. Two arrows labeled 'Roof plan 1' and 'Roof plan 2' point to the roofline, indicating the two scenarios detailed in the diagrams on the right.",
+          "location": "Left side of the page, extending from the middle to the bottom."
+        },
+        {
+          "type": "diagram",
+          "description": "A top-down plan view diagram for 'Roof Plan 1'. It shows a rectangular balcony area divided into three sections: 'A' (shaded with diagonal lines), 'B' (shaded with a grid pattern representing an arbor), and 'C' (unshaded). Vertical dimension lines with arrows indicate the 'Width of overhang over the balcony' and the 'Width of overhang around the rest of the house', which appear to be equal in this diagram.",
+          "location": "Upper right quadrant of the page."
+        },
+        {
+          "type": "diagram",
+          "description": "A top-down plan view diagram for 'Roof Plan 2'. It shows an L-shaped roof overhang covering a balcony. The area is divided into three sections: 'A' and 'B' (both shaded with diagonal lines, indicating they are roofed) and 'C' (unshaded and open). Vertical dimension lines with arrows indicate the 'Width of overhang over the balcony' (which is greater) and the 'Width of overhang around the rest of the house' (which is smaller).",
+          "location": "Lower right quadrant of the page."
+        },
+        {
+          "type": "highlight box",
+          "description": "A light grey rectangular box at the top of the page containing the main rule in bold text: 'Outdoor areas on upper levels that are roofed DO count toward gross floor area regardless of the design (including whether or not the sides are open).'",
+          "location": "Top of the page, below the main heading."
+        },
+        {
+          "type": "note box",
+          "description": "A dark grey rectangular box containing the text: 'Note: Pop-out balconies are subject to the same evaluation.'",
+          "location": "Bottom left of the page."
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Page Number",
+          "value": "15",
+          "unit": null
+        },
+        {
+          "parameter": "Figure Number",
+          "value": "10",
+          "unit": null
+        },
+        {
+          "parameter": "Plan Number",
+          "value": "1",
+          "unit": null
+        },
+        {
+          "parameter": "Plan Number",
+          "value": "2",
+          "unit": null
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Balconies, decks, & outdoor areas on upper floors",
+        "subheadings": [
+          "Fig 10 Balconies",
+          "Roof Plan 1",
+          "Roof Plan 2",
+          "Note:"
+        ],
+        "sections": [
+          "15"
+        ]
+      },
+      "additional_notes": [
+        "The page layout is organized with a large illustrative graphic on the left and explanatory text with corresponding plan diagrams on the right.",
+        "Key rules and notes are highlighted using grey background boxes to draw attention.",
+        "The page number '15' is located in the bottom right corner.",
+        "The document uses different shading patterns in diagrams to distinguish between different types of roof coverage: diagonal lines for 'roofed', a grid pattern for 'arbor', and no shading for 'open'."
+      ],
+      "cross_references": [
+        "comparing Roof Plans 1 & 2 of Fig 10"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-11 14:35:49",
+  "model_used": "google/gemini-2.5-pro"
+}

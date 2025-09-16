@@ -1,0 +1,26 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_10.png",
+  "image_name": "Page_10.png",
+  "analysis": {
+    "page": "4",
+    "heading": "Lot coverage & floor area",
+    "content": "These terms are used to describe the amount of development on a lot. Lot coverage describes how much of the lot is covered by structures but doesn't evaluate the mass of those structures. Gross floor area describes the mass of the structures by reflecting the cumulative square footage of all visible levels. Maximum allowable lot coverage is expressed by a ratio\u201435% of the lot size. Maximum allowable gross floor area is expressed by a ratio\u2014the sum of 45% of the first 5,000 sf of lot area plus 30% of any portion of lot area in excess of 5,000 sf.",
+    "figures": [
+      "Example calculation for 7,000 sf lot coverage: 0.35 x 7,000 sf = 2,450 sf",
+      "Example calculation for 7,000 sf gross floor area: 0.45 x 5,000 sf = 2,250 sf, 0.30 x 2,000 sf = 600 sf, Total = 2,850 sf"
+    ],
+    "tables": [
+      "Lot coverage includes: footprints of structures, projecting elements, decking >30\" above grade, roof overhangs >4', swimming pools >30\" above grade",
+      "Lot coverage excludes: roof overhangs up to 4', uncovered structures <30\" above grade",
+      "Gross floor area includes: sum of all floors, stairwells, covered parking >120 sf, second/third floor equivalents"
+    ],
+    "codes": [
+      "18.12.040 (a) Table 2",
+      "18.12.040 (b) Table 3",
+      "18.04.030 (a) (86)"
+    ]
+  },
+  "timestamp": "2025-09-16 12:45:53",
+  "model": "anthropic/claude-3.5-sonnet",
+  "success": true
+}

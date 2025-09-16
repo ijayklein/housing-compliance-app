@@ -1,0 +1,23 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_20.png",
+  "image_name": "Page_20.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "PARSE_ERROR",
+      "visual_elements": [],
+      "technical_specifications": [],
+      "structural_elements": {
+        "main_heading": "",
+        "subheadings": [],
+        "sections": []
+      },
+      "additional_notes": [
+        "Failed to parse LLM response: Expecting value: line 1 column 1 (char 0)"
+      ],
+      "cross_references": []
+    },
+    "raw_response": "Here's the extracted information from the image, maintaining absolute precision and avoiding any deductions:\n\n**Title:** Recessed porches on the 1st floor\n\n**Rule/Regulation:**\nRecessed porches on the ground floor do NOT count toward gross floor area if ALL the following criteria apply:\n*   Depth of porch is less than 10' and,\n*   Porch ceiling is below 2nd floor and,\n*   Exterior side is substantially open.\n\n**Figure Title:** Fig 9 Recessed porches on the 1st floor\n\n**Note:** It is the city's policy to consider one-story construction to be construction less than 17' above finished floor. If the porch space is higher, the area will count again as 2nd story equivalency.\n\n**Example A Description:**\nThis example complies with all three critera and does NOT count toward gross floor area.\n\n**Example A Visual Information:**\n*   \"2nd floor line\" is indicated.\n*   \"Porch ceiling below 2nd floor\" is indicated.\n*   \"Depth < 10'\" is indicated.\n\n**Example B Description:**\nThis example violates two of the three critera.\n*   the porch depth is greater than 10' and\n*   the porch ceiling is above the 2nd floor\nTherefore it DOES count toward gross floos area and it it is higher than 17' it will count twice (see note).\n\n**Example B Visual Information:**\n*   \"2nd floor line\" is indicated.\n*   \"Height extends past 2nd floor line\" is indicated.\n*   \"Depth \u2265 10'\" is indicated.\n\n**Page Number:** 14"
+  },
+  "analysis_timestamp": "2025-09-16 12:25:52",
+  "model_used": "google/gemini-2.5-flash"
+}

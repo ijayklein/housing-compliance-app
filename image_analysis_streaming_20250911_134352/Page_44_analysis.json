@@ -1,0 +1,49 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_44.png",
+  "image_name": "Page_44.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Attached garages/carports site planning\n\n\u2022 Attached garages must comply with same setbacks as main dwelling.\n\nNote: Uncovered spaces must be located beyond the required frontyard and beyond the first 10' of the street-side yard.\n\nFig 33 Examples of site planning solutions for attached garages/carports\n\nInterior lot example\nRear yard\nBuildable area\n1-car attached\nMain dwelling\nRequired setback\nFront yard\n\nInterior lot example\nRear yard\nBuildable area\nParking structure\nMain dwelling\nRequired setback\nFront yard\n\nCorner lot example\nRear yard\nBuildable area\nMain dwelling\n2-car attached\nRequired setback\nFront yard\nStreet-side yard\n10'\n\nKey\n_____ Curb\n_____ Lot line\n\u2593\u2593\u2593\u2593 Sidewalk\n- - - Required setbacks\n\u250c\u2500 \u2500\u2510 Buildable area\n\u25a0 Dwelling\n\u25a0 Parking structure\n\u2593\u2593\u2593 No-parking area\n\u2593\u2593\u2593 Uncovered space\n\nA 1-car garage with 2nd space (uncovered) located in the sideyard\nB 1-car garage with 2nd space (uncovered) located in the driveway\nC 2-car garage with no uncovered spaces\n\n38",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Three site planning examples showing different configurations for attached garages/carports on residential lots. Each example shows a bird's-eye view of a lot with buildings, setbacks, and parking arrangements. Includes a detailed key explaining all symbols and patterns used.",
+          "location": "Center and bottom of page"
+        },
+        {
+          "type": "figure",
+          "description": "Figure 33 - Site planning solutions diagram with three scenarios: A) Interior lot with 1-car garage and uncovered space in sideyard, B) Interior lot with 1-car garage and uncovered space in driveway, C) Corner lot with 2-car garage and no uncovered spaces",
+          "location": "Center of page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Street-side yard setback for uncovered spaces",
+          "value": "10",
+          "unit": "feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Attached garages/carports site planning",
+        "subheadings": [
+          "Note",
+          "Key"
+        ],
+        "sections": [
+          "Fig 33"
+        ]
+      },
+      "additional_notes": [
+        "Page number 38 appears at bottom left",
+        "Gray shaded note box contains important placement requirements",
+        "Diagram uses various patterns and symbols to distinguish different elements",
+        "Three labeled examples A, B, and C show different garage configurations"
+      ],
+      "cross_references": [
+        "Fig 33 Examples of site planning solutions for attached garages/carports"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-11 13:45:17",
+  "model_used": "anthropic/claude-sonnet-4"
+}

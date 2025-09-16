@@ -1,0 +1,20 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_21.png",
+  "image_name": "Page_21.png",
+  "analysis": {
+    "page": "15",
+    "heading": "Balconies, decks, & outdoor areas on upper floors",
+    "content": "Outdoor areas on upper levels that are roofed DO count toward gross floor area regardless of the design (including whether or not the sides are open). An outdoor area on an upper floor is considered to be roofed if the eave over that area is deeper than the eave over the rest of the building. This may be illustrated by comparing Roof Plans 1 & 2 of Fig 10. Note: Pop-out balconies are subject to the same evaluation.",
+    "figures": [
+      "Fig 10 Balconies - Shows isometric view of building with roof plans and corresponding plan views showing Areas A, B, and C with different roofing configurations"
+    ],
+    "tables": [
+      "Roof Plan 1: Area A: Counts because it is roofed, Area B: Does not count because this arbor is substantially open, Area C: Does not count because the overhang is the same size as the overhang around the rest of the house and is considered to be open",
+      "Roof Plan 2: Area A: Counts because it is roofed, Area B: Counts because the overhang here is greater than the overhang around the rest of the house, and considered to be roofed, Area C: Does not count because it is open"
+    ],
+    "codes": []
+  },
+  "timestamp": "2025-09-16 12:46:19",
+  "model": "anthropic/claude-3.5-sonnet",
+  "success": true
+}

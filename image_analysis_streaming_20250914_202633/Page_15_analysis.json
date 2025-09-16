@@ -1,0 +1,179 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_15.png",
+  "image_name": "Page_15.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Step 2: Determine which perimeter segments abut the house walls. These are closed segments, or sides.\n\nIn Fig 5 sides A, B, & C abut the house walls. These are considered to be closed segments.\n\nStep 3: Determine the status (open/closed) of the remaining segments based on the design. If at least 50% of the facade area is open, then the segment or side is considered open.\n\nFor purposes of assessing the openess of the facade:\n\u2022 The height of the segment facades is measured from the top of the porch floor to the the point where the segment facade intersects with the top of the roof material.\n\u2022 The widths of the segment facades are measured from the same plane. Allowances may be made for structural supports that are not excessive.",
+      "visual_elements": [
+        {
+          "type": "figure",
+          "description": "Diagram of a house floor plan corner showing three perimeter segments labeled A, B, and C with dimensions: A = 3', B = 8', C = 10'. These segments abut the house walls and are shaded in gray to indicate closed segments.",
+          "location": "Top right"
+        },
+        {
+          "type": "figure",
+          "description": "Four elevation views of facade segments labeled D, E, F, and G with dimensions and open/closed status:\n- Segment D: width 7', labeled 'Open'\n- Segment E: width 14', labeled 'Closed (because of decorative glass wall)'\n- Segment F: width 24', labeled 'Open'\n- Segment G: width 4', labeled 'Open'\nHeight is indicated as 8' from porch floor to intersection of facade and roof material. Structural supports shown in elevation views.",
+          "location": "Bottom half of page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Segment A length",
+          "value_type": "Measurement",
+          "value": "3",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Segment B length",
+          "value_type": "Measurement",
+          "value": "8",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Segment C length",
+          "value_type": "Measurement",
+          "value": "10",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Segment D width",
+          "value_type": "Measurement",
+          "value": "7",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Segment E width",
+          "value_type": "Measurement",
+          "value": "14",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Segment F width",
+          "value_type": "Measurement",
+          "value": "24",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Segment G width",
+          "value_type": "Measurement",
+          "value": "4",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Facade segment height",
+          "value_type": "Measurement",
+          "value": "8",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum open facade area percentage",
+          "value_type": "Percentage",
+          "value": "50",
+          "unit": "%"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": null,
+        "subheadings": [
+          "Step 2",
+          "Step 3",
+          "For purposes of assessing the openess of the facade:"
+        ],
+        "sections": []
+      },
+      "additional_notes": [
+        "Page number '9' located at bottom right corner.",
+        "No handwritten annotations or stamps detected.",
+        "Typographical repetition in 'to the the point' in Step 3 text."
+      ],
+      "cross_references": [
+        "Reference to Fig 5 in Step 2."
+      ],
+      "conditions_and_qualifiers": {
+        "qualifiers": [
+          {
+            "id": "q1",
+            "text": "In Fig 5 sides A, B, & C abut the house walls. These are considered to be closed segments.",
+            "applies_to_conditions": [
+              "c1"
+            ],
+            "scope": "Local"
+          },
+          {
+            "id": "q2",
+            "text": "The height of the segment facades is measured from the top of the porch floor to the the point where the segment facade intersects with the top of the roof material.",
+            "applies_to_conditions": [
+              "c2"
+            ],
+            "scope": "Local"
+          },
+          {
+            "id": "q3",
+            "text": "The widths of the segment facades are measured from the same plane. Allowances may be made for structural supports that are not excessive.",
+            "applies_to_conditions": [
+              "c2"
+            ],
+            "scope": "Local"
+          }
+        ],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "These are closed segments, or sides.",
+            "value_type": "Text",
+            "operator": "contains",
+            "threshold_value": "closed",
+            "unit": null
+          },
+          {
+            "id": "c2",
+            "text": "If at least 50% of the facade area is open, then the segment or side is considered open.",
+            "value_type": "Percentage",
+            "operator": ">=",
+            "threshold_value": "50",
+            "unit": "%"
+          }
+        ],
+        "logical_relationships": [
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c2"
+            ],
+            "expression": "If at least 50% of the facade area is open, then the segment or side is considered open.",
+            "evaluation_order": 1
+          }
+        ],
+        "execution_sequence": [
+          {
+            "step": 1,
+            "action": "Determine which perimeter segments abut the house walls and classify them as closed segments.",
+            "condition_ids": [
+              "c1"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 2,
+            "action": "Determine the status (open/closed) of remaining segments based on design and facade openness percentage.",
+            "condition_ids": [
+              "c2"
+            ],
+            "qualifier_ids": [
+              "q2",
+              "q3"
+            ],
+            "dependencies": [
+              1
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:26:54",
+  "model_used": "openai/gpt-4.1-mini"
+}

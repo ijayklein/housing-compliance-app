@@ -1,0 +1,113 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_26.md",
+  "file_name": "Page_26.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "rule": "Standard Setbacks",
+        "qualifiers": {
+          "scope": "Standard setbacks apply in most cases.",
+          "applicability": "Standard setbacks by zone",
+          "exclusions": "Special setbacks override standard setbacks unless a larger contextual setback applies."
+        },
+        "variables": {
+          "dimensional": {
+            "front": "Contextual or 20",
+            "rear": "20",
+            "interior_side": "6 to 8",
+            "street_side": "16"
+          },
+          "zones": [
+            "R-1",
+            "R-1(7000)",
+            "R-1(8000)",
+            "R-1(10000)",
+            "R-1(20000)",
+            "Flag lot",
+            "Substandard lot",
+            "Substandard corner lot < 50' wide"
+          ]
+        },
+        "constants": {
+          "numerical_values": {
+            "front_contextual_threshold": "30",
+            "substandard_corner_lot_street_side": "10"
+          },
+          "specs": "See zone for interior side setbacks for Flag lot and Substandard lot",
+          "procedures": "For front setback, if contextual setback is greater than 30' then it applies\u2014otherwise, the 20' setback applies."
+        },
+        "conditions": {
+          "mandatory": [
+            "Rear setback of 20",
+            "Street side setback of 16"
+          ],
+          "optional": [],
+          "conditional_logic": [
+            "If contextual setback is greater than 30', it applies",
+            "If both a contextual and special setback apply, the greater of the two setbacks is required"
+          ],
+          "dependencies": []
+        },
+        "exceptions": {
+          "explicit_deviations": [],
+          "alternatives": [],
+          "special_cases": [
+            "Substandard corner lot < 50' wide has a street side setback of 10"
+          ]
+        },
+        "relationships": {
+          "hierarchical": [
+            "Standard setbacks by zone",
+            "Special setbacks override standard setbacks"
+          ],
+          "cross_references": [
+            "See zone for interior side setbacks for Flag lot and Substandard lot"
+          ],
+          "logical_dependencies": [
+            "Special setbacks override standard setbacks unless a larger contextual setback applies"
+          ]
+        }
+      },
+      {
+        "rule": "Special Setbacks",
+        "qualifiers": {
+          "scope": "Special setbacks",
+          "applicability": "Override standard setbacks",
+          "exclusions": "Unless a larger contextual setback applies"
+        },
+        "variables": {
+          "dimensional": {},
+          "material": {},
+          "environmental": {},
+          "usage_parameters": {}
+        },
+        "constants": {
+          "numerical_values": {},
+          "specs": {},
+          "procedures": {}
+        },
+        "conditions": {
+          "mandatory": [],
+          "optional": [],
+          "conditional_logic": [],
+          "dependencies": []
+        },
+        "exceptions": {
+          "explicit_deviations": [],
+          "alternatives": [],
+          "special_cases": []
+        },
+        "relationships": {
+          "hierarchical": [],
+          "cross_references": [],
+          "logical_dependencies": []
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n    {\n        \"rule\": \"Standard Setbacks\",\n        \"qualifiers\": {\n            \"scope\": \"Standard setbacks apply in most cases.\",\n            \"applicability\": \"Standard setbacks by zone\",\n            \"exclusions\": \"Special setbacks override standard setbacks unless a larger contextual setback applies.\"\n        },\n        \"variables\": {\n            \"dimensional\": {\n                \"front\": \"Contextual or 20\",\n                \"rear\": \"20\",\n                \"interior_side\": \"6 to 8\",\n                \"street_side\": \"16\"\n            },\n            \"zones\": [\n                \"R-1\",\n                \"R-1(7000)\",\n                \"R-1(8000)\",\n                \"R-1(10000)\",\n                \"R-1(20000)\",\n                \"Flag lot\",\n                \"Substandard lot\",\n                \"Substandard corner lot < 50' wide\"\n            ]\n        },\n        \"constants\": {\n            \"numerical_values\": {\n                \"front_contextual_threshold\": \"30\",\n                \"substandard_corner_lot_street_side\": \"10\"\n            },\n            \"specs\": \"See zone for interior side setbacks for Flag lot and Substandard lot\",\n            \"procedures\": \"For front setback, if contextual setback is greater than 30' then it applies\u2014otherwise, the 20' setback applies.\"\n        },\n        \"conditions\": {\n            \"mandatory\": [\n                \"Rear setback of 20\",\n                \"Street side setback of 16\"\n            ],\n            \"optional\": [],\n            \"conditional_logic\": [\n                \"If contextual setback is greater than 30', it applies\",\n                \"If both a contextual and special setback apply, the greater of the two setbacks is required\"\n            ],\n            \"dependencies\": []\n        },\n        \"exceptions\": {\n            \"explicit_deviations\": [],\n            \"alternatives\": [],\n            \"special_cases\": [\n                \"Substandard corner lot < 50' wide has a street side setback of 10\"\n            ]\n        },\n        \"relationships\": {\n            \"hierarchical\": [\n                \"Standard setbacks by zone\",\n                \"Special setbacks override standard setbacks\"\n            ],\n            \"cross_references\": [\n                \"See zone for interior side setbacks for Flag lot and Substandard lot\"\n            ],\n            \"logical_dependencies\": [\n                \"Special setbacks override standard setbacks unless a larger contextual setback applies\"\n            ]\n        }\n    },\n    {\n        \"rule\": \"Special Setbacks\",\n        \"qualifiers\": {\n            \"scope\": \"Special setbacks\",\n            \"applicability\": \"Override standard setbacks\",\n            \"exclusions\": \"Unless a larger contextual setback applies\"\n        },\n        \"variables\": {\n            \"dimensional\": {},\n            \"material\": {},\n            \"environmental\": {},\n            \"usage_parameters\": {}\n        },\n        \"constants\": {\n            \"numerical_values\": {},\n            \"specs\": {},\n            \"procedures\": {}\n        },\n        \"conditions\": {\n            \"mandatory\": [],\n            \"optional\": [],\n            \"conditional_logic\": [],\n            \"dependencies\": []\n        },\n        \"exceptions\": {\n            \"explicit_deviations\": [],\n            \"alternatives\": [],\n            \"special_cases\": []\n        },\n        \"relationships\": {\n            \"hierarchical\": [],\n            \"cross_references\": [],\n            \"logical_dependencies\": []\n        }\n    }\n]\n```"
+  },
+  "timestamp": "2025-09-16 14:42:36",
+  "model": "openai/gpt-4o",
+  "success": true
+}

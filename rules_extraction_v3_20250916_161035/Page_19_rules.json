@@ -1,0 +1,80 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_19.md",
+  "file_name": "Page_19.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "rule": "Vaulted Entryway Gross Floor Area Calculation",
+        "Qualifiers": {
+          "Scope": "Calculation of Gross Floor Area (GFA).",
+          "Applicability": "Applies to entryways that are 'considered to be a vaulted entryway'. The provided example shows a portion of the entryway recessed beyond the house facade and roof.",
+          "Exclusions": ""
+        },
+        "Variables": {
+          "entryway_area": "The floor area of the entryway feature.",
+          "is_vaulted": "A boolean condition determining if an entryway is 'considered to be a vaulted entryway'."
+        },
+        "Constants": {
+          "gfa_multiplier": "2",
+          "measurement_procedure": "The area is measured to the outside material of the entry-way feature.",
+          "area_inclusion_rule": "If a portion of the entryway is recessed beyond the house facade and roof, it is included in the area that counts."
+        },
+        "Conditions": {
+          "mandatory_condition": "If the entryway is considered to be a vaulted entryway, the area will be counted as specified.",
+          "conditional_logic": "IF is_vaulted IS TRUE THEN GFA_contribution = entryway_area * 2.",
+          "ambiguity_flag": "The specific criteria for an entryway to be 'considered to be a vaulted entryway' are not defined in the text."
+        },
+        "Exceptions": {
+          "explicit_deviations": "",
+          "alternatives": "",
+          "special_cases": "A different calculation applies if a 2nd floor is present over the vaulted entry. See rule 'Vaulted Entryway with 2nd Floor Gross Floor Area Calculation'."
+        },
+        "Relationships": {
+          "hierarchical": "This rule is a specific component of the overall Gross Floor Area calculation.",
+          "cross_references": "The 'Porch Floor Plan' view for Figure 8 shows the 'Outline of entryway floor area that counts TWICE if entryway is vaulted'.",
+          "logical_dependencies": "This rule is overridden by the 'Vaulted Entryway with 2nd Floor' rule when its conditions are met."
+        }
+      },
+      {
+        "rule": "Vaulted Entryway with 2nd Floor Gross Floor Area Calculation",
+        "Qualifiers": {
+          "Scope": "Calculation of Gross Floor Area (GFA).",
+          "Applicability": "Applies to a vaulted entry that has a 2nd floor located over it.",
+          "Exclusions": ""
+        },
+        "Variables": {
+          "entry_area": "The floor area of the vaulted entry.",
+          "has_2nd_floor_above": "A boolean condition determining if a 2nd floor is present over the vaulted entry."
+        },
+        "Constants": {
+          "gfa_multiplier": "3",
+          "procedural_note": "The 2nd floor over a vaulted entry 'will count as usual'."
+        },
+        "Conditions": {
+          "mandatory_condition": "If a 2nd floor is over a vaulted entry, the area will be counted as specified.",
+          "conditional_logic": "IF is_vaulted IS TRUE AND has_2nd_floor_above IS TRUE THEN GFA_contribution = entry_area * 3.",
+          "ambiguity_flag": "The text states 'the area will count three times'. This is interpreted to mean the footprint area of the entry is multiplied by three, but the exact breakdown (e.g., entry counts 2x + 2nd floor counts 1x) is not explicitly defined."
+        },
+        "Exceptions": {
+          "explicit_deviations": "",
+          "alternatives": "",
+          "special_cases": "This rule itself is a special case that modifies the standard calculation for a vaulted entryway."
+        },
+        "Relationships": {
+          "hierarchical": "This is a sub-rule or special condition within the broader regulations for vaulted entryways and Gross Floor Area.",
+          "cross_references": "This rule is visually represented by 'Figure 8: Entry feature with 2nd floor above'.",
+          "logical_dependencies": "This rule modifies the 'Vaulted Entryway Gross Floor Area Calculation' by changing the multiplier from 2 to 3 when a 2nd floor is present above the entry."
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n  {\n    \"rule\": \"Vaulted Entryway Gross Floor Area Calculation\",\n    \"Qualifiers\": {\n      \"Scope\": \"Calculation of Gross Floor Area (GFA).\",\n      \"Applicability\": \"Applies to entryways that are 'considered to be a vaulted entryway'. The provided example shows a portion of the entryway recessed beyond the house facade and roof.\",\n      \"Exclusions\": \"\"\n    },\n    \"Variables\": {\n      \"entryway_area\": \"The floor area of the entryway feature.\",\n      \"is_vaulted\": \"A boolean condition determining if an entryway is 'considered to be a vaulted entryway'.\"\n    },\n    \"Constants\": {\n      \"gfa_multiplier\": \"2\",\n      \"measurement_procedure\": \"The area is measured to the outside material of the entry-way feature.\",\n      \"area_inclusion_rule\": \"If a portion of the entryway is recessed beyond the house facade and roof, it is included in the area that counts.\"\n    },\n    \"Conditions\": {\n      \"mandatory_condition\": \"If the entryway is considered to be a vaulted entryway, the area will be counted as specified.\",\n      \"conditional_logic\": \"IF is_vaulted IS TRUE THEN GFA_contribution = entryway_area * 2.\",\n      \"ambiguity_flag\": \"The specific criteria for an entryway to be 'considered to be a vaulted entryway' are not defined in the text.\"\n    },\n    \"Exceptions\": {\n      \"explicit_deviations\": \"\",\n      \"alternatives\": \"\",\n      \"special_cases\": \"A different calculation applies if a 2nd floor is present over the vaulted entry. See rule 'Vaulted Entryway with 2nd Floor Gross Floor Area Calculation'.\"\n    },\n    \"Relationships\": {\n      \"hierarchical\": \"This rule is a specific component of the overall Gross Floor Area calculation.\",\n      \"cross_references\": \"The 'Porch Floor Plan' view for Figure 8 shows the 'Outline of entryway floor area that counts TWICE if entryway is vaulted'.\",\n      \"logical_dependencies\": \"This rule is overridden by the 'Vaulted Entryway with 2nd Floor' rule when its conditions are met.\"\n    }\n  },\n  {\n    \"rule\": \"Vaulted Entryway with 2nd Floor Gross Floor Area Calculation\",\n    \"Qualifiers\": {\n      \"Scope\": \"Calculation of Gross Floor Area (GFA).\",\n      \"Applicability\": \"Applies to a vaulted entry that has a 2nd floor located over it.\",\n      \"Exclusions\": \"\"\n    },\n    \"Variables\": {\n      \"entry_area\": \"The floor area of the vaulted entry.\",\n      \"has_2nd_floor_above\": \"A boolean condition determining if a 2nd floor is present over the vaulted entry.\"\n    },\n    \"Constants\": {\n      \"gfa_multiplier\": \"3\",\n      \"procedural_note\": \"The 2nd floor over a vaulted entry 'will count as usual'.\"\n    },\n    \"Conditions\": {\n      \"mandatory_condition\": \"If a 2nd floor is over a vaulted entry, the area will be counted as specified.\",\n      \"conditional_logic\": \"IF is_vaulted IS TRUE AND has_2nd_floor_above IS TRUE THEN GFA_contribution = entry_area * 3.\",\n      \"ambiguity_flag\": \"The text states 'the area will count three times'. This is interpreted to mean the footprint area of the entry is multiplied by three, but the exact breakdown (e.g., entry counts 2x + 2nd floor counts 1x) is not explicitly defined.\"\n    },\n    \"Exceptions\": {\n      \"explicit_deviations\": \"\",\n      \"alternatives\": \"\",\n      \"special_cases\": \"This rule itself is a special case that modifies the standard calculation for a vaulted entryway.\"\n    },\n    \"Relationships\": {\n      \"hierarchical\": \"This is a sub-rule or special condition within the broader regulations for vaulted entryways and Gross Floor Area.\",\n      \"cross_references\": \"This rule is visually represented by 'Figure 8: Entry feature with 2nd floor above'.\",\n      \"logical_dependencies\": \"This rule modifies the 'Vaulted Entryway Gross Floor Area Calculation' by changing the multiplier from 2 to 3 when a 2nd floor is present above the entry.\"\n    }\n  }\n]\n```",
+    "response_time": 43.436999797821045,
+    "input_tokens": 740,
+    "output_tokens": 4497,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 16:11:53",
+  "model": "google/gemini-2.5-pro",
+  "success": true
+}

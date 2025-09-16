@@ -1,0 +1,70 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_45.md",
+  "file_name": "Page_45.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "rule": "Detached garages/carports site planning",
+        "Qualifiers": {
+          "Scope": "Detached garages and carports",
+          "Applicability": "Rear or interior side yard placement",
+          "Exclusions": null
+        },
+        "Variables": {
+          "Dimensional": {
+            "Front lot line setback": "75'",
+            "Street-side lot line setback": "20'",
+            "Lot depth": "95'",
+            "Rear half of the lot": "Rear half"
+          },
+          "Material": {
+            "Fire-rated walls": "Required for garages at lot line"
+          },
+          "Environmental": null,
+          "Usage parameters": {
+            "Uncovered spaces": "Beyond required front-yard and first 10' of street-side yard"
+          }
+        },
+        "Constants": {
+          "Numerical values": {
+            "Minimum distance from lot line for carports": "3'"
+          },
+          "Specs": {
+            "Uniform Building Code (UBC)": "Compliance required for fire-rated walls & roof materials"
+          },
+          "Standards": null,
+          "Procedures": null
+        },
+        "Conditions": {
+          "Mandatory": [
+            "Garages and carports must be at least 75' from the front lot line",
+            "Garages and carports must be at least 20' from the street-side lot line",
+            "Carports with open sides must be at least 3' from any lot line"
+          ],
+          "Optional": null,
+          "Conditional logic": [
+            "On lots less than 95' deep, garages and carports may be located in rear or interior side yards if placed in rear half of the lot"
+          ],
+          "Dependencies": [
+            "Garages and carports using setback exception are subject to stricter daylight plane"
+          ]
+        },
+        "Exceptions": {
+          "Explicit deviations": "Garages and carports that take advantage of setback exception",
+          "Alternatives": "1-car garage can be substituted for a 2-car garage",
+          "Special cases": null
+        },
+        "Relationships": {
+          "Hierarchical": null,
+          "Cross-references": "See Figs 25\u201326 p. 32 for daylight plane",
+          "Logical dependencies": "Garages at the lot line must comply with UBC requirements"
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n    {\n        \"rule\": \"Detached garages/carports site planning\",\n        \"Qualifiers\": {\n            \"Scope\": \"Detached garages and carports\",\n            \"Applicability\": \"Rear or interior side yard placement\",\n            \"Exclusions\": null\n        },\n        \"Variables\": {\n            \"Dimensional\": {\n                \"Front lot line setback\": \"75'\",\n                \"Street-side lot line setback\": \"20'\",\n                \"Lot depth\": \"95'\",\n                \"Rear half of the lot\": \"Rear half\"\n            },\n            \"Material\": {\n                \"Fire-rated walls\": \"Required for garages at lot line\"\n            },\n            \"Environmental\": null,\n            \"Usage parameters\": {\n                \"Uncovered spaces\": \"Beyond required front-yard and first 10' of street-side yard\"\n            }\n        },\n        \"Constants\": {\n            \"Numerical values\": {\n                \"Minimum distance from lot line for carports\": \"3'\"\n            },\n            \"Specs\": {\n                \"Uniform Building Code (UBC)\": \"Compliance required for fire-rated walls & roof materials\"\n            },\n            \"Standards\": null,\n            \"Procedures\": null\n        },\n        \"Conditions\": {\n            \"Mandatory\": [\n                \"Garages and carports must be at least 75' from the front lot line\",\n                \"Garages and carports must be at least 20' from the street-side lot line\",\n                \"Carports with open sides must be at least 3' from any lot line\"\n            ],\n            \"Optional\": null,\n            \"Conditional logic\": [\n                \"On lots less than 95' deep, garages and carports may be located in rear or interior side yards if placed in rear half of the lot\"\n            ],\n            \"Dependencies\": [\n                \"Garages and carports using setback exception are subject to stricter daylight plane\"\n            ]\n        },\n        \"Exceptions\": {\n            \"Explicit deviations\": \"Garages and carports that take advantage of setback exception\",\n            \"Alternatives\": \"1-car garage can be substituted for a 2-car garage\",\n            \"Special cases\": null\n        },\n        \"Relationships\": {\n            \"Hierarchical\": null,\n            \"Cross-references\": \"See Figs 25\u201326 p. 32 for daylight plane\",\n            \"Logical dependencies\": \"Garages at the lot line must comply with UBC requirements\"\n        }\n    }\n]\n```"
+  },
+  "timestamp": "2025-09-16 14:43:26",
+  "model": "openai/gpt-4o",
+  "success": true
+}

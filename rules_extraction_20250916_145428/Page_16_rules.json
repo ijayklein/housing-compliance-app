@@ -1,0 +1,306 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_16.md",
+  "file_name": "Page_16.md",
+  "analysis": {
+    "extracted_rules": {
+      "rules": [
+        {
+          "id": "R1",
+          "title": "Porch openness determination for gross floor area (GFA) exclusion",
+          "Qualifiers": {
+            "Scope": "Method to classify porch perimeter segments as open or closed, total their lengths, compute percent openness, and determine whether the porch counts toward gross floor area.",
+            "Applicability": "Porch perimeter evaluation as illustrated by Figure 5 and similar porches where perimeter can be segmented and measured.",
+            "Exclusions": "No explicit exclusions stated. Classification criteria for 'open' vs 'closed' may be affected by safety guard design; see R2."
+          },
+          "Variables": {
+            "Dimensional": {
+              "segments": [
+                {
+                  "id": "A",
+                  "status": "closed",
+                  "length": {
+                    "value": 3,
+                    "unit": "ft"
+                  }
+                },
+                {
+                  "id": "B",
+                  "status": "closed",
+                  "length": {
+                    "value": 8,
+                    "unit": "ft"
+                  }
+                },
+                {
+                  "id": "C",
+                  "status": "closed",
+                  "length": {
+                    "value": 10,
+                    "unit": "ft"
+                  }
+                },
+                {
+                  "id": "D",
+                  "status": "open",
+                  "length": {
+                    "value": 7,
+                    "unit": "ft"
+                  }
+                },
+                {
+                  "id": "E",
+                  "status": "closed",
+                  "length": {
+                    "value": 14,
+                    "unit": "ft"
+                  }
+                },
+                {
+                  "id": "F",
+                  "status": "open",
+                  "length": {
+                    "value": 24,
+                    "unit": "ft"
+                  }
+                },
+                {
+                  "id": "G",
+                  "status": "open",
+                  "length": {
+                    "value": 4,
+                    "unit": "ft"
+                  }
+                }
+              ],
+              "totals_example_from_Figure_5": {
+                "open_length": {
+                  "value": 35,
+                  "unit": "ft"
+                },
+                "closed_length": {
+                  "value": 35,
+                  "unit": "ft"
+                },
+                "total_perimeter": {
+                  "value": 70,
+                  "unit": "ft"
+                },
+                "percent_open": {
+                  "value": 50,
+                  "unit": "%"
+                }
+              },
+              "additional_dimension_callouts_on_plan": [
+                {
+                  "value": 2,
+                  "unit": "ft",
+                  "count": 2,
+                  "notes": "Two separate 2' notations near the left side; not explicitly tied to segment classification in the text."
+                }
+              ]
+            },
+            "Material": {},
+            "Environmental": {},
+            "Usage": {
+              "gfa_counting_outcome": {
+                "type": "boolean",
+                "description": "Whether the porch counts toward gross floor area based on openness calculation."
+              }
+            }
+          },
+          "Constants": {
+            "Numerical": [
+              {
+                "name": "openness_threshold_for_GFA_exclusion",
+                "value": 50,
+                "unit": "%",
+                "operator_intent": ">= (inferred from example where 50% open led to exclusion)",
+                "ambiguity": "The text does not explicitly state 'at least' vs 'greater than'; example uses exactly 50% to exclude."
+              }
+            ],
+            "Standards": [],
+            "Procedures": [
+              {
+                "name": "Step 4 - Openness determination procedure",
+                "steps": [
+                  "Finalize the determination of which segments are closed and which are open.",
+                  "Total the linear feet in each category (open and closed).",
+                  "Compare the totals and compute percent open = open_length / (open_length + closed_length)."
+                ]
+              }
+            ],
+            "Specs": []
+          },
+          "Conditions": {
+            "Mandatory": [
+              {
+                "description": "Each perimeter segment must be classified as 'open' or 'closed' before totaling.",
+                "source": "Header 'Step 4' directive"
+              },
+              {
+                "description": "Use linear feet of each segment when computing totals.",
+                "source": "Header 'Step 4' directive"
+              }
+            ],
+            "Conditional": [
+              {
+                "if": "percent_open >= openness_threshold_for_GFA_exclusion",
+                "then": "porch does NOT count toward gross floor area",
+                "else": "porch counts toward gross floor area",
+                "notes": "Derived from the conclusion that 50% open results in exclusion.",
+                "ambiguity": "Threshold comparator not explicitly stated; example implies '>='."
+              }
+            ],
+            "Optional": []
+          },
+          "Exceptions": [],
+          "Relationships": {
+            "CrossReferences": [
+              {
+                "ref_rule_id": "R2",
+                "relation": "Definition of 'open' vs 'closed' may be affected by safety guard design and elevation above grade."
+              }
+            ],
+            "Dependencies": [
+              "Accurate segment classification (potentially influenced by R2) is required before applying R1 calculations."
+            ],
+            "Hierarchical": [
+              "This is Step 4 in a larger multi-step process (previous steps not provided on this page)."
+            ],
+            "Logical": [
+              "percent_open = open_length / (open_length + closed_length) * 100"
+            ]
+          }
+        },
+        {
+          "id": "R2",
+          "title": "Safety guard height when porch floor is above grade and its impact on openness classification",
+          "Qualifiers": {
+            "Scope": "Safety guard requirements for porches above grade and how guard design affects whether porch sides are considered 'open' or 'closed'.",
+            "Applicability": "Porches where the porch floor elevation is more than 30 inches above adjacent grade.",
+            "Exclusions": "No explicit exclusions stated. Specific guard design standards (e.g., baluster spacing) are not provided in the text."
+          },
+          "Variables": {
+            "Dimensional": [
+              {
+                "name": "porch_floor_height_above_grade",
+                "unit": "in",
+                "description": "Vertical distance from porch floor to adjacent grade."
+              },
+              {
+                "name": "required_guard_height",
+                "unit": "in",
+                "default_value": 36,
+                "description": "Height of guard/railing that may be required for safety when porch floor > 30 inches above grade."
+              }
+            ],
+            "Material": [
+              {
+                "name": "facade_type",
+                "domain": [
+                  "solid_half_wall",
+                  "railings_balusters",
+                  "single_safety_rail_above_lower_solid_half_wall"
+                ],
+                "description": "Construction of porch sides affecting openness classification."
+              }
+            ],
+            "Environmental": [
+              {
+                "name": "grade",
+                "description": "Adjacent ground level used to measure the porch floor height."
+              }
+            ],
+            "Usage": [
+              {
+                "name": "openness_classification",
+                "domain": [
+                  "open",
+                  "closed"
+                ],
+                "description": "Resulting classification of porch sides for openness calculation."
+              }
+            ]
+          },
+          "Constants": {
+            "Numerical": [
+              {
+                "name": "height_threshold_trigger_for_guards",
+                "value": 30,
+                "unit": "in",
+                "description": "If porch floor is more than this height above grade, safety guards may be required."
+              },
+              {
+                "name": "typical_guard_height",
+                "value": 36,
+                "unit": "in",
+                "description": "Indicated guard/railing height for safety."
+              }
+            ],
+            "Specs": [
+              {
+                "name": "acceptable_open_guard_designs",
+                "options": [
+                  "Railings (balusters) instead of solid half walls",
+                  "A single safety rail above lower, solid half walls"
+                ],
+                "both_illustrations_classified_as": "open",
+                "note": "Specific baluster spacing or percentage of openness is not specified."
+              }
+            ],
+            "Standards": [],
+            "Procedures": []
+          },
+          "Conditions": {
+            "Mandatory": [],
+            "Conditional": [
+              {
+                "if": "porch_floor_height_above_grade > 30 in",
+                "then": "safety guard height of approximately 36 in may be required",
+                "ambiguity": "The word 'may' indicates this depends on safety codes not fully provided here."
+              },
+              {
+                "if": "guard is a solid_half_wall at required height",
+                "then": "porch facade may be considered closed",
+                "ambiguity": "Classification criteria for 'closed' are not numerically defined."
+              },
+              {
+                "if": "guard design is railings_balusters OR single_safety_rail_above_lower_solid_half_wall",
+                "then": "porch facade is considered open (per illustrations labeled 'Open')",
+                "notes": "Intended solutions to maintain openness while providing safety."
+              }
+            ],
+            "Optional": []
+          },
+          "Exceptions": [
+            {
+              "case": "Use of railings/balusters or single safety rail above lower solid half walls",
+              "deviation": "Despite the presence of a required safety guard, the facade is treated as 'open'."
+            }
+          ],
+          "Relationships": {
+            "CrossReferences": [
+              {
+                "ref_rule_id": "R1",
+                "relation": "The openness/closed classification determined here feeds the segment status used in the openness percentage calculation for GFA exclusion."
+              }
+            ],
+            "Dependencies": [
+              "Local safety/building codes determine when guards are mandatory and detailed guard specifications; those details are not provided here."
+            ],
+            "Hierarchical": [],
+            "Logical": [
+              "If porch_floor_height_above_grade <= 30 in, no guard requirement is implied by this text.",
+              "If guard is required, choose an 'open' guard design to avoid changing facade classification to 'closed'."
+            ]
+          }
+        }
+      ]
+    },
+    "parse_error": false,
+    "raw_response": "{\n  \"rules\": [\n    {\n      \"id\": \"R1\",\n      \"title\": \"Porch openness determination for gross floor area (GFA) exclusion\",\n      \"Qualifiers\": {\n        \"Scope\": \"Method to classify porch perimeter segments as open or closed, total their lengths, compute percent openness, and determine whether the porch counts toward gross floor area.\",\n        \"Applicability\": \"Porch perimeter evaluation as illustrated by Figure 5 and similar porches where perimeter can be segmented and measured.\",\n        \"Exclusions\": \"No explicit exclusions stated. Classification criteria for 'open' vs 'closed' may be affected by safety guard design; see R2.\"\n      },\n      \"Variables\": {\n        \"Dimensional\": {\n          \"segments\": [\n            {\n              \"id\": \"A\",\n              \"status\": \"closed\",\n              \"length\": {\n                \"value\": 3,\n                \"unit\": \"ft\"\n              }\n            },\n            {\n              \"id\": \"B\",\n              \"status\": \"closed\",\n              \"length\": {\n                \"value\": 8,\n                \"unit\": \"ft\"\n              }\n            },\n            {\n              \"id\": \"C\",\n              \"status\": \"closed\",\n              \"length\": {\n                \"value\": 10,\n                \"unit\": \"ft\"\n              }\n            },\n            {\n              \"id\": \"D\",\n              \"status\": \"open\",\n              \"length\": {\n                \"value\": 7,\n                \"unit\": \"ft\"\n              }\n            },\n            {\n              \"id\": \"E\",\n              \"status\": \"closed\",\n              \"length\": {\n                \"value\": 14,\n                \"unit\": \"ft\"\n              }\n            },\n            {\n              \"id\": \"F\",\n              \"status\": \"open\",\n              \"length\": {\n                \"value\": 24,\n                \"unit\": \"ft\"\n              }\n            },\n            {\n              \"id\": \"G\",\n              \"status\": \"open\",\n              \"length\": {\n                \"value\": 4,\n                \"unit\": \"ft\"\n              }\n            }\n          ],\n          \"totals_example_from_Figure_5\": {\n            \"open_length\": {\n              \"value\": 35,\n              \"unit\": \"ft\"\n            },\n            \"closed_length\": {\n              \"value\": 35,\n              \"unit\": \"ft\"\n            },\n            \"total_perimeter\": {\n              \"value\": 70,\n              \"unit\": \"ft\"\n            },\n            \"percent_open\": {\n              \"value\": 50,\n              \"unit\": \"%\"\n            }\n          },\n          \"additional_dimension_callouts_on_plan\": [\n            {\n              \"value\": 2,\n              \"unit\": \"ft\",\n              \"count\": 2,\n              \"notes\": \"Two separate 2' notations near the left side; not explicitly tied to segment classification in the text.\"\n            }\n          ]\n        },\n        \"Material\": {},\n        \"Environmental\": {},\n        \"Usage\": {\n          \"gfa_counting_outcome\": {\n            \"type\": \"boolean\",\n            \"description\": \"Whether the porch counts toward gross floor area based on openness calculation.\"\n          }\n        }\n      },\n      \"Constants\": {\n        \"Numerical\": [\n          {\n            \"name\": \"openness_threshold_for_GFA_exclusion\",\n            \"value\": 50,\n            \"unit\": \"%\",\n            \"operator_intent\": \">= (inferred from example where 50% open led to exclusion)\",\n            \"ambiguity\": \"The text does not explicitly state 'at least' vs 'greater than'; example uses exactly 50% to exclude.\"\n          }\n        ],\n        \"Standards\": [],\n        \"Procedures\": [\n          {\n            \"name\": \"Step 4 - Openness determination procedure\",\n            \"steps\": [\n              \"Finalize the determination of which segments are closed and which are open.\",\n              \"Total the linear feet in each category (open and closed).\",\n              \"Compare the totals and compute percent open = open_length / (open_length + closed_length).\"\n            ]\n          }\n        ],\n        \"Specs\": []\n      },\n      \"Conditions\": {\n        \"Mandatory\": [\n          {\n            \"description\": \"Each perimeter segment must be classified as 'open' or 'closed' before totaling.\",\n            \"source\": \"Header 'Step 4' directive\"\n          },\n          {\n            \"description\": \"Use linear feet of each segment when computing totals.\",\n            \"source\": \"Header 'Step 4' directive\"\n          }\n        ],\n        \"Conditional\": [\n          {\n            \"if\": \"percent_open >= openness_threshold_for_GFA_exclusion\",\n            \"then\": \"porch does NOT count toward gross floor area\",\n            \"else\": \"porch counts toward gross floor area\",\n            \"notes\": \"Derived from the conclusion that 50% open results in exclusion.\",\n            \"ambiguity\": \"Threshold comparator not explicitly stated; example implies '>='.\"\n          }\n        ],\n        \"Optional\": []\n      },\n      \"Exceptions\": [],\n      \"Relationships\": {\n        \"CrossReferences\": [\n          {\n            \"ref_rule_id\": \"R2\",\n            \"relation\": \"Definition of 'open' vs 'closed' may be affected by safety guard design and elevation above grade.\"\n          }\n        ],\n        \"Dependencies\": [\n          \"Accurate segment classification (potentially influenced by R2) is required before applying R1 calculations.\"\n        ],\n        \"Hierarchical\": [\n          \"This is Step 4 in a larger multi-step process (previous steps not provided on this page).\"\n        ],\n        \"Logical\": [\n          \"percent_open = open_length / (open_length + closed_length) * 100\"\n        ]\n      }\n    },\n    {\n      \"id\": \"R2\",\n      \"title\": \"Safety guard height when porch floor is above grade and its impact on openness classification\",\n      \"Qualifiers\": {\n        \"Scope\": \"Safety guard requirements for porches above grade and how guard design affects whether porch sides are considered 'open' or 'closed'.\",\n        \"Applicability\": \"Porches where the porch floor elevation is more than 30 inches above adjacent grade.\",\n        \"Exclusions\": \"No explicit exclusions stated. Specific guard design standards (e.g., baluster spacing) are not provided in the text.\"\n      },\n      \"Variables\": {\n        \"Dimensional\": [\n          {\n            \"name\": \"porch_floor_height_above_grade\",\n            \"unit\": \"in\",\n            \"description\": \"Vertical distance from porch floor to adjacent grade.\"\n          },\n          {\n            \"name\": \"required_guard_height\",\n            \"unit\": \"in\",\n            \"default_value\": 36,\n            \"description\": \"Height of guard/railing that may be required for safety when porch floor > 30 inches above grade.\"\n          }\n        ],\n        \"Material\": [\n          {\n            \"name\": \"facade_type\",\n            \"domain\": [\n              \"solid_half_wall\",\n              \"railings_balusters\",\n              \"single_safety_rail_above_lower_solid_half_wall\"\n            ],\n            \"description\": \"Construction of porch sides affecting openness classification.\"\n          }\n        ],\n        \"Environmental\": [\n          {\n            \"name\": \"grade\",\n            \"description\": \"Adjacent ground level used to measure the porch floor height.\"\n          }\n        ],\n        \"Usage\": [\n          {\n            \"name\": \"openness_classification\",\n            \"domain\": [\n              \"open\",\n              \"closed\"\n            ],\n            \"description\": \"Resulting classification of porch sides for openness calculation.\"\n          }\n        ]\n      },\n      \"Constants\": {\n        \"Numerical\": [\n          {\n            \"name\": \"height_threshold_trigger_for_guards\",\n            \"value\": 30,\n            \"unit\": \"in\",\n            \"description\": \"If porch floor is more than this height above grade, safety guards may be required.\"\n          },\n          {\n            \"name\": \"typical_guard_height\",\n            \"value\": 36,\n            \"unit\": \"in\",\n            \"description\": \"Indicated guard/railing height for safety.\"\n          }\n        ],\n        \"Specs\": [\n          {\n            \"name\": \"acceptable_open_guard_designs\",\n            \"options\": [\n              \"Railings (balusters) instead of solid half walls\",\n              \"A single safety rail above lower, solid half walls\"\n            ],\n            \"both_illustrations_classified_as\": \"open\",\n            \"note\": \"Specific baluster spacing or percentage of openness is not specified.\"\n          }\n        ],\n        \"Standards\": [],\n        \"Procedures\": []\n      },\n      \"Conditions\": {\n        \"Mandatory\": [],\n        \"Conditional\": [\n          {\n            \"if\": \"porch_floor_height_above_grade > 30 in\",\n            \"then\": \"safety guard height of approximately 36 in may be required\",\n            \"ambiguity\": \"The word 'may' indicates this depends on safety codes not fully provided here.\"\n          },\n          {\n            \"if\": \"guard is a solid_half_wall at required height\",\n            \"then\": \"porch facade may be considered closed\",\n            \"ambiguity\": \"Classification criteria for 'closed' are not numerically defined.\"\n          },\n          {\n            \"if\": \"guard design is railings_balusters OR single_safety_rail_above_lower_solid_half_wall\",\n            \"then\": \"porch facade is considered open (per illustrations labeled 'Open')\",\n            \"notes\": \"Intended solutions to maintain openness while providing safety.\"\n          }\n        ],\n        \"Optional\": []\n      },\n      \"Exceptions\": [\n        {\n          \"case\": \"Use of railings/balusters or single safety rail above lower solid half walls\",\n          \"deviation\": \"Despite the presence of a required safety guard, the facade is treated as 'open'.\"\n        }\n      ],\n      \"Relationships\": {\n        \"CrossReferences\": [\n          {\n            \"ref_rule_id\": \"R1\",\n            \"relation\": \"The openness/closed classification determined here feeds the segment status used in the openness percentage calculation for GFA exclusion.\"\n          }\n        ],\n        \"Dependencies\": [\n          \"Local safety/building codes determine when guards are mandatory and detailed guard specifications; those details are not provided here.\"\n        ],\n        \"Hierarchical\": [],\n        \"Logical\": [\n          \"If porch_floor_height_above_grade <= 30 in, no guard requirement is implied by this text.\",\n          \"If guard is required, choose an 'open' guard design to avoid changing facade classification to 'closed'.\"\n        ]\n      }\n    }\n  ]\n}"
+  },
+  "timestamp": "2025-09-16 14:57:25",
+  "model": "openai/gpt-5",
+  "success": true
+}

@@ -1,0 +1,59 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_24.png",
+  "image_name": "Page_24.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Projections\n\nArchitectural relief\nfeatures such as bay\nwindows are pleasant\nadditions to a house\ndesign and are\nencouraged. If they\nmeet certain design\ncriteria they do not\ncount toward gross\nfloor area.\n\nBay windows\n\nBay windows that meet the design criteria below are considered to be decorative\narchitectural features and do NOT count toward gross floor area.\n\nDesign criteria for bay windows that do not count:\n\n\u2022 Bottom of feature must be at least 18\" above the floor joists\n\u2022 Exterior supports must be features like corbels and/or brackets\n  rather than solid walls\n\u2022 At least 50% of the surface is glass\n\nFig 13 Bay windows\n\n2' max. from bay window\nsurface to facade surface\n(Typical all)\n\nNote: Bay windows that ex-\ntend higher than the struc-\nture's roof are considered\nto be dormers and count to-\nward gross floor area.\n\n18\n\nCode sections\n18.04.030(a)(65)\n18.12.040(b)Table 3\n\nA\nDoes NOT count\n\nB\nCounts because floor\njoists continue into the\nbay window\n\nC & D\nCount because of exterior skirt wall\n(angled or straight)\n\nE\nCounts because the\nsurface is not at least\n50% glass",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "A series of five cross-sectional diagrams (labeled A through E) illustrating different bay window configurations and whether they count towards gross floor area. Each diagram shows a portion of a building wall with a bay window structure. Diagram A shows a bay window that does not count, with its bottom at least 18 inches above the floor joists and supported by corbels. Diagram B shows a bay window that counts because the floor joists extend into it. Diagrams C & D show bay windows that count due to an exterior skirt wall (one angled, one straight). Diagram E shows a bay window that counts because less than 50% of its surface is glass. A vertical dimension line indicates '18\" min. from top of floor to bottom of baywindow structure' for diagram A. A horizontal dimension line indicates '2' max. from bay window surface to facade surface (Typical all)' for the projection of the bay window from the main wall.",
+          "location": "Middle to bottom of the page, spanning horizontally across the content area."
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Minimum height of bay window bottom above floor joists",
+          "value": "18",
+          "unit": "inches"
+        },
+        {
+          "parameter": "Minimum glass surface percentage for non-counting bay windows",
+          "value": "50",
+          "unit": "%"
+        },
+        {
+          "parameter": "Maximum projection of bay window from facade",
+          "value": "2",
+          "unit": "feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Bay windows",
+        "subheadings": [
+          "Design criteria for bay windows that do not count:",
+          "Fig 13 Bay windows"
+        ],
+        "sections": [
+          "Projections",
+          "Architectural relief features such as bay windows are pleasant additions to a house design and are encouraged. If they meet certain design criteria they do not count toward gross floor area.",
+          "Bay windows that meet the design criteria below are considered to be decorative architectural features and do NOT count toward gross floor area.",
+          "Note: Bay windows that extend higher than the structure's roof are considered to be dormers and count toward gross floor area.",
+          "Code sections"
+        ]
+      },
+      "additional_notes": [
+        "The page number '18' is located at the bottom left.",
+        "The text 'feature' is misspelled as 'teature' in the bullet points under 'Design criteria for bay windows that do not count:'.",
+        "The text 'Fig 13 Bay windows' serves as a caption for the diagram.",
+        "The labels A, B, C & D, E correspond to the individual bay window diagrams and describe why they either count or do not count towards gross floor area."
+      ],
+      "cross_references": [
+        "Code sections 18.04.030(a)(65)",
+        "Code sections 18.12.040(b)Table 3"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-14 19:32:25",
+  "model_used": "google/gemini-2.5-flash"
+}

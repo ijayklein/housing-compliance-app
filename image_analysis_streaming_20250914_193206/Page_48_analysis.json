@@ -1,0 +1,78 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_48.png",
+  "image_name": "Page_48.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Light well & stairwell standards\n& site planning\n\n\u2022 Such features may not be located on the side of the struc-\nture that faces the front yard.\n\n\u2022 Maximum width (interior dimension) is 3'.\n\n\u2022 The combined length (interior dimensions of the opening\nexcluding encasing structure) of all the excavated features\nmay not exceed 30% of basement perimeter.\n\n\u2022 Allowable encroachment into required side yard is 3' max\n(however feature must be a minimum of 3' from side lot\nline).\n\n\u2022 Allowable encroachment into required rear yard is 4'.\n\n\u2022 The combined length (interior dimensions of the opening\nexcluding encasing structure) of all the excavated features\nor portions of features that encroach into the required\nyards, on all sides of the structure, may not exceed 15'.\n\n\u2022 Excavated features shall not be harmful to neighboring\ntrees.\n\n\u2022 Public Works Department must approve drainage system.\n\n42",
+      "visual_elements": [
+        {
+          "type": "figure",
+          "description": "Figure 39: Examples of site plan with light wells & stairwells. The figure shows a top-down view of an 'Interior lot example' with a 'Rear yard' at the top and 'Front yard' at the bottom. The lot is bounded by 'Interior-side yard' on both left and right sides. Inside the lot, there's a 'Buildable area' (light grey dashed line rectangle) and a 'Main dwelling' (darker grey rectangle). Several light wells and stairwells are depicted as black and white rectangles encroaching into the side and front yards. Dimensions 'a', 'b', 'c', and 'd' are indicated for various light well/stairwell features. There are also measurements for '3' max. width' for a feature, '3' min. from lot line (Typ.)', and '3' max. into side yard (Typ.)'.",
+          "location": "Right side of the page, spanning from top to bottom"
+        },
+        {
+          "type": "key",
+          "description": "Legend for Figure 39, defining various line types and shaded areas:\n- Solid black line: Curb\n- Dashed black line: Lot line\n- Grey checkered pattern: Sidewalk\n- Dashed black line (thicker): Required setbacks\n- Light grey dashed rectangle: Buildable area\n- Dark grey solid rectangle: Dwelling\n- Black solid rectangle: Lightwells & stairwells\n- White solid rectangle: Lightwells & stairwells that encroach into the required yards",
+          "location": "Bottom right of the page, within the figure area"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Maximum width (interior dimension) of features",
+          "value": "3",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Combined length (interior dimensions of opening excluding encasing structure) of all excavated features",
+          "value": "30",
+          "unit": "percent of basement perimeter"
+        },
+        {
+          "parameter": "Allowable encroachment into required side yard",
+          "value": "3",
+          "unit": "feet max"
+        },
+        {
+          "parameter": "Minimum distance of feature from side lot line",
+          "value": "3",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Allowable encroachment into required rear yard",
+          "value": "4",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Combined length (interior dimensions of opening excluding encasing structure) of all excavated features or portions of features that encroach into required yards, on all sides of structure",
+          "value": "15",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Lightwells & stairwells (encroaching features) a + b",
+          "value": "15",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Lightwells & stairwells (all features) a + b + c + d",
+          "value": "30",
+          "unit": "percent of the perimeter of the basement"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Light well & stairwell standards & site planning",
+        "subheadings": [],
+        "sections": [
+          "Fig 39 Examples of site plan w/light wells & stairwells",
+          "Lightwells & stairwells"
+        ]
+      },
+      "additional_notes": [
+        "Page number '42' is present at the bottom left.",
+        "The note under 'Lightwells & stairwells' states: 'Note: measurements are based on interior dimension of opening and exclude encasing structure.'"
+      ],
+      "cross_references": []
+    }
+  },
+  "analysis_timestamp": "2025-09-14 19:32:35",
+  "model_used": "google/gemini-2.5-flash"
+}

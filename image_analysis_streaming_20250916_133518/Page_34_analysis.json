@@ -1,0 +1,12 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_34.png",
+  "image_name": "Page_34.png",
+  "analysis": {
+    "raw_content": "Based on the photocopied page from this city planning technical manual, I can extract the following information with absolute precision:\n\n## Title\nPrimary daylight plane (rear)\n\n## Figure Reference\nFig 23 Side elevation showing Rear primary daylight plane\n\n## Dimensional Specifications\n- 7.5' max. each protrusion\n- 5' min. separation\n- 7.5' max. each protrusion\n- 24' max. for protrusions\n- 16'\n- 24' max. for protrusions\n- Max. bldg. level\n- 60\u00b0 (angle measurement)\n\n## Maximum Building Height Regulations\n- 30' for structures w/roof slope < 12:12\n- 33' for structures w/roof slope > 12:12\n- 17' for structures on substandard or flag lots regardless of flood plane\n- variable for structures located in flood zones except on substandard and flag lots - up to 33'\n\n## Protrusion Rules\nCumulative length of protrusions must not exceed 15' on any one side.\nRear protrusions subject to same rules as side protrusions\n\n## Notes\n- There is no front daylight plane\n- Side daylight plane is measured [up] at lot line.\n- Rear daylight plane is measured [up] at rear setback.\n\n## Additional Labels\n- Setback line\n- Rear Yard\n- Rear lot line\n\n## Page Number\n28",
+    "content_length": 1151,
+    "parse_error": false
+  },
+  "timestamp": "2025-09-16 13:37:06",
+  "model": "anthropic/claude-sonnet-4",
+  "success": true
+}

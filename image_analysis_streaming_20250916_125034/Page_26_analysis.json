@@ -1,0 +1,12 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_26.png",
+  "image_name": "Page_26.png",
+  "analysis": {
+    "parse_error": true,
+    "error": "JSON parse failed: Expecting value: line 1 column 1 (char 0)",
+    "raw_response": "**Setbacks**\n\nSetbacks apportion a lot into two parts:\n*   **buildable area** (in the middle)\n*   **required yards** (surrounding the building area).\n\nThese required yards, meant to be maintained as open space areas, are important as landscaping opportunities to keep our neighborhoods attractive as well as for the preservation of privacy.\n\n**Code sections**\n*   Page 20\n    *   18.12.040 (a) Table 2\n    *   18.12.040 (a,c,e,& i)\n*   Page 21\n    *   18.04.040 (e)\n*   Page 22-23\n    *   18.040.030 "
+  },
+  "timestamp": "2025-09-16 12:50:59",
+  "model": "google/gemini-2.5-flash",
+  "success": false
+}

@@ -1,0 +1,19 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_09.png",
+  "image_name": "Page_09.png",
+  "analysis": {
+    "page_number": "unknown",
+    "main_heading": "PARSE_ERROR",
+    "text_content": "Failed to parse response: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)",
+    "tables": [],
+    "figures": [],
+    "zoning_rules": [],
+    "code_references": [],
+    "quality_notes": "JSON parsing failed: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)",
+    "raw_response": "```json\n{\n  \"page_number\": \"3\",\n  \"main_heading\": \"Gross vs. net lot area\",\n  \"text_content\": \"Gross lot area is the size of the lot\u2014from lot line to lot line.\\nDevelopment potential is based on the net lot area and\\nwhile gross and net lot area are the same for most lots in\\nPalo Alto, there are some lots for which portions must be\\nexcluded from the gross lot area to establish the net lot area.\\n\\nAreas excluded from the gross lot size are:\\n\u2022 Street right-of-way (Area A of Fig 1 on this page)\\n\u2022 \u201cPole\u201d portion of a flag lot (Area B of Fig 2 on this page)\\n\u2022 Creek channel (Area C of Fig 3 on this page)\\n\\nFig 1 Gross lot area exclusions: street easements\\n\\nLot with\\nboundaries\\nthat extend\\ninto the\\npublic ROW\\n\\nThe portion of the lot within the\\npublic ROW must be subtracted\\nfrom the gross lot area.\\n\\nNote: In some areas of Palo Alto, like\\nBarron Park, it is not unusual for the\\nlot to extend to the middle of the\\nstreet. However\\npurposes, the lot is defined by the\\nedge of t",
+    "parse_error": true
+  },
+  "analysis_timestamp": "2025-09-16 12:33:19",
+  "model_used": "google/gemini-2.5-flash",
+  "success": false
+}

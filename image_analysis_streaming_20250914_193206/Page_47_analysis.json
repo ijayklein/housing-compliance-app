@@ -1,0 +1,53 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_47.png",
+  "image_name": "Page_47.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Other excavation considerations\n\nArchitectural compatibility & landscape screening\n\u2022 If a guard rail is required, it must be designed to be archi-\ntecturally compatible with the residence.\n\u2022 Additionally, landscape screening may be required by the\nPlanning Dept.\n\nTree protection\n\u2022 A tree's root system extends well beyond the drip line and the\nroots are likely to be within the first 18\" below grade.\n\u2022 It is important to plan excavation in a manner that does not\nharm tree roots.\n\u2022 Prior to issuance of building permit, owner to provide evidence\nthat encroaching features or portions of features will not harm\ntrees of any species on subject or abutting lots.\n\u2022 Consult the city's Tree Technical Manual for other aspects of\ntree protection during construction.\n\nFig 37 Excavation, landscape screening, and guard rails\n\nFig 38 Excavation and tree roots\n\nBasement\nExcav\nfeatur\nWhen planning a basement, consider the\nextent of excavation that will be required e.g.,\nsome excavation techniques require (for safety\nreasons) that the excavation to be at a 1:1\nslope which may impact tree roots severely.\n41",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "A cross-sectional diagram illustrating excavation for a building's basement. The diagram shows the side view of a building with a basement level. The ground level is indicated by a solid line, and below it, the basement wall is shown. To the right of the basement, an excavated area is depicted with dashed lines indicating the extent of excavation and hatched lines representing disturbed soil. The text 'Basement' is vertically aligned along the basement wall, and 'Excav featur' is vertically aligned along the excavation line.",
+          "location": "Bottom left"
+        },
+        {
+          "type": "diagram",
+          "description": "A cross-sectional diagram illustrating excavation near a tree's root system. The diagram shows a building with a basement on the left, similar to Fig 37. To the right, a large tree with an extensive root system is depicted. A diagonal line, representing an excavation slope, extends from the ground level near the building towards the tree's root system, indicating potential impact. The text 'Basement' is vertically aligned along the basement wall, and 'Excav featur' is vertically aligned along the excavation line.",
+          "location": "Bottom right"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Root depth",
+          "value": "18",
+          "unit": "inches below grade"
+        },
+        {
+          "parameter": "Excavation slope ratio",
+          "value": "1:1",
+          "unit": "ratio"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Other excavation considerations",
+        "subheadings": [
+          "Architectural compatibility & landscape screening",
+          "Tree protection"
+        ],
+        "sections": [
+          "Fig 37 Excavation, landscape screening, and guard rails",
+          "Fig 38 Excavation and tree roots"
+        ]
+      },
+      "additional_notes": [
+        "Page number '41' is present at the bottom right corner.",
+        "The text 'Excav featur' in the diagrams appears to be a truncated label, likely 'Excavation feature'."
+      ],
+      "cross_references": [
+        "city's Tree Technical Manual"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-14 19:32:34",
+  "model_used": "google/gemini-2.5-flash"
+}

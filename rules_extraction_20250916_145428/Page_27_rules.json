@@ -1,0 +1,279 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_27.md",
+  "file_name": "Page_27.md",
+  "analysis": {
+    "extracted_rules": {
+      "rules": [
+        {
+          "Qualifiers": {
+            "Scope": [
+              "Front (contextual) setbacks for lots on the same side of a block",
+              "Procedure to determine whether contextual front setback rules apply and, if applicable, the contextual setback value to use"
+            ],
+            "Applicability": [
+              "Applies if, and only if, the calculated average of eligible existing front setbacks on the same side of the block is greater than or equal to 30 ft",
+              "Lots considered are on the same side of the subject block and include the project (subject) lot for counting and averaging where it has an existing setback"
+            ],
+            "Exclusions": [
+              "Flag lots",
+              "Lots with multi-family use having 3 or more units",
+              "Corner lots that face a cross street"
+            ]
+          },
+          "Variables": [
+            {
+              "name": "BlockLength",
+              "type": "number",
+              "units": "ft",
+              "definition": "Measured length of the block along the street frontage for the subject side"
+            },
+            {
+              "name": "AllLotsSameSide",
+              "type": "set",
+              "units": "lots",
+              "definition": "All lots on the same side of the block as the subject lot, including the subject lot"
+            },
+            {
+              "name": "BlockLotCount",
+              "type": "integer",
+              "units": "lots",
+              "definition": "Count of AllLotsSameSide"
+            },
+            {
+              "name": "SelectionWindowLots",
+              "type": "set",
+              "units": "lots",
+              "definition": "If BlockLength > 600 ft, restrict consideration to lots within 600 ft of the subject lot, capped at a maximum of 10 lots; otherwise SelectionWindowLots = AllLotsSameSide",
+              "ambiguity": "Method of selecting which 10 lots when more than 10 lots exist within 600 ft is not specified"
+            },
+            {
+              "name": "EligibleLots_PreOutlier",
+              "type": "set",
+              "units": "lots",
+              "definition": "SelectionWindowLots excluding: flag lots; lots with multi-family use (3+ units); corner lots facing cross street"
+            },
+            {
+              "name": "EligibleSetbacks_PreOutlier",
+              "type": "array<number>",
+              "units": "ft",
+              "definition": "Front setback values corresponding to EligibleLots_PreOutlier",
+              "notes": "Includes the subject lot\u2019s existing front setback only if it exists and the subject lot is not excluded by type"
+            },
+            {
+              "name": "RemainingLotsCount",
+              "type": "integer",
+              "units": "lots",
+              "definition": "Count of EligibleLots_PreOutlier"
+            },
+            {
+              "name": "EligibleSetbacks_Final",
+              "type": "array<number>",
+              "units": "ft",
+              "definition": "If RemainingLotsCount >= 5, remove the single smallest and single largest values from EligibleSetbacks_PreOutlier; otherwise use EligibleSetbacks_PreOutlier without removal",
+              "ambiguity": "Handling of ties for smallest/largest not specified; rounding/precision not specified"
+            },
+            {
+              "name": "ContextualSetbackAverage",
+              "type": "number",
+              "units": "ft",
+              "definition": "Arithmetic mean of EligibleSetbacks_Final",
+              "calculation": "sum(EligibleSetbacks_Final) / count(EligibleSetbacks_Final)"
+            },
+            {
+              "name": "ContextualSetbackApplies",
+              "type": "boolean",
+              "definition": "True if ContextualSetbackAverage >= 30 ft and other preconditions are satisfied"
+            },
+            {
+              "name": "RequiredContextualSetback",
+              "type": "number",
+              "units": "ft",
+              "definition": "If ContextualSetbackApplies is true, the required contextual front setback equals ContextualSetbackAverage",
+              "ambiguity": "No rounding rule provided; example shows 32.7 ft retained as-is"
+            }
+          ],
+          "Constants": [
+            {
+              "name": "ContextualThreshold",
+              "value": 30,
+              "units": "ft",
+              "spec": "Minimum average existing setback that triggers contextual setbacks"
+            },
+            {
+              "name": "BlockLengthThreshold",
+              "value": 600,
+              "units": "ft",
+              "spec": "Block-length threshold beyond which only lots within 600 ft are considered"
+            },
+            {
+              "name": "MaxLotsInWindow",
+              "value": 10,
+              "units": "lots",
+              "spec": "Maximum number of lots to consider within the 600-ft selection window"
+            },
+            {
+              "name": "MinLotsForOutlierRemoval",
+              "value": 5,
+              "units": "lots",
+              "spec": "If remaining eligible lots are at least this number, remove one smallest and one largest setback before averaging"
+            },
+            {
+              "name": "MinLotsForProcess",
+              "value": 4,
+              "units": "lots",
+              "spec": "Process begins only if the block has more than 3 lots (including the project lot)"
+            },
+            {
+              "name": "OutliersRemovedCount",
+              "value": 2,
+              "units": "setbacks",
+              "spec": "One smallest and one largest are removed when outlier removal is triggered"
+            }
+          ],
+          "Conditions": [
+            {
+              "id": "C1",
+              "type": "gate",
+              "statement": "Proceed only if the block has more than 3 lots on the same side including the project lot",
+              "logic": "BlockLotCount >= MinLotsForProcess",
+              "dependencies": [],
+              "ambiguity": "If BlockLotCount < MinLotsForProcess, the procedure\u2019s next step or default requirements are not specified"
+            },
+            {
+              "id": "C2",
+              "type": "selection",
+              "statement": "If BlockLength > 600 ft, restrict consideration to lots within 600 ft of the subject lot; cap the considered lots at 10",
+              "logic": "SelectionWindowLots = (BlockLength > 600 ft) ? LotsWithin600ft(subject) limited to 10 : AllLotsSameSide",
+              "dependencies": [
+                "C1"
+              ],
+              "ambiguity": "When more than 10 lots fall within 600 ft, the rule for choosing which 10 to include is not specified (e.g., nearest, symmetrical)"
+            },
+            {
+              "id": "C3",
+              "type": "exclusion",
+              "statement": "Exclude from SelectionWindowLots the following lot types: flag lots; multi-family (3+ units); corner lots facing cross street",
+              "logic": "EligibleLots_PreOutlier = SelectionWindowLots minus {Flag, MultiFamily3Plus, CornerFacingCrossStreet}",
+              "dependencies": [
+                "C2"
+              ]
+            },
+            {
+              "id": "C4",
+              "type": "threshold",
+              "statement": "If RemainingLotsCount >= 5, remove one smallest and one largest setback before averaging; otherwise do not remove extremes",
+              "logic": "EligibleSetbacks_Final = (RemainingLotsCount >= MinLotsForOutlierRemoval) ? RemoveMinMax(EligibleSetbacks_PreOutlier) : EligibleSetbacks_PreOutlier",
+              "dependencies": [
+                "C3"
+              ],
+              "ambiguity": "Tie-breaking for equal smallest/largest values and treatment of missing setback data are not specified"
+            },
+            {
+              "id": "C5",
+              "type": "calculation",
+              "statement": "Compute the average of EligibleSetbacks_Final",
+              "logic": "ContextualSetbackAverage = sum(EligibleSetbacks_Final) / count(EligibleSetbacks_Final)",
+              "dependencies": [
+                "C4"
+              ]
+            },
+            {
+              "id": "C6",
+              "type": "decision",
+              "statement": "Contextual setbacks apply if, and only if, ContextualSetbackAverage >= 30 ft",
+              "logic": "ContextualSetbackApplies = (ContextualSetbackAverage >= ContextualThreshold)",
+              "dependencies": [
+                "C5"
+              ]
+            },
+            {
+              "id": "C7",
+              "type": "assignment",
+              "statement": "If contextual setbacks apply, set the required contextual front setback to the computed average",
+              "logic": "RequiredContextualSetback = ContextualSetbackAverage when ContextualSetbackApplies = true",
+              "dependencies": [
+                "C6"
+              ],
+              "ambiguity": "No rounding/precision rule specified for RequiredContextualSetback"
+            }
+          ],
+          "Exceptions": [
+            {
+              "category": "LotTypeExclusions",
+              "items": [
+                "Flag lots",
+                "Multi-family use with 3 or more units",
+                "Corner lots that face a cross street"
+              ]
+            },
+            {
+              "category": "ProcessFlowGaps",
+              "items": [
+                "Procedure when the block has 3 or fewer lots on the same side (including the project lot) is not defined",
+                "Selection method when more than 10 lots exist within 600 ft is not defined",
+                "Handling of ties for smallest/largest setbacks when removing outliers is not defined",
+                "Treatment when the subject lot lacks an existing setback (e.g., vacant) is not explicitly defined",
+                "Rounding/precision for the resulting contextual setback is not defined"
+              ]
+            }
+          ],
+          "Relationships": [
+            {
+              "from": "ContextualThreshold (30 ft)",
+              "to": "C6",
+              "type": "uses",
+              "description": "Average threshold that determines applicability"
+            },
+            {
+              "from": "BlockLengthThreshold (600 ft)",
+              "to": "C2",
+              "type": "uses",
+              "description": "Determines whether to limit consideration to a 600-ft window"
+            },
+            {
+              "from": "MaxLotsInWindow (10 lots)",
+              "to": "C2",
+              "type": "uses",
+              "description": "Caps the number of lots considered within the 600-ft window"
+            },
+            {
+              "from": "MinLotsForProcess (>3 lots)",
+              "to": "C1",
+              "type": "uses",
+              "description": "Precondition to initiate the contextual averaging process"
+            },
+            {
+              "from": "MinLotsForOutlierRemoval (>=5 lots)",
+              "to": "C4",
+              "type": "controls",
+              "description": "Triggers removal of one smallest and one largest setback"
+            },
+            {
+              "from": "LotTypeExclusions",
+              "to": "EligibleLots_PreOutlier",
+              "type": "filters",
+              "description": "Removes ineligible lots before averaging"
+            },
+            {
+              "from": "C5",
+              "to": "C6",
+              "type": "depends_on",
+              "description": "Applicability decision requires computed average"
+            },
+            {
+              "from": "C6",
+              "to": "C7",
+              "type": "depends_on",
+              "description": "Assignment of required contextual setback occurs only if applicability is true"
+            }
+          ]
+        }
+      ]
+    },
+    "parse_error": false,
+    "raw_response": "{\n  \"rules\": [\n    {\n      \"Qualifiers\": {\n        \"Scope\": [\n          \"Front (contextual) setbacks for lots on the same side of a block\",\n          \"Procedure to determine whether contextual front setback rules apply and, if applicable, the contextual setback value to use\"\n        ],\n        \"Applicability\": [\n          \"Applies if, and only if, the calculated average of eligible existing front setbacks on the same side of the block is greater than or equal to 30 ft\",\n          \"Lots considered are on the same side of the subject block and include the project (subject) lot for counting and averaging where it has an existing setback\"\n        ],\n        \"Exclusions\": [\n          \"Flag lots\",\n          \"Lots with multi-family use having 3 or more units\",\n          \"Corner lots that face a cross street\"\n        ]\n      },\n      \"Variables\": [\n        {\n          \"name\": \"BlockLength\",\n          \"type\": \"number\",\n          \"units\": \"ft\",\n          \"definition\": \"Measured length of the block along the street frontage for the subject side\"\n        },\n        {\n          \"name\": \"AllLotsSameSide\",\n          \"type\": \"set\",\n          \"units\": \"lots\",\n          \"definition\": \"All lots on the same side of the block as the subject lot, including the subject lot\"\n        },\n        {\n          \"name\": \"BlockLotCount\",\n          \"type\": \"integer\",\n          \"units\": \"lots\",\n          \"definition\": \"Count of AllLotsSameSide\"\n        },\n        {\n          \"name\": \"SelectionWindowLots\",\n          \"type\": \"set\",\n          \"units\": \"lots\",\n          \"definition\": \"If BlockLength > 600 ft, restrict consideration to lots within 600 ft of the subject lot, capped at a maximum of 10 lots; otherwise SelectionWindowLots = AllLotsSameSide\",\n          \"ambiguity\": \"Method of selecting which 10 lots when more than 10 lots exist within 600 ft is not specified\"\n        },\n        {\n          \"name\": \"EligibleLots_PreOutlier\",\n          \"type\": \"set\",\n          \"units\": \"lots\",\n          \"definition\": \"SelectionWindowLots excluding: flag lots; lots with multi-family use (3+ units); corner lots facing cross street\"\n        },\n        {\n          \"name\": \"EligibleSetbacks_PreOutlier\",\n          \"type\": \"array<number>\",\n          \"units\": \"ft\",\n          \"definition\": \"Front setback values corresponding to EligibleLots_PreOutlier\",\n          \"notes\": \"Includes the subject lot\u2019s existing front setback only if it exists and the subject lot is not excluded by type\"\n        },\n        {\n          \"name\": \"RemainingLotsCount\",\n          \"type\": \"integer\",\n          \"units\": \"lots\",\n          \"definition\": \"Count of EligibleLots_PreOutlier\"\n        },\n        {\n          \"name\": \"EligibleSetbacks_Final\",\n          \"type\": \"array<number>\",\n          \"units\": \"ft\",\n          \"definition\": \"If RemainingLotsCount >= 5, remove the single smallest and single largest values from EligibleSetbacks_PreOutlier; otherwise use EligibleSetbacks_PreOutlier without removal\",\n          \"ambiguity\": \"Handling of ties for smallest/largest not specified; rounding/precision not specified\"\n        },\n        {\n          \"name\": \"ContextualSetbackAverage\",\n          \"type\": \"number\",\n          \"units\": \"ft\",\n          \"definition\": \"Arithmetic mean of EligibleSetbacks_Final\",\n          \"calculation\": \"sum(EligibleSetbacks_Final) / count(EligibleSetbacks_Final)\"\n        },\n        {\n          \"name\": \"ContextualSetbackApplies\",\n          \"type\": \"boolean\",\n          \"definition\": \"True if ContextualSetbackAverage >= 30 ft and other preconditions are satisfied\"\n        },\n        {\n          \"name\": \"RequiredContextualSetback\",\n          \"type\": \"number\",\n          \"units\": \"ft\",\n          \"definition\": \"If ContextualSetbackApplies is true, the required contextual front setback equals ContextualSetbackAverage\",\n          \"ambiguity\": \"No rounding rule provided; example shows 32.7 ft retained as-is\"\n        }\n      ],\n      \"Constants\": [\n        {\n          \"name\": \"ContextualThreshold\",\n          \"value\": 30,\n          \"units\": \"ft\",\n          \"spec\": \"Minimum average existing setback that triggers contextual setbacks\"\n        },\n        {\n          \"name\": \"BlockLengthThreshold\",\n          \"value\": 600,\n          \"units\": \"ft\",\n          \"spec\": \"Block-length threshold beyond which only lots within 600 ft are considered\"\n        },\n        {\n          \"name\": \"MaxLotsInWindow\",\n          \"value\": 10,\n          \"units\": \"lots\",\n          \"spec\": \"Maximum number of lots to consider within the 600-ft selection window\"\n        },\n        {\n          \"name\": \"MinLotsForOutlierRemoval\",\n          \"value\": 5,\n          \"units\": \"lots\",\n          \"spec\": \"If remaining eligible lots are at least this number, remove one smallest and one largest setback before averaging\"\n        },\n        {\n          \"name\": \"MinLotsForProcess\",\n          \"value\": 4,\n          \"units\": \"lots\",\n          \"spec\": \"Process begins only if the block has more than 3 lots (including the project lot)\"\n        },\n        {\n          \"name\": \"OutliersRemovedCount\",\n          \"value\": 2,\n          \"units\": \"setbacks\",\n          \"spec\": \"One smallest and one largest are removed when outlier removal is triggered\"\n        }\n      ],\n      \"Conditions\": [\n        {\n          \"id\": \"C1\",\n          \"type\": \"gate\",\n          \"statement\": \"Proceed only if the block has more than 3 lots on the same side including the project lot\",\n          \"logic\": \"BlockLotCount >= MinLotsForProcess\",\n          \"dependencies\": [],\n          \"ambiguity\": \"If BlockLotCount < MinLotsForProcess, the procedure\u2019s next step or default requirements are not specified\"\n        },\n        {\n          \"id\": \"C2\",\n          \"type\": \"selection\",\n          \"statement\": \"If BlockLength > 600 ft, restrict consideration to lots within 600 ft of the subject lot; cap the considered lots at 10\",\n          \"logic\": \"SelectionWindowLots = (BlockLength > 600 ft) ? LotsWithin600ft(subject) limited to 10 : AllLotsSameSide\",\n          \"dependencies\": [\n            \"C1\"\n          ],\n          \"ambiguity\": \"When more than 10 lots fall within 600 ft, the rule for choosing which 10 to include is not specified (e.g., nearest, symmetrical)\"\n        },\n        {\n          \"id\": \"C3\",\n          \"type\": \"exclusion\",\n          \"statement\": \"Exclude from SelectionWindowLots the following lot types: flag lots; multi-family (3+ units); corner lots facing cross street\",\n          \"logic\": \"EligibleLots_PreOutlier = SelectionWindowLots minus {Flag, MultiFamily3Plus, CornerFacingCrossStreet}\",\n          \"dependencies\": [\n            \"C2\"\n          ]\n        },\n        {\n          \"id\": \"C4\",\n          \"type\": \"threshold\",\n          \"statement\": \"If RemainingLotsCount >= 5, remove one smallest and one largest setback before averaging; otherwise do not remove extremes\",\n          \"logic\": \"EligibleSetbacks_Final = (RemainingLotsCount >= MinLotsForOutlierRemoval) ? RemoveMinMax(EligibleSetbacks_PreOutlier) : EligibleSetbacks_PreOutlier\",\n          \"dependencies\": [\n            \"C3\"\n          ],\n          \"ambiguity\": \"Tie-breaking for equal smallest/largest values and treatment of missing setback data are not specified\"\n        },\n        {\n          \"id\": \"C5\",\n          \"type\": \"calculation\",\n          \"statement\": \"Compute the average of EligibleSetbacks_Final\",\n          \"logic\": \"ContextualSetbackAverage = sum(EligibleSetbacks_Final) / count(EligibleSetbacks_Final)\",\n            \"dependencies\": [\n            \"C4\"\n          ]\n        },\n        {\n          \"id\": \"C6\",\n          \"type\": \"decision\",\n          \"statement\": \"Contextual setbacks apply if, and only if, ContextualSetbackAverage >= 30 ft\",\n          \"logic\": \"ContextualSetbackApplies = (ContextualSetbackAverage >= ContextualThreshold)\",\n          \"dependencies\": [\n            \"C5\"\n          ]\n        },\n        {\n          \"id\": \"C7\",\n          \"type\": \"assignment\",\n          \"statement\": \"If contextual setbacks apply, set the required contextual front setback to the computed average\",\n          \"logic\": \"RequiredContextualSetback = ContextualSetbackAverage when ContextualSetbackApplies = true\",\n          \"dependencies\": [\n            \"C6\"\n          ],\n          \"ambiguity\": \"No rounding/precision rule specified for RequiredContextualSetback\"\n        }\n      ],\n      \"Exceptions\": [\n        {\n          \"category\": \"LotTypeExclusions\",\n          \"items\": [\n            \"Flag lots\",\n            \"Multi-family use with 3 or more units\",\n            \"Corner lots that face a cross street\"\n          ]\n        },\n        {\n          \"category\": \"ProcessFlowGaps\",\n          \"items\": [\n            \"Procedure when the block has 3 or fewer lots on the same side (including the project lot) is not defined\",\n            \"Selection method when more than 10 lots exist within 600 ft is not defined\",\n            \"Handling of ties for smallest/largest setbacks when removing outliers is not defined\",\n            \"Treatment when the subject lot lacks an existing setback (e.g., vacant) is not explicitly defined\",\n            \"Rounding/precision for the resulting contextual setback is not defined\"\n          ]\n        }\n      ],\n      \"Relationships\": [\n        {\n          \"from\": \"ContextualThreshold (30 ft)\",\n          \"to\": \"C6\",\n          \"type\": \"uses\",\n          \"description\": \"Average threshold that determines applicability\"\n        },\n        {\n          \"from\": \"BlockLengthThreshold (600 ft)\",\n          \"to\": \"C2\",\n          \"type\": \"uses\",\n          \"description\": \"Determines whether to limit consideration to a 600-ft window\"\n        },\n        {\n          \"from\": \"MaxLotsInWindow (10 lots)\",\n          \"to\": \"C2\",\n          \"type\": \"uses\",\n          \"description\": \"Caps the number of lots considered within the 600-ft window\"\n        },\n        {\n          \"from\": \"MinLotsForProcess (>3 lots)\",\n          \"to\": \"C1\",\n          \"type\": \"uses\",\n          \"description\": \"Precondition to initiate the contextual averaging process\"\n        },\n        {\n          \"from\": \"MinLotsForOutlierRemoval (>=5 lots)\",\n          \"to\": \"C4\",\n          \"type\": \"controls\",\n          \"description\": \"Triggers removal of one smallest and one largest setback\"\n        },\n        {\n          \"from\": \"LotTypeExclusions\",\n          \"to\": \"EligibleLots_PreOutlier\",\n          \"type\": \"filters\",\n          \"description\": \"Removes ineligible lots before averaging\"\n        },\n        {\n          \"from\": \"C5\",\n          \"to\": \"C6\",\n          \"type\": \"depends_on\",\n          \"description\": \"Applicability decision requires computed average\"\n        },\n        {\n          \"from\": \"C6\",\n          \"to\": \"C7\",\n          \"type\": \"depends_on\",\n          \"description\": \"Assignment of required contextual setback occurs only if applicability is true\"\n        }\n      ]\n    }\n  ]\n}"
+  },
+  "timestamp": "2025-09-16 15:01:15",
+  "model": "openai/gpt-5",
+  "success": true
+}

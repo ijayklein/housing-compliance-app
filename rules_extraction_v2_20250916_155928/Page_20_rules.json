@@ -1,0 +1,175 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_20.md",
+  "file_name": "Page_20.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "rule_id": "GFA_EXCLUSION_RECESSED_PORCH",
+        "rule_name": "Gross Floor Area Exclusion for Recessed Porches",
+        "source": "Page 20",
+        "analysis": {
+          "Qualifiers": {
+            "scope": "Calculation of Gross Floor Area (GFA).",
+            "applicability": "Applies to recessed porches located on the ground floor (or 1st floor).",
+            "exclusions": "The rule defines the conditions under which the porch area is excluded from the GFA calculation. The default state is inclusion in GFA."
+          },
+          "Variables": [
+            {
+              "category": "dimensional",
+              "name": "porch_depth",
+              "type": "length",
+              "description": "The depth of the recessed porch."
+            },
+            {
+              "category": "dimensional",
+              "name": "porch_ceiling_location",
+              "type": "position",
+              "description": "The vertical position of the porch ceiling relative to the 2nd floor structure."
+            },
+            {
+              "category": "usage",
+              "name": "porch_exterior_side_openness",
+              "type": "state",
+              "description": "The degree of openness of the exterior side of the porch."
+            }
+          ],
+          "Constants": [
+            {
+              "name": "max_porch_depth",
+              "value": 10,
+              "unit": "feet",
+              "description": "The maximum allowable depth for the porch to be excluded from GFA."
+            },
+            {
+              "name": "max_ceiling_position",
+              "value": "below 2nd floor",
+              "unit": "N/A",
+              "description": "The maximum allowable vertical position for the porch ceiling. The diagram refers to the '2nd floor line'."
+            },
+            {
+              "name": "required_openness",
+              "value": "substantially open",
+              "unit": "N/A",
+              "description": "The required state of the exterior side.",
+              "notes": "Flag: Ambiguous language. Requires a specific municipal definition for automated validation."
+            }
+          ],
+          "Conditions": {
+            "type": "Conjunction (AND)",
+            "description": "The recessed porch area does NOT count toward gross floor area if ALL of the following criteria are met.",
+            "logic": "AND",
+            "clauses": [
+              {
+                "id": "C1",
+                "description": "Depth of porch is less than 10'.",
+                "expression": "porch_depth < 10"
+              },
+              {
+                "id": "C2",
+                "description": "Porch ceiling is below 2nd floor.",
+                "expression": "porch_ceiling_location == 'below 2nd floor'"
+              },
+              {
+                "id": "C3",
+                "description": "Exterior side is substantially open.",
+                "expression": "porch_exterior_side_openness == 'substantially open'"
+              }
+            ],
+            "outcome_if_true": "Porch area is EXCLUDED from Gross Floor Area calculation.",
+            "outcome_if_false": "Porch area is INCLUDED in Gross Floor Area calculation. See rule 'PORCH_HEIGHT_DOUBLE_COUNT' for potential further penalties."
+          },
+          "Exceptions": {
+            "description": "No explicit exceptions are listed within this rule. The rule itself functions as an exception to the standard GFA calculation methodology."
+          },
+          "Relationships": {
+            "hierarchical": "This rule is a specific criterion within the broader regulations for calculating Gross Floor Area.",
+            "cross_references": [
+              {
+                "target_rule_id": "PORCH_HEIGHT_DOUBLE_COUNT",
+                "description": "The consequence of failing these conditions (outcome_if_false) is linked to the 'Note' (Rule 2), as clarified in Example B's caption."
+              }
+            ],
+            "logical_dependencies": "The exclusion of porch area from GFA is dependent on all three conditions (C1, C2, C3) being met."
+          }
+        }
+      },
+      {
+        "rule_id": "PORCH_HEIGHT_DOUBLE_COUNT",
+        "rule_name": "Height Limitation and Double Counting for High-Volume Spaces",
+        "source": "Page 20, Note",
+        "analysis": {
+          "Qualifiers": {
+            "scope": "Defines 'one-story construction' for the purpose of area calculation and specifies penalties for exceeding height limits.",
+            "applicability": "Applies to spaces, such as porches, whose area is counted towards GFA and whose height is being evaluated.",
+            "exclusions": "None specified."
+          },
+          "Variables": [
+            {
+              "category": "dimensional",
+              "name": "space_height",
+              "type": "length",
+              "description": "The height of a construction space, measured from the finished floor."
+            }
+          ],
+          "Constants": [
+            {
+              "name": "one_story_height_limit",
+              "value": 17,
+              "unit": "feet",
+              "description": "The maximum height for a space to be considered 'one-story construction', measured 'above finished floor'."
+            },
+            {
+              "name": "area_multiplier",
+              "value": 2,
+              "unit": "factor",
+              "description": "The factor by which an area is multiplied if it exceeds the height limit, derived from 'count again' and 'count twice'."
+            }
+          ],
+          "Conditions": {
+            "type": "Conditional (IF-THEN)",
+            "description": "If a porch space that already counts towards GFA is higher than the one-story limit, its area is counted twice.",
+            "logic": "IF [precondition is met] THEN [evaluate condition]",
+            "clauses": [
+              {
+                "id": "PC1",
+                "type": "precondition",
+                "description": "The space/porch area is determined to be includable in the Gross Floor Area.",
+                "expression": "is_area_in_gfa == true"
+              },
+              {
+                "id": "C1",
+                "type": "condition",
+                "description": "The space is higher than the one-story construction height limit.",
+                "expression": "space_height > 17"
+              }
+            ],
+            "outcome_if_true": "The area of the space is counted twice in the GFA calculation ('2nd story equivalency').",
+            "outcome_if_false": "The area is counted once in the GFA calculation (assuming precondition PC1 is met)."
+          },
+          "Exceptions": {
+            "description": "No explicit exceptions are listed."
+          },
+          "Relationships": {
+            "hierarchical": "This rule is an addendum or clarification to primary area calculation rules, addressing high-volume spaces.",
+            "cross_references": [
+              {
+                "target_definition": "finished floor",
+                "description": "The height measurement is relative to the 'finished floor', which may be defined elsewhere."
+              }
+            ],
+            "logical_dependencies": "This rule is triggered only if the conditions for GFA exclusion in rule 'GFA_EXCLUSION_RECESSED_PORCH' are not met, making the porch area includable in GFA in the first place."
+          }
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n  {\n    \"rule_id\": \"GFA_EXCLUSION_RECESSED_PORCH\",\n    \"rule_name\": \"Gross Floor Area Exclusion for Recessed Porches\",\n    \"source\": \"Page 20\",\n    \"analysis\": {\n      \"Qualifiers\": {\n        \"scope\": \"Calculation of Gross Floor Area (GFA).\",\n        \"applicability\": \"Applies to recessed porches located on the ground floor (or 1st floor).\",\n        \"exclusions\": \"The rule defines the conditions under which the porch area is excluded from the GFA calculation. The default state is inclusion in GFA.\"\n      },\n      \"Variables\": [\n        {\n          \"category\": \"dimensional\",\n          \"name\": \"porch_depth\",\n          \"type\": \"length\",\n          \"description\": \"The depth of the recessed porch.\"\n        },\n        {\n          \"category\": \"dimensional\",\n          \"name\": \"porch_ceiling_location\",\n          \"type\": \"position\",\n          \"description\": \"The vertical position of the porch ceiling relative to the 2nd floor structure.\"\n        },\n        {\n          \"category\": \"usage\",\n          \"name\": \"porch_exterior_side_openness\",\n          \"type\": \"state\",\n          \"description\": \"The degree of openness of the exterior side of the porch.\"\n        }\n      ],\n      \"Constants\": [\n        {\n          \"name\": \"max_porch_depth\",\n          \"value\": 10,\n          \"unit\": \"feet\",\n          \"description\": \"The maximum allowable depth for the porch to be excluded from GFA.\"\n        },\n        {\n          \"name\": \"max_ceiling_position\",\n          \"value\": \"below 2nd floor\",\n          \"unit\": \"N/A\",\n          \"description\": \"The maximum allowable vertical position for the porch ceiling. The diagram refers to the '2nd floor line'.\"\n        },\n        {\n          \"name\": \"required_openness\",\n          \"value\": \"substantially open\",\n          \"unit\": \"N/A\",\n          \"description\": \"The required state of the exterior side.\",\n          \"notes\": \"Flag: Ambiguous language. Requires a specific municipal definition for automated validation.\"\n        }\n      ],\n      \"Conditions\": {\n        \"type\": \"Conjunction (AND)\",\n        \"description\": \"The recessed porch area does NOT count toward gross floor area if ALL of the following criteria are met.\",\n        \"logic\": \"AND\",\n        \"clauses\": [\n          {\n            \"id\": \"C1\",\n            \"description\": \"Depth of porch is less than 10'.\",\n            \"expression\": \"porch_depth < 10\"\n          },\n          {\n            \"id\": \"C2\",\n            \"description\": \"Porch ceiling is below 2nd floor.\",\n            \"expression\": \"porch_ceiling_location == 'below 2nd floor'\"\n          },\n          {\n            \"id\": \"C3\",\n            \"description\": \"Exterior side is substantially open.\",\n            \"expression\": \"porch_exterior_side_openness == 'substantially open'\"\n          }\n        ],\n        \"outcome_if_true\": \"Porch area is EXCLUDED from Gross Floor Area calculation.\",\n        \"outcome_if_false\": \"Porch area is INCLUDED in Gross Floor Area calculation. See rule 'PORCH_HEIGHT_DOUBLE_COUNT' for potential further penalties.\"\n      },\n      \"Exceptions\": {\n        \"description\": \"No explicit exceptions are listed within this rule. The rule itself functions as an exception to the standard GFA calculation methodology.\"\n      },\n      \"Relationships\": {\n        \"hierarchical\": \"This rule is a specific criterion within the broader regulations for calculating Gross Floor Area.\",\n        \"cross_references\": [\n          {\n            \"target_rule_id\": \"PORCH_HEIGHT_DOUBLE_COUNT\",\n            \"description\": \"The consequence of failing these conditions (outcome_if_false) is linked to the 'Note' (Rule 2), as clarified in Example B's caption.\"\n          }\n        ],\n        \"logical_dependencies\": \"The exclusion of porch area from GFA is dependent on all three conditions (C1, C2, C3) being met.\"\n      }\n    }\n  },\n  {\n    \"rule_id\": \"PORCH_HEIGHT_DOUBLE_COUNT\",\n    \"rule_name\": \"Height Limitation and Double Counting for High-Volume Spaces\",\n    \"source\": \"Page 20, Note\",\n    \"analysis\": {\n      \"Qualifiers\": {\n        \"scope\": \"Defines 'one-story construction' for the purpose of area calculation and specifies penalties for exceeding height limits.\",\n        \"applicability\": \"Applies to spaces, such as porches, whose area is counted towards GFA and whose height is being evaluated.\",\n        \"exclusions\": \"None specified.\"\n      },\n      \"Variables\": [\n        {\n          \"category\": \"dimensional\",\n          \"name\": \"space_height\",\n          \"type\": \"length\",\n          \"description\": \"The height of a construction space, measured from the finished floor.\"\n        }\n      ],\n      \"Constants\": [\n        {\n          \"name\": \"one_story_height_limit\",\n          \"value\": 17,\n          \"unit\": \"feet\",\n          \"description\": \"The maximum height for a space to be considered 'one-story construction', measured 'above finished floor'.\"\n        },\n        {\n          \"name\": \"area_multiplier\",\n          \"value\": 2,\n          \"unit\": \"factor\",\n          \"description\": \"The factor by which an area is multiplied if it exceeds the height limit, derived from 'count again' and 'count twice'.\"\n        }\n      ],\n      \"Conditions\": {\n        \"type\": \"Conditional (IF-THEN)\",\n        \"description\": \"If a porch space that already counts towards GFA is higher than the one-story limit, its area is counted twice.\",\n        \"logic\": \"IF [precondition is met] THEN [evaluate condition]\",\n        \"clauses\": [\n          {\n            \"id\": \"PC1\",\n            \"type\": \"precondition\",\n            \"description\": \"The space/porch area is determined to be includable in the Gross Floor Area.\",\n            \"expression\": \"is_area_in_gfa == true\"\n          },\n          {\n            \"id\": \"C1\",\n            \"type\": \"condition\",\n            \"description\": \"The space is higher than the one-story construction height limit.\",\n            \"expression\": \"space_height > 17\"\n          }\n        ],\n        \"outcome_if_true\": \"The area of the space is counted twice in the GFA calculation ('2nd story equivalency').\",\n        \"outcome_if_false\": \"The area is counted once in the GFA calculation (assuming precondition PC1 is met).\"\n      },\n      \"Exceptions\": {\n        \"description\": \"No explicit exceptions are listed.\"\n      },\n      \"Relationships\": {\n        \"hierarchical\": \"This rule is an addendum or clarification to primary area calculation rules, addressing high-volume spaces.\",\n        \"cross_references\": [\n          {\n            \"target_definition\": \"finished floor\",\n            \"description\": \"The height measurement is relative to the 'finished floor', which may be defined elsewhere.\"\n          }\n        ],\n        \"logical_dependencies\": \"This rule is triggered only if the conditions for GFA exclusion in rule 'GFA_EXCLUSION_RECESSED_PORCH' are not met, making the porch area includable in GFA in the first place.\"\n      }\n    }\n  }\n]\n```",
+    "response_time": 42.14948892593384,
+    "input_tokens": 718,
+    "output_tokens": 4682,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 16:01:06",
+  "model": "google/gemini-2.5-pro",
+  "success": true
+}

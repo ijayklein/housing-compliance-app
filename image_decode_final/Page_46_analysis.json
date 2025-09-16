@@ -1,0 +1,63 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_46.png",
+  "image_name": "Page_46.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Basements\n&\nExcavated\nfeatures\n\nFloor area regulations\nare intended to address\nthe building mass and\nthe appearance of the\nstreetscape. Therefore,\nif basement area is\nbelow grade and does\nnot contribute to the\napparent mass of a\nbuilding, that area,\neven if it is habitable,\nneed not be included in\nthe total floor area.\n\nCode sections\nPage 40\n18.12.090 (a, b, & c)\nPage 41\n18.12.090 (c)\nPage 43\n18.12.090 (c) (1)\nPage 44\n18.12.090 (c) (2)\n40\n\nBasement standards\n\n\u2022 May not be located in special flood hazard areas.\n\u2022 May not extend beyond building footprint.\n\u2022 May not encroach into required yards, except where\n  main dwelling is permitted to extend into rear yard.\n\nFAR\nBasements (even habitable ones) do\nnot count as floor area if first floor\nis no more than 3' above grade.\n\nFig 35 Basement & grade\n\nExcavated features\n\nThere are two types of excavated features:\n\u2022 Light wells and stairwells\n\u2022 Below-grade patios\n\nFAR\nExcavation will not affect grade or\nmeasurement of floor area if stan-\ndards are met (see pages 42 and 43).\n\nFig 36 Excavated feature & grade\n\nA: distance between top of first floor\nand grade if excavation meets the\nsize/dimensioinal limits described in\nFigs 39-40 on pp. 42-43.\n\nB: distance between top of first\nfloor and grade if excavated\nfeatures exceed the\nsize/dimensioinal limits described\nin Figs 39-40 on pp. 42-43.\n\nTop of first floor\n\nBasement\nExcavated\nfeature\n\nGrade if excavated features\nmeet standards described in\nFigs 39-40 on pp. 42-43.\n\nGrade if excavated features\nexceed standards described in\nFigs 39-40 on pp. 42-43.",
+      "visual_elements": [
+        {
+          "type": "figure",
+          "description": "Figure 35: A cross-section diagram illustrating a basement and its relationship to grade. It shows a building foundation with a basement extending below ground level, with horizontal lines representing the ground/grade level. The ground is depicted with a cross-hatch pattern.",
+          "location": "Bottom left, below 'Fig 35 Basement & grade'"
+        },
+        {
+          "type": "figure",
+          "description": "Figure 36: A cross-section diagram illustrating an excavated feature and its relationship to grade. It shows a portion of a building with a 'Basement' section and an 'Excavated Feature' section. The diagram defines 'A' as the distance between the top of the first floor and grade when excavation meets standards, and 'B' as the distance when excavated features exceed standards. It also labels 'Top of first floor' and indicates 'Grade' lines for both scenarios (meeting and exceeding standards). The ground is depicted with a cross-hatch pattern.",
+          "location": "Middle right, below 'Fig 36 Excavated feature & grade'"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "First floor height above grade for FAR exclusion",
+          "value": "3",
+          "unit": "feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": null,
+        "subheadings": [
+          "Basement standards",
+          "Excavated features",
+          "FAR",
+          "FAR",
+          "Code sections"
+        ],
+        "sections": [
+          "Basements & Excavated features (introductory text)",
+          "Basement standards (bullet points)",
+          "FAR (Basements)",
+          "Excavated features (bullet points)",
+          "FAR (Excavation)",
+          "Code sections (list of pages and section numbers)"
+        ]
+      },
+      "additional_notes": [
+        "Page number '40' is present at the bottom left."
+      ],
+      "cross_references": [
+        "pages 42 and 43",
+        "Figs 39-40 on pp. 42-43",
+        "Page 40",
+        "18.12.090 (a, b, & c)",
+        "Page 41",
+        "18.12.090 (c)",
+        "Page 43",
+        "18.12.090 (c) (1)",
+        "Page 44",
+        "18.12.090 (c) (2)"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-11 14:59:24",
+  "model_used": "google/gemini-2.5-flash"
+}

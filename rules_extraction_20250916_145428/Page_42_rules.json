@@ -1,0 +1,518 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_42.md",
+  "file_name": "Page_42.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "rule_id": "RULE-MAT-ALLOWED",
+        "title": "Permissible driveway paving materials and standards compliance",
+        "Qualifiers": {
+          "scope": "Driveway surface materials on private property",
+          "applicability": "All driveways serving properties subject to city driveway standards",
+          "exclusions": "None stated",
+          "source": {
+            "page_header": "Driveway standards",
+            "page_number": 36,
+            "figure": "Figure 31"
+          }
+        },
+        "Variables": [
+          {
+            "name": "material_type",
+            "type": "categorical",
+            "allowed_values": [
+              "permeable paving",
+              "impermeable paving",
+              "pavers without mortar (grass between)",
+              "Hollywood strips (two paved strips with grass between)",
+              "gravel (see proximity restriction in RULE-MAT-LOOSE-ROW)"
+            ]
+          }
+        ],
+        "Constants": [
+          {
+            "name": "standards_reference",
+            "value": "Public Works standards / city standards",
+            "unit": null,
+            "notes": "Materials shall meet Public Works standards. Work in ROW must comply with city standards (see RULE-ROW-PERMIT)."
+          }
+        ],
+        "Conditions": {
+          "mandatory": [
+            "Driveway surfaces may be either permeable or impermeable paving.",
+            "All driveway surface materials shall meet Public Works standards."
+          ],
+          "encouraged": [],
+          "conditional_logic": []
+        },
+        "Exceptions": [
+          "Use of gravel or similar loose materials is allowed generally, except within 10 ft of the public right-of-way per RULE-MAT-LOOSE-ROW."
+        ],
+        "Relationships": {
+          "depends_on": [],
+          "overrides": [],
+          "related_rules": [
+            {
+              "rule_id": "RULE-MAT-LOOSE-ROW",
+              "relationship": "General allowance of gravel is constrained by proximity restriction near public right-of-way."
+            },
+            {
+              "rule_id": "RULE-ROW-PERMIT",
+              "relationship": "Materials and construction within the public ROW must comply with city standards and permit requirements."
+            },
+            {
+              "rule_id": "RULE-FRONT-YARD-IMPERVIOUS",
+              "relationship": "Material permeability affects compliance with front yard impermeable coverage limit."
+            }
+          ]
+        },
+        "Ambiguities": [
+          "\u2018Public Works standards\u2019 and \u2018city standards\u2019 are referenced without a specific document version or section."
+        ]
+      },
+      {
+        "rule_id": "RULE-MAT-LOOSE-ROW",
+        "title": "Prohibition of loose materials near the public right-of-way",
+        "Qualifiers": {
+          "scope": "Driveway surface segment adjacent to public right-of-way",
+          "applicability": "All driveway surfaces located within 10 ft of the public right-of-way (lot line)",
+          "exclusions": "Segments beyond 10 ft from the public right-of-way are not subject to this prohibition",
+          "source": {
+            "page_header": "Driveway standards",
+            "page_number": 36,
+            "figure": "Figure 31"
+          }
+        },
+        "Variables": [
+          {
+            "name": "setback_distance_from_public_ROW",
+            "type": "distance",
+            "unit": "ft"
+          },
+          {
+            "name": "prohibited_materials_within_setback",
+            "type": "categorical",
+            "values": [
+              "gravel",
+              "similar loose materials"
+            ]
+          }
+        ],
+        "Constants": [
+          {
+            "name": "setback_distance_from_public_ROW_value",
+            "value": 10,
+            "unit": "ft"
+          }
+        ],
+        "Conditions": {
+          "mandatory": [
+            "Driveway surface within 10 ft of the public right-of-way may not be of a loose material (e.g., gravel).",
+            "No gravel or similar loose materials within 10 ft of the public right-of-way (lot line)."
+          ],
+          "encouraged": [],
+          "conditional_logic": []
+        },
+        "Exceptions": [],
+        "Relationships": {
+          "depends_on": [],
+          "overrides": [
+            {
+              "rule_id": "RULE-MAT-ALLOWED",
+              "relationship": "Overrides general allowance of gravel for the portion of driveway within 10 ft of the public ROW."
+            }
+          ],
+          "related_rules": [
+            {
+              "rule_id": "RULE-ROW-PERMIT",
+              "relationship": "Adjacent to or within ROW work triggers permit and city standards compliance."
+            }
+          ]
+        },
+        "Ambiguities": [
+          "\u2018Similar loose materials\u2019 is not exhaustively defined.",
+          "\u2018Public right-of-way\u2019 measurement reference is indicated as \u2018lot line\u2019 in the figure, but the exact datum (back of sidewalk, curb face, property line) should be confirmed."
+        ]
+      },
+      {
+        "rule_id": "RULE-WIDTH",
+        "title": "Minimum driveway widths (surface and clearance)",
+        "Qualifiers": {
+          "scope": "Driveway geometry",
+          "applicability": "All driveways",
+          "exclusions": "None stated",
+          "source": {
+            "page_header": "Driveway standards",
+            "page_number": 36,
+            "figure": "Figure 31"
+          }
+        },
+        "Variables": [
+          {
+            "name": "driveway_surface_width_min",
+            "type": "distance",
+            "unit": "ft"
+          },
+          {
+            "name": "driveway_clearance_width_min",
+            "type": "distance",
+            "unit": "ft"
+          }
+        ],
+        "Constants": [
+          {
+            "name": "driveway_surface_width_min_value",
+            "value": 8,
+            "unit": "ft",
+            "notes": "Labeled \u20188' min. width for driveway surface (typ. all)."
+          },
+          {
+            "name": "driveway_clearance_width_min_value",
+            "value": 10,
+            "unit": "ft",
+            "notes": "Labeled \u201810' min. width for driveway clearance (typ. all)."
+          }
+        ],
+        "Conditions": {
+          "mandatory": [
+            "Minimum driveway surface width is 8 ft.",
+            "Minimum driveway clearance width is 10 ft."
+          ],
+          "encouraged": [],
+          "conditional_logic": []
+        },
+        "Exceptions": [],
+        "Relationships": {
+          "depends_on": [],
+          "overrides": [],
+          "related_rules": [
+            {
+              "rule_id": "RULE-MANEUVERABILITY",
+              "relationship": "Clearance and surface width contribute to maneuverability to required parking spaces."
+            }
+          ]
+        },
+        "Ambiguities": [
+          "\u2018Driveway clearance\u2019 is not defined; unclear if it refers to unobstructed width between vertical elements, landscape edges, or includes flares."
+        ]
+      },
+      {
+        "rule_id": "RULE-CURB-CUT",
+        "title": "Curb cut spacing and number",
+        "Qualifiers": {
+          "scope": "Curb cuts associated with driveways along street frontages",
+          "applicability": "All properties proposing one or more curb cuts",
+          "exclusions": "None stated",
+          "source": {
+            "page_header": "Driveway standards",
+            "page_number": 36
+          }
+        },
+        "Variables": [
+          {
+            "name": "min_spacing_between_curb_cuts_mandatory",
+            "type": "distance",
+            "unit": "ft"
+          },
+          {
+            "name": "encouraged_max_curb_cuts_per_single_frontage",
+            "type": "count",
+            "unit": "curb cuts"
+          },
+          {
+            "name": "encouraged_min_distance_to_intersection_curb_face",
+            "type": "distance",
+            "unit": "ft"
+          }
+        ],
+        "Constants": [
+          {
+            "name": "min_spacing_between_curb_cuts_value",
+            "value": 20,
+            "unit": "ft",
+            "notes": "Mandatory standard"
+          },
+          {
+            "name": "encouraged_max_curb_cuts_per_single_frontage_value",
+            "value": 1,
+            "unit": "curb cuts",
+            "notes": "Encouraged (safety) standard"
+          },
+          {
+            "name": "encouraged_min_distance_to_intersection_curb_face_value",
+            "value": 50,
+            "unit": "ft",
+            "notes": "Encouraged (safety) standard"
+          }
+        ],
+        "Conditions": {
+          "mandatory": [
+            "Minimum 20 ft between curb cuts."
+          ],
+          "encouraged": [
+            "No more than one curb cut per single frontage.",
+            "Minimum of 50 ft between curb cut and intersection curb face."
+          ],
+          "conditional_logic": []
+        },
+        "Exceptions": [],
+        "Relationships": {
+          "depends_on": [],
+          "overrides": [],
+          "related_rules": [
+            {
+              "rule_id": "RULE-ROW-PERMIT",
+              "relationship": "Creation or modification of curb cuts involves work in the public ROW requiring permit and compliance with city standards."
+            },
+            {
+              "rule_id": "RULE-ADU-SHARED-DRIVEWAY",
+              "relationship": "Shared driveway requirement for second dwelling units supports the encouraged limit of one curb cut per frontage."
+            }
+          ]
+        },
+        "Ambiguities": [
+          "\u2018Single frontage\u2019 is not defined; corner lots may have multiple frontages.",
+          "\u2018Intersection curb face\u2019 as a measurement datum is not defined; need method of measurement (along curb line, radial, etc.)."
+        ]
+      },
+      {
+        "rule_id": "RULE-FRONT-YARD-IMPERVIOUS",
+        "title": "Front yard impermeable coverage limit",
+        "Qualifiers": {
+          "scope": "Required front yard area on a lot",
+          "applicability": "All lots with a required front yard as defined by zoning",
+          "exclusions": "Permeable surfaces are not counted as impermeable",
+          "source": {
+            "page_header": "Driveway standards",
+            "page_number": 36
+          }
+        },
+        "Variables": [
+          {
+            "name": "max_impermeable_coverage_in_required_front_yard",
+            "type": "ratio",
+            "unit": "%"
+          }
+        ],
+        "Constants": [
+          {
+            "name": "max_impermeable_coverage_value",
+            "value": 40,
+            "unit": "%",
+            "notes": "No more than 40% of required front yard may be impermeable."
+          }
+        ],
+        "Conditions": {
+          "mandatory": [
+            "Total impermeable coverage within the required front yard must not exceed 40% of the required front yard area."
+          ],
+          "encouraged": [],
+          "conditional_logic": []
+        },
+        "Exceptions": [],
+        "Relationships": {
+          "depends_on": [
+            {
+              "rule_id": null,
+              "relationship": "Depends on zoning definitions to determine the boundaries and area of the \u2018required front yard\u2019."
+            }
+          ],
+          "overrides": [],
+          "related_rules": [
+            {
+              "rule_id": "RULE-MAT-ALLOWED",
+              "relationship": "Choice of permeable vs. impermeable driveway materials affects compliance with the 40% limit."
+            }
+          ]
+        },
+        "Ambiguities": [
+          "\u2018Required front yard\u2019 is not defined here; must reference zoning code for the yard depth and lot-specific dimensions.",
+          "Accounting rules for partially permeable systems (e.g., pavers with grass joints) are not specified."
+        ]
+      },
+      {
+        "rule_id": "RULE-ADU-SHARED-DRIVEWAY",
+        "title": "Shared driveway requirement for second dwelling units",
+        "Qualifiers": {
+          "scope": "Driveway access for lots with a main dwelling and a second dwelling unit",
+          "applicability": "Properties proposing or containing a second dwelling unit (ADU or similar)",
+          "exclusions": "None stated",
+          "source": {
+            "page_header": "Driveway standards",
+            "page_number": 36
+          }
+        },
+        "Variables": [
+          {
+            "name": "number_of_driveways_serving_main_and_second_unit",
+            "type": "count",
+            "unit": "driveways"
+          }
+        ],
+        "Constants": [],
+        "Conditions": {
+          "mandatory": [
+            "Second dwelling units must share a common driveway with the main dwelling."
+          ],
+          "encouraged": [],
+          "conditional_logic": [
+            "If a second dwelling unit is present or proposed, then only a shared/common driveway is permitted for both dwellings."
+          ]
+        },
+        "Exceptions": [],
+        "Relationships": {
+          "depends_on": [],
+          "overrides": [],
+          "related_rules": [
+            {
+              "rule_id": "RULE-CURB-CUT",
+              "relationship": "Sharing a driveway typically limits the number of curb cuts, aligning with the encouraged standard of one curb cut per frontage."
+            }
+          ]
+        },
+        "Ambiguities": [
+          "\u2018Second dwelling units\u2019 is not defined (e.g., whether it includes all ADUs, JADUs); cross-reference with definitions section needed.",
+          "Treatment of corner lots with multiple frontages is not specified."
+        ]
+      },
+      {
+        "rule_id": "RULE-MANEUVERABILITY",
+        "title": "Maneuverability to required parking spaces",
+        "Qualifiers": {
+          "scope": "Vehicle maneuvering along driveway paths to required parking spaces",
+          "applicability": "Projects where vehicles must make turns en route to required parking spaces",
+          "exclusions": "Straight approaches without turns are implicitly unaffected",
+          "source": {
+            "page_header": "Driveway standards",
+            "page_number": 36,
+            "figure": "Figure 31"
+          }
+        },
+        "Variables": [
+          {
+            "name": "maneuverability_approval_authority",
+            "type": "authority",
+            "values": [
+              "Transportation Division"
+            ]
+          }
+        ],
+        "Constants": [
+          {
+            "name": "approval_requirement",
+            "value": "Turns enroute to required parking spaces must be deemed maneuverable by the Transportation Division.",
+            "unit": null
+          }
+        ],
+        "Conditions": {
+          "mandatory": [
+            "Where the path to required parking spaces includes turns, the Transportation Division must determine that the turns are maneuverable."
+          ],
+          "encouraged": [],
+          "conditional_logic": [
+            "IF path_to_required_parking has_turns == true THEN Transportation Division maneuverability approval is required."
+          ]
+        },
+        "Exceptions": [],
+        "Relationships": {
+          "depends_on": [],
+          "overrides": [],
+          "related_rules": [
+            {
+              "rule_id": "RULE-WIDTH",
+              "relationship": "Minimum driveway surface and clearance widths contribute to maneuverability feasibility."
+            }
+          ]
+        },
+        "Ambiguities": [
+          "\u2018Maneuverable\u2019 is not quantified; no turning radius or aisle width criteria provided.",
+          "\u2018Required parking spaces\u2019 reference depends on separate parking standards not included here."
+        ]
+      },
+      {
+        "rule_id": "RULE-ROW-PERMIT",
+        "title": "Permit and standards for work within the public right-of-way",
+        "Qualifiers": {
+          "scope": "Construction or alteration within the public right-of-way related to driveways (e.g., curb cuts, aprons, sidewalk transitions)",
+          "applicability": "Any work performed within the public right-of-way",
+          "exclusions": "Work entirely on private property outside of the public right-of-way",
+          "source": {
+            "page_header": "Driveway standards",
+            "page_number": 36,
+            "figure": "Figure 31"
+          }
+        },
+        "Variables": [
+          {
+            "name": "work_location",
+            "type": "categorical",
+            "values": [
+              "within public right-of-way",
+              "outside public right-of-way"
+            ]
+          },
+          {
+            "name": "permit_type",
+            "type": "text",
+            "values": [
+              "street-work permit"
+            ]
+          },
+          {
+            "name": "applicable_standards",
+            "type": "text",
+            "values": [
+              "city standards",
+              "Public Works standards"
+            ]
+          }
+        ],
+        "Constants": [
+          {
+            "name": "permit_requirement_trigger",
+            "value": "work done within the public right-of-way",
+            "unit": null
+          }
+        ],
+        "Conditions": {
+          "mandatory": [
+            "A street-work permit is required for any work done within the public right-of-way.",
+            "Work done within the public right-of-way must comply with city standards."
+          ],
+          "encouraged": [],
+          "conditional_logic": [
+            "IF work_location == \u2018within public right-of-way\u2019 THEN require \u2018street-work permit\u2019 AND enforce compliance with \u2018city standards\u2019."
+          ]
+        },
+        "Exceptions": [],
+        "Relationships": {
+          "depends_on": [],
+          "overrides": [],
+          "related_rules": [
+            {
+              "rule_id": "RULE-CURB-CUT",
+              "relationship": "Curb cut construction/modification is within the ROW and triggers this permit and standards compliance."
+            },
+            {
+              "rule_id": "RULE-MAT-ALLOWED",
+              "relationship": "Materials used in the ROW must meet city standards; may be more specific than general Public Works standards stated for private property."
+            },
+            {
+              "rule_id": "RULE-MAT-LOOSE-ROW",
+              "relationship": "Proximity and material restrictions near ROW align with compliance requirements for ROW work."
+            }
+          ]
+        },
+        "Ambiguities": [
+          "Issuing department and exact permit process for \u2018street-work permit\u2019 are not specified.",
+          "\u2018City standards\u2019 are not cited by document number or section."
+        ]
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "[\n  {\n    \"rule_id\": \"RULE-MAT-ALLOWED\",\n    \"title\": \"Permissible driveway paving materials and standards compliance\",\n    \"Qualifiers\": {\n      \"scope\": \"Driveway surface materials on private property\",\n      \"applicability\": \"All driveways serving properties subject to city driveway standards\",\n      \"exclusions\": \"None stated\",\n      \"source\": {\n        \"page_header\": \"Driveway standards\",\n        \"page_number\": 36,\n        \"figure\": \"Figure 31\"\n      }\n    },\n    \"Variables\": [\n      {\n        \"name\": \"material_type\",\n        \"type\": \"categorical\",\n        \"allowed_values\": [\n          \"permeable paving\",\n          \"impermeable paving\",\n          \"pavers without mortar (grass between)\",\n          \"Hollywood strips (two paved strips with grass between)\",\n          \"gravel (see proximity restriction in RULE-MAT-LOOSE-ROW)\"\n        ]\n      }\n    ],\n    \"Constants\": [\n      {\n        \"name\": \"standards_reference\",\n        \"value\": \"Public Works standards / city standards\",\n        \"unit\": null,\n        \"notes\": \"Materials shall meet Public Works standards. Work in ROW must comply with city standards (see RULE-ROW-PERMIT).\"\n      }\n    ],\n    \"Conditions\": {\n      \"mandatory\": [\n        \"Driveway surfaces may be either permeable or impermeable paving.\",\n        \"All driveway surface materials shall meet Public Works standards.\"\n      ],\n      \"encouraged\": [],\n      \"conditional_logic\": []\n    },\n    \"Exceptions\": [\n      \"Use of gravel or similar loose materials is allowed generally, except within 10 ft of the public right-of-way per RULE-MAT-LOOSE-ROW.\"\n    ],\n    \"Relationships\": {\n      \"depends_on\": [],\n      \"overrides\": [],\n      \"related_rules\": [\n        {\n          \"rule_id\": \"RULE-MAT-LOOSE-ROW\",\n          \"relationship\": \"General allowance of gravel is constrained by proximity restriction near public right-of-way.\"\n        },\n        {\n          \"rule_id\": \"RULE-ROW-PERMIT\",\n          \"relationship\": \"Materials and construction within the public ROW must comply with city standards and permit requirements.\"\n        },\n        {\n          \"rule_id\": \"RULE-FRONT-YARD-IMPERVIOUS\",\n          \"relationship\": \"Material permeability affects compliance with front yard impermeable coverage limit.\"\n        }\n      ]\n    },\n    \"Ambiguities\": [\n      \"\u2018Public Works standards\u2019 and \u2018city standards\u2019 are referenced without a specific document version or section.\"\n    ]\n  },\n  {\n    \"rule_id\": \"RULE-MAT-LOOSE-ROW\",\n    \"title\": \"Prohibition of loose materials near the public right-of-way\",\n    \"Qualifiers\": {\n      \"scope\": \"Driveway surface segment adjacent to public right-of-way\",\n      \"applicability\": \"All driveway surfaces located within 10 ft of the public right-of-way (lot line)\",\n      \"exclusions\": \"Segments beyond 10 ft from the public right-of-way are not subject to this prohibition\",\n      \"source\": {\n        \"page_header\": \"Driveway standards\",\n        \"page_number\": 36,\n        \"figure\": \"Figure 31\"\n      }\n    },\n    \"Variables\": [\n      {\n        \"name\": \"setback_distance_from_public_ROW\",\n        \"type\": \"distance\",\n        \"unit\": \"ft\"\n      },\n      {\n        \"name\": \"prohibited_materials_within_setback\",\n        \"type\": \"categorical\",\n        \"values\": [\n          \"gravel\",\n          \"similar loose materials\"\n        ]\n      }\n    ],\n    \"Constants\": [\n      {\n        \"name\": \"setback_distance_from_public_ROW_value\",\n        \"value\": 10,\n        \"unit\": \"ft\"\n      }\n    ],\n    \"Conditions\": {\n      \"mandatory\": [\n        \"Driveway surface within 10 ft of the public right-of-way may not be of a loose material (e.g., gravel).\",\n        \"No gravel or similar loose materials within 10 ft of the public right-of-way (lot line).\"\n      ],\n      \"encouraged\": [],\n      \"conditional_logic\": []\n    },\n    \"Exceptions\": [],\n    \"Relationships\": {\n      \"depends_on\": [],\n      \"overrides\": [\n        {\n          \"rule_id\": \"RULE-MAT-ALLOWED\",\n          \"relationship\": \"Overrides general allowance of gravel for the portion of driveway within 10 ft of the public ROW.\"\n        }\n      ],\n      \"related_rules\": [\n        {\n          \"rule_id\": \"RULE-ROW-PERMIT\",\n          \"relationship\": \"Adjacent to or within ROW work triggers permit and city standards compliance.\"\n        }\n      ]\n    },\n    \"Ambiguities\": [\n      \"\u2018Similar loose materials\u2019 is not exhaustively defined.\",\n      \"\u2018Public right-of-way\u2019 measurement reference is indicated as \u2018lot line\u2019 in the figure, but the exact datum (back of sidewalk, curb face, property line) should be confirmed.\"\n    ]\n  },\n  {\n    \"rule_id\": \"RULE-WIDTH\",\n    \"title\": \"Minimum driveway widths (surface and clearance)\",\n    \"Qualifiers\": {\n      \"scope\": \"Driveway geometry\",\n      \"applicability\": \"All driveways\",\n      \"exclusions\": \"None stated\",\n      \"source\": {\n        \"page_header\": \"Driveway standards\",\n        \"page_number\": 36,\n        \"figure\": \"Figure 31\"\n      }\n    },\n    \"Variables\": [\n      {\n        \"name\": \"driveway_surface_width_min\",\n        \"type\": \"distance\",\n        \"unit\": \"ft\"\n      },\n      {\n        \"name\": \"driveway_clearance_width_min\",\n        \"type\": \"distance\",\n        \"unit\": \"ft\"\n      }\n    ],\n    \"Constants\": [\n      {\n        \"name\": \"driveway_surface_width_min_value\",\n        \"value\": 8,\n        \"unit\": \"ft\",\n        \"notes\": \"Labeled \u20188' min. width for driveway surface (typ. all).\"\n      },\n      {\n        \"name\": \"driveway_clearance_width_min_value\",\n        \"value\": 10,\n        \"unit\": \"ft\",\n        \"notes\": \"Labeled \u201810' min. width for driveway clearance (typ. all).\"\n      }\n    ],\n    \"Conditions\": {\n      \"mandatory\": [\n        \"Minimum driveway surface width is 8 ft.\",\n        \"Minimum driveway clearance width is 10 ft.\"\n      ],\n      \"encouraged\": [],\n      \"conditional_logic\": []\n    },\n    \"Exceptions\": [],\n    \"Relationships\": {\n      \"depends_on\": [],\n      \"overrides\": [],\n      \"related_rules\": [\n        {\n          \"rule_id\": \"RULE-MANEUVERABILITY\",\n          \"relationship\": \"Clearance and surface width contribute to maneuverability to required parking spaces.\"\n        }\n      ]\n    },\n    \"Ambiguities\": [\n      \"\u2018Driveway clearance\u2019 is not defined; unclear if it refers to unobstructed width between vertical elements, landscape edges, or includes flares.\"\n    ]\n  },\n  {\n    \"rule_id\": \"RULE-CURB-CUT\",\n    \"title\": \"Curb cut spacing and number\",\n    \"Qualifiers\": {\n      \"scope\": \"Curb cuts associated with driveways along street frontages\",\n      \"applicability\": \"All properties proposing one or more curb cuts\",\n      \"exclusions\": \"None stated\",\n      \"source\": {\n        \"page_header\": \"Driveway standards\",\n        \"page_number\": 36\n      }\n    },\n    \"Variables\": [\n      {\n        \"name\": \"min_spacing_between_curb_cuts_mandatory\",\n        \"type\": \"distance\",\n        \"unit\": \"ft\"\n      },\n      {\n        \"name\": \"encouraged_max_curb_cuts_per_single_frontage\",\n        \"type\": \"count\",\n        \"unit\": \"curb cuts\"\n      },\n      {\n        \"name\": \"encouraged_min_distance_to_intersection_curb_face\",\n        \"type\": \"distance\",\n        \"unit\": \"ft\"\n      }\n    ],\n    \"Constants\": [\n      {\n        \"name\": \"min_spacing_between_curb_cuts_value\",\n        \"value\": 20,\n        \"unit\": \"ft\",\n        \"notes\": \"Mandatory standard\"\n      },\n      {\n        \"name\": \"encouraged_max_curb_cuts_per_single_frontage_value\",\n        \"value\": 1,\n        \"unit\": \"curb cuts\",\n        \"notes\": \"Encouraged (safety) standard\"\n      },\n      {\n        \"name\": \"encouraged_min_distance_to_intersection_curb_face_value\",\n        \"value\": 50,\n        \"unit\": \"ft\",\n        \"notes\": \"Encouraged (safety) standard\"\n      }\n    ],\n    \"Conditions\": {\n      \"mandatory\": [\n        \"Minimum 20 ft between curb cuts.\"\n      ],\n      \"encouraged\": [\n        \"No more than one curb cut per single frontage.\",\n        \"Minimum of 50 ft between curb cut and intersection curb face.\"\n      ],\n      \"conditional_logic\": []\n    },\n    \"Exceptions\": [],\n    \"Relationships\": {\n      \"depends_on\": [],\n      \"overrides\": [],\n      \"related_rules\": [\n        {\n          \"rule_id\": \"RULE-ROW-PERMIT\",\n          \"relationship\": \"Creation or modification of curb cuts involves work in the public ROW requiring permit and compliance with city standards.\"\n        },\n        {\n          \"rule_id\": \"RULE-ADU-SHARED-DRIVEWAY\",\n          \"relationship\": \"Shared driveway requirement for second dwelling units supports the encouraged limit of one curb cut per frontage.\"\n        }\n      ]\n    },\n    \"Ambiguities\": [\n      \"\u2018Single frontage\u2019 is not defined; corner lots may have multiple frontages.\",\n      \"\u2018Intersection curb face\u2019 as a measurement datum is not defined; need method of measurement (along curb line, radial, etc.).\"\n    ]\n  },\n  {\n    \"rule_id\": \"RULE-FRONT-YARD-IMPERVIOUS\",\n    \"title\": \"Front yard impermeable coverage limit\",\n    \"Qualifiers\": {\n      \"scope\": \"Required front yard area on a lot\",\n      \"applicability\": \"All lots with a required front yard as defined by zoning\",\n      \"exclusions\": \"Permeable surfaces are not counted as impermeable\",\n      \"source\": {\n        \"page_header\": \"Driveway standards\",\n        \"page_number\": 36\n      }\n    },\n    \"Variables\": [\n      {\n        \"name\": \"max_impermeable_coverage_in_required_front_yard\",\n        \"type\": \"ratio\",\n        \"unit\": \"%\"\n      }\n    ],\n    \"Constants\": [\n      {\n        \"name\": \"max_impermeable_coverage_value\",\n        \"value\": 40,\n        \"unit\": \"%\",\n        \"notes\": \"No more than 40% of required front yard may be impermeable.\"\n      }\n    ],\n    \"Conditions\": {\n      \"mandatory\": [\n        \"Total impermeable coverage within the required front yard must not exceed 40% of the required front yard area.\"\n      ],\n      \"encouraged\": [],\n      \"conditional_logic\": []\n    },\n    \"Exceptions\": [],\n    \"Relationships\": {\n      \"depends_on\": [\n        {\n          \"rule_id\": null,\n          \"relationship\": \"Depends on zoning definitions to determine the boundaries and area of the \u2018required front yard\u2019.\"\n        }\n      ],\n      \"overrides\": [],\n      \"related_rules\": [\n        {\n          \"rule_id\": \"RULE-MAT-ALLOWED\",\n          \"relationship\": \"Choice of permeable vs. impermeable driveway materials affects compliance with the 40% limit.\"\n        }\n      ]\n    },\n    \"Ambiguities\": [\n      \"\u2018Required front yard\u2019 is not defined here; must reference zoning code for the yard depth and lot-specific dimensions.\",\n      \"Accounting rules for partially permeable systems (e.g., pavers with grass joints) are not specified.\"\n    ]\n  },\n  {\n    \"rule_id\": \"RULE-ADU-SHARED-DRIVEWAY\",\n    \"title\": \"Shared driveway requirement for second dwelling units\",\n    \"Qualifiers\": {\n      \"scope\": \"Driveway access for lots with a main dwelling and a second dwelling unit\",\n      \"applicability\": \"Properties proposing or containing a second dwelling unit (ADU or similar)\",\n      \"exclusions\": \"None stated\",\n      \"source\": {\n        \"page_header\": \"Driveway standards\",\n        \"page_number\": 36\n      }\n    },\n    \"Variables\": [\n      {\n        \"name\": \"number_of_driveways_serving_main_and_second_unit\",\n        \"type\": \"count\",\n        \"unit\": \"driveways\"\n      }\n    ],\n    \"Constants\": [],\n    \"Conditions\": {\n      \"mandatory\": [\n        \"Second dwelling units must share a common driveway with the main dwelling.\"\n      ],\n      \"encouraged\": [],\n      \"conditional_logic\": [\n        \"If a second dwelling unit is present or proposed, then only a shared/common driveway is permitted for both dwellings.\"\n      ]\n    },\n    \"Exceptions\": [],\n    \"Relationships\": {\n      \"depends_on\": [],\n      \"overrides\": [],\n      \"related_rules\": [\n        {\n          \"rule_id\": \"RULE-CURB-CUT\",\n          \"relationship\": \"Sharing a driveway typically limits the number of curb cuts, aligning with the encouraged standard of one curb cut per frontage.\"\n        }\n      ]\n    },\n    \"Ambiguities\": [\n      \"\u2018Second dwelling units\u2019 is not defined (e.g., whether it includes all ADUs, JADUs); cross-reference with definitions section needed.\",\n      \"Treatment of corner lots with multiple frontages is not specified.\"\n    ]\n  },\n  {\n    \"rule_id\": \"RULE-MANEUVERABILITY\",\n    \"title\": \"Maneuverability to required parking spaces\",\n    \"Qualifiers\": {\n      \"scope\": \"Vehicle maneuvering along driveway paths to required parking spaces\",\n      \"applicability\": \"Projects where vehicles must make turns en route to required parking spaces\",\n      \"exclusions\": \"Straight approaches without turns are implicitly unaffected\",\n      \"source\": {\n        \"page_header\": \"Driveway standards\",\n        \"page_number\": 36,\n        \"figure\": \"Figure 31\"\n      }\n    },\n    \"Variables\": [\n      {\n        \"name\": \"maneuverability_approval_authority\",\n        \"type\": \"authority\",\n        \"values\": [\n          \"Transportation Division\"\n        ]\n      }\n    ],\n    \"Constants\": [\n      {\n        \"name\": \"approval_requirement\",\n        \"value\": \"Turns enroute to required parking spaces must be deemed maneuverable by the Transportation Division.\",\n        \"unit\": null\n      }\n    ],\n    \"Conditions\": {\n      \"mandatory\": [\n        \"Where the path to required parking spaces includes turns, the Transportation Division must determine that the turns are maneuverable.\"\n      ],\n      \"encouraged\": [],\n      \"conditional_logic\": [\n        \"IF path_to_required_parking has_turns == true THEN Transportation Division maneuverability approval is required.\"\n      ]\n    },\n    \"Exceptions\": [],\n    \"Relationships\": {\n      \"depends_on\": [],\n      \"overrides\": [],\n      \"related_rules\": [\n        {\n          \"rule_id\": \"RULE-WIDTH\",\n          \"relationship\": \"Minimum driveway surface and clearance widths contribute to maneuverability feasibility.\"\n        }\n      ]\n    },\n    \"Ambiguities\": [\n      \"\u2018Maneuverable\u2019 is not quantified; no turning radius or aisle width criteria provided.\",\n      \"\u2018Required parking spaces\u2019 reference depends on separate parking standards not included here.\"\n    ]\n  },\n  {\n    \"rule_id\": \"RULE-ROW-PERMIT\",\n    \"title\": \"Permit and standards for work within the public right-of-way\",\n    \"Qualifiers\": {\n      \"scope\": \"Construction or alteration within the public right-of-way related to driveways (e.g., curb cuts, aprons, sidewalk transitions)\",\n      \"applicability\": \"Any work performed within the public right-of-way\",\n      \"exclusions\": \"Work entirely on private property outside of the public right-of-way\",\n      \"source\": {\n        \"page_header\": \"Driveway standards\",\n        \"page_number\": 36,\n        \"figure\": \"Figure 31\"\n      }\n    },\n    \"Variables\": [\n      {\n        \"name\": \"work_location\",\n        \"type\": \"categorical\",\n        \"values\": [\n          \"within public right-of-way\",\n          \"outside public right-of-way\"\n        ]\n      },\n      {\n        \"name\": \"permit_type\",\n        \"type\": \"text\",\n        \"values\": [\n          \"street-work permit\"\n        ]\n      },\n      {\n        \"name\": \"applicable_standards\",\n        \"type\": \"text\",\n        \"values\": [\n          \"city standards\",\n          \"Public Works standards\"\n        ]\n      }\n    ],\n    \"Constants\": [\n      {\n        \"name\": \"permit_requirement_trigger\",\n        \"value\": \"work done within the public right-of-way\",\n        \"unit\": null\n      }\n    ],\n    \"Conditions\": {\n      \"mandatory\": [\n        \"A street-work permit is required for any work done within the public right-of-way.\",\n        \"Work done within the public right-of-way must comply with city standards.\"\n      ],\n      \"encouraged\": [],\n      \"conditional_logic\": [\n        \"IF work_location == \u2018within public right-of-way\u2019 THEN require \u2018street-work permit\u2019 AND enforce compliance with \u2018city standards\u2019.\"\n      ]\n    },\n    \"Exceptions\": [],\n    \"Relationships\": {\n      \"depends_on\": [],\n      \"overrides\": [],\n      \"related_rules\": [\n        {\n          \"rule_id\": \"RULE-CURB-CUT\",\n          \"relationship\": \"Curb cut construction/modification is within the ROW and triggers this permit and standards compliance.\"\n        },\n        {\n          \"rule_id\": \"RULE-MAT-ALLOWED\",\n          \"relationship\": \"Materials used in the ROW must meet city standards; may be more specific than general Public Works standards stated for private property.\"\n        },\n        {\n          \"rule_id\": \"RULE-MAT-LOOSE-ROW\",\n          \"relationship\": \"Proximity and material restrictions near ROW align with compliance requirements for ROW work.\"\n        }\n      ]\n    },\n    \"Ambiguities\": [\n      \"Issuing department and exact permit process for \u2018street-work permit\u2019 are not specified.\",\n      \"\u2018City standards\u2019 are not cited by document number or section.\"\n    ]\n  }\n]"
+  },
+  "timestamp": "2025-09-16 15:09:04",
+  "model": "openai/gpt-5",
+  "success": true
+}

@@ -1,0 +1,137 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_13.png",
+  "image_name": "Page_13.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Fig 4 Types of porches and entry ways\n\nA Roofed porch\n\nC Vaulted entry way\n\nB Roofed entry way\n(not vaulted)\n\nHeight\nless than 12'\nabove grade\n\nSee how to measure height of porches &\nentry features in Figs 6-8 on pp. 11-13\n\nD Combination porch & vaulted entry way\n\nHeight\ngreater than 12'\nabove grade\n\nHeight\ngreater than 12'\nabove grade",
+      "visual_elements": [
+        {
+          "type": "figure",
+          "description": "Line drawing of a single-story house facade with a covered porch supported by columns. Labeled 'A Roofed porch'.",
+          "location": "Top left"
+        },
+        {
+          "type": "figure",
+          "description": "Line drawing of a two-story house facade with a prominent vaulted entry way featuring double doors and arched windows above. A vertical dimension line indicates 'Height greater than 12' above grade'. Labeled 'C Vaulted entry way'.",
+          "location": "Top right"
+        },
+        {
+          "type": "figure",
+          "description": "Line drawing of a house facade with a gabled roof and a small, gabled entry way to the right. A vertical dimension line indicates 'Height less than 12' above grade'. Labeled 'B Roofed entry way (not vaulted)'.",
+          "location": "Bottom left"
+        },
+        {
+          "type": "figure",
+          "description": "Line drawing of a building facade featuring a combination of a porch with arched openings and columns, and a vaulted entry way with an arched door. A vertical dimension line indicates 'Height greater than 12' above grade'. Labeled 'D Combination porch & vaulted entry way'.",
+          "location": "Bottom right"
+        },
+        {
+          "type": "text_box",
+          "description": "A grey rectangular box containing text: 'See how to measure height of porches & entry features in Figs 6-8 on pp. 11-13'.",
+          "location": "Middle, center"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Height of entry way",
+          "value_type": "Measurement",
+          "value": "12",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Height of entry way relative to grade",
+          "value_type": "Text",
+          "value": "less than 12'",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Height of entry way relative to grade",
+          "value_type": "Text",
+          "value": "greater than 12'",
+          "unit": "feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Fig 4 Types of porches and entry ways",
+        "subheadings": [],
+        "sections": [
+          "A Roofed porch",
+          "C Vaulted entry way",
+          "B Roofed entry way (not vaulted)",
+          "D Combination porch & vaulted entry way"
+        ]
+      },
+      "additional_notes": [],
+      "cross_references": [
+        "Figs 6-8 on pp. 11-13"
+      ],
+      "conditions_and_qualifiers": {
+        "qualifiers": [],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "Height less than 12' above grade",
+            "value_type": "Measurement",
+            "operator": "<",
+            "threshold_value": "12",
+            "unit": "feet"
+          },
+          {
+            "id": "c2",
+            "text": "Height greater than 12' above grade",
+            "value_type": "Measurement",
+            "operator": ">",
+            "threshold_value": "12",
+            "unit": "feet"
+          },
+          {
+            "id": "c3",
+            "text": "(not vaulted)",
+            "value_type": "Boolean",
+            "operator": "is",
+            "threshold_value": "false",
+            "unit": "None"
+          }
+        ],
+        "logical_relationships": [],
+        "execution_sequence": [
+          {
+            "step": 1,
+            "action": "Identify type of porch or entry way",
+            "condition_ids": [],
+            "qualifier_ids": [],
+            "dependencies": []
+          },
+          {
+            "step": 2,
+            "action": "Measure height of porch or entry feature",
+            "condition_ids": [],
+            "qualifier_ids": [],
+            "dependencies": []
+          },
+          {
+            "step": 3,
+            "action": "Compare height to 12' above grade",
+            "condition_ids": [
+              "c1",
+              "c2"
+            ],
+            "qualifier_ids": [],
+            "dependencies": [
+              "2"
+            ]
+          },
+          {
+            "step": 4,
+            "action": "Refer to Figs 6-8 on pp. 11-13 for measurement details",
+            "condition_ids": [],
+            "qualifier_ids": [],
+            "dependencies": []
+          }
+        ]
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:24:13",
+  "model_used": "google/gemini-2.5-flash"
+}

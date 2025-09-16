@@ -1,0 +1,19 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_22.png",
+  "image_name": "Page_22.png",
+  "analysis": {
+    "page_number": "unknown",
+    "main_heading": "PARSE_ERROR",
+    "text_content": "Failed to parse response: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)",
+    "tables": [],
+    "figures": [],
+    "zoning_rules": [],
+    "code_references": [],
+    "quality_notes": "JSON parsing failed: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)",
+    "raw_response": "```json\n{\n  \"page_number\": \"16\",\n  \"main_heading\": \"Attic, closet, & perimeter spaces\",\n  \"text_content\": \"Attic space & equivalencies\\nOn all accessible floors, areas with at least 5' of head clearance count toward the gross floor area regardless of the floor plan or actual usage of the space.\\nVoluminous spaces in a structure contribute to the mass even if these areas are not used or described in the floor plan. The 2nd & 3rd floor equivalency addresses how these areas count toward the gross floor area.\\nIn Fig 11 below, the highlighted areas count as follows:\\n\u2022 Area A of this 3rd floor (accessible via stairs), has 5' of head clearance and counts as 3rd floor area.\\n\u2022 Area B of this 2rd floor (accessible via stairs), has 5' of head clearance and is included in the count of the, more obvious, 2nd floor area.\\nNote: 500 sf of unusable attic space may be exempted for Category 1 & 2 historic homes.\\nNote: Measurements are from top of floor to underside of the rafter\\nUnderside of pical)",
+    "parse_error": true
+  },
+  "analysis_timestamp": "2025-09-16 12:33:24",
+  "model_used": "google/gemini-2.5-flash",
+  "success": false
+}

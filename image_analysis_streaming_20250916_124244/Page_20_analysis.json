@@ -1,0 +1,19 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_20.png",
+  "image_name": "Page_20.png",
+  "analysis": {
+    "page_number": "unknown",
+    "main_heading": "PARSE_ERROR",
+    "text_content": "Failed to parse response: API Error",
+    "tables": [],
+    "figures": [],
+    "zoning_rules": [],
+    "code_references": [],
+    "quality_notes": "JSON parsing failed: API Error",
+    "raw_response": "API Error: 404 - {\"error\":{\"message\":\"No endpoints found for google/gemini-2.0-flash-exp.\",\"code\":404},\"user_id\":\"user_2w7iHcpOx7ok6ut9XTSiBGMgDVF\"}",
+    "parse_error": true
+  },
+  "analysis_timestamp": "2025-09-16 12:43:05",
+  "model_used": "google/gemini-2.0-flash-exp",
+  "success": false
+}

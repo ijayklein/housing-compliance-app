@@ -1,0 +1,23 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_16.png",
+  "image_name": "Page_16.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "PARSE_ERROR",
+      "visual_elements": [],
+      "technical_specifications": [],
+      "structural_elements": {
+        "main_heading": "",
+        "subheadings": [],
+        "sections": []
+      },
+      "additional_notes": [
+        "Failed to parse LLM response: Expecting value: line 1 column 1 (char 0)"
+      ],
+      "cross_references": []
+    },
+    "raw_response": "Here's the extracted information from the images, maintaining absolute precision and avoiding any deductions:\n\n**Step 4: Finalize the determination of which segments are closed and which are open, total the linear feet in each category, and compare the totals.**\n\nFor the porch in Fig 5, the summary is as follows:\n\n**Closed**\n*   **Segment A:** 3'\n*   **Segment B:** 8'\n*   **Segment C:** 10'\n*   **Segment E:** 14'\n*   **Total Closed:** 35'\n\n**Open**\n*   **Segment D:** 7'\n*   **Segment F:** 24'\n*   **Segment G:** 4'\n*   **Total Open:** 35'\n\n**Visual Representation (from diagram):**\n*   **Closed segments** are indicated by a dark grey fill.\n*   **Open segments** are indicated by a light grey fill.\n*   Segment A is 3'.\n*   Segment B is 8'.\n*   Segment C is 10'.\n*   Segment D is 7'.\n*   Segment E is 14'.\n*   Segment F is 24'.\n*   Segment G is 4'.\n\n**Conclusion:** The perimeter of the porch in Fig 5 is 50% open and so the porch would **NOT** count toward gross floor area.\n\n**Note:**\n*   If a porch floor is more than 30\" above grade, the porch sides may need to be 36\" high for safety reasons.\n*   This may cause the porch facade to be considered closed.\n*   Possible solutions to make sure the porch sides are considered open are illustrated to the right:\n    *   Railing (ballisters) instead of solid half walls.\n    *   A single safety rail above lower, solid half walls.\n\n**Diagram (related to Note):**\n*   Shows a porch floor (\"Porch flr\") above \"Grade\".\n*   The distance from \"Grade\" to \"Porch flr\" is indicated as 30\".\n*   A \"Safety rail\" is shown above the porch floor, with a height of 36\" from the porch floor.\n*   Two examples of \"Open\" porch sides are depicted:\n    *   One with vertical railings (ballisters).\n    *   One with a lower solid half wall and a single safety rail above it."
+  },
+  "analysis_timestamp": "2025-09-16 12:25:52",
+  "model_used": "google/gemini-2.5-flash"
+}

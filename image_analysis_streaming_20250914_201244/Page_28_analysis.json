@@ -1,0 +1,157 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_28.png",
+  "image_name": "Page_28.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Setback considerations\n\nEasements\nSome easements affect setbacks i.e., setbacks must be measured from the edge of the easement regardless of the lot line as illustrated in Fig 16 on this page. Easements that affect setbacks are:\n\u2022 Creek easements\n\u2022 Public street easements\n\nNote: most public utility easements do not affect setbacks.\n\nSidewalks\nThe sidewalk may not indicate the lot line. Often, the street easement or public right-of-way extends for several feet beyond the sidewalk. Fig 16 on this page illustrates this common circumstance and how the setbacks are affected i.e., they must be measured from the lot line regardless of the sidewalk.\n\nOddly shaped lots\nFor some lots, the setbacks and required yards may not be obvious . Fig 17 on page 23 indicates the appropriate site plan for lot shapes about which questions often arise:\n\u2022 flag lot (Fig 17 A)\n\u2022 corner lot (Fig 17 B)\n\u2022 through lot (Fig 17 D)\n\u2022 wedge-shaped lot (Fig 17 E)\n\u2022 lot with more than four sides (Fig 17 F & G)\n\nFlag & substandard lots\nFig 17 on page 23 also illustrates examples of setbacks that have been reduced for smaller or oddly shaped lots e.g.,\n\u2022 the front setback of a flag lot (Fig 17 A)\n\u2022 the street-side yard setback for substandard corner lots that are less than 50' wide (Fig 17 C)\n\nFig 16 Setbacks: easements and sidewalks\n\nSetbacks are measured from easement regardless of where the lot lines are located. (See section on Lot Size for more information about creek easements).\n\nSetbacks are measured from the lot lines regardless of where the sidewalks are located. (Note if the lot line is in the middle of the street, then the setback is measured from the edge of the public street easement or right-of-way. (See section on Lot Size for more information about public street easements.)\n\nNote: The space between the sidewalk edge and the lot line is part of the public right of way. It may be 0' or more than 15'. Please ask at the Development Center.\n\nKey\nCurb\nLot line\nSidewalk\nRequired setbacks\nBuildable area\nEasement\n\nNote: For information regarding creek easements, contact the Santa Clara Valley Water District",
+      "visual_elements": [
+        {
+          "type": "figure",
+          "description": "Diagram titled 'Fig 16 Setbacks: easements and sidewalks' showing a rectangular lot divided into Rear yard, Buildable area, and Front yard. The lot is bordered on the sides by 'Interior-side yard'. The top of the lot shows an 'Easement' area labeled as 'Creek or public access easement e.g., street or alley'. Arrows indicate that setbacks are measured from the easement regardless of lot lines, and from the lot lines regardless of sidewalk location. The bottom shows a sidewalk area. A key explains symbols for Curb, Lot line, Sidewalk, Required setbacks, Buildable area, and Easement.",
+          "location": "Right side, middle to bottom"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Street-side yard setback for substandard corner lots",
+          "value_type": "Measurement",
+          "value": "less than 50",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Space between sidewalk edge and lot line",
+          "value_type": "Range",
+          "value": "0 or more than 15",
+          "unit": "feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Setback considerations",
+        "subheadings": [
+          "Easements",
+          "Sidewalks",
+          "Oddly shaped lots",
+          "Flag & substandard lots"
+        ],
+        "sections": []
+      },
+      "additional_notes": [
+        "Page number 22 at bottom left corner.",
+        "No handwritten annotations or stamps detected.",
+        "Text is clear and legible with no quality issues."
+      ],
+      "cross_references": [
+        "Fig 16 on this page",
+        "Fig 17 on page 23",
+        "See section on Lot Size for more information about creek easements",
+        "See section on Lot Size for more information about public street easements"
+      ],
+      "conditions_and_qualifiers": {
+        "qualifiers": [
+          {
+            "id": "q1",
+            "text": "Some easements affect setbacks i.e., setbacks must be measured from the edge of the easement regardless of the lot line as illustrated in Fig 16 on this page.",
+            "applies_to_conditions": [
+              "c1",
+              "c2"
+            ],
+            "scope": "Local"
+          },
+          {
+            "id": "q2",
+            "text": "The sidewalk may not indicate the lot line. Often, the street easement or public right-of-way extends for several feet beyond the sidewalk.",
+            "applies_to_conditions": [
+              "c2"
+            ],
+            "scope": "Local"
+          },
+          {
+            "id": "q3",
+            "text": "Note if the lot line is in the middle of the street, then the setback is measured from the edge of the public street easement or right-of-way.",
+            "applies_to_conditions": [
+              "c2"
+            ],
+            "scope": "Local"
+          }
+        ],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "Setbacks must be measured from the edge of the easement regardless of the lot line.",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "true",
+            "unit": null
+          },
+          {
+            "id": "c2",
+            "text": "Setbacks must be measured from the lot lines regardless of where the sidewalks are located.",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "true",
+            "unit": null
+          },
+          {
+            "id": "c3",
+            "text": "The street-side yard setback for substandard corner lots that are less than 50' wide is reduced.",
+            "value_type": "Measurement",
+            "operator": "<",
+            "threshold_value": "50",
+            "unit": "feet"
+          }
+        ],
+        "logical_relationships": [
+          {
+            "operation": "OR",
+            "condition_ids": [
+              "c1",
+              "c2"
+            ],
+            "expression": "Setbacks must be measured from either the edge of the easement or the lot lines depending on the circumstance.",
+            "evaluation_order": 1
+          }
+        ],
+        "execution_sequence": [
+          {
+            "step": 1,
+            "action": "Determine if an easement affects the setback measurement.",
+            "condition_ids": [
+              "c1"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 2,
+            "action": "If no easement affects the setback, measure setbacks from the lot lines regardless of sidewalk location.",
+            "condition_ids": [
+              "c2"
+            ],
+            "qualifier_ids": [
+              "q2",
+              "q3"
+            ],
+            "dependencies": [
+              "1"
+            ]
+          },
+          {
+            "step": 3,
+            "action": "Apply reduced setbacks for substandard corner lots less than 50 feet wide.",
+            "condition_ids": [
+              "c3"
+            ],
+            "qualifier_ids": [],
+            "dependencies": [
+              "2"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:13:49",
+  "model_used": "openai/gpt-4.1-mini"
+}

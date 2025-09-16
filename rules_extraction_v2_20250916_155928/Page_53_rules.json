@@ -1,0 +1,291 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_53.md",
+  "file_name": "Page_53.md",
+  "analysis": {
+    "extracted_rules": {
+      "source_document": {
+        "title": "Page 53",
+        "topic": "Grade",
+        "page_number_footer": 47
+      },
+      "regulations": [
+        {
+          "rule_id": "GRADE_RULE_01",
+          "rule_name": "Height Measurement on Land with Natural Slope \u2264 10%",
+          "source_text": "Table, Row 1: When measuring: The height of a structure on land with natural slope \u2264 10%; Use: Existing Grade; Which is defined as: for each building or structure, the lowest point of adjacent ground elevation prior to grading or fill",
+          "qualifiers": {
+            "scope": "Measurement of the height of a structure.",
+            "applicability": "Applies to land with a natural slope less than or equal to 10%.",
+            "exclusions": "None specified."
+          },
+          "variables": [
+            {
+              "name": "natural_slope",
+              "type": "dimensional",
+              "description": "Natural slope of the land, used to determine which grade definition applies.",
+              "unit": "%"
+            },
+            {
+              "name": "structure_height",
+              "type": "dimensional",
+              "description": "The height of a structure, which is the parameter being measured."
+            },
+            {
+              "name": "existing_grade_elevation",
+              "type": "dimensional",
+              "description": "The reference elevation for height measurement, defined as the lowest point of adjacent ground elevation prior to grading or fill."
+            }
+          ],
+          "constants": [
+            {
+              "name": "slope_threshold",
+              "type": "numerical_value",
+              "value": 10,
+              "unit": "%"
+            },
+            {
+              "name": "measurement_reference",
+              "type": "standard",
+              "value": "Existing Grade"
+            },
+            {
+              "name": "existing_grade_definition",
+              "type": "procedure",
+              "value": "For each building or structure, the lowest point of adjacent ground elevation prior to grading or fill."
+            }
+          ],
+          "conditions": [
+            {
+              "type": "conditional_logic",
+              "status": "mandatory",
+              "description": "This rule is applied if the natural slope of the land is less than or equal to the slope threshold.",
+              "logic": "IF natural_slope <= 10% THEN use 'Existing Grade' as the measurement reference."
+            }
+          ],
+          "exceptions": [
+            {
+              "type": "explicit_deviation",
+              "description": "None specified in the provided text."
+            }
+          ],
+          "relationships": {
+            "hierarchical": "This rule is one of three definitions under the general topic of 'Grade'.",
+            "cross_references": [
+              {
+                "type": "illustration",
+                "reference": "Figure 44",
+                "description": "Illustrates the concept of 'Existing Grade' versus 'Finished grade'."
+              }
+            ],
+            "logical_dependencies": "Mutually exclusive with GRADE_RULE_02 based on the natural_slope value."
+          }
+        },
+        {
+          "rule_id": "GRADE_RULE_02",
+          "rule_name": "Height Measurement on Land with Natural Slope > 10%",
+          "source_text": "Table, Row 2: When measuring: The height of a structure on land with natural slope > 10%; Use: Grade; Which is defined as: adjacent ground elevation of the finished or existing grade, whichever is lower\u2014at any point of the structure",
+          "qualifiers": {
+            "scope": "Measurement of the height of a structure and its compliance with height limits.",
+            "applicability": "Applies to land with a natural slope greater than 10%.",
+            "exclusions": "None specified."
+          },
+          "variables": [
+            {
+              "name": "natural_slope",
+              "type": "dimensional",
+              "description": "Natural slope of the land, used to determine which grade definition applies.",
+              "unit": "%"
+            },
+            {
+              "name": "structure_height",
+              "type": "dimensional",
+              "description": "The height of a structure, which is the parameter being measured."
+            },
+            {
+              "name": "grade_elevation",
+              "type": "dimensional",
+              "description": "The reference elevation for height measurement, calculated as the lower of existing or finished grade."
+            },
+            {
+              "name": "finished_grade_elevation",
+              "type": "dimensional",
+              "description": "Adjacent ground elevation after grading or fill."
+            },
+            {
+              "name": "existing_grade_elevation",
+              "type": "dimensional",
+              "description": "Adjacent ground elevation prior to grading or fill."
+            }
+          ],
+          "constants": [
+            {
+              "name": "slope_threshold",
+              "type": "numerical_value",
+              "value": 10,
+              "unit": "%"
+            },
+            {
+              "name": "maximum_height_above_grade",
+              "type": "numerical_value",
+              "source": "Figure 45",
+              "value": 30,
+              "unit": "feet"
+            },
+            {
+              "name": "measurement_reference",
+              "type": "standard",
+              "value": "Grade"
+            },
+            {
+              "name": "grade_definition",
+              "type": "procedure",
+              "value": "Adjacent ground elevation of the finished or existing grade, whichever is lower\u2014at any point of the structure."
+            }
+          ],
+          "conditions": [
+            {
+              "type": "conditional_logic",
+              "status": "mandatory",
+              "description": "This rule is applied if the natural slope of the land is greater than the slope threshold.",
+              "logic": "IF natural_slope > 10% THEN use 'Grade' as the measurement reference."
+            },
+            {
+              "type": "calculation",
+              "status": "mandatory",
+              "description": "The 'Grade' at any point is the minimum of the finished and existing grade elevations at that point.",
+              "logic": "grade_elevation(point) = MIN(finished_grade_elevation(point), existing_grade_elevation(point))"
+            },
+            {
+              "type": "compliance_check",
+              "status": "mandatory",
+              "source": "Figure 45",
+              "description": "The structure must comply with the lower of two height limits at all points along the slope.",
+              "logic": "FOR EACH point ALONG structure: structure_height(point) <= 30 feet + existing_grade_elevation(point) AND structure_height(point) <= 30 feet + finished_grade_elevation(point)"
+            }
+          ],
+          "exceptions": [
+            {
+              "type": "explicit_deviation",
+              "description": "None specified in the provided text."
+            }
+          ],
+          "relationships": {
+            "hierarchical": "This rule is one of three definitions under the general topic of 'Grade'.",
+            "cross_references": [
+              {
+                "type": "illustration",
+                "reference": "Figure 45",
+                "description": "Illustrates height limits for structures on slopes greater than 10%."
+              }
+            ],
+            "logical_dependencies": "Mutually exclusive with GRADE_RULE_01 based on the natural_slope value."
+          }
+        },
+        {
+          "rule_id": "GRADE_RULE_03",
+          "rule_name": "Daylight Plane Measurement",
+          "source_text": "Table, Row 3: When measuring: A daylight plane; Use: Average grade; Which is defined as: average of the grade at the midpoint of the building and the grade at the closest point on the abutting site",
+          "qualifiers": {
+            "scope": "Measurement of a daylight plane.",
+            "applicability": "Applies when measuring a daylight plane.",
+            "exclusions": "None specified."
+          },
+          "variables": [
+            {
+              "name": "daylight_plane",
+              "type": "dimensional",
+              "description": "The geometric plane being measured, typically for light/air access."
+            },
+            {
+              "name": "average_grade_elevation",
+              "type": "dimensional",
+              "description": "The reference elevation for daylight plane measurement."
+            },
+            {
+              "name": "grade_at_building_midpoint",
+              "type": "dimensional",
+              "description": "The grade elevation at the midpoint of the building."
+            },
+            {
+              "name": "grade_at_closest_point_on_abutting_site",
+              "type": "dimensional",
+              "description": "The grade elevation at the closest point on the adjacent property."
+            }
+          ],
+          "constants": [
+            {
+              "name": "measurement_reference",
+              "type": "standard",
+              "value": "Average grade"
+            },
+            {
+              "name": "average_grade_definition",
+              "type": "procedure",
+              "value": "Average of the grade at the midpoint of the building and the grade at the closest point on the abutting site."
+            }
+          ],
+          "conditions": [
+            {
+              "type": "conditional_logic",
+              "status": "mandatory",
+              "description": "This rule is applied when the measurement context is a daylight plane.",
+              "logic": "IF measuring = 'A daylight plane' THEN use 'Average grade' as the measurement reference."
+            },
+            {
+              "type": "calculation",
+              "status": "mandatory",
+              "description": "The 'Average grade' is calculated as the mean of two specific grade points.",
+              "logic": "average_grade_elevation = (grade_at_building_midpoint + grade_at_closest_point_on_abutting_site) / 2"
+            }
+          ],
+          "exceptions": [
+            {
+              "type": "explicit_deviation",
+              "description": "None specified in the provided text."
+            }
+          ],
+          "relationships": {
+            "hierarchical": "This rule is one of three definitions under the general topic of 'Grade'.",
+            "cross_references": [
+              {
+                "type": "illustration",
+                "reference": "Figs 20\u201321 pp. 26\u201327",
+                "description": "Illustrates the concept of a daylight plane."
+              }
+            ],
+            "logical_dependencies": "Independent of GRADE_RULE_01 and GRADE_RULE_02 as it applies to a different measurement scope (daylight plane vs. structure height)."
+          }
+        }
+      ],
+      "ambiguities": [
+        {
+          "id": "AMBIGUITY_01",
+          "type": "data_inconsistency",
+          "location": "Page Header vs. Footer",
+          "description": "The extracted text is titled 'Page 53' but the footer contains 'Page number: 47'."
+        },
+        {
+          "id": "AMBIGUITY_02",
+          "type": "illegible_text",
+          "location": "Figure 44 labels",
+          "description": "A label reads 'Height measured to [illegible] highest point'. The illegible word prevents full understanding of the measurement endpoint."
+        },
+        {
+          "id": "AMBIGUITY_03",
+          "type": "illegible_text",
+          "location": "Figure 46 diagram",
+          "description": "The source text notes that 'Interior numeric/ratio labels on the diagram are not fully legible', preventing extraction of quantitative data from this figure."
+        }
+      ]
+    },
+    "parse_error": false,
+    "raw_response": "```json\n{\n  \"source_document\": {\n    \"title\": \"Page 53\",\n    \"topic\": \"Grade\",\n    \"page_number_footer\": 47\n  },\n  \"regulations\": [\n    {\n      \"rule_id\": \"GRADE_RULE_01\",\n      \"rule_name\": \"Height Measurement on Land with Natural Slope \u2264 10%\",\n      \"source_text\": \"Table, Row 1: When measuring: The height of a structure on land with natural slope \u2264 10%; Use: Existing Grade; Which is defined as: for each building or structure, the lowest point of adjacent ground elevation prior to grading or fill\",\n      \"qualifiers\": {\n        \"scope\": \"Measurement of the height of a structure.\",\n        \"applicability\": \"Applies to land with a natural slope less than or equal to 10%.\",\n        \"exclusions\": \"None specified.\"\n      },\n      \"variables\": [\n        {\n          \"name\": \"natural_slope\",\n          \"type\": \"dimensional\",\n          \"description\": \"Natural slope of the land, used to determine which grade definition applies.\",\n          \"unit\": \"%\"\n        },\n        {\n          \"name\": \"structure_height\",\n          \"type\": \"dimensional\",\n          \"description\": \"The height of a structure, which is the parameter being measured.\"\n        },\n        {\n          \"name\": \"existing_grade_elevation\",\n          \"type\": \"dimensional\",\n          \"description\": \"The reference elevation for height measurement, defined as the lowest point of adjacent ground elevation prior to grading or fill.\"\n        }\n      ],\n      \"constants\": [\n        {\n          \"name\": \"slope_threshold\",\n          \"type\": \"numerical_value\",\n          \"value\": 10,\n          \"unit\": \"%\"\n        },\n        {\n          \"name\": \"measurement_reference\",\n          \"type\": \"standard\",\n          \"value\": \"Existing Grade\"\n        },\n        {\n          \"name\": \"existing_grade_definition\",\n          \"type\": \"procedure\",\n          \"value\": \"For each building or structure, the lowest point of adjacent ground elevation prior to grading or fill.\"\n        }\n      ],\n      \"conditions\": [\n        {\n          \"type\": \"conditional_logic\",\n          \"status\": \"mandatory\",\n          \"description\": \"This rule is applied if the natural slope of the land is less than or equal to the slope threshold.\",\n          \"logic\": \"IF natural_slope <= 10% THEN use 'Existing Grade' as the measurement reference.\"\n        }\n      ],\n      \"exceptions\": [\n        {\n          \"type\": \"explicit_deviation\",\n          \"description\": \"None specified in the provided text.\"\n        }\n      ],\n      \"relationships\": {\n        \"hierarchical\": \"This rule is one of three definitions under the general topic of 'Grade'.\",\n        \"cross_references\": [\n          {\n            \"type\": \"illustration\",\n            \"reference\": \"Figure 44\",\n            \"description\": \"Illustrates the concept of 'Existing Grade' versus 'Finished grade'.\"\n          }\n        ],\n        \"logical_dependencies\": \"Mutually exclusive with GRADE_RULE_02 based on the natural_slope value.\"\n      }\n    },\n    {\n      \"rule_id\": \"GRADE_RULE_02\",\n      \"rule_name\": \"Height Measurement on Land with Natural Slope > 10%\",\n      \"source_text\": \"Table, Row 2: When measuring: The height of a structure on land with natural slope > 10%; Use: Grade; Which is defined as: adjacent ground elevation of the finished or existing grade, whichever is lower\u2014at any point of the structure\",\n      \"qualifiers\": {\n        \"scope\": \"Measurement of the height of a structure and its compliance with height limits.\",\n        \"applicability\": \"Applies to land with a natural slope greater than 10%.\",\n        \"exclusions\": \"None specified.\"\n      },\n      \"variables\": [\n        {\n          \"name\": \"natural_slope\",\n          \"type\": \"dimensional\",\n          \"description\": \"Natural slope of the land, used to determine which grade definition applies.\",\n          \"unit\": \"%\"\n        },\n        {\n          \"name\": \"structure_height\",\n          \"type\": \"dimensional\",\n          \"description\": \"The height of a structure, which is the parameter being measured.\"\n        },\n        {\n          \"name\": \"grade_elevation\",\n          \"type\": \"dimensional\",\n          \"description\": \"The reference elevation for height measurement, calculated as the lower of existing or finished grade.\"\n        },\n        {\n          \"name\": \"finished_grade_elevation\",\n          \"type\": \"dimensional\",\n          \"description\": \"Adjacent ground elevation after grading or fill.\"\n        },\n        {\n          \"name\": \"existing_grade_elevation\",\n          \"type\": \"dimensional\",\n          \"description\": \"Adjacent ground elevation prior to grading or fill.\"\n        }\n      ],\n      \"constants\": [\n        {\n          \"name\": \"slope_threshold\",\n          \"type\": \"numerical_value\",\n          \"value\": 10,\n          \"unit\": \"%\"\n        },\n        {\n          \"name\": \"maximum_height_above_grade\",\n          \"type\": \"numerical_value\",\n          \"source\": \"Figure 45\",\n          \"value\": 30,\n          \"unit\": \"feet\"\n        },\n        {\n          \"name\": \"measurement_reference\",\n          \"type\": \"standard\",\n          \"value\": \"Grade\"\n        },\n        {\n          \"name\": \"grade_definition\",\n          \"type\": \"procedure\",\n          \"value\": \"Adjacent ground elevation of the finished or existing grade, whichever is lower\u2014at any point of the structure.\"\n        }\n      ],\n      \"conditions\": [\n        {\n          \"type\": \"conditional_logic\",\n          \"status\": \"mandatory\",\n          \"description\": \"This rule is applied if the natural slope of the land is greater than the slope threshold.\",\n          \"logic\": \"IF natural_slope > 10% THEN use 'Grade' as the measurement reference.\"\n        },\n        {\n          \"type\": \"calculation\",\n          \"status\": \"mandatory\",\n          \"description\": \"The 'Grade' at any point is the minimum of the finished and existing grade elevations at that point.\",\n          \"logic\": \"grade_elevation(point) = MIN(finished_grade_elevation(point), existing_grade_elevation(point))\"\n        },\n        {\n          \"type\": \"compliance_check\",\n          \"status\": \"mandatory\",\n          \"source\": \"Figure 45\",\n          \"description\": \"The structure must comply with the lower of two height limits at all points along the slope.\",\n          \"logic\": \"FOR EACH point ALONG structure: structure_height(point) <= 30 feet + existing_grade_elevation(point) AND structure_height(point) <= 30 feet + finished_grade_elevation(point)\"\n        }\n      ],\n      \"exceptions\": [\n        {\n          \"type\": \"explicit_deviation\",\n          \"description\": \"None specified in the provided text.\"\n        }\n      ],\n      \"relationships\": {\n        \"hierarchical\": \"This rule is one of three definitions under the general topic of 'Grade'.\",\n        \"cross_references\": [\n          {\n            \"type\": \"illustration\",\n            \"reference\": \"Figure 45\",\n            \"description\": \"Illustrates height limits for structures on slopes greater than 10%.\"\n          }\n        ],\n        \"logical_dependencies\": \"Mutually exclusive with GRADE_RULE_01 based on the natural_slope value.\"\n      }\n    },\n    {\n      \"rule_id\": \"GRADE_RULE_03\",\n      \"rule_name\": \"Daylight Plane Measurement\",\n      \"source_text\": \"Table, Row 3: When measuring: A daylight plane; Use: Average grade; Which is defined as: average of the grade at the midpoint of the building and the grade at the closest point on the abutting site\",\n      \"qualifiers\": {\n        \"scope\": \"Measurement of a daylight plane.\",\n        \"applicability\": \"Applies when measuring a daylight plane.\",\n        \"exclusions\": \"None specified.\"\n      },\n      \"variables\": [\n        {\n          \"name\": \"daylight_plane\",\n          \"type\": \"dimensional\",\n          \"description\": \"The geometric plane being measured, typically for light/air access.\"\n        },\n        {\n          \"name\": \"average_grade_elevation\",\n          \"type\": \"dimensional\",\n          \"description\": \"The reference elevation for daylight plane measurement.\"\n        },\n        {\n          \"name\": \"grade_at_building_midpoint\",\n          \"type\": \"dimensional\",\n          \"description\": \"The grade elevation at the midpoint of the building.\"\n        },\n        {\n          \"name\": \"grade_at_closest_point_on_abutting_site\",\n          \"type\": \"dimensional\",\n          \"description\": \"The grade elevation at the closest point on the adjacent property.\"\n        }\n      ],\n      \"constants\": [\n        {\n          \"name\": \"measurement_reference\",\n          \"type\": \"standard\",\n          \"value\": \"Average grade\"\n        },\n        {\n          \"name\": \"average_grade_definition\",\n          \"type\": \"procedure\",\n          \"value\": \"Average of the grade at the midpoint of the building and the grade at the closest point on the abutting site.\"\n        }\n      ],\n      \"conditions\": [\n        {\n          \"type\": \"conditional_logic\",\n          \"status\": \"mandatory\",\n          \"description\": \"This rule is applied when the measurement context is a daylight plane.\",\n          \"logic\": \"IF measuring = 'A daylight plane' THEN use 'Average grade' as the measurement reference.\"\n        },\n        {\n          \"type\": \"calculation\",\n          \"status\": \"mandatory\",\n          \"description\": \"The 'Average grade' is calculated as the mean of two specific grade points.\",\n          \"logic\": \"average_grade_elevation = (grade_at_building_midpoint + grade_at_closest_point_on_abutting_site) / 2\"\n        }\n      ],\n      \"exceptions\": [\n        {\n          \"type\": \"explicit_deviation\",\n          \"description\": \"None specified in the provided text.\"\n        }\n      ],\n      \"relationships\": {\n        \"hierarchical\": \"This rule is one of three definitions under the general topic of 'Grade'.\",\n        \"cross_references\": [\n          {\n            \"type\": \"illustration\",\n            \"reference\": \"Figs 20\u201321 pp. 26\u201327\",\n            \"description\": \"Illustrates the concept of a daylight plane.\"\n          }\n        ],\n        \"logical_dependencies\": \"Independent of GRADE_RULE_01 and GRADE_RULE_02 as it applies to a different measurement scope (daylight plane vs. structure height).\"\n      }\n    }\n  ],\n  \"ambiguities\": [\n    {\n      \"id\": \"AMBIGUITY_01\",\n      \"type\": \"data_inconsistency\",\n      \"location\": \"Page Header vs. Footer\",\n      \"description\": \"The extracted text is titled 'Page 53' but the footer contains 'Page number: 47'.\"\n    },\n    {\n      \"id\": \"AMBIGUITY_02\",\n      \"type\": \"illegible_text\",\n      \"location\": \"Figure 44 labels\",\n      \"description\": \"A label reads 'Height measured to [illegible] highest point'. The illegible word prevents full understanding of the measurement endpoint.\"\n    },\n    {\n      \"id\": \"AMBIGUITY_03\",\n      \"type\": \"illegible_text\",\n      \"location\": \"Figure 46 diagram\",\n      \"description\": \"The source text notes that 'Interior numeric/ratio labels on the diagram are not fully legible', preventing extraction of quantitative data from this figure.\"\n    }\n  ]\n}\n```",
+    "response_time": 55.05117082595825,
+    "input_tokens": 831,
+    "output_tokens": 6873,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 16:05:18",
+  "model": "google/gemini-2.5-pro",
+  "success": true
+}

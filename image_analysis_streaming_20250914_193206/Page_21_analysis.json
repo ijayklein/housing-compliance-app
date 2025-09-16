@@ -1,0 +1,51 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_21.png",
+  "image_name": "Page_21.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Balconies, decks, & outdoor areas on upper floors\n\nOutdoor areas on upper levels that are roofed DO count toward gross floor area regardless of the design\n(including whether or not the sides are open).\n\nAn outdoor area on an upper floor is considered to be\nroofed if the eave over that area is deeper than the eave\nover the rest of the building. This may be illustrated by\ncomparing Roof Plans 1 & 2 of Fig 10.\n\nFig 10 Balconies\n\nRoof plan 1\nRoof plan 2\n\nNote: Pop-out balconies are\nsubject to the same evaluation.\n\nRoof Plan 1\nArea A: Counts because it is roofed\nArea B: Does not count because this arbor is substantially open\nArea C: Does not count because the overhang is the same size as the over-\nhang around the rest of the house and is considered to be open\n\nWidth of overhang\nover the balcony\n\nWidth of overhang around\nthe rest of the house\n\nC\nB\nA\n\nRoof Plan 2\nArea A: Counts because it is roofed\nArea B: Counts because the overhang here is greater than the overhang\naround the rest of the house, and considered to be roofed\nArea C: Does not count because it is open\n\nWidth of overhang\nover the balcony\n\nWidth of overhang around\nthe rest of the house\n\nB\nC\nA\n\n15",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "An isometric view of a building section showing two upper-level outdoor areas. The upper area (Roof plan 1) has a partial roof structure (pergola-like) and a solid roof section. The lower area (Roof plan 2) is an open balcony. Arrows point from 'Roof plan 1' and 'Roof plan 2' labels to their respective areas on the building.",
+          "location": "Middle left"
+        },
+        {
+          "type": "diagram",
+          "description": "A top-down 'Roof Plan 1' diagram illustrating an outdoor area divided into three sections: A, B, and C. Area A is hatched with diagonal lines, Area B is hatched with a grid pattern, and Area C is solid white. There are labels for 'Width of overhang over the balcony' and 'Width of overhang around the rest of the house' with double-headed arrows indicating these dimensions. A dashed line indicates the extent of the overhang.",
+          "location": "Middle right"
+        },
+        {
+          "type": "diagram",
+          "description": "A top-down 'Roof Plan 2' diagram illustrating an outdoor area divided into three sections: A, B, and C. Area A is hatched with diagonal lines, Area B is hatched with a grid pattern, and Area C is solid white. There are labels for 'Width of overhang over the balcony' and 'Width of overhang around the rest of the house' with double-headed arrows indicating these dimensions. A solid line indicates the extent of the overhang.",
+          "location": "Bottom right"
+        }
+      ],
+      "technical_specifications": [],
+      "structural_elements": {
+        "main_heading": "Balconies, decks, & outdoor areas on upper floors",
+        "subheadings": [],
+        "sections": [
+          "Outdoor areas on upper levels that are roofed DO count toward gross floor area regardless of the design (including whether or not the sides are open).",
+          "An outdoor area on an upper floor is considered to be roofed if the eave over that area is deeper than the eave over the rest of the building. This may be illustrated by comparing Roof Plans 1 & 2 of Fig 10.",
+          "Fig 10 Balconies",
+          "Roof Plan 1",
+          "Area A: Counts because it is roofed",
+          "Area B: Does not count because this arbor is substantially open",
+          "Area C: Does not count because the overhang is the same size as the over-hang around the rest of the house and is considered to be open",
+          "Roof Plan 2",
+          "Area A: Counts because it is roofed",
+          "Area B: Counts because the overhang here is greater than the overhang around the rest of the house, and considered to be roofed",
+          "Area C: Does not count because it is open",
+          "Note: Pop-out balconies are subject to the same evaluation."
+        ]
+      },
+      "additional_notes": [],
+      "cross_references": [
+        "Fig 10"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-14 19:32:21",
+  "model_used": "google/gemini-2.5-flash"
+}

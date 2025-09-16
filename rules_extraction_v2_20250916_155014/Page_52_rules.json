@@ -1,0 +1,463 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_52.md",
+  "file_name": "Page_52.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "rule_id": "R1-HEIGHT-STANDARD-DWELLING",
+        "title": "Maximum height for main dwelling on a standard lot based on roof slope",
+        "Qualifiers": {
+          "scope": "Main dwelling structures on standard lots",
+          "applicability": [
+            "Applies to residential main dwellings located on standard lots"
+          ],
+          "exclusions": [
+            "Does not apply to main dwellings on substandard or flag lots",
+            "Does not apply to accessory structures",
+            "Does not apply to 2nd-dwelling units"
+          ],
+          "notes": [
+            "Height is measured to the roof peak and, per Figure 42, to the top of roof material",
+            "Ambiguity: Figure 42 labels of roof slopes (e.g., 12:14, 12:10) appear inconsistent with Figure 43 definition of rise:run; the threshold condition here is interpreted using rise:run as defined in Figure 43"
+          ]
+        },
+        "Variables": [
+          {
+            "name": "roof_slope_rise_in",
+            "description": "Vertical rise of the roof over the standard run",
+            "unit": "in",
+            "allowed_range": ">= 0"
+          },
+          {
+            "name": "roof_slope_run_in",
+            "description": "Horizontal run used for slope calculation",
+            "unit": "in",
+            "allowed_values": [
+              12
+            ]
+          },
+          {
+            "name": "roof_slope_ratio",
+            "description": "Roof slope expressed as rise:run based on 12 in run",
+            "unit": "ratio (dimensionless)",
+            "derived_from": "roof_slope_rise_in : roof_slope_run_in (rise:run)"
+          },
+          {
+            "name": "height_to_roof_peak_ft",
+            "description": "Vertical height measured to the top of roof material at the roof peak",
+            "unit": "ft"
+          }
+        ],
+        "Constants": [
+          {
+            "name": "slope_threshold_ratio_rise_run",
+            "value": "12:12",
+            "unit": "ratio (rise:run)",
+            "equivalents": {
+              "rise_in": 12,
+              "run_in": 12,
+              "decimal": 1.0
+            }
+          },
+          {
+            "name": "max_height_if_slope_lt_threshold",
+            "value": 30,
+            "unit": "ft"
+          },
+          {
+            "name": "max_height_if_slope_ge_threshold",
+            "value": 33,
+            "unit": "ft"
+          },
+          {
+            "name": "height_measurement_reference",
+            "value": "Top of roof material at roof peak",
+            "unit": "n/a"
+          }
+        ],
+        "Conditions": [
+          {
+            "type": "conditional",
+            "if": "roof_slope_ratio (rise:run with 12 in run) >= 12:12",
+            "then": "height_to_roof_peak_ft <= 33 ft",
+            "else": "height_to_roof_peak_ft <= 30 ft",
+            "dependencies": [
+              "Use 12 in run for slope calculation as defined in R5-SLOPE-DEFINITION",
+              "Measure height to top of roof material as defined in R6-HEIGHT-MEASURE-REFERENCE"
+            ]
+          }
+        ],
+        "Exceptions": [],
+        "Relationships": {
+          "depends_on_rules": [
+            "R5-SLOPE-DEFINITION",
+            "R6-HEIGHT-MEASURE-REFERENCE"
+          ],
+          "cross_references": [
+            {
+              "code_section": "18.12.040(a) Table 2",
+              "source_page": 46
+            },
+            {
+              "code_section": "18.04.030(64)(b)",
+              "source_page": 47
+            },
+            {
+              "figure": "Figure 42",
+              "subject": "Height measurement reference and slope comparison"
+            },
+            {
+              "figure": "Figure 43",
+              "subject": "Determining slope of roof"
+            }
+          ],
+          "logical_dependencies": [
+            "Height limit determination requires roof slope classification against threshold 12:12"
+          ]
+        }
+      },
+      {
+        "rule_id": "R2-HEIGHT-SUBSTANDARD-FLAG-DWELLING",
+        "title": "Maximum height for main dwelling on a substandard or flag lot",
+        "Qualifiers": {
+          "scope": "Main dwelling structures on substandard or flag lots",
+          "applicability": [
+            "Applies to residential main dwellings located on substandard lots",
+            "Applies to residential main dwellings located on flag lots"
+          ],
+          "exclusions": [
+            "Does not apply to standard lots",
+            "Does not apply to accessory structures",
+            "Does not apply to 2nd-dwelling units"
+          ],
+          "notes": [
+            "Height is measured to the roof peak and to the top of roof material per Figure 42",
+            "Terms 'substandard lot' and 'flag lot' are referenced but not defined on this page"
+          ]
+        },
+        "Variables": [
+          {
+            "name": "height_to_roof_peak_ft",
+            "description": "Vertical height measured to the top of roof material at the roof peak",
+            "unit": "ft"
+          }
+        ],
+        "Constants": [
+          {
+            "name": "max_height_substandard_or_flag_lot",
+            "value": 17,
+            "unit": "ft"
+          },
+          {
+            "name": "height_measurement_reference",
+            "value": "Top of roof material at roof peak",
+            "unit": "n/a"
+          }
+        ],
+        "Conditions": [
+          {
+            "type": "mandatory",
+            "statement": "height_to_roof_peak_ft <= 17 ft"
+          }
+        ],
+        "Exceptions": [
+          {
+            "type": "clarification",
+            "statement": "Roof slope does not modify the 17 ft maximum for substandard or flag lots"
+          }
+        ],
+        "Relationships": {
+          "depends_on_rules": [
+            "R6-HEIGHT-MEASURE-REFERENCE"
+          ],
+          "cross_references": [
+            {
+              "code_section": "18.12.040(a) Table 2",
+              "source_page": 46
+            },
+            {
+              "code_section": "18.04.030(64)(b)",
+              "source_page": 47
+            },
+            {
+              "figure": "Figure 42",
+              "subject": "Height measurement reference"
+            }
+          ]
+        }
+      },
+      {
+        "rule_id": "R3-HEIGHT-ACCESSORY-STRUCTURE",
+        "title": "Maximum height for accessory structures in rear or side yard",
+        "Qualifiers": {
+          "scope": "Accessory structures located in rear or side yards",
+          "applicability": [
+            "Applies to accessory structures placed within rear yards",
+            "Applies to accessory structures placed within side yards"
+          ],
+          "exclusions": [
+            "Does not explicitly cover accessory structures in front yards"
+          ],
+          "notes": [
+            "Height measured to the top of roof material per Figure 42",
+            "The term 'accessory structure' is not defined on this page"
+          ]
+        },
+        "Variables": [
+          {
+            "name": "location_in_yard",
+            "description": "Yard location of the accessory structure",
+            "allowed_values": [
+              "rear",
+              "side"
+            ]
+          },
+          {
+            "name": "height_to_roof_peak_ft",
+            "description": "Vertical height measured to the top of roof material at the roof peak",
+            "unit": "ft"
+          }
+        ],
+        "Constants": [
+          {
+            "name": "max_height_accessory_rear_side",
+            "value": 12,
+            "unit": "ft"
+          },
+          {
+            "name": "height_measurement_reference",
+            "value": "Top of roof material at roof peak",
+            "unit": "n/a"
+          }
+        ],
+        "Conditions": [
+          {
+            "type": "mandatory",
+            "statement": "If location_in_yard \u2208 {rear, side}, then height_to_roof_peak_ft <= 12 ft"
+          }
+        ],
+        "Exceptions": [],
+        "Relationships": {
+          "depends_on_rules": [
+            "R6-HEIGHT-MEASURE-REFERENCE"
+          ],
+          "cross_references": [
+            {
+              "code_section": "18.12.040(a) Table 2",
+              "source_page": 46
+            },
+            {
+              "code_section": "18.04.030(64)(b)",
+              "source_page": 47
+            },
+            {
+              "figure": "Figure 42",
+              "subject": "Height measurement reference"
+            }
+          ]
+        }
+      },
+      {
+        "rule_id": "R4-HEIGHT-SECOND-DWELLING-UNIT",
+        "title": "Maximum height for 2nd-dwelling units",
+        "Qualifiers": {
+          "scope": "Second-dwelling units (2nd-dwelling units)",
+          "applicability": [
+            "Applies to designated second-dwelling/residential accessory dwelling units"
+          ],
+          "exclusions": [
+            "Does not apply to main dwellings",
+            "Does not apply to non-dwelling accessory structures"
+          ],
+          "notes": [
+            "Height measured to the top of roof material per Figure 42",
+            "Term '2nd-dwelling units' is not defined on this page; attachment/detachment status not specified"
+          ]
+        },
+        "Variables": [
+          {
+            "name": "height_to_roof_peak_ft",
+            "description": "Vertical height measured to the top of roof material at the roof peak",
+            "unit": "ft"
+          }
+        ],
+        "Constants": [
+          {
+            "name": "max_height_second_dwelling_unit",
+            "value": 17,
+            "unit": "ft"
+          },
+          {
+            "name": "height_measurement_reference",
+            "value": "Top of roof material at roof peak",
+            "unit": "n/a"
+          }
+        ],
+        "Conditions": [
+          {
+            "type": "mandatory",
+            "statement": "height_to_roof_peak_ft <= 17 ft"
+          }
+        ],
+        "Exceptions": [],
+        "Relationships": {
+          "depends_on_rules": [
+            "R6-HEIGHT-MEASURE-REFERENCE"
+          ],
+          "cross_references": [
+            {
+              "code_section": "18.12.040(a) Table 2",
+              "source_page": 46
+            },
+            {
+              "code_section": "18.04.030(64)(b)",
+              "source_page": 47
+            },
+            {
+              "figure": "Figure 42",
+              "subject": "Height measurement reference"
+            }
+          ]
+        }
+      },
+      {
+        "rule_id": "R5-SLOPE-DEFINITION",
+        "title": "Definition and method for determining roof slope",
+        "Qualifiers": {
+          "scope": "All roof slope determinations referenced by height regulations on this page",
+          "applicability": [
+            "Applies to calculating roof slope for comparison against thresholds (e.g., 12:12)"
+          ],
+          "exclusions": [],
+          "notes": [
+            "Roof slope is defined as the vertical rise in inches per 12 inches of horizontal distance (run)",
+            "On drawings, slope may be represented as rise:run (e.g., 6:12)",
+            "Ambiguity: The page also shows fraction representations with numbers above/below a line that appear as run over rise (e.g., 12 over 6, then 2 over 1), which conflicts with the stated rise:run convention. For validation, use rise:run with 12 in run."
+          ]
+        },
+        "Variables": [
+          {
+            "name": "rise_in",
+            "description": "Vertical rise",
+            "unit": "in",
+            "allowed_range": ">= 0"
+          },
+          {
+            "name": "run_in",
+            "description": "Horizontal run; for roof slope determination standardized to 12 inches",
+            "unit": "in",
+            "allowed_values": [
+              12
+            ]
+          },
+          {
+            "name": "slope_ratio",
+            "description": "Roof slope expressed as rise:run",
+            "unit": "ratio (dimensionless)",
+            "derived_from": "rise_in : run_in"
+          }
+        ],
+        "Constants": [
+          {
+            "name": "standard_run",
+            "value": 12,
+            "unit": "in"
+          },
+          {
+            "name": "example_slope_rise_run",
+            "value": "6:12",
+            "unit": "ratio (rise:run)",
+            "notes": "Example provided on page"
+          }
+        ],
+        "Conditions": [
+          {
+            "type": "procedure",
+            "steps": [
+              "Set run_in = 12 in",
+              "Measure rise_in in inches corresponding to that 12 in horizontal run",
+              "Express slope_ratio as rise_in:run_in (rise:run)",
+              "Use slope_ratio for any threshold comparisons (e.g., against 12:12)"
+            ]
+          }
+        ],
+        "Exceptions": [],
+        "Relationships": {
+          "used_by_rules": [
+            "R1-HEIGHT-STANDARD-DWELLING"
+          ],
+          "cross_references": [
+            {
+              "figure": "Figure 43",
+              "subject": "Determining slope of roof"
+            }
+          ]
+        }
+      },
+      {
+        "rule_id": "R6-HEIGHT-MEASURE-REFERENCE",
+        "title": "Reference point for measuring building height",
+        "Qualifiers": {
+          "scope": "All structures subject to height limits on this page",
+          "applicability": [
+            "Main dwellings on standard lots",
+            "Main dwellings on substandard or flag lots",
+            "Accessory structures in rear or side yard",
+            "2nd-dwelling units"
+          ],
+          "exclusions": [],
+          "notes": [
+            "Caption in Figure 42 states: 'Height measured to top of roof material'",
+            "Interpreted to mean height to roof peak is taken at the top surface of the roof material"
+          ]
+        },
+        "Variables": [
+          {
+            "name": "height_measurement_point",
+            "description": "Physical point at which height is measured",
+            "allowed_values": [
+              "Top of roof material at roof peak"
+            ]
+          }
+        ],
+        "Constants": [
+          {
+            "name": "height_reference_surface",
+            "value": "Top of roof material",
+            "unit": "n/a"
+          }
+        ],
+        "Conditions": [
+          {
+            "type": "mandatory",
+            "statement": "All height measurements to roof peak shall be taken to the top of roof material"
+          }
+        ],
+        "Exceptions": [],
+        "Relationships": {
+          "used_by_rules": [
+            "R1-HEIGHT-STANDARD-DWELLING",
+            "R2-HEIGHT-SUBSTANDARD-FLAG-DWELLING",
+            "R3-HEIGHT-ACCESSORY-STRUCTURE",
+            "R4-HEIGHT-SECOND-DWELLING-UNIT"
+          ],
+          "cross_references": [
+            {
+              "figure": "Figure 42",
+              "subject": "Height measurement reference"
+            }
+          ]
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "[\n  {\n    \"rule_id\": \"R1-HEIGHT-STANDARD-DWELLING\",\n    \"title\": \"Maximum height for main dwelling on a standard lot based on roof slope\",\n    \"Qualifiers\": {\n      \"scope\": \"Main dwelling structures on standard lots\",\n      \"applicability\": [\n        \"Applies to residential main dwellings located on standard lots\"\n      ],\n      \"exclusions\": [\n        \"Does not apply to main dwellings on substandard or flag lots\",\n        \"Does not apply to accessory structures\",\n        \"Does not apply to 2nd-dwelling units\"\n      ],\n      \"notes\": [\n        \"Height is measured to the roof peak and, per Figure 42, to the top of roof material\",\n        \"Ambiguity: Figure 42 labels of roof slopes (e.g., 12:14, 12:10) appear inconsistent with Figure 43 definition of rise:run; the threshold condition here is interpreted using rise:run as defined in Figure 43\"\n      ]\n    },\n    \"Variables\": [\n      {\n        \"name\": \"roof_slope_rise_in\",\n        \"description\": \"Vertical rise of the roof over the standard run\",\n        \"unit\": \"in\",\n        \"allowed_range\": \">= 0\"\n      },\n      {\n        \"name\": \"roof_slope_run_in\",\n        \"description\": \"Horizontal run used for slope calculation\",\n        \"unit\": \"in\",\n        \"allowed_values\": [\n          12\n        ]\n      },\n      {\n        \"name\": \"roof_slope_ratio\",\n        \"description\": \"Roof slope expressed as rise:run based on 12 in run\",\n        \"unit\": \"ratio (dimensionless)\",\n        \"derived_from\": \"roof_slope_rise_in : roof_slope_run_in (rise:run)\"\n      },\n      {\n        \"name\": \"height_to_roof_peak_ft\",\n        \"description\": \"Vertical height measured to the top of roof material at the roof peak\",\n        \"unit\": \"ft\"\n      }\n    ],\n    \"Constants\": [\n      {\n        \"name\": \"slope_threshold_ratio_rise_run\",\n        \"value\": \"12:12\",\n        \"unit\": \"ratio (rise:run)\",\n        \"equivalents\": {\n          \"rise_in\": 12,\n          \"run_in\": 12,\n          \"decimal\": 1.0\n        }\n      },\n      {\n        \"name\": \"max_height_if_slope_lt_threshold\",\n        \"value\": 30,\n        \"unit\": \"ft\"\n      },\n      {\n        \"name\": \"max_height_if_slope_ge_threshold\",\n        \"value\": 33,\n        \"unit\": \"ft\"\n      },\n      {\n        \"name\": \"height_measurement_reference\",\n        \"value\": \"Top of roof material at roof peak\",\n        \"unit\": \"n/a\"\n      }\n    ],\n    \"Conditions\": [\n      {\n        \"type\": \"conditional\",\n        \"if\": \"roof_slope_ratio (rise:run with 12 in run) >= 12:12\",\n        \"then\": \"height_to_roof_peak_ft <= 33 ft\",\n        \"else\": \"height_to_roof_peak_ft <= 30 ft\",\n        \"dependencies\": [\n          \"Use 12 in run for slope calculation as defined in R5-SLOPE-DEFINITION\",\n          \"Measure height to top of roof material as defined in R6-HEIGHT-MEASURE-REFERENCE\"\n        ]\n      }\n    ],\n    \"Exceptions\": [],\n    \"Relationships\": {\n      \"depends_on_rules\": [\n        \"R5-SLOPE-DEFINITION\",\n        \"R6-HEIGHT-MEASURE-REFERENCE\"\n      ],\n      \"cross_references\": [\n        {\n          \"code_section\": \"18.12.040(a) Table 2\",\n          \"source_page\": 46\n        },\n        {\n          \"code_section\": \"18.04.030(64)(b)\",\n          \"source_page\": 47\n        },\n        {\n          \"figure\": \"Figure 42\",\n          \"subject\": \"Height measurement reference and slope comparison\"\n        },\n        {\n          \"figure\": \"Figure 43\",\n          \"subject\": \"Determining slope of roof\"\n        }\n      ],\n      \"logical_dependencies\": [\n        \"Height limit determination requires roof slope classification against threshold 12:12\"\n      ]\n    }\n  },\n  {\n    \"rule_id\": \"R2-HEIGHT-SUBSTANDARD-FLAG-DWELLING\",\n    \"title\": \"Maximum height for main dwelling on a substandard or flag lot\",\n    \"Qualifiers\": {\n      \"scope\": \"Main dwelling structures on substandard or flag lots\",\n      \"applicability\": [\n        \"Applies to residential main dwellings located on substandard lots\",\n        \"Applies to residential main dwellings located on flag lots\"\n      ],\n      \"exclusions\": [\n        \"Does not apply to standard lots\",\n        \"Does not apply to accessory structures\",\n        \"Does not apply to 2nd-dwelling units\"\n      ],\n      \"notes\": [\n        \"Height is measured to the roof peak and to the top of roof material per Figure 42\",\n        \"Terms 'substandard lot' and 'flag lot' are referenced but not defined on this page\"\n      ]\n    },\n    \"Variables\": [\n      {\n        \"name\": \"height_to_roof_peak_ft\",\n        \"description\": \"Vertical height measured to the top of roof material at the roof peak\",\n        \"unit\": \"ft\"\n      }\n    ],\n    \"Constants\": [\n      {\n        \"name\": \"max_height_substandard_or_flag_lot\",\n        \"value\": 17,\n        \"unit\": \"ft\"\n      },\n      {\n        \"name\": \"height_measurement_reference\",\n        \"value\": \"Top of roof material at roof peak\",\n        \"unit\": \"n/a\"\n      }\n    ],\n    \"Conditions\": [\n      {\n        \"type\": \"mandatory\",\n        \"statement\": \"height_to_roof_peak_ft <= 17 ft\"\n      }\n    ],\n    \"Exceptions\": [\n      {\n        \"type\": \"clarification\",\n        \"statement\": \"Roof slope does not modify the 17 ft maximum for substandard or flag lots\"\n      }\n    ],\n    \"Relationships\": {\n      \"depends_on_rules\": [\n        \"R6-HEIGHT-MEASURE-REFERENCE\"\n      ],\n      \"cross_references\": [\n        {\n          \"code_section\": \"18.12.040(a) Table 2\",\n          \"source_page\": 46\n        },\n        {\n          \"code_section\": \"18.04.030(64)(b)\",\n          \"source_page\": 47\n        },\n        {\n          \"figure\": \"Figure 42\",\n          \"subject\": \"Height measurement reference\"\n        }\n      ]\n    }\n  },\n  {\n    \"rule_id\": \"R3-HEIGHT-ACCESSORY-STRUCTURE\",\n    \"title\": \"Maximum height for accessory structures in rear or side yard\",\n    \"Qualifiers\": {\n      \"scope\": \"Accessory structures located in rear or side yards\",\n      \"applicability\": [\n        \"Applies to accessory structures placed within rear yards\",\n        \"Applies to accessory structures placed within side yards\"\n      ],\n      \"exclusions\": [\n        \"Does not explicitly cover accessory structures in front yards\"\n      ],\n      \"notes\": [\n        \"Height measured to the top of roof material per Figure 42\",\n        \"The term 'accessory structure' is not defined on this page\"\n      ]\n    },\n    \"Variables\": [\n      {\n        \"name\": \"location_in_yard\",\n        \"description\": \"Yard location of the accessory structure\",\n        \"allowed_values\": [\n          \"rear\",\n          \"side\"\n        ]\n      },\n      {\n        \"name\": \"height_to_roof_peak_ft\",\n        \"description\": \"Vertical height measured to the top of roof material at the roof peak\",\n        \"unit\": \"ft\"\n      }\n    ],\n    \"Constants\": [\n      {\n        \"name\": \"max_height_accessory_rear_side\",\n        \"value\": 12,\n        \"unit\": \"ft\"\n      },\n      {\n        \"name\": \"height_measurement_reference\",\n        \"value\": \"Top of roof material at roof peak\",\n        \"unit\": \"n/a\"\n      }\n    ],\n    \"Conditions\": [\n      {\n        \"type\": \"mandatory\",\n        \"statement\": \"If location_in_yard \u2208 {rear, side}, then height_to_roof_peak_ft <= 12 ft\"\n      }\n    ],\n    \"Exceptions\": [],\n    \"Relationships\": {\n      \"depends_on_rules\": [\n        \"R6-HEIGHT-MEASURE-REFERENCE\"\n      ],\n      \"cross_references\": [\n        {\n          \"code_section\": \"18.12.040(a) Table 2\",\n          \"source_page\": 46\n        },\n        {\n          \"code_section\": \"18.04.030(64)(b)\",\n          \"source_page\": 47\n        },\n        {\n          \"figure\": \"Figure 42\",\n          \"subject\": \"Height measurement reference\"\n        }\n      ]\n    }\n  },\n  {\n    \"rule_id\": \"R4-HEIGHT-SECOND-DWELLING-UNIT\",\n    \"title\": \"Maximum height for 2nd-dwelling units\",\n    \"Qualifiers\": {\n      \"scope\": \"Second-dwelling units (2nd-dwelling units)\",\n      \"applicability\": [\n        \"Applies to designated second-dwelling/residential accessory dwelling units\"\n      ],\n      \"exclusions\": [\n        \"Does not apply to main dwellings\",\n        \"Does not apply to non-dwelling accessory structures\"\n      ],\n      \"notes\": [\n        \"Height measured to the top of roof material per Figure 42\",\n        \"Term '2nd-dwelling units' is not defined on this page; attachment/detachment status not specified\"\n      ]\n    },\n    \"Variables\": [\n      {\n        \"name\": \"height_to_roof_peak_ft\",\n        \"description\": \"Vertical height measured to the top of roof material at the roof peak\",\n        \"unit\": \"ft\"\n      }\n    ],\n    \"Constants\": [\n      {\n        \"name\": \"max_height_second_dwelling_unit\",\n        \"value\": 17,\n        \"unit\": \"ft\"\n      },\n      {\n        \"name\": \"height_measurement_reference\",\n        \"value\": \"Top of roof material at roof peak\",\n        \"unit\": \"n/a\"\n      }\n    ],\n    \"Conditions\": [\n      {\n        \"type\": \"mandatory\",\n        \"statement\": \"height_to_roof_peak_ft <= 17 ft\"\n      }\n    ],\n    \"Exceptions\": [],\n    \"Relationships\": {\n      \"depends_on_rules\": [\n        \"R6-HEIGHT-MEASURE-REFERENCE\"\n      ],\n      \"cross_references\": [\n        {\n          \"code_section\": \"18.12.040(a) Table 2\",\n          \"source_page\": 46\n        },\n        {\n          \"code_section\": \"18.04.030(64)(b)\",\n          \"source_page\": 47\n        },\n        {\n          \"figure\": \"Figure 42\",\n          \"subject\": \"Height measurement reference\"\n        }\n      ]\n    }\n  },\n  {\n    \"rule_id\": \"R5-SLOPE-DEFINITION\",\n    \"title\": \"Definition and method for determining roof slope\",\n    \"Qualifiers\": {\n      \"scope\": \"All roof slope determinations referenced by height regulations on this page\",\n      \"applicability\": [\n        \"Applies to calculating roof slope for comparison against thresholds (e.g., 12:12)\"\n      ],\n      \"exclusions\": [],\n      \"notes\": [\n        \"Roof slope is defined as the vertical rise in inches per 12 inches of horizontal distance (run)\",\n        \"On drawings, slope may be represented as rise:run (e.g., 6:12)\",\n        \"Ambiguity: The page also shows fraction representations with numbers above/below a line that appear as run over rise (e.g., 12 over 6, then 2 over 1), which conflicts with the stated rise:run convention. For validation, use rise:run with 12 in run.\"\n      ]\n    },\n    \"Variables\": [\n      {\n        \"name\": \"rise_in\",\n        \"description\": \"Vertical rise\",\n        \"unit\": \"in\",\n        \"allowed_range\": \">= 0\"\n      },\n      {\n        \"name\": \"run_in\",\n        \"description\": \"Horizontal run; for roof slope determination standardized to 12 inches\",\n        \"unit\": \"in\",\n        \"allowed_values\": [\n          12\n        ]\n      },\n      {\n        \"name\": \"slope_ratio\",\n        \"description\": \"Roof slope expressed as rise:run\",\n        \"unit\": \"ratio (dimensionless)\",\n        \"derived_from\": \"rise_in : run_in\"\n      }\n    ],\n    \"Constants\": [\n      {\n        \"name\": \"standard_run\",\n        \"value\": 12,\n        \"unit\": \"in\"\n      },\n      {\n        \"name\": \"example_slope_rise_run\",\n        \"value\": \"6:12\",\n        \"unit\": \"ratio (rise:run)\",\n        \"notes\": \"Example provided on page\"\n      }\n    ],\n    \"Conditions\": [\n      {\n        \"type\": \"procedure\",\n        \"steps\": [\n          \"Set run_in = 12 in\",\n          \"Measure rise_in in inches corresponding to that 12 in horizontal run\",\n          \"Express slope_ratio as rise_in:run_in (rise:run)\",\n          \"Use slope_ratio for any threshold comparisons (e.g., against 12:12)\"\n        ]\n      }\n    ],\n    \"Exceptions\": [],\n    \"Relationships\": {\n      \"used_by_rules\": [\n        \"R1-HEIGHT-STANDARD-DWELLING\"\n      ],\n      \"cross_references\": [\n        {\n          \"figure\": \"Figure 43\",\n          \"subject\": \"Determining slope of roof\"\n        }\n      ]\n    }\n  },\n  {\n    \"rule_id\": \"R6-HEIGHT-MEASURE-REFERENCE\",\n    \"title\": \"Reference point for measuring building height\",\n    \"Qualifiers\": {\n      \"scope\": \"All structures subject to height limits on this page\",\n      \"applicability\": [\n        \"Main dwellings on standard lots\",\n        \"Main dwellings on substandard or flag lots\",\n        \"Accessory structures in rear or side yard\",\n        \"2nd-dwelling units\"\n      ],\n      \"exclusions\": [],\n      \"notes\": [\n        \"Caption in Figure 42 states: 'Height measured to top of roof material'\",\n        \"Interpreted to mean height to roof peak is taken at the top surface of the roof material\"\n      ]\n    },\n    \"Variables\": [\n      {\n        \"name\": \"height_measurement_point\",\n        \"description\": \"Physical point at which height is measured\",\n        \"allowed_values\": [\n          \"Top of roof material at roof peak\"\n        ]\n      }\n    ],\n    \"Constants\": [\n      {\n        \"name\": \"height_reference_surface\",\n        \"value\": \"Top of roof material\",\n        \"unit\": \"n/a\"\n      }\n    ],\n    \"Conditions\": [\n      {\n        \"type\": \"mandatory\",\n        \"statement\": \"All height measurements to roof peak shall be taken to the top of roof material\"\n      }\n    ],\n    \"Exceptions\": [],\n    \"Relationships\": {\n      \"used_by_rules\": [\n        \"R1-HEIGHT-STANDARD-DWELLING\",\n        \"R2-HEIGHT-SUBSTANDARD-FLAG-DWELLING\",\n        \"R3-HEIGHT-ACCESSORY-STRUCTURE\",\n        \"R4-HEIGHT-SECOND-DWELLING-UNIT\"\n      ],\n      \"cross_references\": [\n        {\n          \"figure\": \"Figure 42\",\n          \"subject\": \"Height measurement reference\"\n        }\n      ]\n    }\n  }\n]",
+    "response_time": 90.6134238243103,
+    "input_tokens": 861,
+    "output_tokens": 7361,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 15:55:58",
+  "model": "openai/gpt-5",
+  "success": true
+}

@@ -1,0 +1,90 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_35.png",
+  "image_name": "Page_35.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Allowable daylight plane protrusions summary\n\nFeature                      Allowable protrusion                                                                 Illustration\n\nTelevision and radio antennas  up to 15' above maximum building height\n\nChimneys and flues < 5' wide  may extend beyond the daylight plane to meet minimum required clearance of Building Code (Chapter 16.04)  Fig 20 on p. 26\n\nDormers, roof decks, gables, or similar architectural features  each feature \u2264 7.5' long and cumulative length of all features \u2264 15' with min 5' separation between features (on each side); height \u2264 24';  Fig 20 on p. 26 & Fig 23 on p. 28\n\nCornices, eaves, and similar architectural features (excluding flat or continuous walls or enclosures usable for interior space)  max 2'  Fig 22 on p. 27\n\n29",
+      "visual_elements": [
+        {
+          "type": "table",
+          "description": "A summary table listing features, their allowable protrusions beyond the daylight plane, and references to illustrations. The table has three columns: Feature, Allowable protrusion, and Illustration. Features include Television and radio antennas, Chimneys and flues < 5' wide, Dormers/roof decks/gables or similar architectural features, and Cornices/eaves and similar architectural features. Allowable protrusions specify height or length limits and conditions. Illustrations are referenced by figure numbers and page numbers.",
+          "location": "Center of the page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Television and radio antennas allowable protrusion",
+          "value_type": "Measurement",
+          "value": "up to 15",
+          "unit": "feet above maximum building height"
+        },
+        {
+          "parameter": "Chimneys and flues width",
+          "value_type": "Measurement",
+          "value": "< 5",
+          "unit": "feet wide"
+        },
+        {
+          "parameter": "Chimneys and flues allowable protrusion",
+          "value_type": "Text",
+          "value": "may extend beyond the daylight plane to meet minimum required clearance of Building Code (Chapter 16.04)",
+          "unit": "None"
+        },
+        {
+          "parameter": "Dormers, roof decks, gables or similar architectural features - each feature length",
+          "value_type": "Measurement",
+          "value": "\u2264 7.5",
+          "unit": "feet long"
+        },
+        {
+          "parameter": "Dormers, roof decks, gables or similar architectural features - cumulative length of all features",
+          "value_type": "Measurement",
+          "value": "\u2264 15",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Dormers, roof decks, gables or similar architectural features - minimum separation between features",
+          "value_type": "Measurement",
+          "value": "5",
+          "unit": "feet (on each side)"
+        },
+        {
+          "parameter": "Dormers, roof decks, gables or similar architectural features - height",
+          "value_type": "Measurement",
+          "value": "\u2264 24",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Cornices, eaves, and similar architectural features maximum protrusion",
+          "value_type": "Measurement",
+          "value": "max 2",
+          "unit": "feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Allowable daylight plane protrusions summary",
+        "subheadings": [],
+        "sections": []
+      },
+      "additional_notes": [
+        "Page number 29 at bottom right corner",
+        "No handwritten annotations, stamps, or markings detected",
+        "Layout consists of a single centered table under a bold heading with three columns separated by horizontal lines"
+      ],
+      "cross_references": [
+        "Fig 20 on p. 26",
+        "Fig 23 on p. 28",
+        "Fig 22 on p. 27",
+        "Building Code (Chapter 16.04)"
+      ],
+      "conditions_and_qualifiers": {
+        "qualifiers": [],
+        "conditions": [],
+        "logical_relationships": [],
+        "execution_sequence": []
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:27:19",
+  "model_used": "openai/gpt-4.1-mini"
+}

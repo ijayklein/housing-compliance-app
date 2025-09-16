@@ -1,0 +1,193 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_25.md",
+  "file_name": "Page_25.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "rule": "Fireplaces and Gross Floor Area",
+        "Qualifiers": {
+          "Scope": "Fireplaces",
+          "Applicability": "All configurations and designs",
+          "Exclusions": null
+        },
+        "Variables": {
+          "Dimensional": null,
+          "Material": null,
+          "Environmental": null,
+          "Usage": "Gross floor area inclusion"
+        },
+        "Constants": {
+          "Numerical values": null,
+          "Specs": null,
+          "Standards": null,
+          "Procedures": "Counted one time"
+        },
+        "Conditions": {
+          "Mandatory": "Fireplaces shall be included in the gross floor area",
+          "Optional": null,
+          "Conditional logic": null,
+          "Dependencies": null
+        },
+        "Exceptions": {
+          "Explicit deviations": "Fireplaces not connected to the house are treated like accessory structures",
+          "Alternatives": null,
+          "Special cases": "Count towards FAR if greater than 120 s.f.; Count towards lot coverage always"
+        },
+        "Relationships": {
+          "Hierarchical": null,
+          "Cross-references": null,
+          "Logical dependencies": null
+        }
+      },
+      {
+        "rule": "Sheds, Planters, and Other Projections",
+        "Qualifiers": {
+          "Scope": "Sheds, planters, and other projections",
+          "Applicability": "Higher than 5'",
+          "Exclusions": null
+        },
+        "Variables": {
+          "Dimensional": "Height greater than 5'",
+          "Material": null,
+          "Environmental": null,
+          "Usage": "Gross floor area inclusion"
+        },
+        "Constants": {
+          "Numerical values": "5'",
+          "Specs": null,
+          "Standards": null,
+          "Procedures": "Count toward gross floor area"
+        },
+        "Conditions": {
+          "Mandatory": "Sheds, planters, and other projections that are higher than 5' count toward gross floor area",
+          "Optional": null,
+          "Conditional logic": null,
+          "Dependencies": null
+        },
+        "Exceptions": {
+          "Explicit deviations": null,
+          "Alternatives": null,
+          "Special cases": null
+        },
+        "Relationships": {
+          "Hierarchical": null,
+          "Cross-references": null,
+          "Logical dependencies": null
+        }
+      },
+      {
+        "rule": "Chimneys and Gross Floor Area",
+        "Qualifiers": {
+          "Scope": "Chimneys",
+          "Applicability": "All configurations",
+          "Exclusions": "Chimneys on the upper floors"
+        },
+        "Variables": {
+          "Dimensional": null,
+          "Material": null,
+          "Environmental": null,
+          "Usage": "Gross floor area inclusion"
+        },
+        "Constants": {
+          "Numerical values": null,
+          "Specs": null,
+          "Standards": null,
+          "Procedures": "Count once towards the gross floor area"
+        },
+        "Conditions": {
+          "Mandatory": "All configurations of chimneys count once towards the gross floor area",
+          "Optional": null,
+          "Conditional logic": null,
+          "Dependencies": null
+        },
+        "Exceptions": {
+          "Explicit deviations": "Chimneys on the upper floors do not count",
+          "Alternatives": null,
+          "Special cases": null
+        },
+        "Relationships": {
+          "Hierarchical": null,
+          "Cross-references": null,
+          "Logical dependencies": null
+        }
+      },
+      {
+        "rule": "Miscellaneous Appendages and Gross Floor Area",
+        "Qualifiers": {
+          "Scope": "Miscellaneous appendages",
+          "Applicability": "Greater than 5' in height",
+          "Exclusions": "May not be located in the required yards"
+        },
+        "Variables": {
+          "Dimensional": "Height greater than 5'",
+          "Material": null,
+          "Environmental": null,
+          "Usage": "Gross floor area inclusion"
+        },
+        "Constants": {
+          "Numerical values": "5'",
+          "Specs": null,
+          "Standards": null,
+          "Procedures": "Count toward gross floor area"
+        },
+        "Conditions": {
+          "Mandatory": "Miscellaneous appendages greater than 5' in height do count toward gross floor area",
+          "Optional": null,
+          "Conditional logic": null,
+          "Dependencies": null
+        },
+        "Exceptions": {
+          "Explicit deviations": "Neither appendages nor noise-producing equipment may be located in the required yards",
+          "Alternatives": null,
+          "Special cases": null
+        },
+        "Relationships": {
+          "Hierarchical": null,
+          "Cross-references": null,
+          "Logical dependencies": null
+        }
+      },
+      {
+        "rule": "Prohibition of New Wood-Burning Fireplaces",
+        "Qualifiers": {
+          "Scope": "New wood-burning fireplaces",
+          "Applicability": "City of Palo Alto",
+          "Exclusions": null
+        },
+        "Variables": {
+          "Dimensional": null,
+          "Material": "Wood-burning",
+          "Environmental": null,
+          "Usage": "Construction prohibition"
+        },
+        "Constants": {
+          "Numerical values": "Year 2000",
+          "Specs": null,
+          "Standards": "Ordinance",
+          "Procedures": "Prohibition of construction"
+        },
+        "Conditions": {
+          "Mandatory": "Prohibition of the construction of new wood-burning fireplaces",
+          "Optional": null,
+          "Conditional logic": null,
+          "Dependencies": null
+        },
+        "Exceptions": {
+          "Explicit deviations": "Possible exceptions detailed in Chapter 9.06.030",
+          "Alternatives": null,
+          "Special cases": null
+        },
+        "Relationships": {
+          "Hierarchical": null,
+          "Cross-references": "See Chapter 9.06.030 for details and exceptions",
+          "Logical dependencies": null
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n    {\n        \"rule\": \"Fireplaces and Gross Floor Area\",\n        \"Qualifiers\": {\n            \"Scope\": \"Fireplaces\",\n            \"Applicability\": \"All configurations and designs\",\n            \"Exclusions\": null\n        },\n        \"Variables\": {\n            \"Dimensional\": null,\n            \"Material\": null,\n            \"Environmental\": null,\n            \"Usage\": \"Gross floor area inclusion\"\n        },\n        \"Constants\": {\n            \"Numerical values\": null,\n            \"Specs\": null,\n            \"Standards\": null,\n            \"Procedures\": \"Counted one time\"\n        },\n        \"Conditions\": {\n            \"Mandatory\": \"Fireplaces shall be included in the gross floor area\",\n            \"Optional\": null,\n            \"Conditional logic\": null,\n            \"Dependencies\": null\n        },\n        \"Exceptions\": {\n            \"Explicit deviations\": \"Fireplaces not connected to the house are treated like accessory structures\",\n            \"Alternatives\": null,\n            \"Special cases\": \"Count towards FAR if greater than 120 s.f.; Count towards lot coverage always\"\n        },\n        \"Relationships\": {\n            \"Hierarchical\": null,\n            \"Cross-references\": null,\n            \"Logical dependencies\": null\n        }\n    },\n    {\n        \"rule\": \"Sheds, Planters, and Other Projections\",\n        \"Qualifiers\": {\n            \"Scope\": \"Sheds, planters, and other projections\",\n            \"Applicability\": \"Higher than 5'\",\n            \"Exclusions\": null\n        },\n        \"Variables\": {\n            \"Dimensional\": \"Height greater than 5'\",\n            \"Material\": null,\n            \"Environmental\": null,\n            \"Usage\": \"Gross floor area inclusion\"\n        },\n        \"Constants\": {\n            \"Numerical values\": \"5'\",\n            \"Specs\": null,\n            \"Standards\": null,\n            \"Procedures\": \"Count toward gross floor area\"\n        },\n        \"Conditions\": {\n            \"Mandatory\": \"Sheds, planters, and other projections that are higher than 5' count toward gross floor area\",\n            \"Optional\": null,\n            \"Conditional logic\": null,\n            \"Dependencies\": null\n        },\n        \"Exceptions\": {\n            \"Explicit deviations\": null,\n            \"Alternatives\": null,\n            \"Special cases\": null\n        },\n        \"Relationships\": {\n            \"Hierarchical\": null,\n            \"Cross-references\": null,\n            \"Logical dependencies\": null\n        }\n    },\n    {\n        \"rule\": \"Chimneys and Gross Floor Area\",\n        \"Qualifiers\": {\n            \"Scope\": \"Chimneys\",\n            \"Applicability\": \"All configurations\",\n            \"Exclusions\": \"Chimneys on the upper floors\"\n        },\n        \"Variables\": {\n            \"Dimensional\": null,\n            \"Material\": null,\n            \"Environmental\": null,\n            \"Usage\": \"Gross floor area inclusion\"\n        },\n        \"Constants\": {\n            \"Numerical values\": null,\n            \"Specs\": null,\n            \"Standards\": null,\n            \"Procedures\": \"Count once towards the gross floor area\"\n        },\n        \"Conditions\": {\n            \"Mandatory\": \"All configurations of chimneys count once towards the gross floor area\",\n            \"Optional\": null,\n            \"Conditional logic\": null,\n            \"Dependencies\": null\n        },\n        \"Exceptions\": {\n            \"Explicit deviations\": \"Chimneys on the upper floors do not count\",\n            \"Alternatives\": null,\n            \"Special cases\": null\n        },\n        \"Relationships\": {\n            \"Hierarchical\": null,\n            \"Cross-references\": null,\n            \"Logical dependencies\": null\n        }\n    },\n    {\n        \"rule\": \"Miscellaneous Appendages and Gross Floor Area\",\n        \"Qualifiers\": {\n            \"Scope\": \"Miscellaneous appendages\",\n            \"Applicability\": \"Greater than 5' in height\",\n            \"Exclusions\": \"May not be located in the required yards\"\n        },\n        \"Variables\": {\n            \"Dimensional\": \"Height greater than 5'\",\n            \"Material\": null,\n            \"Environmental\": null,\n            \"Usage\": \"Gross floor area inclusion\"\n        },\n        \"Constants\": {\n            \"Numerical values\": \"5'\",\n            \"Specs\": null,\n            \"Standards\": null,\n            \"Procedures\": \"Count toward gross floor area\"\n        },\n        \"Conditions\": {\n            \"Mandatory\": \"Miscellaneous appendages greater than 5' in height do count toward gross floor area\",\n            \"Optional\": null,\n            \"Conditional logic\": null,\n            \"Dependencies\": null\n        },\n        \"Exceptions\": {\n            \"Explicit deviations\": \"Neither appendages nor noise-producing equipment may be located in the required yards\",\n            \"Alternatives\": null,\n            \"Special cases\": null\n        },\n        \"Relationships\": {\n            \"Hierarchical\": null,\n            \"Cross-references\": null,\n            \"Logical dependencies\": null\n        }\n    },\n    {\n        \"rule\": \"Prohibition of New Wood-Burning Fireplaces\",\n        \"Qualifiers\": {\n            \"Scope\": \"New wood-burning fireplaces\",\n            \"Applicability\": \"City of Palo Alto\",\n            \"Exclusions\": null\n        },\n        \"Variables\": {\n            \"Dimensional\": null,\n            \"Material\": \"Wood-burning\",\n            \"Environmental\": null,\n            \"Usage\": \"Construction prohibition\"\n        },\n        \"Constants\": {\n            \"Numerical values\": \"Year 2000\",\n            \"Specs\": null,\n            \"Standards\": \"Ordinance\",\n            \"Procedures\": \"Prohibition of construction\"\n        },\n        \"Conditions\": {\n            \"Mandatory\": \"Prohibition of the construction of new wood-burning fireplaces\",\n            \"Optional\": null,\n            \"Conditional logic\": null,\n            \"Dependencies\": null\n        },\n        \"Exceptions\": {\n            \"Explicit deviations\": \"Possible exceptions detailed in Chapter 9.06.030\",\n            \"Alternatives\": null,\n            \"Special cases\": null\n        },\n        \"Relationships\": {\n            \"Hierarchical\": null,\n            \"Cross-references\": \"See Chapter 9.06.030 for details and exceptions\",\n            \"Logical dependencies\": null\n        }\n    }\n]\n```"
+  },
+  "timestamp": "2025-09-16 14:42:33",
+  "model": "openai/gpt-4o",
+  "success": true
+}

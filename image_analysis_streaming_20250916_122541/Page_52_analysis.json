@@ -1,0 +1,23 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_52.png",
+  "image_name": "Page_52.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "PARSE_ERROR",
+      "visual_elements": [],
+      "technical_specifications": [],
+      "structural_elements": {
+        "main_heading": "",
+        "subheadings": [],
+        "sections": []
+      },
+      "additional_notes": [
+        "Failed to parse LLM response: Expecting value: line 1 column 1 (char 0)"
+      ],
+      "cross_references": []
+    },
+    "raw_response": "The following information is extracted from the provided images:\n\n**Height & Grade**\n\n**Height Allowances:**\nHeight allowances enable a variety of architectural styles while preserving the residential scale of neighborhoods, as well as the privacy and natural light available to each lot.\n\n**Structure and Max. Height to Roof Peak:**\n*   Main dwelling on a standard lot with a roof slope <12:12: 30'\n*   Main dwelling on a standard lot with a roof slope \u226512:12: 33'\n*   Main dwelling on a substandard or flag lot: 17'\n*   Accessory structure in rear or side yard: 12'\n*   2nd-dwelling units: 17'\n\n**Fig 43 Determining slope of roof:**\n*   Roof slope is the vertical rise in inches for every horizontal distance of twelve inches (called the \"run\"). It is expressed as rise:run or, in this example 6:12.\n*   Note: On a drawing this slope might also be represented as: 6/12 or 1/2.\n*   An illustration shows a roof with a 12\" run and a 6\" rise.\n\n**Fig 42 Comparison of roof slopes:**\n*   Height measured to top of roof material.\n*   **Height limit = 33'**: Applies to roofs with slopes 12:14 and 12:12.\n*   **Height limit = 30'**: Applies to roofs with slopes 12:10, 12:6, and 12:3.\n\n**Code sections:**\n*   Page 46\n*   18.12.040 (a) Table 2\n*   Page 47\n*   18.04.030 (64) (b)"
+  },
+  "analysis_timestamp": "2025-09-16 12:26:02",
+  "model_used": "google/gemini-2.5-flash"
+}

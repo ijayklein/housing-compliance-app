@@ -1,0 +1,12 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_27.png",
+  "image_name": "Page_27.png",
+  "analysis": {
+    "raw_content": "The following information has been extracted from the provided images:\n\n**Title:** Contextual front setbacks\n\n**Rule for Contextual Setbacks:**\nContextual setbacks apply if, and only if, the average of the existing setbacks on the same side of the block is 30' or greater.\n\n**How to determine if a contextual setback applies (using Fig 15 below, as an example):**\n\n1.  **Does block have more than 3 lots? (incl project lot)**\n    *   **Note:** If block is more than 600' long, consider only lots within 600' (max. 10 lots).\n\n2.  **If Yes:** Exclude the following types of lots:\n    *   Flag lot (C)\n    *   Multi-family use w/ 3+ units (G)\n    *   Corner lot facing cross street (H)\n\n3.  **Is the number of remaining lots more or less than 5 or more?**\n\n4.  **If Yes (to the previous step, implying 5 or more remaining lots):** Exclude the smallest and largest setbacks:\n    *   Smallest (D)\n    *   Largest (E)\n\n5.  **Calculation Example:**\n    *   30 (A)\n    *   33 (B)\n    *   + 35 (F)\n    *   98 \u00f7 3 = 32.7\n\n6.  **Final Step:** Find the average of the remaining lots (incl. subject lot). If greater than 30', it applies.\n\n**Fig 15 Example of a block with a contextual setback of 32.7'**\n\n**Diagram Elements and Setbacks:**\n*   **A:** Single-Family, 30' setback\n*   **B:** Single-Family, 33' setback\n*   **C:** Flag lot (crossed out)\n*   **D:** Single-Family, 20' setback (crossed out)\n*   **E:** Single-Family, 37' setback (crossed out)\n*   **F:** Single-Family, 35' setback\n*   **G:** Multiple-Family (3 + units), \"na\" setback (crossed out)\n*   **H:** Lot fronts onto other street, \"na\" setback (Street sideyard) (crossed out)\n\n**Key:**\n*   Lot line (dashed line)\n*   Sidewalk (hatched pattern)\n*   Curb (thick solid line)\n*   Required setbacks (dashed line with square corners)\n*   Buildable area (light gray shaded area)\n*   Existing house (dark gray solid rectangle)",
+    "content_length": 1874,
+    "parse_error": false
+  },
+  "timestamp": "2025-09-16 12:52:45",
+  "model": "google/gemini-2.5-flash",
+  "success": true
+}

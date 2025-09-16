@@ -1,0 +1,58 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_48.md",
+  "file_name": "Page_48.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "rule": "Light Well & Stairwell Standards",
+        "Qualifiers": {
+          "Scope": "Standards for the design, placement, and dimensions of excavated features such as light wells and stairwells.",
+          "Applicability": "Applies to all excavated features (light wells, stairwells) on a property, particularly in relation to required yards and setbacks.",
+          "Exclusions": "Features are not permitted on the side of the structure that faces the front yard."
+        },
+        "Variables": {
+          "feature_width": "The interior dimension of the width of a single excavated feature.",
+          "combined_length_all_features": "The sum of the interior lengths of all excavated features on the property, excluding the encasing structure.",
+          "basement_perimeter": "The total perimeter of the building's basement.",
+          "side_yard_encroachment": "The distance a feature extends into a required side yard.",
+          "distance_from_side_lot_line": "The distance from the feature to the side lot line.",
+          "rear_yard_encroachment": "The distance a feature extends into a required rear yard.",
+          "combined_length_encroaching_features": "The sum of the interior lengths of all features or portions of features that encroach into any required yard (side or rear)."
+        },
+        "Constants": {
+          "max_feature_width": "3 feet (interior dimension)",
+          "max_total_length_ratio": "30% of basement perimeter",
+          "max_side_yard_encroachment": "3 feet",
+          "min_distance_from_side_lot_line": "3 feet",
+          "max_rear_yard_encroachment": "4 feet",
+          "max_combined_length_of_encroaching_features": "15 feet (interior dimension)",
+          "measurement_basis": "Measurements are based on the interior dimension of the opening and exclude the encasing structure."
+        },
+        "Conditions": {
+          "Mandatory": "The drainage system for the features must be approved by the Public Works Department.",
+          "Conditional Logic": "IF a feature encroaches into a required side yard, THEN the encroachment must be <= 3 feet AND the feature must be >= 3 feet from the side lot line.",
+          "Mandatory (Ambiguous)": "Excavated features shall not be harmful to neighboring trees. (Note: 'harmful' is not quantitatively defined, making automated validation difficult)."
+        },
+        "Exceptions": {
+          "Explicit Deviations": "None specified in the provided text.",
+          "Alternatives": "None specified in the provided text.",
+          "Special Cases": "None specified in the provided text."
+        },
+        "Relationships": {
+          "Hierarchical": "These standards are a component of overall site planning regulations.",
+          "Cross-references": "Refers to 'Figure 39' for visual examples. Requires procedural approval from an external entity: 'Public Works Department'.",
+          "Logical Dependencies": "The total length of encroaching features (max 15') is a subset of the total length of all features (max 30% of basement perimeter). The side yard encroachment rule is a compound condition with two constraints that must both be met."
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n  {\n    \"rule\": \"Light Well & Stairwell Standards\",\n    \"Qualifiers\": {\n      \"Scope\": \"Standards for the design, placement, and dimensions of excavated features such as light wells and stairwells.\",\n      \"Applicability\": \"Applies to all excavated features (light wells, stairwells) on a property, particularly in relation to required yards and setbacks.\",\n      \"Exclusions\": \"Features are not permitted on the side of the structure that faces the front yard.\"\n    },\n    \"Variables\": {\n      \"feature_width\": \"The interior dimension of the width of a single excavated feature.\",\n      \"combined_length_all_features\": \"The sum of the interior lengths of all excavated features on the property, excluding the encasing structure.\",\n      \"basement_perimeter\": \"The total perimeter of the building's basement.\",\n      \"side_yard_encroachment\": \"The distance a feature extends into a required side yard.\",\n      \"distance_from_side_lot_line\": \"The distance from the feature to the side lot line.\",\n      \"rear_yard_encroachment\": \"The distance a feature extends into a required rear yard.\",\n      \"combined_length_encroaching_features\": \"The sum of the interior lengths of all features or portions of features that encroach into any required yard (side or rear).\"\n    },\n    \"Constants\": {\n      \"max_feature_width\": \"3 feet (interior dimension)\",\n      \"max_total_length_ratio\": \"30% of basement perimeter\",\n      \"max_side_yard_encroachment\": \"3 feet\",\n      \"min_distance_from_side_lot_line\": \"3 feet\",\n      \"max_rear_yard_encroachment\": \"4 feet\",\n      \"max_combined_length_of_encroaching_features\": \"15 feet (interior dimension)\",\n      \"measurement_basis\": \"Measurements are based on the interior dimension of the opening and exclude the encasing structure.\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"Features may not be located on the side of the structure that faces the front yard.\",\n      \"Conditional Logic\": \"IF a feature encroaches into a required side yard, THEN the encroachment must be <= 3 feet AND the feature must be >= 3 feet from the side lot line.\",\n      \"Mandatory\": \"The combined length of all excavated features may not exceed 30% of the basement perimeter.\",\n      \"Mandatory\": \"The combined length of all features (or portions) that encroach into required yards may not exceed 15 feet.\",\n      \"Mandatory\": \"The drainage system for the features must be approved by the Public Works Department.\",\n      \"Mandatory (Ambiguous)\": \"Excavated features shall not be harmful to neighboring trees. (Note: 'harmful' is not quantitatively defined, making automated validation difficult).\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"None specified in the provided text.\",\n      \"Alternatives\": \"None specified in the provided text.\",\n      \"Special Cases\": \"None specified in the provided text.\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"These standards are a component of overall site planning regulations.\",\n      \"Cross-references\": \"Refers to 'Figure 39' for visual examples. Requires procedural approval from an external entity: 'Public Works Department'.\",\n      \"Logical Dependencies\": \"The total length of encroaching features (max 15') is a subset of the total length of all features (max 30% of basement perimeter). The side yard encroachment rule is a compound condition with two constraints that must both be met.\"\n    }\n  }\n]\n```",
+    "response_time": 31.284016847610474,
+    "input_tokens": 1003,
+    "output_tokens": 3310,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 16:14:34",
+  "model": "google/gemini-2.5-pro",
+  "success": true
+}

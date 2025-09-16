@@ -1,0 +1,122 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_27.png",
+  "image_name": "Page_27.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Contextual front setbacks\n\nContextual setbacks apply if, and only if, the average of the existing setbacks on the same side of the block is 30' or greater.\n\nHow to determine if a contextual setback applies using Fig 15 below, as an example.\n\nDoes block have more than 3 lots? (incl. project lot)\n\nYes - Exclude the following types of lots:\n\u2022 Flag lot (C)\n\u2022 Multifamily use w/ 3+ units (G)\n\u2022 Corner lot facing cross street (H)\n\nIs the number of remaining lots more or less than 5 or more?\n\nYes - Exclude the smallest and largest setbacks:\n\u2022 Smallest (D)\n\u2022 Largest (E)\n\nFind the average of the remaining lots (incl. subject lot). If greater than 30', it applies.\n\n30 (A)\n33 (B)\n+ 35 (F)\n98 \u00f7 3 = (32.7)\n\nNote: If block is more than 600' long, consider only lots within 600' (max. 10 lots).\n\nFig 15 Example of a block with a contextual setback of 32.7'\n\nKey:\n--- Required setbacks\n\u2014 Lot line\n\u25a1 Buildable area\n\u25a0 Sidewalk\n\u25a0 Curb\n\u25a0 Existing house\n\n21",
+      "visual_elements": [
+        {
+          "type": "flowchart",
+          "description": "Decision tree flowchart showing the process for determining contextual setbacks, with rectangular boxes connected by arrows, starting with a question about block having more than 3 lots and proceeding through exclusion criteria and calculations",
+          "location": "upper middle portion of page"
+        },
+        {
+          "type": "diagram",
+          "description": "Block diagram labeled as Fig 15 showing a street layout with lots A through H, including single-family homes, multifamily buildings, and various setback measurements. Shows sidewalk, curb, lot lines, buildable areas, and existing houses with different shadings and line types",
+          "location": "bottom half of page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Contextual setback threshold",
+          "value": "30",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Block length consideration limit",
+          "value": "600",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Maximum lots to consider",
+          "value": "10",
+          "unit": "lots"
+        },
+        {
+          "parameter": "Minimum lots for contextual setback",
+          "value": "3",
+          "unit": "lots"
+        },
+        {
+          "parameter": "Multifamily unit threshold",
+          "value": "3",
+          "unit": "units"
+        },
+        {
+          "parameter": "Example setback lot A",
+          "value": "30",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Example setback lot B",
+          "value": "33",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Example setback lot F",
+          "value": "35",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Calculated contextual setback",
+          "value": "32.7",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Setback measurement lot C",
+          "value": "20",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Setback measurement lot D",
+          "value": "33",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Setback measurement lot E",
+          "value": "37",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Setback measurement lot F",
+          "value": "35",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Setback measurement lot G",
+          "value": "10",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Setback measurement lot H",
+          "value": "10",
+          "unit": "feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Contextual front setbacks",
+        "subheadings": [
+          "How to determine if a contextual setback applies"
+        ],
+        "sections": [
+          "Fig 15",
+          "Key"
+        ]
+      },
+      "additional_notes": [
+        "Page number 21 appears at bottom right",
+        "Gray shaded box contains the main rule for contextual setbacks",
+        "Calculation example shows 98 \u00f7 3 = 32.7 with the result circled",
+        "Letters A through H are used to label different lots in the diagram",
+        "Various building types are indicated including Single-Family and Multifamily buildings"
+      ],
+      "cross_references": [
+        "Fig 15 below, as an example",
+        "incl. project lot",
+        "incl. subject lot"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-11 13:44:45",
+  "model_used": "anthropic/claude-sonnet-4"
+}

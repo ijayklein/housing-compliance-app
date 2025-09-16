@@ -1,0 +1,65 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_14.md",
+  "file_name": "Page_14.md",
+  "analysis": {
+    "extracted_rules": {
+      "rules": [
+        {
+          "title": "Roofed porches on the 1st floor",
+          "subheading": "How to determine if a porch is at least 50% open",
+          "qualifiers": {
+            "scope": "Applies to roofed porches on the 1st floor",
+            "applicability": "Determining openness of porches",
+            "exclusions": "None specified"
+          },
+          "variables": {
+            "dimensional": {
+              "perimeter": "70 linear feet",
+              "segments": {
+                "A": "2 feet",
+                "B": "8 feet",
+                "C": "10 feet",
+                "D": "7 feet",
+                "E": "14 feet",
+                "F": "24 feet",
+                "G": "2 feet"
+              }
+            },
+            "material": "Not specified",
+            "environmental": "Not specified",
+            "usage": "Not specified"
+          },
+          "constants": {
+            "numerical_values": {
+              "total_perimeter": "70 linear feet"
+            },
+            "specs": "Not specified",
+            "standards": "Not specified",
+            "procedures": "Determine the perimeter and compare closed and open segments"
+          },
+          "conditions": {
+            "mandatory": "Porch must be at least 50% open",
+            "optional": "None specified",
+            "conditional_logic": "Comparison of closed and open segments",
+            "dependencies": "Based on segment dimensions"
+          },
+          "exceptions": {
+            "explicit_deviations": "None specified",
+            "alternatives": "None specified",
+            "special_cases": "None specified"
+          },
+          "relationships": {
+            "hierarchical": "None specified",
+            "cross_references": "Figure 5",
+            "logical_dependencies": "Openness determined by segment comparison"
+          }
+        }
+      ]
+    },
+    "parse_error": false,
+    "raw_response": "```json\n{\n  \"rules\": [\n    {\n      \"title\": \"Roofed porches on the 1st floor\",\n      \"subheading\": \"How to determine if a porch is at least 50% open\",\n      \"qualifiers\": {\n        \"scope\": \"Applies to roofed porches on the 1st floor\",\n        \"applicability\": \"Determining openness of porches\",\n        \"exclusions\": \"None specified\"\n      },\n      \"variables\": {\n        \"dimensional\": {\n          \"perimeter\": \"70 linear feet\",\n          \"segments\": {\n            \"A\": \"2 feet\",\n            \"B\": \"8 feet\",\n            \"C\": \"10 feet\",\n            \"D\": \"7 feet\",\n            \"E\": \"14 feet\",\n            \"F\": \"24 feet\",\n            \"G\": \"2 feet\"\n          }\n        },\n        \"material\": \"Not specified\",\n        \"environmental\": \"Not specified\",\n        \"usage\": \"Not specified\"\n      },\n      \"constants\": {\n        \"numerical_values\": {\n          \"total_perimeter\": \"70 linear feet\"\n        },\n        \"specs\": \"Not specified\",\n        \"standards\": \"Not specified\",\n        \"procedures\": \"Determine the perimeter and compare closed and open segments\"\n      },\n      \"conditions\": {\n        \"mandatory\": \"Porch must be at least 50% open\",\n        \"optional\": \"None specified\",\n        \"conditional_logic\": \"Comparison of closed and open segments\",\n        \"dependencies\": \"Based on segment dimensions\"\n      },\n      \"exceptions\": {\n        \"explicit_deviations\": \"None specified\",\n        \"alternatives\": \"None specified\",\n        \"special_cases\": \"None specified\"\n      },\n      \"relationships\": {\n        \"hierarchical\": \"None specified\",\n        \"cross_references\": \"Figure 5\",\n        \"logical_dependencies\": \"Openness determined by segment comparison\"\n      }\n    }\n  ]\n}\n```"
+  },
+  "timestamp": "2025-09-16 14:42:08",
+  "model": "openai/gpt-4o",
+  "success": true
+}

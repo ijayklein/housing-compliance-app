@@ -1,0 +1,187 @@
+{
+  "file_path": "markdown_pages/Page_08.md",
+  "file_name": "Page_08.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "rule": "Lot size and building size",
+        "Qualifiers": {
+          "Scope": "Lot characteristics and development potential",
+          "Applicability": "All neighborhoods and city",
+          "Exclusions": null
+        },
+        "Variables": {
+          "Dimensional": "Lot area",
+          "Material": null,
+          "Environmental": null,
+          "Usage": "Building size based on lot area percentage"
+        },
+        "Constants": {
+          "Numerical values": null,
+          "Specs": null,
+          "Standards": null,
+          "Procedures": null
+        },
+        "Conditions": {
+          "Mandatory": "Building size is based on a percentage of the lot area",
+          "Optional": null,
+          "Conditional logic": null,
+          "Dependencies": null
+        },
+        "Exceptions": null,
+        "Relationships": null
+      },
+      {
+        "rule": "Minimum & maximum lot sizes",
+        "Qualifiers": {
+          "Scope": "Lot sizes in R-1 zones",
+          "Applicability": "Subdivisions in Palo Alto",
+          "Exclusions": null
+        },
+        "Variables": {
+          "Dimensional": {
+            "width": "\u2265 60'",
+            "depth": "\u2265 100'"
+          },
+          "Material": null,
+          "Environmental": null,
+          "Usage": null
+        },
+        "Constants": {
+          "Numerical values": {
+            "Zone District R-1": {
+              "Minimum": "6,000",
+              "Maximum": "9,999"
+            },
+            "Zone District R-1(7000)": {
+              "Minimum": "7,000",
+              "Maximum": "13,999"
+            },
+            "Zone District R-1(8000)": {
+              "Minimum": "8,000",
+              "Maximum": "15,999"
+            },
+            "Zone District R-1(10000)": {
+              "Minimum": "10,000",
+              "Maximum": "19,999"
+            },
+            "Zone District R-1(20000)": {
+              "Minimum": "20,000",
+              "Maximum": "39,999"
+            }
+          },
+          "Specs": null,
+          "Standards": null,
+          "Procedures": null
+        },
+        "Conditions": {
+          "Mandatory": "New lot must meet width, depth, and area requirements",
+          "Optional": null,
+          "Conditional logic": null,
+          "Dependencies": null
+        },
+        "Exceptions": {
+          "Explicit deviations": [
+            "Underlying lot lines removal with no net loss of housing",
+            "Combining substandard lot with another lot with no net loss of housing",
+            "Resultant number of lots increases or stays the same with no net loss of housing"
+          ],
+          "Alternatives": null,
+          "Special cases": null
+        },
+        "Relationships": null
+      },
+      {
+        "rule": "Substandard lots",
+        "Qualifiers": {
+          "Scope": "Substandard lot sizes in R-1 zones",
+          "Applicability": "Variety of lot sizes within each R-1 zone",
+          "Exclusions": null
+        },
+        "Variables": {
+          "Dimensional": {
+            "width": "< 50'",
+            "depth": "< 83'"
+          },
+          "Material": null,
+          "Environmental": null,
+          "Usage": null
+        },
+        "Constants": {
+          "Numerical values": {
+            "Zone District R-1": {
+              "Typical lot": "4,980",
+              "Flag lot": "5,976"
+            },
+            "Zone District R-1(7000)": {
+              "Typical lot": "5,810",
+              "Flag lot": "6,972"
+            },
+            "Zone District R-1(8000)": {
+              "Typical lot": "6,640",
+              "Flag lot": "7,968"
+            },
+            "Zone District R-1(10000)": {
+              "Typical lot": "8,300",
+              "Flag lot": "9,960"
+            },
+            "Zone District R-1(20000)": {
+              "Typical lot": "16,600",
+              "Flag lot": "19,920"
+            }
+          },
+          "Specs": null,
+          "Standards": null,
+          "Procedures": null
+        },
+        "Conditions": {
+          "Mandatory": "Lot must meet width, depth, and area criteria to be considered substandard",
+          "Optional": null,
+          "Conditional logic": null,
+          "Dependencies": null
+        },
+        "Exceptions": null,
+        "Relationships": null
+      },
+      {
+        "rule": "Special regulations for substandard lots",
+        "Qualifiers": {
+          "Scope": "Building regulations for substandard lots",
+          "Applicability": "Substandard lots in R-1 zones",
+          "Exclusions": null
+        },
+        "Variables": {
+          "Dimensional": {
+            "Maximum building height": "17'",
+            "Street-side yard for lots < 50' wide": "10'",
+            "Garage location for lots < 95' deep": "rear half of the lot"
+          },
+          "Material": null,
+          "Environmental": null,
+          "Usage": null
+        },
+        "Constants": {
+          "Numerical values": null,
+          "Specs": null,
+          "Standards": null,
+          "Procedures": null
+        },
+        "Conditions": {
+          "Mandatory": "Building height, street-side yard, and garage location requirements",
+          "Optional": null,
+          "Conditional logic": null,
+          "Dependencies": null
+        },
+        "Exceptions": null,
+        "Relationships": {
+          "Hierarchical": "Figure 15 C on p. 23"
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n    {\n        \"rule\": \"Lot size and building size\",\n        \"Qualifiers\": {\n            \"Scope\": \"Lot characteristics and development potential\",\n            \"Applicability\": \"All neighborhoods and city\",\n            \"Exclusions\": null\n        },\n        \"Variables\": {\n            \"Dimensional\": \"Lot area\",\n            \"Material\": null,\n            \"Environmental\": null,\n            \"Usage\": \"Building size based on lot area percentage\"\n        },\n        \"Constants\": {\n            \"Numerical values\": null,\n            \"Specs\": null,\n            \"Standards\": null,\n            \"Procedures\": null\n        },\n        \"Conditions\": {\n            \"Mandatory\": \"Building size is based on a percentage of the lot area\",\n            \"Optional\": null,\n            \"Conditional logic\": null,\n            \"Dependencies\": null\n        },\n        \"Exceptions\": null,\n        \"Relationships\": null\n    },\n    {\n        \"rule\": \"Minimum & maximum lot sizes\",\n        \"Qualifiers\": {\n            \"Scope\": \"Lot sizes in R-1 zones\",\n            \"Applicability\": \"Subdivisions in Palo Alto\",\n            \"Exclusions\": null\n        },\n        \"Variables\": {\n            \"Dimensional\": {\n                \"width\": \"\u2265 60'\",\n                \"depth\": \"\u2265 100'\"\n            },\n            \"Material\": null,\n            \"Environmental\": null,\n            \"Usage\": null\n        },\n        \"Constants\": {\n            \"Numerical values\": {\n                \"Zone District R-1\": {\n                    \"Minimum\": \"6,000\",\n                    \"Maximum\": \"9,999\"\n                },\n                \"Zone District R-1(7000)\": {\n                    \"Minimum\": \"7,000\",\n                    \"Maximum\": \"13,999\"\n                },\n                \"Zone District R-1(8000)\": {\n                    \"Minimum\": \"8,000\",\n                    \"Maximum\": \"15,999\"\n                },\n                \"Zone District R-1(10000)\": {\n                    \"Minimum\": \"10,000\",\n                    \"Maximum\": \"19,999\"\n                },\n                \"Zone District R-1(20000)\": {\n                    \"Minimum\": \"20,000\",\n                    \"Maximum\": \"39,999\"\n                }\n            },\n            \"Specs\": null,\n            \"Standards\": null,\n            \"Procedures\": null\n        },\n        \"Conditions\": {\n            \"Mandatory\": \"New lot must meet width, depth, and area requirements\",\n            \"Optional\": null,\n            \"Conditional logic\": null,\n            \"Dependencies\": null\n        },\n        \"Exceptions\": {\n            \"Explicit deviations\": [\n                \"Underlying lot lines removal with no net loss of housing\",\n                \"Combining substandard lot with another lot with no net loss of housing\",\n                \"Resultant number of lots increases or stays the same with no net loss of housing\"\n            ],\n            \"Alternatives\": null,\n            \"Special cases\": null\n        },\n        \"Relationships\": null\n    },\n    {\n        \"rule\": \"Substandard lots\",\n        \"Qualifiers\": {\n            \"Scope\": \"Substandard lot sizes in R-1 zones\",\n            \"Applicability\": \"Variety of lot sizes within each R-1 zone\",\n            \"Exclusions\": null\n        },\n        \"Variables\": {\n            \"Dimensional\": {\n                \"width\": \"< 50'\",\n                \"depth\": \"< 83'\"\n            },\n            \"Material\": null,\n            \"Environmental\": null,\n            \"Usage\": null\n        },\n        \"Constants\": {\n            \"Numerical values\": {\n                \"Zone District R-1\": {\n                    \"Typical lot\": \"4,980\",\n                    \"Flag lot\": \"5,976\"\n                },\n                \"Zone District R-1(7000)\": {\n                    \"Typical lot\": \"5,810\",\n                    \"Flag lot\": \"6,972\"\n                },\n                \"Zone District R-1(8000)\": {\n                    \"Typical lot\": \"6,640\",\n                    \"Flag lot\": \"7,968\"\n                },\n                \"Zone District R-1(10000)\": {\n                    \"Typical lot\": \"8,300\",\n                    \"Flag lot\": \"9,960\"\n                },\n                \"Zone District R-1(20000)\": {\n                    \"Typical lot\": \"16,600\",\n                    \"Flag lot\": \"19,920\"\n                }\n            },\n            \"Specs\": null,\n            \"Standards\": null,\n            \"Procedures\": null\n        },\n        \"Conditions\": {\n            \"Mandatory\": \"Lot must meet width, depth, and area criteria to be considered substandard\",\n            \"Optional\": null,\n            \"Conditional logic\": null,\n            \"Dependencies\": null\n        },\n        \"Exceptions\": null,\n        \"Relationships\": null\n    },\n    {\n        \"rule\": \"Special regulations for substandard lots\",\n        \"Qualifiers\": {\n            \"Scope\": \"Building regulations for substandard lots\",\n            \"Applicability\": \"Substandard lots in R-1 zones\",\n            \"Exclusions\": null\n        },\n        \"Variables\": {\n            \"Dimensional\": {\n                \"Maximum building height\": \"17'\",\n                \"Street-side yard for lots < 50' wide\": \"10'\",\n                \"Garage location for lots < 95' deep\": \"rear half of the lot\"\n            },\n            \"Material\": null,\n            \"Environmental\": null,\n            \"Usage\": null\n        },\n        \"Constants\": {\n            \"Numerical values\": null,\n            \"Specs\": null,\n            \"Standards\": null,\n            \"Procedures\": null\n        },\n        \"Conditions\": {\n            \"Mandatory\": \"Building height, street-side yard, and garage location requirements\",\n            \"Optional\": null,\n            \"Conditional logic\": null,\n            \"Dependencies\": null\n        },\n        \"Exceptions\": null,\n        \"Relationships\": {\n            \"Hierarchical\": \"Figure 15 C on p. 23\"\n        }\n    }\n]\n```"
+  },
+  "timestamp": "2025-09-16 15:43:18",
+  "model": "openai/gpt-4o",
+  "success": true
+}

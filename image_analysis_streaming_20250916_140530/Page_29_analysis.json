@@ -1,0 +1,12 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_29.png",
+  "image_name": "Page_29.png",
+  "analysis": {
+    "raw_content": "Page title: Determining setbacks on oddly shaped lots considerations\nFigure caption: Fig 17 Setbacks for oddly shaped lots\nPage number: 23\n\nKey:\n- Curb\n- Lot line\n- Sidewalk\n- Required setbacks\n- Buildable area\n\nFigure A \u2014 Flag lot\n- Labels shown: Rear yard; Interior side yard (both sides); Front yard; A Flag lot (buildable area).\n- Callouts/text:\n  - Front lot line is closest and most parallel to street.\n  - Front setback is 10' instead of 20'.\n- Street shown along one edge.\n\nFigure B \u2014 Corner lot\n- Labels shown: Rear yard; Front yard; Street side yard; B Corner lot (buildable area).\n- Dimension shown on street side setback: 16'.\n- Two streets shown along two edges.\n\nFigure C \u2014 Substandard Corner lot w/frontage < 50'\n- Labels shown: Rear yard; Front yard; Interior side yard; Street side yard; C Substandard Corner lot w/frontage < 50'.\n- Callouts/text:\n  - Front lot line is shortest of the two frontages.\n  - Street side setback is 10' instead of 16'.\n- Dimension shown on street side setback: 10'.\n- Two streets shown along two edges.\n\nFigure D \u2014 Through lot\n- Labels shown: Rear yard; Front yard; Interior side yard (both sides); D Through lot.\n- Streets shown on opposite, parallel sides.\n\nFigure E \u2014 Wedge shaped lot\n- Labels shown: Front yard; Interior side yard (both sides); E Wedge shaped lot.\n- Callout/text:\n  - Wedge shaped lots don't have rear lot lines. The rear yard is determined by a 20' radius from intersection of side lot lines.\n- Street shown on one curved edge.\n\nFigure F \u2014 Lot with more than 4 sides\n- Labels shown: Rear yard; Interior side yard; Front yard; F Lot with more than 4 sides.\n- Street shown along one edge.\n\nFigure G \u2014 Lot with more than 4 sides\n- Labels shown: Rear yard; Interior side yard; Front yard; G Lot with more than 4 sides.\n- Callout/text:\n  - Rear lot line is farthest and most parallel to street.\n- Street shown along one edge.",
+    "content_length": 1888,
+    "parse_error": false
+  },
+  "timestamp": "2025-09-16 14:08:42",
+  "model": "openai/gpt-5",
+  "success": true
+}

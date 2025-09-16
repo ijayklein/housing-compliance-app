@@ -1,0 +1,108 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_50.md",
+  "file_name": "Page_50.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "rule": "Attached 2nd-dwelling unit",
+        "Qualifiers": {
+          "Scope": "Regulations for attached 2nd-dwelling units, subordinate to a main dwelling on a single lot.",
+          "Applicability": "Applies to lots in specified single-family zones (R-1, R-1(7000), R-1(8000), R-1(10000), R-1(20000)) that meet the minimum lot size for the zone.",
+          "Exclusions": "These rules are exceptions to the standard regulations that apply to the main dwelling. Does not apply to detached units."
+        },
+        "Variables": {
+          "Dimensional": "lot_size (dependent on zone and lot type); unit_size; basement_area; unit_height; covered_parking_size; total_FAR (Floor Area Ratio).",
+          "Material": "Not specified.",
+          "Environmental": "Not specified.",
+          "Usage": "unit_type (attached); unit_subordination; parking_spaces; covered_parking_spaces; entrance_way_orientation; staircase_location; unit_location (setbacks)."
+        },
+        "Constants": {
+          "max_unit_size": "450 sf",
+          "max_unit_height": "17 ft",
+          "required_parking_spaces": "2",
+          "required_covered_parking_spaces": "1",
+          "max_covered_parking_size": "200 sf (in addition to unit size)",
+          "min_lot_size_R-1_typical": "8,100 sf",
+          "min_lot_size_R-1_flag": "9,720 sf",
+          "min_lot_size_R-1(7000)_typical": "9,450 sf",
+          "min_lot_size_R-1(7000)_flag": "11,340 sf",
+          "min_lot_size_R-1(8000)_typical": "10,800 sf",
+          "min_lot_size_R-1(8000)_flag": "12,960 sf",
+          "min_lot_size_R-1(10000)_typical": "13,500 sf",
+          "min_lot_size_R-1(10000)_flag": "16,200 sf",
+          "min_lot_size_R-1(20000)_typical": "27,000 sf",
+          "min_lot_size_R-1(20000)_flag": "32,400 sf"
+        },
+        "Conditions": {
+          "Mandatory": "Unit must be subordinate to main dwelling. Lot size must meet minimum for zone. Size must not exceed 450 sf. Height must not exceed 17'. Must have two parking spaces (one covered). Covered parking must not exceed 200 sf. Must be located within setbacks. Counts towards total lot FAR. Basement area counts towards unit size.",
+          "Optional": "Construction of a 2nd-dwelling unit is optional for the property owner, provided all conditions are met.",
+          "Conditional Logic": "IF lot is NOT a corner lot, THEN entrance way shall not face the same lot line as the entrance to the main dwelling. IF unit is on the 2nd floor AND has an exterior staircase, THEN the staircase shall be located toward the interior side or rear yard."
+        },
+        "Exceptions": {
+          "Entrance Orientation": "The restriction on entrance way orientation does not apply to corner lots.",
+          "General": "The rules for 2nd-dwelling units are presented as a set of exceptions to the regulations that apply to the main dwelling."
+        },
+        "Relationships": {
+          "Hierarchical": "Parent Rule: 2nd-dwelling units standards & site planning. This rule is a specific type for 'Attached units'.",
+          "Cross-references": "Code Sections: 18.12.070 (b) (1 & 2), 18.12.070 (c, d, e, & f), 18.12.080 (d, e, & f). Tables: Table 5 (Min. lot size). Figures: Figure 41 (p. 45) for setbacks, Figure 23 C & D for combined parking. Manuals: 'Parking' section for 'Site planning for attached garages/carports'.",
+          "Logical Dependencies": "Eligibility to build is dependent on meeting minimum lot size. Covered parking area is calculated separately from the unit's floor area. The unit's floor area contributes to the lot's total FAR."
+        }
+      },
+      {
+        "rule": "Detached 2nd-dwelling unit",
+        "Qualifiers": {
+          "Scope": "Regulations for detached 2nd-dwelling units, subordinate to a main dwelling on a single lot.",
+          "Applicability": "Applies to lots in specified single-family zones (R-1, R-1(7000), R-1(8000), R-1(10000), R-1(20000)) that meet the minimum lot size for the zone.",
+          "Exclusions": "These rules are exceptions to the standard regulations that apply to the main dwelling. Does not apply to attached units."
+        },
+        "Variables": {
+          "Dimensional": "lot_size (dependent on zone and lot type); unit_size; basement_area; unit_height (stories and feet); covered_parking_size; separation_from_main_dwelling; total_FAR (Floor Area Ratio).",
+          "Material": "architectural_compatibility (Ambiguous).",
+          "Environmental": "Not specified.",
+          "Usage": "unit_type (detached); unit_subordination; driveway_access; parking_spaces; covered_parking_spaces; unit_location (setbacks)."
+        },
+        "Constants": {
+          "max_unit_size": "900 sf",
+          "max_unit_height_stories": "1",
+          "max_unit_height_feet": "17 ft",
+          "min_separation_from_main_dwelling": "12 ft",
+          "required_parking_spaces": "2",
+          "required_covered_parking_spaces": "1",
+          "max_covered_parking_size": "200 sf (in addition to unit size)",
+          "min_lot_size_R-1_typical": "8,100 sf",
+          "min_lot_size_R-1_flag": "9,720 sf",
+          "min_lot_size_R-1(7000)_typical": "9,450 sf",
+          "min_lot_size_R-1(7000)_flag": "11,340 sf",
+          "min_lot_size_R-1(8000)_typical": "10,800 sf",
+          "min_lot_size_R-1(8000)_flag": "12,960 sf",
+          "min_lot_size_R-1(10000)_typical": "13,500 sf",
+          "min_lot_size_R-1(10000)_flag": "16,200 sf",
+          "min_lot_size_R-1(20000)_typical": "27,000 sf",
+          "min_lot_size_R-1(20000)_flag": "32,400 sf"
+        },
+        "Conditions": {
+          "Mandatory": "Unit must be subordinate to main dwelling. Lot size must meet minimum for zone. Size must not exceed 900 sf. Height must not exceed one story and 17'. Must share driveway with main dwelling. Must have two parking spaces (one covered). Covered parking must not exceed 200 sf. Must be located 12' from main dwelling. Must be located within setbacks. Counts towards total lot FAR. Basement area counts towards unit size. Must be architecturally compatible with main dwelling (AMBIGUOUS).",
+          "Optional": "Construction of a 2nd-dwelling unit is optional for the property owner, provided all conditions are met.",
+          "Conditional Logic": "None specified beyond mandatory requirements."
+        },
+        "Exceptions": {
+          "General": "The rules for 2nd-dwelling units are presented as a set of exceptions to the regulations that apply to the main dwelling."
+        },
+        "Relationships": {
+          "Hierarchical": "Parent Rule: 2nd-dwelling units standards & site planning. This rule is a specific type for 'Detached units'.",
+          "Cross-references": "Code Sections: 18.12.070 (b) (1 & 2), 18.12.070 (c, d, e, & f), 18.12.080 (d, e, & f). Tables: Table 5 (Min. lot size). Figures: Figure 41 A-D (p. 45) for detached unit placement, Figure 23 C & D for combined parking. Manuals: 'Parking' section for 'Site planning for detached garages/carports'.",
+          "Logical Dependencies": "Eligibility to build is dependent on meeting minimum lot size. Covered parking area is calculated separately from the unit's floor area. The unit's floor area contributes to the lot's total FAR. Unit must be physically separated from the main dwelling."
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n  {\n    \"rule\": \"Attached 2nd-dwelling unit\",\n    \"Qualifiers\": {\n      \"Scope\": \"Regulations for attached 2nd-dwelling units, subordinate to a main dwelling on a single lot.\",\n      \"Applicability\": \"Applies to lots in specified single-family zones (R-1, R-1(7000), R-1(8000), R-1(10000), R-1(20000)) that meet the minimum lot size for the zone.\",\n      \"Exclusions\": \"These rules are exceptions to the standard regulations that apply to the main dwelling. Does not apply to detached units.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"lot_size (dependent on zone and lot type); unit_size; basement_area; unit_height; covered_parking_size; total_FAR (Floor Area Ratio).\",\n      \"Material\": \"Not specified.\",\n      \"Environmental\": \"Not specified.\",\n      \"Usage\": \"unit_type (attached); unit_subordination; parking_spaces; covered_parking_spaces; entrance_way_orientation; staircase_location; unit_location (setbacks).\"\n    },\n    \"Constants\": {\n      \"max_unit_size\": \"450 sf\",\n      \"max_unit_height\": \"17 ft\",\n      \"required_parking_spaces\": \"2\",\n      \"required_covered_parking_spaces\": \"1\",\n      \"max_covered_parking_size\": \"200 sf (in addition to unit size)\",\n      \"min_lot_size_R-1_typical\": \"8,100 sf\",\n      \"min_lot_size_R-1_flag\": \"9,720 sf\",\n      \"min_lot_size_R-1(7000)_typical\": \"9,450 sf\",\n      \"min_lot_size_R-1(7000)_flag\": \"11,340 sf\",\n      \"min_lot_size_R-1(8000)_typical\": \"10,800 sf\",\n      \"min_lot_size_R-1(8000)_flag\": \"12,960 sf\",\n      \"min_lot_size_R-1(10000)_typical\": \"13,500 sf\",\n      \"min_lot_size_R-1(10000)_flag\": \"16,200 sf\",\n      \"min_lot_size_R-1(20000)_typical\": \"27,000 sf\",\n      \"min_lot_size_R-1(20000)_flag\": \"32,400 sf\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"Unit must be subordinate to main dwelling. Lot size must meet minimum for zone. Size must not exceed 450 sf. Height must not exceed 17'. Must have two parking spaces (one covered). Covered parking must not exceed 200 sf. Must be located within setbacks. Counts towards total lot FAR. Basement area counts towards unit size.\",\n      \"Optional\": \"Construction of a 2nd-dwelling unit is optional for the property owner, provided all conditions are met.\",\n      \"Conditional Logic\": \"IF lot is NOT a corner lot, THEN entrance way shall not face the same lot line as the entrance to the main dwelling. IF unit is on the 2nd floor AND has an exterior staircase, THEN the staircase shall be located toward the interior side or rear yard.\"\n    },\n    \"Exceptions\": {\n      \"Entrance Orientation\": \"The restriction on entrance way orientation does not apply to corner lots.\",\n      \"General\": \"The rules for 2nd-dwelling units are presented as a set of exceptions to the regulations that apply to the main dwelling.\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"Parent Rule: 2nd-dwelling units standards & site planning. This rule is a specific type for 'Attached units'.\",\n      \"Cross-references\": \"Code Sections: 18.12.070 (b) (1 & 2), 18.12.070 (c, d, e, & f), 18.12.080 (d, e, & f). Tables: Table 5 (Min. lot size). Figures: Figure 41 (p. 45) for setbacks, Figure 23 C & D for combined parking. Manuals: 'Parking' section for 'Site planning for attached garages/carports'.\",\n      \"Logical Dependencies\": \"Eligibility to build is dependent on meeting minimum lot size. Covered parking area is calculated separately from the unit's floor area. The unit's floor area contributes to the lot's total FAR.\"\n    }\n  },\n  {\n    \"rule\": \"Detached 2nd-dwelling unit\",\n    \"Qualifiers\": {\n      \"Scope\": \"Regulations for detached 2nd-dwelling units, subordinate to a main dwelling on a single lot.\",\n      \"Applicability\": \"Applies to lots in specified single-family zones (R-1, R-1(7000), R-1(8000), R-1(10000), R-1(20000)) that meet the minimum lot size for the zone.\",\n      \"Exclusions\": \"These rules are exceptions to the standard regulations that apply to the main dwelling. Does not apply to attached units.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"lot_size (dependent on zone and lot type); unit_size; basement_area; unit_height (stories and feet); covered_parking_size; separation_from_main_dwelling; total_FAR (Floor Area Ratio).\",\n      \"Material\": \"architectural_compatibility (Ambiguous).\",\n      \"Environmental\": \"Not specified.\",\n      \"Usage\": \"unit_type (detached); unit_subordination; driveway_access; parking_spaces; covered_parking_spaces; unit_location (setbacks).\"\n    },\n    \"Constants\": {\n      \"max_unit_size\": \"900 sf\",\n      \"max_unit_height_stories\": \"1\",\n      \"max_unit_height_feet\": \"17 ft\",\n      \"min_separation_from_main_dwelling\": \"12 ft\",\n      \"required_parking_spaces\": \"2\",\n      \"required_covered_parking_spaces\": \"1\",\n      \"max_covered_parking_size\": \"200 sf (in addition to unit size)\",\n      \"min_lot_size_R-1_typical\": \"8,100 sf\",\n      \"min_lot_size_R-1_flag\": \"9,720 sf\",\n      \"min_lot_size_R-1(7000)_typical\": \"9,450 sf\",\n      \"min_lot_size_R-1(7000)_flag\": \"11,340 sf\",\n      \"min_lot_size_R-1(8000)_typical\": \"10,800 sf\",\n      \"min_lot_size_R-1(8000)_flag\": \"12,960 sf\",\n      \"min_lot_size_R-1(10000)_typical\": \"13,500 sf\",\n      \"min_lot_size_R-1(10000)_flag\": \"16,200 sf\",\n      \"min_lot_size_R-1(20000)_typical\": \"27,000 sf\",\n      \"min_lot_size_R-1(20000)_flag\": \"32,400 sf\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"Unit must be subordinate to main dwelling. Lot size must meet minimum for zone. Size must not exceed 900 sf. Height must not exceed one story and 17'. Must share driveway with main dwelling. Must have two parking spaces (one covered). Covered parking must not exceed 200 sf. Must be located 12' from main dwelling. Must be located within setbacks. Counts towards total lot FAR. Basement area counts towards unit size. Must be architecturally compatible with main dwelling (AMBIGUOUS).\",\n      \"Optional\": \"Construction of a 2nd-dwelling unit is optional for the property owner, provided all conditions are met.\",\n      \"Conditional Logic\": \"None specified beyond mandatory requirements.\"\n    },\n    \"Exceptions\": {\n      \"General\": \"The rules for 2nd-dwelling units are presented as a set of exceptions to the regulations that apply to the main dwelling.\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"Parent Rule: 2nd-dwelling units standards & site planning. This rule is a specific type for 'Detached units'.\",\n      \"Cross-references\": \"Code Sections: 18.12.070 (b) (1 & 2), 18.12.070 (c, d, e, & f), 18.12.080 (d, e, & f). Tables: Table 5 (Min. lot size). Figures: Figure 41 A-D (p. 45) for detached unit placement, Figure 23 C & D for combined parking. Manuals: 'Parking' section for 'Site planning for detached garages/carports'.\",\n      \"Logical Dependencies\": \"Eligibility to build is dependent on meeting minimum lot size. Covered parking area is calculated separately from the unit's floor area. The unit's floor area contributes to the lot's total FAR. Unit must be physically separated from the main dwelling.\"\n    }\n  }\n]\n```",
+    "response_time": 44.27745604515076,
+    "input_tokens": 1374,
+    "output_tokens": 5866,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 16:14:50",
+  "model": "google/gemini-2.5-pro",
+  "success": true
+}

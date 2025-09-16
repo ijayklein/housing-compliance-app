@@ -1,0 +1,19 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_35.png",
+  "image_name": "Page_35.png",
+  "analysis": {
+    "page_number": "unknown",
+    "main_heading": "PARSE_ERROR",
+    "text_content": "Failed to parse response: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)",
+    "tables": [],
+    "figures": [],
+    "zoning_rules": [],
+    "code_references": [],
+    "quality_notes": "JSON parsing failed: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)",
+    "raw_response": "```json\n{\n  \"page_number\": \"29\",\n  \"main_heading\": \"Allowable daylight plane protrusions summary\",\n  \"text_content\": \"Allowable daylight plane protrusions summary\\nFeature\\nAllowable protrusion\\nIllustration\\nTelevision and radio antennas\\nup to 15' above maximum building\\nheight\\nChimneys and flues < 5' wide\\nmay extend beyond the daylight plane to\\nmeet minimum required clearance of\\nBuilding Code (Chapter 16.04)\\nFig 20 on p. 26\\nDormers, roof decks, gabels, or similar\\narchitectural features\\neach feature \u2264 7.5' long and cumulative\\nlength of all features \u2264 15' with min 5'\\nseparation between features (on each\\nside); height \u2264 24';\\nComices, eaves, and similar architectural\\nfeatures (excluding flat or continuous walls\\nor enclosures usable for interior space)\\nmax 2'\\nFig 20 on p. 26 &\\nFig 23 on p. 28\\nFig 22 on p. 27\\n29\",\n  \"tables\": [\n    {\n      \"title\": null,\n      \"headers\": [\n        \"Feature\",\n        \"Allowable protrusion\",\n        \"Illustration\"\n      ],\n      \"rows\": [",
+    "parse_error": true
+  },
+  "analysis_timestamp": "2025-09-16 12:33:33",
+  "model_used": "google/gemini-2.5-flash",
+  "success": false
+}

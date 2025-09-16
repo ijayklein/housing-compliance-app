@@ -1,0 +1,53 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_20.png",
+  "image_name": "Page_20.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Recessed porches on the 1st floor\n\nRecessed porches on the ground floor do NOT count toward\ngross floor area if ALL the following criteria apply:\n\n* Depth of porch is less than 10' and,\n* Porch ceiling is below 2nd floor and,\n* Exterior side is substantially open.\n\nFig 9 Recessed porches on the 1st floor\n\nNote: It is the city's policy to consider\none-story construction to be construction\nless than 17' above finished floor. If the\nporch space is higher, the area will count\nagain as 2nd story equivalency.\n\nA This example complies with all three\ncritera and does NOT count toward\ngross floor area\n\nB This example violates two of the three critera.\n* the porch depth is greater than 10' and\n* the porch ceiling is above the 2nd floor\nTherefore it DOES count toward gross floos area and\nit it is higher than 17' it will count twice (see note).\n\n14",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "An isometric architectural drawing of a building with a recessed porch on the ground floor. The porch has three arched openings. A diagonal line labeled '2nd floor line' indicates the height of the second floor. Another diagonal line with an arrow points to the porch ceiling and is labeled 'Porch ceiling below 2nd floor'. A dimension line below the porch is labeled 'Depth < 10''. This diagram illustrates a porch that complies with the criteria for not counting towards gross floor area.",
+          "location": "Middle left"
+        },
+        {
+          "type": "diagram",
+          "description": "An isometric architectural drawing of a building with a recessed porch on the ground floor, similar in style to the first diagram but with different dimensions. The porch also has three arched openings. A diagonal line labeled '2nd floor line' indicates the height of the second floor. A vertical dimension line with an arrow points from the ground to above the 2nd floor line and is labeled 'Height extends past 2nd floor line'. A dimension line below the porch is labeled 'Depth \u2265 10''. This diagram illustrates a porch that violates criteria and counts towards gross floor area.",
+          "location": "Middle right"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Porch depth for exclusion",
+          "value": "10",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Construction height for one-story equivalency",
+          "value": "17",
+          "unit": "feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Recessed porches on the 1st floor",
+        "subheadings": [],
+        "sections": [
+          "Recessed porches on the ground floor do NOT count toward gross floor area if ALL the following criteria apply:",
+          "Fig 9 Recessed porches on the 1st floor",
+          "Note: It is the city's policy to consider one-story construction to be construction less than 17' above finished floor. If the porch space is higher, the area will count again as 2nd story equivalency.",
+          "A This example complies with all three critera and does NOT count toward gross floor area",
+          "B This example violates two of the three critera."
+        ]
+      },
+      "additional_notes": [
+        "Page number '14' is present at the bottom left.",
+        "The word 'floos' in the last paragraph of section B appears to be a typo and should likely be 'floor'."
+      ],
+      "cross_references": [
+        "Reference to 'note' in section B, referring to the 'Note' box on the top right."
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-14 19:32:21",
+  "model_used": "google/gemini-2.5-flash"
+}

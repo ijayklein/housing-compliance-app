@@ -1,0 +1,392 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_53.md",
+  "file_name": "Page_53.md",
+  "analysis": {
+    "extracted_rules": {
+      "rules": [
+        {
+          "id": "R1",
+          "title": "Height measurement datum for structures on land with natural slope \u2264 10%",
+          "Qualifiers": {
+            "scope": "Determination of vertical datum for measuring the height of a building or structure.",
+            "applicability": [
+              "Parcels where the natural slope is less than or equal to 10%."
+            ],
+            "exclusions": [
+              "Parcels where the natural slope is greater than 10%.",
+              "Daylight plane measurements (handled under separate rule)."
+            ]
+          },
+          "Variables": {
+            "dimensional": [
+              {
+                "name": "natural_slope_percent",
+                "description": "The natural slope of the land, expressed as a percentage, prior to any grading or fill.",
+                "unit": "%",
+                "source": "Table, Row 1"
+              },
+              {
+                "name": "existing_grade_elevation_adjacent",
+                "description": "Adjacent ground elevation prior to grading or fill.",
+                "unit": "ft (elevation datum as adopted by jurisdiction)",
+                "source": "Table, Row 1"
+              },
+              {
+                "name": "lowest_point_existing_grade",
+                "description": "The lowest point of adjacent ground elevation (pre-fill) around the building/structure perimeter.",
+                "unit": "ft (elevation datum as adopted by jurisdiction)",
+                "source": "Table, Row 1; Figure 44 label"
+              },
+              {
+                "name": "structure_height",
+                "description": "Vertical distance from the applicable grade datum to the measurement point on the structure.",
+                "unit": "ft",
+                "source": "General height measurement context"
+              }
+            ],
+            "environmental": [],
+            "usage": []
+          },
+          "Constants": [
+            {
+              "name": "slope_threshold_inclusive",
+              "value": 10,
+              "unit": "%",
+              "definition": "Boundary at or below which this rule applies.",
+              "source": "Table, Row 1"
+            }
+          ],
+          "Conditions": [
+            {
+              "type": "mandatory",
+              "statement": "Use Existing Grade as the datum for measuring structure height.",
+              "logic": "IF natural_slope_percent <= 10% THEN datum = Existing Grade",
+              "source": "Table, Row 1"
+            },
+            {
+              "type": "mandatory",
+              "statement": "Existing Grade is defined as the lowest point of adjacent ground elevation prior to grading or fill, evaluated per building or structure.",
+              "logic": "Existing Grade = min(adjacent_ground_elevation_pre_fill_along_structure_perimeter)",
+              "source": "Table, Row 1; Figure 44 label"
+            },
+            {
+              "type": "ambiguous",
+              "statement": "Height measured to [illegible] highest point.",
+              "logic": "Unclear if measurement is to 'highest point of roof', 'highest point of structure', or other benchmark.",
+              "source": "Figure 44 label",
+              "notes": "Ambiguity flagged; cannot be used for automated validation without clarification."
+            }
+          ],
+          "Exceptions": [],
+          "Relationships": {
+            "hierarchical": [
+              {
+                "parent": "Grade (page title)",
+                "relationship": "subcategory",
+                "note": "Rule pertains to grade-based height measurement."
+              }
+            ],
+            "crossReferences": [
+              {
+                "type": "figure",
+                "ref": "Figure 44",
+                "caption": "Existing vs. Finished grade"
+              }
+            ],
+            "logicalDependencies": [
+              {
+                "dependsOn": "natural_slope_percent classification",
+                "mutuallyExclusiveWith": "R2 (slope > 10%)"
+              }
+            ]
+          }
+        },
+        {
+          "id": "R2",
+          "title": "Height measurement datum and limit for structures on land with natural slope > 10%",
+          "Qualifiers": {
+            "scope": "Determination of vertical datum and limiting criteria for measuring the height of a building or structure on sloping sites.",
+            "applicability": [
+              "Parcels where the natural slope is greater than 10%."
+            ],
+            "exclusions": [
+              "Parcels where the natural slope is less than or equal to 10%.",
+              "Daylight plane measurements (handled under separate rule)."
+            ]
+          },
+          "Variables": {
+            "dimensional": [
+              {
+                "name": "natural_slope_percent",
+                "description": "The natural slope of the land, expressed as a percentage, prior to any grading or fill.",
+                "unit": "%",
+                "source": "Table, Row 2"
+              },
+              {
+                "name": "existing_grade_elevation_at_point",
+                "description": "Existing (pre-fill) adjacent ground elevation at a given point along the structure.",
+                "unit": "ft (elevation datum as adopted by jurisdiction)",
+                "source": "Table, Row 2; Figure 45"
+              },
+              {
+                "name": "finished_grade_elevation_at_point",
+                "description": "Finished (post-grading/fill) adjacent ground elevation at a given point along the structure.",
+                "unit": "ft (elevation datum as adopted by jurisdiction)",
+                "source": "Table, Row 2; Figure 45"
+              },
+              {
+                "name": "selected_grade_elevation_at_point",
+                "description": "The lower of the existing or finished grade elevations at a given point along the structure, used as the datum.",
+                "unit": "ft (elevation datum as adopted by jurisdiction)",
+                "source": "Table, Row 2"
+              },
+              {
+                "name": "structure_height_at_point",
+                "description": "Vertical distance from the selected datum at a given point to the corresponding height point on the structure.",
+                "unit": "ft",
+                "source": "Figure 45 context"
+              }
+            ],
+            "environmental": [],
+            "usage": []
+          },
+          "Constants": [
+            {
+              "name": "slope_threshold_exclusive",
+              "value": 10,
+              "unit": "%",
+              "definition": "Boundary above which this rule applies.",
+              "source": "Table, Row 2"
+            },
+            {
+              "name": "max_height_above_existing_grade",
+              "value": 30,
+              "unit": "ft",
+              "definition": "Apparent maximum height above existing grade indicated in figure.",
+              "source": "Figure 45 label",
+              "notes": "Potentially illustrative; normative status unclear."
+            },
+            {
+              "name": "max_height_above_finished_grade",
+              "value": 30,
+              "unit": "ft",
+              "definition": "Apparent maximum height above finished grade indicated in figure.",
+              "source": "Figure 45 label",
+              "notes": "Potentially illustrative; normative status unclear."
+            }
+          ],
+          "Conditions": [
+            {
+              "type": "mandatory",
+              "statement": "Use Grade as the datum for measuring structure height, defined per-point along the structure as the lower of existing or finished grade.",
+              "logic": "FOR EACH point p along the structure: datum(p) = min(existing_grade(p), finished_grade(p))",
+              "source": "Table, Row 2"
+            },
+            {
+              "type": "mandatory",
+              "statement": "Compliance must be checked at all points along the slope using the lower of the applicable limits.",
+              "logic": "FOR EACH point p: permissible_height(p) = min(max_height_above_existing_grade, max_height_above_finished_grade) AND measured_height(p) <= permissible_height(p)",
+              "source": "Figure 45 label: 'The structure must comply with the lower of the two limits at all points along the slope.'",
+              "notes": "Where specific numeric limits are jurisdictional; figure shows 30 ft values but may be illustrative."
+            },
+            {
+              "type": "conditional",
+              "statement": "If numeric height limits relative to existing and finished grade are both specified, the stricter (lower) limit governs at every point.",
+              "logic": "IF both limits exist THEN governing_limit(p) = min(limit_existing, limit_finished)",
+              "source": "Figure 45 label"
+            }
+          ],
+          "Exceptions": [],
+          "Relationships": {
+            "hierarchical": [
+              {
+                "parent": "Grade (page title)",
+                "relationship": "subcategory",
+                "note": "Rule pertains to grade-based height measurement on steep slopes."
+              }
+            ],
+            "crossReferences": [
+              {
+                "type": "figure",
+                "ref": "Figure 45",
+                "caption": "Height limits for structures on slopes greater than 10%"
+              }
+            ],
+            "logicalDependencies": [
+              {
+                "dependsOn": "natural_slope_percent classification",
+                "mutuallyExclusiveWith": "R1 (slope \u2264 10%)"
+              }
+            ]
+          }
+        },
+        {
+          "id": "R3",
+          "title": "Daylight plane datum using Average Grade",
+          "Qualifiers": {
+            "scope": "Determination of vertical datum for measuring a daylight plane.",
+            "applicability": [
+              "Daylight plane calculations for buildings or structures."
+            ],
+            "exclusions": [
+              "Height measurements for structures on slopes \u2264 10% (see R1).",
+              "Height measurements for structures on slopes > 10% (see R2)."
+            ]
+          },
+          "Variables": {
+            "dimensional": [
+              {
+                "name": "grade_at_building_midpoint",
+                "description": "The grade at the midpoint of the building along the relevant measurement line.",
+                "unit": "ft (elevation datum as adopted by jurisdiction)",
+                "source": "Table, Row 3"
+              },
+              {
+                "name": "grade_at_closest_point_on_abutting_site",
+                "description": "The grade at the closest point on the abutting site to the measurement location.",
+                "unit": "ft (elevation datum as adopted by jurisdiction)",
+                "source": "Table, Row 3"
+              },
+              {
+                "name": "average_grade",
+                "description": "Arithmetic mean of the grade at the building midpoint and the grade at the closest point on the abutting site.",
+                "unit": "ft (elevation datum as adopted by jurisdiction)",
+                "source": "Table, Row 3"
+              }
+            ],
+            "environmental": [],
+            "usage": [
+              {
+                "name": "daylight_plane_usage",
+                "description": "Use average_grade as the baseline for projecting or evaluating the daylight plane.",
+                "unit": "N/A",
+                "source": "Table, Row 3"
+              }
+            ]
+          },
+          "Constants": [],
+          "Conditions": [
+            {
+              "type": "mandatory",
+              "statement": "Use Average Grade as the datum for daylight plane measurement.",
+              "logic": "average_grade = (grade_at_building_midpoint + grade_at_closest_point_on_abutting_site) / 2",
+              "source": "Table, Row 3"
+            }
+          ],
+          "Exceptions": [],
+          "Relationships": {
+            "hierarchical": [
+              {
+                "parent": "Grade (page title)",
+                "relationship": "subcategory",
+                "note": "Rule pertains to grade-based datum for daylight plane."
+              }
+            ],
+            "crossReferences": [
+              {
+                "type": "figure",
+                "ref": "Figs 20\u201321 (pp. 26\u201327)",
+                "caption": "Illustrations of daylight plane using average grade"
+              },
+              {
+                "type": "figure",
+                "ref": "Figure 46",
+                "caption": "Comparison of different grades",
+                "note": "Illustrative; interior numeric/ratio labels not legible."
+              }
+            ],
+            "logicalDependencies": [
+              {
+                "independentOf": [
+                  "R1",
+                  "R2"
+                ],
+                "note": "Daylight plane datum selection is separate from height measurement datum selection."
+              }
+            ]
+          }
+        },
+        {
+          "id": "R4",
+          "title": "General height measurement to the highest point (ambiguous)",
+          "Qualifiers": {
+            "scope": "Potential general rule for the target point of height measurement.",
+            "applicability": [
+              "All structures where height is measured."
+            ],
+            "exclusions": []
+          },
+          "Variables": {
+            "dimensional": [
+              {
+                "name": "height_target_point",
+                "description": "The point on the structure to which height is measured.",
+                "unit": "N/A",
+                "source": "Figure 44 label"
+              }
+            ],
+            "environmental": [],
+            "usage": []
+          },
+          "Constants": [],
+          "Conditions": [
+            {
+              "type": "ambiguous",
+              "statement": "Height measured to [illegible] highest point.",
+              "logic": "Unclear whether height is measured to the highest point of the roof, structure, or other element.",
+              "source": "Figure 44 label",
+              "notes": "Insufficient clarity for enforcement; requires confirmation from original source."
+            }
+          ],
+          "Exceptions": [],
+          "Relationships": {
+            "hierarchical": [
+              {
+                "parent": "Grade (page title)",
+                "relationship": "related context",
+                "note": "Mentioned within the context of grade/height measurement figures."
+              }
+            ],
+            "crossReferences": [
+              {
+                "type": "figure",
+                "ref": "Figure 44",
+                "caption": "Existing vs. Finished grade"
+              }
+            ],
+            "logicalDependencies": [
+              {
+                "relatedTo": [
+                  "R1",
+                  "R2"
+                ],
+                "note": "If clarified, this rule would define the vertical measurement target used with the datum selected in R1 or R2."
+              }
+            ]
+          }
+        }
+      ],
+      "validation_considerations": {
+        "completeness": "All table rows and figure-derived enforceable items are represented. Numeric height limits from Figure 45 are included with caution.",
+        "accuracy": "Slope threshold values and datum definitions are captured verbatim. The 30 ft limits may be illustrative; flagged accordingly.",
+        "ambiguities_flagged": [
+          "Measurement to 'highest point' (Figure 44) is illegible/ambiguous.",
+          "Whether the 30 ft limits in Figure 45 are normative or illustrative."
+        ],
+        "consistency_checks": [
+          "Ensure slope classification is mutually exclusive between R1 and R2.",
+          "For R2, compute datum and limits per-point along the structure and apply the lower of available limits."
+        ]
+      }
+    },
+    "parse_error": false,
+    "raw_response": "{\n  \"rules\": [\n    {\n      \"id\": \"R1\",\n      \"title\": \"Height measurement datum for structures on land with natural slope \u2264 10%\",\n      \"Qualifiers\": {\n        \"scope\": \"Determination of vertical datum for measuring the height of a building or structure.\",\n        \"applicability\": [\n          \"Parcels where the natural slope is less than or equal to 10%.\"\n        ],\n        \"exclusions\": [\n          \"Parcels where the natural slope is greater than 10%.\",\n          \"Daylight plane measurements (handled under separate rule).\"\n        ]\n      },\n      \"Variables\": {\n        \"dimensional\": [\n          {\n            \"name\": \"natural_slope_percent\",\n            \"description\": \"The natural slope of the land, expressed as a percentage, prior to any grading or fill.\",\n            \"unit\": \"%\",\n            \"source\": \"Table, Row 1\"\n          },\n          {\n            \"name\": \"existing_grade_elevation_adjacent\",\n            \"description\": \"Adjacent ground elevation prior to grading or fill.\",\n            \"unit\": \"ft (elevation datum as adopted by jurisdiction)\",\n            \"source\": \"Table, Row 1\"\n          },\n          {\n            \"name\": \"lowest_point_existing_grade\",\n            \"description\": \"The lowest point of adjacent ground elevation (pre-fill) around the building/structure perimeter.\",\n            \"unit\": \"ft (elevation datum as adopted by jurisdiction)\",\n            \"source\": \"Table, Row 1; Figure 44 label\"\n          },\n          {\n            \"name\": \"structure_height\",\n            \"description\": \"Vertical distance from the applicable grade datum to the measurement point on the structure.\",\n            \"unit\": \"ft\",\n            \"source\": \"General height measurement context\"\n          }\n        ],\n        \"environmental\": [],\n        \"usage\": []\n      },\n      \"Constants\": [\n        {\n          \"name\": \"slope_threshold_inclusive\",\n          \"value\": 10,\n          \"unit\": \"%\",\n          \"definition\": \"Boundary at or below which this rule applies.\",\n          \"source\": \"Table, Row 1\"\n        }\n      ],\n      \"Conditions\": [\n        {\n          \"type\": \"mandatory\",\n          \"statement\": \"Use Existing Grade as the datum for measuring structure height.\",\n          \"logic\": \"IF natural_slope_percent <= 10% THEN datum = Existing Grade\",\n          \"source\": \"Table, Row 1\"\n        },\n        {\n          \"type\": \"mandatory\",\n          \"statement\": \"Existing Grade is defined as the lowest point of adjacent ground elevation prior to grading or fill, evaluated per building or structure.\",\n          \"logic\": \"Existing Grade = min(adjacent_ground_elevation_pre_fill_along_structure_perimeter)\",\n          \"source\": \"Table, Row 1; Figure 44 label\"\n        },\n        {\n          \"type\": \"ambiguous\",\n          \"statement\": \"Height measured to [illegible] highest point.\",\n          \"logic\": \"Unclear if measurement is to 'highest point of roof', 'highest point of structure', or other benchmark.\",\n          \"source\": \"Figure 44 label\",\n          \"notes\": \"Ambiguity flagged; cannot be used for automated validation without clarification.\"\n        }\n      ],\n      \"Exceptions\": [],\n      \"Relationships\": {\n        \"hierarchical\": [\n          {\n            \"parent\": \"Grade (page title)\",\n            \"relationship\": \"subcategory\",\n            \"note\": \"Rule pertains to grade-based height measurement.\"\n          }\n        ],\n        \"crossReferences\": [\n          {\n            \"type\": \"figure\",\n            \"ref\": \"Figure 44\",\n            \"caption\": \"Existing vs. Finished grade\"\n          }\n        ],\n        \"logicalDependencies\": [\n          {\n            \"dependsOn\": \"natural_slope_percent classification\",\n            \"mutuallyExclusiveWith\": \"R2 (slope > 10%)\"\n          }\n        ]\n      }\n    },\n    {\n      \"id\": \"R2\",\n      \"title\": \"Height measurement datum and limit for structures on land with natural slope > 10%\",\n      \"Qualifiers\": {\n        \"scope\": \"Determination of vertical datum and limiting criteria for measuring the height of a building or structure on sloping sites.\",\n        \"applicability\": [\n          \"Parcels where the natural slope is greater than 10%.\"\n        ],\n        \"exclusions\": [\n          \"Parcels where the natural slope is less than or equal to 10%.\",\n          \"Daylight plane measurements (handled under separate rule).\"\n        ]\n      },\n      \"Variables\": {\n        \"dimensional\": [\n          {\n            \"name\": \"natural_slope_percent\",\n            \"description\": \"The natural slope of the land, expressed as a percentage, prior to any grading or fill.\",\n            \"unit\": \"%\",\n            \"source\": \"Table, Row 2\"\n          },\n          {\n            \"name\": \"existing_grade_elevation_at_point\",\n            \"description\": \"Existing (pre-fill) adjacent ground elevation at a given point along the structure.\",\n            \"unit\": \"ft (elevation datum as adopted by jurisdiction)\",\n            \"source\": \"Table, Row 2; Figure 45\"\n          },\n          {\n            \"name\": \"finished_grade_elevation_at_point\",\n            \"description\": \"Finished (post-grading/fill) adjacent ground elevation at a given point along the structure.\",\n            \"unit\": \"ft (elevation datum as adopted by jurisdiction)\",\n            \"source\": \"Table, Row 2; Figure 45\"\n          },\n          {\n            \"name\": \"selected_grade_elevation_at_point\",\n            \"description\": \"The lower of the existing or finished grade elevations at a given point along the structure, used as the datum.\",\n            \"unit\": \"ft (elevation datum as adopted by jurisdiction)\",\n            \"source\": \"Table, Row 2\"\n          },\n          {\n            \"name\": \"structure_height_at_point\",\n            \"description\": \"Vertical distance from the selected datum at a given point to the corresponding height point on the structure.\",\n            \"unit\": \"ft\",\n            \"source\": \"Figure 45 context\"\n          }\n        ],\n        \"environmental\": [],\n        \"usage\": []\n      },\n      \"Constants\": [\n        {\n          \"name\": \"slope_threshold_exclusive\",\n          \"value\": 10,\n          \"unit\": \"%\",\n          \"definition\": \"Boundary above which this rule applies.\",\n          \"source\": \"Table, Row 2\"\n        },\n        {\n          \"name\": \"max_height_above_existing_grade\",\n          \"value\": 30,\n          \"unit\": \"ft\",\n          \"definition\": \"Apparent maximum height above existing grade indicated in figure.\",\n          \"source\": \"Figure 45 label\",\n          \"notes\": \"Potentially illustrative; normative status unclear.\"\n        },\n        {\n          \"name\": \"max_height_above_finished_grade\",\n          \"value\": 30,\n          \"unit\": \"ft\",\n          \"definition\": \"Apparent maximum height above finished grade indicated in figure.\",\n          \"source\": \"Figure 45 label\",\n          \"notes\": \"Potentially illustrative; normative status unclear.\"\n        }\n      ],\n      \"Conditions\": [\n        {\n          \"type\": \"mandatory\",\n          \"statement\": \"Use Grade as the datum for measuring structure height, defined per-point along the structure as the lower of existing or finished grade.\",\n          \"logic\": \"FOR EACH point p along the structure: datum(p) = min(existing_grade(p), finished_grade(p))\",\n          \"source\": \"Table, Row 2\"\n        },\n        {\n          \"type\": \"mandatory\",\n          \"statement\": \"Compliance must be checked at all points along the slope using the lower of the applicable limits.\",\n          \"logic\": \"FOR EACH point p: permissible_height(p) = min(max_height_above_existing_grade, max_height_above_finished_grade) AND measured_height(p) <= permissible_height(p)\",\n          \"source\": \"Figure 45 label: 'The structure must comply with the lower of the two limits at all points along the slope.'\",\n          \"notes\": \"Where specific numeric limits are jurisdictional; figure shows 30 ft values but may be illustrative.\"\n        },\n        {\n          \"type\": \"conditional\",\n          \"statement\": \"If numeric height limits relative to existing and finished grade are both specified, the stricter (lower) limit governs at every point.\",\n          \"logic\": \"IF both limits exist THEN governing_limit(p) = min(limit_existing, limit_finished)\",\n          \"source\": \"Figure 45 label\"\n        }\n      ],\n      \"Exceptions\": [],\n      \"Relationships\": {\n        \"hierarchical\": [\n          {\n            \"parent\": \"Grade (page title)\",\n            \"relationship\": \"subcategory\",\n            \"note\": \"Rule pertains to grade-based height measurement on steep slopes.\"\n          }\n        ],\n        \"crossReferences\": [\n          {\n            \"type\": \"figure\",\n            \"ref\": \"Figure 45\",\n            \"caption\": \"Height limits for structures on slopes greater than 10%\"\n          }\n        ],\n        \"logicalDependencies\": [\n          {\n            \"dependsOn\": \"natural_slope_percent classification\",\n            \"mutuallyExclusiveWith\": \"R1 (slope \u2264 10%)\"\n          }\n        ]\n      }\n    },\n    {\n      \"id\": \"R3\",\n      \"title\": \"Daylight plane datum using Average Grade\",\n      \"Qualifiers\": {\n        \"scope\": \"Determination of vertical datum for measuring a daylight plane.\",\n        \"applicability\": [\n          \"Daylight plane calculations for buildings or structures.\"\n        ],\n        \"exclusions\": [\n          \"Height measurements for structures on slopes \u2264 10% (see R1).\",\n          \"Height measurements for structures on slopes > 10% (see R2).\"\n        ]\n      },\n      \"Variables\": {\n        \"dimensional\": [\n          {\n            \"name\": \"grade_at_building_midpoint\",\n            \"description\": \"The grade at the midpoint of the building along the relevant measurement line.\",\n            \"unit\": \"ft (elevation datum as adopted by jurisdiction)\",\n            \"source\": \"Table, Row 3\"\n          },\n          {\n            \"name\": \"grade_at_closest_point_on_abutting_site\",\n            \"description\": \"The grade at the closest point on the abutting site to the measurement location.\",\n            \"unit\": \"ft (elevation datum as adopted by jurisdiction)\",\n            \"source\": \"Table, Row 3\"\n          },\n          {\n            \"name\": \"average_grade\",\n            \"description\": \"Arithmetic mean of the grade at the building midpoint and the grade at the closest point on the abutting site.\",\n            \"unit\": \"ft (elevation datum as adopted by jurisdiction)\",\n            \"source\": \"Table, Row 3\"\n          }\n        ],\n        \"environmental\": [],\n        \"usage\": [\n          {\n            \"name\": \"daylight_plane_usage\",\n            \"description\": \"Use average_grade as the baseline for projecting or evaluating the daylight plane.\",\n            \"unit\": \"N/A\",\n            \"source\": \"Table, Row 3\"\n          }\n        ]\n      },\n      \"Constants\": [],\n      \"Conditions\": [\n        {\n          \"type\": \"mandatory\",\n          \"statement\": \"Use Average Grade as the datum for daylight plane measurement.\",\n          \"logic\": \"average_grade = (grade_at_building_midpoint + grade_at_closest_point_on_abutting_site) / 2\",\n          \"source\": \"Table, Row 3\"\n        }\n      ],\n      \"Exceptions\": [],\n      \"Relationships\": {\n        \"hierarchical\": [\n          {\n            \"parent\": \"Grade (page title)\",\n            \"relationship\": \"subcategory\",\n            \"note\": \"Rule pertains to grade-based datum for daylight plane.\"\n          }\n        ],\n        \"crossReferences\": [\n          {\n            \"type\": \"figure\",\n            \"ref\": \"Figs 20\u201321 (pp. 26\u201327)\",\n            \"caption\": \"Illustrations of daylight plane using average grade\"\n          },\n          {\n            \"type\": \"figure\",\n            \"ref\": \"Figure 46\",\n            \"caption\": \"Comparison of different grades\",\n            \"note\": \"Illustrative; interior numeric/ratio labels not legible.\"\n          }\n        ],\n        \"logicalDependencies\": [\n          {\n            \"independentOf\": [\n              \"R1\",\n              \"R2\"\n            ],\n            \"note\": \"Daylight plane datum selection is separate from height measurement datum selection.\"\n          }\n        ]\n      }\n    },\n    {\n      \"id\": \"R4\",\n      \"title\": \"General height measurement to the highest point (ambiguous)\",\n      \"Qualifiers\": {\n        \"scope\": \"Potential general rule for the target point of height measurement.\",\n        \"applicability\": [\n          \"All structures where height is measured.\"\n        ],\n        \"exclusions\": []\n      },\n      \"Variables\": {\n        \"dimensional\": [\n          {\n            \"name\": \"height_target_point\",\n            \"description\": \"The point on the structure to which height is measured.\",\n            \"unit\": \"N/A\",\n            \"source\": \"Figure 44 label\"\n          }\n        ],\n        \"environmental\": [],\n        \"usage\": []\n      },\n      \"Constants\": [],\n      \"Conditions\": [\n        {\n          \"type\": \"ambiguous\",\n          \"statement\": \"Height measured to [illegible] highest point.\",\n          \"logic\": \"Unclear whether height is measured to the highest point of the roof, structure, or other element.\",\n          \"source\": \"Figure 44 label\",\n          \"notes\": \"Insufficient clarity for enforcement; requires confirmation from original source.\"\n        }\n      ],\n      \"Exceptions\": [],\n      \"Relationships\": {\n        \"hierarchical\": [\n          {\n            \"parent\": \"Grade (page title)\",\n            \"relationship\": \"related context\",\n            \"note\": \"Mentioned within the context of grade/height measurement figures.\"\n          }\n        ],\n        \"crossReferences\": [\n          {\n            \"type\": \"figure\",\n            \"ref\": \"Figure 44\",\n            \"caption\": \"Existing vs. Finished grade\"\n          }\n        ],\n        \"logicalDependencies\": [\n          {\n            \"relatedTo\": [\n              \"R1\",\n              \"R2\"\n            ],\n            \"note\": \"If clarified, this rule would define the vertical measurement target used with the datum selected in R1 or R2.\"\n          }\n        ]\n      }\n    }\n  ],\n  \"validation_considerations\": {\n    \"completeness\": \"All table rows and figure-derived enforceable items are represented. Numeric height limits from Figure 45 are included with caution.\",\n    \"accuracy\": \"Slope threshold values and datum definitions are captured verbatim. The 30 ft limits may be illustrative; flagged accordingly.\",\n    \"ambiguities_flagged\": [\n      \"Measurement to 'highest point' (Figure 44) is illegible/ambiguous.\",\n      \"Whether the 30 ft limits in Figure 45 are normative or illustrative.\"\n    ],\n    \"consistency_checks\": [\n      \"Ensure slope classification is mutually exclusive between R1 and R2.\",\n      \"For R2, compute datum and limits per-point along the structure and apply the lower of available limits.\"\n    ]\n  }\n}",
+    "response_time": 81.74539804458618,
+    "input_tokens": 819,
+    "output_tokens": 6216,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 15:56:04",
+  "model": "openai/gpt-5",
+  "success": true
+}

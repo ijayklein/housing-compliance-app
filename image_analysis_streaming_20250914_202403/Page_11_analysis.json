@@ -1,0 +1,555 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_11.png",
+  "image_name": "Page_11.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "What counts as floor area summary\n\nArchitectural feature\nCounts?\nIllustration\nPorches & entry features\n\u2022 Unenclosed porches\nNo\nFig 5 on pp. 8-10\n\u2022 Enclosed porches\nOnce\nFig 5 on pp. 8-10\n\u2022 Entry feature \u2264 12' in height\nNo\nFigs 6-8 on pp. 11-13\n\u2022 Entry feature > 12' in height\nTwice (footprint)\nFigs 6-8 on pp. 11-13\n\u2022 1st floor recessed porches < 10' in depth and open on exterior side\nNo\nFig 9 on p. 14\n\u2022 2nd floor roofed or enclosed porches, arcades, balconies, porticos, breezeways\nOnce\nFig 10 on p. 15\nAttics & equivalencies\n\u2022 Attic space where floor to under side of roof rafter distance is < 5'\nNo\nFig 11 on p. 16\n\u2022 All 2nd floor space (including attics) where head height or distance from top of floor to bottom of rafter is \u2265 5'\nOnce\nFig 11 on p. 16\n\u2022 2nd floor equivalent: areas where height from top of first floor to top of roof material is > 17'\nTwice\nFig 12 on p. 17\n\u2022 3rd floor equivalent: areas where height from top of first floor to top of roof material is > 26'\nThree times\nFig 12 on p. 17\n\u2022 Exemption: 3rd floor equivalent, where roof pitch is \u2265 4:12\n200 sf exempt\n\u2022 Exemption: Unusable attic space for Category 1 & 2 historic homes\n500 sf exempt\nBasements\n\u2022 Basements that comply with patio & lightwell requirements of 18.12.070\nNo\nFigs 35, 36, 39, 40 on pp. 39-43\n\u2022 Basements of Category 1 & 2 historic homes or contributing structures in a historic district (even if > 3')\nNo\nOther\n\u2022 Bay windows (if \u2265 18\" above interior flr, does not project > 2', and > 50% windows)\nNo\nFig 13 on p. 18\n\u2022 Architectural appendages like fireplace or buttress footprint\nOnce\nFig 14 on p. 19\nAccessory structures\n\u2022 Accessory structures > 120 sf\nOnce\n\u2022 Garages and carports\nOnce\n\u2022 Porte cocheres\nNo\n5",
+      "visual_elements": [],
+      "technical_specifications": [
+        {
+          "parameter": "Entry feature height",
+          "value_type": "Measurement",
+          "value": "12",
+          "unit": "feet"
+        },
+        {
+          "parameter": "1st floor recessed porches depth",
+          "value_type": "Measurement",
+          "value": "10",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Attic space floor to underside of roof rafter distance",
+          "value_type": "Measurement",
+          "value": "5",
+          "unit": "feet"
+        },
+        {
+          "parameter": "2nd floor space head height or distance from top of floor to bottom of rafter",
+          "value_type": "Measurement",
+          "value": "5",
+          "unit": "feet"
+        },
+        {
+          "parameter": "2nd floor equivalent height from top of first floor to top of roof material",
+          "value_type": "Measurement",
+          "value": "17",
+          "unit": "feet"
+        },
+        {
+          "parameter": "3rd floor equivalent height from top of first floor to top of roof material",
+          "value_type": "Measurement",
+          "value": "26",
+          "unit": "feet"
+        },
+        {
+          "parameter": "3rd floor equivalent exemption square footage",
+          "value_type": "Numerical",
+          "value": "200",
+          "unit": "sf"
+        },
+        {
+          "parameter": "Unusable attic space exemption square footage",
+          "value_type": "Numerical",
+          "value": "500",
+          "unit": "sf"
+        },
+        {
+          "parameter": "Basements of Category 1 & 2 historic homes projection",
+          "value_type": "Measurement",
+          "value": "3",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Bay windows above interior floor",
+          "value_type": "Measurement",
+          "value": "18",
+          "unit": "inches"
+        },
+        {
+          "parameter": "Bay windows projection",
+          "value_type": "Measurement",
+          "value": "2",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Bay windows percentage of windows",
+          "value_type": "Percentage",
+          "value": "50",
+          "unit": "%"
+        },
+        {
+          "parameter": "Accessory structures size",
+          "value_type": "Numerical",
+          "value": "120",
+          "unit": "sf"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "What counts as floor area summary",
+        "subheadings": [
+          "Porches & entry features",
+          "Attics & equivalencies",
+          "Basements",
+          "Other",
+          "Accessory structures"
+        ],
+        "sections": []
+      },
+      "additional_notes": [],
+      "cross_references": [
+        "Fig 5 on pp. 8-10",
+        "Figs 6-8 on pp. 11-13",
+        "Fig 9 on p. 14",
+        "Fig 10 on p. 15",
+        "Fig 11 on p. 16",
+        "Fig 12 on p. 17",
+        "Figs 35, 36, 39, 40 on pp. 39-43",
+        "18.12.070",
+        "Fig 13 on p. 18",
+        "Fig 14 on p. 19"
+      ],
+      "conditions_and_qualifiers": {
+        "qualifiers": [
+          {
+            "id": "q1",
+            "text": "if \u2265 18\" above interior flr",
+            "applies_to_conditions": [
+              "c15"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q2",
+            "text": "does not project > 2'",
+            "applies_to_conditions": [
+              "c16"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q3",
+            "text": "and > 50% windows",
+            "applies_to_conditions": [
+              "c17"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q4",
+            "text": "where roof pitch is \u2265 4:12",
+            "applies_to_conditions": [
+              "c12"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q5",
+            "text": "for Category 1 & 2 historic homes",
+            "applies_to_conditions": [
+              "c13"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q6",
+            "text": "even if > 3'",
+            "applies_to_conditions": [
+              "c14"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q7",
+            "text": "including attics",
+            "applies_to_conditions": [
+              "c8"
+            ],
+            "scope": "Specific"
+          }
+        ],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "Unenclosed porches",
+            "value_type": "Boolean",
+            "operator": "None",
+            "threshold_value": "True",
+            "unit": "None"
+          },
+          {
+            "id": "c2",
+            "text": "Enclosed porches",
+            "value_type": "Boolean",
+            "operator": "None",
+            "threshold_value": "True",
+            "unit": "None"
+          },
+          {
+            "id": "c3",
+            "text": "Entry feature \u2264 12' in height",
+            "value_type": "Measurement",
+            "operator": "<=",
+            "threshold_value": "12",
+            "unit": "feet"
+          },
+          {
+            "id": "c4",
+            "text": "Entry feature > 12' in height",
+            "value_type": "Measurement",
+            "operator": ">",
+            "threshold_value": "12",
+            "unit": "feet"
+          },
+          {
+            "id": "c5",
+            "text": "1st floor recessed porches < 10' in depth and open on exterior side",
+            "value_type": "Measurement",
+            "operator": "<",
+            "threshold_value": "10",
+            "unit": "feet"
+          },
+          {
+            "id": "c6",
+            "text": "2nd floor roofed or enclosed porches, arcades, balconies, porticos, breezeways",
+            "value_type": "Boolean",
+            "operator": "None",
+            "threshold_value": "True",
+            "unit": "None"
+          },
+          {
+            "id": "c7",
+            "text": "Attic space where floor to under side of roof rafter distance is < 5'",
+            "value_type": "Measurement",
+            "operator": "<",
+            "threshold_value": "5",
+            "unit": "feet"
+          },
+          {
+            "id": "c8",
+            "text": "All 2nd floor space where head height or distance from top of floor to bottom of rafter is \u2265 5'",
+            "value_type": "Measurement",
+            "operator": ">=",
+            "threshold_value": "5",
+            "unit": "feet"
+          },
+          {
+            "id": "c9",
+            "text": "2nd floor equivalent: areas where height from top of first floor to top of roof material is > 17'",
+            "value_type": "Measurement",
+            "operator": ">",
+            "threshold_value": "17",
+            "unit": "feet"
+          },
+          {
+            "id": "c10",
+            "text": "3rd floor equivalent: areas where height from top of first floor to top of roof material is > 26'",
+            "value_type": "Measurement",
+            "operator": ">",
+            "threshold_value": "26",
+            "unit": "feet"
+          },
+          {
+            "id": "c11",
+            "text": "3rd floor equivalent",
+            "value_type": "Boolean",
+            "operator": "None",
+            "threshold_value": "True",
+            "unit": "None"
+          },
+          {
+            "id": "c12",
+            "text": "roof pitch is \u2265 4:12",
+            "value_type": "Text",
+            "operator": ">=",
+            "threshold_value": "4:12",
+            "unit": "None"
+          },
+          {
+            "id": "c13",
+            "text": "Unusable attic space",
+            "value_type": "Boolean",
+            "operator": "None",
+            "threshold_value": "True",
+            "unit": "None"
+          },
+          {
+            "id": "c14",
+            "text": "Basements that comply with patio & lightwell requirements of 18.12.070",
+            "value_type": "Boolean",
+            "operator": "None",
+            "threshold_value": "True",
+            "unit": "None"
+          },
+          {
+            "id": "c15",
+            "text": "Bay windows are \u2265 18\" above interior flr",
+            "value_type": "Measurement",
+            "operator": ">=",
+            "threshold_value": "18",
+            "unit": "inches"
+          },
+          {
+            "id": "c16",
+            "text": "Bay windows do not project > 2'",
+            "value_type": "Measurement",
+            "operator": "<=",
+            "threshold_value": "2",
+            "unit": "feet"
+          },
+          {
+            "id": "c17",
+            "text": "Bay windows are > 50% windows",
+            "value_type": "Percentage",
+            "operator": ">",
+            "threshold_value": "50",
+            "unit": "%"
+          },
+          {
+            "id": "c18",
+            "text": "Architectural appendages like fireplace or buttress footprint",
+            "value_type": "Boolean",
+            "operator": "None",
+            "threshold_value": "True",
+            "unit": "None"
+          },
+          {
+            "id": "c19",
+            "text": "Accessory structures > 120 sf",
+            "value_type": "Numerical",
+            "operator": ">",
+            "threshold_value": "120",
+            "unit": "sf"
+          },
+          {
+            "id": "c20",
+            "text": "Garages and carports",
+            "value_type": "Boolean",
+            "operator": "None",
+            "threshold_value": "True",
+            "unit": "None"
+          },
+          {
+            "id": "c21",
+            "text": "Porte cocheres",
+            "value_type": "Boolean",
+            "operator": "None",
+            "threshold_value": "True",
+            "unit": "None"
+          }
+        ],
+        "logical_relationships": [
+          {
+            "operation": "AND",
+            "condition_ids": [
+              "c5_depth",
+              "c5_open"
+            ],
+            "expression": "1st floor recessed porches < 10' in depth AND open on exterior side",
+            "evaluation_order": 1
+          },
+          {
+            "operation": "AND",
+            "condition_ids": [
+              "c15",
+              "c16",
+              "c17"
+            ],
+            "expression": "Bay windows (if \u2265 18\" above interior flr, does not project > 2', AND > 50% windows)",
+            "evaluation_order": 2
+          }
+        ],
+        "execution_sequence": [
+          {
+            "step": 1,
+            "action": "Evaluate if Unenclosed porches count towards floor area.",
+            "condition_ids": [
+              "c1"
+            ],
+            "qualifier_ids": [],
+            "dependencies": []
+          },
+          {
+            "step": 2,
+            "action": "Evaluate if Enclosed porches count towards floor area.",
+            "condition_ids": [
+              "c2"
+            ],
+            "qualifier_ids": [],
+            "dependencies": []
+          },
+          {
+            "step": 3,
+            "action": "Evaluate if Entry feature \u2264 12' in height counts towards floor area.",
+            "condition_ids": [
+              "c3"
+            ],
+            "qualifier_ids": [],
+            "dependencies": []
+          },
+          {
+            "step": 4,
+            "action": "Evaluate if Entry feature > 12' in height counts towards floor area.",
+            "condition_ids": [
+              "c4"
+            ],
+            "qualifier_ids": [],
+            "dependencies": []
+          },
+          {
+            "step": 5,
+            "action": "Evaluate if 1st floor recessed porches < 10' in depth and open on exterior side count towards floor area.",
+            "condition_ids": [
+              "c5"
+            ],
+            "qualifier_ids": [],
+            "dependencies": []
+          },
+          {
+            "step": 6,
+            "action": "Evaluate if 2nd floor roofed or enclosed porches, arcades, balconies, porticos, breezeways count towards floor area.",
+            "condition_ids": [
+              "c6"
+            ],
+            "qualifier_ids": [],
+            "dependencies": []
+          },
+          {
+            "step": 7,
+            "action": "Evaluate if Attic space where floor to under side of roof rafter distance is < 5' counts towards floor area.",
+            "condition_ids": [
+              "c7"
+            ],
+            "qualifier_ids": [],
+            "dependencies": []
+          },
+          {
+            "step": 8,
+            "action": "Evaluate if All 2nd floor space (including attics) where head height or distance from top of floor to bottom of rafter is \u2265 5' counts towards floor area.",
+            "condition_ids": [
+              "c8"
+            ],
+            "qualifier_ids": [
+              "q7"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 9,
+            "action": "Evaluate if 2nd floor equivalent: areas where height from top of first floor to top of roof material is > 17' counts towards floor area.",
+            "condition_ids": [
+              "c9"
+            ],
+            "qualifier_ids": [],
+            "dependencies": []
+          },
+          {
+            "step": 10,
+            "action": "Evaluate if 3rd floor equivalent: areas where height from top of first floor to top of roof material is > 26' counts towards floor area.",
+            "condition_ids": [
+              "c10"
+            ],
+            "qualifier_ids": [],
+            "dependencies": []
+          },
+          {
+            "step": 11,
+            "action": "Evaluate Exemption for 3rd floor equivalent, where roof pitch is \u2265 4:12.",
+            "condition_ids": [
+              "c11",
+              "c12"
+            ],
+            "qualifier_ids": [
+              "q4"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 12,
+            "action": "Evaluate Exemption for Unusable attic space for Category 1 & 2 historic homes.",
+            "condition_ids": [
+              "c13"
+            ],
+            "qualifier_ids": [
+              "q5"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 13,
+            "action": "Evaluate if Basements that comply with patio & lightwell requirements of 18.12.070 count towards floor area.",
+            "condition_ids": [
+              "c14"
+            ],
+            "qualifier_ids": [],
+            "dependencies": []
+          },
+          {
+            "step": 14,
+            "action": "Evaluate if Basements of Category 1 & 2 historic homes or contributing structures in a historic district (even if > 3') count towards floor area.",
+            "condition_ids": [
+              "c14_historic_basements"
+            ],
+            "qualifier_ids": [
+              "q6"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 15,
+            "action": "Evaluate if Bay windows (if \u2265 18\" above interior flr, does not project > 2', and > 50% windows) count towards floor area.",
+            "condition_ids": [
+              "c15",
+              "c16",
+              "c17"
+            ],
+            "qualifier_ids": [
+              "q1",
+              "q2",
+              "q3"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 16,
+            "action": "Evaluate if Architectural appendages like fireplace or buttress footprint count towards floor area.",
+            "condition_ids": [
+              "c18"
+            ],
+            "qualifier_ids": [],
+            "dependencies": []
+          },
+          {
+            "step": 17,
+            "action": "Evaluate if Accessory structures > 120 sf count towards floor area.",
+            "condition_ids": [
+              "c19"
+            ],
+            "qualifier_ids": [],
+            "dependencies": []
+          },
+          {
+            "step": 18,
+            "action": "Evaluate if Garages and carports count towards floor area.",
+            "condition_ids": [
+              "c20"
+            ],
+            "qualifier_ids": [],
+            "dependencies": []
+          },
+          {
+            "step": 19,
+            "action": "Evaluate if Porte cocheres count towards floor area.",
+            "condition_ids": [
+              "c21"
+            ],
+            "qualifier_ids": [],
+            "dependencies": []
+          }
+        ]
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:24:22",
+  "model_used": "google/gemini-2.5-flash"
+}

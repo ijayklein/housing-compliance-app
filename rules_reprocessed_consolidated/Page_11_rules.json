@@ -1,0 +1,341 @@
+{
+  "file_path": "markdown_pages/Page_11.md",
+  "file_name": "Page_11.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "rule": "Porches & entry features",
+        "Qualifiers": {
+          "Scope": "Porches and entry features",
+          "Applicability": "All porches and entry features",
+          "Exclusions": null
+        },
+        "Variables": {
+          "Dimensional": [
+            {
+              "Feature": "Entry feature",
+              "Height": "\u2264 12'"
+            },
+            {
+              "Feature": "Entry feature",
+              "Height": "> 12'"
+            },
+            {
+              "Feature": "1st floor recessed porches",
+              "Depth": "< 10'"
+            }
+          ],
+          "Material": null,
+          "Environmental": null,
+          "Usage": null
+        },
+        "Constants": {
+          "Numerical values": null,
+          "Specs": null,
+          "Standards": null,
+          "Procedures": null
+        },
+        "Conditions": {
+          "Mandatory": null,
+          "Optional": null,
+          "Conditional logic": [
+            {
+              "Condition": "Unenclosed porches",
+              "Counts": "No"
+            },
+            {
+              "Condition": "Enclosed porches",
+              "Counts": "Once"
+            },
+            {
+              "Condition": "Entry feature \u2264 12' in height",
+              "Counts": "No"
+            },
+            {
+              "Condition": "Entry feature > 12' in height",
+              "Counts": "Twice (footprint)"
+            },
+            {
+              "Condition": "1st floor recessed porches < 10' in depth and open on exterior side",
+              "Counts": "No"
+            },
+            {
+              "Condition": "2nd floor roofed or enclosed porches, arcades, balconies, porticos, breezeways",
+              "Counts": "Once"
+            }
+          ],
+          "Dependencies": null
+        },
+        "Exceptions": null,
+        "Relationships": {
+          "Hierarchical": null,
+          "Cross-references": [
+            {
+              "Reference": "Figure 5",
+              "Pages": "8-10"
+            },
+            {
+              "Reference": "Figs 6-8",
+              "Pages": "11-13"
+            },
+            {
+              "Reference": "Figure 9",
+              "Page": "14"
+            },
+            {
+              "Reference": "Figure 10",
+              "Page": "15"
+            }
+          ],
+          "Logical dependencies": null
+        }
+      },
+      {
+        "rule": "Attics & equivalencies",
+        "Qualifiers": {
+          "Scope": "Attics and equivalent spaces",
+          "Applicability": "All attic and equivalent spaces",
+          "Exclusions": null
+        },
+        "Variables": {
+          "Dimensional": [
+            {
+              "Feature": "Attic space",
+              "Height": "\u2264 5'"
+            },
+            {
+              "Feature": "2nd floor space",
+              "Height": "\u2265 5'"
+            },
+            {
+              "Feature": "2nd floor equivalent",
+              "Height": "> 17'"
+            },
+            {
+              "Feature": "3rd floor equivalent",
+              "Height": "\u2265 26'"
+            }
+          ],
+          "Material": null,
+          "Environmental": null,
+          "Usage": null
+        },
+        "Constants": {
+          "Numerical values": null,
+          "Specs": null,
+          "Standards": null,
+          "Procedures": null
+        },
+        "Conditions": {
+          "Mandatory": null,
+          "Optional": null,
+          "Conditional logic": [
+            {
+              "Condition": "Attic space where floor to under side of roof rafter distance is \u2264 5'",
+              "Counts": "No"
+            },
+            {
+              "Condition": "All 2nd floor space (including attics) where head height or distance from top of floor to bottom of rafter is \u2265 5'",
+              "Counts": "Once"
+            },
+            {
+              "Condition": "2nd floor equivalent: areas where height from top of first floor to top of roof material is > 17'",
+              "Counts": "Twice"
+            },
+            {
+              "Condition": "3rd floor equivalent: areas where height from top of first floor to top of roof material is \u2265 26'",
+              "Counts": "Three times"
+            }
+          ],
+          "Dependencies": null
+        },
+        "Exceptions": {
+          "Explicit deviations": [
+            {
+              "Condition": "3rd floor equivalent, where roof pitch is \u2265 4:12",
+              "Exemption": "200 sf exempt"
+            },
+            {
+              "Condition": "Unusable attic space for Category 1 & 2 historic homes",
+              "Exemption": "500 sf exempt"
+            }
+          ],
+          "Alternatives": null,
+          "Special cases": null
+        },
+        "Relationships": {
+          "Hierarchical": null,
+          "Cross-references": [
+            {
+              "Reference": "Figure 11",
+              "Page": "16"
+            },
+            {
+              "Reference": "Figure 12",
+              "Page": "17"
+            }
+          ],
+          "Logical dependencies": null
+        }
+      },
+      {
+        "rule": "Basements",
+        "Qualifiers": {
+          "Scope": "Basements",
+          "Applicability": "All basements",
+          "Exclusions": null
+        },
+        "Variables": {
+          "Dimensional": null,
+          "Material": null,
+          "Environmental": null,
+          "Usage": null
+        },
+        "Constants": {
+          "Numerical values": null,
+          "Specs": null,
+          "Standards": "18.12.070",
+          "Procedures": null
+        },
+        "Conditions": {
+          "Mandatory": null,
+          "Optional": null,
+          "Conditional logic": [
+            {
+              "Condition": "Basements that comply with patio & lightwell requirements of 18.12.070",
+              "Counts": "No"
+            },
+            {
+              "Condition": "Basements of Category 1 & 2 historic homes or contributing structures in a historic district (even if > 3')",
+              "Counts": "No"
+            }
+          ],
+          "Dependencies": null
+        },
+        "Exceptions": null,
+        "Relationships": {
+          "Hierarchical": null,
+          "Cross-references": [
+            {
+              "Reference": "Figs 35, 36, 39, 40",
+              "Pages": "39-43"
+            }
+          ],
+          "Logical dependencies": null
+        }
+      },
+      {
+        "rule": "Other",
+        "Qualifiers": {
+          "Scope": "Other architectural features",
+          "Applicability": "Bay windows, architectural appendages",
+          "Exclusions": null
+        },
+        "Variables": {
+          "Dimensional": [
+            {
+              "Feature": "Bay windows",
+              "Height": "\u2265 18\" above interior floor",
+              "Projection": "\u2264 2'",
+              "Window coverage": "> 50%"
+            }
+          ],
+          "Material": null,
+          "Environmental": null,
+          "Usage": null
+        },
+        "Constants": {
+          "Numerical values": null,
+          "Specs": null,
+          "Standards": null,
+          "Procedures": null
+        },
+        "Conditions": {
+          "Mandatory": null,
+          "Optional": null,
+          "Conditional logic": [
+            {
+              "Condition": "Bay windows (if \u2265 18\" above interior floor, does not project > 2', and > 50% windows)",
+              "Counts": "No"
+            },
+            {
+              "Condition": "Architectural appendages like fireplace or buttress footprint",
+              "Counts": "Once"
+            }
+          ],
+          "Dependencies": null
+        },
+        "Exceptions": null,
+        "Relationships": {
+          "Hierarchical": null,
+          "Cross-references": [
+            {
+              "Reference": "Figure 13",
+              "Page": "18"
+            },
+            {
+              "Reference": "Figure 14",
+              "Page": "19"
+            }
+          ],
+          "Logical dependencies": null
+        }
+      },
+      {
+        "rule": "Accessory structures",
+        "Qualifiers": {
+          "Scope": "Accessory structures",
+          "Applicability": "All accessory structures",
+          "Exclusions": null
+        },
+        "Variables": {
+          "Dimensional": [
+            {
+              "Feature": "Accessory structures",
+              "Size": "> 120 sf"
+            }
+          ],
+          "Material": null,
+          "Environmental": null,
+          "Usage": null
+        },
+        "Constants": {
+          "Numerical values": null,
+          "Specs": null,
+          "Standards": null,
+          "Procedures": null
+        },
+        "Conditions": {
+          "Mandatory": null,
+          "Optional": null,
+          "Conditional logic": [
+            {
+              "Condition": "Accessory structures > 120 sf",
+              "Counts": "Once"
+            },
+            {
+              "Condition": "Garages and carports",
+              "Counts": "Once"
+            },
+            {
+              "Condition": "Porte cocheres",
+              "Counts": "No"
+            }
+          ],
+          "Dependencies": null
+        },
+        "Exceptions": null,
+        "Relationships": {
+          "Hierarchical": null,
+          "Cross-references": null,
+          "Logical dependencies": null
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n    {\n        \"rule\": \"Porches & entry features\",\n        \"Qualifiers\": {\n            \"Scope\": \"Porches and entry features\",\n            \"Applicability\": \"All porches and entry features\",\n            \"Exclusions\": null\n        },\n        \"Variables\": {\n            \"Dimensional\": [\n                {\n                    \"Feature\": \"Entry feature\",\n                    \"Height\": \"\u2264 12'\"\n                },\n                {\n                    \"Feature\": \"Entry feature\",\n                    \"Height\": \"> 12'\"\n                },\n                {\n                    \"Feature\": \"1st floor recessed porches\",\n                    \"Depth\": \"< 10'\"\n                }\n            ],\n            \"Material\": null,\n            \"Environmental\": null,\n            \"Usage\": null\n        },\n        \"Constants\": {\n            \"Numerical values\": null,\n            \"Specs\": null,\n            \"Standards\": null,\n            \"Procedures\": null\n        },\n        \"Conditions\": {\n            \"Mandatory\": null,\n            \"Optional\": null,\n            \"Conditional logic\": [\n                {\n                    \"Condition\": \"Unenclosed porches\",\n                    \"Counts\": \"No\"\n                },\n                {\n                    \"Condition\": \"Enclosed porches\",\n                    \"Counts\": \"Once\"\n                },\n                {\n                    \"Condition\": \"Entry feature \u2264 12' in height\",\n                    \"Counts\": \"No\"\n                },\n                {\n                    \"Condition\": \"Entry feature > 12' in height\",\n                    \"Counts\": \"Twice (footprint)\"\n                },\n                {\n                    \"Condition\": \"1st floor recessed porches < 10' in depth and open on exterior side\",\n                    \"Counts\": \"No\"\n                },\n                {\n                    \"Condition\": \"2nd floor roofed or enclosed porches, arcades, balconies, porticos, breezeways\",\n                    \"Counts\": \"Once\"\n                }\n            ],\n            \"Dependencies\": null\n        },\n        \"Exceptions\": null,\n        \"Relationships\": {\n            \"Hierarchical\": null,\n            \"Cross-references\": [\n                {\n                    \"Reference\": \"Figure 5\",\n                    \"Pages\": \"8-10\"\n                },\n                {\n                    \"Reference\": \"Figs 6-8\",\n                    \"Pages\": \"11-13\"\n                },\n                {\n                    \"Reference\": \"Figure 9\",\n                    \"Page\": \"14\"\n                },\n                {\n                    \"Reference\": \"Figure 10\",\n                    \"Page\": \"15\"\n                }\n            ],\n            \"Logical dependencies\": null\n        }\n    },\n    {\n        \"rule\": \"Attics & equivalencies\",\n        \"Qualifiers\": {\n            \"Scope\": \"Attics and equivalent spaces\",\n            \"Applicability\": \"All attic and equivalent spaces\",\n            \"Exclusions\": null\n        },\n        \"Variables\": {\n            \"Dimensional\": [\n                {\n                    \"Feature\": \"Attic space\",\n                    \"Height\": \"\u2264 5'\"\n                },\n                {\n                    \"Feature\": \"2nd floor space\",\n                    \"Height\": \"\u2265 5'\"\n                },\n                {\n                    \"Feature\": \"2nd floor equivalent\",\n                    \"Height\": \"> 17'\"\n                },\n                {\n                    \"Feature\": \"3rd floor equivalent\",\n                    \"Height\": \"\u2265 26'\"\n                }\n            ],\n            \"Material\": null,\n            \"Environmental\": null,\n            \"Usage\": null\n        },\n        \"Constants\": {\n            \"Numerical values\": null,\n            \"Specs\": null,\n            \"Standards\": null,\n            \"Procedures\": null\n        },\n        \"Conditions\": {\n            \"Mandatory\": null,\n            \"Optional\": null,\n            \"Conditional logic\": [\n                {\n                    \"Condition\": \"Attic space where floor to under side of roof rafter distance is \u2264 5'\",\n                    \"Counts\": \"No\"\n                },\n                {\n                    \"Condition\": \"All 2nd floor space (including attics) where head height or distance from top of floor to bottom of rafter is \u2265 5'\",\n                    \"Counts\": \"Once\"\n                },\n                {\n                    \"Condition\": \"2nd floor equivalent: areas where height from top of first floor to top of roof material is > 17'\",\n                    \"Counts\": \"Twice\"\n                },\n                {\n                    \"Condition\": \"3rd floor equivalent: areas where height from top of first floor to top of roof material is \u2265 26'\",\n                    \"Counts\": \"Three times\"\n                }\n            ],\n            \"Dependencies\": null\n        },\n        \"Exceptions\": {\n            \"Explicit deviations\": [\n                {\n                    \"Condition\": \"3rd floor equivalent, where roof pitch is \u2265 4:12\",\n                    \"Exemption\": \"200 sf exempt\"\n                },\n                {\n                    \"Condition\": \"Unusable attic space for Category 1 & 2 historic homes\",\n                    \"Exemption\": \"500 sf exempt\"\n                }\n            ],\n            \"Alternatives\": null,\n            \"Special cases\": null\n        },\n        \"Relationships\": {\n            \"Hierarchical\": null,\n            \"Cross-references\": [\n                {\n                    \"Reference\": \"Figure 11\",\n                    \"Page\": \"16\"\n                },\n                {\n                    \"Reference\": \"Figure 12\",\n                    \"Page\": \"17\"\n                }\n            ],\n            \"Logical dependencies\": null\n        }\n    },\n    {\n        \"rule\": \"Basements\",\n        \"Qualifiers\": {\n            \"Scope\": \"Basements\",\n            \"Applicability\": \"All basements\",\n            \"Exclusions\": null\n        },\n        \"Variables\": {\n            \"Dimensional\": null,\n            \"Material\": null,\n            \"Environmental\": null,\n            \"Usage\": null\n        },\n        \"Constants\": {\n            \"Numerical values\": null,\n            \"Specs\": null,\n            \"Standards\": \"18.12.070\",\n            \"Procedures\": null\n        },\n        \"Conditions\": {\n            \"Mandatory\": null,\n            \"Optional\": null,\n            \"Conditional logic\": [\n                {\n                    \"Condition\": \"Basements that comply with patio & lightwell requirements of 18.12.070\",\n                    \"Counts\": \"No\"\n                },\n                {\n                    \"Condition\": \"Basements of Category 1 & 2 historic homes or contributing structures in a historic district (even if > 3')\",\n                    \"Counts\": \"No\"\n                }\n            ],\n            \"Dependencies\": null\n        },\n        \"Exceptions\": null,\n        \"Relationships\": {\n            \"Hierarchical\": null,\n            \"Cross-references\": [\n                {\n                    \"Reference\": \"Figs 35, 36, 39, 40\",\n                    \"Pages\": \"39-43\"\n                }\n            ],\n            \"Logical dependencies\": null\n        }\n    },\n    {\n        \"rule\": \"Other\",\n        \"Qualifiers\": {\n            \"Scope\": \"Other architectural features\",\n            \"Applicability\": \"Bay windows, architectural appendages\",\n            \"Exclusions\": null\n        },\n        \"Variables\": {\n            \"Dimensional\": [\n                {\n                    \"Feature\": \"Bay windows\",\n                    \"Height\": \"\u2265 18\\\" above interior floor\",\n                    \"Projection\": \"\u2264 2'\",\n                    \"Window coverage\": \"> 50%\"\n                }\n            ],\n            \"Material\": null,\n            \"Environmental\": null,\n            \"Usage\": null\n        },\n        \"Constants\": {\n            \"Numerical values\": null,\n            \"Specs\": null,\n            \"Standards\": null,\n            \"Procedures\": null\n        },\n        \"Conditions\": {\n            \"Mandatory\": null,\n            \"Optional\": null,\n            \"Conditional logic\": [\n                {\n                    \"Condition\": \"Bay windows (if \u2265 18\\\" above interior floor, does not project > 2', and > 50% windows)\",\n                    \"Counts\": \"No\"\n                },\n                {\n                    \"Condition\": \"Architectural appendages like fireplace or buttress footprint\",\n                    \"Counts\": \"Once\"\n                }\n            ],\n            \"Dependencies\": null\n        },\n        \"Exceptions\": null,\n        \"Relationships\": {\n            \"Hierarchical\": null,\n            \"Cross-references\": [\n                {\n                    \"Reference\": \"Figure 13\",\n                    \"Page\": \"18\"\n                },\n                {\n                    \"Reference\": \"Figure 14\",\n                    \"Page\": \"19\"\n                }\n            ],\n            \"Logical dependencies\": null\n        }\n    },\n    {\n        \"rule\": \"Accessory structures\",\n        \"Qualifiers\": {\n            \"Scope\": \"Accessory structures\",\n            \"Applicability\": \"All accessory structures\",\n            \"Exclusions\": null\n        },\n        \"Variables\": {\n            \"Dimensional\": [\n                {\n                    \"Feature\": \"Accessory structures\",\n                    \"Size\": \"> 120 sf\"\n                }\n            ],\n            \"Material\": null,\n            \"Environmental\": null,\n            \"Usage\": null\n        },\n        \"Constants\": {\n            \"Numerical values\": null,\n            \"Specs\": null,\n            \"Standards\": null,\n            \"Procedures\": null\n        },\n        \"Conditions\": {\n            \"Mandatory\": null,\n            \"Optional\": null,\n            \"Conditional logic\": [\n                {\n                    \"Condition\": \"Accessory structures > 120 sf\",\n                    \"Counts\": \"Once\"\n                },\n                {\n                    \"Condition\": \"Garages and carports\",\n                    \"Counts\": \"Once\"\n                },\n                {\n                    \"Condition\": \"Porte cocheres\",\n                    \"Counts\": \"No\"\n                }\n            ],\n            \"Dependencies\": null\n        },\n        \"Exceptions\": null,\n        \"Relationships\": {\n            \"Hierarchical\": null,\n            \"Cross-references\": null,\n            \"Logical dependencies\": null\n        }\n    }\n]\n```"
+  },
+  "timestamp": "2025-09-16 15:43:02",
+  "model": "openai/gpt-4o",
+  "success": true
+}

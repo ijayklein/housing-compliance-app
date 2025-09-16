@@ -1,0 +1,106 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_16.png",
+  "image_name": "Page_16.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Step 4: Finalize the determination of which segments are closed and which are open, total the linear feet in each category, and compare the totals.\n\nFor the porch in Fig 5, the summary is as follows:\n\nClosed\t\t\tOpen\nSegment Feet\t\tSegment Feet\nA 3'\t\t\tD 7'\nB 8'\t\t\tF 24'\nC 10'\t\t\tG 4'\nE 14'\t\t\t\n_____\t\t\t_____\n35'\t\t\t35'\n\nConclusion: The perimeter of the porch in Fig 5 is 50% open and so the porch would NOT count toward gross floor area\n\nNote: If a porch floor is more than 30\" above grade, the porch sides may need to be 36\" high for safety reasons. This may cause the porch facade to be considered closed. Possible solutions to make sure the porch sides are considered open are illustrated to the right:\n\n\u2022 Railings (ballisters) instead of solid half walls.\n\u2022 A single safety rail above lower, solid half walls.",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Plan view of a porch with labeled segments A, B, C, D, E, F, G showing dimensions in feet. Closed segments are shaded black and open segments are shaded gray. Dimensions are: A = 3', B = 8', C = 10', D = 7', E = 14', F = 24', G = 4'.",
+          "location": "Top right"
+        },
+        {
+          "type": "diagram",
+          "description": "Two side elevation views of porch sides illustrating open porch sides with railings (ballisters) and a single safety rail above lower solid half walls. Dimensions indicate porch floor height > 30\" above grade and porch side height 36\".",
+          "location": "Bottom right"
+        },
+        {
+          "type": "legend",
+          "description": "Legend indicating black squares represent closed segments and gray squares represent open segments.",
+          "location": "Near top right diagram"
+        },
+        {
+          "type": "callout box",
+          "description": "Gray shaded note box with safety note about porch floor height and porch side height requirements for safety and how it affects classification of porch sides as open or closed.",
+          "location": "Bottom left"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Segment A length",
+          "value": "3",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Segment B length",
+          "value": "8",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Segment C length",
+          "value": "10",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Segment D length",
+          "value": "7",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Segment E length",
+          "value": "14",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Segment F length",
+          "value": "24",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Segment G length",
+          "value": "4",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Total closed segments length",
+          "value": "35",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Total open segments length",
+          "value": "35",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Porch floor height above grade",
+          "value": "30",
+          "unit": "inches"
+        },
+        {
+          "parameter": "Porch side height for safety",
+          "value": "36",
+          "unit": "inches"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Step 4",
+        "subheadings": [
+          "Conclusion",
+          "Note"
+        ],
+        "sections": []
+      },
+      "additional_notes": [
+        "The page number '10' is located at the bottom left corner.",
+        "No handwritten annotations or stamps are present.",
+        "Text and diagrams are clear and legible."
+      ],
+      "cross_references": [
+        "Reference to Fig 5 for porch plan and perimeter details."
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-14 19:41:05",
+  "model_used": "openai/gpt-4.1-mini"
+}

@@ -1,0 +1,328 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_12.png",
+  "image_name": "Page_12.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Porches\n&\nentry\nfeatures\n\nFacades with defined\nentryways make a\nstreetscape pleasant\nand friendly as long as\nthey are not out of scale\nor proportion.\n\nThe gross floor area\nregulations encourage\nappropriately sized\nporches and entryways.\n\nCode sections\n18.04.030(a)(65)\n18.04.030(a)(113.1)\n18.04.030(143.5)\n18.12.040(b)Table 3\n\nPorch types\n\nFor purposes of assessing gross floor area, porches, entryways, and balconies fall into one of these categories:\n\n1. Non-roofed porches, entryways, balconies etc.\n   \u2022 Non-roofed features generally do not count\n\n2. Roofed porches on the 1st floor (Fig 4 A & D on p. 7, Fig 5 on p. 8)\n   \u2022 Openess of the sides determines whether or not these count\n     regardless of the height.\n   \u2022 If they do count, they count only once.\n\n3. Roofed entry features on the 1st floor\n   that are less than 12' high (from grade) (Fig 4 B on p. 7)\n   \u2022 These count once regardless of the design including openess.\n\n4. Roofed entry features on the 1st floor that are more than 12'\n   high from grade-\"vaulted entry feature\" (Fig 4 C & D on p. 7,\n   Fig 6, 7, & 8 on pp. 11-13)\n   \u2022 These count twice regardless of the design including openess.\n\n5. Recessed porches on the 1st floor (Fig 9 on p. 14)\n   \u2022 Height, depth, & openess determine whether or not these count.\n   \u2022 If they count and are less than 17' high, they count only once.\n   \u2022 If they count and are more than 17' high, they count twice.\n\n6. Roofed balconies/outdoor areas on upper floors (Fig 10 on p. 15)\n   \u2022 These count once regardless of the design including openess\n\nDifference\nbetween a porch\n& an entry\nfeature:\n\nA feature is considered\nto be a porch rather than\nan entry feature if it can\nclearly accomodate more\nactivities than entering and\nleaving the house.\n\nThe following pages address the details of assessing these features with regard to gross floor area.\n\n6",
+      "visual_elements": [
+        {
+          "type": "text_block",
+          "description": "A grey rectangular text block on the left side of the page containing introductory text about porches and entry features, and a list of code sections.",
+          "location": "Left side, spanning top to bottom"
+        },
+        {
+          "type": "text_block",
+          "description": "A grey rectangular text block on the right side of the page providing a definition for the 'Difference between a porch & an entry feature'.",
+          "location": "Middle right"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Height for Roofed entry features (category 3)",
+          "value_type": "Measurement",
+          "value": "12",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Height for Roofed entry features (category 4)",
+          "value_type": "Measurement",
+          "value": "12",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Height for Recessed porches (category 5)",
+          "value_type": "Measurement",
+          "value": "17",
+          "unit": "feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Porch types",
+        "subheadings": [],
+        "sections": [
+          "Porches & entry features",
+          "Code sections",
+          "Difference between a porch & an entry feature:",
+          "1. Non-roofed porches, entryways, balconies etc.",
+          "2. Roofed porches on the 1st floor",
+          "3. Roofed entry features on the 1st floor",
+          "4. Roofed entry features on the 1st floor that are more than 12' high from grade-\"vaulted entry feature\"",
+          "5. Recessed porches on the 1st floor",
+          "6. Roofed balconies/outdoor areas on upper floors"
+        ]
+      },
+      "additional_notes": [],
+      "cross_references": [
+        "Fig 4 A & D on p. 7",
+        "Fig 5 on p. 8",
+        "Fig 4 B on p. 7",
+        "Fig 4 C & D on p. 7",
+        "Fig 6, 7, & 8 on pp. 11-13",
+        "Fig 9 on p. 14",
+        "Fig 10 on p. 15",
+        "18.04.030(a)(65)",
+        "18.04.030(a)(113.1)",
+        "18.04.030(143.5)",
+        "18.12.040(b)Table 3"
+      ],
+      "conditions_and_qualifiers": {
+        "qualifiers": [
+          {
+            "id": "q1",
+            "text": "For purposes of assessing gross floor area",
+            "applies_to_conditions": [],
+            "scope": "Global"
+          },
+          {
+            "id": "q2",
+            "text": "regardless of the height",
+            "applies_to_conditions": [
+              "c2"
+            ],
+            "scope": "Local"
+          },
+          {
+            "id": "q3",
+            "text": "regardless of the design including openess",
+            "applies_to_conditions": [
+              "c3",
+              "c4",
+              "c6"
+            ],
+            "scope": "Local"
+          },
+          {
+            "id": "q4",
+            "text": "from grade",
+            "applies_to_conditions": [
+              "c5",
+              "c7"
+            ],
+            "scope": "Local"
+          },
+          {
+            "id": "q5",
+            "text": "A feature is considered to be a porch rather than an entry feature if it can clearly accomodate more activities than entering and leaving the house.",
+            "applies_to_conditions": [],
+            "scope": "Global"
+          }
+        ],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "Non-roofed features generally do not count",
+            "value_type": "Boolean",
+            "operator": "is",
+            "threshold_value": "false",
+            "unit": "None"
+          },
+          {
+            "id": "c2",
+            "text": "Openess of the sides determines whether or not these count",
+            "value_type": "Boolean",
+            "operator": "determines",
+            "threshold_value": "count",
+            "unit": "None"
+          },
+          {
+            "id": "c3",
+            "text": "If they do count, they count only once.",
+            "value_type": "Numerical",
+            "operator": "=",
+            "threshold_value": "1",
+            "unit": "count"
+          },
+          {
+            "id": "c4",
+            "text": "that are less than 12' high",
+            "value_type": "Measurement",
+            "operator": "<",
+            "threshold_value": "12",
+            "unit": "feet"
+          },
+          {
+            "id": "c5",
+            "text": "These count once",
+            "value_type": "Numerical",
+            "operator": "=",
+            "threshold_value": "1",
+            "unit": "count"
+          },
+          {
+            "id": "c6",
+            "text": "that are more than 12' high",
+            "value_type": "Measurement",
+            "operator": ">",
+            "threshold_value": "12",
+            "unit": "feet"
+          },
+          {
+            "id": "c7",
+            "text": "These count twice",
+            "value_type": "Numerical",
+            "operator": "=",
+            "threshold_value": "2",
+            "unit": "count"
+          },
+          {
+            "id": "c8",
+            "text": "Height, depth, & openess determine whether or not these count.",
+            "value_type": "Boolean",
+            "operator": "determines",
+            "threshold_value": "count",
+            "unit": "None"
+          },
+          {
+            "id": "c9",
+            "text": "If they count and are less than 17' high, they count only once.",
+            "value_type": "Numerical",
+            "operator": "=",
+            "threshold_value": "1",
+            "unit": "count"
+          },
+          {
+            "id": "c10",
+            "text": "If they count and are more than 17' high, they count twice.",
+            "value_type": "Numerical",
+            "operator": "=",
+            "threshold_value": "2",
+            "unit": "count"
+          },
+          {
+            "id": "c11",
+            "text": "These count once",
+            "value_type": "Numerical",
+            "operator": "=",
+            "threshold_value": "1",
+            "unit": "count"
+          }
+        ],
+        "logical_relationships": [
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c2"
+            ],
+            "expression": "IF (Openess of the sides determines that they count) THEN (c3)",
+            "evaluation_order": 1
+          },
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c4"
+            ],
+            "expression": "IF (Roofed entry features on the 1st floor that are less than 12' high (from grade)) THEN (c5 AND q3)",
+            "evaluation_order": 2
+          },
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c6"
+            ],
+            "expression": "IF (Roofed entry features on the 1st floor that are more than 12' high from grade) THEN (c7 AND q3)",
+            "evaluation_order": 3
+          },
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c8"
+            ],
+            "expression": "IF (Height, depth, & openess determine that these count) THEN (c9 OR c10)",
+            "evaluation_order": 4
+          },
+          {
+            "operation": "AND",
+            "condition_ids": [
+              "c9",
+              "c10"
+            ],
+            "expression": "c9 AND c10 are mutually exclusive conditions based on height",
+            "evaluation_order": 5,
+            "ambiguity_note": "The phrasing 'If they count and are less than 17' high' and 'If they count and are more than 17' high' implies a logical OR for the counting outcome, but the conditions themselves are distinct based on height."
+          }
+        ],
+        "execution_sequence": [
+          {
+            "step": 1,
+            "action": "Evaluate if feature is Non-roofed porches, entryways, balconies etc.",
+            "condition_ids": [
+              "c1"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 2,
+            "action": "Evaluate if feature is Roofed porches on the 1st floor",
+            "condition_ids": [
+              "c2",
+              "c3"
+            ],
+            "qualifier_ids": [
+              "q1",
+              "q2"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 3,
+            "action": "Evaluate if feature is Roofed entry features on the 1st floor that are less than 12' high (from grade)",
+            "condition_ids": [
+              "c4",
+              "c5"
+            ],
+            "qualifier_ids": [
+              "q1",
+              "q3",
+              "q4"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 4,
+            "action": "Evaluate if feature is Roofed entry features on the 1st floor that are more than 12' high from grade-\"vaulted entry feature\"",
+            "condition_ids": [
+              "c6",
+              "c7"
+            ],
+            "qualifier_ids": [
+              "q1",
+              "q3",
+              "q4"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 5,
+            "action": "Evaluate if feature is Recessed porches on the 1st floor",
+            "condition_ids": [
+              "c8",
+              "c9",
+              "c10"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 6,
+            "action": "Evaluate if feature is Roofed balconies/outdoor areas on upper floors",
+            "condition_ids": [
+              "c11"
+            ],
+            "qualifier_ids": [
+              "q1",
+              "q3"
+            ],
+            "dependencies": []
+          }
+        ]
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:24:18",
+  "model_used": "google/gemini-2.5-flash"
+}

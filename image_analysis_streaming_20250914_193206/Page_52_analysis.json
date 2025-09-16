@@ -1,0 +1,103 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_52.png",
+  "image_name": "Page_52.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Height\nHeight\n&\ngrade\nStructure\nMax. height\nto roof peak\nMain dwelling on a standard lot\nwith a roof slope <12:12\n30'\nMain dwelling on a standard lot\nwith a roof slope \u226512:12\n33'\nHeight allowances\nMain dwelling on a substandard\n17'\nenable a variety of\nor flag lot\narchitectural styles\nwhile preserving the\nresidential scale of our\nneighborhoods as well\nas the privacy and\nnatural light available\nto each lot.\nAccessory structure in rear or\nside yard\n12'\n2nd-dwelling units\n17'\nFig 43 Determining slope of roof\n12\"\nrun\n6\"\nrise\nRoof slope is the vertical rise in\ninches for every horizontal distance\nof twelve inches (called the \"run\"). It\nis expressed as rise:run or, in this\nexample 6:12.\nNote: On a drawing this slope\nmight also be represented as:\n12\n6\nor\n2\n1\nFig 42 Comparison of roof slopes\nHeight measured to top of roof material\n33\u2032\n30\u2032\n12 : 14\n12 : 12\n12 : 10\n12 : 6\n12 : 3\nHeight limit = 33'\nHeight limit = 30\u2032\nCode sections\nPage 46\n18.12.040 (a) Table 2\nPage 47\n18.04.030 (64) (b)\n46",
+      "visual_elements": [
+        {
+          "type": "table",
+          "description": "A table titled 'Structure' and 'Max. height to roof peak' listing different dwelling types and their maximum allowed roof peak heights.",
+          "location": "Top-middle of the page"
+        },
+        {
+          "type": "diagram",
+          "description": "A diagram illustrating how to determine the slope of a roof, showing a cross-section of a roof with a horizontal 'run' of 12 inches and a vertical 'rise' of 6 inches.",
+          "location": "Top-right of the page"
+        },
+        {
+          "type": "diagram",
+          "description": "A series of five house silhouettes with different roof slopes (12:14, 12:12, 12:10, 12:6, 12:3) demonstrating 'Comparison of roof slopes'. Two height limits are indicated: 33' for the first two houses and 30' for the last three, with a horizontal line representing 'Height measured to top of roof material'.",
+          "location": "Bottom-middle of the page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Max. height to roof peak for Main dwelling on a standard lot with a roof slope <12:12",
+          "value": "30",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Max. height to roof peak for Main dwelling on a standard lot with a roof slope \u226512:12",
+          "value": "33",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Max. height to roof peak for Main dwelling on a substandard or flag lot",
+          "value": "17",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Max. height to roof peak for Accessory structure in rear or side yard",
+          "value": "12",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Max. height to roof peak for 2nd-dwelling units",
+          "value": "17",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Roof slope run",
+          "value": "12",
+          "unit": "inches"
+        },
+        {
+          "parameter": "Roof slope rise (example)",
+          "value": "6",
+          "unit": "inches"
+        },
+        {
+          "parameter": "Height limit for roof slopes 12:14 and 12:12",
+          "value": "33",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Height limit for roof slopes 12:10, 12:6, and 12:3",
+          "value": "30",
+          "unit": "feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Height",
+        "subheadings": [
+          "Height & grade",
+          "Structure",
+          "Max. height to roof peak",
+          "Code sections"
+        ],
+        "sections": [
+          "Main dwelling on a standard lot with a roof slope <12:12",
+          "Main dwelling on a standard lot with a roof slope \u226512:12",
+          "Main dwelling on a substandard or flag lot",
+          "Accessory structure in rear or side yard",
+          "2nd-dwelling units"
+        ]
+      },
+      "additional_notes": [
+        "Page number '46' is printed at the bottom left.",
+        "The text 'Height allowances enable a variety of architectural styles while preserving the residential scale of our neighborhoods as well as the privacy and natural light available to each lot.' is presented in a shaded box on the left side of the page."
+      ],
+      "cross_references": [
+        "Fig 43 Determining slope of roof",
+        "Fig 42 Comparison of roof slopes",
+        "Page 46",
+        "18.12.040 (a) Table 2",
+        "Page 47",
+        "18.04.030 (64) (b)"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-14 19:32:38",
+  "model_used": "google/gemini-2.5-flash"
+}

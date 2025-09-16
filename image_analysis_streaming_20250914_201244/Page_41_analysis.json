@@ -1,0 +1,77 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_41.png",
+  "image_name": "Page_41.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Carport standards\n\nFig 29 Parking space dimensions for carport in plan view\n\nOne of 2 corner columns\n20' min. open\nopen\nDriveway/parking surface\nPlan View\n\nFig 30 Parking space dimensions for covered space in elevation\n\nOne of 2 corner columns\nBottom roof system\n7' min. open\n20' min. open\nLeft Side Elevation\n\nOne of 2 corner columns\nBottom roof system\n7' min. open\n10' min open\nFront Elevation\n\n35",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Plan view diagram showing a car parked within a rectangular carport space. The diagram indicates two corner columns on the left side, with dimensions labeled as '20' min. open' vertically and 'open' horizontally. The driveway/parking surface is shown at the bottom right side of the carport.",
+          "location": "Left middle of the page"
+        },
+        {
+          "type": "diagram",
+          "description": "Left side elevation view of a covered parking space with a car underneath. The diagram shows two corner columns supporting a bottom roof system. Vertical clearance is labeled as '7' min. open' and horizontal clearance as '20' min. open'.",
+          "location": "Top right of the page"
+        },
+        {
+          "type": "diagram",
+          "description": "Front elevation view of a covered parking space with a car underneath. The diagram shows two corner columns supporting a bottom roof system. Vertical clearance is labeled as '7' min. open' and horizontal clearance as '10' min open'.",
+          "location": "Bottom right of the page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Minimum vertical clearance (side elevation)",
+          "value_type": "Measurement",
+          "value": 7,
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum horizontal clearance (side elevation)",
+          "value_type": "Measurement",
+          "value": 20,
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum vertical clearance (front elevation)",
+          "value_type": "Measurement",
+          "value": 7,
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum horizontal clearance (front elevation)",
+          "value_type": "Measurement",
+          "value": 10,
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum open space length (plan view)",
+          "value_type": "Measurement",
+          "value": 20,
+          "unit": "feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Carport standards",
+        "subheadings": [],
+        "sections": []
+      },
+      "additional_notes": [
+        "Page number 35 at bottom right corner",
+        "No handwritten annotations, stamps, or markings detected",
+        "Text and diagrams are clear and legible"
+      ],
+      "cross_references": [],
+      "conditions_and_qualifiers": {
+        "qualifiers": [],
+        "conditions": [],
+        "logical_relationships": [],
+        "execution_sequence": []
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:13:52",
+  "model_used": "openai/gpt-4.1-mini"
+}

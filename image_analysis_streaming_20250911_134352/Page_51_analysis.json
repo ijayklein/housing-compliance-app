@@ -1,0 +1,82 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_51.png",
+  "image_name": "Page_51.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Detached 2nd-dwelling units & associated parking site planning\n\nFig 41 Examples of site planning solutions for detached 2nd dwelling units and associated required parking\n\nA Detached & separate from main-dwelling parking\n\u2022 Main dwelling has a 1-car attached garage.\n\u2022 2nd dwelling has a 1-car detached garage. (Because it is detached and at least 75' from the front lot line, it may be located in the rear and side yards.)\n\u2022 Both dwellings use driveway for their uncovered space (beyond front setback)\nInterior lot example\n\nB Attached & separate from main-dwelling parking\n\u2022 Main dwelling has 1-car attached garage.\n\u2022 2nd dwelling has a 1-car attached garage. (Because attached, it must be located with the building area rather than in the rear or side yards.)\n\u2022 Both dwellings use driveway for their uncovered spaces (beyond front setback)\nInterior lot example\n\nC Detached & combined with main-dwelling parking\n\u2022 Both dwellings share a 2-car detached garage. (Because it is detached and at least 75' from the front lot line, it may be located in the rear and side yards.)\n\u2022 Both dwellings use the driveway for their respective uncovered spaces (beyond front setback)\nInterior lot example\n\nD Combined w/ main-dwelling parking that is attached to main dwelling\n\u2022 Both dwellings share a 2-car attached garage.\n\u2022 Both dwellings use the driveway for their respective uncovered spaces (beyond front setback)\nInterior lot example\n\nKey:\n_____ Curb\n- - - - Lot line\n[hatched pattern] Sidewalk\n- - - Required setbacks\n[gray] Dwelling\n[hatched pattern] Buildable area\n[black] 2nd-dwelling unit & associated pkg\n[white box] Area that may not be used to satisfy required parking spaces\n[car icon] Uncovered space\n\n45",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Four site plan diagrams (A, B, C, D) showing different configurations of detached 2nd dwelling units and parking arrangements. Each diagram shows a rectangular lot with main dwelling, 2nd dwelling unit (900 sf max), buildable area, rear yard, and various parking configurations including 1-car and 2-car garages. Diagrams include measurements like '12' min' for buildable area dimensions and show driveways, setbacks, and uncovered parking spaces.",
+          "location": "Center of page, arranged in a 2x2 grid"
+        },
+        {
+          "type": "figure",
+          "description": "Legend/key showing various symbols and patterns used in the diagrams including curb lines, lot lines, sidewalks, required setbacks, dwelling areas, buildable areas, 2nd-dwelling units, restricted parking areas, and uncovered spaces",
+          "location": "Bottom right of page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Distance from front lot line for detached garage",
+          "value": "75",
+          "unit": "feet minimum"
+        },
+        {
+          "parameter": "Maximum size of 2nd dwelling unit",
+          "value": "900",
+          "unit": "square feet"
+        },
+        {
+          "parameter": "Minimum buildable area dimension",
+          "value": "12",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Garage capacity - Option A",
+          "value": "1",
+          "unit": "car per dwelling"
+        },
+        {
+          "parameter": "Garage capacity - Option B",
+          "value": "1",
+          "unit": "car per dwelling"
+        },
+        {
+          "parameter": "Garage capacity - Option C",
+          "value": "2",
+          "unit": "car shared"
+        },
+        {
+          "parameter": "Garage capacity - Option D",
+          "value": "2",
+          "unit": "car shared"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Detached 2nd-dwelling units & associated parking site planning",
+        "subheadings": [
+          "A Detached & separate from main-dwelling parking",
+          "B Attached & separate from main-dwelling parking",
+          "C Detached & combined with main-dwelling parking",
+          "D Combined w/ main-dwelling parking that is attached to main dwelling"
+        ],
+        "sections": [
+          "Fig 41",
+          "Key"
+        ]
+      },
+      "additional_notes": [
+        "Page number 45 appears at bottom right",
+        "All diagrams are labeled as 'Interior lot example'",
+        "Diagrams use various patterns and shadings to distinguish different elements",
+        "Text includes detailed explanations of setback requirements and parking arrangements"
+      ],
+      "cross_references": [
+        "Fig 41 - Examples of site planning solutions for detached 2nd dwelling units and associated required parking"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-11 13:45:17",
+  "model_used": "anthropic/claude-sonnet-4"
+}

@@ -1,0 +1,88 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_40.png",
+  "image_name": "Page_40.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Parking\n\nParking space standards\n\nParking regulations af-\nfect the appearance of\nthe streetscapes in our\nresidential neighbor-\nhoods by minimizing\nthe number of cars\nparked on the street\nand in the front yards\nby requiring that there\nare parking spaces\navailable deeper into\nthe lot.\n\n\u2022 Two spaces are required on the lot (per\ndwelling).\n\n\u2022 They may NOT be located in the\nrequired front yard or, first 10 ft of,\nrequired street side yard.\n\n\u2022 2nd dwelling units have same require-\nments.\n\n\u2022 No underground parking garages except\nby variance.\n\n\u2022 One of the two spaces must be covered.\n\n\u2022 To be considered detached, a covered-\nparking structure must be a minimum of\n3' from the main dwelling.\n\n\u2022 Minimim size for an uncovered space is\n8.5' x 18'.\n\n\u2022 Minimum clearance inside a covered\nparking structure to be 10' x 20' for\neach space. Therefore, a two-car garage\nor carport to be 20' x 20' clear inside.\n\nCode sections\nPage 34\n18.12.060, 18.83.090\nPage 35\n18.83.090, 18.83.110(a)\nPage 36\n18.12.060\nPage 37\n18.12.040 (f)\nPage 38\n\u2022 Minimum vertical clearance: 7'.\n\n*\n\n* Clear area for parking space must be free\nof other uses e.g., water heaters, clothes\nwashers or dryer, bicycle parking facili-\nties, etc.\n\n18.12.060\nPage 39\n34\n18.12.080 (b)\n\nFig 28 Parking space dimensions for garage\nand uncovered space in plan view\n\n*\n\n10' min\ninside\nclearance\n\nRequired covered space\n\n20' min. inside clearance\n\n*\n\n2nd space (uncovered)\nTandem OK\n\n18' min.\nuncovered space\n\n8.5' min\nuncovered\nspace",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "A plan view diagram illustrating parking space dimensions for both a garage (covered space) and an uncovered space. The diagram shows two parking spaces arranged in tandem. The top space, labeled 'Required covered space', shows a car parked within a rectangular area. Dimensions are indicated: '10' min inside clearance' horizontally and '20' min. inside clearance' vertically. An asterisk symbol is next to the '10' min' dimension. The bottom space, labeled '2nd space (uncovered) Tandem OK', also shows a car parked within a rectangular area. Dimensions are indicated: '8.5' min uncovered space' horizontally and '18' min. uncovered space' vertically. An asterisk symbol is next to the '20' min' dimension for the covered space.",
+          "location": "Right side of the page, spanning from top to bottom"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Minimum size for uncovered space",
+          "value": "8.5 x 18",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum clearance inside covered parking structure (per space)",
+          "value": "10 x 20",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum clearance inside two-car garage/carport",
+          "value": "20 x 20",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum vertical clearance",
+          "value": "7",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum distance for detached covered-parking structure from main dwelling",
+          "value": "3",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Required covered space (diagram) horizontal clearance",
+          "value": "10",
+          "unit": "feet min"
+        },
+        {
+          "parameter": "Required covered space (diagram) vertical clearance",
+          "value": "20",
+          "unit": "feet min"
+        },
+        {
+          "parameter": "Uncovered space (diagram) horizontal clearance",
+          "value": "8.5",
+          "unit": "feet min"
+        },
+        {
+          "parameter": "Uncovered space (diagram) vertical clearance",
+          "value": "18",
+          "unit": "feet min"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Parking space standards",
+        "subheadings": [],
+        "sections": [
+          "Parking",
+          "Parking regulations affect the appearance of the streetscapes in our residential neighborhoods by minimizing the number of cars parked on the street and in the front yards by requiring that there are parking spaces available deeper into the lot.",
+          "Code sections"
+        ]
+      },
+      "additional_notes": [
+        "The page number '34' is located at the bottom left.",
+        "Two asterisk symbols (*) are present in the text content, indicating specific conditions or clarifications. One is next to 'Minimum vertical clearance: 7'.' and the other introduces the 'Clear area for parking space' note.",
+        "Two asterisk symbols (*) are present in the diagram, one next to the '10' min' dimension for the covered space and another next to the '20' min' dimension for the covered space."
+      ],
+      "cross_references": [
+        "Fig 28 Parking space dimensions for garage and uncovered space in plan view",
+        "Page 34: 18.12.060, 18.83.090",
+        "Page 35: 18.83.090, 18.83.110(a)",
+        "Page 36: 18.12.060",
+        "Page 37: 18.12.040 (f)",
+        "Page 38: 18.12.060",
+        "Page 39: 18.12.080 (b)"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-14 19:32:32",
+  "model_used": "google/gemini-2.5-flash"
+}

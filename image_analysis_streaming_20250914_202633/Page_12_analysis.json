@@ -1,0 +1,264 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_12.png",
+  "image_name": "Page_12.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Porches & entry features\n\nFacades with defined entryways make a streetscape pleasant and friendly as long as they are not out of scale or proportion.\n\nThe gross floor area regulations encourage appropriately sized porches and entryways.\n\nCode sections\n18.04.030(a)(65)\n18.04.030(a)(113.1)\n18.04.030(143.5)\n18.12.040(b)table 3\n\nPorch types\n\nFor purposes of assessing gross floor area, porches, entryways, and balconies fall into one of these categories:\n\n1. Non-roofed porches, entryways, balconies etc.\n  \u2022 Non-roofed features generally do not count\n\n2. Roofed porches on the 1st floor (Fig 4 A & D on p. 7 , Fig 5 on p. 8)\n  \u2022 Openess of the sides determines whether or not these count regardless of the height.\n  \u2022 If they do count, they count only once.\n\n3. Roofed entry features on the 1st floor that are less than 12' high (from grade) (Fig 4 B on p. 7)\n  \u2022 These count once regardless of the design including openess.\n\n4. Roofed entry features on the 1st floor that are more than 12' high from grade - \"vaulted entry feature\" (Fig 4 C & D on p. 7, Fig 6, 7, & 8 on pp. 11-13)\n  \u2022 These count twice regardless of the design including openess.\n\n5. Recessed porches on the 1st floor (Fig 9 on p. 14)\n  \u2022 Height, depth, & openess determine whether or not these count.\n  \u2022 If they count and are less than 17' high, they count only once.\n  \u2022 If they count and are more than 17' high, they count twice.\n\n6. Roofed balconies/outdoor areas on upper floors (Fig 10 on p. 15 )\n  \u2022 These count once regardless of the design including openess\n\nThe following pages address the details of assessing these features with regard to gross floor area.\n\nDifference between a porch & an entry feature:\n\nA feature is considered to be a porch rather than an entry feature if it can clearly accomodate more activities than entering and leaving the house.",
+      "visual_elements": [
+        {
+          "type": "figure",
+          "description": "References to multiple figures illustrating porch and entry feature types: Fig 4 A, B, C, D; Fig 5; Fig 6, 7, 8; Fig 9; Fig 10. These figures presumably show examples or diagrams of porch types, roofed/non-roofed features, vaulted entry features, recessed porches, and roofed balconies/outdoor areas.",
+          "location": "Referenced throughout the main text, with specific page numbers indicated (p. 7, 8, 11-13, 14, 15). No actual figures visible on this page."
+        },
+        {
+          "type": "text box",
+          "description": "A shaded box titled 'Difference between a porch & an entry feature:' explaining that a feature is considered a porch rather than an entry feature if it can clearly accommodate more activities than entering and leaving the house.",
+          "location": "Right side, middle of the page"
+        },
+        {
+          "type": "sidebar",
+          "description": "A vertical shaded sidebar on the left side of the page containing introductory text about porches and entry features, emphasizing scale and proportion, and listing relevant code sections.",
+          "location": "Left side, full height of the page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Height threshold for roofed entry features to be considered vaulted",
+          "value_type": "Measurement",
+          "value": "12",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Height threshold for recessed porches to count once or twice",
+          "value_type": "Measurement",
+          "value": "17",
+          "unit": "feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Porch types",
+        "subheadings": [],
+        "sections": [
+          "1. Non-roofed porches, entryways, balconies etc.",
+          "2. Roofed porches on the 1st floor",
+          "3. Roofed entry features on the 1st floor that are less than 12' high (from grade)",
+          "4. Roofed entry features on the 1st floor that are more than 12' high from grade - \"vaulted entry feature\"",
+          "5. Recessed porches on the 1st floor",
+          "6. Roofed balconies/outdoor areas on upper floors"
+        ]
+      },
+      "additional_notes": [
+        "The page contains no handwritten annotations or stamps.",
+        "The page is well structured with a left sidebar for introductory context and code references, main body text with numbered categories, and a right-side shaded box clarifying a key distinction.",
+        "The spelling of 'openess' appears multiple times and may be a typographical error for 'openness'.",
+        "Figures referenced are not visible on this page but are cited with page numbers for cross-reference."
+      ],
+      "cross_references": [
+        "Fig 4 A, B, C, D on p. 7",
+        "Fig 5 on p. 8",
+        "Fig 6, 7, & 8 on pp. 11-13",
+        "Fig 9 on p. 14",
+        "Fig 10 on p. 15",
+        "Code sections: 18.04.030(a)(65), 18.04.030(a)(113.1), 18.04.030(143.5), 18.12.040(b)table 3"
+      ],
+      "conditions_and_qualifiers": {
+        "qualifiers": [
+          {
+            "id": "q1",
+            "text": "For purposes of assessing gross floor area, porches, entryways, and balconies fall into one of these categories:",
+            "applies_to_conditions": [
+              "c1",
+              "c2",
+              "c3",
+              "c4",
+              "c5",
+              "c6"
+            ],
+            "scope": "Global"
+          }
+        ],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "Non-roofed features generally do not count",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "false",
+            "unit": "None"
+          },
+          {
+            "id": "c2",
+            "text": "Openess of the sides determines whether or not these count regardless of the height",
+            "value_type": "Text",
+            "operator": "contains",
+            "threshold_value": "openess",
+            "unit": "None"
+          },
+          {
+            "id": "c3",
+            "text": "If they do count, they count only once",
+            "value_type": "Numerical",
+            "operator": "=",
+            "threshold_value": "1",
+            "unit": "count"
+          },
+          {
+            "id": "c4",
+            "text": "Roofed entry features on the 1st floor that are less than 12' high (from grade) count once regardless of the design including openess",
+            "value_type": "Measurement",
+            "operator": "<",
+            "threshold_value": "12",
+            "unit": "feet"
+          },
+          {
+            "id": "c5",
+            "text": "Roofed entry features on the 1st floor that are more than 12' high from grade count twice regardless of the design including openess",
+            "value_type": "Measurement",
+            "operator": ">",
+            "threshold_value": "12",
+            "unit": "feet"
+          },
+          {
+            "id": "c6",
+            "text": "Recessed porches on the 1st floor: Height, depth, & openess determine whether or not these count",
+            "value_type": "Text",
+            "operator": "contains",
+            "threshold_value": "height, depth, openess",
+            "unit": "None"
+          },
+          {
+            "id": "c7",
+            "text": "If recessed porches count and are less than 17' high, they count only once",
+            "value_type": "Measurement",
+            "operator": "<",
+            "threshold_value": "17",
+            "unit": "feet"
+          },
+          {
+            "id": "c8",
+            "text": "If recessed porches count and are more than 17' high, they count twice",
+            "value_type": "Measurement",
+            "operator": ">",
+            "threshold_value": "17",
+            "unit": "feet"
+          },
+          {
+            "id": "c9",
+            "text": "Roofed balconies/outdoor areas on upper floors count once regardless of the design including openess",
+            "value_type": "Numerical",
+            "operator": "=",
+            "threshold_value": "1",
+            "unit": "count"
+          }
+        ],
+        "logical_relationships": [
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c4",
+              "c3"
+            ],
+            "expression": "If roofed entry features on the 1st floor are less than 12' high, then they count once",
+            "evaluation_order": 1
+          },
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c5"
+            ],
+            "expression": "If roofed entry features on the 1st floor are more than 12' high, then they count twice",
+            "evaluation_order": 2
+          },
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c7",
+              "c3"
+            ],
+            "expression": "If recessed porches count and are less than 17' high, then they count once",
+            "evaluation_order": 3
+          },
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c8"
+            ],
+            "expression": "If recessed porches count and are more than 17' high, then they count twice",
+            "evaluation_order": 4
+          }
+        ],
+        "execution_sequence": [
+          {
+            "step": 1,
+            "action": "Determine if the feature is non-roofed; if so, it generally does not count",
+            "condition_ids": [
+              "c1"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 2,
+            "action": "For roofed porches on the 1st floor, assess openness of sides to determine if they count",
+            "condition_ids": [
+              "c2",
+              "c3"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": [
+              "1"
+            ]
+          },
+          {
+            "step": 3,
+            "action": "For roofed entry features on the 1st floor, check height to determine count multiplier",
+            "condition_ids": [
+              "c4",
+              "c5"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": [
+              "2"
+            ]
+          },
+          {
+            "step": 4,
+            "action": "For recessed porches on the 1st floor, evaluate height, depth, and openness to determine count",
+            "condition_ids": [
+              "c6",
+              "c7",
+              "c8"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": [
+              "3"
+            ]
+          },
+          {
+            "step": 5,
+            "action": "For roofed balconies/outdoor areas on upper floors, count once regardless of design",
+            "condition_ids": [
+              "c9"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": [
+              "4"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:27:08",
+  "model_used": "openai/gpt-4.1-mini"
+}

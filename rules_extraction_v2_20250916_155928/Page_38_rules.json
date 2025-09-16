@@ -1,0 +1,122 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_38.md",
+  "file_name": "Page_38.md",
+  "analysis": {
+    "extracted_rules": {
+      "rules": [
+        {
+          "rule_name": "Accessory Structure Daylight Plane",
+          "source_page": "38",
+          "qualifiers": {
+            "scope": "Applies to accessory structures.",
+            "applicability": [
+              "Side lot lines",
+              "Rear lot line"
+            ],
+            "exclusions": [
+              "Front of the lot"
+            ]
+          },
+          "variables": [
+            {
+              "name": "structure_profile",
+              "type": "Dimensional",
+              "description": "The exterior profile or envelope of the accessory structure, which must fit within the calculated daylight plane."
+            },
+            {
+              "name": "average_grade",
+              "type": "Environmental",
+              "description": "The reference elevation from which vertical measurements are taken. The specific calculation method for 'average grade' is not defined in this text.",
+              "ambiguity_flag": "The definition and calculation method for 'average grade' is required for precise validation and is assumed to be defined elsewhere in the regulations."
+            },
+            {
+              "name": "distance_from_lot_line",
+              "type": "Dimensional",
+              "description": "The horizontal distance of any point on the structure measured perpendicularly from the nearest applicable (side or rear) lot line."
+            }
+          ],
+          "constants": [
+            {
+              "name": "daylight_plane_start_height",
+              "value": 8,
+              "unit": "feet",
+              "description": "The height at the lot line from which the daylight plane begins, measured vertically from the average grade."
+            },
+            {
+              "name": "daylight_plane_slope",
+              "value": "3:1",
+              "type": "Ratio (Vertical:Horizontal)",
+              "description": "The slope of the daylight plane, allowing 3 feet of vertical rise for every 1 foot of horizontal run inward from the lot line."
+            },
+            {
+              "name": "max_structure_height",
+              "value": 12,
+              "unit": "feet",
+              "description": "The absolute maximum height allowed for the accessory structure, measured from average grade."
+            }
+          ],
+          "conditions": {
+            "mandatory": [
+              "The profile of the accessory structure must not penetrate the daylight plane originating from the side and rear lot lines.",
+              "The total height of the accessory structure must not exceed the 'max_structure_height' (12 feet)."
+            ],
+            "optional": [
+              {
+                "type": "Design Guideline",
+                "description": "For accessory buildings near the rear and side lot lines, a hipped-gable roof is often the best solution for complying with the accessory-structure daylight plane.",
+                "source": "Note box"
+              }
+            ],
+            "conditional_logic": [
+              {
+                "if": "A structure is an 'accessory structure'.",
+                "then": "This rule applies to portions of the structure adjacent to side and rear lot lines."
+              },
+              {
+                "description": "The maximum permitted height (H) of any point on the structure is determined by its horizontal distance (D) from the applicable side or rear lot line.",
+                "formula": "H(D) = MIN( (daylight_plane_start_height + (D * 3)), max_structure_height )",
+                "components": [
+                  "H(D) = Maximum permitted height at distance D",
+                  "D = distance_from_lot_line (in feet)",
+                  "daylight_plane_start_height = 8 feet",
+                  "max_structure_height = 12 feet"
+                ]
+              }
+            ]
+          },
+          "exceptions": [],
+          "relationships": {
+            "hierarchical": [
+              {
+                "element": "max_structure_height",
+                "relationship": "Acts as an absolute ceiling on the structure height, overriding the daylight plane calculation if the calculated height would otherwise exceed 12 feet."
+              }
+            ],
+            "cross_references": [],
+            "logical_dependencies": [
+              {
+                "dependent": "Allowable structure profile/envelope",
+                "on": [
+                  "average_grade",
+                  "distance_from_lot_line",
+                  "daylight_plane_start_height",
+                  "daylight_plane_slope",
+                  "max_structure_height"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "parse_error": false,
+    "raw_response": "```json\n{\n  \"rules\": [\n    {\n      \"rule_name\": \"Accessory Structure Daylight Plane\",\n      \"source_page\": \"38\",\n      \"qualifiers\": {\n        \"scope\": \"Applies to accessory structures.\",\n        \"applicability\": [\n          \"Side lot lines\",\n          \"Rear lot line\"\n        ],\n        \"exclusions\": [\n          \"Front of the lot\"\n        ]\n      },\n      \"variables\": [\n        {\n          \"name\": \"structure_profile\",\n          \"type\": \"Dimensional\",\n          \"description\": \"The exterior profile or envelope of the accessory structure, which must fit within the calculated daylight plane.\"\n        },\n        {\n          \"name\": \"average_grade\",\n          \"type\": \"Environmental\",\n          \"description\": \"The reference elevation from which vertical measurements are taken. The specific calculation method for 'average grade' is not defined in this text.\",\n          \"ambiguity_flag\": \"The definition and calculation method for 'average grade' is required for precise validation and is assumed to be defined elsewhere in the regulations.\"\n        },\n        {\n          \"name\": \"distance_from_lot_line\",\n          \"type\": \"Dimensional\",\n          \"description\": \"The horizontal distance of any point on the structure measured perpendicularly from the nearest applicable (side or rear) lot line.\"\n        }\n      ],\n      \"constants\": [\n        {\n          \"name\": \"daylight_plane_start_height\",\n          \"value\": 8,\n          \"unit\": \"feet\",\n          \"description\": \"The height at the lot line from which the daylight plane begins, measured vertically from the average grade.\"\n        },\n        {\n          \"name\": \"daylight_plane_slope\",\n          \"value\": \"3:1\",\n          \"type\": \"Ratio (Vertical:Horizontal)\",\n          \"description\": \"The slope of the daylight plane, allowing 3 feet of vertical rise for every 1 foot of horizontal run inward from the lot line.\"\n        },\n        {\n          \"name\": \"max_structure_height\",\n          \"value\": 12,\n          \"unit\": \"feet\",\n          \"description\": \"The absolute maximum height allowed for the accessory structure, measured from average grade.\"\n        }\n      ],\n      \"conditions\": {\n        \"mandatory\": [\n          \"The profile of the accessory structure must not penetrate the daylight plane originating from the side and rear lot lines.\",\n          \"The total height of the accessory structure must not exceed the 'max_structure_height' (12 feet).\"\n        ],\n        \"optional\": [\n          {\n            \"type\": \"Design Guideline\",\n            \"description\": \"For accessory buildings near the rear and side lot lines, a hipped-gable roof is often the best solution for complying with the accessory-structure daylight plane.\",\n            \"source\": \"Note box\"\n          }\n        ],\n        \"conditional_logic\": [\n          {\n            \"if\": \"A structure is an 'accessory structure'.\",\n            \"then\": \"This rule applies to portions of the structure adjacent to side and rear lot lines.\"\n          },\n          {\n            \"description\": \"The maximum permitted height (H) of any point on the structure is determined by its horizontal distance (D) from the applicable side or rear lot line.\",\n            \"formula\": \"H(D) = MIN( (daylight_plane_start_height + (D * 3)), max_structure_height )\",\n            \"components\": [\n              \"H(D) = Maximum permitted height at distance D\",\n              \"D = distance_from_lot_line (in feet)\",\n              \"daylight_plane_start_height = 8 feet\",\n              \"max_structure_height = 12 feet\"\n            ]\n          }\n        ]\n      },\n      \"exceptions\": [],\n      \"relationships\": {\n        \"hierarchical\": [\n          {\n            \"element\": \"max_structure_height\",\n            \"relationship\": \"Acts as an absolute ceiling on the structure height, overriding the daylight plane calculation if the calculated height would otherwise exceed 12 feet.\"\n          }\n        ],\n        \"cross_references\": [],\n        \"logical_dependencies\": [\n          {\n            \"dependent\": \"Allowable structure profile/envelope\",\n            \"on\": [\n              \"average_grade\",\n              \"distance_from_lot_line\",\n              \"daylight_plane_start_height\",\n              \"daylight_plane_slope\",\n              \"max_structure_height\"\n            ]\n          }\n        ]\n      }\n    }\n  ]\n}\n```",
+    "response_time": 40.48472595214844,
+    "input_tokens": 711,
+    "output_tokens": 4361,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 16:03:01",
+  "model": "google/gemini-2.5-pro",
+  "success": true
+}

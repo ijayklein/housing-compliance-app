@@ -1,0 +1,23 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_13.png",
+  "image_name": "Page_13.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "PARSE_ERROR",
+      "visual_elements": [],
+      "technical_specifications": [],
+      "structural_elements": {
+        "main_heading": "",
+        "subheadings": [],
+        "sections": []
+      },
+      "additional_notes": [
+        "Failed to parse LLM response: Expecting value: line 1 column 1 (char 0)"
+      ],
+      "cross_references": []
+    },
+    "raw_response": "The image displays \"Fig 4 Types of porches and entry ways\" and illustrates four different types of porches and entry ways with associated height specifications.\n\n**A. Roofed porch**\n*   An illustration of a single-story structure with a roofed porch.\n\n**B. Roofed entry way (not vaulted)**\n*   An illustration of a building with a roofed entry way.\n*   **Height:** less than 12' above grade.\n\n**C. Vaulted entry way**\n*   An illustration of a building with a vaulted entry way.\n*   **Height:** greater than 12' above grade.\n\n**D. Combination porch & vaulted entry way**\n*   An illustration of a building with a combination porch and vaulted entry way.\n*   **Height:** greater than 12' above grade.\n\nA text box in the center of the image states: \"See how to measure height of porches & entry features in Figs 6-8 on pp. 11-13\"."
+  },
+  "analysis_timestamp": "2025-09-16 12:25:51",
+  "model_used": "google/gemini-2.5-flash"
+}

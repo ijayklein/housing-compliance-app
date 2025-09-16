@@ -1,0 +1,47 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_17.png",
+  "image_name": "Page_17.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Vaulted entry features\n\nEntry features that are greater than 12' high are called \"vaulted entry features\". The footprint of such features count twice toward gross floor area regardless of the design (including whether or not they are open).\n\nHow to measure the height of an entry feature in order to determine whether or not it is considered to be a vaulted entry feature (using Fig 6 - 8 as examples)\n\nFig 6 Entry feature with shed roof\n\nNote: If the entryway is considered to be a vaulted entryway the area will be counted as follows:\n\u2022 In this example, a portion of the entryway is recessed beyond the house facade and roof. It is included in the area that counts.\n\u2022 The area is measured to the outside material of the entryway feature.\n\u2022 The area counts TWICE toward gross floor area.\n\nIntersection of front facade and top of roof material\n\nHeight\n\nGrade\n\nIsometric View\n\nHeight\n\nSide Elevation\n\nOutline of entryway roof\n\nOutline of entryway floor area that counts TWICE if entryway is vaulted\n\nPorch Floor Plan\n\n11",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Three-part architectural diagram showing an entry feature with shed roof. Left panel shows isometric view of a house entry with height and grade measurements marked. Middle panel shows side elevation view with height measurement and intersection of front facade and roof material marked. Right panel shows porch floor plan with outline of entryway roof and floor area marked.",
+          "location": "Center of page, spanning most of the page width"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Vaulted entry feature height threshold",
+          "value": "12",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Gross floor area multiplier for vaulted entry features",
+          "value": "2",
+          "unit": "times (twice)"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Vaulted entry features",
+        "subheadings": [
+          "How to measure the height of an entry feature in order to determine whether or not it is considered to be a vaulted entry feature"
+        ],
+        "sections": [
+          "Fig 6 Entry feature with shed roof"
+        ]
+      },
+      "additional_notes": [
+        "Page number 11 appears at bottom right",
+        "Text quality is clear and legible throughout",
+        "Diagram labels include technical measurement points and architectural elements"
+      ],
+      "cross_references": [
+        "Reference to Fig 6 - 8 as examples for measuring entry feature height"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-11 13:44:21",
+  "model_used": "anthropic/claude-sonnet-4"
+}

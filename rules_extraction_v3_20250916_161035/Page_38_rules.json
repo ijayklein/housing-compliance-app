@@ -1,0 +1,55 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_38.md",
+  "file_name": "Page_38.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "rule": "Accessory structure daylight plane (sides & rear)",
+        "Qualifiers": {
+          "Scope": "Defines the maximum allowable building envelope for accessory structures on a lot.",
+          "Applicability": "Applies to accessory structures, specifically concerning their proximity to side and rear lot lines.",
+          "Exclusions": "None specified in the text."
+        },
+        "Variables": {
+          "dimensional": "Building design and roof form (e.g., a 'hipped-gable roof' is mentioned as a potential solution).",
+          "material": "Not specified.",
+          "environmental": "Average grade of the lot, which is the reference datum for height measurements.",
+          "usage": "The structure must be an 'accessory structure', such as a garage."
+        },
+        "Constants": {
+          "daylight_plane_start_height": "8 feet",
+          "daylight_plane_start_height_reference_point": "Average grade",
+          "daylight_plane_start_location": "Side and rear lot lines",
+          "daylight_plane_slope_ratio": "3:1",
+          "accessory_structure_maximum_height": "12 feet",
+          "ambiguous_language": "The daylight plane slope is labeled with '3' above '1'. This is ambiguous. It could be interpreted as a 3:1 (rise:run) ratio, or the more common zoning standard of 1:3 (rise:run). Clarification is required for automated validation."
+        },
+        "Conditions": {
+          "mandatory": "The accessory structure must not penetrate the daylight plane.",
+          "optional": "A 'hipped-gable roof' is suggested as an effective, but not required, design strategy for compliance.",
+          "conditional_logic": "The rule is triggered by the presence of an accessory structure. The building envelope is defined by a plane that begins at 8 feet above average grade at the side/rear lot line and slopes inward over the property at the specified ratio.",
+          "dependencies": "Compliance calculation depends on the 'average grade', the location of 'side lot line' and 'rear lot line'."
+        },
+        "Exceptions": {
+          "explicit_deviations": "None specified.",
+          "alternatives": "None specified.",
+          "special_cases": "None specified."
+        },
+        "Relationships": {
+          "hierarchical": "This rule is a specific dimensional constraint applied to the general category of 'accessory structure'.",
+          "cross_references": "The rule is illustrated by 'Figure 25' (front elevation, side lot line) and 'Figure 26' (side elevation, rear lot line). The source page has conflicting numbering: 'Page 38' in the header and '32' in the footer.",
+          "logical_dependencies": "The maximum height of any part of the accessory structure is a function of its horizontal distance from the lot line, governed by the daylight plane's starting height and slope, and capped by the overall maximum height of 12 feet."
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n  {\n    \"rule\": \"Accessory structure daylight plane (sides & rear)\",\n    \"Qualifiers\": {\n      \"Scope\": \"Defines the maximum allowable building envelope for accessory structures on a lot.\",\n      \"Applicability\": \"Applies to accessory structures, specifically concerning their proximity to side and rear lot lines.\",\n      \"Exclusions\": \"None specified in the text.\"\n    },\n    \"Variables\": {\n      \"dimensional\": \"Building design and roof form (e.g., a 'hipped-gable roof' is mentioned as a potential solution).\",\n      \"material\": \"Not specified.\",\n      \"environmental\": \"Average grade of the lot, which is the reference datum for height measurements.\",\n      \"usage\": \"The structure must be an 'accessory structure', such as a garage.\"\n    },\n    \"Constants\": {\n      \"daylight_plane_start_height\": \"8 feet\",\n      \"daylight_plane_start_height_reference_point\": \"Average grade\",\n      \"daylight_plane_start_location\": \"Side and rear lot lines\",\n      \"daylight_plane_slope_ratio\": \"3:1\",\n      \"accessory_structure_maximum_height\": \"12 feet\",\n      \"ambiguous_language\": \"The daylight plane slope is labeled with '3' above '1'. This is ambiguous. It could be interpreted as a 3:1 (rise:run) ratio, or the more common zoning standard of 1:3 (rise:run). Clarification is required for automated validation.\"\n    },\n    \"Conditions\": {\n      \"mandatory\": \"The accessory structure must not penetrate the daylight plane.\",\n      \"optional\": \"A 'hipped-gable roof' is suggested as an effective, but not required, design strategy for compliance.\",\n      \"conditional_logic\": \"The rule is triggered by the presence of an accessory structure. The building envelope is defined by a plane that begins at 8 feet above average grade at the side/rear lot line and slopes inward over the property at the specified ratio.\",\n      \"dependencies\": \"Compliance calculation depends on the 'average grade', the location of 'side lot line' and 'rear lot line'.\"\n    },\n    \"Exceptions\": {\n      \"explicit_deviations\": \"None specified.\",\n      \"alternatives\": \"None specified.\",\n      \"special_cases\": \"None specified.\"\n    },\n    \"Relationships\": {\n      \"hierarchical\": \"This rule is a specific dimensional constraint applied to the general category of 'accessory structure'.\",\n      \"cross_references\": \"The rule is illustrated by 'Figure 25' (front elevation, side lot line) and 'Figure 26' (side elevation, rear lot line). The source page has conflicting numbering: 'Page 38' in the header and '32' in the footer.\",\n      \"logical_dependencies\": \"The maximum height of any part of the accessory structure is a function of its horizontal distance from the lot line, governed by the daylight plane's starting height and slope, and capped by the overall maximum height of 12 feet.\"\n    }\n  }\n]\n```",
+    "response_time": 34.20975995063782,
+    "input_tokens": 837,
+    "output_tokens": 3502,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 16:13:24",
+  "model": "google/gemini-2.5-pro",
+  "success": true
+}

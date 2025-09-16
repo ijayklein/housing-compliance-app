@@ -1,0 +1,1284 @@
+{
+  "rules": [
+    {
+      "id": "LS-001",
+      "title": "Minimum Lot Dimensions for New Lots",
+      "category": "Lot Size & Lot Area (incl. gross vs net)",
+      "short_summary": "New lots must meet minimum width and depth requirements",
+      "summary": "The subdivision ordinance requires new lots to have minimum dimensions to ensure adequate development space and maintain neighborhood character. All new lots must meet both width and depth requirements simultaneously.",
+      "requirements": [
+        {
+          "qualifier": "new lots",
+          "setting": "minimum width of 60 feet AND minimum depth of 100 feet"
+        }
+      ],
+      "inclusions": [
+        "Applies to all new lots created through subdivision",
+        "Both width and depth requirements must be met simultaneously"
+      ],
+      "exclusions": [
+        "Does not apply to existing lots of record",
+        "Flag lots have different requirements"
+      ],
+      "reasoning": "To ensure adequate space for development while maintaining neighborhood character and streetscape continuity"
+    },
+    {
+      "id": "LS-002",
+      "title": "Minimum and Maximum Lot Areas by Zone",
+      "category": "Lot Size & Lot Area (incl. gross vs net)",
+      "short_summary": "Lot areas must fall within zone-specific minimum and maximum limits",
+      "summary": "Five R-1 zones have specific minimum and maximum lot area requirements that reflect and preserve traditional lotting patterns developed through annexation. Each zone has distinct area requirements to maintain neighborhood character.",
+      "requirements": [
+        {
+          "qualifier": "lots in R-1 zone",
+          "setting": "minimum 6,000 sf and maximum 9,999 sf"
+        },
+        {
+          "qualifier": "lots in R-1(7000) zone",
+          "setting": "minimum 7,000 sf and maximum 13,999 sf"
+        },
+        {
+          "qualifier": "lots in R-1(8000) zone",
+          "setting": "minimum 8,000 sf and maximum 15,999 sf"
+        },
+        {
+          "qualifier": "lots in R-1(10000) zone",
+          "setting": "minimum 10,000 sf and maximum 19,999 sf"
+        },
+        {
+          "qualifier": "lots in R-1(20000) zone",
+          "setting": "minimum 20,000 sf and maximum 39,999 sf"
+        }
+      ],
+      "inclusions": [
+        "Applies to all lots within R-1 zoning districts",
+        "Requirements vary by specific R-1 zone designation"
+      ],
+      "exclusions": [
+        "Exceptions allowed for lot line removal to eliminate non-conformities with no net loss of housing",
+        "Exceptions for combining adjacent substandard lots less than 25' wide with no net loss of housing",
+        "Exceptions where resultant number of lots increases or stays same with no net loss of housing"
+      ],
+      "reasoning": "To preserve traditional lotting patterns and neighborhood character while allowing flexibility for housing preservation"
+    },
+    {
+      "id": "LS-003",
+      "title": "Substandard Lot Definition and Criteria",
+      "category": "Lot Size & Lot Area (incl. gross vs net)",
+      "short_summary": "Lots with insufficient width, depth, or area are classified as substandard",
+      "summary": "Substandard lots are those that fail to meet minimum dimensional requirements. These lots are subject to special regulations including height restrictions and modified setback requirements.",
+      "requirements": [
+        {
+          "qualifier": "substandard lots",
+          "setting": "width less than 50 feet OR depth less than 83 feet AND area less than or equal to 83% of minimum zone lot size"
+        }
+      ],
+      "inclusions": [
+        "Both dimensional and area criteria must be evaluated",
+        "Applies to all R-1 zones with zone-specific area thresholds"
+      ],
+      "exclusions": [],
+      "reasoning": "To identify lots requiring special development regulations due to size constraints"
+    },
+    {
+      "id": "LS-004",
+      "title": "Gross vs Net Lot Area Calculation",
+      "category": "Lot Size & Lot Area (incl. gross vs net)",
+      "short_summary": "Net lot area excludes certain areas from gross lot area for development calculations",
+      "summary": "Development potential is based on net lot area. While gross and net lot area are the same for most lots, certain areas must be excluded from gross lot area to establish net lot area for development calculations.",
+      "requirements": [
+        {
+          "qualifier": "lots with street right-of-way within boundaries",
+          "setting": "exclude street right-of-way area from gross lot area"
+        },
+        {
+          "qualifier": "flag lots",
+          "setting": "exclude pole portion from gross lot area"
+        },
+        {
+          "qualifier": "lots with creek channels",
+          "setting": "exclude creek channel area from gross lot area"
+        }
+      ],
+      "inclusions": [
+        "Applies to all lots where excluded areas are present",
+        "Net lot area is used for all development potential calculations"
+      ],
+      "exclusions": [
+        "Private access easements for flag lots are NOT excluded from the lot area"
+      ],
+      "reasoning": "To ensure development calculations are based on actually usable lot area"
+    },
+    {
+      "id": "LCFA-001",
+      "title": "Maximum Lot Coverage Ratio",
+      "category": "Lot Coverage & Floor Area (FAR/GFA)",
+      "short_summary": "Lot coverage limited to 35% of lot area with additional 5% for specific features",
+      "summary": "Lot coverage describes how much of the lot is covered by structures. The maximum allowable coverage is 35% of the lot size, with an additional 5% permitted for covered patios, canopies, and roof overhangs beyond 4 feet.",
+      "requirements": [
+        {
+          "qualifier": "all structures on a lot",
+          "setting": "maximum lot coverage of 35% of lot area"
+        },
+        {
+          "qualifier": "covered patios, canopies, and roof overhangs beyond 4 feet",
+          "setting": "additional 5% lot coverage permitted"
+        }
+      ],
+      "inclusions": [
+        "Includes footprints of all structures (main residence, covered parking, tool sheds, covered pool equipment)",
+        "Includes projecting elements (balconies, stairways, porches, patio covers)",
+        "Includes decking exceeding 30 inches above grade",
+        "Includes roof overhangs or eaves exceeding 4 feet (portion beyond 4 feet)",
+        "Includes swimming pools and spas exceeding 30 inches above grade"
+      ],
+      "exclusions": [
+        "Excludes roof overhangs up to 4 feet",
+        "Excludes uncovered structures less than 30 inches above grade"
+      ],
+      "reasoning": "To control building density and maintain open space while allowing reasonable development"
+    },
+    {
+      "id": "LCFA-002",
+      "title": "Gross Floor Area Calculation Method",
+      "category": "Lot Coverage & Floor Area (FAR/GFA)",
+      "short_summary": "GFA calculated as 45% of first 5,000 sf plus 30% of excess area",
+      "summary": "Allowable gross floor area is calculated using a tiered system: 45% of the first 5,000 sf of lot area plus 30% of any portion exceeding 5,000 sf. This system allows larger lots more floor area while maintaining proportionality.",
+      "requirements": [
+        {
+          "qualifier": "first 5,000 sf of lot area",
+          "setting": "maximum 45% can be counted toward gross floor area"
+        },
+        {
+          "qualifier": "lot area exceeding 5,000 sf",
+          "setting": "maximum 30% of excess area can be counted toward gross floor area"
+        }
+      ],
+      "inclusions": [
+        "Sum of all floors in main structure measured to outside of exterior stud walls",
+        "Stairwells at all floors and areas greater than 50% enclosed and covered",
+        "Covered parking and accessory buildings greater than 120 square feet",
+        "Spaces meeting criteria for second and third floor equivalents"
+      ],
+      "exclusions": [],
+      "reasoning": "To control building mass while allowing proportionally more floor area on larger lots"
+    },
+    {
+      "id": "LCFA-003",
+      "title": "Maximum Main House Size Limit",
+      "category": "Lot Coverage & Floor Area (FAR/GFA)",
+      "short_summary": "Main house cannot exceed 6,000 sf regardless of lot size",
+      "summary": "The main house has an absolute maximum size limit of 6,000 sf, regardless of the calculated allowable gross floor area based on lot size. This prevents oversized houses even on very large lots.",
+      "requirements": [
+        {
+          "qualifier": "main house",
+          "setting": "maximum size of 6,000 sf"
+        }
+      ],
+      "inclusions": [
+        "Applies to main house only, not total development on lot",
+        "Absolute limit regardless of lot size or calculated FAR"
+      ],
+      "exclusions": [
+        "Does not apply to accessory structures",
+        "Does not limit total development on lot beyond FAR calculations"
+      ],
+      "reasoning": "To prevent oversized main houses that would be out of scale with neighborhood character"
+    },
+    {
+      "id": "PE-001",
+      "title": "Porch Floor Area Calculation Based on Openness",
+      "category": "Porches, Entries, Balconies",
+      "short_summary": "Roofed first floor porches count toward GFA only if less than 50% open",
+      "summary": "Roofed porches on the first floor are evaluated for openness to determine if they count toward gross floor area. Porches that are at least 50% open on their perimeter do not count, while those less than 50% open count once toward GFA.",
+      "requirements": [
+        {
+          "qualifier": "roofed first floor porches with less than 50% open perimeter",
+          "setting": "count once toward gross floor area"
+        },
+        {
+          "qualifier": "roofed first floor porches with 50% or more open perimeter",
+          "setting": "do not count toward gross floor area"
+        }
+      ],
+      "inclusions": [
+        "Openness measured by comparing open vs closed segments of porch perimeter",
+        "Segments abutting house walls are considered closed",
+        "50% facade area must be open for segment to be considered open",
+        "Height measured from porch floor to intersection with roof material"
+      ],
+      "exclusions": [
+        "Non-roofed porches generally do not count",
+        "Applies only to first floor porches"
+      ],
+      "reasoning": "To encourage open porches that contribute to streetscape while controlling enclosed space"
+    },
+    {
+      "id": "PE-002",
+      "title": "Entry Feature Height-Based Floor Area Calculation",
+      "category": "Porches, Entries, Balconies",
+      "short_summary": "Entry features count once if under 12' high, twice if over 12' high",
+      "summary": "Roofed entry features on the first floor are classified as regular or vaulted based on height. Features 12 feet or less count once toward GFA, while those over 12 feet (vaulted) count twice, regardless of design or openness.",
+      "requirements": [
+        {
+          "qualifier": "roofed entry features 12 feet or less in height",
+          "setting": "count once toward gross floor area"
+        },
+        {
+          "qualifier": "roofed entry features over 12 feet in height (vaulted)",
+          "setting": "count twice toward gross floor area"
+        }
+      ],
+      "inclusions": [
+        "Height measured from grade to top of roof material",
+        "Applies regardless of design including openness",
+        "Footprint measured to outside material of entry feature"
+      ],
+      "exclusions": [],
+      "reasoning": "To account for the increased visual mass and impact of taller entry features"
+    },
+    {
+      "id": "PE-003",
+      "title": "Recessed Porch Floor Area Exemption Criteria",
+      "category": "Porches, Entries, Balconies",
+      "short_summary": "Recessed porches exempt from GFA if under 10' deep, below 2nd floor, and open",
+      "summary": "Recessed porches on the ground floor do not count toward gross floor area if they meet all three criteria: depth less than 10 feet, ceiling below second floor level, and exterior side substantially open.",
+      "requirements": [
+        {
+          "qualifier": "recessed ground floor porches meeting all criteria",
+          "setting": "do not count toward gross floor area"
+        },
+        {
+          "qualifier": "recessed ground floor porches failing any criteria",
+          "setting": "count toward gross floor area, twice if over 17 feet high"
+        }
+      ],
+      "inclusions": [
+        "All three criteria must be met: depth < 10', ceiling below 2nd floor, exterior side substantially open",
+        "One-story construction considered less than 17' above finished floor",
+        "If porch space is higher than 17', counts twice as 2nd story equivalency"
+      ],
+      "exclusions": [],
+      "reasoning": "To encourage open, human-scale recessed porches while controlling enclosed space"
+    },
+    {
+      "id": "PE-004",
+      "title": "Upper Floor Outdoor Area Floor Area Calculation",
+      "category": "Porches, Entries, Balconies",
+      "short_summary": "Roofed outdoor areas on upper floors count toward GFA regardless of design",
+      "summary": "Outdoor areas on upper levels that are roofed count toward gross floor area regardless of whether the sides are open. An area is considered roofed if the eave over that area is deeper than the eave over the rest of the building.",
+      "requirements": [
+        {
+          "qualifier": "roofed outdoor areas on upper floors",
+          "setting": "count once toward gross floor area"
+        }
+      ],
+      "inclusions": [
+        "Includes balconies, decks, and outdoor areas on upper floors",
+        "Roofed determination based on eave depth comparison",
+        "Applies regardless of side openness",
+        "Pop-out balconies subject to same evaluation"
+      ],
+      "exclusions": [
+        "Areas with eave same size as rest of house considered open",
+        "Substantially open arbors may not count"
+      ],
+      "reasoning": "To account for covered outdoor space that adds to building mass and visual impact"
+    },
+    {
+      "id": "AE-001",
+      "title": "Attic Space Floor Area Based on Head Clearance",
+      "category": "Attics & Equivalencies",
+      "short_summary": "Attic areas with 5+ feet head clearance count toward GFA",
+      "summary": "On all accessible floors, areas with at least 5 feet of head clearance count toward gross floor area regardless of floor plan or actual usage. This includes attic spaces, closets, and perimeter spaces under sloped roofs.",
+      "requirements": [
+        {
+          "qualifier": "accessible floor areas with 5+ feet head clearance",
+          "setting": "count toward gross floor area"
+        },
+        {
+          "qualifier": "attic areas with less than 5 feet head clearance",
+          "setting": "do not count toward gross floor area"
+        }
+      ],
+      "inclusions": [
+        "Applies to all accessible floors including attics",
+        "Measurements from top of floor to underside of rafter",
+        "Includes closets and perimeter spaces",
+        "500 sf exemption for unusable attic space in Category 1 & 2 historic homes"
+      ],
+      "exclusions": [],
+      "reasoning": "To account for usable space that contributes to building mass even if not shown on floor plans"
+    },
+    {
+      "id": "AE-002",
+      "title": "Second and Third Floor Equivalency Height Thresholds",
+      "category": "Attics & Equivalencies",
+      "short_summary": "Areas above 17' count twice, above 26' count three times toward GFA",
+      "summary": "Areas higher than 17 feet and 26 feet above the first floor that do not already count as floor area (such as open atrium spaces and inaccessible attic spaces) count toward gross floor area as 2nd and 3rd floor equivalencies.",
+      "requirements": [
+        {
+          "qualifier": "areas 17-26 feet above first floor not otherwise counted",
+          "setting": "count twice toward gross floor area (2nd floor equivalency)"
+        },
+        {
+          "qualifier": "areas over 26 feet above first floor not otherwise counted",
+          "setting": "count three times toward gross floor area (3rd floor equivalency)"
+        }
+      ],
+      "inclusions": [
+        "Applies to open atrium spaces and inaccessible attic spaces",
+        "Stairwells measured same way as vaulted ceiling spaces",
+        "200 sf exemption for 3rd floor equivalency where roof pitch is 4:12 or steeper"
+      ],
+      "exclusions": [
+        "Does not apply to areas already counted as floor area"
+      ],
+      "reasoning": "To account for voluminous spaces that contribute to building mass even if not used or accessible"
+    },
+    {
+      "id": "PR-001",
+      "title": "Bay Window Floor Area Exemption Criteria",
+      "category": "Projections (bays, chimneys, etc.)",
+      "short_summary": "Bay windows exempt from GFA if 18+ inches above floor, supported by brackets, 50%+ glass",
+      "summary": "Bay windows meeting specific design criteria are considered decorative architectural features and do not count toward gross floor area. They must be at least 18 inches above floor joists, supported by corbels/brackets rather than solid walls, and have at least 50% glass surface.",
+      "requirements": [
+        {
+          "qualifier": "bay windows meeting all design criteria",
+          "setting": "do not count toward gross floor area"
+        },
+        {
+          "qualifier": "bay windows failing any design criteria",
+          "setting": "count toward gross floor area"
+        }
+      ],
+      "inclusions": [
+        "Must be at least 18 inches above floor joists",
+        "Must have exterior supports like corbels/brackets, not solid walls",
+        "Must be at least 50% glass surface",
+        "Maximum 2 feet projection from facade",
+        "Bay windows extending higher than structure's roof considered dormers"
+      ],
+      "exclusions": [
+        "Floor joists continuing into bay window disqualifies exemption",
+        "Exterior skirt walls (angled or straight) disqualify exemption",
+        "Less than 50% glass surface disqualifies exemption"
+      ],
+      "reasoning": "To encourage attractive architectural features while preventing abuse of projections to gain floor area"
+    },
+    {
+      "id": "PR-002",
+      "title": "Fireplace and Chimney Floor Area Calculation",
+      "category": "Projections (bays, chimneys, etc.)",
+      "short_summary": "Fireplaces count once toward GFA; upper floor chimneys do not count",
+      "summary": "All configurations of fireplaces, chimneys, and buttresses count once toward gross floor area regardless of configuration or design. However, chimneys on upper floors do not count. Detached fireplaces are treated as accessory structures.",
+      "requirements": [
+        {
+          "qualifier": "fireplaces, chimneys, and buttresses on ground level",
+          "setting": "count once toward gross floor area"
+        },
+        {
+          "qualifier": "chimneys on upper floors",
+          "setting": "do not count toward gross floor area"
+        },
+        {
+          "qualifier": "detached fireplaces over 120 sf",
+          "setting": "count toward FAR as accessory structures"
+        },
+        {
+          "qualifier": "detached fireplaces of any size",
+          "setting": "count toward lot coverage"
+        }
+      ],
+      "inclusions": [
+        "Applies to all fireplace configurations and designs",
+        "2000 ordinance prohibits new wood-burning fireplaces"
+      ],
+      "exclusions": [],
+      "reasoning": "To account for structural mass while recognizing upper floor chimneys have minimal impact"
+    },
+    {
+      "id": "PR-003",
+      "title": "Miscellaneous Projection Height Threshold",
+      "category": "Projections (bays, chimneys, etc.)",
+      "short_summary": "Sheds, planters, and projections over 5' high count toward GFA",
+      "summary": "Miscellaneous appendages such as tool sheds, equipment enclosures, and playhouses that exceed 5 feet in height count toward gross floor area regardless of configuration or design. These structures may not be located in required yards.",
+      "requirements": [
+        {
+          "qualifier": "sheds, planters, and projections over 5 feet high",
+          "setting": "count toward gross floor area"
+        },
+        {
+          "qualifier": "sheds, planters, and projections 5 feet or less high",
+          "setting": "do not count toward gross floor area"
+        }
+      ],
+      "inclusions": [
+        "Includes tool sheds, equipment enclosures, playhouses",
+        "Height is the determining factor regardless of other characteristics"
+      ],
+      "exclusions": [
+        "May not be located in required yards",
+        "Noise-producing equipment may not be located in required yards"
+      ],
+      "reasoning": "To control visual impact of auxiliary structures while allowing small utility features"
+    },
+    {
+      "id": "SB-001",
+      "title": "Standard Setback Requirements by Zone",
+      "category": "Setbacks & Encroachments",
+      "short_summary": "Setback requirements vary by R-1 zone designation with contextual or minimum standards",
+      "summary": "Standard setbacks apply in most cases and vary by zone district. Front setbacks use contextual setbacks if greater than 30 feet, otherwise 20-foot minimum applies. Other setbacks are fixed by zone.",
+      "requirements": [
+        {
+          "qualifier": "R-1 zone lots",
+          "setting": "front: contextual or 20', rear: 20', interior side: 6', street side: 16'"
+        },
+        {
+          "qualifier": "R-1(7000), R-1(8000), R-1(10000), R-1(20000) zone lots",
+          "setting": "front: contextual or 20', rear: 20', interior side: 8', street side: 16'"
+        },
+        {
+          "qualifier": "flag lots",
+          "setting": "front: 10', rear: 20', interior side: see zone, street side: n/a"
+        },
+        {
+          "qualifier": "substandard lots",
+          "setting": "front: contextual or 20', rear: 20', interior side: see zone, street side: 16'"
+        },
+        {
+          "qualifier": "substandard corner lots under 50' wide",
+          "setting": "front: contextual or 20', rear: 20', interior side: see zone, street side: 10'"
+        }
+      ],
+      "inclusions": [
+        "Contextual setback applies if average existing setbacks on block is 30' or greater",
+        "Special setbacks may override standard setbacks on designated streets"
+      ],
+      "exclusions": [],
+      "reasoning": "To maintain neighborhood character while providing flexibility for contextual compatibility"
+    },
+    {
+      "id": "SB-002",
+      "title": "Contextual Front Setback Calculation Method",
+      "category": "Setbacks & Encroachments",
+      "short_summary": "Contextual setbacks apply when average existing setbacks exceed 30 feet",
+      "summary": "Contextual setbacks apply only if the average of existing setbacks on the same side of the block is 30 feet or greater. The calculation excludes certain lot types and uses a specific methodology to determine the average.",
+      "requirements": [
+        {
+          "qualifier": "blocks with contextual setback pattern",
+          "setting": "use calculated average setback if 30 feet or greater"
+        },
+        {
+          "qualifier": "blocks without contextual setback pattern",
+          "setting": "use standard 20-foot front setback"
+        }
+      ],
+      "inclusions": [
+        "Must have more than 3 lots on block (including project lot)",
+        "If block over 600' long, consider only lots within 600' (max 10 lots)",
+        "If 5 or more remaining lots, exclude smallest and largest setbacks",
+        "Calculate average of remaining lots including subject lot"
+      ],
+      "exclusions": [
+        "Exclude flag lots from calculation",
+        "Exclude multi-family use with 3+ units",
+        "Exclude corner lots facing cross street",
+        "If subject lot is corner lot, consider pattern on street that garage faces"
+      ],
+      "reasoning": "To ensure new development is compatible with established neighborhood patterns"
+    },
+    {
+      "id": "SB-003",
+      "title": "Setback Measurement from Easements",
+      "category": "Setbacks & Encroachments",
+      "short_summary": "Setbacks measured from easement edge regardless of lot line location",
+      "summary": "Some easements affect setback measurements. Setbacks must be measured from the edge of creek easements and public street easements regardless of where the actual lot lines are located.",
+      "requirements": [
+        {
+          "qualifier": "lots with creek easements",
+          "setting": "measure setbacks from easement edge, not lot line"
+        },
+        {
+          "qualifier": "lots with public street easements",
+          "setting": "measure setbacks from easement edge, not lot line"
+        },
+        {
+          "qualifier": "lots with public utility easements",
+          "setting": "measure setbacks from lot line (most utility easements do not affect setbacks)"
+        }
+      ],
+      "inclusions": [
+        "Applies to creek easements and public street easements",
+        "Sidewalk location does not indicate lot line position"
+      ],
+      "exclusions": [
+        "Most public utility easements do not affect setbacks"
+      ],
+      "reasoning": "To ensure setbacks provide intended separation from actual constraints and public areas"
+    },
+    {
+      "id": "SB-004",
+      "title": "Allowable Rear Yard Encroachment for Main Dwelling",
+      "category": "Setbacks & Encroachments",
+      "short_summary": "Main dwelling may encroach up to 6' into rear setback with 14' minimum maintained",
+      "summary": "A portion of the main dwelling no wider than half the maximum width may encroach into the rear setback at ground floor only. Standard lots allow 6' encroachment with 14' minimum setback; back-to-back corner lots allow 10' encroachment with 10' minimum setback.",
+      "requirements": [
+        {
+          "qualifier": "main dwelling on standard lots",
+          "setting": "may encroach up to 6' into rear yard maintaining 14' minimum setback"
+        },
+        {
+          "qualifier": "main dwelling on back-to-back corner lots",
+          "setting": "may encroach up to 10' into rear yard maintaining 10' minimum setback"
+        },
+        {
+          "qualifier": "encroaching portion",
+          "setting": "maximum width of half the building width"
+        }
+      ],
+      "inclusions": [
+        "Ground floor only",
+        "Must be contiguous with existing structure",
+        "Only for legally constructed structures",
+        "Only once in the life of the structure"
+      ],
+      "exclusions": [
+        "Multiple protrusions not permitted",
+        "Not allowed for structures built with variance or home-improvement exception"
+      ],
+      "reasoning": "To allow reasonable expansion while maintaining adequate rear yard space"
+    },
+    {
+      "id": "SB-005",
+      "title": "Extension of Existing Setback Encroachments",
+      "category": "Setbacks & Encroachments",
+      "short_summary": "Existing legal encroachments may be extended under specific conditions",
+      "summary": "Existing walls that legally encroach into required setbacks may be extended at the same setback distance, in one direction only, at ground floor only, subject to minimum setback requirements and length limitations.",
+      "requirements": [
+        {
+          "qualifier": "existing side yard encroachments at least 5' from property line",
+          "setting": "may extend up to length of existing wall or 20', whichever is less"
+        },
+        {
+          "qualifier": "existing front yard encroachments at least 14' from property line",
+          "setting": "may extend up to length of existing wall, combined length not exceeding half building width"
+        },
+        {
+          "qualifier": "existing street-side yard encroachments at least 10' from property line",
+          "setting": "may extend up to length of existing wall or 20', whichever is less"
+        }
+      ],
+      "inclusions": [
+        "Ground floor only",
+        "One direction only",
+        "Must be contiguous with existing encroachment",
+        "Only for legally constructed structures without variance",
+        "Only once in the life of the structure",
+        "Requires retention of non-complying wall"
+      ],
+      "exclusions": [
+        "Walls not meeting minimum setbacks cannot be extended",
+        "Cannot be stepped back and then extended",
+        "Multiple protrusions not permitted"
+      ],
+      "reasoning": "To allow reasonable expansion of existing legal non-conformities while maintaining setback intent"
+    },
+    {
+      "id": "DP-001",
+      "title": "Primary Daylight Plane Side Setback Measurement",
+      "category": "Daylight Plane & Protrusions",
+      "short_summary": "45-degree daylight plane measured from 10' above average grade at side lot lines",
+      "summary": "The primary daylight plane regulates structures within the buildable area. Side daylight planes are measured at a 45-degree angle starting from 10 feet above average grade at the side lot lines.",
+      "requirements": [
+        {
+          "qualifier": "structures within buildable area",
+          "setting": "must comply with 45-degree daylight plane from side lot lines"
+        },
+        {
+          "qualifier": "daylight plane origin",
+          "setting": "10 feet above average grade at lot line"
+        }
+      ],
+      "inclusions": [
+        "Measured from average grade established using existing grade before grading",
+        "Average grade calculated from grade at building midpoint and closest point on adjacent lot",
+        "Applies to structures in buildable area only"
+      ],
+      "exclusions": [
+        "Structures in rear/side yards regulated by accessory-structure daylight plane",
+        "No front daylight plane exists"
+      ],
+      "reasoning": "To preserve privacy and natural light access to adjacent properties"
+    },
+    {
+      "id": "DP-002",
+      "title": "Primary Daylight Plane Rear Setback Measurement",
+      "category": "Daylight Plane & Protrusions",
+      "short_summary": "60-degree daylight plane measured from rear setback line",
+      "summary": "The rear daylight plane is measured at a 60-degree angle from the rear setback line. Protrusions are allowed with specific dimensional limits and separation requirements.",
+      "requirements": [
+        {
+          "qualifier": "structures within buildable area",
+          "setting": "must comply with 60-degree daylight plane from rear setback line"
+        },
+        {
+          "qualifier": "daylight plane protrusions",
+          "setting": "maximum 7.5' length each, 5' minimum separation, 15' cumulative length per side"
+        }
+      ],
+      "inclusions": [
+        "Applies to rear elevations of structures",
+        "Protrusions limited to 24' maximum height",
+        "Same rules apply to side protrusions"
+      ],
+      "exclusions": [
+        "No front daylight plane"
+      ],
+      "reasoning": "To balance development flexibility with neighbor privacy and light access"
+    },
+    {
+      "id": "DP-003",
+      "title": "Allowable Daylight Plane Protrusions",
+      "category": "Daylight Plane & Protrusions",
+      "short_summary": "Specific architectural features may extend beyond daylight plane with limitations",
+      "summary": "Certain architectural features are allowed to extend beyond the daylight plane with specific dimensional and design limitations to maintain the intent of the daylight plane while allowing reasonable architectural expression.",
+      "requirements": [
+        {
+          "qualifier": "television and radio antennas",
+          "setting": "may extend up to 15' above maximum building height"
+        },
+        {
+          "qualifier": "chimneys and flues under 5' wide",
+          "setting": "may extend beyond daylight plane to meet Building Code clearances"
+        },
+        {
+          "qualifier": "dormers, roof decks, gables, or similar features",
+          "setting": "maximum 7.5' long each, 15' cumulative, 5' minimum separation, 24' maximum height"
+        },
+        {
+          "qualifier": "cornices, eaves, and similar features",
+          "setting": "maximum 2' protrusion (excluding usable interior space)"
+        }
+      ],
+      "inclusions": [
+        "Each feature type has specific dimensional limits",
+        "Some features limited by cumulative length",
+        "Height restrictions apply to certain features"
+      ],
+      "exclusions": [
+        "Flat or continuous walls not allowed as eave protrusions",
+        "Enclosures usable for interior space not allowed as eave protrusions"
+      ],
+      "reasoning": "To allow necessary and attractive architectural features while maintaining daylight plane intent"
+    },
+    {
+      "id": "AS-001",
+      "title": "Accessory Structure General Standards",
+      "category": "Accessory Structures (sheds, carports)",
+      "short_summary": "Accessory structures must be incidental, detached, and meet size-based permit requirements",
+      "summary": "Non-dwelling accessory structures have no minimum lot size requirements but must meet specific standards for use, location, and permitting based on size. All accessory structures count toward lot coverage.",
+      "requirements": [
+        {
+          "qualifier": "all accessory structures",
+          "setting": "must be incidental to main dwelling, detached by 3' minimum, no kitchen allowed"
+        },
+        {
+          "qualifier": "accessory structures over 120 sf",
+          "setting": "require building permit and count toward gross floor area"
+        },
+        {
+          "qualifier": "accessory structures over 200 sf",
+          "setting": "maximum two plumbing fixtures allowed"
+        },
+        {
+          "qualifier": "all accessory structures",
+          "setting": "count toward total lot coverage"
+        }
+      ],
+      "inclusions": [
+        "Use must be incidental to main dwelling",
+        "Must be detached by at least 3' from main dwelling",
+        "No kitchen allowed in any accessory structure"
+      ],
+      "exclusions": [
+        "Structures under 120 sf do not require building permit but must comply with zoning"
+      ],
+      "reasoning": "To allow reasonable accessory uses while maintaining residential character and controlling development intensity"
+    },
+    {
+      "id": "AS-002",
+      "title": "Accessory Structure Location Restrictions",
+      "category": "Accessory Structures (sheds, carports)",
+      "short_summary": "Accessory structures in setbacks have specific location and use restrictions",
+      "summary": "Accessory structures located in required setbacks face additional restrictions on location, coverage, use, and height compared to those in the buildable area.",
+      "requirements": [
+        {
+          "qualifier": "accessory structures in required setbacks",
+          "setting": "prohibited in front yard, street-side yard, and rear yard of through lots"
+        },
+        {
+          "qualifier": "accessory structures in rear yard",
+          "setting": "may not cover more than 50% of rear yard area"
+        },
+        {
+          "qualifier": "accessory structures in setbacks",
+          "setting": "may not be used for sleeping or living"
+        },
+        {
+          "qualifier": "accessory structures in setbacks",
+          "setting": "subject to accessory-structure height and daylight plane regulations"
+        }
+      ],
+      "inclusions": [
+        "May be located in rear and interior side yards only",
+        "Subject to special height and daylight plane rules",
+        "Still require permits if over 120 sf"
+      ],
+      "exclusions": [
+        "Cannot be located in front yard, street-side yard, or rear yard of through lots",
+        "Cannot be used for habitation"
+      ],
+      "reasoning": "To allow accessory structures while protecting required open space and neighborhood character"
+    },
+    {
+      "id": "AS-003",
+      "title": "Accessory Structure Daylight Plane Requirements",
+      "category": "Accessory Structures (sheds, carports)",
+      "short_summary": "Accessory structures near lot lines subject to special daylight plane starting at 8' above grade",
+      "summary": "Accessory structures located near rear and side lot lines must comply with a special daylight plane that starts at 8 feet above average grade with a maximum building height of 12 feet.",
+      "requirements": [
+        {
+          "qualifier": "accessory structures near side lot lines",
+          "setting": "comply with daylight plane starting 8' above grade at side lot line"
+        },
+        {
+          "qualifier": "accessory structures near rear lot lines",
+          "setting": "comply with daylight plane starting 8' above grade at rear lot line"
+        },
+        {
+          "qualifier": "accessory structures in setbacks",
+          "setting": "maximum height of 12 feet"
+        }
+      ],
+      "inclusions": [
+        "Daylight plane slopes inward from lot line",
+        "Hipped-gable roof often best solution for compliance",
+        "Maximum 12' height limit applies"
+      ],
+      "exclusions": [],
+      "reasoning": "To minimize impact on neighboring properties while allowing reasonable accessory structures"
+    },
+    {
+      "id": "AS-004",
+      "title": "Detached Garage and Carport Location Requirements",
+      "category": "Accessory Structures (sheds, carports)",
+      "short_summary": "Detached parking structures must be 75' from front or in rear half if lot under 95' deep",
+      "summary": "Detached garages and carports may be located in rear or interior side yards if at least 75 feet from the front lot line and 20 feet from street-side lot line. On lots less than 95 feet deep, they may be in the rear half of the lot.",
+      "requirements": [
+        {
+          "qualifier": "detached garages/carports in rear/side yards",
+          "setting": "minimum 75' from front lot line and 20' from street-side lot line"
+        },
+        {
+          "qualifier": "detached garages/carports on lots under 95' deep",
+          "setting": "may be located in rear half of lot"
+        },
+        {
+          "qualifier": "garages at lot line",
+          "setting": "must comply with fire-rated walls and roof materials"
+        },
+        {
+          "qualifier": "carports with open sides",
+          "setting": "minimum 3' from any lot line"
+        }
+      ],
+      "inclusions": [
+        "Special setback exception available for covered parking on shallow lots",
+        "Subject to stricter daylight plane when using setback exception",
+        "Fire rating required when at lot line"
+      ],
+      "exclusions": [
+        "Setback exception applies only to parking structures, not other accessory structures"
+      ],
+      "reasoning": "To accommodate parking needs while maintaining adequate separation and fire safety"
+    },
+    {
+      "id": "EQ-001",
+      "title": "Noise-Producing Equipment Location Restrictions",
+      "category": "Equipment (noise-producing, HVAC, etc.)",
+      "short_summary": "Noise equipment prohibited in most yards, limited encroachment in street-side yard",
+      "summary": "Noise-producing equipment may not be located in front, rear, or interior-side yards. Limited encroachment up to 6 feet is allowed in street-side yards. All equipment must meet City Noise Ordinance requirements.",
+      "requirements": [
+        {
+          "qualifier": "noise-producing equipment",
+          "setting": "prohibited in front, rear, and interior-side yards"
+        },
+        {
+          "qualifier": "noise-producing equipment in street-side yard",
+          "setting": "may encroach up to 6 feet"
+        },
+        {
+          "qualifier": "all service equipment",
+          "setting": "must meet City Noise Ordinance Chapter 9.10 requirements"
+        },
+        {
+          "qualifier": "noise-producing equipment",
+          "setting": "must be insulated and housed unless waived by Planning Department"
+        }
+      ],
+      "inclusions": [
+        "Includes pool equipment, air conditioning units, generators",
+        "Planning Department may waive housing requirement for equipment in buildable area",
+        "Replacement equipment must conform where feasible"
+      ],
+      "exclusions": [
+        "May not encroach into front or rear yards from street-side yard"
+      ],
+      "reasoning": "To minimize noise impacts on neighbors while allowing necessary mechanical equipment"
+    },
+    {
+      "id": "PK-001",
+      "title": "Required Parking Spaces and Location",
+      "category": "Parking (spaces, driveways)",
+      "short_summary": "Two parking spaces required per dwelling, prohibited in front yard and first 10' of street-side",
+      "summary": "Two parking spaces are required on each lot per dwelling unit. They may not be located in the required front yard or the first 10 feet of the required street-side yard. One space must be covered.",
+      "requirements": [
+        {
+          "qualifier": "all dwellings including 2nd dwelling units",
+          "setting": "two parking spaces required on lot"
+        },
+        {
+          "qualifier": "one of two required spaces",
+          "setting": "must be covered"
+        },
+        {
+          "qualifier": "parking spaces",
+          "setting": "prohibited in front yard and first 10' of street-side yard"
+        },
+        {
+          "qualifier": "underground parking garages",
+          "setting": "prohibited except by variance"
+        }
+      ],
+      "inclusions": [
+        "Applies to main dwelling and 2nd dwelling units",
+        "Covered parking must be provided",
+        "Tandem parking acceptable for second space"
+      ],
+      "exclusions": [
+        "No underground parking except by variance"
+      ],
+      "reasoning": "To ensure adequate parking while maintaining attractive streetscapes"
+    },
+    {
+      "id": "PK-002",
+      "title": "Parking Space Dimensional Requirements",
+      "category": "Parking (spaces, driveways)",
+      "short_summary": "Uncovered spaces 8.5'x18', covered spaces 10'x20', 7' vertical clearance",
+      "summary": "Parking spaces have specific dimensional requirements based on whether they are covered or uncovered. Covered spaces require larger dimensions and must be kept clear of other uses.",
+      "requirements": [
+        {
+          "qualifier": "uncovered parking spaces",
+          "setting": "minimum 8.5' x 18'"
+        },
+        {
+          "qualifier": "covered parking spaces",
+          "setting": "minimum 10' x 20' clear inside dimension"
+        },
+        {
+          "qualifier": "two-car garage or carport",
+          "setting": "minimum 20' x 20' clear inside"
+        },
+        {
+          "qualifier": "covered parking structures",
+          "setting": "minimum 7' vertical clearance"
+        },
+        {
+          "qualifier": "detached covered parking",
+          "setting": "minimum 3' from main dwelling"
+        }
+      ],
+      "inclusions": [
+        "Clear area must be free of other uses (water heaters, washers, etc.)",
+        "Dimensions are interior clear dimensions for covered spaces"
+      ],
+      "exclusions": [],
+      "reasoning": "To ensure parking spaces are adequately sized and functional"
+    },
+    {
+      "id": "PK-003",
+      "title": "Driveway Standards and Materials",
+      "category": "Parking (spaces, driveways)",
+      "short_summary": "Driveways must meet width and material standards with Public Works approval",
+      "summary": "Driveways may use permeable or impermeable materials meeting Public Works standards. Specific width requirements and material restrictions apply near public right-of-way.",
+      "requirements": [
+        {
+          "qualifier": "driveway surfaces",
+          "setting": "must meet Public Works standards for materials"
+        },
+        {
+          "qualifier": "driveway surface within 10' of public right-of-way",
+          "setting": "may not be loose material like gravel"
+        },
+        {
+          "qualifier": "driveway clearance",
+          "setting": "minimum 10' width"
+        },
+        {
+          "qualifier": "driveway surface",
+          "setting": "minimum 8' width"
+        },
+        {
+          "qualifier": "curb cuts",
+          "setting": "minimum 20' separation between cuts"
+        },
+        {
+          "qualifier": "front yard impermeable coverage",
+          "setting": "maximum 40% of required front yard"
+        }
+      ],
+      "inclusions": [
+        "2nd dwelling units must share common driveway",
+        "Street-work permit required for public right-of-way work",
+        "Turns must be deemed maneuverable by Transportation Division",
+        "Encouraged: maximum one curb cut per frontage, 50' from intersection"
+      ],
+      "exclusions": [],
+      "reasoning": "To ensure safe, functional driveways while maintaining neighborhood appearance"
+    },
+    {
+      "id": "GP-001",
+      "title": "Contextual Garage Placement Determination",
+      "category": "Garage Placement (contextual)",
+      "short_summary": "Garage placement regulated by predominant neighborhood pattern when it exists",
+      "summary": "Contextual garage placement applies when there is a predominant neighborhood pattern. The determination involves analyzing existing garages on the block and categorizing them as front-half or rear-half pattern lots.",
+      "requirements": [
+        {
+          "qualifier": "projects where contextual garage placement applies",
+          "setting": "must place garage according to predominant neighborhood pattern"
+        }
+      ],
+      "inclusions": [
+        "Consider only lots within 600' or 10 closest lots if block over 600' long",
+        "For corner lots, consider pattern on street that garage faces",
+        "Divide lots into front-half pattern and rear-half pattern categories",
+        "Lots with no garage count as rear-half pattern",
+        "Predominant pattern is category with more than half the lots"
+      ],
+      "exclusions": [
+        "Exclude flag lots from analysis",
+        "Exclude multi-family use with 3+ units",
+        "Exclude corner lots from analysis"
+      ],
+      "reasoning": "To ensure garage placement is compatible with established neighborhood character"
+    },
+    {
+      "id": "BX-001",
+      "title": "Basement Floor Area Exemption Criteria",
+      "category": "Basements & Excavation",
+      "short_summary": "Basements exempt from GFA if first floor is 3' or less above grade",
+      "summary": "Basements, even habitable ones, do not count as floor area if the first floor is no more than 3 feet above grade. This exemption recognizes that below-grade space does not contribute to apparent building mass.",
+      "requirements": [
+        {
+          "qualifier": "basements with first floor 3' or less above grade",
+          "setting": "do not count toward gross floor area"
+        },
+        {
+          "qualifier": "basements with first floor over 3' above grade",
+          "setting": "count toward gross floor area"
+        }
+      ],
+      "inclusions": [
+        "Applies to all basement areas including habitable spaces",
+        "First floor height measurement determines exemption"
+      ],
+      "exclusions": [
+        "May not be located in special flood hazard areas",
+        "May not extend beyond building footprint",
+        "May not encroach into required yards except where main dwelling permitted"
+      ],
+      "reasoning": "To allow below-grade development that does not impact building appearance or mass"
+    },
+    {
+      "id": "BX-002",
+      "title": "Light Well and Stairwell Standards",
+      "category": "Basements & Excavation",
+      "short_summary": "Light wells limited to 3' width, 30% of basement perimeter, with encroachment limits",
+      "summary": "Light wells and stairwells have specific dimensional limits and location restrictions. They may not face the front yard and are limited in width, total length, and encroachment into required yards.",
+      "requirements": [
+        {
+          "qualifier": "light wells and stairwells",
+          "setting": "maximum 3' interior width"
+        },
+        {
+          "qualifier": "all excavated features combined",
+          "setting": "maximum 30% of basement perimeter length"
+        },
+        {
+          "qualifier": "features encroaching into side yards",
+          "setting": "maximum 3' encroachment, minimum 3' from lot line"
+        },
+        {
+          "qualifier": "features encroaching into rear yard",
+          "setting": "maximum 4' encroachment"
+        },
+        {
+          "qualifier": "all encroaching features combined",
+          "setting": "maximum 15' total length on all sides"
+        }
+      ],
+      "inclusions": [
+        "May not be located facing front yard",
+        "Must not harm neighboring trees",
+        "Require Public Works drainage system approval",
+        "Measurements based on interior dimensions excluding structure"
+      ],
+      "exclusions": [
+        "Prohibited on front-facing side of structure"
+      ],
+      "reasoning": "To allow necessary light and access while minimizing impact on required yards"
+    },
+    {
+      "id": "BX-003",
+      "title": "Below-Grade Patio Standards",
+      "category": "Basements & Excavation",
+      "short_summary": "Below-grade patios limited to 200 sf each, 2% of lot area total, with separation requirements",
+      "summary": "Below-grade patios have size limitations both individually and cumulatively, plus separation requirements and location restrictions. They require architectural compatibility and screening.",
+      "requirements": [
+        {
+          "qualifier": "individual below-grade patios",
+          "setting": "maximum 200 sf each"
+        },
+        {
+          "qualifier": "all below-grade patios combined",
+          "setting": "maximum 2% of lot area or 200 sf, whichever is greater"
+        },
+        {
+          "qualifier": "separation between patio areas",
+          "setting": "minimum 10' apart"
+        },
+        {
+          "qualifier": "encroachment into side yards",
+          "setting": "maximum 2'"
+        },
+        {
+          "qualifier": "encroachment into rear yard",
+          "setting": "maximum 4'"
+        },
+        {
+          "qualifier": "all encroaching features",
+          "setting": "maximum 15' combined length"
+        }
+      ],
+      "inclusions": [
+        "May not face front yard",
+        "Required stairway egress not included in 200 sf limitation",
+        "Must be architecturally compatible with residence",
+        "Must be screened from off-site views",
+        "Overhangs/canopies count toward lot coverage",
+        "Must not harm neighboring trees",
+        "Require drainage system approval"
+      ],
+      "exclusions": [
+        "Prohibited on front-facing side"
+      ],
+      "reasoning": "To allow outdoor living space while controlling visual and privacy impacts"
+    },
+    {
+      "id": "ADU-001",
+      "title": "Attached Second Dwelling Unit Standards",
+      "category": "Second/Accessory Dwelling Units",
+      "short_summary": "Attached ADUs limited to 450 sf on qualifying lots with specific design requirements",
+      "summary": "Attached second dwelling units are allowed on lots meeting minimum size requirements. They are limited to 450 sf, 17' height, and must meet specific parking and design standards.",
+      "requirements": [
+        {
+          "qualifier": "attached 2nd dwelling units",
+          "setting": "maximum 450 sf including basement area"
+        },
+        {
+          "qualifier": "attached 2nd dwelling units",
+          "setting": "maximum 17' height"
+        },
+        {
+          "qualifier": "attached 2nd dwelling units",
+          "setting": "two parking spaces required (one covered)"
+        },
+        {
+          "qualifier": "covered parking for attached ADU",
+          "setting": "maximum 200 sf (additional to 450 sf unit)"
+        },
+        {
+          "qualifier": "attached ADU entrance (except corner lots)",
+          "setting": "may not face same lot line as main dwelling entrance"
+        },
+        {
+          "qualifier": "exterior staircases to 2nd floor ADUs",
+          "setting": "must be located toward interior side or rear yard"
+        }
+      ],
+      "inclusions": [
+        "Must be located within setbacks like main dwelling",
+        "Counts toward total FAR for lot",
+        "Basement area counts toward unit size even if exempt from GFA",
+        "Must comply with all main dwelling regulations except as specified"
+      ],
+      "exclusions": [],
+      "reasoning": "To provide additional housing opportunities while maintaining neighborhood character"
+    },
+    {
+      "id": "ADU-002",
+      "title": "Detached Second Dwelling Unit Standards",
+      "category": "Second/Accessory Dwelling Units",
+      "short_summary": "Detached ADUs limited to 900 sf, one story, 12' from main dwelling",
+      "summary": "Detached second dwelling units are allowed on lots meeting larger minimum size requirements. They are limited to 900 sf, one story/17' height, and must be architecturally compatible with the main dwelling.",
+      "requirements": [
+        {
+          "qualifier": "detached 2nd dwelling units",
+          "setting": "maximum 900 sf including basement area"
+        },
+        {
+          "qualifier": "detached 2nd dwelling units",
+          "setting": "maximum one story and 17' height"
+        },
+        {
+          "qualifier": "detached 2nd dwelling units",
+          "setting": "minimum 12' from main dwelling"
+        },
+        {
+          "qualifier": "detached 2nd dwelling units",
+          "setting": "must be architecturally compatible with main dwelling"
+        },
+        {
+          "qualifier": "detached 2nd dwelling units",
+          "setting": "must share driveway with main dwelling"
+        },
+        {
+          "qualifier": "covered parking for detached ADU",
+          "setting": "maximum 200 sf (additional to 900 sf unit)"
+        }
+      ],
+      "inclusions": [
+        "Must be located within setbacks like main dwelling",
+        "Counts toward total FAR for lot",
+        "Two parking spaces required (one covered)",
+        "Basement area counts toward unit size even if exempt from GFA"
+      ],
+      "exclusions": [],
+      "reasoning": "To provide additional housing while ensuring compatibility and adequate separation"
+    },
+    {
+      "id": "ADU-003",
+      "title": "Minimum Lot Sizes for Second Dwelling Units",
+      "category": "Second/Accessory Dwelling Units",
+      "short_summary": "ADU lot size requirements vary by zone and lot type, generally 35% larger than standard",
+      "summary": "Second dwelling units require larger minimum lot sizes than standard development. Requirements vary by R-1 zone designation and are higher for flag lots than typical lots.",
+      "requirements": [
+        {
+          "qualifier": "R-1 zone typical lots with 2nd dwelling unit",
+          "setting": "minimum 8,100 sf lot size"
+        },
+        {
+          "qualifier": "R-1 zone flag lots with 2nd dwelling unit",
+          "setting": "minimum 9,720 sf lot size"
+        },
+        {
+          "qualifier": "R-1(7000) zone typical lots with 2nd dwelling unit",
+          "setting": "minimum 9,450 sf lot size"
+        },
+        {
+          "qualifier": "R-1(7000) zone flag lots with 2nd dwelling unit",
+          "setting": "minimum 11,340 sf lot size"
+        },
+        {
+          "qualifier": "R-1(8000) zone typical lots with 2nd dwelling unit",
+          "setting": "minimum 10,800 sf lot size"
+        },
+        {
+          "qualifier": "R-1(8000) zone flag lots with 2nd dwelling unit",
+          "setting": "minimum 12,960 sf lot size"
+        },
+        {
+          "qualifier": "R-1(10000) zone typical lots with 2nd dwelling unit",
+          "setting": "minimum 13,500 sf lot size"
+        },
+        {
+          "qualifier": "R-1(10000) zone flag lots with 2nd dwelling unit",
+          "setting": "minimum 16,200 sf lot size"
+        },
+        {
+          "qualifier": "R-1(20000) zone typical lots with 2nd dwelling unit",
+          "setting": "minimum 27,000 sf lot size"
+        },
+        {
+          "qualifier": "R-1(20000) zone flag lots with 2nd dwelling unit",
+          "setting": "minimum 32,400 sf lot size"
+        }
+      ],
+      "inclusions": [
+        "Requirements apply to both attached and detached 2nd dwelling units",
+        "Flag lots require larger minimum sizes than typical lots"
+      ],
+      "exclusions": [],
+      "reasoning": "To ensure adequate lot size to accommodate additional dwelling while maintaining low density character"
+    },
+    {
+      "id": "HG-001",
+      "title": "Maximum Building Height by Lot Type",
+      "category": "Height & Grade",
+      "short_summary": "Building height limits vary by roof slope and lot type, with special limits for substandard lots",
+      "summary": "Maximum building height depends on roof slope and lot characteristics. Standard lots allow 30-33 feet depending on roof slope, while substandard and flag lots are limited to 17 feet regardless of other factors.",
+      "requirements": [
+        {
+          "qualifier": "structures with roof slope less than 12:12",
+          "setting": "maximum 30' building height"
+        },
+        {
+          "qualifier": "structures with roof slope greater than 12:12",
+          "setting": "maximum 33' building height"
+        },
+        {
+          "qualifier": "structures on substandard or flag lots",
+          "setting": "maximum 17' building height regardless of roof slope or flood zone"
+        },
+        {
+          "qualifier": "structures in flood zones (except substandard/flag lots)",
+          "setting": "variable height up to 33' maximum"
+        }
+      ],
+      "inclusions": [
+        "Roof slope determines height limit for standard lots",
+        "Flood zone considerations may affect height",
+        "Substandard and flag lots have absolute 17' limit"
+      ],
+      "exclusions": [],
+      "reasoning": "To control building scale while allowing flexibility for architectural design and flood requirements"
+    },
+    {
+      "id": "HG-002",
+      "title": "Special Height Regulations for Substandard Lots",
+      "category": "Height & Grade",
+      "short_summary": "Substandard lots limited to single-story, 17' maximum height",
+      "summary": "Substandard lots are subject to special height regulations that limit buildings to single-story construction with a maximum height of 17 feet, significantly lower than the standard 30-foot limit.",
+      "requirements": [
+        {
+          "qualifier": "buildings on substandard lots",
+          "setting": "maximum single-story and 17' height"
+        },
+        {
+          "qualifier": "buildings on standard lots",
+          "setting": "maximum 30' height (or 33' with steep roof)"
+        }
+      ],
+      "inclusions": [
+        "Applies to all substandard lots regardless of zone",
+        "Single-story restriction in addition to height limit"
+      ],
+      "exclusions": [],
+      "reasoning": "To ensure building scale is appropriate for smaller lot sizes and maintain neighborhood compatibility"
+    }
+  ]
+}
+
+
+

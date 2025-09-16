@@ -1,0 +1,51 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_47.png",
+  "image_name": "Page_47.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Other excavation considerations\n\nArchitectural compatibility & landscape screening\n\u2022 If a guard rail is required, it must be designed to be architecturally compatible with the residence.\n\u2022 Additionally, landscape screening may be required by the Planning Dept.\n\nTree protection\n\u2022 A tree's root system extends well beyond the drip line and the roots are likely to be within the first 18\" below grade.\n\u2022 It is important to plan excavation in a manner that does not harm tree roots.\n\u2022 Prior to issuance of building permit, owner to provide evidence that encroaching features or portions of features will not harm trees of any species on subject or abutting lots.\n\u2022 Consult the city's Tree Technical Manual for other aspects of tree protection during construction.\n\nFig 37 Excavation, landscape screening, and guard rails\n\nFig 38 Excavation and tree roots\n\n\"When planning a basement, consider the extent of excavation that will be required, e.g., some excavation techniques require (for safety reasons) that the excavation to be at a 1:1 slope which may impact tree roots severely.\"\n\n41",
+      "visual_elements": [
+        {
+          "type": "figure",
+          "description": "A partial architectural side view of a residence showing excavation below the basement level, illustrating landscape screening and guard rails. The figure is labeled as Fig 37 Excavation, landscape screening, and guard rails.",
+          "location": "bottom left"
+        },
+        {
+          "type": "figure",
+          "description": "A detailed side view showing a residence with basement excavation and a large tree with extensive root system extending beyond the drip line. The excavation area is marked, showing the relationship between the basement excavation and tree roots. A note explains the importance of considering excavation slope (1:1) to avoid severe impact on tree roots. The figure is labeled as Fig 38 Excavation and tree roots.",
+          "location": "bottom right"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Tree root depth",
+          "value": "18",
+          "unit": "inches below grade"
+        },
+        {
+          "parameter": "Excavation slope",
+          "value": "1:1",
+          "unit": "slope ratio"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Other excavation considerations",
+        "subheadings": [
+          "Architectural compatibility & landscape screening",
+          "Tree protection"
+        ],
+        "sections": []
+      },
+      "additional_notes": [
+        "No handwritten notes or stamps visible.",
+        "Page number 41 located at bottom right corner.",
+        "Text and figures are clear and legible."
+      ],
+      "cross_references": [
+        "Consult the city's Tree Technical Manual for other aspects of tree protection during construction."
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-14 19:41:32",
+  "model_used": "openai/gpt-4.1-mini"
+}

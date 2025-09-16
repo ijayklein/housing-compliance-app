@@ -1,0 +1,297 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_09.png",
+  "image_name": "Page_09.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Gross vs. net lot area\n\nGross lot area is the size of the lot\u2014from lot line to lot line.\nDevelopment potential is based on the net lot area and\nwhile gross and net lot area are the same for most lots in\nPalo Alto, there are some lots for which portions must be\nexcluded from the gross lot area to establish the net lot area.\n\nAreas excluded from the gross lot size are:\n\u2022 Street right-of-way (Area A of Fig 1 on this page)\n\u2022 \"Pole\" portion of a flag lot (Area B of Fig 2 on this page)\n\u2022 Creek channel (Area C of Fig 3 on this page)\n\nFig 1 Gross lot area exclusions: street easements\n\n[Diagram showing lot with boundaries that extend into the public ROW]\n\nThe portion of the lot within the public ROW must be subtracted from the gross lot area.\n\nNotes: In some areas of Palo Alto, like Barron Park, it is not unusual for the lot to extend to the middle of the street. However, for zoning purposes, the lot is defined by the edge of the public street easement or public right-of-way (ROW). Dimensions for the public ROW are available at the Development Center.\n\nFig 2 Gross lot area exclusions: flag-lot \"poles\"\n\n[Diagram showing flag lot containing private easement and flag lot with pole]\n\npole* portion of a lot must be subtracted from the gross lot size\n\n* Private access easements to that provide access to lots are NOT subtracted from the lot on which they occur.\n\nFig 3 Gross lot area exclusions: creek easements\n\n[Diagram showing lot with creek and/or creek easement]\n\nThe portion of the lot within a creek channel must be subtracted from gross lot size.\n\nNotes: The channel or area to be subtracted is defined by Santa Clara Valley Water District's easement or, if there is no easement, the top-of-bank. Determining the top-of-bank may require a surveyor.\n\nKey\nCurb\nSidewalk\nLot lines\nCreek\nArea that must be subtracted from gross lot area\n\n3",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Figure 1 shows a lot with boundaries that extend into the public right-of-way (ROW). The diagram illustrates how the portion of the lot within the public ROW (labeled as Area A) must be subtracted from the gross lot area. Shows street, sidewalk, and lot boundaries with hatched area indicating the portion to be excluded.",
+          "location": "middle left of page"
+        },
+        {
+          "type": "diagram",
+          "description": "Figure 2 shows flag lot configurations with private easements and poles. Illustrates flag lot containing private easement on the left and flag lot with pole on the right. Shows how the pole portion (Area B) of a flag lot must be subtracted from the gross lot size. Includes note about private access easements.",
+          "location": "top right of page"
+        },
+        {
+          "type": "diagram",
+          "description": "Figure 3 shows a lot with creek and/or creek easement. Illustrates how the portion of the lot within a creek channel (Area C) must be subtracted from gross lot size. Shows top of bank, creek easement boundaries, and street. Includes wavy lines representing creek water.",
+          "location": "bottom right of page"
+        },
+        {
+          "type": "key",
+          "description": "Legend showing symbols for: Curb (hatched lines), Sidewalk (hatched lines), Lot lines (solid lines), Creek (wavy lines), and Area that must be subtracted from gross lot area (outlined areas)",
+          "location": "bottom right of page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Gross lot area definition",
+          "value_type": "Text",
+          "value": "size of the lot\u2014from lot line to lot line",
+          "unit": "None"
+        },
+        {
+          "parameter": "Development potential basis",
+          "value_type": "Text",
+          "value": "net lot area",
+          "unit": "None"
+        },
+        {
+          "parameter": "Street right-of-way exclusion",
+          "value_type": "Text",
+          "value": "Area A of Fig 1",
+          "unit": "None"
+        },
+        {
+          "parameter": "Flag lot pole exclusion",
+          "value_type": "Text",
+          "value": "Area B of Fig 2",
+          "unit": "None"
+        },
+        {
+          "parameter": "Creek channel exclusion",
+          "value_type": "Text",
+          "value": "Area C of Fig 3",
+          "unit": "None"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Gross vs. net lot area",
+        "subheadings": [
+          "Areas excluded from the gross lot size are:",
+          "Fig 1 Gross lot area exclusions: street easements",
+          "Fig 2 Gross lot area exclusions: flag-lot \"poles\"",
+          "Fig 3 Gross lot area exclusions: creek easements",
+          "Key"
+        ],
+        "sections": [
+          "3"
+        ]
+      },
+      "additional_notes": [
+        "Page number 3 appears at bottom right",
+        "Asterisk notation used for 'pole' definition",
+        "Multiple technical diagrams with detailed annotations",
+        "Reference to Development Center for ROW dimensions",
+        "Reference to Santa Clara Valley Water District for creek easement definitions"
+      ],
+      "cross_references": [
+        "Area A of Fig 1 on this page",
+        "Area B of Fig 2 on this page",
+        "Area C of Fig 3 on this page",
+        "Development Center",
+        "Santa Clara Valley Water District's easement"
+      ],
+      "conditions_and_qualifiers": {
+        "qualifiers": [
+          {
+            "id": "q1",
+            "text": "for most lots in Palo Alto",
+            "applies_to_conditions": [
+              "c1"
+            ],
+            "scope": "Local"
+          },
+          {
+            "id": "q2",
+            "text": "there are some lots for which portions must be excluded from the gross lot area to establish the net lot area",
+            "applies_to_conditions": [
+              "c2",
+              "c3",
+              "c4"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q3",
+            "text": "In some areas of Palo Alto, like Barron Park",
+            "applies_to_conditions": [
+              "c5"
+            ],
+            "scope": "Local"
+          },
+          {
+            "id": "q4",
+            "text": "for zoning purposes",
+            "applies_to_conditions": [
+              "c6"
+            ],
+            "scope": "Global"
+          },
+          {
+            "id": "q5",
+            "text": "if there is no easement",
+            "applies_to_conditions": [
+              "c8"
+            ],
+            "scope": "Specific"
+          }
+        ],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "gross and net lot area are the same",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "true",
+            "unit": "None"
+          },
+          {
+            "id": "c2",
+            "text": "Street right-of-way (Area A of Fig 1 on this page) must be excluded",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "true",
+            "unit": "None"
+          },
+          {
+            "id": "c3",
+            "text": "\"Pole\" portion of a flag lot (Area B of Fig 2 on this page) must be excluded",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "true",
+            "unit": "None"
+          },
+          {
+            "id": "c4",
+            "text": "Creek channel (Area C of Fig 3 on this page) must be excluded",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "true",
+            "unit": "None"
+          },
+          {
+            "id": "c5",
+            "text": "it is not unusual for the lot to extend to the middle of the street",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "true",
+            "unit": "None"
+          },
+          {
+            "id": "c6",
+            "text": "the lot is defined by the edge of the public street easement or public right-of-way (ROW)",
+            "value_type": "Text",
+            "operator": "=",
+            "threshold_value": "edge of public street easement or ROW",
+            "unit": "None"
+          },
+          {
+            "id": "c7",
+            "text": "The channel or area to be subtracted is defined by Santa Clara Valley Water District's easement",
+            "value_type": "Text",
+            "operator": "=",
+            "threshold_value": "Santa Clara Valley Water District's easement",
+            "unit": "None"
+          },
+          {
+            "id": "c8",
+            "text": "the top-of-bank defines the area to be subtracted",
+            "value_type": "Text",
+            "operator": "=",
+            "threshold_value": "top-of-bank",
+            "unit": "None"
+          },
+          {
+            "id": "c9",
+            "text": "Private access easements to that provide access to lots are NOT subtracted from the lot on which they occur",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "false",
+            "unit": "None"
+          }
+        ],
+        "logical_relationships": [
+          {
+            "operation": "OR",
+            "condition_ids": [
+              "c2",
+              "c3",
+              "c4"
+            ],
+            "expression": "Areas excluded from the gross lot size are: Street right-of-way OR \"Pole\" portion of a flag lot OR Creek channel",
+            "evaluation_order": 1
+          },
+          {
+            "operation": "IF-THEN-ELSE",
+            "condition_ids": [
+              "c7",
+              "c8"
+            ],
+            "expression": "The channel or area to be subtracted is defined by Santa Clara Valley Water District's easement or, if there is no easement, the top-of-bank",
+            "evaluation_order": 2
+          }
+        ],
+        "execution_sequence": [
+          {
+            "step": 1,
+            "action": "Determine if lot has areas that must be excluded from gross lot area",
+            "condition_ids": [
+              "c2",
+              "c3",
+              "c4"
+            ],
+            "qualifier_ids": [
+              "q2"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 2,
+            "action": "Subtract street right-of-way area if present",
+            "condition_ids": [
+              "c2"
+            ],
+            "qualifier_ids": [
+              "q4"
+            ],
+            "dependencies": [
+              "1"
+            ]
+          },
+          {
+            "step": 3,
+            "action": "Subtract pole portion of flag lot if present",
+            "condition_ids": [
+              "c3"
+            ],
+            "qualifier_ids": [],
+            "dependencies": [
+              "1"
+            ]
+          },
+          {
+            "step": 4,
+            "action": "Subtract creek channel area if present",
+            "condition_ids": [
+              "c4"
+            ],
+            "qualifier_ids": [],
+            "dependencies": [
+              "1"
+            ]
+          },
+          {
+            "step": 5,
+            "action": "Determine creek area boundary definition",
+            "condition_ids": [
+              "c7",
+              "c8"
+            ],
+            "qualifier_ids": [
+              "q5"
+            ],
+            "dependencies": [
+              "4"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:31:39",
+  "model_used": "anthropic/claude-sonnet-4"
+}

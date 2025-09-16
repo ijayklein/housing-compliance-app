@@ -1,0 +1,67 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_41.png",
+  "image_name": "Page_41.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Carport standards\n\nFig 29 Parking space dimensions for carport in plan view\n\nOne of\n2 corner\ncolumns\n\nopen\n\n20' min. open\n\nDriveway/\nparking\nsurface\n\nPlan View\n\nFig 30 Parking space dimensions for covered space in elevation\n\nOne of 2 corner\ncolumns\n\nBottom roof\nsystem\n\n20' min. open\n\n7' min.\nopen\n\nLeft Side Elevation\n\nOne of 2 corner\ncolumns\n\nBottom roof\nsystem\n\n10' min.\nopen\n\n7' min.\nopen\n\nFront Elevation\n\n35",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Plan view diagram showing carport dimensions with a car positioned between two corner columns, indicating open space and driveway/parking surface",
+          "location": "Left side of page, middle section"
+        },
+        {
+          "type": "diagram",
+          "description": "Left side elevation view showing covered parking space with car underneath, indicating bottom roof system, corner columns, and minimum clearances",
+          "location": "Right side of page, upper middle section"
+        },
+        {
+          "type": "diagram",
+          "description": "Front elevation view showing covered parking space with car, indicating bottom roof system, corner columns, and minimum clearances",
+          "location": "Right side of page, lower middle section"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Minimum open space (plan view)",
+          "value": "20",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum open space (elevation)",
+          "value": "20",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum vertical clearance",
+          "value": "7",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum open space (front elevation)",
+          "value": "10",
+          "unit": "feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Carport standards",
+        "subheadings": [],
+        "sections": [
+          "Fig 29",
+          "Fig 30"
+        ]
+      },
+      "additional_notes": [
+        "Page number 35 appears at bottom right",
+        "Diagrams show architectural technical drawings with dimensional annotations",
+        "Gray shaded area appears at top of page below main heading"
+      ],
+      "cross_references": [
+        "Fig 29 Parking space dimensions for carport in plan view",
+        "Fig 30 Parking space dimensions for covered space in elevation"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-11 13:44:56",
+  "model_used": "anthropic/claude-sonnet-4"
+}

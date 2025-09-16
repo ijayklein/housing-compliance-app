@@ -1,0 +1,19 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_52.png",
+  "image_name": "Page_52.png",
+  "analysis": {
+    "page_number": "unknown",
+    "main_heading": "PARSE_ERROR",
+    "text_content": "Failed to parse response: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)",
+    "tables": [],
+    "figures": [],
+    "zoning_rules": [],
+    "code_references": [],
+    "quality_notes": "JSON parsing failed: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)",
+    "raw_response": "```json\n{\n  \"page_number\": \"46\",\n  \"main_heading\": \"Height\",\n  \"text_content\": \"Height\\n&\\ngrade\\nHeight allowances\\nenable a variety of\\narchitectural styles\\nwhile preserving the\\nresidential scale of our\\nneighborhoods as well\\nas the privacy and\\nnatural light available\\nto each lot.\\nRoof slope is the vertical rise in\\ninches for every horizontal distance\\nof twelve inches (called the \\\"run\\\"). It\\nis expressed as rise:run or, in this\\nexample 6:12.\\nNote: On a drawing this slope\\nmight also be represented as:\\n12\\n6\\nor\\n2\\n1\\nHeight measured to top of roof material\",\n  \"tables\": [\n    {\n      \"title\": null,\n      \"headers\": [\n        \"Structure\",\n        \"Max. height\\nto roof peak\"\n      ],\n      \"rows\": [\n        [\n          \"Main dwelling on a standard lot\\nwith a roof slope <12:12\",\n          \"30'\"\n        ],\n        [\n          \"Main dwelling on a standard lot\\nwith a roof slope \u226512:12\",\n          \"33'\"\n        ],\n        [\n          \"Main dwelling on a substandard\\nor flag ",
+    "parse_error": true
+  },
+  "analysis_timestamp": "2025-09-16 12:33:47",
+  "model_used": "google/gemini-2.5-flash",
+  "success": false
+}

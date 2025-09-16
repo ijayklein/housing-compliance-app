@@ -1,0 +1,93 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_16.md",
+  "file_name": "Page_16.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "Rule": "Porch Segment Analysis",
+        "Qualifiers": {
+          "Scope": "Determination of open and closed segments of a porch",
+          "Applicability": "Porch in Figure 5",
+          "Exclusions": "None specified"
+        },
+        "Variables": {
+          "Dimensional": {
+            "Segment A": "3'",
+            "Segment B": "8'",
+            "Segment C": "10'",
+            "Segment D": "7'",
+            "Segment E": "14'",
+            "Segment F": "24'",
+            "Segment G": "4'",
+            "Additional dimensions": [
+              "2'",
+              "2'"
+            ]
+          },
+          "Material": {
+            "Railings": "Ballisters",
+            "Solid half walls": "Material not specified"
+          },
+          "Environmental": {
+            "Grade": "30\""
+          },
+          "Usage": {
+            "Porch floor height": "More than 30\" above grade"
+          }
+        },
+        "Constants": {
+          "Total closed": "35'",
+          "Total open": "35'",
+          "Safety rail height": "36\""
+        },
+        "Conditions": {
+          "Mandatory": [
+            "If porch floor is more than 30\" above grade, porch sides may need to be 36\" high for safety reasons"
+          ],
+          "Optional": [
+            "Use railings (ballisters) instead of solid half walls to ensure porch sides are considered open"
+          ],
+          "Conditional logic": [
+            "If porch is 50% open, it does not count toward gross floor area"
+          ],
+          "Dependencies": [
+            "Porch facade may be considered closed if sides are not open"
+          ]
+        },
+        "Exceptions": {
+          "Explicit deviations": "None specified",
+          "Alternatives": [
+            "Use a single safety rail above lower, solid half walls"
+          ],
+          "Special cases": "None specified"
+        },
+        "Relationships": {
+          "Hierarchical": {
+            "Closed segments": [
+              "Segment A",
+              "Segment B",
+              "Segment C",
+              "Segment E"
+            ],
+            "Open segments": [
+              "Segment D",
+              "Segment F",
+              "Segment G"
+            ]
+          },
+          "Cross-references": {
+            "Figure 5": "Diagram showing porch segments"
+          },
+          "Logical dependencies": [
+            "Porch perimeter being 50% open affects its inclusion in gross floor area"
+          ]
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n    {\n        \"Rule\": \"Porch Segment Analysis\",\n        \"Qualifiers\": {\n            \"Scope\": \"Determination of open and closed segments of a porch\",\n            \"Applicability\": \"Porch in Figure 5\",\n            \"Exclusions\": \"None specified\"\n        },\n        \"Variables\": {\n            \"Dimensional\": {\n                \"Segment A\": \"3'\",\n                \"Segment B\": \"8'\",\n                \"Segment C\": \"10'\",\n                \"Segment D\": \"7'\",\n                \"Segment E\": \"14'\",\n                \"Segment F\": \"24'\",\n                \"Segment G\": \"4'\",\n                \"Additional dimensions\": [\"2'\", \"2'\"]\n            },\n            \"Material\": {\n                \"Railings\": \"Ballisters\",\n                \"Solid half walls\": \"Material not specified\"\n            },\n            \"Environmental\": {\n                \"Grade\": \"30\\\"\"\n            },\n            \"Usage\": {\n                \"Porch floor height\": \"More than 30\\\" above grade\"\n            }\n        },\n        \"Constants\": {\n            \"Total closed\": \"35'\",\n            \"Total open\": \"35'\",\n            \"Safety rail height\": \"36\\\"\"\n        },\n        \"Conditions\": {\n            \"Mandatory\": [\n                \"If porch floor is more than 30\\\" above grade, porch sides may need to be 36\\\" high for safety reasons\"\n            ],\n            \"Optional\": [\n                \"Use railings (ballisters) instead of solid half walls to ensure porch sides are considered open\"\n            ],\n            \"Conditional logic\": [\n                \"If porch is 50% open, it does not count toward gross floor area\"\n            ],\n            \"Dependencies\": [\n                \"Porch facade may be considered closed if sides are not open\"\n            ]\n        },\n        \"Exceptions\": {\n            \"Explicit deviations\": \"None specified\",\n            \"Alternatives\": [\n                \"Use a single safety rail above lower, solid half walls\"\n            ],\n            \"Special cases\": \"None specified\"\n        },\n        \"Relationships\": {\n            \"Hierarchical\": {\n                \"Closed segments\": [\"Segment A\", \"Segment B\", \"Segment C\", \"Segment E\"],\n                \"Open segments\": [\"Segment D\", \"Segment F\", \"Segment G\"]\n            },\n            \"Cross-references\": {\n                \"Figure 5\": \"Diagram showing porch segments\"\n            },\n            \"Logical dependencies\": [\n                \"Porch perimeter being 50% open affects its inclusion in gross floor area\"\n            ]\n        }\n    }\n]\n```"
+  },
+  "timestamp": "2025-09-16 14:42:11",
+  "model": "openai/gpt-4o",
+  "success": true
+}

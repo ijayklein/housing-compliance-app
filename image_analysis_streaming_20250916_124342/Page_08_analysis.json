@@ -1,0 +1,19 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_08.png",
+  "image_name": "Page_08.png",
+  "analysis": {
+    "page_number": "unknown",
+    "main_heading": "PARSE_ERROR",
+    "text_content": "Failed to parse response: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)",
+    "tables": [],
+    "figures": [],
+    "zoning_rules": [],
+    "code_references": [],
+    "quality_notes": "JSON parsing failed: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)",
+    "raw_response": "{\n  \"page\": \"2\",\n  \"heading\": \"Lot size\",\n  \"content\": \"The characteristics of a lot determine its development potential and chief among these characteristics is the area of the lot. For example, to assure continuity in the appearance of the streetscape throughout our neighborhoods and city, the allowable building size is based on a percentage of the lot area. As Palo Alto developed and grew through annexation, each subdivision evolved with unique characteristics e.g., the size of the lots within the subdivision. Five R-1 zones reflect and preserve traditional lotting patterns with criteria for minimum and maximum lot sizes. Even within each R-1 zone there are a variety of lot sizes. Smaller lots that meet the following criteria are considered to be substandard.\",\n  \"figures\": [],\n  \"tables\": [\n    \"Min. & max. lot sizes by zone:\\nZone District | Minimum | Maximum\\nR-1 | 6,000 | 9,999\\nR-1(7000) | 7,000 | 13,999\\nR-1(8000) | 8,000 | 15,999\\nR-1(10000) | 10,000 | 19,999\\nR-1(20000) | 20",
+    "parse_error": true
+  },
+  "analysis_timestamp": "2025-09-16 12:43:57",
+  "model_used": "anthropic/claude-3.5-sonnet",
+  "success": false
+}

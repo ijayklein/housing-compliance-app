@@ -1,0 +1,215 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_52.png",
+  "image_name": "Page_52.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Height\n& grade\nHeight\nStructure\nMax. height\nto roof peak\nMain dwelling on a standard lot\nwith a roof slope <12:12\n30'\nMain dwelling on a standard lot\nwith a roof slope \u226512:12\n33'\nHeight allowances\nenable a variety of\narchitectural styles\nwhile preserving the\nresidential scale of our\nneighborhoods as well\nas the privacy and\nnatural light available\nto each lot.\nMain dwelling on a substandard\nor flag lot\n17'\nAccessory structure in rear or\nside yard\n12'\n2nd-dwelling units\n17'\nFig 43 Determining slope of roof\n12\"\nrun\n6\"\nrise\nRoof slope is the vertical rise in\ninches for every horizontal distance\nof twelve inches (called the \"run\"). It\nis expressed as rise:run or, in this\nexample 6:12.\nNote: On a drawing this slope\nmight also be represented as:\n12\n6\nor\n2\n1\nFig 42 Comparison of roof slopes\nHeight measured to top of roof material\n33'\n30'\n12:14\n12:12\nHeight limit = 33'\n12:10\n12:6\n12:3\nHeight limit = 30'\nCode sections\nPage 46\n18.12.040 (a) Table 2\nPage 47\n18.04.030 (64) (b)\n46",
+      "visual_elements": [
+        {
+          "type": "table",
+          "description": "A table titled 'Structure' with two columns: 'Structure' and 'Max. height to roof peak'. It lists different types of dwellings and their corresponding maximum height limits.",
+          "location": "Top-middle"
+        },
+        {
+          "type": "diagram",
+          "description": "A diagram illustrating how to determine the slope of a roof, labeled 'Fig 43 Determining slope of roof'. It shows a cross-section of a roof with a horizontal 'run' of 12 inches and a vertical 'rise' of 6 inches, indicating the slope.",
+          "location": "Top-right"
+        },
+        {
+          "type": "diagram",
+          "description": "A diagram labeled 'Fig 42 Comparison of roof slopes' showing five house silhouettes with different roof slopes (12:14, 12:12, 12:10, 12:6, 12:3) and their corresponding height limits (33' or 30'). The height is measured to the top of the roof material.",
+          "location": "Bottom-middle"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Max. height to roof peak",
+          "value_type": "Measurement",
+          "value": "30",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Max. height to roof peak",
+          "value_type": "Measurement",
+          "value": "33",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Max. height to roof peak",
+          "value_type": "Measurement",
+          "value": "17",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Max. height to roof peak",
+          "value_type": "Measurement",
+          "value": "12",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Max. height to roof peak",
+          "value_type": "Measurement",
+          "value": "17",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Roof slope run",
+          "value_type": "Measurement",
+          "value": "12",
+          "unit": "inches"
+        },
+        {
+          "parameter": "Roof slope rise",
+          "value_type": "Measurement",
+          "value": "6",
+          "unit": "inches"
+        },
+        {
+          "parameter": "Height limit",
+          "value_type": "Measurement",
+          "value": "33",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Height limit",
+          "value_type": "Measurement",
+          "value": "30",
+          "unit": "feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Height",
+        "subheadings": [
+          "Height & grade",
+          "Structure",
+          "Max. height to roof peak",
+          "Code sections"
+        ],
+        "sections": []
+      },
+      "additional_notes": [],
+      "cross_references": [
+        "Page 46",
+        "18.12.040 (a) Table 2",
+        "Page 47",
+        "18.04.030 (64) (b)"
+      ],
+      "conditions_and_qualifiers": {
+        "qualifiers": [
+          {
+            "id": "q1",
+            "text": "on a standard lot",
+            "applies_to_conditions": [
+              "c1",
+              "c2"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q2",
+            "text": "on a substandard or flag lot",
+            "applies_to_conditions": [
+              "c3"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q3",
+            "text": "in rear or side yard",
+            "applies_to_conditions": [
+              "c4"
+            ],
+            "scope": "Specific"
+          }
+        ],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "with a roof slope <12:12",
+            "value_type": "Text",
+            "operator": "<",
+            "threshold_value": "12:12",
+            "unit": "rise:run"
+          },
+          {
+            "id": "c2",
+            "text": "with a roof slope \u226512:12",
+            "value_type": "Text",
+            "operator": ">=",
+            "threshold_value": "12:12",
+            "unit": "rise:run"
+          }
+        ],
+        "logical_relationships": [],
+        "execution_sequence": [
+          {
+            "step": 1,
+            "action": "Determine the structure type and lot type.",
+            "condition_ids": [],
+            "qualifier_ids": [],
+            "dependencies": []
+          },
+          {
+            "step": 2,
+            "action": "If 'Main dwelling' and 'on a standard lot' and 'with a roof slope <12:12', then Max. height to roof peak is 30'.",
+            "condition_ids": [
+              "c1"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": [
+              1
+            ]
+          },
+          {
+            "step": 3,
+            "action": "If 'Main dwelling' and 'on a standard lot' and 'with a roof slope \u226512:12', then Max. height to roof peak is 33'.",
+            "condition_ids": [
+              "c2"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": [
+              1
+            ]
+          },
+          {
+            "step": 4,
+            "action": "If 'Main dwelling' and 'on a substandard or flag lot', then Max. height to roof peak is 17'.",
+            "condition_ids": [],
+            "qualifier_ids": [
+              "q2"
+            ],
+            "dependencies": [
+              1
+            ]
+          },
+          {
+            "step": 5,
+            "action": "If 'Accessory structure' and 'in rear or side yard', then Max. height to roof peak is 12'.",
+            "condition_ids": [],
+            "qualifier_ids": [
+              "q3"
+            ],
+            "dependencies": [
+              1
+            ]
+          },
+          {
+            "step": 6,
+            "action": "If '2nd-dwelling units', then Max. height to roof peak is 17'.",
+            "condition_ids": [],
+            "qualifier_ids": [],
+            "dependencies": [
+              1
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:24:42",
+  "model_used": "google/gemini-2.5-flash"
+}

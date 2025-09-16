@@ -1,0 +1,120 @@
+{
+  "file_path": "markdown_pages/Page_40.md",
+  "file_name": "Page_40.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "rule": "Parking Regulations",
+        "qualifiers": {
+          "scope": "Residential neighborhoods",
+          "applicability": "All residential lots",
+          "exclusions": "None specified"
+        },
+        "variables": {
+          "dimensional": [
+            {
+              "name": "Minimum size for uncovered space",
+              "value": "8.5' x 18'"
+            },
+            {
+              "name": "Minimum clearance inside covered parking structure",
+              "value": "10' x 20'"
+            },
+            {
+              "name": "Minimum vertical clearance",
+              "value": "7'"
+            }
+          ],
+          "material": [],
+          "environmental": [],
+          "usage": [
+            {
+              "name": "Parking spaces per dwelling",
+              "value": "2"
+            }
+          ]
+        },
+        "constants": {
+          "numerical_values": [
+            {
+              "name": "Minimum distance for detached covered-parking structure",
+              "value": "3'"
+            }
+          ],
+          "specs": [
+            {
+              "name": "Minimum size for two-car garage or carport",
+              "value": "20' x 20'"
+            }
+          ],
+          "standards": [],
+          "procedures": []
+        },
+        "conditions": {
+          "mandatory": [
+            "Two spaces are required on the lot per dwelling",
+            "One of the two spaces must be covered",
+            "Clear area for parking space must be free of other uses"
+          ],
+          "optional": [],
+          "conditional_logic": [
+            "No underground parking garages except by variance",
+            "To be considered detached, a covered-parking structure must be a minimum of 3' from the main dwelling"
+          ],
+          "dependencies": []
+        },
+        "exceptions": {
+          "explicit_deviations": [],
+          "alternatives": [
+            "2nd space (uncovered) Tandem OK"
+          ],
+          "special_cases": []
+        },
+        "relationships": {
+          "hierarchical": [],
+          "cross_references": [
+            {
+              "code_section": "18.12.060",
+              "pages": [
+                34,
+                36,
+                38
+              ]
+            },
+            {
+              "code_section": "18.83.090",
+              "pages": [
+                34,
+                35
+              ]
+            },
+            {
+              "code_section": "18.83.110(a)",
+              "pages": [
+                35
+              ]
+            },
+            {
+              "code_section": "18.12.040(f)",
+              "pages": [
+                37
+              ]
+            },
+            {
+              "code_section": "18.12.080(b)",
+              "pages": [
+                39
+              ]
+            }
+          ],
+          "logical_dependencies": []
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n  {\n    \"rule\": \"Parking Regulations\",\n    \"qualifiers\": {\n      \"scope\": \"Residential neighborhoods\",\n      \"applicability\": \"All residential lots\",\n      \"exclusions\": \"None specified\"\n    },\n    \"variables\": {\n      \"dimensional\": [\n        {\n          \"name\": \"Minimum size for uncovered space\",\n          \"value\": \"8.5' x 18'\"\n        },\n        {\n          \"name\": \"Minimum clearance inside covered parking structure\",\n          \"value\": \"10' x 20'\"\n        },\n        {\n          \"name\": \"Minimum vertical clearance\",\n          \"value\": \"7'\"\n        }\n      ],\n      \"material\": [],\n      \"environmental\": [],\n      \"usage\": [\n        {\n          \"name\": \"Parking spaces per dwelling\",\n          \"value\": \"2\"\n        }\n      ]\n    },\n    \"constants\": {\n      \"numerical_values\": [\n        {\n          \"name\": \"Minimum distance for detached covered-parking structure\",\n          \"value\": \"3'\"\n        }\n      ],\n      \"specs\": [\n        {\n          \"name\": \"Minimum size for two-car garage or carport\",\n          \"value\": \"20' x 20'\"\n        }\n      ],\n      \"standards\": [],\n      \"procedures\": []\n    },\n    \"conditions\": {\n      \"mandatory\": [\n        \"Two spaces are required on the lot per dwelling\",\n        \"One of the two spaces must be covered\",\n        \"Clear area for parking space must be free of other uses\"\n      ],\n      \"optional\": [],\n      \"conditional_logic\": [\n        \"No underground parking garages except by variance\",\n        \"To be considered detached, a covered-parking structure must be a minimum of 3' from the main dwelling\"\n      ],\n      \"dependencies\": []\n    },\n    \"exceptions\": {\n      \"explicit_deviations\": [],\n      \"alternatives\": [\n        \"2nd space (uncovered) Tandem OK\"\n      ],\n      \"special_cases\": []\n    },\n    \"relationships\": {\n      \"hierarchical\": [],\n      \"cross_references\": [\n        {\n          \"code_section\": \"18.12.060\",\n          \"pages\": [34, 36, 38]\n        },\n        {\n          \"code_section\": \"18.83.090\",\n          \"pages\": [34, 35]\n        },\n        {\n          \"code_section\": \"18.83.110(a)\",\n          \"pages\": [35]\n        },\n        {\n          \"code_section\": \"18.12.040(f)\",\n          \"pages\": [37]\n        },\n        {\n          \"code_section\": \"18.12.080(b)\",\n          \"pages\": [39]\n        }\n      ],\n      \"logical_dependencies\": []\n    }\n  }\n]\n```"
+  },
+  "timestamp": "2025-09-16 15:44:43",
+  "model": "openai/gpt-4o",
+  "success": true
+}

@@ -1,0 +1,327 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_27.md",
+  "file_name": "Page_27.md",
+  "analysis": {
+    "extracted_rules": {
+      "rules": [
+        {
+          "id": "contextual_front_setbacks_applicability",
+          "title": "Contextual front setbacks \u2014 Applicability criterion",
+          "Qualifiers": {
+            "Scope": [
+              "Front setback standards for development on a subject lot located on a block."
+            ],
+            "Applicability": [
+              "Applies if, and only if, the computed average of the existing front setbacks on the same side of the subject block meets the threshold defined in Constants.threshold_average_setback_ft."
+            ],
+            "Exclusions": [
+              "Does not apply when the computed average setback is below the threshold."
+            ]
+          },
+          "Variables": {
+            "average_setback_ft": {
+              "type": "number",
+              "unit": "ft",
+              "description": "Average of existing front setbacks on the same side of the block after applying the selection and exclusion procedure.",
+              "source": "Computed per rule contextual_front_setbacks_methodology"
+            },
+            "side_of_block": {
+              "type": "string",
+              "enum": [
+                "same_side_as_subject_lot"
+              ],
+              "description": "Only setbacks from lots on the same side of the block as the subject lot are eligible."
+            }
+          },
+          "Constants": {
+            "threshold_average_setback_ft": {
+              "value": 30,
+              "unit": "ft",
+              "spec": "Primary rule text states '30' or greater'; process text states 'greater than 30'' (see Ambiguities for inclusive vs exclusive threshold)."
+            }
+          },
+          "Conditions": {
+            "Mandatory": [
+              "If average_setback_ft satisfies the threshold comparison to Constants.threshold_average_setback_ft, contextual front setbacks shall apply.",
+              "If average_setback_ft fails the threshold comparison, contextual front setbacks shall not apply."
+            ],
+            "Conditional": [
+              {
+                "if": "average_setback_ft >= 30 (ft)",
+                "then": "Contextual front setbacks apply",
+                "note": "Primary rule text uses '30' or greater'. See Ambiguities regarding inclusive vs exclusive comparison."
+              },
+              {
+                "if": "average_setback_ft < 30 (ft)",
+                "then": "Contextual front setbacks do not apply"
+              }
+            ],
+            "Optional": []
+          },
+          "Exceptions": [],
+          "Relationships": {
+            "Dependencies": [
+              "Depends on the computation defined in rule 'contextual_front_setbacks_methodology' to produce average_setback_ft."
+            ],
+            "Logical": [
+              "This rule is the final applicability gate that consumes the computed average from the methodology rule."
+            ],
+            "CrossReferences": [
+              "See 'contextual_front_setbacks_methodology' for lot selection, exclusions, and averaging procedure."
+            ]
+          },
+          "Ambiguities": [
+            {
+              "issue": "Threshold comparison is inconsistent between texts: '30' or greater' (>= 30 ft) vs 'greater than 30'' (> 30 ft).",
+              "impact": "Determines applicability when the average equals exactly 30.0 ft.",
+              "data_needed": "Authoritative confirmation whether the threshold is inclusive (>=) or exclusive (>)."
+            }
+          ]
+        },
+        {
+          "id": "contextual_front_setbacks_methodology",
+          "title": "Contextual front setbacks \u2014 Method to determine applicable average",
+          "Qualifiers": {
+            "Scope": [
+              "Procedure to determine whether a contextual front setback applies to a subject lot by computing an average of existing front setbacks."
+            ],
+            "Applicability": [
+              "Use this procedure to compute the average of existing front setbacks on the same side of the block as the subject lot."
+            ],
+            "Exclusions": [
+              "Certain lot types are excluded from the averaging data set (see Exceptions).",
+              "For blocks longer than 600 ft, only consider lots within 600 ft of the subject lot and cap the count at a maximum of 10 lots."
+            ]
+          },
+          "Variables": {
+            "subject_lot_id": {
+              "type": "string",
+              "description": "Identifier of the subject lot."
+            },
+            "block_length_ft": {
+              "type": "number",
+              "unit": "ft",
+              "description": "Length of the block along the frontage side relevant to the subject lot."
+            },
+            "candidate_lots": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "lot_id": {
+                    "type": "string"
+                  },
+                  "is_subject_lot": {
+                    "type": "boolean"
+                  },
+                  "front_setback_ft": {
+                    "type": "number",
+                    "unit": "ft",
+                    "nullable": false,
+                    "description": "Measured existing front setback for the lot."
+                  },
+                  "lot_type": {
+                    "type": "string",
+                    "enum": [
+                      "single_family",
+                      "multi_family_3plus",
+                      "flag_lot",
+                      "corner_facing_cross_street",
+                      "other"
+                    ]
+                  },
+                  "distance_from_subject_lot_ft": {
+                    "type": "number",
+                    "unit": "ft",
+                    "description": "Along-block distance from the subject lot to this lot\u2019s frontage (used when block_length_ft > 600 ft)."
+                  },
+                  "side_of_block": {
+                    "type": "string",
+                    "enum": [
+                      "same_side_as_subject_lot",
+                      "opposite_side"
+                    ]
+                  }
+                },
+                "required": [
+                  "lot_id",
+                  "is_subject_lot",
+                  "front_setback_ft",
+                  "lot_type",
+                  "side_of_block"
+                ]
+              },
+              "description": "All lots on the block with attributes needed for filtering."
+            },
+            "total_block_lots_including_subject": {
+              "type": "integer",
+              "description": "Total number of lots on the block including the subject lot (as referenced in the decision step: 'Does block have more than 3 lots?')."
+            },
+            "considered_lots_after_distance_cap": {
+              "type": "array",
+              "description": "Lots remaining after applying side-of-block filter, 600 ft radius (if applicable), and 10-lot cap."
+            },
+            "eligible_lots_after_type_exclusions": {
+              "type": "array",
+              "description": "Lots remaining after excluding specified lot types."
+            },
+            "eligible_count_after_type_exclusions": {
+              "type": "integer",
+              "description": "Count of eligible lots after type exclusions."
+            },
+            "eligible_lots_for_average": {
+              "type": "array",
+              "description": "Final lot set used to compute the average after optionally excluding extreme setbacks."
+            },
+            "average_setback_ft": {
+              "type": "number",
+              "unit": "ft",
+              "description": "Computed average of front setbacks from eligible_lots_for_average (including subject lot)."
+            }
+          },
+          "Constants": {
+            "block_length_threshold_ft": {
+              "value": 600,
+              "unit": "ft",
+              "spec": "If block is more than 600 ft long, consider only lots within 600 ft; max 10 lots."
+            },
+            "max_considered_lots": {
+              "value": 10,
+              "unit": "count",
+              "spec": "Maximum number of lots to consider when block is more than 600 ft long."
+            },
+            "min_total_block_lots_for_process": {
+              "value": 4,
+              "unit": "count",
+              "spec": "Derived from decision step: 'Does block have more than 3 lots?' including the subject lot."
+            },
+            "min_eligible_lots_for_extreme_exclusion": {
+              "value": 5,
+              "unit": "count",
+              "spec": "If remaining eligible lots are 5 or more, exclude one smallest and one largest setback."
+            },
+            "threshold_average_setback_ft": {
+              "value": 30,
+              "unit": "ft",
+              "spec": "Used by the applicability rule; see Ambiguities for inclusive vs exclusive."
+            }
+          },
+          "Conditions": {
+            "Mandatory": [
+              "Consider only lots on the same side of the block as the subject lot.",
+              "Include the subject lot in the averaging set (after all applicable filters).",
+              "Exclude specified lot types before computing the average (see Exceptions).",
+              "If eligible_lots_after_type_exclusions count is 5 or more, exclude the smallest and largest front setback values before computing the average."
+            ],
+            "Conditional": [
+              {
+                "if": "block_length_ft > 600 ft",
+                "then": "Filter candidate_lots to those within 600 ft of the subject lot along the block and cap the resulting set at max_considered_lots (10).",
+                "dependencies": [
+                  "distance_from_subject_lot_ft",
+                  "Constants.block_length_threshold_ft",
+                  "Constants.max_considered_lots"
+                ]
+              },
+              {
+                "if": "block_length_ft <= 600 ft",
+                "then": "No 600 ft distance cap; consider all lots on the same side of the block (subject to other exclusions)."
+              },
+              {
+                "if": "eligible_count_after_type_exclusions >= 5",
+                "then": "Remove exactly one smallest and one largest front_setback_ft value from the eligible set before averaging."
+              },
+              {
+                "if": "eligible_count_after_type_exclusions < 5",
+                "then": "Do not remove extreme values; use all remaining eligible lots (including the subject lot) to compute the average."
+              }
+            ],
+            "Optional": []
+          },
+          "Exceptions": [
+            {
+              "type": "lot_type_exclusion",
+              "description": "Exclude these lot types from the averaging dataset:",
+              "exclusions": [
+                "Flag lot",
+                "Multi-family use with 3+ units",
+                "Corner lot facing cross street"
+              ]
+            },
+            {
+              "type": "distance_and_count_cap",
+              "description": "For blocks longer than 600 ft, only lots within 600 ft of the subject are considered, up to a maximum of 10 lots in total."
+            }
+          ],
+          "Relationships": {
+            "Hierarchical": [
+              "Side-of-block filter -> distance/lot-cap filter (if applicable) -> type exclusions -> count check for extreme-value removal -> compute average."
+            ],
+            "LogicalDependencies": [
+              "The final average_setback_ft produced here is consumed by rule 'contextual_front_setbacks_applicability' to decide applicability."
+            ],
+            "CrossReferences": [
+              "Figure 15 is an illustrative example only and does not alter the procedure."
+            ]
+          },
+          "ComputationProcedure": {
+            "steps": [
+              "Start with candidate_lots = all lots on the same side of the block as the subject lot (must include subject lot).",
+              "If block_length_ft > 600, filter candidate_lots to those within 600 ft of the subject lot; if the resulting count exceeds 10, cap at 10 lots (selection method for which 10 is not specified; see Ambiguities).",
+              "Exclude lots with lot_type in {flag_lot, multi_family_3plus, corner_facing_cross_street}.",
+              "Let eligible_lots_after_type_exclusions be the result. If its count >= 5, remove the single lot with the smallest front_setback_ft and the single lot with the largest front_setback_ft.",
+              "Let eligible_lots_for_average be the remaining lots including the subject lot (subject lot must not have been excluded by lot type).",
+              "Compute average_setback_ft = sum(front_setback_ft over eligible_lots_for_average) / count(eligible_lots_for_average).",
+              "Compare average_setback_ft to 30 ft per rule 'contextual_front_setbacks_applicability'."
+            ],
+            "formulae": [
+              "average_setback_ft = \u03a3(front_setback_ft_i) / N, where i iterates over eligible_lots_for_average and N is the count after all exclusions."
+            ]
+          },
+          "Ambiguities": [
+            {
+              "issue": "Decision gate: 'Does block have more than 3 lots? (incl project lot)' is provided without explicit instructions for the 'No' branch.",
+              "impact": "Unclear whether the procedure is inapplicable for blocks with 3 or fewer lots, or whether an alternative method applies.",
+              "data_needed": "Clarify whether contextual setbacks are not determined for <=3-lot blocks or if averaging proceeds without certain steps."
+            },
+            {
+              "issue": "Text: 'Is the number of remaining lots more or less than 5 or more?' is internally inconsistent.",
+              "assumed_intent": "Interpret as 'Is the number of remaining lots 5 or more?'",
+              "impact": "Determines whether to exclude smallest and largest setbacks.",
+              "data_needed": "Confirm the threshold is '>= 5'."
+            },
+            {
+              "issue": "Inclusion of subject lot: 'Find the average of the remaining lots (incl. subject lot)'.",
+              "impact": "If the subject lot is vacant or being redeveloped, its 'existing' setback may be undefined; inclusion could bias the result.",
+              "data_needed": "Clarify whether to use the subject lot\u2019s existing setback (if any), or to exclude subject lot when no existing measurable setback exists."
+            },
+            {
+              "issue": "Lot selection when applying the 10-lot cap within 600 ft is unspecified.",
+              "impact": "Different selection strategies (e.g., nearest 10 by distance, centered window, or directional tie-breaking) yield different averages.",
+              "data_needed": "Specify deterministic selection criteria for which 10 lots to include when more than 10 fall within 600 ft."
+            },
+            {
+              "issue": "Corner lot exclusion criterion 'facing cross street' may need precise definition.",
+              "impact": "Ambiguity in corner lot orientation could change dataset membership.",
+              "data_needed": "Define 'facing cross street' (e.g., primary frontage/street address frontage orientation)."
+            },
+            {
+              "issue": "Threshold comparison inconsistency with the primary rule (>= 30 ft vs > 30 ft).",
+              "impact": "Affects applicability when average equals exactly 30.0 ft.",
+              "data_needed": "Confirm which comparison operator to use."
+            }
+          ]
+        }
+      ]
+    },
+    "parse_error": false,
+    "raw_response": "{\n  \"rules\": [\n    {\n      \"id\": \"contextual_front_setbacks_applicability\",\n      \"title\": \"Contextual front setbacks \u2014 Applicability criterion\",\n      \"Qualifiers\": {\n        \"Scope\": [\n          \"Front setback standards for development on a subject lot located on a block.\"\n        ],\n        \"Applicability\": [\n          \"Applies if, and only if, the computed average of the existing front setbacks on the same side of the subject block meets the threshold defined in Constants.threshold_average_setback_ft.\"\n        ],\n        \"Exclusions\": [\n          \"Does not apply when the computed average setback is below the threshold.\"\n        ]\n      },\n      \"Variables\": {\n        \"average_setback_ft\": {\n          \"type\": \"number\",\n          \"unit\": \"ft\",\n          \"description\": \"Average of existing front setbacks on the same side of the block after applying the selection and exclusion procedure.\",\n          \"source\": \"Computed per rule contextual_front_setbacks_methodology\"\n        },\n        \"side_of_block\": {\n          \"type\": \"string\",\n          \"enum\": [\n            \"same_side_as_subject_lot\"\n          ],\n          \"description\": \"Only setbacks from lots on the same side of the block as the subject lot are eligible.\"\n        }\n      },\n      \"Constants\": {\n        \"threshold_average_setback_ft\": {\n          \"value\": 30,\n          \"unit\": \"ft\",\n          \"spec\": \"Primary rule text states '30' or greater'; process text states 'greater than 30'' (see Ambiguities for inclusive vs exclusive threshold).\"\n        }\n      },\n      \"Conditions\": {\n        \"Mandatory\": [\n          \"If average_setback_ft satisfies the threshold comparison to Constants.threshold_average_setback_ft, contextual front setbacks shall apply.\",\n          \"If average_setback_ft fails the threshold comparison, contextual front setbacks shall not apply.\"\n        ],\n        \"Conditional\": [\n          {\n            \"if\": \"average_setback_ft >= 30 (ft)\",\n            \"then\": \"Contextual front setbacks apply\",\n            \"note\": \"Primary rule text uses '30' or greater'. See Ambiguities regarding inclusive vs exclusive comparison.\"\n          },\n          {\n            \"if\": \"average_setback_ft < 30 (ft)\",\n            \"then\": \"Contextual front setbacks do not apply\"\n          }\n        ],\n        \"Optional\": []\n      },\n      \"Exceptions\": [],\n      \"Relationships\": {\n        \"Dependencies\": [\n          \"Depends on the computation defined in rule 'contextual_front_setbacks_methodology' to produce average_setback_ft.\"\n        ],\n        \"Logical\": [\n          \"This rule is the final applicability gate that consumes the computed average from the methodology rule.\"\n        ],\n        \"CrossReferences\": [\n          \"See 'contextual_front_setbacks_methodology' for lot selection, exclusions, and averaging procedure.\"\n        ]\n      },\n      \"Ambiguities\": [\n        {\n          \"issue\": \"Threshold comparison is inconsistent between texts: '30' or greater' (>= 30 ft) vs 'greater than 30'' (> 30 ft).\",\n          \"impact\": \"Determines applicability when the average equals exactly 30.0 ft.\",\n          \"data_needed\": \"Authoritative confirmation whether the threshold is inclusive (>=) or exclusive (>).\"\n        }\n      ]\n    },\n    {\n      \"id\": \"contextual_front_setbacks_methodology\",\n      \"title\": \"Contextual front setbacks \u2014 Method to determine applicable average\",\n      \"Qualifiers\": {\n        \"Scope\": [\n          \"Procedure to determine whether a contextual front setback applies to a subject lot by computing an average of existing front setbacks.\"\n        ],\n        \"Applicability\": [\n          \"Use this procedure to compute the average of existing front setbacks on the same side of the block as the subject lot.\"\n        ],\n        \"Exclusions\": [\n          \"Certain lot types are excluded from the averaging data set (see Exceptions).\",\n          \"For blocks longer than 600 ft, only consider lots within 600 ft of the subject lot and cap the count at a maximum of 10 lots.\"\n        ]\n      },\n      \"Variables\": {\n        \"subject_lot_id\": {\n          \"type\": \"string\",\n          \"description\": \"Identifier of the subject lot.\"\n        },\n        \"block_length_ft\": {\n          \"type\": \"number\",\n          \"unit\": \"ft\",\n          \"description\": \"Length of the block along the frontage side relevant to the subject lot.\"\n        },\n        \"candidate_lots\": {\n          \"type\": \"array\",\n          \"items\": {\n            \"type\": \"object\",\n            \"properties\": {\n              \"lot_id\": {\n                \"type\": \"string\"\n              },\n              \"is_subject_lot\": {\n                \"type\": \"boolean\"\n              },\n              \"front_setback_ft\": {\n                \"type\": \"number\",\n                \"unit\": \"ft\",\n                \"nullable\": false,\n                \"description\": \"Measured existing front setback for the lot.\"\n              },\n              \"lot_type\": {\n                \"type\": \"string\",\n                \"enum\": [\n                  \"single_family\",\n                  \"multi_family_3plus\",\n                  \"flag_lot\",\n                  \"corner_facing_cross_street\",\n                  \"other\"\n                ]\n              },\n              \"distance_from_subject_lot_ft\": {\n                \"type\": \"number\",\n                \"unit\": \"ft\",\n                \"description\": \"Along-block distance from the subject lot to this lot\u2019s frontage (used when block_length_ft > 600 ft).\"\n              },\n              \"side_of_block\": {\n                \"type\": \"string\",\n                \"enum\": [\n                  \"same_side_as_subject_lot\",\n                  \"opposite_side\"\n                ]\n              }\n            },\n            \"required\": [\n              \"lot_id\",\n              \"is_subject_lot\",\n              \"front_setback_ft\",\n              \"lot_type\",\n              \"side_of_block\"\n            ]\n          },\n          \"description\": \"All lots on the block with attributes needed for filtering.\"\n        },\n        \"total_block_lots_including_subject\": {\n          \"type\": \"integer\",\n          \"description\": \"Total number of lots on the block including the subject lot (as referenced in the decision step: 'Does block have more than 3 lots?').\"\n        },\n        \"considered_lots_after_distance_cap\": {\n          \"type\": \"array\",\n          \"description\": \"Lots remaining after applying side-of-block filter, 600 ft radius (if applicable), and 10-lot cap.\"\n        },\n        \"eligible_lots_after_type_exclusions\": {\n          \"type\": \"array\",\n          \"description\": \"Lots remaining after excluding specified lot types.\"\n        },\n        \"eligible_count_after_type_exclusions\": {\n          \"type\": \"integer\",\n          \"description\": \"Count of eligible lots after type exclusions.\"\n        },\n        \"eligible_lots_for_average\": {\n          \"type\": \"array\",\n          \"description\": \"Final lot set used to compute the average after optionally excluding extreme setbacks.\"\n        },\n        \"average_setback_ft\": {\n          \"type\": \"number\",\n          \"unit\": \"ft\",\n          \"description\": \"Computed average of front setbacks from eligible_lots_for_average (including subject lot).\"\n        }\n      },\n      \"Constants\": {\n        \"block_length_threshold_ft\": {\n          \"value\": 600,\n          \"unit\": \"ft\",\n          \"spec\": \"If block is more than 600 ft long, consider only lots within 600 ft; max 10 lots.\"\n        },\n        \"max_considered_lots\": {\n          \"value\": 10,\n          \"unit\": \"count\",\n          \"spec\": \"Maximum number of lots to consider when block is more than 600 ft long.\"\n        },\n        \"min_total_block_lots_for_process\": {\n          \"value\": 4,\n          \"unit\": \"count\",\n          \"spec\": \"Derived from decision step: 'Does block have more than 3 lots?' including the subject lot.\"\n        },\n        \"min_eligible_lots_for_extreme_exclusion\": {\n          \"value\": 5,\n          \"unit\": \"count\",\n          \"spec\": \"If remaining eligible lots are 5 or more, exclude one smallest and one largest setback.\"\n        },\n        \"threshold_average_setback_ft\": {\n          \"value\": 30,\n          \"unit\": \"ft\",\n          \"spec\": \"Used by the applicability rule; see Ambiguities for inclusive vs exclusive.\"\n        }\n      },\n      \"Conditions\": {\n        \"Mandatory\": [\n          \"Consider only lots on the same side of the block as the subject lot.\",\n          \"Include the subject lot in the averaging set (after all applicable filters).\",\n          \"Exclude specified lot types before computing the average (see Exceptions).\",\n          \"If eligible_lots_after_type_exclusions count is 5 or more, exclude the smallest and largest front setback values before computing the average.\"\n        ],\n        \"Conditional\": [\n          {\n            \"if\": \"block_length_ft > 600 ft\",\n            \"then\": \"Filter candidate_lots to those within 600 ft of the subject lot along the block and cap the resulting set at max_considered_lots (10).\",\n            \"dependencies\": [\n              \"distance_from_subject_lot_ft\",\n              \"Constants.block_length_threshold_ft\",\n              \"Constants.max_considered_lots\"\n            ]\n          },\n          {\n            \"if\": \"block_length_ft <= 600 ft\",\n            \"then\": \"No 600 ft distance cap; consider all lots on the same side of the block (subject to other exclusions).\"\n          },\n          {\n            \"if\": \"eligible_count_after_type_exclusions >= 5\",\n            \"then\": \"Remove exactly one smallest and one largest front_setback_ft value from the eligible set before averaging.\"\n          },\n          {\n            \"if\": \"eligible_count_after_type_exclusions < 5\",\n            \"then\": \"Do not remove extreme values; use all remaining eligible lots (including the subject lot) to compute the average.\"\n          }\n        ],\n        \"Optional\": []\n      },\n      \"Exceptions\": [\n        {\n          \"type\": \"lot_type_exclusion\",\n          \"description\": \"Exclude these lot types from the averaging dataset:\",\n          \"exclusions\": [\n            \"Flag lot\",\n            \"Multi-family use with 3+ units\",\n            \"Corner lot facing cross street\"\n          ]\n        },\n        {\n          \"type\": \"distance_and_count_cap\",\n          \"description\": \"For blocks longer than 600 ft, only lots within 600 ft of the subject are considered, up to a maximum of 10 lots in total.\"\n        }\n      ],\n      \"Relationships\": {\n        \"Hierarchical\": [\n          \"Side-of-block filter -> distance/lot-cap filter (if applicable) -> type exclusions -> count check for extreme-value removal -> compute average.\"\n        ],\n        \"LogicalDependencies\": [\n          \"The final average_setback_ft produced here is consumed by rule 'contextual_front_setbacks_applicability' to decide applicability.\"\n        ],\n        \"CrossReferences\": [\n          \"Figure 15 is an illustrative example only and does not alter the procedure.\"\n        ]\n      },\n      \"ComputationProcedure\": {\n        \"steps\": [\n          \"Start with candidate_lots = all lots on the same side of the block as the subject lot (must include subject lot).\",\n          \"If block_length_ft > 600, filter candidate_lots to those within 600 ft of the subject lot; if the resulting count exceeds 10, cap at 10 lots (selection method for which 10 is not specified; see Ambiguities).\",\n          \"Exclude lots with lot_type in {flag_lot, multi_family_3plus, corner_facing_cross_street}.\",\n          \"Let eligible_lots_after_type_exclusions be the result. If its count >= 5, remove the single lot with the smallest front_setback_ft and the single lot with the largest front_setback_ft.\",\n          \"Let eligible_lots_for_average be the remaining lots including the subject lot (subject lot must not have been excluded by lot type).\",\n          \"Compute average_setback_ft = sum(front_setback_ft over eligible_lots_for_average) / count(eligible_lots_for_average).\",\n          \"Compare average_setback_ft to 30 ft per rule 'contextual_front_setbacks_applicability'.\"\n        ],\n        \"formulae\": [\n          \"average_setback_ft = \u03a3(front_setback_ft_i) / N, where i iterates over eligible_lots_for_average and N is the count after all exclusions.\"\n        ]\n      },\n      \"Ambiguities\": [\n        {\n          \"issue\": \"Decision gate: 'Does block have more than 3 lots? (incl project lot)' is provided without explicit instructions for the 'No' branch.\",\n          \"impact\": \"Unclear whether the procedure is inapplicable for blocks with 3 or fewer lots, or whether an alternative method applies.\",\n          \"data_needed\": \"Clarify whether contextual setbacks are not determined for <=3-lot blocks or if averaging proceeds without certain steps.\"\n        },\n        {\n          \"issue\": \"Text: 'Is the number of remaining lots more or less than 5 or more?' is internally inconsistent.\",\n          \"assumed_intent\": \"Interpret as 'Is the number of remaining lots 5 or more?'\",\n          \"impact\": \"Determines whether to exclude smallest and largest setbacks.\",\n          \"data_needed\": \"Confirm the threshold is '>= 5'.\"\n        },\n        {\n          \"issue\": \"Inclusion of subject lot: 'Find the average of the remaining lots (incl. subject lot)'.\",\n          \"impact\": \"If the subject lot is vacant or being redeveloped, its 'existing' setback may be undefined; inclusion could bias the result.\",\n          \"data_needed\": \"Clarify whether to use the subject lot\u2019s existing setback (if any), or to exclude subject lot when no existing measurable setback exists.\"\n        },\n        {\n          \"issue\": \"Lot selection when applying the 10-lot cap within 600 ft is unspecified.\",\n          \"impact\": \"Different selection strategies (e.g., nearest 10 by distance, centered window, or directional tie-breaking) yield different averages.\",\n          \"data_needed\": \"Specify deterministic selection criteria for which 10 lots to include when more than 10 fall within 600 ft.\"\n        },\n        {\n          \"issue\": \"Corner lot exclusion criterion 'facing cross street' may need precise definition.\",\n          \"impact\": \"Ambiguity in corner lot orientation could change dataset membership.\",\n          \"data_needed\": \"Define 'facing cross street' (e.g., primary frontage/street address frontage orientation).\"\n        },\n        {\n          \"issue\": \"Threshold comparison inconsistency with the primary rule (>= 30 ft vs > 30 ft).\",\n          \"impact\": \"Affects applicability when average equals exactly 30.0 ft.\",\n          \"data_needed\": \"Confirm which comparison operator to use.\"\n        }\n      ]\n    }\n  ]\n}",
+    "response_time": 145.37410473823547,
+    "input_tokens": 958,
+    "output_tokens": 6549,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 15:53:51",
+  "model": "openai/gpt-5",
+  "success": true
+}

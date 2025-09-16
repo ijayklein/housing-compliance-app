@@ -1,0 +1,12 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_52.png",
+  "image_name": "Page_52.png",
+  "analysis": {
+    "raw_content": "The following information is extracted from the provided images:\n\n**Height & Grade**\n\n**Height Allowances:**\nHeight allowances enable a variety of architectural styles while preserving the residential scale of neighborhoods, as well as the privacy and natural light available to each lot.\n\n**Table: Structure and Max. height to roof peak**\n*   **Structure:** Main dwelling on a standard lot with a roof slope <12:12\n    *   **Max. height to roof peak:** 30'\n*   **Structure:** Main dwelling on a standard lot with a roof slope \u226512:12\n    *   **Max. height to roof peak:** 33'\n*   **Structure:** Main dwelling on a substandard or flag lot\n    *   **Max. height to roof peak:** 17'\n*   **Structure:** Accessory structure in rear or side yard\n    *   **Max. height to roof peak:** 12'\n*   **Structure:** 2nd-dwelling units\n    *   **Max. height to roof peak:** 17'\n\n**Fig 43 Determining slope of roof**\n*   An illustration shows a roof with a \"run\" of 12\" and a \"rise\" of 6\".\n*   **Definition of Roof slope:** Roof slope is the vertical rise in inches for every horizontal distance of twelve inches (called the \"run\"). It is expressed as rise:run or, in this example 6:12.\n*   **Note:** On a drawing this slope might also be represented as: 6/12 or 1/2.\n\n**Fig 42 Comparison of roof slopes**\n*   **Height measured to top of roof material**\n*   An illustration shows different roof slopes and their corresponding height limits:\n    *   Roofs with slopes 12:14 and 12:12 have a **Height limit = 33'**.\n    *   Roofs with slopes 12:10, 12:6, and 12:3 have a **Height limit = 30'**.\n\n**Code sections**\n*   Page 46\n*   18.12.040 (a) Table 2\n*   Page 47\n*   18.04.030 (64) (b)",
+    "content_length": 1667,
+    "parse_error": false
+  },
+  "timestamp": "2025-09-16 12:53:13",
+  "model": "google/gemini-2.5-flash",
+  "success": true
+}

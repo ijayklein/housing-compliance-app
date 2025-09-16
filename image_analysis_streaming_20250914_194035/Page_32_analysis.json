@@ -1,0 +1,55 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_32.png",
+  "image_name": "Page_32.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Daylight plane\n\nThe daylight plane in conjunction with the setbacks & height limits, create an invisible tent\n\nintended to contain development on the lot in a way that preserves privacy and exposure to natural light.\n\nCode sections\nPage 26\n18.12.040 (a) Table 2\nPage 27\n18.04\nPage 28\n18.12.040 (c) Table 2\nPage 29\n18.12.050 (b) (2)\n18.12.040 (i)\n\nPrimary daylight plane (sides)\n\nThe primary daylight plane regulates structures located within the buildable area. Structures located in the rear and/or side yards are regulated by the accessory-structure daylight plan described on the next page.\n\nFig 20 Front elevation showing side primary daylight plane\n\nMax. allowed is Min. required by Building Code\n\n45\u00b0\n\n10' from average grade\n\nAverage grade\n\nGrade at the nearest point on the adjacent lot\n\nExisting grade of the structure (at midpoint of wall)\n\nside lot line\n\n24' max. for protrusions\n\nMax. building height\n\nside lot line\n\nNotes:\n\n\u2022 Daylight plane is measured from average grade.\n\n\u2022 Average grade is established using existing grade\u2014before any grading or fill (See Fig 44 p. 42)\n\n\u2022 Side daylight plane is measured (up) at lot line.\n\n\u2022 Rear daylight plane is measured (up) at rear setback.",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Front elevation drawing of a house showing the side primary daylight plane with dashed lines forming an angled plane at 45 degrees from a point 10 feet above average grade at the side lot line. The diagram includes labels for average grade, grade at the nearest point on the adjacent lot, existing grade of the structure at midpoint of wall, maximum allowed height per building code, 24 feet max for protrusions, and max building height. Vertical arrows indicate height measurements and horizontal arrows indicate distances. The side lot line is marked on both sides of the house.",
+          "location": "middle right of the page"
+        },
+        {
+          "type": "graphic",
+          "description": "3D wireframe illustration of an invisible tent shape representing the daylight plane concept, located in the left sidebar.",
+          "location": "left sidebar"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Angle of primary daylight plane",
+          "value": "45",
+          "unit": "degrees"
+        },
+        {
+          "parameter": "Height from average grade for daylight plane start",
+          "value": "10",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Maximum protrusion height",
+          "value": "24",
+          "unit": "feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Primary daylight plane (sides)",
+        "subheadings": [],
+        "sections": []
+      },
+      "additional_notes": [
+        "Text is clear and legible with no quality issues.",
+        "The left sidebar contains a shaded background with white text and a 3D wireframe graphic illustrating the daylight plane concept.",
+        "Notes section provides clarifications on how measurements are taken.",
+        "References a figure on another page: 'See Fig 44 p. 42'."
+      ],
+      "cross_references": [
+        "See Fig 44 p. 42",
+        "Code sections Page 26, 27, 28, 29 with specific code references: 18.12.040 (a) Table 2, 18.04, 18.12.040 (c) Table 2, 18.12.050 (b) (2), 18.12.040 (i)"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-14 19:41:20",
+  "model_used": "openai/gpt-4.1-mini"
+}

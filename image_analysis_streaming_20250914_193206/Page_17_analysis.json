@@ -1,0 +1,56 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_17.png",
+  "image_name": "Page_17.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Vaulted entry features\n\nEntry features that are greater than 12' high are called \"vaulted entry features\". The footprint of such features\ncount twice toward gross floor area regardless of the design (including whether or not they are open).\n\nHow to measure the height of an entry feature in order to determine whether or not\nit is considered to be a vaulted entry feature (using Fig 6 - 8 as examples)\n\nFig 6 Entry feature with shed roof\n\nNote: If the entryway is considered to be a vaulted entryway\nthe area will be counted as follows:\n\n* In this example, a portion of the entryway is recessed\nbeyond the house facade and roof. It is included in the\narea that counts.\n\n* The area is measured to the outside material of the entry-\nway feature.\n\n* The area counts TWICE toward gross floor area.\n\nIsometric View\n\nSide Elevation\n\nPorch Floor Plan\n\n||",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "An isometric view of an entry feature with a shed roof attached to a building facade. It shows a measurement line labeled 'Height' from the 'Grade' to the top of the roof. Dashed lines indicate the extent of the feature.",
+          "location": "Bottom left"
+        },
+        {
+          "type": "diagram",
+          "description": "A side elevation view of the same entry feature. It shows a measurement line labeled 'Height' from the bottom of the feature to the 'Intersection of front facade and top of roof material'. Dashed lines indicate the vertical extent.",
+          "location": "Bottom middle"
+        },
+        {
+          "type": "diagram",
+          "description": "A porch floor plan view. It shows an 'Outline of entry-way roof' and an 'Outline of entryway floor area that counts TWICE if entryway is vaulted'. The floor area outline is thicker and includes a recessed portion.",
+          "location": "Bottom right"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Minimum height for vaulted entry feature",
+          "value": "12",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Gross floor area counting multiplier for vaulted entry features",
+          "value": "2",
+          "unit": "times"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Vaulted entry features",
+        "subheadings": [],
+        "sections": [
+          "Entry features that are greater than 12' high are called \"vaulted entry features\". The footprint of such features count twice toward gross floor area regardless of the design (including whether or not they are open).",
+          "How to measure the height of an entry feature in order to determine whether or not it is considered to be a vaulted entry feature (using Fig 6 - 8 as examples)",
+          "Note: If the entryway is considered to be a vaulted entryway the area will be counted as follows:",
+          "In this example, a portion of the entryway is recessed beyond the house facade and roof. It is included in the area that counts.",
+          "The area is measured to the outside material of the entry-way feature.",
+          "The area counts TWICE toward gross floor area."
+        ]
+      },
+      "additional_notes": [],
+      "cross_references": [
+        "Fig 6 - 8"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-14 19:32:19",
+  "model_used": "google/gemini-2.5-flash"
+}

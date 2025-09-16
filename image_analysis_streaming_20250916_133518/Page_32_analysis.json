@@ -1,0 +1,12 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_32.png",
+  "image_name": "Page_32.png",
+  "analysis": {
+    "raw_content": "Based on the photocopied page from this city planning technical manual, I can extract the following information:\n\n## Daylight Plane\n\n### Primary daylight plane (sides)\n\n**Regulation:**\nThe primary daylight plane regulates structures located within the buildable area. Structures located in the rear and/or side yards are regulated by the accessory-structure daylight plan described on the next page.\n\n**Purpose:**\nThe daylight plane in conjunction with the setbacks & height limits, create an invisible tent intended to contain development on the lot in a way that preserves privacy and exposure to natural light.\n\n### Technical Specifications from Figure 20:\n\n**Measurements:**\n- 45\u00b0 angle for daylight plane\n- 10' measurement shown from average grade\n- 24' measurement shown for structure height\n- \"Max. building height\" indicated with arrow\n\n**Notes from the diagram:**\n- Daylight plane is measured from average grade\n- Average grade is established using existing grade\u2014before any grading or fill (See Fig 44 p. 42)\n- Side daylight plane is measured (up) at lot line\n- Rear daylight plane is measured (up) at rear setback\n\n**Additional technical elements shown:**\n- Grade at the nearest point on the adjacent lot\n- Average grade line\n- Existing grade of the structure (at midpoint of wall)\n- Side lot line\n- Max. above grade height measurements\n\n### Code Sections Referenced:\n- Page 26: 18.12.040 (a) Table 2\n- Page 27: 18.04\n- Page 28: 18.12.040 (c) Table 2\n- Page 29: 18.12.050 (b) (2), 18.12.040 (i)\n\n**Page number:** 26",
+    "content_length": 1526,
+    "parse_error": false
+  },
+  "timestamp": "2025-09-16 13:36:56",
+  "model": "anthropic/claude-sonnet-4",
+  "success": true
+}

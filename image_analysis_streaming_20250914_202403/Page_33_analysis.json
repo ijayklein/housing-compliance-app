@@ -1,0 +1,217 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_33.png",
+  "image_name": "Page_33.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Fig 21 Plan view showing how to determine average grade\n\nWhen measuring daylight plane, height is measured from the average of the grade at the\nmidpoint of the building and the grade of the closest point on the abutting site.\n\nFor this side of this structure, the\naverage grade is the average\nof the grades at these two\npoints\n\nRear yard\n\nInterior-side yard\n\nInterior-side yard\n\nRear yard\n\nBuildable area\n\nSubject\nHouse\n\nInterior-side yard\n\nInterior-side yard\n\nFor this side of this structure, the\naverage grade is the average of\nthe grades at these two points\n\nNeighbor\n\nFront yard\n\nFront yard\n\nFront yard\n\nKey\n\nLot line\n\nRequired setbacks\n\nSidewalk\n\nBuildable area\n\nExisting house\n\nRear yard\n\nBuildable area\n\nFig 22 Detail showing allowable eave protrusion\n\nwall plane\n\n2'\nmax\n\nThe daylight plane must\nclear the point where\nthe wall plane intersects\nthe top of the roof\nmaterial\n\nCertification of daylight plane compliance:\n\nUpon request by the building official any person\nbuilding or making improvements to a structure shall\nprovide a certification that the structure, as built, com-\nplies with the daylight plane provisions in Code Section\n18.12.040(a). Such certification shall be prepared\nby a licensed engineer, architect, or surveyor, and\nshall be provided prior to frame inspection. (Sections\n18.12.040(j)).\n\n27",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Figure 21: Plan view showing how to determine average grade. It depicts two adjacent properties, one with a 'Subject House' and the other with a 'Neighbor' house. Both properties have 'Front yard', 'Rear yard', and 'Interior-side yard' areas. The 'Subject House' property also shows a 'Buildable area'. Dashed lines indicate 'Required setbacks' and 'Lot line'. Arrows and text indicate how the average grade is calculated for each side of the structure, specifically as the average of grades at two points along the interior-side yard. The diagram illustrates the concept of 'Buildable area' within the lot boundaries and setbacks.",
+          "location": "Left and middle of the page"
+        },
+        {
+          "type": "diagram",
+          "description": "Figure 22: Detail showing allowable eave protrusion. This is a cross-sectional view of a building's roof and wall. A 'wall plane' is shown vertically, and a 'daylight plane' is represented by a dashed line sloping downwards from the wall plane. An arrow points from the daylight plane to the intersection of the wall plane and the top of the roof material, indicating that the daylight plane must clear this point. A horizontal dimension line indicates a '2' max' protrusion from the wall plane.",
+          "location": "Top right of the page"
+        },
+        {
+          "type": "key",
+          "description": "A legend defining symbols used in Figure 21. 'Lot line' is a solid line, 'Required setbacks' are dashed lines, 'Sidewalk' is a patterned rectangle, 'Buildable area' is a dashed outline, and 'Existing house' is a solid grey rectangle.",
+          "location": "Bottom left of the page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Allowable eave protrusion",
+          "value_type": "Measurement",
+          "value": "2",
+          "unit": "feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": null,
+        "subheadings": [
+          "Certification of daylight plane compliance:"
+        ],
+        "sections": [
+          "Fig 21 Plan view showing how to determine average grade",
+          "Fig 22 Detail showing allowable eave protrusion"
+        ]
+      },
+      "additional_notes": [
+        "Page number '27' is located at the bottom right corner."
+      ],
+      "cross_references": [
+        "Code Section 18.12.040(a)",
+        "Sections 18.12.040(j)"
+      ],
+      "conditions_and_qualifiers": {
+        "qualifiers": [
+          {
+            "id": "q1",
+            "text": "When measuring daylight plane",
+            "applies_to_conditions": [
+              "c1",
+              "c2"
+            ],
+            "scope": "Global"
+          },
+          {
+            "id": "q2",
+            "text": "For this side of this structure",
+            "applies_to_conditions": [
+              "c3"
+            ],
+            "scope": "Local"
+          },
+          {
+            "id": "q3",
+            "text": "Upon request by the building official",
+            "applies_to_conditions": [
+              "c4"
+            ],
+            "scope": "Global"
+          },
+          {
+            "id": "q4",
+            "text": "any person building or making improvements to a structure",
+            "applies_to_conditions": [
+              "c4"
+            ],
+            "scope": "Global"
+          }
+        ],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "height is measured from the average of the grade at the midpoint of the building",
+            "value_type": "None",
+            "operator": null,
+            "threshold_value": null,
+            "unit": null
+          },
+          {
+            "id": "c2",
+            "text": "height is measured from the grade of the closest point on the abutting site",
+            "value_type": "None",
+            "operator": null,
+            "threshold_value": null,
+            "unit": null
+          },
+          {
+            "id": "c3",
+            "text": "the average grade is the average of the grades at these two points",
+            "value_type": "None",
+            "operator": null,
+            "threshold_value": null,
+            "unit": null
+          },
+          {
+            "id": "c4",
+            "text": "shall provide a certification that the structure, as built, complies with the daylight plane provisions in Code Section 18.12.040(a)",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "true",
+            "unit": null
+          },
+          {
+            "id": "c5",
+            "text": "Such certification shall be prepared by a licensed engineer, architect, or surveyor",
+            "value_type": "Text",
+            "operator": "contains",
+            "threshold_value": "licensed engineer, architect, or surveyor",
+            "unit": null
+          },
+          {
+            "id": "c6",
+            "text": "shall be provided prior to frame inspection",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "true",
+            "unit": null
+          },
+          {
+            "id": "c7",
+            "text": "The daylight plane must clear the point where the wall plane intersects the top of the roof material",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "true",
+            "unit": null
+          }
+        ],
+        "logical_relationships": [
+          {
+            "operation": "AND",
+            "condition_ids": [
+              "c1",
+              "c2"
+            ],
+            "expression": "When measuring daylight plane, height is measured from the average of the grade at the midpoint of the building AND the grade of the closest point on the abutting site.",
+            "evaluation_order": 1
+          },
+          {
+            "operation": "AND",
+            "condition_ids": [
+              "c4",
+              "c5",
+              "c6"
+            ],
+            "expression": "Upon request by the building official any person building or making improvements to a structure shall provide a certification that the structure, as built, complies with the daylight plane provisions in Code Section 18.12.040(a) AND Such certification shall be prepared by a licensed engineer, architect, or surveyor AND shall be provided prior to frame inspection.",
+            "evaluation_order": 2
+          }
+        ],
+        "execution_sequence": [
+          {
+            "step": 1,
+            "action": "Determine how height is measured for daylight plane.",
+            "condition_ids": [
+              "c1",
+              "c2"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 2,
+            "action": "Calculate average grade for a side of the structure.",
+            "condition_ids": [
+              "c3"
+            ],
+            "qualifier_ids": [
+              "q2"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 3,
+            "action": "Ensure daylight plane clears the specified point.",
+            "condition_ids": [
+              "c7"
+            ],
+            "qualifier_ids": [],
+            "dependencies": []
+          },
+          {
+            "step": 4,
+            "action": "Provide certification for daylight plane compliance.",
+            "condition_ids": [
+              "c4",
+              "c5",
+              "c6"
+            ],
+            "qualifier_ids": [
+              "q3",
+              "q4"
+            ],
+            "dependencies": []
+          }
+        ]
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:24:26",
+  "model_used": "google/gemini-2.5-flash"
+}

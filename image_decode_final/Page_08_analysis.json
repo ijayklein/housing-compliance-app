@@ -1,0 +1,204 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_08.png",
+  "image_name": "Page_08.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Lot size\n\nThe characteristics of a\nlot determine its devel-\nopment potential and\nchief among these char-\nacteristics is the area of\nthe lot.\n\nFor example, to as-\nsure continuity in the\nappearance of the\nstreetscape throughout\nour neighborhoods and\ncity, the allowable\nbuilding size is based\non a percentage of the\nlot area.\n\nCode sections\nPage 2\n18.12.040 (a) Table 2\n18.12.040 (d)\n18.12.040 (c)\nPage 3\n18.04.030 (a) (85)\n\n2\n\nMinimum & maximum\nlot sizes\n\nAs Palo Alto developed and grew through annexation, each\nsubdivision evolved with unique characteristics e.g., the\nsize of the lots within the subdivision. Five R-1 zones\nreflect and preserve traditional lotting patterns with criteria\nfor minimum and maximum lot sizes.\n\nMin. & max. lot sizes by zone\n\nThe subdivision ordinance requires a new lot to have\nA) width \u2265 60' AND depth \u2265 100' AND\nB) lot area (in sf) per the following:\n\nExceptions to the max. lot size\n\n\u2022 Where underlying lot lines must be removed to elimi-\nnate non-conformities and results in no net loss of\nhousing.\n\u2022 Where an adjacent substandard lot of less than 25' in\nwidth is combined with another lot and results in no\nnet loss of housing.\n\u2022 Where the resultant number of lots increases or stays\nthe same and results in no net loss of housing.\n\nSubstandard lots\n\nEven within each R-1 zone there are a variety of lot sizes.\nSmaller lots that meet the following criteria are considered\nto be substandard.\n\nSubstandard lot sizes by zone\n\nA sub-standard lot is one with\nA) width < 50' OR depth < 83' AND\nB) area \u2264 the following (83% of min. lot size):\n\nSpecial regulations for substandard lots\n\n\u2022 Maximum building height is single-story and 17'\ninstead of 30'\n\u2022 For lots less than 50' wide, the required street-sid\nyard is 10' instead of 16'. (Fig 15 C on p. 23)\n\u2022 For lots less than 95' deep, the requirements for locat-\ning a garage in the rear or side yards are that it be in\nthe rear half of the lot instead of 75' back from the\nfront lot line.\n\nNote: Determining where lot\nlines are on the ground may\nrequire a boundary survey.",
+      "visual_elements": [
+        {
+          "type": "table",
+          "description": "Table showing minimum and maximum lot sizes by Zone District. It has three columns: 'Zone District', 'Minimum', and 'Maximum'.",
+          "location": "Middle-left"
+        },
+        {
+          "type": "table",
+          "description": "Table showing typical and flag lot sizes for substandard lots by Zone District. It has three columns: 'Zone District', 'Typical lot', and 'Flag lot'.",
+          "location": "Middle-right"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Minimum lot width for new lot",
+          "value": "60",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum lot depth for new lot",
+          "value": "100",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Substandard lot width",
+          "value": "50",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Substandard lot depth",
+          "value": "83",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Substandard lot area percentage",
+          "value": "83",
+          "unit": "percent of minimum lot size"
+        },
+        {
+          "parameter": "Maximum building height for substandard lots",
+          "value": "17",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Standard maximum building height",
+          "value": "30",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Required street-side yard for lots less than 50' wide",
+          "value": "10",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Standard street-side yard",
+          "value": "16",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Garage setback from front lot line for lots less than 95' deep",
+          "value": "75",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Adjacent substandard lot width for combination exception",
+          "value": "25",
+          "unit": "feet"
+        },
+        {
+          "parameter": "R-1 Minimum Lot Area",
+          "value": "6000",
+          "unit": "sf"
+        },
+        {
+          "parameter": "R-1 Maximum Lot Area",
+          "value": "9999",
+          "unit": "sf"
+        },
+        {
+          "parameter": "R-1(7000) Minimum Lot Area",
+          "value": "7000",
+          "unit": "sf"
+        },
+        {
+          "parameter": "R-1(7000) Maximum Lot Area",
+          "value": "13999",
+          "unit": "sf"
+        },
+        {
+          "parameter": "R-1(8000) Minimum Lot Area",
+          "value": "8000",
+          "unit": "sf"
+        },
+        {
+          "parameter": "R-1(8000) Maximum Lot Area",
+          "value": "15999",
+          "unit": "sf"
+        },
+        {
+          "parameter": "R-1(10000) Minimum Lot Area",
+          "value": "10000",
+          "unit": "sf"
+        },
+        {
+          "parameter": "R-1(10000) Maximum Lot Area",
+          "value": "19999",
+          "unit": "sf"
+        },
+        {
+          "parameter": "R-1(20000) Minimum Lot Area",
+          "value": "20000",
+          "unit": "sf"
+        },
+        {
+          "parameter": "R-1(20000) Maximum Lot Area",
+          "value": "39999",
+          "unit": "sf"
+        },
+        {
+          "parameter": "R-1 Substandard Typical Lot Area",
+          "value": "4980",
+          "unit": "sf"
+        },
+        {
+          "parameter": "R-1 Substandard Flag Lot Area",
+          "value": "5976",
+          "unit": "sf"
+        },
+        {
+          "parameter": "R-1(7000) Substandard Typical Lot Area",
+          "value": "5810",
+          "unit": "sf"
+        },
+        {
+          "parameter": "R-1(7000) Substandard Flag Lot Area",
+          "value": "6972",
+          "unit": "sf"
+        },
+        {
+          "parameter": "R-1(8000) Substandard Typical Lot Area",
+          "value": "6640",
+          "unit": "sf"
+        },
+        {
+          "parameter": "R-1(8000) Substandard Flag Lot Area",
+          "value": "7968",
+          "unit": "sf"
+        },
+        {
+          "parameter": "R-1(10000) Substandard Typical Lot Area",
+          "value": "8300",
+          "unit": "sf"
+        },
+        {
+          "parameter": "R-1(10000) Substandard Flag Lot Area",
+          "value": "9960",
+          "unit": "sf"
+        },
+        {
+          "parameter": "R-1(20000) Substandard Typical Lot Area",
+          "value": "16600",
+          "unit": "sf"
+        },
+        {
+          "parameter": "R-1(20000) Substandard Flag Lot Area",
+          "value": "19920",
+          "unit": "sf"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": null,
+        "subheadings": [
+          "Lot size",
+          "Minimum & maximum\nlot sizes",
+          "Min. & max. lot sizes by zone",
+          "Exceptions to the max. lot size",
+          "Substandard lots",
+          "Substandard lot sizes by zone",
+          "Special regulations for substandard lots"
+        ],
+        "sections": [
+          "Code sections"
+        ]
+      },
+      "additional_notes": [
+        "Page number '2' is present at the bottom left.",
+        "The overall layout is a two-column format, with a shaded left column containing general information and code references, and a wider right column containing detailed regulations and tables."
+      ],
+      "cross_references": [
+        "Page 2 (for code sections 18.12.040 (a) Table 2, 18.12.040 (d), 18.12.040 (c))",
+        "Page 3 (for code section 18.04.030 (a) (85))",
+        "Fig 15 C on p. 23"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-11 14:59:14",
+  "model_used": "google/gemini-2.5-flash"
+}

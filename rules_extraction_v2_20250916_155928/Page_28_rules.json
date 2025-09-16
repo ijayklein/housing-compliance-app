@@ -1,0 +1,301 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_28.md",
+  "file_name": "Page_28.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "rule_name": "Setback Measurement with Easements",
+        "Qualifiers": {
+          "scope": "Defines how setbacks are measured in the presence of specific easements.",
+          "applicability": "Applies to lots with Creek easements or Public street easements.",
+          "exclusions": [
+            "Most public utility easements do not affect setbacks."
+          ]
+        },
+        "Variables": [
+          {
+            "name": "easement_type",
+            "type": "usage parameter",
+            "values": [
+              "Creek easement",
+              "Public street easement"
+            ]
+          },
+          {
+            "name": "lot_line_location",
+            "type": "dimensional parameter",
+            "description": "The surveyed boundary of the lot."
+          },
+          {
+            "name": "easement_edge_location",
+            "type": "dimensional parameter",
+            "description": "The boundary of the easement area."
+          }
+        ],
+        "Constants": [
+          {
+            "name": "Measurement Procedure",
+            "type": "procedure",
+            "value": "Setbacks must be measured from the edge of the easement."
+          }
+        ],
+        "Conditions": [
+          {
+            "type": "mandatory",
+            "logic": "IF (easement_type IS 'Creek easement' OR easement_type IS 'Public street easement') THEN setback_measurement_origin IS 'edge of the easement'",
+            "dependencies": [
+              "This measurement is performed regardless of the lot line location."
+            ]
+          }
+        ],
+        "Exceptions": [
+          {
+            "case": "Public Utility Easements",
+            "description": "Most public utility easements are exempt from this rule and do not affect setback calculations.",
+            "ambiguous_language_flag": "The term 'most' is ambiguous and would require clarification for automated validation."
+          }
+        ],
+        "Relationships": {
+          "hierarchical": [],
+          "cross-references": [
+            {
+              "target": "Figure 16",
+              "description": "Illustrates the rule."
+            },
+            {
+              "target": "Section on Lot Size",
+              "description": "Contains more information about creek easements."
+            },
+            {
+              "target": "Section on Lot Size",
+              "description": "Contains more information about public street easements."
+            },
+            {
+              "target": "Santa Clara Valley Water District",
+              "description": "External agency to contact for information regarding creek easements."
+            }
+          ],
+          "logical_dependencies": []
+        }
+      },
+      {
+        "rule_name": "Setback Measurement with Sidewalks",
+        "Qualifiers": {
+          "scope": "Defines how setbacks are measured in relation to sidewalks and lot lines.",
+          "applicability": "Applies to all lots where a sidewalk is present near the lot line."
+        },
+        "Variables": [
+          {
+            "name": "sidewalk_location",
+            "type": "dimensional parameter",
+            "description": "The physical location of the sidewalk."
+          },
+          {
+            "name": "lot_line_location",
+            "type": "dimensional parameter",
+            "description": "The surveyed boundary of the lot."
+          },
+          {
+            "name": "public_right_of_way_width",
+            "type": "dimensional parameter",
+            "description": "The space between the sidewalk edge and the lot line. Can be 0' or more than 15'.",
+            "ambiguous_language_flag": "The phrase 'several feet' is ambiguous. The note 'may be 0' or more than 15'' provides a range but requires verification."
+          }
+        ],
+        "Constants": [
+          {
+            "name": "Measurement Procedure",
+            "type": "procedure",
+            "value": "Setbacks must be measured from the lot line."
+          }
+        ],
+        "Conditions": [
+          {
+            "type": "mandatory",
+            "logic": "Setback_measurement_origin IS 'lot line'",
+            "dependencies": [
+              "This measurement is performed regardless of the sidewalk location."
+            ]
+          }
+        ],
+        "Exceptions": [
+          {
+            "case": "Lot line in street",
+            "description": "If the lot line is in the middle of the street, then the setback is measured from the edge of the public street easement or right-of-way.",
+            "condition": "lot_line_location IS 'middle of the street'"
+          }
+        ],
+        "Relationships": {
+          "hierarchical": [],
+          "cross-references": [
+            {
+              "target": "Figure 16",
+              "description": "Illustrates the common circumstance and the rule."
+            },
+            {
+              "target": "Section on Lot Size",
+              "description": "Contains more information about public street easements."
+            },
+            {
+              "target": "Development Center",
+              "description": "External entity to contact to determine the exact distance between the sidewalk edge and the lot line."
+            }
+          ],
+          "logical_dependencies": []
+        }
+      },
+      {
+        "rule_name": "Setback Determination for Oddly Shaped Lots (Reference)",
+        "Qualifiers": {
+          "scope": "Provides references for determining appropriate site plans for non-standard lot shapes.",
+          "applicability": "Applies to lots where setbacks and required yards are not obvious due to shape.",
+          "inclusions": [
+            "flag lot",
+            "corner lot",
+            "through lot",
+            "wedge-shaped lot",
+            "lot with more than four sides"
+          ]
+        },
+        "Variables": [
+          {
+            "name": "lot_shape",
+            "type": "usage parameter",
+            "values": [
+              "flag",
+              "corner",
+              "through",
+              "wedge-shaped",
+              "more than four sides"
+            ]
+          }
+        ],
+        "Constants": [],
+        "Conditions": [
+          {
+            "type": "conditional",
+            "logic": "IF lot_shape IS one of the applicable types, THEN refer to the specified figure on page 23 for the appropriate site plan.",
+            "ambiguous_language_flag": "The condition 'may not be obvious' is subjective."
+          }
+        ],
+        "Exceptions": [],
+        "Relationships": {
+          "hierarchical": [
+            {
+              "parent": "Oddly shaped lots",
+              "children": [
+                "flag lot -> Figure 17 A",
+                "corner lot -> Figure 17 B",
+                "through lot -> Figure 17 D",
+                "wedge-shaped lot -> Figure 17 E",
+                "lot with more than four sides -> Figure 17 F & G"
+              ]
+            }
+          ],
+          "cross-references": [
+            {
+              "target": "Figure 17 on page 23",
+              "description": "Primary reference for appropriate site plans for various lot shapes."
+            }
+          ],
+          "logical_dependencies": [
+            {
+              "description": "The rules for these lot shapes are not in this text but are located in the referenced figures."
+            }
+          ]
+        }
+      },
+      {
+        "rule_name": "Reduced Setbacks for Flag and Substandard Lots",
+        "Qualifiers": {
+          "scope": "Describes specific instances where setbacks have been reduced.",
+          "applicability": "Applies to smaller or oddly shaped lots, specifically flag lots and certain substandard corner lots."
+        },
+        "Variables": [
+          {
+            "name": "lot_type",
+            "type": "usage parameter",
+            "values": [
+              "flag lot",
+              "substandard corner lot"
+            ]
+          },
+          {
+            "name": "lot_width",
+            "type": "dimensional parameter",
+            "description": "Width of a substandard corner lot."
+          },
+          {
+            "name": "setback_type",
+            "type": "usage parameter",
+            "values": [
+              "front setback",
+              "street-side yard setback"
+            ]
+          }
+        ],
+        "Constants": [
+          {
+            "name": "Substandard Corner Lot Width Threshold",
+            "type": "dimensional",
+            "value": "50",
+            "unit": "feet"
+          }
+        ],
+        "Conditions": [
+          {
+            "type": "conditional",
+            "logic": "IF lot_type IS 'flag lot', THEN the 'front setback' may be reduced.",
+            "dependencies": [
+              "The specific reduction is illustrated in Figure 17 A."
+            ]
+          },
+          {
+            "type": "conditional",
+            "logic": "IF lot_type IS 'substandard corner lot' AND lot_width IS '< 50 ft', THEN the 'street-side yard setback' may be reduced.",
+            "dependencies": [
+              "The specific reduction is illustrated in Figure 17 C."
+            ]
+          }
+        ],
+        "Exceptions": [
+          {
+            "case": "Setback Reduction",
+            "description": "This entire rule describes an exception to standard setback requirements, allowing for reductions under specific conditions."
+          }
+        ],
+        "Relationships": {
+          "hierarchical": [],
+          "cross-references": [
+            {
+              "target": "Figure 17 on page 23",
+              "description": "Illustrates examples of reduced setbacks."
+            },
+            {
+              "target": "Figure 17 A",
+              "description": "Illustrates reduced front setback for a flag lot."
+            },
+            {
+              "target": "Figure 17 C",
+              "description": "Illustrates reduced street-side yard setback for substandard corner lots < 50' wide."
+            }
+          ],
+          "logical_dependencies": [
+            {
+              "description": "The actual value of the reduced setback is not defined in the text and is dependent on the referenced figures."
+            }
+          ]
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n  {\n    \"rule_name\": \"Setback Measurement with Easements\",\n    \"Qualifiers\": {\n      \"scope\": \"Defines how setbacks are measured in the presence of specific easements.\",\n      \"applicability\": \"Applies to lots with Creek easements or Public street easements.\",\n      \"exclusions\": [\n        \"Most public utility easements do not affect setbacks.\"\n      ]\n    },\n    \"Variables\": [\n      {\n        \"name\": \"easement_type\",\n        \"type\": \"usage parameter\",\n        \"values\": [\n          \"Creek easement\",\n          \"Public street easement\"\n        ]\n      },\n      {\n        \"name\": \"lot_line_location\",\n        \"type\": \"dimensional parameter\",\n        \"description\": \"The surveyed boundary of the lot.\"\n      },\n      {\n        \"name\": \"easement_edge_location\",\n        \"type\": \"dimensional parameter\",\n        \"description\": \"The boundary of the easement area.\"\n      }\n    ],\n    \"Constants\": [\n      {\n        \"name\": \"Measurement Procedure\",\n        \"type\": \"procedure\",\n        \"value\": \"Setbacks must be measured from the edge of the easement.\"\n      }\n    ],\n    \"Conditions\": [\n      {\n        \"type\": \"mandatory\",\n        \"logic\": \"IF (easement_type IS 'Creek easement' OR easement_type IS 'Public street easement') THEN setback_measurement_origin IS 'edge of the easement'\",\n        \"dependencies\": [\n          \"This measurement is performed regardless of the lot line location.\"\n        ]\n      }\n    ],\n    \"Exceptions\": [\n      {\n        \"case\": \"Public Utility Easements\",\n        \"description\": \"Most public utility easements are exempt from this rule and do not affect setback calculations.\",\n        \"ambiguous_language_flag\": \"The term 'most' is ambiguous and would require clarification for automated validation.\"\n      }\n    ],\n    \"Relationships\": {\n      \"hierarchical\": [],\n      \"cross-references\": [\n        {\n          \"target\": \"Figure 16\",\n          \"description\": \"Illustrates the rule.\"\n        },\n        {\n          \"target\": \"Section on Lot Size\",\n          \"description\": \"Contains more information about creek easements.\"\n        },\n        {\n          \"target\": \"Section on Lot Size\",\n          \"description\": \"Contains more information about public street easements.\"\n        },\n        {\n          \"target\": \"Santa Clara Valley Water District\",\n          \"description\": \"External agency to contact for information regarding creek easements.\"\n        }\n      ],\n      \"logical_dependencies\": []\n    }\n  },\n  {\n    \"rule_name\": \"Setback Measurement with Sidewalks\",\n    \"Qualifiers\": {\n      \"scope\": \"Defines how setbacks are measured in relation to sidewalks and lot lines.\",\n      \"applicability\": \"Applies to all lots where a sidewalk is present near the lot line.\"\n    },\n    \"Variables\": [\n      {\n        \"name\": \"sidewalk_location\",\n        \"type\": \"dimensional parameter\",\n        \"description\": \"The physical location of the sidewalk.\"\n      },\n      {\n        \"name\": \"lot_line_location\",\n        \"type\": \"dimensional parameter\",\n        \"description\": \"The surveyed boundary of the lot.\"\n      },\n      {\n        \"name\": \"public_right_of_way_width\",\n        \"type\": \"dimensional parameter\",\n        \"description\": \"The space between the sidewalk edge and the lot line. Can be 0' or more than 15'.\",\n        \"ambiguous_language_flag\": \"The phrase 'several feet' is ambiguous. The note 'may be 0' or more than 15'' provides a range but requires verification.\"\n      }\n    ],\n    \"Constants\": [\n      {\n        \"name\": \"Measurement Procedure\",\n        \"type\": \"procedure\",\n        \"value\": \"Setbacks must be measured from the lot line.\"\n      }\n    ],\n    \"Conditions\": [\n      {\n        \"type\": \"mandatory\",\n        \"logic\": \"Setback_measurement_origin IS 'lot line'\",\n        \"dependencies\": [\n          \"This measurement is performed regardless of the sidewalk location.\"\n        ]\n      }\n    ],\n    \"Exceptions\": [\n      {\n        \"case\": \"Lot line in street\",\n        \"description\": \"If the lot line is in the middle of the street, then the setback is measured from the edge of the public street easement or right-of-way.\",\n        \"condition\": \"lot_line_location IS 'middle of the street'\"\n      }\n    ],\n    \"Relationships\": {\n      \"hierarchical\": [],\n      \"cross-references\": [\n        {\n          \"target\": \"Figure 16\",\n          \"description\": \"Illustrates the common circumstance and the rule.\"\n        },\n        {\n          \"target\": \"Section on Lot Size\",\n          \"description\": \"Contains more information about public street easements.\"\n        },\n        {\n          \"target\": \"Development Center\",\n          \"description\": \"External entity to contact to determine the exact distance between the sidewalk edge and the lot line.\"\n        }\n      ],\n      \"logical_dependencies\": []\n    }\n  },\n  {\n    \"rule_name\": \"Setback Determination for Oddly Shaped Lots (Reference)\",\n    \"Qualifiers\": {\n      \"scope\": \"Provides references for determining appropriate site plans for non-standard lot shapes.\",\n      \"applicability\": \"Applies to lots where setbacks and required yards are not obvious due to shape.\",\n      \"inclusions\": [\n        \"flag lot\",\n        \"corner lot\",\n        \"through lot\",\n        \"wedge-shaped lot\",\n        \"lot with more than four sides\"\n      ]\n    },\n    \"Variables\": [\n      {\n        \"name\": \"lot_shape\",\n        \"type\": \"usage parameter\",\n        \"values\": [\n          \"flag\",\n          \"corner\",\n          \"through\",\n          \"wedge-shaped\",\n          \"more than four sides\"\n        ]\n      }\n    ],\n    \"Constants\": [],\n    \"Conditions\": [\n      {\n        \"type\": \"conditional\",\n        \"logic\": \"IF lot_shape IS one of the applicable types, THEN refer to the specified figure on page 23 for the appropriate site plan.\",\n        \"ambiguous_language_flag\": \"The condition 'may not be obvious' is subjective.\"\n      }\n    ],\n    \"Exceptions\": [],\n    \"Relationships\": {\n      \"hierarchical\": [\n        {\n          \"parent\": \"Oddly shaped lots\",\n          \"children\": [\n            \"flag lot -> Figure 17 A\",\n            \"corner lot -> Figure 17 B\",\n            \"through lot -> Figure 17 D\",\n            \"wedge-shaped lot -> Figure 17 E\",\n            \"lot with more than four sides -> Figure 17 F & G\"\n          ]\n        }\n      ],\n      \"cross-references\": [\n        {\n          \"target\": \"Figure 17 on page 23\",\n          \"description\": \"Primary reference for appropriate site plans for various lot shapes.\"\n        }\n      ],\n      \"logical_dependencies\": [\n        {\n          \"description\": \"The rules for these lot shapes are not in this text but are located in the referenced figures.\"\n        }\n      ]\n    }\n  },\n  {\n    \"rule_name\": \"Reduced Setbacks for Flag and Substandard Lots\",\n    \"Qualifiers\": {\n      \"scope\": \"Describes specific instances where setbacks have been reduced.\",\n      \"applicability\": \"Applies to smaller or oddly shaped lots, specifically flag lots and certain substandard corner lots.\"\n    },\n    \"Variables\": [\n      {\n        \"name\": \"lot_type\",\n        \"type\": \"usage parameter\",\n        \"values\": [\n          \"flag lot\",\n          \"substandard corner lot\"\n        ]\n      },\n      {\n        \"name\": \"lot_width\",\n        \"type\": \"dimensional parameter\",\n        \"description\": \"Width of a substandard corner lot.\"\n      },\n      {\n        \"name\": \"setback_type\",\n        \"type\": \"usage parameter\",\n        \"values\": [\n          \"front setback\",\n          \"street-side yard setback\"\n        ]\n      }\n    ],\n    \"Constants\": [\n      {\n        \"name\": \"Substandard Corner Lot Width Threshold\",\n        \"type\": \"dimensional\",\n        \"value\": \"50\",\n        \"unit\": \"feet\"\n      }\n    ],\n    \"Conditions\": [\n      {\n        \"type\": \"conditional\",\n        \"logic\": \"IF lot_type IS 'flag lot', THEN the 'front setback' may be reduced.\",\n        \"dependencies\": [\n          \"The specific reduction is illustrated in Figure 17 A.\"\n        ]\n      },\n      {\n        \"type\": \"conditional\",\n        \"logic\": \"IF lot_type IS 'substandard corner lot' AND lot_width IS '< 50 ft', THEN the 'street-side yard setback' may be reduced.\",\n        \"dependencies\": [\n          \"The specific reduction is illustrated in Figure 17 C.\"\n        ]\n      }\n    ],\n    \"Exceptions\": [\n      {\n        \"case\": \"Setback Reduction\",\n        \"description\": \"This entire rule describes an exception to standard setback requirements, allowing for reductions under specific conditions.\"\n      }\n    ],\n    \"Relationships\": {\n      \"hierarchical\": [],\n      \"cross-references\": [\n        {\n          \"target\": \"Figure 17 on page 23\",\n          \"description\": \"Illustrates examples of reduced setbacks.\"\n        },\n        {\n          \"target\": \"Figure 17 A\",\n          \"description\": \"Illustrates reduced front setback for a flag lot.\"\n        },\n        {\n          \"target\": \"Figure 17 C\",\n          \"description\": \"Illustrates reduced street-side yard setback for substandard corner lots < 50' wide.\"\n        }\n      ],\n      \"logical_dependencies\": [\n        {\n          \"description\": \"The actual value of the reduced setback is not defined in the text and is dependent on the referenced figures.\"\n        }\n      ]\n    }\n  }\n]\n```",
+    "response_time": 37.76421308517456,
+    "input_tokens": 1016,
+    "output_tokens": 4468,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 16:01:43",
+  "model": "google/gemini-2.5-pro",
+  "success": true
+}

@@ -1,0 +1,106 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_26.png",
+  "image_name": "Page_26.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Setbacks\n\nSetbacks apportion a lot into two parts:\n\n\u2022 buildable area (in the middle)\n\n\u2022 required yards (surrounding the building area).\n\nThese required yards, meant to be maintained as open space areas, are important as landscaping opportunities to keep our neighborhoods attractive as well as for the preservation of privacy.\n\nCode sections\nPage 20\n18.12.040 (a) Table 2\nPage 21\n18.12.040 (a,c,e,& f)\nPage 22\u201423\n18.04.040 (e)\nPage 24\u201425\n18.040.030 (84, 87, 91, 128, & 146)\nas shown in table\n\nStandard setbacks\n\nStandard setbacks apply in most cases.\n\nStandard setbacks by zone\n\nZone District | Front | Rear | Interior Side | Street Side\nR-1 | Contextual or 20 | 20 | 6 | 16\nR-1(7000) | Contextual or 20 | 20 | 8 | 16\nR-1(8000) | Contextual or 20 | 20' | 8 | 16\nR-1(10000) | Contextual or 20 | 20 | 8 | 16\nR-1(20000) | Contextual or 20 | 20 | 8 | 16\nFlag lot | 10 | 20 | see zone | na\nSubstandard lot | Contextual or 20 | 20 | see zone | 16\nSubstandard corner lot < 50' wide | Contextual or 20 | 20 | see zone | 10\n\n* For front setback, if contextual setback is greater than 30' then it applies \u2013 otherwise, the 20' setback applies.\n\n* For front & street side setbacks a special setback may apply. If both a contextual and special setback apply, the greater of the two setbacks is required.\n\nSpecial setbacks\n\nSpecial setbacks override standard setbacks unless a larger contextual setback applies.\n\nStreets w/special setbacks\n\nAlma St | Embarcadero Rd | Middlefield Rd\nArastradero Rd | Guinda St | Miranda Ave\nAsh St | Hamilton Ave | Newell Rd\nCalifornia Ave | Hanover St | Oak Hill Ave\nChanning Ave | Lincoln Ave | Page Mill Rd\nCharleston Rd | Loma Verde Ave | Park Blvd\nChurchill Ave | Louis Rd | Stanford Ave\nColorado Ave | Lytton Ave | University Ave\nEast Meadow Dr | Manuela Ave | West Meadow Dr\nEl Camino Real | Mesa Ave |\n\nSpecial setback distances can be found on:\n\n\u2022 pages of the city's zonemap booklet (available both online and in hardbook at the Development Center)\n\n\u2022 parcel reports from the city's GIS (available at the Development Center)",
+      "visual_elements": [
+        {
+          "type": "table",
+          "description": "Standard setbacks by zone table showing Zone District, Front, Rear, Interior Side, and Street Side setback requirements for various R-1 zones, flag lots, and substandard lots",
+          "location": "center of page"
+        },
+        {
+          "type": "table",
+          "description": "Streets with special setbacks organized in three columns listing street names alphabetically",
+          "location": "right side of page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "R-1 Front setback",
+          "value": "Contextual or 20",
+          "unit": "feet (implied)"
+        },
+        {
+          "parameter": "R-1 Rear setback",
+          "value": "20",
+          "unit": "feet (implied)"
+        },
+        {
+          "parameter": "R-1 Interior Side setback",
+          "value": "6",
+          "unit": "feet (implied)"
+        },
+        {
+          "parameter": "R-1 Street Side setback",
+          "value": "16",
+          "unit": "feet (implied)"
+        },
+        {
+          "parameter": "R-1(7000) Interior Side setback",
+          "value": "8",
+          "unit": "feet (implied)"
+        },
+        {
+          "parameter": "R-1(8000) Rear setback",
+          "value": "20",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Flag lot Front setback",
+          "value": "10",
+          "unit": "feet (implied)"
+        },
+        {
+          "parameter": "Substandard corner lot Street Side setback",
+          "value": "10",
+          "unit": "feet (implied)"
+        },
+        {
+          "parameter": "Contextual setback threshold",
+          "value": "30",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Default front setback",
+          "value": "20",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Substandard corner lot width threshold",
+          "value": "50",
+          "unit": "feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Setbacks",
+        "subheadings": [
+          "Standard setbacks",
+          "Special setbacks",
+          "Standard setbacks by zone",
+          "Streets w/special setbacks"
+        ],
+        "sections": [
+          "Code sections"
+        ]
+      },
+      "additional_notes": [
+        "Page appears to be page 20 of a zoning manual",
+        "Contains asterisk footnotes explaining contextual setback rules",
+        "Gray shaded boxes contain key explanatory text"
+      ],
+      "cross_references": [
+        "Page 20 - 18.12.040 (a) Table 2",
+        "Page 21 - 18.12.040 (a,c,e,& f)",
+        "Page 22\u201423 - 18.04.040 (e)",
+        "Page 24\u201425 - 18.040.030 (84, 87, 91, 128, & 146)",
+        "city's zonemap booklet",
+        "Development Center",
+        "city's GIS parcel reports"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-11 13:44:51",
+  "model_used": "anthropic/claude-sonnet-4"
+}

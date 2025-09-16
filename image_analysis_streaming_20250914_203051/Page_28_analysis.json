@@ -1,0 +1,230 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_28.png",
+  "image_name": "Page_28.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Setback considerations\n\nEasements\nSome easements affect setbacks i.e., setbacks must be measured from the edge of the easement regardless of the lot line as illustrated in Fig 16 on this page. Easements that affect setbacks are:\n\u2022 Creek easements\n\u2022 Public street easements\n\nNote: most public utility easements do not affect setbacks.\n\nSidewalks\nThe sidewalk may not indicate the lot line. Often, the street easement or public right-of-way extends for several feet beyond the sidewalk. Fig 16 on this page illustrates this common circumstance and how the setbacks are affected i.e., they must be measured from the lot line regardless of the sidewalk.\n\nOddly shaped lots\nFor some lots, the setbacks and required yards may not be obvious. Fig 17 on page 23 indicates the appropriate site plan for lot shapes about which questions often arise:\n\u2022 flag lot (Fig 17 A)\n\u2022 corner lot (Fig 17 B)\n\u2022 through lot (Fig 17 D)\n\u2022 wedge-shaped lot (Fig 17 E)\n\u2022 lot with more than four sides (Fig 17 F & G)\n\nFlag & substandard lots\nFig 17 on page 23 also illustrates examples of setbacks that have been reduced for smaller or oddly shaped lots e.g.,\n\u2022 the front setback of a flag lot (Fig 17 A)\n\u2022 the street-side yard setback for substandard corner lots that are less than 50' wide (Fig 17 C)\n\n22",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Fig 16 Setbacks: easements and sidewalks - Shows a lot layout with easement at top (hatched area), rear yard, buildable area in center, interior side yards on left and right, front yard at bottom, and sidewalk. Includes annotations about setback measurements from easements and lot lines. Contains a key showing symbols for Curb, Lot line, Sidewalk, Required setbacks, Buildable area, and Easement.",
+          "location": "Right side of page, center"
+        },
+        {
+          "type": "text_box",
+          "description": "Gray box with white text stating 'Note: For information regarding creek easements, contact the Santa Clara Valley Water District'",
+          "location": "Bottom right corner"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Substandard corner lot width threshold",
+          "value_type": "Measurement",
+          "value": "50",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Page number",
+          "value_type": "Numerical",
+          "value": "22",
+          "unit": "None"
+        },
+        {
+          "parameter": "Reference figure for lot shapes",
+          "value_type": "Text",
+          "value": "Fig 17 on page 23",
+          "unit": "None"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Setback considerations",
+        "subheadings": [
+          "Easements",
+          "Sidewalks",
+          "Oddly shaped lots",
+          "Flag & substandard lots"
+        ],
+        "sections": [
+          "Easements",
+          "Sidewalks",
+          "Oddly shaped lots",
+          "Flag & substandard lots"
+        ]
+      },
+      "additional_notes": [
+        "Page appears to be from a city planning manual with clear text quality",
+        "Contains diagram with key/legend for symbols used",
+        "Gray informational note box in bottom right corner"
+      ],
+      "cross_references": [
+        "Fig 16 on this page",
+        "Fig 17 on page 23",
+        "Fig 17 A",
+        "Fig 17 B",
+        "Fig 17 C",
+        "Fig 17 D",
+        "Fig 17 E",
+        "Fig 17 F & G",
+        "See section on Lot Size for more information about creek easements",
+        "See section on Lot Size for more information about public street easements",
+        "Santa Clara Valley Water District"
+      ],
+      "conditions_and_qualifiers": {
+        "qualifiers": [
+          {
+            "id": "q1",
+            "text": "Some easements affect setbacks",
+            "applies_to_conditions": [
+              "c1"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q2",
+            "text": "Often, the street easement or public right-of-way extends for several feet beyond the sidewalk",
+            "applies_to_conditions": [
+              "c2"
+            ],
+            "scope": "Local"
+          },
+          {
+            "id": "q3",
+            "text": "For some lots, the setbacks and required yards may not be obvious",
+            "applies_to_conditions": [
+              "c3"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q4",
+            "text": "for smaller or oddly shaped lots",
+            "applies_to_conditions": [
+              "c4"
+            ],
+            "scope": "Specific"
+          }
+        ],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "setbacks must be measured from the edge of the easement regardless of the lot line",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "true",
+            "unit": "None"
+          },
+          {
+            "id": "c2",
+            "text": "they must be measured from the lot line regardless of the sidewalk",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "true",
+            "unit": "None"
+          },
+          {
+            "id": "c3",
+            "text": "most public utility easements do not affect setbacks",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "true",
+            "unit": "None"
+          },
+          {
+            "id": "c4",
+            "text": "setbacks that have been reduced",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "true",
+            "unit": "None"
+          },
+          {
+            "id": "c5",
+            "text": "substandard corner lots that are less than 50' wide",
+            "value_type": "Measurement",
+            "operator": "<",
+            "threshold_value": "50",
+            "unit": "feet"
+          }
+        ],
+        "logical_relationships": [
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c1"
+            ],
+            "expression": "if easements affect setbacks, then setbacks must be measured from the edge of the easement regardless of the lot line",
+            "evaluation_order": 1
+          },
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c2"
+            ],
+            "expression": "if street easement extends beyond sidewalk, then setbacks must be measured from the lot line regardless of the sidewalk",
+            "evaluation_order": 2
+          },
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c4",
+              "c5"
+            ],
+            "expression": "if lots are smaller or oddly shaped, then setbacks may be reduced",
+            "evaluation_order": 3
+          }
+        ],
+        "execution_sequence": [
+          {
+            "step": 1,
+            "action": "Determine if easements affect setbacks",
+            "condition_ids": [
+              "c1"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 2,
+            "action": "Check if street easement extends beyond sidewalk",
+            "condition_ids": [
+              "c2"
+            ],
+            "qualifier_ids": [
+              "q2"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 3,
+            "action": "Evaluate if lot shape affects setback requirements",
+            "condition_ids": [
+              "c3"
+            ],
+            "qualifier_ids": [
+              "q3"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 4,
+            "action": "Apply reduced setbacks for qualifying lots",
+            "condition_ids": [
+              "c4",
+              "c5"
+            ],
+            "qualifier_ids": [
+              "q4"
+            ],
+            "dependencies": [
+              3
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:32:00",
+  "model_used": "anthropic/claude-sonnet-4"
+}

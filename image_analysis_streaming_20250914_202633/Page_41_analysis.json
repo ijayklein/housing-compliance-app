@@ -1,0 +1,96 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_41.png",
+  "image_name": "Page_41.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Carport standards\n\nFig 29 Parking space dimensions for carport in plan view\n\nOne of 2 corner columns\n20' min. open\nopen\nDriveway/parking surface\nPlan View\n\nFig 30 Parking space dimensions for covered space in elevation\n\nOne of 2 corner columns\nBottom roof system\n7' min. open\n20' min. open\nLeft Side Elevation\n\nOne of 2 corner columns\nBottom roof system\n7' min. open\n10' min open\nFront Elevation\n\n35",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Plan view diagram of a carport parking space showing a car parked within a rectangular space. The diagram highlights two corner columns on the left side, with dimensions indicating a minimum 20 feet open space vertically and an unspecified horizontal 'open' dimension. The driveway/parking surface is indicated at the bottom right of the space.",
+          "location": "Left middle of the page"
+        },
+        {
+          "type": "diagram",
+          "description": "Left side elevation view of a covered parking space under a carport. Shows a car parked under a roof supported by two corner columns. The roof bottom system is labeled. Vertical clearance is marked as minimum 7 feet open, and horizontal clearance is marked as minimum 20 feet open.",
+          "location": "Top right of the page"
+        },
+        {
+          "type": "diagram",
+          "description": "Front elevation view of a covered parking space under a carport. Shows a car parked under a sloped roof supported by two corner columns. The roof bottom system is labeled. Vertical clearance is marked as minimum 7 feet open, and horizontal clearance is marked as minimum 10 feet open.",
+          "location": "Bottom right of the page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Minimum open vertical clearance (plan view)",
+          "value_type": "Measurement",
+          "value": 20,
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum open vertical clearance (elevation views)",
+          "value_type": "Measurement",
+          "value": 7,
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum open horizontal clearance (left side elevation)",
+          "value_type": "Measurement",
+          "value": 20,
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum open horizontal clearance (front elevation)",
+          "value_type": "Measurement",
+          "value": 10,
+          "unit": "feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Carport standards",
+        "subheadings": [],
+        "sections": []
+      },
+      "additional_notes": [
+        "Page number 35 located at bottom right corner.",
+        "No handwritten annotations, stamps, or markings detected.",
+        "All text and diagrams are clear and legible."
+      ],
+      "cross_references": [],
+      "conditions_and_qualifiers": {
+        "qualifiers": [],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "20' min. open",
+            "value_type": "Measurement",
+            "operator": ">=",
+            "threshold_value": 20,
+            "unit": "feet"
+          },
+          {
+            "id": "c2",
+            "text": "7' min. open",
+            "value_type": "Measurement",
+            "operator": ">=",
+            "threshold_value": 7,
+            "unit": "feet"
+          },
+          {
+            "id": "c3",
+            "text": "10' min open",
+            "value_type": "Measurement",
+            "operator": ">=",
+            "threshold_value": 10,
+            "unit": "feet"
+          }
+        ],
+        "logical_relationships": [],
+        "execution_sequence": []
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:27:30",
+  "model_used": "openai/gpt-4.1-mini"
+}

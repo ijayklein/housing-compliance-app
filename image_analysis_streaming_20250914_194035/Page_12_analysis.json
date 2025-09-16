@@ -1,0 +1,69 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_12.png",
+  "image_name": "Page_12.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Porches & entry features\n\nFacades with defined entryways make a streetscape pleasant and friendly as long as they are not out of scale or proportion.\n\nThe gross floor area regulations encourage appropriately sized porches and entryways.\n\nCode sections\n18.04.030(a)(65)\n18.04.030(a)(113.1)\n18.04.030(143.5)\n18.12.040(b)table 3\n\nPorch types\n\nFor purposes of assessing gross floor area, porches, entryways, and balconies fall into one of these categories:\n\n1. Non-roofed porches, entryways, balconies etc.\n  \u2022 Non-roofed features generally do not count\n\n2. Roofed porches on the 1st floor (Fig 4 A & D on p. 7 , Fig 5 on p. 8)\n  \u2022 Openess of the sides determines whether or not these count regardless of the height.\n  \u2022 If they do count, they count only once.\n\n3. Roofed entry features on the 1st floor that are less than 12' high (from grade) (Fig 4 B on p. 7)\n  \u2022 These count once regardless of the design including openess.\n\n4. Roofed entry features on the 1st floor that are more than 12' high from grade \u2013 \"vaulted entry feature\" (Fig 4 C & D on p. 7, Fig 6, 7, & 8 on pp. 11-13)\n  \u2022 These count twice regardless of the design including openess.\n\n5. Recessed porches on the 1st floor (Fig 9 on p. 14)\n  \u2022 Height, depth, & openess determine whether or not these count.\n  \u2022 If they count and are less than 17' high, they count only once.\n  \u2022 If they count and are more than 17' high, they count twice.\n\n6. Roofed balconies/outdoor areas on upper floors (Fig 10 on p. 15 )\n  \u2022 These count once regardless of the design including openess\n\nThe following pages address the details of assessing these features with regard to gross floor area.",
+      "visual_elements": [
+        {
+          "type": "text box",
+          "description": "A grey vertical sidebar on the left side of the page containing the title 'Porches & entry features', a brief description about facades and gross floor area regulations, and a list of code sections.",
+          "location": "Left side vertical sidebar"
+        },
+        {
+          "type": "text box",
+          "description": "A grey rectangular box on the right side of the page titled 'Difference between a porch & an entry feature:' explaining that a feature is considered a porch rather than an entry feature if it can clearly accommodate more activities than entering and leaving the house.",
+          "location": "Right side middle"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Height threshold for roofed entry features to be considered vaulted",
+          "value": "12",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Height threshold for recessed porches counting once or twice",
+          "value": "17",
+          "unit": "feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Porch types",
+        "subheadings": [
+          "Non-roofed porches, entryways, balconies etc.",
+          "Roofed porches on the 1st floor",
+          "Roofed entry features on the 1st floor that are less than 12' high (from grade)",
+          "Roofed entry features on the 1st floor that are more than 12' high from grade \u2013 \"vaulted entry feature\"",
+          "Recessed porches on the 1st floor",
+          "Roofed balconies/outdoor areas on upper floors"
+        ],
+        "sections": [
+          "1.",
+          "2.",
+          "3.",
+          "4.",
+          "5.",
+          "6."
+        ]
+      },
+      "additional_notes": [
+        "The word 'openess' appears multiple times and may be a typographical error for 'openness'.",
+        "Page number '6' is located at the bottom left corner.",
+        "No handwritten annotations or stamps are present.",
+        "The page is well organized with a left sidebar, main text body, and a highlighted information box on the right."
+      ],
+      "cross_references": [
+        "Fig 4 A & D on p. 7",
+        "Fig 5 on p. 8",
+        "Fig 4 B on p. 7",
+        "Fig 4 C & D on p. 7",
+        "Fig 6, 7, & 8 on pp. 11-13",
+        "Fig 9 on p. 14",
+        "Fig 10 on p. 15"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-14 19:40:58",
+  "model_used": "openai/gpt-4.1-mini"
+}

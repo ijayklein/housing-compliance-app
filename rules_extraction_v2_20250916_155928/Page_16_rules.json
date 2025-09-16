@@ -1,0 +1,245 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_16.md",
+  "file_name": "Page_16.md",
+  "analysis": {
+    "extracted_rules": {
+      "regulations": [
+        {
+          "rule_id": "PORCH_GFA_OPENNESS_RULE",
+          "rule_name": "Porch Contribution to Gross Floor Area based on Perimeter Openness",
+          "source_reference": "Page 16, Conclusion",
+          "analysis": {
+            "Qualifiers": {
+              "scope": "Determination of whether a porch counts toward Gross Floor Area (GFA).",
+              "applicability": "Applies to porches.",
+              "exclusions": "None explicitly stated."
+            },
+            "Variables": [
+              {
+                "name": "total_closed_length",
+                "type": "Dimensional",
+                "description": "Total linear feet of all porch perimeter segments classified as 'closed'."
+              },
+              {
+                "name": "total_open_length",
+                "type": "Dimensional",
+                "description": "Total linear feet of all porch perimeter segments classified as 'open'."
+              },
+              {
+                "name": "total_perimeter_length",
+                "type": "Dimensional",
+                "description": "Sum of total_closed_length and total_open_length."
+              },
+              {
+                "name": "open_percentage",
+                "type": "Calculated",
+                "description": "The percentage of the porch perimeter that is open. Formula: (total_open_length / total_perimeter_length) * 100."
+              }
+            ],
+            "Constants": [
+              {
+                "name": "GFA_Exclusion_Threshold",
+                "type": "Numerical",
+                "value": 50,
+                "unit": "%",
+                "description": "The minimum percentage of the perimeter that must be 'open' for the porch to NOT count toward GFA."
+              },
+              {
+                "name": "Calculation_Procedure",
+                "type": "Procedure",
+                "steps": [
+                  "Finalize the determination of which segments are closed and which are open.",
+                  "Total the linear feet in each category (open and closed).",
+                  "Compare the totals (implicitly, calculate the open percentage)."
+                ]
+              },
+              {
+                "name": "Example_Figure_5",
+                "type": "Example Data",
+                "description": "Data for the specific porch shown in Figure 5.",
+                "data": {
+                  "closed_segments": [
+                    {
+                      "id": "A",
+                      "length": 3,
+                      "unit": "feet"
+                    },
+                    {
+                      "id": "B",
+                      "length": 8,
+                      "unit": "feet"
+                    },
+                    {
+                      "id": "C",
+                      "length": 10,
+                      "unit": "feet"
+                    },
+                    {
+                      "id": "E",
+                      "length": 14,
+                      "unit": "feet"
+                    }
+                  ],
+                  "open_segments": [
+                    {
+                      "id": "D",
+                      "length": 7,
+                      "unit": "feet"
+                    },
+                    {
+                      "id": "F",
+                      "length": 24,
+                      "unit": "feet"
+                    },
+                    {
+                      "id": "G",
+                      "length": 4,
+                      "unit": "feet"
+                    }
+                  ],
+                  "totals": {
+                    "total_closed": 35,
+                    "total_open": 35,
+                    "total_perimeter": 70,
+                    "unit": "feet"
+                  },
+                  "result": {
+                    "open_percentage": 50,
+                    "gfa_contribution": false,
+                    "reason": "The perimeter of the porch is 50% open."
+                  }
+                }
+              }
+            ],
+            "Conditions": [
+              {
+                "type": "Mandatory",
+                "logic": "IF open_percentage >= 50 THEN porch does NOT count toward gross floor area.",
+                "ambiguity_flag": "The text states 'is 50% open and so... would NOT count', implying the threshold is inclusive (>=). This should be confirmed."
+              },
+              {
+                "type": "Mandatory",
+                "logic": "IF open_percentage < 50 THEN porch DOES count toward gross floor area (implied)."
+              }
+            ],
+            "Exceptions": {
+              "description": "No exceptions to the calculation method itself are listed. However, the classification of segments (input to this rule) has exceptions detailed in the related safety rule.",
+              "cases": []
+            },
+            "Relationships": {
+              "hierarchical": "This rule is the final step in a process that begins with classifying individual porch segments as 'open' or 'closed'.",
+              "cross_references": [
+                "Figure 5 (used as a complete example)"
+              ],
+              "logical_dependencies": [
+                "The outcome of this rule is dependent on the classification of porch segments, which may be determined by 'PORCH_SAFETY_RAIL_CLASSIFICATION_RULE'."
+              ]
+            }
+          }
+        },
+        {
+          "rule_id": "PORCH_SAFETY_RAIL_CLASSIFICATION_RULE",
+          "rule_name": "Porch Side Classification based on Height Above Grade",
+          "source_reference": "Page 16, Note",
+          "analysis": {
+            "Qualifiers": {
+              "scope": "Classification of porch sides/facades as 'open' or 'closed' for safety reasons.",
+              "applicability": "Porches where the floor is more than 30 inches above grade.",
+              "exclusions": "Porches with a floor 30 inches or less above grade."
+            },
+            "Variables": [
+              {
+                "name": "porch_floor_height_above_grade",
+                "type": "Dimensional",
+                "description": "The vertical distance from grade to the porch floor."
+              },
+              {
+                "name": "porch_side_design",
+                "type": "Material/Usage",
+                "description": "The construction type of the porch side (e.g., 'solid half wall', 'railings', 'safety rail over half wall')."
+              }
+            ],
+            "Constants": [
+              {
+                "name": "Grade_Height_Trigger",
+                "type": "Numerical",
+                "value": 30,
+                "unit": "inches",
+                "operator": ">",
+                "description": "The rule applies if the porch floor is 'more than 30\" above grade'."
+              },
+              {
+                "name": "Required_Safety_Height",
+                "type": "Numerical",
+                "value": 36,
+                "unit": "inches",
+                "description": "The height that porch sides 'may need to be' for safety reasons if the grade height trigger is met."
+              }
+            ],
+            "Conditions": [
+              {
+                "type": "Conditional",
+                "logic": "IF porch_floor_height_above_grade > 30 inches THEN a 36-inch high safety barrier requirement is triggered.",
+                "ambiguity_flag": "The text uses 'may need to be' and 'may cause', which is permissive and not mandatory language. This suggests the requirement could be subject to an inspector's discretion or other unstated rules."
+              },
+              {
+                "type": "Conditional",
+                "logic": "IF a 36-inch high safety barrier is required AND it is constructed as a solid wall THEN the porch facade is 'considered closed'.",
+                "ambiguity_flag": "This is implied by the text providing solutions to avoid this outcome."
+              }
+            ],
+            "Exceptions": {
+              "description": "Explicitly stated 'possible solutions' to ensure porch sides are considered 'open' even when the safety height requirement is triggered.",
+              "cases": [
+                {
+                  "case_id": "ALT_RAILINGS",
+                  "description": "Use 'Railings (ballisters) instead of solid half walls.'",
+                  "outcome": "The porch side is considered 'open'."
+                },
+                {
+                  "case_id": "ALT_COMBO_RAIL",
+                  "description": "Use 'A single safety rail above lower, solid half walls.'",
+                  "outcome": "The porch side is considered 'open'."
+                }
+              ]
+            },
+            "Relationships": {
+              "hierarchical": "This rule acts as a prerequisite or modifier for the 'PORCH_GFA_OPENNESS_RULE'.",
+              "cross_references": [
+                "Illustrations labeled 'Open' on the right side of the page."
+              ],
+              "logical_dependencies": [
+                "The classification ('open' or 'closed') determined by this rule is a direct input for the 'PORCH_GFA_OPENNESS_RULE'."
+              ]
+            }
+          }
+        }
+      ],
+      "inter_rule_relationships": [
+        {
+          "source_rule": "PORCH_SAFETY_RAIL_CLASSIFICATION_RULE",
+          "target_rule": "PORCH_GFA_OPENNESS_RULE",
+          "type": "Input Dependency",
+          "description": "The output of the 'PORCH_SAFETY_RAIL_CLASSIFICATION_RULE' (classifying a porch segment as 'open' or 'closed') serves as a direct input for the 'total_open_length' and 'total_closed_length' variables in the 'PORCH_GFA_OPENNESS_RULE'."
+        }
+      ],
+      "source_metadata": {
+        "file_name": "Input Text",
+        "page_number_discrepancy": {
+          "header": "Page 16",
+          "footer": "10",
+          "note": "The provided text contains conflicting page numbers in the header and footer."
+        }
+      }
+    },
+    "parse_error": false,
+    "raw_response": "```json\n{\n  \"regulations\": [\n    {\n      \"rule_id\": \"PORCH_GFA_OPENNESS_RULE\",\n      \"rule_name\": \"Porch Contribution to Gross Floor Area based on Perimeter Openness\",\n      \"source_reference\": \"Page 16, Conclusion\",\n      \"analysis\": {\n        \"Qualifiers\": {\n          \"scope\": \"Determination of whether a porch counts toward Gross Floor Area (GFA).\",\n          \"applicability\": \"Applies to porches.\",\n          \"exclusions\": \"None explicitly stated.\"\n        },\n        \"Variables\": [\n          {\n            \"name\": \"total_closed_length\",\n            \"type\": \"Dimensional\",\n            \"description\": \"Total linear feet of all porch perimeter segments classified as 'closed'.\"\n          },\n          {\n            \"name\": \"total_open_length\",\n            \"type\": \"Dimensional\",\n            \"description\": \"Total linear feet of all porch perimeter segments classified as 'open'.\"\n          },\n          {\n            \"name\": \"total_perimeter_length\",\n            \"type\": \"Dimensional\",\n            \"description\": \"Sum of total_closed_length and total_open_length.\"\n          },\n          {\n            \"name\": \"open_percentage\",\n            \"type\": \"Calculated\",\n            \"description\": \"The percentage of the porch perimeter that is open. Formula: (total_open_length / total_perimeter_length) * 100.\"\n          }\n        ],\n        \"Constants\": [\n          {\n            \"name\": \"GFA_Exclusion_Threshold\",\n            \"type\": \"Numerical\",\n            \"value\": 50,\n            \"unit\": \"%\",\n            \"description\": \"The minimum percentage of the perimeter that must be 'open' for the porch to NOT count toward GFA.\"\n          },\n          {\n            \"name\": \"Calculation_Procedure\",\n            \"type\": \"Procedure\",\n            \"steps\": [\n              \"Finalize the determination of which segments are closed and which are open.\",\n              \"Total the linear feet in each category (open and closed).\",\n              \"Compare the totals (implicitly, calculate the open percentage).\"\n            ]\n          },\n          {\n            \"name\": \"Example_Figure_5\",\n            \"type\": \"Example Data\",\n            \"description\": \"Data for the specific porch shown in Figure 5.\",\n            \"data\": {\n              \"closed_segments\": [\n                {\"id\": \"A\", \"length\": 3, \"unit\": \"feet\"},\n                {\"id\": \"B\", \"length\": 8, \"unit\": \"feet\"},\n                {\"id\": \"C\", \"length\": 10, \"unit\": \"feet\"},\n                {\"id\": \"E\", \"length\": 14, \"unit\": \"feet\"}\n              ],\n              \"open_segments\": [\n                {\"id\": \"D\", \"length\": 7, \"unit\": \"feet\"},\n                {\"id\": \"F\", \"length\": 24, \"unit\": \"feet\"},\n                {\"id\": \"G\", \"length\": 4, \"unit\": \"feet\"}\n              ],\n              \"totals\": {\n                \"total_closed\": 35,\n                \"total_open\": 35,\n                \"total_perimeter\": 70,\n                \"unit\": \"feet\"\n              },\n              \"result\": {\n                \"open_percentage\": 50,\n                \"gfa_contribution\": false,\n                \"reason\": \"The perimeter of the porch is 50% open.\"\n              }\n            }\n          }\n        ],\n        \"Conditions\": [\n          {\n            \"type\": \"Mandatory\",\n            \"logic\": \"IF open_percentage >= 50 THEN porch does NOT count toward gross floor area.\",\n            \"ambiguity_flag\": \"The text states 'is 50% open and so... would NOT count', implying the threshold is inclusive (>=). This should be confirmed.\"\n          },\n          {\n            \"type\": \"Mandatory\",\n            \"logic\": \"IF open_percentage < 50 THEN porch DOES count toward gross floor area (implied).\"\n          }\n        ],\n        \"Exceptions\": {\n          \"description\": \"No exceptions to the calculation method itself are listed. However, the classification of segments (input to this rule) has exceptions detailed in the related safety rule.\",\n          \"cases\": []\n        },\n        \"Relationships\": {\n          \"hierarchical\": \"This rule is the final step in a process that begins with classifying individual porch segments as 'open' or 'closed'.\",\n          \"cross_references\": [\n            \"Figure 5 (used as a complete example)\"\n          ],\n          \"logical_dependencies\": [\n            \"The outcome of this rule is dependent on the classification of porch segments, which may be determined by 'PORCH_SAFETY_RAIL_CLASSIFICATION_RULE'.\"\n          ]\n        }\n      }\n    },\n    {\n      \"rule_id\": \"PORCH_SAFETY_RAIL_CLASSIFICATION_RULE\",\n      \"rule_name\": \"Porch Side Classification based on Height Above Grade\",\n      \"source_reference\": \"Page 16, Note\",\n      \"analysis\": {\n        \"Qualifiers\": {\n          \"scope\": \"Classification of porch sides/facades as 'open' or 'closed' for safety reasons.\",\n          \"applicability\": \"Porches where the floor is more than 30 inches above grade.\",\n          \"exclusions\": \"Porches with a floor 30 inches or less above grade.\"\n        },\n        \"Variables\": [\n          {\n            \"name\": \"porch_floor_height_above_grade\",\n            \"type\": \"Dimensional\",\n            \"description\": \"The vertical distance from grade to the porch floor.\"\n          },\n          {\n            \"name\": \"porch_side_design\",\n            \"type\": \"Material/Usage\",\n            \"description\": \"The construction type of the porch side (e.g., 'solid half wall', 'railings', 'safety rail over half wall').\"\n          }\n        ],\n        \"Constants\": [\n          {\n            \"name\": \"Grade_Height_Trigger\",\n            \"type\": \"Numerical\",\n            \"value\": 30,\n            \"unit\": \"inches\",\n            \"operator\": \">\",\n            \"description\": \"The rule applies if the porch floor is 'more than 30\\\" above grade'.\"\n          },\n          {\n            \"name\": \"Required_Safety_Height\",\n            \"type\": \"Numerical\",\n            \"value\": 36,\n            \"unit\": \"inches\",\n            \"description\": \"The height that porch sides 'may need to be' for safety reasons if the grade height trigger is met.\"\n          }\n        ],\n        \"Conditions\": [\n          {\n            \"type\": \"Conditional\",\n            \"logic\": \"IF porch_floor_height_above_grade > 30 inches THEN a 36-inch high safety barrier requirement is triggered.\",\n            \"ambiguity_flag\": \"The text uses 'may need to be' and 'may cause', which is permissive and not mandatory language. This suggests the requirement could be subject to an inspector's discretion or other unstated rules.\"\n          },\n          {\n            \"type\": \"Conditional\",\n            \"logic\": \"IF a 36-inch high safety barrier is required AND it is constructed as a solid wall THEN the porch facade is 'considered closed'.\",\n            \"ambiguity_flag\": \"This is implied by the text providing solutions to avoid this outcome.\"\n          }\n        ],\n        \"Exceptions\": {\n          \"description\": \"Explicitly stated 'possible solutions' to ensure porch sides are considered 'open' even when the safety height requirement is triggered.\",\n          \"cases\": [\n            {\n              \"case_id\": \"ALT_RAILINGS\",\n              \"description\": \"Use 'Railings (ballisters) instead of solid half walls.'\",\n              \"outcome\": \"The porch side is considered 'open'.\"\n            },\n            {\n              \"case_id\": \"ALT_COMBO_RAIL\",\n              \"description\": \"Use 'A single safety rail above lower, solid half walls.'\",\n              \"outcome\": \"The porch side is considered 'open'.\"\n            }\n          ]\n        },\n        \"Relationships\": {\n          \"hierarchical\": \"This rule acts as a prerequisite or modifier for the 'PORCH_GFA_OPENNESS_RULE'.\",\n          \"cross_references\": [\n            \"Illustrations labeled 'Open' on the right side of the page.\"\n          ],\n          \"logical_dependencies\": [\n            \"The classification ('open' or 'closed') determined by this rule is a direct input for the 'PORCH_GFA_OPENNESS_RULE'.\"\n          ]\n        }\n      }\n    }\n  ],\n  \"inter_rule_relationships\": [\n    {\n      \"source_rule\": \"PORCH_SAFETY_RAIL_CLASSIFICATION_RULE\",\n      \"target_rule\": \"PORCH_GFA_OPENNESS_RULE\",\n      \"type\": \"Input Dependency\",\n      \"description\": \"The output of the 'PORCH_SAFETY_RAIL_CLASSIFICATION_RULE' (classifying a porch segment as 'open' or 'closed') serves as a direct input for the 'total_open_length' and 'total_closed_length' variables in the 'PORCH_GFA_OPENNESS_RULE'.\"\n    }\n  ],\n  \"source_metadata\": {\n    \"file_name\": \"Input Text\",\n    \"page_number_discrepancy\": {\n      \"header\": \"Page 16\",\n      \"footer\": \"10\",\n      \"note\": \"The provided text contains conflicting page numbers in the header and footer.\"\n    }\n  }\n}\n```",
+    "response_time": 42.91401124000549,
+    "input_tokens": 797,
+    "output_tokens": 4923,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 16:00:51",
+  "model": "google/gemini-2.5-pro",
+  "success": true
+}

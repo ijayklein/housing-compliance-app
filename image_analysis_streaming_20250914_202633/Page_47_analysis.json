@@ -1,0 +1,145 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_47.png",
+  "image_name": "Page_47.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Other excavation considerations\n\nArchitectural compatibility & landscape screening\n\u2022 If a guard rail is required, it must be designed to be architecturally compatible with the residence.\n\u2022 Additionally, landscape screening may be required by the Planning Dept.\n\nTree protection\n\u2022 A tree's root system extends well beyond the drip line and the roots are likely to be within the first 18\" below grade.\n\u2022 It is important to plan excavation in a manner that does not harm tree roots.\n\u2022 Prior to issuance of building permit, owner to provide evidence that encroaching features or portions of features will not harm trees of any species on subject or abutting lots.\n\u2022 Consult the city's Tree Technical Manual for other aspects of tree protection during construction.\n\nFig 37 Excavation, landscape screening, and guard rails\n\nFig 38 Excavation and tree roots\n\n\"When planning a basement, consider the extent of excavation that will be required e.g., some excavation techniques require (for safety reasons) that the excavation to be at a 1:1 slope which may impact tree roots severely.\"",
+      "visual_elements": [
+        {
+          "type": "figure",
+          "description": "Diagram showing a side view of a house with excavation, landscape screening, and guard rails indicated. The figure is labeled as Fig 37 Excavation, landscape screening, and guard rails.",
+          "location": "Bottom left"
+        },
+        {
+          "type": "figure",
+          "description": "Diagram showing a side view of a house with excavation and tree roots illustrated. The tree's root system extends beyond the drip line and below grade. The excavation area is marked with a dashed line and labeled 'Excavation feature' and 'Basement'. A note states: \"When planning a basement, consider the extent of excavation that will be required e.g., some excavation techniques require (for safety reasons) that the excavation to be at a 1:1 slope which may impact tree roots severely.\" The figure is labeled as Fig 38 Excavation and tree roots.",
+          "location": "Bottom right"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Tree root depth",
+          "value_type": "Measurement",
+          "value": "18",
+          "unit": "inches below grade"
+        },
+        {
+          "parameter": "Excavation slope for basement planning",
+          "value_type": "Ratio",
+          "value": "1:1",
+          "unit": "slope"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Other excavation considerations",
+        "subheadings": [
+          "Architectural compatibility & landscape screening",
+          "Tree protection"
+        ],
+        "sections": []
+      },
+      "additional_notes": [
+        "Page number 41 at bottom right corner.",
+        "No handwritten annotations or stamps detected.",
+        "Text and diagrams are clear and legible."
+      ],
+      "cross_references": [
+        "Consult the city's Tree Technical Manual for other aspects of tree protection during construction."
+      ],
+      "conditions_and_qualifiers": {
+        "qualifiers": [
+          {
+            "id": "q1",
+            "text": "If a guard rail is required, it must be designed to be architecturally compatible with the residence.",
+            "applies_to_conditions": [],
+            "scope": "Specific"
+          },
+          {
+            "id": "q2",
+            "text": "Additionally, landscape screening may be required by the Planning Dept.",
+            "applies_to_conditions": [],
+            "scope": "Specific"
+          },
+          {
+            "id": "q3",
+            "text": "Prior to issuance of building permit, owner to provide evidence that encroaching features or portions of features will not harm trees of any species on subject or abutting lots.",
+            "applies_to_conditions": [],
+            "scope": "Specific"
+          }
+        ],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "A tree's root system extends well beyond the drip line and the roots are likely to be within the first 18\" below grade.",
+            "value_type": "Measurement",
+            "operator": "within",
+            "threshold_value": "18",
+            "unit": "inches below grade"
+          },
+          {
+            "id": "c2",
+            "text": "Excavation to be at a 1:1 slope which may impact tree roots severely.",
+            "value_type": "Ratio",
+            "operator": "=",
+            "threshold_value": "1:1",
+            "unit": "slope"
+          }
+        ],
+        "logical_relationships": [
+          {
+            "operation": "AND",
+            "condition_ids": [
+              "c1",
+              "c2"
+            ],
+            "expression": "Tree roots are within 18\" below grade AND excavation slope is 1:1 which may impact tree roots severely.",
+            "evaluation_order": 1
+          }
+        ],
+        "execution_sequence": [
+          {
+            "step": 1,
+            "action": "Determine if a guard rail is required and ensure it is architecturally compatible.",
+            "condition_ids": [],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 2,
+            "action": "Assess if landscape screening is required by the Planning Dept.",
+            "condition_ids": [],
+            "qualifier_ids": [
+              "q2"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 3,
+            "action": "Plan excavation to avoid harm to tree roots considering root depth and excavation slope.",
+            "condition_ids": [
+              "c1",
+              "c2"
+            ],
+            "qualifier_ids": [],
+            "dependencies": []
+          },
+          {
+            "step": 4,
+            "action": "Prior to building permit issuance, provide evidence that encroaching features will not harm trees on subject or abutting lots.",
+            "condition_ids": [],
+            "qualifier_ids": [
+              "q3"
+            ],
+            "dependencies": [
+              "3"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:27:49",
+  "model_used": "openai/gpt-4.1-mini"
+}

@@ -1,0 +1,87 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_34.png",
+  "image_name": "Page_34.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Primary daylight plane (rear)\n\nFig 23 Side elevation showing Rear primary daylight plane\n\nNote: There is no front daylight plane.\n\nMax building height is:\n\u2022 30' for structures w/ roof slope < 12:12\n\u2022 33' for structures w/ roof slope > 12:12\n\u2022 17' for structures on substandard or flag lots regardless of flood plane\n\u2022 variable for structures located in flood zones except on substandard and flag lots - up to 33'\n\nCumulative length of protrusions must not exceed 15' on any one side.\nRear protrusions subject to same rules as side protrusions\n\nNotes:\n\u2022 Side daylight plane is measured (up) at lot line.\n\u2022 Rear daylight plane is measured (up) at rear setback.",
+      "visual_elements": [
+        {
+          "type": "figure",
+          "description": "Side elevation drawing of a house showing the rear primary daylight plane with various dimensional annotations. The drawing includes roof protrusions with maximum protrusion limits of 7.5 feet each, a minimum separation of 5 feet between protrusions, and height limits of 24 feet max for protrusions and building height. The daylight plane angle is marked as 60 degrees. The setback line, rear yard, and rear lot line are indicated with arrows and labels. Notes on building height and protrusion length are included around the drawing.",
+          "location": "Middle of the page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Max building height for structures with roof slope < 12:12",
+          "value": "30",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Max building height for structures with roof slope > 12:12",
+          "value": "33",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Max building height for structures on substandard or flag lots regardless of flood plane",
+          "value": "17",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Max building height for structures located in flood zones except on substandard and flag lots",
+          "value": "up to 33",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Max protrusion length each",
+          "value": "7.5",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum separation between protrusions",
+          "value": "5",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Cumulative length of protrusions on any one side",
+          "value": "15",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Max height for protrusions",
+          "value": "24",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Max building height",
+          "value": "24",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Height to top of rear daylight plane",
+          "value": "16",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Daylight plane angle",
+          "value": "60",
+          "unit": "degrees"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Primary daylight plane (rear)",
+        "subheadings": [],
+        "sections": []
+      },
+      "additional_notes": [
+        "There is a note indicating no front daylight plane exists.",
+        "The page number '28' is located at the bottom left corner.",
+        "No handwritten annotations or stamps are present.",
+        "Text and diagram are clear and legible."
+      ],
+      "cross_references": []
+    }
+  },
+  "analysis_timestamp": "2025-09-14 19:41:20",
+  "model_used": "openai/gpt-4.1-mini"
+}

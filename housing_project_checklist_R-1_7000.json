@@ -1,0 +1,75 @@
+{
+  "generated_date": "2025-09-16T20:50:51.454080",
+  "total_rules_analyzed": 160,
+  "checklist_type": "housing_project_compliance",
+  "phases": {
+    "Phase 1 - Site Analysis": [
+      {
+        "rule_title": "Minimum & Maximum Lot Sizes for New Lots",
+        "category": "lot_requirements",
+        "scope": "Defines the dimensional requirements (width, depth, area) for the creation of new lots via subdivision.",
+        "applicability": "Applies to new lots created under the subdivision ordinance in the following zones: R-1, R-1(7000), R-1(8000), R-1(10000), R-1(20000).",
+        "requirements": [
+          "MANDATORY: A new lot must satisfy all of the following: (width >= 60 ft) AND (depth >= 100 ft) AND (lot_area is within the min/max range for its specific zone district).",
+          "VALUES: Minimum width: 60 ft\nMinimum depth: 100 ft\nLot Area Ranges (sf):\n- R-1: Min 6,000; Max 9,999\n- R-1(7000): Min 7,000; Max 13,999\n- R-1(8000): Min 8,000; Max 15,999\n- R-1(10000): Min 10,000; Max 19,999\n- R-1(20000): Min 20,000; Max 39,999",
+          "DIMENSIONS: lot_width (ft), lot_depth (ft), lot_area (sf)"
+        ],
+        "source_file": "Page_08_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Definition of a Substandard Lot",
+        "category": "lot_requirements",
+        "scope": "Defines the dimensional criteria used to classify an existing lot as 'substandard'.",
+        "applicability": "Applies to lots within all R-1 zones: R-1, R-1(7000), R-1(8000), R-1(10000), R-1(20000).",
+        "requirements": [
+          "VALUES: Substandard width threshold: < 50 ft\nSubstandard depth threshold: < 83 ft\nArea Thresholds (sf) - A lot is substandard if its area is less than or equal to these values:\n- R-1: Typical 4,980; Flag 5,976\n- R-1(7000): Typical 5,810; Flag 6,972\n- R-1(8000): Typical 6,640; Flag 7,968\n- R-1(10000): Typical 8,300; Flag 9,960\n- R-1(20000): Typical 16,600; Flag 19,920",
+          "DIMENSIONS: lot_width (ft), lot_depth (ft), lot_area (sf)"
+        ],
+        "source_file": "Page_08_rules.json",
+        "status": "pending"
+      }
+    ],
+    "Phase 2 - Building Design": [
+      {
+        "rule_title": "Standard Setbacks by Zone",
+        "category": "setbacks",
+        "scope": "Defines minimum required yard dimensions (front, rear, interior side, street side) for lots, creating a buildable area and surrounding open space.",
+        "applicability": "Applies in 'most cases' to specific residential zones (R-1, R-1(7000), R-1(8000), R-1(10000), R-1(20000)), flag lots, substandard lots, and substandard corner lots.",
+        "requirements": [
+          "MANDATORY: Required yards must be maintained as open space areas."
+        ],
+        "source_file": "Page_26_rules.json",
+        "status": "pending"
+      }
+    ],
+    "Phase 3 - Parking & Access": [],
+    "Phase 4 - Special Features": [
+      {
+        "rule_title": "Attached 2nd-dwelling unit",
+        "category": "dwelling_units",
+        "scope": "Regulations for attached 2nd-dwelling units, subordinate to a main dwelling on a single lot.",
+        "applicability": "Applies to lots in specified single-family zones (R-1, R-1(7000), R-1(8000), R-1(10000), R-1(20000)) that meet the minimum lot size for the zone.",
+        "requirements": [
+          "MANDATORY: Unit must be subordinate to main dwelling. Lot size must meet minimum for zone. Size must not exceed 450 sf. Height must not exceed 17'. Must have two parking spaces (one covered). Covered parking must not exceed 200 sf. Must be located within setbacks. Counts towards total lot FAR. Basement area counts towards unit size.",
+          "DIMENSIONS: lot_size (dependent on zone and lot type); unit_size; basement_area; unit_height; covered_parking_size; total_FAR (Floor Area Ratio)."
+        ],
+        "source_file": "Page_50_rules.json",
+        "status": "pending"
+      },
+      {
+        "rule_title": "Detached 2nd-dwelling unit",
+        "category": "dwelling_units",
+        "scope": "Regulations for detached 2nd-dwelling units, subordinate to a main dwelling on a single lot.",
+        "applicability": "Applies to lots in specified single-family zones (R-1, R-1(7000), R-1(8000), R-1(10000), R-1(20000)) that meet the minimum lot size for the zone.",
+        "requirements": [
+          "MANDATORY: Unit must be subordinate to main dwelling. Lot size must meet minimum for zone. Size must not exceed 900 sf. Height must not exceed one story and 17'. Must share driveway with main dwelling. Must have two parking spaces (one covered). Covered parking must not exceed 200 sf. Must be located 12' from main dwelling. Must be located within setbacks. Counts towards total lot FAR. Basement area counts towards unit size. Must be architecturally compatible with main dwelling (AMBIGUOUS).",
+          "DIMENSIONS: lot_size (dependent on zone and lot type); unit_size; basement_area; unit_height (stories and feet); covered_parking_size; separation_from_main_dwelling; total_FAR (Floor Area Ratio)."
+        ],
+        "source_file": "Page_50_rules.json",
+        "status": "pending"
+      }
+    ],
+    "Phase 5 - Final Review": []
+  }
+}

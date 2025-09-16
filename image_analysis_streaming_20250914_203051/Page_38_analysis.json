@@ -1,0 +1,141 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_38.png",
+  "image_name": "Page_38.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Accessory structure daylight plane (sides & rear)\n\nFig 25 Front elevation showing accessory-structure daylight plane at the side of the lot\n\nNote: For accessory buildings near the rear & side lot lines, a hipped gable roof is often the best solution for complying with the accessory-structure daylight plane.\n\nFig 26 Side elevation showing accessory-structure daylight plane at the rear of the lot\n\nSide\n\n32",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Front elevation diagram showing an accessory structure (appears to be a garage) with a hipped gable roof. Shows daylight plane angles marked as '3' on both sides, with measurements indicating '8' from average grade' and '24' max height of building'. Side lot lines are marked on both sides of the structure.",
+          "location": "Upper middle portion of page"
+        },
+        {
+          "type": "diagram",
+          "description": "Side elevation diagram showing an accessory structure with daylight plane angle marked as '3'. Shows measurements of '8' from average grade' and '24' max height of building'. Rear lot line is marked at the bottom of the structure.",
+          "location": "Lower middle portion of page"
+        },
+        {
+          "type": "diagram",
+          "description": "Small square diagram in bottom right showing directional arrows pointing to Front, Rear, and both Sides, with diagonal lines indicating the lot orientation.",
+          "location": "Bottom right corner"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Daylight plane angle",
+          "value_type": "Numerical",
+          "value": "3",
+          "unit": "ratio or degrees (not specified)"
+        },
+        {
+          "parameter": "Height from average grade",
+          "value_type": "Measurement",
+          "value": "8",
+          "unit": "feet (implied)"
+        },
+        {
+          "parameter": "Maximum height of building",
+          "value_type": "Measurement",
+          "value": "24",
+          "unit": "feet (implied)"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Accessory structure daylight plane (sides & rear)",
+        "subheadings": [],
+        "sections": [
+          "Fig 25",
+          "Fig 26"
+        ]
+      },
+      "additional_notes": [
+        "Page number 32 appears at bottom left",
+        "Gray header bar spans width of page under main heading",
+        "Diagrams show technical elevation views with measurement annotations",
+        "Note section provides guidance on roof design for compliance"
+      ],
+      "cross_references": [
+        "Fig 25",
+        "Fig 26"
+      ],
+      "conditions_and_qualifiers": {
+        "qualifiers": [
+          {
+            "id": "q1",
+            "text": "For accessory buildings near the rear & side lot lines",
+            "applies_to_conditions": [
+              "c1"
+            ],
+            "scope": "Specific"
+          }
+        ],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "complying with the accessory-structure daylight plane",
+            "value_type": "Boolean",
+            "operator": "matches",
+            "threshold_value": "daylight plane requirements",
+            "unit": "None"
+          },
+          {
+            "id": "c2",
+            "text": "8' from average grade",
+            "value_type": "Measurement",
+            "operator": "=",
+            "threshold_value": "8",
+            "unit": "feet"
+          },
+          {
+            "id": "c3",
+            "text": "24' max height of building",
+            "value_type": "Measurement",
+            "operator": "<=",
+            "threshold_value": "24",
+            "unit": "feet"
+          }
+        ],
+        "logical_relationships": [
+          {
+            "operation": "AND",
+            "condition_ids": [
+              "c2",
+              "c3"
+            ],
+            "expression": "Building must meet both height measurement from grade and maximum height limit",
+            "evaluation_order": 1
+          }
+        ],
+        "execution_sequence": [
+          {
+            "step": 1,
+            "action": "Evaluate if accessory building is near rear & side lot lines",
+            "condition_ids": [],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 2,
+            "action": "Apply daylight plane requirements with height restrictions",
+            "condition_ids": [
+              "c1",
+              "c2",
+              "c3"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": [
+              1
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:32:10",
+  "model_used": "anthropic/claude-sonnet-4"
+}

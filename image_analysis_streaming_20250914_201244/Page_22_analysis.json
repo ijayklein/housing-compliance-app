@@ -1,0 +1,119 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_22.png",
+  "image_name": "Page_22.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Attic space & equivalencies\n\nVoluminous spaces in a structure contribute to the mass even if these areas are not used or described in the floor plan. The 2nd & 3rd floor equivalency addresses how these areas count toward the gross floor area.\n\nCode sections\n18.04.030(a)(65)\n18.12.040(b)Table 3\n\nAttic, closet, & perimeter spaces\n\nOn all accessible floors, areas with at least 5' of head clearance count toward the gross floor area regardless of the floor plan or actual usage of the space.\n\nIn Fig 11 below, the highlighted areas count as follows:\n\n\u2022 Area A of this 3rd floor (accessible via stairs), has 5' of head clearance and counts as 3rd floor area.\n\u2022 Area B of this 2nd floor (accessible via stairs), has 5' of head clearance and is included in the count of the, more obvious, 2nd floor area.\n\nFig 11 Attic, closet, & perimeter spaces\n\nNote: 500 sf of unusable attic space may be exempted for Category 1 & 2 historic homes.\n\nNote:\nMeasurements are from top of floor to underside of the rafter\n\n5'\n\n1st floor\n\nUnderside of (typical)\n\n",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "A cross-sectional architectural diagram of a house showing attic, closet, and perimeter spaces. The diagram highlights two areas labeled 'A' and 'B'. Area A is located in the attic space on the 3rd floor, showing a 5-foot head clearance measurement from the floor to the underside of the rafter. Area B is a smaller highlighted area on the 2nd floor near the perimeter wall. The diagram includes arrows and labels indicating the 5' head clearance, the underside of the rafter, and the 1st floor level.",
+          "location": "Bottom half of the page, centered"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Head clearance",
+          "value_type": "Measurement",
+          "value": "5",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Exemption for unusable attic space",
+          "value_type": "Measurement",
+          "value": "500",
+          "unit": "square feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Attic, closet, & perimeter spaces",
+        "subheadings": [],
+        "sections": [
+          "18.04.030(a)(65)",
+          "18.12.040(b)Table 3"
+        ]
+      },
+      "additional_notes": [
+        "Page number 16 at bottom left corner.",
+        "The diagram includes handwritten style labels and arrows indicating measurements and floor levels.",
+        "Some text near the diagram is faint but legible.",
+        "No stamps or handwritten annotations detected."
+      ],
+      "cross_references": [
+        "Code sections 18.04.030(a)(65) and 18.12.040(b)Table 3"
+      ],
+      "conditions_and_qualifiers": {
+        "qualifiers": [
+          {
+            "id": "q1",
+            "text": "On all accessible floors, areas with at least 5' of head clearance count toward the gross floor area regardless of the floor plan or actual usage of the space.",
+            "applies_to_conditions": [
+              "c1",
+              "c2"
+            ],
+            "scope": "Global"
+          }
+        ],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "Area A of this 3rd floor (accessible via stairs), has 5' of head clearance and counts as 3rd floor area.",
+            "value_type": "Measurement",
+            "operator": "=",
+            "threshold_value": "5",
+            "unit": "feet"
+          },
+          {
+            "id": "c2",
+            "text": "Area B of this 2nd floor (accessible via stairs), has 5' of head clearance and is included in the count of the, more obvious, 2nd floor area.",
+            "value_type": "Measurement",
+            "operator": "=",
+            "threshold_value": "5",
+            "unit": "feet"
+          }
+        ],
+        "logical_relationships": [
+          {
+            "operation": "AND",
+            "condition_ids": [
+              "c1",
+              "c2"
+            ],
+            "expression": "Both Area A and Area B must have at least 5' of head clearance to count toward their respective floor areas.",
+            "evaluation_order": 1
+          }
+        ],
+        "execution_sequence": [
+          {
+            "step": 1,
+            "action": "Verify that areas have at least 5' of head clearance on accessible floors.",
+            "condition_ids": [
+              "c1",
+              "c2"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 2,
+            "action": "Count Area A as 3rd floor area and Area B as 2nd floor area in gross floor area calculations.",
+            "condition_ids": [
+              "c1",
+              "c2"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": [
+              1
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:13:14",
+  "model_used": "openai/gpt-4.1-mini"
+}

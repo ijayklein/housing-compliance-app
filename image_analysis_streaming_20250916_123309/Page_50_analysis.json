@@ -1,0 +1,19 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_50.png",
+  "image_name": "Page_50.png",
+  "analysis": {
+    "page_number": "unknown",
+    "main_heading": "PARSE_ERROR",
+    "text_content": "Failed to parse response: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)",
+    "tables": [],
+    "figures": [],
+    "zoning_rules": [],
+    "code_references": [],
+    "quality_notes": "JSON parsing failed: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)",
+    "raw_response": "```json\n{\n  \"page_number\": \"44\",\n  \"main_heading\": \"2nd-dwelling units standards & site planning\",\n  \"text_content\": \"2nd dwelling units\\nSome lots are large enough to accommo- date a 2nd dwelling unit and still maintain the low density that is appropriate for single- family neighborhoods. These units provide for a variety to the City's housing stock and additional affordable housing opportunities.\\nLots that meet the minimum size may have an attached or detached 2nd-dwelling unit that is a separate unit and is subordinate to the main dwelling. 2nd dwelling units must comply with all regulations applying to the main dwelling except as follows:\\nAttached units\\n\u2022 Lot size must meet minimum for zone. (see table)\\n\u2022 Maximum size is 450 sf (basement area counts towards the size of the 2nd-dwelling unit even if it does not count toward total gross floor area.)\\n\u2022 Maximum height is 17'.\\n\u2022 Must have two parking spaces (one to be covered).\\n\u2022 Maximum size for covered parking is 200 sf. (This ",
+    "parse_error": true
+  },
+  "analysis_timestamp": "2025-09-16 12:33:48",
+  "model_used": "google/gemini-2.5-flash",
+  "success": false
+}

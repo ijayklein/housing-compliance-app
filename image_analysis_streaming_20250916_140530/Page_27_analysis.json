@@ -1,0 +1,12 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_27.png",
+  "image_name": "Page_27.png",
+  "analysis": {
+    "raw_content": "Transcription/extraction from the provided page (page number shown: 21)\n\nTitle\n- Contextual front setbacks\n\nPrimary rule (boxed)\n- Contextual setbacks apply if, and only if, the average of the existing setbacks on the same side of the block is 30' or greater.\n\nProcess header\n- How to determine if a contextual setback applies using Fig 15 below, as an example.\n\nDecision/steps (flowchart text)\n- Does block have more than 3 lots? (incl project lot)\n- Note: If block is more than 600' long, consider only lots within 600' (max. 10 lots).\n- Yes Exclude the following types of lots:\n  \u2022 Flag lot (C)\n  \u2022 Multi-family use w/ 3+ units (G)\n  \u2022 Corner lot facing cross street (H)\n- Is the number of remaining lots more or less than 5 or more?\n- Yes Exclude the smallest and largest setbacks:\n  \u2022 Smallest (D)\n  \u2022 Largest (E)\n  Find the average of the remaining lots (incl. subject lot). If greater than 30', it applies.\n\nNumerical example (callout at right of flow)\n- 30 (A)\n- 33 (B)\n- + 35 (F)\n- 98 \u00f7 3 = 32.7\n\nFigure caption\n- Fig 15 Example of a block with a contextual setback of 32.7'\n\nLots shown in Fig 15 (A\u2013H) with legible labels/notes\n- A: Single-Family. Setback label: 30'\n- B: Single-Family. Setback label: 33'\n- C: Flag lot (labeled \u201cFlag lot\u201d). Excluded in process.\n- D: Single Family. Setback label: 29'. Excluded as \u201cSmallest (D)\u201d.\n- E: Single Family. Setback label: 37'. Excluded as \u201cLargest (E)\u201d.\n- F: Single-Family. Setback label: 35'\n- G: Multiple Family (3+ units). Excluded in process. (A numerical setback label may be present but is not clearly legible in the image.)\n- H: Corner lot facing other street. Excluded in process. Adjacent note: \u201cStreet sideyard\u201d. (Any numeric dimension adjacent to this lot is not clearly legible in the image.)\n\nKey (legend) labels visible\n- lot line\n- Sidewalk\n- Buildable area\n- Curb\n- Required setbacks\n- Existing house\n\nNotes on legibility\n- All text above is transcribed exactly where legible. Any measurements for lots G and H are not clearly readable in the provided image and are therefore not reported.",
+    "content_length": 2059,
+    "parse_error": false
+  },
+  "timestamp": "2025-09-16 14:08:27",
+  "model": "openai/gpt-5",
+  "success": true
+}

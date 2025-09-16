@@ -1,0 +1,358 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_27.png",
+  "image_name": "Page_27.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Contextual front setbacks\nContextual setbacks apply if, and only if, the average of the existing setbacks on the same side of the block\nis 30' or greater.\nHow to determine if a contextual setback applies using Fig 15 below, as an example.\nDoes block have\nmore than 3 lots?\n(incl project lot)\nNote: If block is more\nthan 600' long,\nconsider only lots within\n600' (max. 10 lots).\nYes Exclude the following types of lots:\n\u2022 Flag lot (C)\n\u2022 Multi-family use w/ 3+ units (G)\n\u2022 Corner lot facing cross street (H)\nIs the number of remaining lots more or less\nthan 5 or more?\nYes\nExclude the smallest and largest\nsetbacks:\n\u2022 Smallest (D)\n\u2022 Largest (E)\nFind the average of the remaining\nlots (incl. subject lot). If greater\nthan 30', it applies.\n30 (A)\n33 (B)\n+ 35 (F)\n98 \u00f7 3 = 32.7\nFig 15 Example of a block with a contextual setback of 32.7'\nA\nB\nC\nFlag lot\nSingle-\nFamily\nSingle-\nFamily\nSingle-\nFamily\nD\nSingle\nFamily\n30\u2032\n33\u2032\n20'\n37'\n35\u2032\nF\nG\nSingle-\nFamily\nMultiple-\nFamily\n(3 + units)\nH\nna\nna\nKey\nLot line\nSidewalk\nCurb\nRequired\nsetbacks\nBuildable\narea\nExisting\nhouse\nStreet sideyard\n21",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "A flowchart illustrating the process to determine if a contextual setback applies. It starts with a question 'Does block have more than 3 lots? (incl project lot)'. If 'Yes', it leads to 'Exclude the following types of lots: Flag lot (C), Multi-family use w/ 3+ units (G), Corner lot facing cross street (H)'. Then it asks 'Is the number of remaining lots more or less than 5 or more?'. If 'Yes', it leads to 'Exclude the smallest and largest setbacks: Smallest (D), Largest (E)'. Finally, it instructs to 'Find the average of the remaining lots (incl. subject lot). If greater than 30', it applies.' An example calculation is provided: '30 (A) + 33 (B) + 35 (F) = 98 \u00f7 3 = 32.7'.",
+          "location": "Middle of the page"
+        },
+        {
+          "type": "figure",
+          "description": "Figure 15: An example plan view of a block with multiple lots (A-H) demonstrating different types of lots and their setbacks. Lots A, B, D, E, F are 'Single-Family' with setbacks of 30', 33', 20', 37', 35' respectively. Lot C is a 'Flag lot'. Lot G is 'Multiple-Family (3 + units)'. Lot H is a 'Lot fronts onto other street' with a 'Street sideyard'. Some lots (C, D, G, H) and lot E have diagonal lines crossing them, indicating exclusion from the calculation. A key defines 'Lot line', 'Sidewalk', 'Curb', 'Required setbacks', 'Buildable area', and 'Existing house'.",
+          "location": "Bottom of the page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Minimum average existing setback for contextual setback application",
+          "value_type": "Measurement",
+          "value": "30",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Maximum block length for lot consideration",
+          "value_type": "Measurement",
+          "value": "600",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Maximum number of lots to consider within 600' block length",
+          "value_type": "Numerical",
+          "value": "10",
+          "unit": "lots"
+        },
+        {
+          "parameter": "Setback for Lot A",
+          "value_type": "Measurement",
+          "value": "30",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Setback for Lot B",
+          "value_type": "Measurement",
+          "value": "33",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Setback for Lot D",
+          "value_type": "Measurement",
+          "value": "20",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Setback for Lot E",
+          "value_type": "Measurement",
+          "value": "37",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Setback for Lot F",
+          "value_type": "Measurement",
+          "value": "35",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Calculated sum of setbacks (A, B, F)",
+          "value_type": "Numerical",
+          "value": "98",
+          "unit": "None"
+        },
+        {
+          "parameter": "Number of lots used in average calculation",
+          "value_type": "Numerical",
+          "value": "3",
+          "unit": "lots"
+        },
+        {
+          "parameter": "Calculated average setback",
+          "value_type": "Numerical",
+          "value": "32.7",
+          "unit": "feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Contextual front setbacks",
+        "subheadings": [
+          "How to determine if a contextual setback applies using Fig 15 below, as an example."
+        ],
+        "sections": []
+      },
+      "additional_notes": [
+        "Page number '21' is present at the bottom right corner."
+      ],
+      "cross_references": [
+        "Fig 15"
+      ],
+      "conditions_and_qualifiers": {
+        "qualifiers": [
+          {
+            "id": "q1",
+            "text": "on the same side of the block",
+            "applies_to_conditions": [
+              "c1"
+            ],
+            "scope": "Global"
+          },
+          {
+            "id": "q2",
+            "text": "(incl project lot)",
+            "applies_to_conditions": [
+              "c2",
+              "c8"
+            ],
+            "scope": "Local"
+          },
+          {
+            "id": "q3",
+            "text": "If block is more than 600' long, consider only lots within 600' (max. 10 lots).",
+            "applies_to_conditions": [
+              "c2"
+            ],
+            "scope": "Local"
+          },
+          {
+            "id": "q4",
+            "text": "(C)",
+            "applies_to_conditions": [
+              "c3"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q5",
+            "text": "(G)",
+            "applies_to_conditions": [
+              "c4"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q6",
+            "text": "(H)",
+            "applies_to_conditions": [
+              "c5"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q7",
+            "text": "(D)",
+            "applies_to_conditions": [
+              "c6"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q8",
+            "text": "(E)",
+            "applies_to_conditions": [
+              "c7"
+            ],
+            "scope": "Specific"
+          }
+        ],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "the average of the existing setbacks ... is 30' or greater",
+            "value_type": "Measurement",
+            "operator": ">=",
+            "threshold_value": "30",
+            "unit": "feet"
+          },
+          {
+            "id": "c2",
+            "text": "Does block have more than 3 lots?",
+            "value_type": "Boolean",
+            "operator": "matches",
+            "threshold_value": "Yes",
+            "unit": "None"
+          },
+          {
+            "id": "c3",
+            "text": "Flag lot",
+            "value_type": "Boolean",
+            "operator": "is",
+            "threshold_value": "true",
+            "unit": "None"
+          },
+          {
+            "id": "c4",
+            "text": "Multi-family use w/ 3+ units",
+            "value_type": "Boolean",
+            "operator": "is",
+            "threshold_value": "true",
+            "unit": "None"
+          },
+          {
+            "id": "c5",
+            "text": "Corner lot facing cross street",
+            "value_type": "Boolean",
+            "operator": "is",
+            "threshold_value": "true",
+            "unit": "None"
+          },
+          {
+            "id": "c6",
+            "text": "Smallest (D)",
+            "value_type": "Boolean",
+            "operator": "is",
+            "threshold_value": "true",
+            "unit": "None"
+          },
+          {
+            "id": "c7",
+            "text": "Largest (E)",
+            "value_type": "Boolean",
+            "operator": "is",
+            "threshold_value": "true",
+            "unit": "None"
+          },
+          {
+            "id": "c8",
+            "text": "Is the number of remaining lots more or less than 5 or more?",
+            "value_type": "Boolean",
+            "operator": "matches",
+            "threshold_value": "Yes",
+            "unit": "None"
+          },
+          {
+            "id": "c9",
+            "text": "Find the average of the remaining lots (incl. subject lot). If greater than 30', it applies.",
+            "value_type": "Measurement",
+            "operator": ">",
+            "threshold_value": "30",
+            "unit": "feet"
+          }
+        ],
+        "logical_relationships": [
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c1"
+            ],
+            "expression": "Contextual setbacks apply IF AND ONLY IF (c1)",
+            "evaluation_order": 1
+          },
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c2"
+            ],
+            "expression": "IF (c2) THEN Exclude (c3 OR c4 OR c5)",
+            "evaluation_order": 2
+          },
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c8"
+            ],
+            "expression": "IF (c8) THEN Exclude (c6 AND c7)",
+            "evaluation_order": 3
+          },
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c9"
+            ],
+            "expression": "IF (c9) THEN contextual setback applies",
+            "evaluation_order": 4
+          }
+        ],
+        "execution_sequence": [
+          {
+            "step": 1,
+            "action": "Evaluate if the block has more than 3 lots (including project lot).",
+            "condition_ids": [
+              "c2"
+            ],
+            "qualifier_ids": [
+              "q2",
+              "q3"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 2,
+            "action": "If the block has more than 3 lots, exclude specific types of lots from consideration: Flag lots (C), Multi-family use with 3+ units (G), and Corner lots facing a cross street (H).",
+            "condition_ids": [
+              "c3",
+              "c4",
+              "c5"
+            ],
+            "qualifier_ids": [
+              "q4",
+              "q5",
+              "q6"
+            ],
+            "dependencies": [
+              1
+            ]
+          },
+          {
+            "step": 3,
+            "action": "Evaluate if the number of remaining lots is 5 or more.",
+            "condition_ids": [
+              "c8"
+            ],
+            "qualifier_ids": [],
+            "dependencies": [
+              2
+            ]
+          },
+          {
+            "step": 4,
+            "action": "If the number of remaining lots is 5 or more, exclude the smallest (D) and largest (E) setbacks from the remaining lots.",
+            "condition_ids": [
+              "c6",
+              "c7"
+            ],
+            "qualifier_ids": [
+              "q7",
+              "q8"
+            ],
+            "dependencies": [
+              3
+            ]
+          },
+          {
+            "step": 5,
+            "action": "Calculate the average of the setbacks of the remaining lots (including the subject lot).",
+            "condition_ids": [],
+            "qualifier_ids": [],
+            "dependencies": [
+              4
+            ]
+          },
+          {
+            "step": 6,
+            "action": "Determine if the calculated average setback is greater than 30'. If it is, the contextual setback applies.",
+            "condition_ids": [
+              "c9"
+            ],
+            "qualifier_ids": [],
+            "dependencies": [
+              5
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:24:26",
+  "model_used": "google/gemini-2.5-flash"
+}

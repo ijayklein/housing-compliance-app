@@ -1,0 +1,112 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_18.md",
+  "file_name": "Page_18.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "rule_id": "R1_Page12_Fig7",
+        "rule_name": "Vaulted Entryway Area Calculation for Gross Floor Area",
+        "source_page": 12,
+        "source_figure": "Figure 7",
+        "analysis": {
+          "Qualifiers": {
+            "scope": "Calculation of floor area contribution to the building's total 'gross floor area'.",
+            "applicability": "Applies to entryway features that are classified as 'vaulted'. The rule is illustrated with an 'Entry feature with gabled roof'.",
+            "exclusions": "None specified. The rule does not apply if the entryway is not considered 'vaulted'."
+          },
+          "Variables": [
+            {
+              "name": "is_vaulted_entryway",
+              "type": "Boolean",
+              "description": "A conditional flag indicating if an entryway is 'vaulted'. The rule's logic depends on this variable.",
+              "ambiguity_flag": "The criteria for determining if an entryway is 'considered to be a vaulted entryway' are not defined in the provided text. This is a critical missing definition for automated validation."
+            },
+            {
+              "name": "entryway_floor_area",
+              "type": "Dimensional",
+              "description": "The plan-view floor area of the entryway feature.",
+              "unit": "Area (e.g., sq ft, m^2)"
+            },
+            {
+              "name": "gross_floor_area_contribution",
+              "type": "Dimensional",
+              "description": "The final calculated area from the entryway to be added to the building's gross floor area.",
+              "unit": "Area (e.g., sq ft, m^2)"
+            }
+          ],
+          "Constants": [
+            {
+              "name": "Area Multiplier",
+              "type": "Numerical Value",
+              "value": 2,
+              "description": "The factor by which the entryway floor area is multiplied. Derived from the phrase 'counts TWICE'."
+            },
+            {
+              "name": "Area Measurement Boundary",
+              "type": "Procedure",
+              "value": "The area is measured to the outside material of the entryway feature.",
+              "description": "Defines the perimeter for the area calculation."
+            },
+            {
+              "name": "Inclusion of Recessed Portions",
+              "type": "Procedure",
+              "value": "Any portion of the entryway recessed beyond the house facade and roof must be included in the area calculation.",
+              "description": "Ensures all parts of the entryway feature are accounted for, even if recessed."
+            }
+          ],
+          "Conditions": [
+            {
+              "type": "Conditional Logic",
+              "description": "The calculation method for the entryway's contribution to gross floor area is conditional on whether the entryway is vaulted.",
+              "logic": {
+                "if": {
+                  "variable": "is_vaulted_entryway",
+                  "operator": "equals",
+                  "value": true
+                },
+                "then": {
+                  "action": "Calculate gross_floor_area_contribution",
+                  "formula": "entryway_floor_area * 2"
+                },
+                "else": {
+                  "action": "Default calculation applies (not specified)",
+                  "description": "The text does not specify the calculation for non-vaulted entryways, but it is implied to be a standard 1:1 area count."
+                }
+              }
+            }
+          ],
+          "Exceptions": [
+            {
+              "type": "Special Case",
+              "description": "The entire rule represents a special case for 'vaulted entryways', which are treated differently from other floor areas by having their area contribution doubled."
+            }
+          ],
+          "Relationships": {
+            "hierarchical": [
+              "The 'gross_floor_area_contribution' calculated by this rule is a component of the building's total 'gross_floor_area'."
+            ],
+            "cross_references": [
+              {
+                "type": "Figure",
+                "reference": "Figure 7",
+                "description": "Provides a visual example of the architectural feature ('Entry feature with gabled roof') and illustrates the area being discussed."
+              }
+            ],
+            "logical_dependencies": [
+              "The application of the 'Area Multiplier' (Constant) is dependent on the 'is_vaulted_entryway' (Variable) being true, as defined in the 'Conditions'."
+            ]
+          }
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n  {\n    \"rule_id\": \"R1_Page12_Fig7\",\n    \"rule_name\": \"Vaulted Entryway Area Calculation for Gross Floor Area\",\n    \"source_page\": 12,\n    \"source_figure\": \"Figure 7\",\n    \"analysis\": {\n      \"Qualifiers\": {\n        \"scope\": \"Calculation of floor area contribution to the building's total 'gross floor area'.\",\n        \"applicability\": \"Applies to entryway features that are classified as 'vaulted'. The rule is illustrated with an 'Entry feature with gabled roof'.\",\n        \"exclusions\": \"None specified. The rule does not apply if the entryway is not considered 'vaulted'.\"\n      },\n      \"Variables\": [\n        {\n          \"name\": \"is_vaulted_entryway\",\n          \"type\": \"Boolean\",\n          \"description\": \"A conditional flag indicating if an entryway is 'vaulted'. The rule's logic depends on this variable.\",\n          \"ambiguity_flag\": \"The criteria for determining if an entryway is 'considered to be a vaulted entryway' are not defined in the provided text. This is a critical missing definition for automated validation.\"\n        },\n        {\n          \"name\": \"entryway_floor_area\",\n          \"type\": \"Dimensional\",\n          \"description\": \"The plan-view floor area of the entryway feature.\",\n          \"unit\": \"Area (e.g., sq ft, m^2)\"\n        },\n        {\n          \"name\": \"gross_floor_area_contribution\",\n          \"type\": \"Dimensional\",\n          \"description\": \"The final calculated area from the entryway to be added to the building's gross floor area.\",\n          \"unit\": \"Area (e.g., sq ft, m^2)\"\n        }\n      ],\n      \"Constants\": [\n        {\n          \"name\": \"Area Multiplier\",\n          \"type\": \"Numerical Value\",\n          \"value\": 2,\n          \"description\": \"The factor by which the entryway floor area is multiplied. Derived from the phrase 'counts TWICE'.\"\n        },\n        {\n          \"name\": \"Area Measurement Boundary\",\n          \"type\": \"Procedure\",\n          \"value\": \"The area is measured to the outside material of the entryway feature.\",\n          \"description\": \"Defines the perimeter for the area calculation.\"\n        },\n        {\n          \"name\": \"Inclusion of Recessed Portions\",\n          \"type\": \"Procedure\",\n          \"value\": \"Any portion of the entryway recessed beyond the house facade and roof must be included in the area calculation.\",\n          \"description\": \"Ensures all parts of the entryway feature are accounted for, even if recessed.\"\n        }\n      ],\n      \"Conditions\": [\n        {\n          \"type\": \"Conditional Logic\",\n          \"description\": \"The calculation method for the entryway's contribution to gross floor area is conditional on whether the entryway is vaulted.\",\n          \"logic\": {\n            \"if\": {\n              \"variable\": \"is_vaulted_entryway\",\n              \"operator\": \"equals\",\n              \"value\": true\n            },\n            \"then\": {\n              \"action\": \"Calculate gross_floor_area_contribution\",\n              \"formula\": \"entryway_floor_area * 2\"\n            },\n            \"else\": {\n              \"action\": \"Default calculation applies (not specified)\",\n              \"description\": \"The text does not specify the calculation for non-vaulted entryways, but it is implied to be a standard 1:1 area count.\"\n            }\n          }\n        }\n      ],\n      \"Exceptions\": [\n        {\n          \"type\": \"Special Case\",\n          \"description\": \"The entire rule represents a special case for 'vaulted entryways', which are treated differently from other floor areas by having their area contribution doubled.\"\n        }\n      ],\n      \"Relationships\": {\n        \"hierarchical\": [\n          \"The 'gross_floor_area_contribution' calculated by this rule is a component of the building's total 'gross_floor_area'.\"\n        ],\n        \"cross_references\": [\n          {\n            \"type\": \"Figure\",\n            \"reference\": \"Figure 7\",\n            \"description\": \"Provides a visual example of the architectural feature ('Entry feature with gabled roof') and illustrates the area being discussed.\"\n          }\n        ],\n        \"logical_dependencies\": [\n          \"The application of the 'Area Multiplier' (Constant) is dependent on the 'is_vaulted_entryway' (Variable) being true, as defined in the 'Conditions'.\"\n        ]\n      }\n    }\n  }\n]\n```",
+    "response_time": 32.87560415267944,
+    "input_tokens": 597,
+    "output_tokens": 3541,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 16:00:45",
+  "model": "google/gemini-2.5-pro",
+  "success": true
+}

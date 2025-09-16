@@ -1,0 +1,49 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_09.md",
+  "file_name": "Page_09.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "rule": "Gross vs. net lot area",
+        "Qualifiers": {
+          "Scope": "Defines the calculation of net lot area from gross lot area. The net lot area is the basis for determining a lot's development potential.",
+          "Applicability": "Applies to all lots in Palo Alto, specifically lots where portions must be excluded from the gross lot area. This includes lots with street right-of-ways, flag lots, and lots with creek channels.",
+          "Exclusions": "The rule does not apply to lots where gross and net lot area are identical. The rule explicitly excludes private access easements from being subtracted from the gross lot area."
+        },
+        "Variables": {
+          "Dimensional": "Gross lot area: The total size of the lot from lot line to lot line. Net lot area: The area used for calculating development potential, derived from the gross lot area. Area A: The portion of a lot within a public street right-of-way (ROW). Area B: The 'pole' portion of a flag lot. Area C: The portion of a lot within a creek channel.",
+          "Material": "",
+          "Environmental": "Creek channel: A natural watercourse on a lot. Top-of-bank: The boundary defining a creek channel when no easement is present.",
+          "Usage": "Development potential: The extent of development allowed on a lot, which is based on the net lot area."
+        },
+        "Constants": {
+          "Numerical values": "Dimensions for the public ROW are not specified in the text but are noted as being available at the Development Center.",
+          "Specs, standards, procedures": "Procedure for Net Lot Area Calculation: Net Lot Area = Gross Lot Area - (Sum of all excluded areas). Standard for Creek Channel Exclusion: The area to be subtracted is defined by the Santa Clara Valley Water District\u2019s easement. Alternative Standard for Creek Channel Exclusion: If no easement exists, the area is defined by the top-of-bank. Procedure for Top-of-Bank Determination: May require a surveyor."
+        },
+        "Conditions": {
+          "Mandatory": "The following areas MUST be excluded from the gross lot size to establish net lot area: 1. Street right-of-way. 2. 'Pole' portion of a flag lot. 3. Creek channel.",
+          "Optional": "Determining the top-of-bank 'may require a surveyor', indicating a potential but not strictly mandatory action depending on circumstances.",
+          "Conditional logic": "IF a lot's boundaries extend into a public street right-of-way (ROW), THEN that portion of the lot must be subtracted from the gross lot area. IF a lot is a flag lot, THEN the 'pole' portion must be subtracted from the gross lot size. IF a lot contains a creek channel, THEN that portion of the lot must be subtracted from the gross lot size. IF a creek channel area must be subtracted AND there is no easement from the Santa Clara Valley Water District, THEN the area is defined by the top-of-bank.",
+          "Dependencies": "The calculation of a lot's 'development potential' is dependent on the final 'net lot area' value."
+        },
+        "Exceptions": {
+          "Explicit deviations, alternatives, special cases": "Private access easements that provide access to other lots are explicitly NOT subtracted from the gross area of the lot on which they occur."
+        },
+        "Relationships": {
+          "Hierarchical": "The primary entity is 'Net Lot Area', which is derived from 'Gross Lot Area'. The calculation involves subtracting a sum of up to three distinct sub-areas: Street ROW (Area A), Flag-lot 'pole' (Area B), and Creek Channel (Area C).",
+          "Cross-references": "Text references Figure 1 (Street easements), Figure 2 (Flag-lot 'poles'), and Figure 3 (Creek easements). External reference for public ROW dimensions: 'Development Center'. External reference for creek channel definition: 'Santa Clara Valley Water District\u2019s easement'.",
+          "Logical dependencies": "The value of 'Net Lot Area' is logically dependent on the 'Gross Lot Area' and the presence and dimensions of any of the three specified excludable areas (Street ROW, Flag-lot pole, Creek channel)."
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n  {\n    \"rule\": \"Gross vs. net lot area\",\n    \"Qualifiers\": {\n      \"Scope\": \"Defines the calculation of net lot area from gross lot area. The net lot area is the basis for determining a lot's development potential.\",\n      \"Applicability\": \"Applies to all lots in Palo Alto, specifically lots where portions must be excluded from the gross lot area. This includes lots with street right-of-ways, flag lots, and lots with creek channels.\",\n      \"Exclusions\": \"The rule does not apply to lots where gross and net lot area are identical. The rule explicitly excludes private access easements from being subtracted from the gross lot area.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"Gross lot area: The total size of the lot from lot line to lot line. Net lot area: The area used for calculating development potential, derived from the gross lot area. Area A: The portion of a lot within a public street right-of-way (ROW). Area B: The 'pole' portion of a flag lot. Area C: The portion of a lot within a creek channel.\",\n      \"Material\": \"\",\n      \"Environmental\": \"Creek channel: A natural watercourse on a lot. Top-of-bank: The boundary defining a creek channel when no easement is present.\",\n      \"Usage\": \"Development potential: The extent of development allowed on a lot, which is based on the net lot area.\"\n    },\n    \"Constants\": {\n      \"Numerical values\": \"Dimensions for the public ROW are not specified in the text but are noted as being available at the Development Center.\",\n      \"Specs, standards, procedures\": \"Procedure for Net Lot Area Calculation: Net Lot Area = Gross Lot Area - (Sum of all excluded areas). Standard for Creek Channel Exclusion: The area to be subtracted is defined by the Santa Clara Valley Water District\u2019s easement. Alternative Standard for Creek Channel Exclusion: If no easement exists, the area is defined by the top-of-bank. Procedure for Top-of-Bank Determination: May require a surveyor.\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"The following areas MUST be excluded from the gross lot size to establish net lot area: 1. Street right-of-way. 2. 'Pole' portion of a flag lot. 3. Creek channel.\",\n      \"Optional\": \"Determining the top-of-bank 'may require a surveyor', indicating a potential but not strictly mandatory action depending on circumstances.\",\n      \"Conditional logic\": \"IF a lot's boundaries extend into a public street right-of-way (ROW), THEN that portion of the lot must be subtracted from the gross lot area. IF a lot is a flag lot, THEN the 'pole' portion must be subtracted from the gross lot size. IF a lot contains a creek channel, THEN that portion of the lot must be subtracted from the gross lot size. IF a creek channel area must be subtracted AND there is no easement from the Santa Clara Valley Water District, THEN the area is defined by the top-of-bank.\",\n      \"Dependencies\": \"The calculation of a lot's 'development potential' is dependent on the final 'net lot area' value.\"\n    },\n    \"Exceptions\": {\n      \"Explicit deviations, alternatives, special cases\": \"Private access easements that provide access to other lots are explicitly NOT subtracted from the gross area of the lot on which they occur.\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"The primary entity is 'Net Lot Area', which is derived from 'Gross Lot Area'. The calculation involves subtracting a sum of up to three distinct sub-areas: Street ROW (Area A), Flag-lot 'pole' (Area B), and Creek Channel (Area C).\",\n      \"Cross-references\": \"Text references Figure 1 (Street easements), Figure 2 (Flag-lot 'poles'), and Figure 3 (Creek easements). External reference for public ROW dimensions: 'Development Center'. External reference for creek channel definition: 'Santa Clara Valley Water District\u2019s easement'.\",\n      \"Logical dependencies\": \"The value of 'Net Lot Area' is logically dependent on the 'Gross Lot Area' and the presence and dimensions of any of the three specified excludable areas (Street ROW, Flag-lot pole, Creek channel).\"\n    }\n  }\n]\n```",
+    "response_time": 29.189446210861206,
+    "input_tokens": 1043,
+    "output_tokens": 3048,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 16:11:10",
+  "model": "google/gemini-2.5-pro",
+  "success": true
+}

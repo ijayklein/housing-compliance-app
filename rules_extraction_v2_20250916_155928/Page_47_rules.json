@@ -1,0 +1,204 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_47.md",
+  "file_name": "Page_47.md",
+  "analysis": {
+    "extracted_rules": {
+      "file_name": "Page 47",
+      "rules": [
+        {
+          "rule_id": "GR-AC-01",
+          "rule_name": "Guard Rail Architectural Compatibility",
+          "Qualifiers": {
+            "scope": "Architectural design of guard rails.",
+            "applicability": "Applies when a guard rail is required in the context of excavation.",
+            "exclusions": "Not specified."
+          },
+          "Variables": [
+            {
+              "name": "guard_rail_design",
+              "description": "The aesthetic and structural design of the required guard rail.",
+              "type": "Qualitative"
+            }
+          ],
+          "Constants": [
+            {
+              "name": "design_standard",
+              "value": "architecturally compatible with the residence",
+              "type": "Qualitative Standard",
+              "ambiguous_language": "The term 'architecturally compatible' is subjective and not quantitatively defined, requiring interpretation."
+            }
+          ],
+          "Conditions": [
+            {
+              "type": "Mandatory",
+              "logic": "IF a guard rail is required THEN this rule applies.",
+              "dependency": "The requirement for a guard rail is established by other, unstated regulations."
+            }
+          ],
+          "Exceptions": [
+            {
+              "type": "Not Specified",
+              "description": "No exceptions or alternatives are mentioned in the text."
+            }
+          ],
+          "Relationships": {
+            "hierarchical": "This rule is part of the 'Architectural compatibility & landscape screening' section.",
+            "cross-references": "None specified.",
+            "logical_dependencies": [
+              {
+                "description": "The application of this rule is dependent on an external trigger (a requirement for a guard rail)."
+              }
+            ]
+          }
+        },
+        {
+          "rule_id": "LS-PD-01",
+          "rule_name": "Landscape Screening Requirement",
+          "Qualifiers": {
+            "scope": "Provision of landscape screening for a construction or excavation site.",
+            "applicability": "All projects subject to Planning Department review.",
+            "exclusions": "Not specified."
+          },
+          "Variables": [
+            {
+              "name": "is_screening_required",
+              "description": "A boolean decision made by the Planning Dept. on whether screening is necessary.",
+              "type": "Boolean"
+            },
+            {
+              "name": "screening_plan",
+              "description": "The design, materials, and location of the landscape screening, if required.",
+              "type": "Plan/Document"
+            }
+          ],
+          "Constants": [
+            {
+              "name": "approving_authority",
+              "value": "Planning Dept.",
+              "type": "Entity"
+            }
+          ],
+          "Conditions": [
+            {
+              "type": "Optional / Conditional",
+              "logic": "Landscape screening MAY be required.",
+              "trigger": "At the discretion of the 'Planning Dept.'",
+              "ambiguous_language": "The specific criteria used by the Planning Dept. to decide if screening is required are not defined."
+            }
+          ],
+          "Exceptions": [
+            {
+              "type": "Not Specified",
+              "description": "No exceptions or alternatives are mentioned in the text."
+            }
+          ],
+          "Relationships": {
+            "hierarchical": "This rule is part of the 'Architectural compatibility & landscape screening' section.",
+            "cross-references": "None specified.",
+            "logical_dependencies": [
+              {
+                "description": "The requirement for landscape screening is dependent on a discretionary decision by the Planning Dept."
+              }
+            ]
+          }
+        },
+        {
+          "rule_id": "TP-EX-01",
+          "rule_name": "Tree Protection During Excavation",
+          "Qualifiers": {
+            "scope": "Protection of trees from harm caused by excavation and related construction activities.",
+            "applicability": {
+              "tree_species": "any species",
+              "location": "subject or abutting lots"
+            },
+            "exclusions": "Not specified."
+          },
+          "Variables": [
+            {
+              "name": "excavation_plan",
+              "description": "The documented plan for excavation, which must account for tree root protection.",
+              "type": "Plan/Document"
+            },
+            {
+              "name": "evidence_of_no_harm",
+              "description": "Evidence provided by the owner to demonstrate that encroaching features or construction activities will not harm trees.",
+              "type": "Document/Report",
+              "ambiguous_language": "The required format, content, and standard of 'evidence' are not specified."
+            },
+            {
+              "name": "excavation_technique",
+              "description": "The method used for excavation, which affects the area of disturbance (e.g., slope requirements).",
+              "type": "Procedure"
+            }
+          ],
+          "Constants": [
+            {
+              "name": "Reference Manual",
+              "value": "city\u2019s Tree Technical Manual",
+              "type": "External Document",
+              "description": "Must be consulted for other aspects of tree protection during construction."
+            },
+            {
+              "name": "Typical Root System Depth",
+              "value": "within the first 18\u201d below grade",
+              "unit": "inches",
+              "type": "Informational Spec"
+            },
+            {
+              "name": "Example Excavation Safety Slope",
+              "value": "1:1",
+              "type": "Ratio",
+              "context": "Provided as an example for some excavation techniques that may severely impact tree roots (Figure 38)."
+            }
+          ],
+          "Conditions": [
+            {
+              "type": "Mandatory",
+              "logic": "Excavation must be planned in a manner that does not harm tree roots.",
+              "ambiguous_language": "The definition of 'harm' is not provided in this text, likely defined in the 'Tree Technical Manual'."
+            },
+            {
+              "type": "Mandatory Prerequisite",
+              "logic": "Owner must provide evidence of no harm to trees PRIOR to issuance of a building permit.",
+              "trigger": "Application for a building permit."
+            }
+          ],
+          "Exceptions": [
+            {
+              "type": "Implicit",
+              "description": "The condition to provide 'evidence' implies that encroachment on a tree's root zone may be permissible if it can be proven to be non-harmful. This constitutes an implicit exception pathway."
+            }
+          ],
+          "Relationships": {
+            "hierarchical": "This rule is part of the 'Tree protection' section.",
+            "cross-references": [
+              {
+                "document_name": "city\u2019s Tree Technical Manual",
+                "description": "This external manual must be consulted for further details on tree protection."
+              }
+            ],
+            "logical_dependencies": [
+              {
+                "description": "The issuance of a 'building permit' is dependent on the successful provision of 'evidence of no harm' to trees.",
+                "type": "Prerequisite"
+              },
+              {
+                "description": "The 'excavation plan' is constrained by the location and extent of tree roots on both the subject and abutting properties.",
+                "type": "Constraint"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "parse_error": false,
+    "raw_response": "```json\n{\n  \"file_name\": \"Page 47\",\n  \"rules\": [\n    {\n      \"rule_id\": \"GR-AC-01\",\n      \"rule_name\": \"Guard Rail Architectural Compatibility\",\n      \"Qualifiers\": {\n        \"scope\": \"Architectural design of guard rails.\",\n        \"applicability\": \"Applies when a guard rail is required in the context of excavation.\",\n        \"exclusions\": \"Not specified.\"\n      },\n      \"Variables\": [\n        {\n          \"name\": \"guard_rail_design\",\n          \"description\": \"The aesthetic and structural design of the required guard rail.\",\n          \"type\": \"Qualitative\"\n        }\n      ],\n      \"Constants\": [\n        {\n          \"name\": \"design_standard\",\n          \"value\": \"architecturally compatible with the residence\",\n          \"type\": \"Qualitative Standard\",\n          \"ambiguous_language\": \"The term 'architecturally compatible' is subjective and not quantitatively defined, requiring interpretation.\"\n        }\n      ],\n      \"Conditions\": [\n        {\n          \"type\": \"Mandatory\",\n          \"logic\": \"IF a guard rail is required THEN this rule applies.\",\n          \"dependency\": \"The requirement for a guard rail is established by other, unstated regulations.\"\n        }\n      ],\n      \"Exceptions\": [\n        {\n          \"type\": \"Not Specified\",\n          \"description\": \"No exceptions or alternatives are mentioned in the text.\"\n        }\n      ],\n      \"Relationships\": {\n        \"hierarchical\": \"This rule is part of the 'Architectural compatibility & landscape screening' section.\",\n        \"cross-references\": \"None specified.\",\n        \"logical_dependencies\": [\n          {\n            \"description\": \"The application of this rule is dependent on an external trigger (a requirement for a guard rail).\"\n          }\n        ]\n      }\n    },\n    {\n      \"rule_id\": \"LS-PD-01\",\n      \"rule_name\": \"Landscape Screening Requirement\",\n      \"Qualifiers\": {\n        \"scope\": \"Provision of landscape screening for a construction or excavation site.\",\n        \"applicability\": \"All projects subject to Planning Department review.\",\n        \"exclusions\": \"Not specified.\"\n      },\n      \"Variables\": [\n        {\n          \"name\": \"is_screening_required\",\n          \"description\": \"A boolean decision made by the Planning Dept. on whether screening is necessary.\",\n          \"type\": \"Boolean\"\n        },\n        {\n          \"name\": \"screening_plan\",\n          \"description\": \"The design, materials, and location of the landscape screening, if required.\",\n          \"type\": \"Plan/Document\"\n        }\n      ],\n      \"Constants\": [\n        {\n          \"name\": \"approving_authority\",\n          \"value\": \"Planning Dept.\",\n          \"type\": \"Entity\"\n        }\n      ],\n      \"Conditions\": [\n        {\n          \"type\": \"Optional / Conditional\",\n          \"logic\": \"Landscape screening MAY be required.\",\n          \"trigger\": \"At the discretion of the 'Planning Dept.'\",\n          \"ambiguous_language\": \"The specific criteria used by the Planning Dept. to decide if screening is required are not defined.\"\n        }\n      ],\n      \"Exceptions\": [\n        {\n          \"type\": \"Not Specified\",\n          \"description\": \"No exceptions or alternatives are mentioned in the text.\"\n        }\n      ],\n      \"Relationships\": {\n        \"hierarchical\": \"This rule is part of the 'Architectural compatibility & landscape screening' section.\",\n        \"cross-references\": \"None specified.\",\n        \"logical_dependencies\": [\n          {\n            \"description\": \"The requirement for landscape screening is dependent on a discretionary decision by the Planning Dept.\"\n          }\n        ]\n      }\n    },\n    {\n      \"rule_id\": \"TP-EX-01\",\n      \"rule_name\": \"Tree Protection During Excavation\",\n      \"Qualifiers\": {\n        \"scope\": \"Protection of trees from harm caused by excavation and related construction activities.\",\n        \"applicability\": {\n          \"tree_species\": \"any species\",\n          \"location\": \"subject or abutting lots\"\n        },\n        \"exclusions\": \"Not specified.\"\n      },\n      \"Variables\": [\n        {\n          \"name\": \"excavation_plan\",\n          \"description\": \"The documented plan for excavation, which must account for tree root protection.\",\n          \"type\": \"Plan/Document\"\n        },\n        {\n          \"name\": \"evidence_of_no_harm\",\n          \"description\": \"Evidence provided by the owner to demonstrate that encroaching features or construction activities will not harm trees.\",\n          \"type\": \"Document/Report\",\n          \"ambiguous_language\": \"The required format, content, and standard of 'evidence' are not specified.\"\n        },\n        {\n          \"name\": \"excavation_technique\",\n          \"description\": \"The method used for excavation, which affects the area of disturbance (e.g., slope requirements).\",\n          \"type\": \"Procedure\"\n        }\n      ],\n      \"Constants\": [\n        {\n          \"name\": \"Reference Manual\",\n          \"value\": \"city\u2019s Tree Technical Manual\",\n          \"type\": \"External Document\",\n          \"description\": \"Must be consulted for other aspects of tree protection during construction.\"\n        },\n        {\n          \"name\": \"Typical Root System Depth\",\n          \"value\": \"within the first 18\u201d below grade\",\n          \"unit\": \"inches\",\n          \"type\": \"Informational Spec\"\n        },\n        {\n          \"name\": \"Example Excavation Safety Slope\",\n          \"value\": \"1:1\",\n          \"type\": \"Ratio\",\n          \"context\": \"Provided as an example for some excavation techniques that may severely impact tree roots (Figure 38).\"\n        }\n      ],\n      \"Conditions\": [\n        {\n          \"type\": \"Mandatory\",\n          \"logic\": \"Excavation must be planned in a manner that does not harm tree roots.\",\n          \"ambiguous_language\": \"The definition of 'harm' is not provided in this text, likely defined in the 'Tree Technical Manual'.\"\n        },\n        {\n          \"type\": \"Mandatory Prerequisite\",\n          \"logic\": \"Owner must provide evidence of no harm to trees PRIOR to issuance of a building permit.\",\n          \"trigger\": \"Application for a building permit.\"\n        }\n      ],\n      \"Exceptions\": [\n        {\n          \"type\": \"Implicit\",\n          \"description\": \"The condition to provide 'evidence' implies that encroachment on a tree's root zone may be permissible if it can be proven to be non-harmful. This constitutes an implicit exception pathway.\"\n        }\n      ],\n      \"Relationships\": {\n        \"hierarchical\": \"This rule is part of the 'Tree protection' section.\",\n        \"cross-references\": [\n          {\n            \"document_name\": \"city\u2019s Tree Technical Manual\",\n            \"description\": \"This external manual must be consulted for further details on tree protection.\"\n          }\n        ],\n        \"logical_dependencies\": [\n          {\n            \"description\": \"The issuance of a 'building permit' is dependent on the successful provision of 'evidence of no harm' to trees.\",\n            \"type\": \"Prerequisite\"\n          },\n          {\n            \"description\": \"The 'excavation plan' is constrained by the location and extent of tree roots on both the subject and abutting properties.\",\n            \"type\": \"Constraint\"\n          }\n        ]\n      }\n    }\n  ]\n}\n```",
+    "response_time": 43.929365158081055,
+    "input_tokens": 682,
+    "output_tokens": 4917,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 16:04:22",
+  "model": "google/gemini-2.5-pro",
+  "success": true
+}

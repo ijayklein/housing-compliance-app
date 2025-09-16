@@ -1,0 +1,268 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_13.md",
+  "file_name": "Page_13.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "Qualifiers": {
+          "scope": "Porches and entry features for building facades (typology)",
+          "applicability": "General classification of porch/entry feature types as depicted in Figure 4",
+          "exclusions": "None specified",
+          "description": "Figure 4 enumerates the recognized types of porches and entry features.",
+          "ambiguities": [
+            "Figure-based enumeration does not explicitly state whether this list is exhaustive.",
+            "No definitions are provided for 'roofed', 'entry way', 'porch', or 'vaulted'."
+          ]
+        },
+        "Variables": [
+          {
+            "name": "feature_type",
+            "type": "categorical",
+            "unit": null,
+            "allowed_values": [
+              "roofed porch",
+              "roofed entry way (not vaulted)",
+              "vaulted entry way",
+              "combination porch & vaulted entry way"
+            ],
+            "description": "Type classification of the porch/entry feature per Figure 4."
+          }
+        ],
+        "Constants": [],
+        "Conditions": [
+          {
+            "type": "mandatory",
+            "description": "feature_type must be one of the enumerated types shown in Figure 4.",
+            "logic": "feature_type \u2208 {'roofed porch','roofed entry way (not vaulted)','vaulted entry way','combination porch & vaulted entry way'}"
+          }
+        ],
+        "Exceptions": [],
+        "Relationships": {
+          "hierarchical": {
+            "figure": "Figure 4",
+            "title": "Types of porches and entry ways"
+          },
+          "cross_references": [
+            {
+              "type": "measurement_procedure",
+              "reference": "Figs 6-8 on pp. 11-13",
+              "subject": "How to measure height of porches & entry features"
+            }
+          ],
+          "logical_dependencies": []
+        }
+      },
+      {
+        "Qualifiers": {
+          "scope": "Roofed entry ways that are not vaulted",
+          "applicability": "Entry features categorized as 'roofed entry way (not vaulted)' per Figure 4",
+          "exclusions": "Vaulted entry ways; combination porch & vaulted entry way",
+          "description": "Non-vaulted roofed entry way height constraint relative to grade.",
+          "ambiguities": [
+            "Boundary condition at exactly 12 ft is not specified (whether 12.0 ft is classified as not vaulted or vaulted).",
+            "Method of determining 'grade' and vertical measurement datum is referenced in other figures, not provided here."
+          ]
+        },
+        "Variables": [
+          {
+            "name": "height_above_grade",
+            "type": "dimension",
+            "unit": "ft",
+            "description": "Vertical height of the roofed entry way measured above grade (see referenced figures for method).",
+            "range": {
+              "min_inclusive": 0,
+              "max_inclusive": null
+            }
+          },
+          {
+            "name": "feature_type",
+            "type": "categorical",
+            "unit": null,
+            "allowed_values": [
+              "roofed entry way (not vaulted)"
+            ],
+            "description": "Target classification for this rule."
+          }
+        ],
+        "Constants": [
+          {
+            "name": "vault_threshold_height",
+            "value": 12,
+            "unit": "ft",
+            "spec": "Right-side note: Height less than 12' above grade"
+          }
+        ],
+        "Conditions": [
+          {
+            "type": "mandatory",
+            "description": "A roofed entry way (not vaulted) must have height less than 12 ft above grade.",
+            "logic": "IF feature_type == 'roofed entry way (not vaulted)' THEN height_above_grade < 12 ft",
+            "boundary_inclusive": "unspecified"
+          }
+        ],
+        "Exceptions": [],
+        "Relationships": {
+          "hierarchical": {
+            "figure": "Figure 4",
+            "panel": "B",
+            "title": "Roofed entry way (not vaulted)"
+          },
+          "cross_references": [
+            {
+              "type": "measurement_procedure",
+              "reference": "Figs 6-8 on pp. 11-13",
+              "subject": "How to measure height of porches & entry features"
+            }
+          ],
+          "logical_dependencies": [
+            "Depends on accurate measurement of height_above_grade per referenced procedure."
+          ]
+        }
+      },
+      {
+        "Qualifiers": {
+          "scope": "Vaulted entry ways",
+          "applicability": "Entry features categorized as 'vaulted entry way' per Figure 4",
+          "exclusions": "Roofed entry way (not vaulted); roofed porch",
+          "description": "Vaulted entry way height condition relative to grade.",
+          "ambiguities": [
+            "Boundary condition at exactly 12 ft is not specified.",
+            "No explicit definition of 'vaulted' beyond the height note on this page."
+          ]
+        },
+        "Variables": [
+          {
+            "name": "height_above_grade",
+            "type": "dimension",
+            "unit": "ft",
+            "description": "Vertical height of the vaulted entry way above grade.",
+            "range": {
+              "min_inclusive": 0,
+              "max_inclusive": null
+            }
+          },
+          {
+            "name": "feature_type",
+            "type": "categorical",
+            "unit": null,
+            "allowed_values": [
+              "vaulted entry way"
+            ],
+            "description": "Target classification for this rule."
+          }
+        ],
+        "Constants": [
+          {
+            "name": "vault_threshold_height",
+            "value": 12,
+            "unit": "ft",
+            "spec": "Right-side note: Height greater than 12' above grade"
+          }
+        ],
+        "Conditions": [
+          {
+            "type": "mandatory",
+            "description": "A vaulted entry way must have height greater than 12 ft above grade.",
+            "logic": "IF feature_type == 'vaulted entry way' THEN height_above_grade > 12 ft",
+            "boundary_inclusive": "unspecified"
+          }
+        ],
+        "Exceptions": [],
+        "Relationships": {
+          "hierarchical": {
+            "figure": "Figure 4",
+            "panel": "C",
+            "title": "Vaulted entry way"
+          },
+          "cross_references": [
+            {
+              "type": "measurement_procedure",
+              "reference": "Figs 6-8 on pp. 11-13",
+              "subject": "How to measure height of porches & entry features"
+            }
+          ],
+          "logical_dependencies": [
+            "Depends on accurate measurement of height_above_grade per referenced procedure."
+          ]
+        }
+      },
+      {
+        "Qualifiers": {
+          "scope": "Combination porch and vaulted entry way",
+          "applicability": "Features that combine a porch and a vaulted entry way per Figure 4",
+          "exclusions": "Standalone roofed porch; standalone non-vaulted roofed entry way",
+          "description": "Combination feature height condition relative to grade.",
+          "ambiguities": [
+            "Boundary condition at exactly 12 ft is not specified.",
+            "The required characteristics of the 'porch' component are not detailed on this page."
+          ]
+        },
+        "Variables": [
+          {
+            "name": "height_above_grade",
+            "type": "dimension",
+            "unit": "ft",
+            "description": "Vertical height of the combination feature's entry component above grade.",
+            "range": {
+              "min_inclusive": 0,
+              "max_inclusive": null
+            }
+          },
+          {
+            "name": "feature_type",
+            "type": "categorical",
+            "unit": null,
+            "allowed_values": [
+              "combination porch & vaulted entry way"
+            ],
+            "description": "Target classification for this rule."
+          }
+        ],
+        "Constants": [
+          {
+            "name": "vault_threshold_height",
+            "value": 12,
+            "unit": "ft",
+            "spec": "Right-side note: Height greater than 12' above grade"
+          }
+        ],
+        "Conditions": [
+          {
+            "type": "mandatory",
+            "description": "A combination porch & vaulted entry way must have height greater than 12 ft above grade.",
+            "logic": "IF feature_type == 'combination porch & vaulted entry way' THEN height_above_grade > 12 ft",
+            "boundary_inclusive": "unspecified"
+          }
+        ],
+        "Exceptions": [],
+        "Relationships": {
+          "hierarchical": {
+            "figure": "Figure 4",
+            "panel": "D",
+            "title": "Combination porch & vaulted entry way"
+          },
+          "cross_references": [
+            {
+              "type": "measurement_procedure",
+              "reference": "Figs 6-8 on pp. 11-13",
+              "subject": "How to measure height of porches & entry features"
+            }
+          ],
+          "logical_dependencies": [
+            "Depends on accurate measurement of height_above_grade per referenced procedure.",
+            "Composite relationship: composed_of {'roofed porch','vaulted entry way'}."
+          ]
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "[\n  {\n    \"Qualifiers\": {\n      \"scope\": \"Porches and entry features for building facades (typology)\",\n      \"applicability\": \"General classification of porch/entry feature types as depicted in Figure 4\",\n      \"exclusions\": \"None specified\",\n      \"description\": \"Figure 4 enumerates the recognized types of porches and entry features.\",\n      \"ambiguities\": [\n        \"Figure-based enumeration does not explicitly state whether this list is exhaustive.\",\n        \"No definitions are provided for 'roofed', 'entry way', 'porch', or 'vaulted'.\"\n      ]\n    },\n    \"Variables\": [\n      {\n        \"name\": \"feature_type\",\n        \"type\": \"categorical\",\n        \"unit\": null,\n        \"allowed_values\": [\n          \"roofed porch\",\n          \"roofed entry way (not vaulted)\",\n          \"vaulted entry way\",\n          \"combination porch & vaulted entry way\"\n        ],\n        \"description\": \"Type classification of the porch/entry feature per Figure 4.\"\n      }\n    ],\n    \"Constants\": [],\n    \"Conditions\": [\n      {\n        \"type\": \"mandatory\",\n        \"description\": \"feature_type must be one of the enumerated types shown in Figure 4.\",\n        \"logic\": \"feature_type \u2208 {'roofed porch','roofed entry way (not vaulted)','vaulted entry way','combination porch & vaulted entry way'}\"\n      }\n    ],\n    \"Exceptions\": [],\n    \"Relationships\": {\n      \"hierarchical\": {\n        \"figure\": \"Figure 4\",\n        \"title\": \"Types of porches and entry ways\"\n      },\n      \"cross_references\": [\n        {\n          \"type\": \"measurement_procedure\",\n          \"reference\": \"Figs 6-8 on pp. 11-13\",\n          \"subject\": \"How to measure height of porches & entry features\"\n        }\n      ],\n      \"logical_dependencies\": []\n    }\n  },\n  {\n    \"Qualifiers\": {\n      \"scope\": \"Roofed entry ways that are not vaulted\",\n      \"applicability\": \"Entry features categorized as 'roofed entry way (not vaulted)' per Figure 4\",\n      \"exclusions\": \"Vaulted entry ways; combination porch & vaulted entry way\",\n      \"description\": \"Non-vaulted roofed entry way height constraint relative to grade.\",\n      \"ambiguities\": [\n        \"Boundary condition at exactly 12 ft is not specified (whether 12.0 ft is classified as not vaulted or vaulted).\",\n        \"Method of determining 'grade' and vertical measurement datum is referenced in other figures, not provided here.\"\n      ]\n    },\n    \"Variables\": [\n      {\n        \"name\": \"height_above_grade\",\n        \"type\": \"dimension\",\n        \"unit\": \"ft\",\n        \"description\": \"Vertical height of the roofed entry way measured above grade (see referenced figures for method).\",\n        \"range\": {\n          \"min_inclusive\": 0,\n          \"max_inclusive\": null\n        }\n      },\n      {\n        \"name\": \"feature_type\",\n        \"type\": \"categorical\",\n        \"unit\": null,\n        \"allowed_values\": [\n          \"roofed entry way (not vaulted)\"\n        ],\n        \"description\": \"Target classification for this rule.\"\n      }\n    ],\n    \"Constants\": [\n      {\n        \"name\": \"vault_threshold_height\",\n        \"value\": 12,\n        \"unit\": \"ft\",\n        \"spec\": \"Right-side note: Height less than 12' above grade\"\n      }\n    ],\n    \"Conditions\": [\n      {\n        \"type\": \"mandatory\",\n        \"description\": \"A roofed entry way (not vaulted) must have height less than 12 ft above grade.\",\n        \"logic\": \"IF feature_type == 'roofed entry way (not vaulted)' THEN height_above_grade < 12 ft\",\n        \"boundary_inclusive\": \"unspecified\"\n      }\n    ],\n    \"Exceptions\": [],\n    \"Relationships\": {\n      \"hierarchical\": {\n        \"figure\": \"Figure 4\",\n        \"panel\": \"B\",\n        \"title\": \"Roofed entry way (not vaulted)\"\n      },\n      \"cross_references\": [\n        {\n          \"type\": \"measurement_procedure\",\n          \"reference\": \"Figs 6-8 on pp. 11-13\",\n          \"subject\": \"How to measure height of porches & entry features\"\n        }\n      ],\n      \"logical_dependencies\": [\n        \"Depends on accurate measurement of height_above_grade per referenced procedure.\"\n      ]\n    }\n  },\n  {\n    \"Qualifiers\": {\n      \"scope\": \"Vaulted entry ways\",\n      \"applicability\": \"Entry features categorized as 'vaulted entry way' per Figure 4\",\n      \"exclusions\": \"Roofed entry way (not vaulted); roofed porch\",\n      \"description\": \"Vaulted entry way height condition relative to grade.\",\n      \"ambiguities\": [\n        \"Boundary condition at exactly 12 ft is not specified.\",\n        \"No explicit definition of 'vaulted' beyond the height note on this page.\"\n      ]\n    },\n    \"Variables\": [\n      {\n        \"name\": \"height_above_grade\",\n        \"type\": \"dimension\",\n        \"unit\": \"ft\",\n        \"description\": \"Vertical height of the vaulted entry way above grade.\",\n        \"range\": {\n          \"min_inclusive\": 0,\n          \"max_inclusive\": null\n        }\n      },\n      {\n        \"name\": \"feature_type\",\n        \"type\": \"categorical\",\n        \"unit\": null,\n        \"allowed_values\": [\n          \"vaulted entry way\"\n        ],\n        \"description\": \"Target classification for this rule.\"\n      }\n    ],\n    \"Constants\": [\n      {\n        \"name\": \"vault_threshold_height\",\n        \"value\": 12,\n        \"unit\": \"ft\",\n        \"spec\": \"Right-side note: Height greater than 12' above grade\"\n      }\n    ],\n    \"Conditions\": [\n      {\n        \"type\": \"mandatory\",\n        \"description\": \"A vaulted entry way must have height greater than 12 ft above grade.\",\n        \"logic\": \"IF feature_type == 'vaulted entry way' THEN height_above_grade > 12 ft\",\n        \"boundary_inclusive\": \"unspecified\"\n      }\n    ],\n    \"Exceptions\": [],\n    \"Relationships\": {\n      \"hierarchical\": {\n        \"figure\": \"Figure 4\",\n        \"panel\": \"C\",\n        \"title\": \"Vaulted entry way\"\n      },\n      \"cross_references\": [\n        {\n          \"type\": \"measurement_procedure\",\n          \"reference\": \"Figs 6-8 on pp. 11-13\",\n          \"subject\": \"How to measure height of porches & entry features\"\n        }\n      ],\n      \"logical_dependencies\": [\n        \"Depends on accurate measurement of height_above_grade per referenced procedure.\"\n      ]\n    }\n  },\n  {\n    \"Qualifiers\": {\n      \"scope\": \"Combination porch and vaulted entry way\",\n      \"applicability\": \"Features that combine a porch and a vaulted entry way per Figure 4\",\n      \"exclusions\": \"Standalone roofed porch; standalone non-vaulted roofed entry way\",\n      \"description\": \"Combination feature height condition relative to grade.\",\n      \"ambiguities\": [\n        \"Boundary condition at exactly 12 ft is not specified.\",\n        \"The required characteristics of the 'porch' component are not detailed on this page.\"\n      ]\n    },\n    \"Variables\": [\n      {\n        \"name\": \"height_above_grade\",\n        \"type\": \"dimension\",\n        \"unit\": \"ft\",\n        \"description\": \"Vertical height of the combination feature's entry component above grade.\",\n        \"range\": {\n          \"min_inclusive\": 0,\n          \"max_inclusive\": null\n        }\n      },\n      {\n        \"name\": \"feature_type\",\n        \"type\": \"categorical\",\n        \"unit\": null,\n        \"allowed_values\": [\n          \"combination porch & vaulted entry way\"\n        ],\n        \"description\": \"Target classification for this rule.\"\n      }\n    ],\n    \"Constants\": [\n      {\n        \"name\": \"vault_threshold_height\",\n        \"value\": 12,\n        \"unit\": \"ft\",\n        \"spec\": \"Right-side note: Height greater than 12' above grade\"\n      }\n    ],\n    \"Conditions\": [\n      {\n        \"type\": \"mandatory\",\n        \"description\": \"A combination porch & vaulted entry way must have height greater than 12 ft above grade.\",\n        \"logic\": \"IF feature_type == 'combination porch & vaulted entry way' THEN height_above_grade > 12 ft\",\n        \"boundary_inclusive\": \"unspecified\"\n      }\n    ],\n    \"Exceptions\": [],\n    \"Relationships\": {\n      \"hierarchical\": {\n        \"figure\": \"Figure 4\",\n        \"panel\": \"D\",\n        \"title\": \"Combination porch & vaulted entry way\"\n      },\n      \"cross_references\": [\n        {\n          \"type\": \"measurement_procedure\",\n          \"reference\": \"Figs 6-8 on pp. 11-13\",\n          \"subject\": \"How to measure height of porches & entry features\"\n        }\n      ],\n      \"logical_dependencies\": [\n        \"Depends on accurate measurement of height_above_grade per referenced procedure.\",\n        \"Composite relationship: composed_of {'roofed porch','vaulted entry way'}.\"\n      ]\n    }\n  }\n]",
+    "response_time": 106.75571393966675,
+    "input_tokens": 549,
+    "output_tokens": 5245,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 15:52:04",
+  "model": "openai/gpt-5",
+  "success": true
+}

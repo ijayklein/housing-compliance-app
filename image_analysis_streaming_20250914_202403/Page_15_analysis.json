@@ -1,0 +1,227 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_15.png",
+  "image_name": "Page_15.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Step 2: Determine which perimeter segments abut the house walls. These are closed segments, or sides.\nIn Fig 5 sides A, B, & C abut the house walls.\nThese are considered to be closed segments.\nStep 3: Determine the status (open/closed) of the remaining segments based on the design. If at least 50% of the facade area is\nopen, then the segment or side is considered open.\nFor purposes of assessing the openess of the facade:\n\u2022\nThe height of the segment facades is measured from the top of the porch floor to the the point where the\nsegment facade intersects with the top of the roof material.\n\u2022\nThe widths of the segment facades are measured from the same plane. Allowances may be made for\nstructural supports that are not excessive.\nIntersection\nfacade & top\nof roof material\nPorch flr\nD\n7'\nOpen\nE\n14'\nClosed\n(because of decorative glass wall)\nF\n24'\nOpen\nG\n4'\nOpen\n9",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "An overhead plan view of a structure with three segments labeled A, B, and C. Segment A is 3' long, segment B is 8' long, and segment C is 10' long. These segments are shown abutting a house wall, indicating they are closed segments.",
+          "location": "Top right"
+        },
+        {
+          "type": "diagram",
+          "description": "Four cross-sectional diagrams of facade segments labeled D, E, F, and G. Each diagram shows the width of the segment and its 'open' or 'closed' status. Segment D is 7' wide and labeled 'Open'. Segment E is 14' wide and labeled 'Closed (because of decorative glass wall)'. Segment F is 24' wide and labeled 'Open'. Segment G is 4' wide and labeled 'Open'. A vertical measurement for 'Height' is indicated on segment E, extending from 'Porch flr' to 'Intersection facade & top of roof material'.",
+          "location": "Bottom half"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Segment A Length",
+          "value_type": "Measurement",
+          "value": "3",
+          "unit": "ft"
+        },
+        {
+          "parameter": "Segment B Length",
+          "value_type": "Measurement",
+          "value": "8",
+          "unit": "ft"
+        },
+        {
+          "parameter": "Segment C Length",
+          "value_type": "Measurement",
+          "value": "10",
+          "unit": "ft"
+        },
+        {
+          "parameter": "Segment D Width",
+          "value_type": "Measurement",
+          "value": "7",
+          "unit": "ft"
+        },
+        {
+          "parameter": "Segment E Width",
+          "value_type": "Measurement",
+          "value": "14",
+          "unit": "ft"
+        },
+        {
+          "parameter": "Segment F Width",
+          "value_type": "Measurement",
+          "value": "24",
+          "unit": "ft"
+        },
+        {
+          "parameter": "Segment G Width",
+          "value_type": "Measurement",
+          "value": "4",
+          "unit": "ft"
+        },
+        {
+          "parameter": "Minimum Facade Openness for 'Open' Status",
+          "value_type": "Percentage",
+          "value": "50",
+          "unit": "%"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": null,
+        "subheadings": [
+          "Step 2:",
+          "Step 3:",
+          "For purposes of assessing the openess of the facade:"
+        ],
+        "sections": []
+      },
+      "additional_notes": [],
+      "cross_references": [
+        "Fig 5"
+      ],
+      "conditions_and_qualifiers": {
+        "qualifiers": [
+          {
+            "id": "q1",
+            "text": "For purposes of assessing the openess of the facade:",
+            "applies_to_conditions": [
+              "c3",
+              "c4"
+            ],
+            "scope": "Local"
+          }
+        ],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "perimeter segments abut the house walls",
+            "value_type": "Boolean",
+            "operator": "matches",
+            "threshold_value": "true",
+            "unit": null
+          },
+          {
+            "id": "c2",
+            "text": "at least 50% of the facade area is open",
+            "value_type": "Percentage",
+            "operator": ">=",
+            "threshold_value": "50",
+            "unit": "%"
+          },
+          {
+            "id": "c3",
+            "text": "The height of the segment facades is measured from the top of the porch floor to the the point where the segment facade intersects with the top of the roof material.",
+            "value_type": "Text",
+            "operator": "None",
+            "threshold_value": null,
+            "unit": null
+          },
+          {
+            "id": "c4",
+            "text": "The widths of the segment facades are measured from the same plane. Allowances may be made for structural supports that are not excessive.",
+            "value_type": "Text",
+            "operator": "None",
+            "threshold_value": null,
+            "unit": null
+          },
+          {
+            "id": "c5",
+            "text": "(because of decorative glass wall)",
+            "value_type": "Text",
+            "operator": "None",
+            "threshold_value": null,
+            "unit": null
+          }
+        ],
+        "logical_relationships": [
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c1"
+            ],
+            "expression": "IF (perimeter segments abut the house walls) THEN (These are closed segments, or sides.)",
+            "evaluation_order": 1
+          },
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c2"
+            ],
+            "expression": "IF (at least 50% of the facade area is open) THEN (the segment or side is considered open.)",
+            "evaluation_order": 2
+          }
+        ],
+        "execution_sequence": [
+          {
+            "step": 1,
+            "action": "Determine which perimeter segments abut the house walls.",
+            "condition_ids": [
+              "c1"
+            ],
+            "qualifier_ids": [],
+            "dependencies": []
+          },
+          {
+            "step": 2,
+            "action": "Classify segments abutting house walls as closed segments or sides.",
+            "condition_ids": [
+              "c1"
+            ],
+            "qualifier_ids": [],
+            "dependencies": [
+              "1"
+            ]
+          },
+          {
+            "step": 3,
+            "action": "Determine the status (open/closed) of the remaining segments based on the design.",
+            "condition_ids": [
+              "c2"
+            ],
+            "qualifier_ids": [],
+            "dependencies": []
+          },
+          {
+            "step": 4,
+            "action": "If at least 50% of the facade area is open, consider the segment or side open.",
+            "condition_ids": [
+              "c2"
+            ],
+            "qualifier_ids": [],
+            "dependencies": [
+              "3"
+            ]
+          },
+          {
+            "step": 5,
+            "action": "For assessing facade openness, measure height from porch floor to intersection with roof material.",
+            "condition_ids": [
+              "c3"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": [
+              "3"
+            ]
+          },
+          {
+            "step": 6,
+            "action": "For assessing facade openness, measure widths from the same plane, allowing for non-excessive structural supports.",
+            "condition_ids": [
+              "c4"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": [
+              "3"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:24:14",
+  "model_used": "google/gemini-2.5-flash"
+}

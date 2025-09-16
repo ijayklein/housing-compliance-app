@@ -1,0 +1,74 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_45.png",
+  "image_name": "Page_45.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Detached garages/carports site planning\n\n\u2022 Detached garages and carports may be located in the rear or interior side yard if at least 75' from the front lot line and at least 20' from the street-side lot line.\n\n\u2022 Additionally, on lots less than 95' deep, they may be located in rear or interior side yards if placed in rear half of the lot.\n\n\u2022 Garages and carports that take advantage of this setback exception are subject to a stricter daylight plane. See Figs 25-26 p. 32.\n\nFig 34 Examples of site planning solutions for detached garages/carports\n\nGarages at the lot line must comply with Uniform Building Code (UBC) requirements for fire-rated walls & roof materials.\n\nCarports with open sides must be at least 3' from any lot line.\n\n3' min.\n\nInterior lot example\n\n2-car Garage w/rated walls\n\nRear yard\n\n2-car Carport w/open sides\n\nRear yard\n\nInterior lot example\n\n2-car Garage w/rated walls\n\nRear yard\n\nBuildable area\n\nMain dwelling\n\nBuildable area\n\nMain dwelling\n\nBuildable area\n\nMain dwelling\n\nCorner lot example\n\n20' min\n\n10'\n\nNo parking area\n\nUncovered space\n\nKey:\nCurb\nLot line\nSidewalk\nRequired setbacks\nBuildable area\nDwelling\nParking structure\nNo parking area\nUncovered space\n\nA 2-car garage w/uncovered spaces in driveway (tandem OK)\nB 2-car carport w/uncovered spaces in driveway (tandem OK)\nC 2-car garage w/uncovered spaces in driveway (tandem OK)\n\nNote: Uncovered spaces must be located beyond the required front yard and beyond the first 10' of the street-side yard.\n\nNote: In all the examples on this page, a 1-car garage could be substituted for a 2-car garage because there is room for uncovered parking in the driveway.\n\n39",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Three site plan examples (A, B, C) showing different configurations of detached garages and carports on lots. Each shows a main dwelling, buildable area, parking structures, and various setback requirements. Includes detailed measurements and annotations for garage/carport placement.",
+          "location": "Center and bottom portion of page"
+        },
+        {
+          "type": "legend",
+          "description": "Key showing different visual elements used in the diagrams including curb, lot line, sidewalk, required setbacks, buildable area, dwelling, parking structure, no parking area, and uncovered space with corresponding visual symbols",
+          "location": "Bottom right of page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Front lot line setback for detached garages/carports",
+          "value": "75",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Street-side lot line setback for detached garages/carports",
+          "value": "20",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Lot depth threshold for alternative placement",
+          "value": "95",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum distance from lot line for open-sided carports",
+          "value": "3",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum street-side yard setback",
+          "value": "20",
+          "unit": "feet"
+        },
+        {
+          "parameter": "First portion of street-side yard where uncovered spaces prohibited",
+          "value": "10",
+          "unit": "feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Detached garages/carports site planning",
+        "subheadings": [
+          "Fig 34 Examples of site planning solutions for detached garages/carports"
+        ],
+        "sections": [
+          "A",
+          "B",
+          "C"
+        ]
+      },
+      "additional_notes": [
+        "Page number 39 appears at bottom right",
+        "Two gray note boxes appear on the right side of the page with additional clarifications",
+        "Diagram uses various patterns and shadings to distinguish different elements"
+      ],
+      "cross_references": [
+        "See Figs 25-26 p. 32"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-11 13:45:12",
+  "model_used": "anthropic/claude-sonnet-4"
+}

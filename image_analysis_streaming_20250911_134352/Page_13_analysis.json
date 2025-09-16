@@ -1,0 +1,63 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_13.png",
+  "image_name": "Page_13.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Fig 4 Types of porches and entry ways\n\nA Roofed porch\n\nB Roofed entry way\n(not vaulted)\n\nC Vaulted entry way\n\nD Combination porch & vaulted entry way\n\nSee how to measure height of porches &\nentry features in Figs 6-8 on pp. 11-13\n\nHeight\ngreater than 12'\nabove grade\n\nHeight\nless than 12'\nabove grade\n\nHeight\ngreater than 12'\nabove grade",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Four architectural elevation drawings showing different types of porches and entry ways. Drawing A shows a single-story building with a roofed porch supported by columns. Drawing B shows a two-story house with a small roofed entry way. Drawing C shows a two-story colonial-style building with dormer windows and a vaulted entry way. Drawing D shows a building combining both a porch and vaulted entry way with arched openings.",
+          "location": "Center of page, arranged in 2x2 grid format"
+        },
+        {
+          "type": "figure",
+          "description": "Height measurement indicators showing vertical lines with arrows and text indicating height measurements relative to grade level",
+          "location": "Right side of drawings C and D, and right side of drawing B"
+        },
+        {
+          "type": "figure",
+          "description": "Gray text box containing reference information",
+          "location": "Center of page between the four architectural drawings"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Height threshold for classification",
+          "value": "12",
+          "unit": "feet above grade"
+        },
+        {
+          "parameter": "Reference pages for measurement methods",
+          "value": "11-13",
+          "unit": "page numbers"
+        },
+        {
+          "parameter": "Reference figures for measurement methods",
+          "value": "6-8",
+          "unit": "figure numbers"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Fig 4 Types of porches and entry ways",
+        "subheadings": [],
+        "sections": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ]
+      },
+      "additional_notes": [
+        "Page appears to be from a technical manual with clear line drawings",
+        "Image quality is good with clear text and diagrams",
+        "Contains measurement annotations on architectural drawings"
+      ],
+      "cross_references": [
+        "Figs 6-8 on pp. 11-13 for measurement methods of porches and entry features"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-11 13:44:18",
+  "model_used": "anthropic/claude-sonnet-4"
+}

@@ -1,0 +1,23 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_37.png",
+  "image_name": "Page_37.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "PARSE_ERROR",
+      "visual_elements": [],
+      "technical_specifications": [],
+      "structural_elements": {
+        "main_heading": "",
+        "subheadings": [],
+        "sections": []
+      },
+      "additional_notes": [
+        "Failed to parse LLM response: Expecting value: line 1 column 1 (char 0)"
+      ],
+      "cross_references": []
+    },
+    "raw_response": "Here's the extracted information from the images, presented with absolute precision:\n\n**Accessory structures site planning**\n\n**Note:** Site planning for accessory buildings differs from that for parking structures in one way. A special allowance enables garages to be located in the rear/side yards even when the lot is not deep enough to maintain the 75' minimum distance from the front lot line. This does not apply to non-parking accessory structures.\n\n**Fig 24 Examples of site planning solutions for accessory structures**\n\n**A Combo garage /small pool cabana (side by side)**\n*   Structure is located in rear yard so it must:\n    a. be at least 75' from the front lot line\n    b. be no more than 12' high\n    c. comply with accessory-structure daylight plane. (Figs 25 & 26 on p. 32)\n*   Structure is located right at the side lot line so that wall and the roof must be fire rated.\n*   Structure has 2 plumbing fixtures.\n\n**B Stand-alone pool cabana**\n*   Structure is located in rear yard so it must:\n    a. be at least 75' from the front lot line\n    b. be no more than 12' high\n    c. comply with accessory-structure daylight plane. (Figs 25 & 26 on p. 32)\n*   Structure is located right at the rear lot line so that wall and the roof must be fire rated.\n*   Structure has 3 plumbing fixtures\u2014 sink, toilet, and shower and is greater than 200 sf, so it requires a CUP.\n\n**C Office above garage**\n*   Structure is located within the buildable area, so it doesn't have to comply with regulations for structures in the required yards and it may be two stories high.\n*   Structure has 2 plumbing fixtures.\n*   Structure is new 2nd floor addition and therefore subject to the Planning Department's Individual Review (IR).\n\n**Note:** Because this structure is 2 stories, it must be located within the buildable area regardless of the distances from the lot lines and is subject to Individual Review (IR).\n\n**Diagram Information:**\n\n**Interior lot example (for A Combo garage /small pool cabana)**\n*   **Accessory structure:** \"Combo garage / small pool house\"\n*   **Location:** In the Rear yard.\n*   **Setback from front lot line:** Min. 75' (indicated by arrow from front lot line to the accessory structure).\n*   **Adjacent to:** Interior-side yard.\n*   **Main dwelling:** Located in the Front yard area.\n\n**Interior lot example (for B Stand-alone pool cabana)**\n*   **Accessory structure:** \"Larger pool cabana\"\n*   **Location:** In the Rear yard.\n*   **Setback from front lot line:** Min. 75' (indicated by arrow from front lot line to the accessory structure).\n*   **Adjacent to:** Interior-side yard.\n*   **Main dwelling:** \"2-car attached garage\" and \"Main dwelling\" located in the Front yard area.\n\n**Corner lot example (for C Office above garage)**\n*   **Accessory structure:** \"Office above garage\"\n*   **Location:** In the Rear yard.\n*   **Setback from street-side yard:** 3' min. (indicated by arrow from street-side yard to the accessory structure).\n*   **Adjacent to:** Interior-side yard and Street-side yard.\n*   **Main dwelling:** Located in the Front yard area.\n\n**Key**\n*   **Solid black line:** Curb\n*   **Thick solid black line:** Lot line\n*   **Patterned grey area:** Sidewalk\n*   **Dashed line:** Required setbacks\n*   **Light grey shaded area:** Buildable area\n*   **Dark grey shaded area:** Dwelling/parking\n*   **Solid black shaded area:** Accessory structure\n\n**Page Number:** 31"
+  },
+  "analysis_timestamp": "2025-09-16 12:25:58",
+  "model_used": "google/gemini-2.5-flash"
+}

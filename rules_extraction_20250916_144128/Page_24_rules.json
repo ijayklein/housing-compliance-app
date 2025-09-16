@@ -1,0 +1,88 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_24.md",
+  "file_name": "Page_24.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "Rule": "Bay Windows Design Criteria",
+        "Qualifiers": {
+          "Scope": "Bay windows",
+          "Applicability": "Bay windows that meet specific design criteria",
+          "Exclusions": "Bay windows that do not meet the design criteria"
+        },
+        "Variables": {
+          "Dimensional": [
+            {
+              "Name": "Bottom height above floor joists",
+              "Value": "18",
+              "Unit": "inches"
+            },
+            {
+              "Name": "Maximum projection from facade",
+              "Value": "2",
+              "Unit": "feet"
+            }
+          ],
+          "Material": [
+            {
+              "Name": "Exterior supports",
+              "Options": [
+                "corbels",
+                "brackets"
+              ]
+            }
+          ],
+          "Environmental": [],
+          "Usage": [
+            {
+              "Name": "Glass surface percentage",
+              "Value": "50",
+              "Unit": "%"
+            }
+          ]
+        },
+        "Constants": {
+          "Numerical values": [],
+          "Specs": [],
+          "Standards": [],
+          "Procedures": []
+        },
+        "Conditions": {
+          "Mandatory": [
+            "Bottom of feature must be at least 18 inches above the floor joists",
+            "Exterior supports must be features like corbels and/or brackets rather than solid walls",
+            "At least 50% of the surface is glass"
+          ],
+          "Optional": [],
+          "Conditional logic": [],
+          "Dependencies": []
+        },
+        "Exceptions": {
+          "Explicit deviations": [
+            "Bay windows that extend higher than the structure\u2019s roof are considered to be dormers and count toward gross floor area"
+          ],
+          "Alternatives": [],
+          "Special cases": []
+        },
+        "Relationships": {
+          "Hierarchical": [],
+          "Cross-references": [
+            {
+              "Reference": "Code Sections",
+              "Details": [
+                "18.04.030(a)(65)",
+                "18.12.040(b)Table 3"
+              ]
+            }
+          ],
+          "Logical dependencies": []
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n  {\n    \"Rule\": \"Bay Windows Design Criteria\",\n    \"Qualifiers\": {\n      \"Scope\": \"Bay windows\",\n      \"Applicability\": \"Bay windows that meet specific design criteria\",\n      \"Exclusions\": \"Bay windows that do not meet the design criteria\"\n    },\n    \"Variables\": {\n      \"Dimensional\": [\n        {\n          \"Name\": \"Bottom height above floor joists\",\n          \"Value\": \"18\",\n          \"Unit\": \"inches\"\n        },\n        {\n          \"Name\": \"Maximum projection from facade\",\n          \"Value\": \"2\",\n          \"Unit\": \"feet\"\n        }\n      ],\n      \"Material\": [\n        {\n          \"Name\": \"Exterior supports\",\n          \"Options\": [\"corbels\", \"brackets\"]\n        }\n      ],\n      \"Environmental\": [],\n      \"Usage\": [\n        {\n          \"Name\": \"Glass surface percentage\",\n          \"Value\": \"50\",\n          \"Unit\": \"%\"\n        }\n      ]\n    },\n    \"Constants\": {\n      \"Numerical values\": [],\n      \"Specs\": [],\n      \"Standards\": [],\n      \"Procedures\": []\n    },\n    \"Conditions\": {\n      \"Mandatory\": [\n        \"Bottom of feature must be at least 18 inches above the floor joists\",\n        \"Exterior supports must be features like corbels and/or brackets rather than solid walls\",\n        \"At least 50% of the surface is glass\"\n      ],\n      \"Optional\": [],\n      \"Conditional logic\": [],\n      \"Dependencies\": []\n    },\n    \"Exceptions\": {\n      \"Explicit deviations\": [\n        \"Bay windows that extend higher than the structure\u2019s roof are considered to be dormers and count toward gross floor area\"\n      ],\n      \"Alternatives\": [],\n      \"Special cases\": []\n    },\n    \"Relationships\": {\n      \"Hierarchical\": [],\n      \"Cross-references\": [\n        {\n          \"Reference\": \"Code Sections\",\n          \"Details\": [\n            \"18.04.030(a)(65)\",\n            \"18.12.040(b)Table 3\"\n          ]\n        }\n      ],\n      \"Logical dependencies\": []\n    }\n  }\n]\n```"
+  },
+  "timestamp": "2025-09-16 14:42:25",
+  "model": "openai/gpt-4o",
+  "success": true
+}

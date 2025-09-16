@@ -1,0 +1,61 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_44.md",
+  "file_name": "Page_44.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "rule": "Attached garages/carports site planning",
+        "Qualifiers": {
+          "Scope": "Attached garages and carports",
+          "Applicability": "Must comply with same setbacks as main dwelling",
+          "Exclusions": null
+        },
+        "Variables": {
+          "Dimensional": {
+            "Setbacks": "Same as main dwelling",
+            "Uncovered space location": "Beyond required frontyard and beyond first 10' of street-side yard"
+          },
+          "Material": null,
+          "Environmental": null,
+          "Usage parameters": null
+        },
+        "Constants": {
+          "Numerical values": {
+            "Street-side yard": "10'"
+          },
+          "Specs": null,
+          "Standards": null,
+          "Procedures": null
+        },
+        "Conditions": {
+          "Mandatory": [
+            "Attached garages must comply with same setbacks as main dwelling"
+          ],
+          "Optional": null,
+          "Conditional logic": null,
+          "Dependencies": null
+        },
+        "Exceptions": {
+          "Explicit deviations": null,
+          "Alternatives": null,
+          "Special cases": "Uncovered spaces must be located beyond the required frontyard and beyond the first 10' of the street-side yard"
+        },
+        "Relationships": {
+          "Hierarchical": {
+            "Main dwelling": "Primary structure",
+            "Attached garages/carports": "Secondary structure"
+          },
+          "Cross-references": {
+            "Figure 33": "Examples of site planning solutions for attached garages/carports"
+          },
+          "Logical dependencies": null
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n    {\n        \"rule\": \"Attached garages/carports site planning\",\n        \"Qualifiers\": {\n            \"Scope\": \"Attached garages and carports\",\n            \"Applicability\": \"Must comply with same setbacks as main dwelling\",\n            \"Exclusions\": null\n        },\n        \"Variables\": {\n            \"Dimensional\": {\n                \"Setbacks\": \"Same as main dwelling\",\n                \"Uncovered space location\": \"Beyond required frontyard and beyond first 10' of street-side yard\"\n            },\n            \"Material\": null,\n            \"Environmental\": null,\n            \"Usage parameters\": null\n        },\n        \"Constants\": {\n            \"Numerical values\": {\n                \"Street-side yard\": \"10'\"\n            },\n            \"Specs\": null,\n            \"Standards\": null,\n            \"Procedures\": null\n        },\n        \"Conditions\": {\n            \"Mandatory\": [\n                \"Attached garages must comply with same setbacks as main dwelling\"\n            ],\n            \"Optional\": null,\n            \"Conditional logic\": null,\n            \"Dependencies\": null\n        },\n        \"Exceptions\": {\n            \"Explicit deviations\": null,\n            \"Alternatives\": null,\n            \"Special cases\": \"Uncovered spaces must be located beyond the required frontyard and beyond the first 10' of the street-side yard\"\n        },\n        \"Relationships\": {\n            \"Hierarchical\": {\n                \"Main dwelling\": \"Primary structure\",\n                \"Attached garages/carports\": \"Secondary structure\"\n            },\n            \"Cross-references\": {\n                \"Figure 33\": \"Examples of site planning solutions for attached garages/carports\"\n            },\n            \"Logical dependencies\": null\n        }\n    }\n]\n```"
+  },
+  "timestamp": "2025-09-16 14:43:21",
+  "model": "openai/gpt-4o",
+  "success": true
+}

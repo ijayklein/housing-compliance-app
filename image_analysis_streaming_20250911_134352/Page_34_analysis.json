@@ -1,0 +1,86 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_34.png",
+  "image_name": "Page_34.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Primary daylight plane (rear)\n\nFig 23 Side elevation showing Rear primary daylight plane\n\n7.5' max. each protrusion    5' min. separation    7.5' max. each protrusion\n\nNote: There is no front daylight plane\n\n24' max. for protrusions\n\n16'\n\n24' max. for protrusions\n\nMax. bldg. height\n\nSetback line\n\nRear Yard\n\nRear lot line\n\nMax building height is:\n\u2022 30' for structures w/roof slope < 12:12\n\u2022 33' for structures w/roof slope > 12:12\n\u2022 17' for structures on substandard or flag lots regardless of flood plane\n\u2022 variable for structures located in flood zones except on substandard and flag lots - up to 33'\n\nCumulative length of protrusions must not exceed 15' on any one side.\nRear protrusions subject to same rules as side protrusions\n\nNotes:\n\u2022 Side daylight plane is measured (up) at lot line.\n\u2022 Rear daylight plane is measured (up) at rear setback.\n\n28",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Side elevation architectural diagram showing a two-story house with dormers and various measurement annotations. The diagram illustrates the rear primary daylight plane with angular lines extending upward at 60-degree angles from the setback line. The building shows windows, siding details, and foundation elements.",
+          "location": "Center of page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Maximum protrusion width",
+          "value": "7.5",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum separation between protrusions",
+          "value": "5",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Maximum height for protrusions",
+          "value": "24",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Standard height measurement",
+          "value": "16",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Daylight plane angle",
+          "value": "60",
+          "unit": "degrees"
+        },
+        {
+          "parameter": "Maximum building height (roof slope < 12:12)",
+          "value": "30",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Maximum building height (roof slope > 12:12)",
+          "value": "33",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Maximum building height (substandard or flag lots)",
+          "value": "17",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Maximum building height (flood zones, except substandard/flag lots)",
+          "value": "33",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Maximum cumulative length of protrusions per side",
+          "value": "15",
+          "unit": "feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Primary daylight plane (rear)",
+        "subheadings": [],
+        "sections": [
+          "Fig 23"
+        ]
+      },
+      "additional_notes": [
+        "Page number 28 appears at bottom left",
+        "Asterisk symbols (*) are used to mark specific measurement points and reference notes",
+        "Dashed lines indicate the daylight plane boundaries",
+        "The diagram uses different shading to distinguish building elements from measurement lines"
+      ],
+      "cross_references": [
+        "Fig 23 Side elevation showing Rear primary daylight plane"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-11 13:44:47",
+  "model_used": "anthropic/claude-sonnet-4"
+}

@@ -1,0 +1,55 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_22.md",
+  "file_name": "Page_22.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "rule": "Attic, closet, & perimeter spaces contributing to Gross Floor Area",
+        "Qualifiers": {
+          "Scope": "This rule defines how to calculate the contribution of certain spaces (attics, closets, perimeters) to the total gross floor area of a structure.",
+          "Applicability": "The rule applies to all accessible floors in a structure.",
+          "Exclusions": "A specific exemption for unusable attic space in historic homes is provided as a special case."
+        },
+        "Variables": {
+          "Dimensional": "head clearance, gross floor area, floor area",
+          "Material": "",
+          "Environmental": "",
+          "Usage": "The rule applies regardless of the floor plan or actual usage of the space. The exception specifically refers to 'unusable attic space'."
+        },
+        "Constants": {
+          "Numerical values": "Head clearance threshold: 5 feet; Exemption area: 500 sf",
+          "Specs": "Head clearance measurement is from 'top of floor to underside of the rafter'.",
+          "Standards": "Code Section 18.04.030(a)(65); Code Section 18.12.040(b)Table 3"
+        },
+        "Conditions": {
+          "Mandatory": "On any accessible floor, any area with at least 5 feet of head clearance must be counted toward the gross floor area.",
+          "Optional": "The exemption of 500 sf for historic homes is optional ('may be exempted').",
+          "Conditional Logic": "IF (floor is accessible) AND (head clearance >= 5 feet) THEN (area is included in gross floor area calculation).",
+          "Dependencies": "The inclusion of an area in the gross floor area calculation is dependent on meeting both the accessibility and head clearance conditions."
+        },
+        "Exceptions": {
+          "Explicit deviations": "An exemption of up to 500 sf of unusable attic space is permitted.",
+          "Alternatives": "",
+          "Special cases": "The exemption is only applicable to 'Category 1 & 2 historic homes'."
+        },
+        "Relationships": {
+          "Hierarchical": "This rule is a specific provision for the general calculation of 'gross floor area'. The exemption for historic homes is a conditional sub-rule that modifies the primary rule.",
+          "Cross-references": "Refers to Code Sections 18.04.030(a)(65) and 18.12.040(b)Table 3. Refers to 'Figure 11' for visual examples (Area A, Area B).",
+          "Logical dependencies": "The availability of the exemption is logically dependent on the building's classification as a 'Category 1 or 2 historic home' and the space being 'unusable attic space'."
+        },
+        "Ambiguous Language": {
+          "Flags": "The term 'unusable attic space' is not defined. The full definition of 'accessible' is not provided, though 'accessible via stairs' is used as an example. 'Figure 11' contains illegible callouts that might contain further information."
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n  {\n    \"rule\": \"Attic, closet, & perimeter spaces contributing to Gross Floor Area\",\n    \"Qualifiers\": {\n      \"Scope\": \"This rule defines how to calculate the contribution of certain spaces (attics, closets, perimeters) to the total gross floor area of a structure.\",\n      \"Applicability\": \"The rule applies to all accessible floors in a structure.\",\n      \"Exclusions\": \"A specific exemption for unusable attic space in historic homes is provided as a special case.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"head clearance, gross floor area, floor area\",\n      \"Material\": \"\",\n      \"Environmental\": \"\",\n      \"Usage\": \"The rule applies regardless of the floor plan or actual usage of the space. The exception specifically refers to 'unusable attic space'.\"\n    },\n    \"Constants\": {\n      \"Numerical values\": \"Head clearance threshold: 5 feet; Exemption area: 500 sf\",\n      \"Specs\": \"Head clearance measurement is from 'top of floor to underside of the rafter'.\",\n      \"Standards\": \"Code Section 18.04.030(a)(65); Code Section 18.12.040(b)Table 3\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"On any accessible floor, any area with at least 5 feet of head clearance must be counted toward the gross floor area.\",\n      \"Optional\": \"The exemption of 500 sf for historic homes is optional ('may be exempted').\",\n      \"Conditional Logic\": \"IF (floor is accessible) AND (head clearance >= 5 feet) THEN (area is included in gross floor area calculation).\",\n      \"Dependencies\": \"The inclusion of an area in the gross floor area calculation is dependent on meeting both the accessibility and head clearance conditions.\"\n    },\n    \"Exceptions\": {\n      \"Explicit deviations\": \"An exemption of up to 500 sf of unusable attic space is permitted.\",\n      \"Alternatives\": \"\",\n      \"Special cases\": \"The exemption is only applicable to 'Category 1 & 2 historic homes'.\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"This rule is a specific provision for the general calculation of 'gross floor area'. The exemption for historic homes is a conditional sub-rule that modifies the primary rule.\",\n      \"Cross-references\": \"Refers to Code Sections 18.04.030(a)(65) and 18.12.040(b)Table 3. Refers to 'Figure 11' for visual examples (Area A, Area B).\",\n      \"Logical dependencies\": \"The availability of the exemption is logically dependent on the building's classification as a 'Category 1 or 2 historic home' and the space being 'unusable attic space'.\"\n    },\n    \"Ambiguous Language\": {\n      \"Flags\": \"The term 'unusable attic space' is not defined. The full definition of 'accessible' is not provided, though 'accessible via stairs' is used as an example. 'Figure 11' contains illegible callouts that might contain further information.\"\n    }\n  }\n]\n```",
+    "response_time": 25.613532304763794,
+    "input_tokens": 874,
+    "output_tokens": 2669,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 16:12:00",
+  "model": "google/gemini-2.5-pro",
+  "success": true
+}

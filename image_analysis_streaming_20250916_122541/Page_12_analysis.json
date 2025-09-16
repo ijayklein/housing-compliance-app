@@ -1,0 +1,23 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_12.png",
+  "image_name": "Page_12.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "PARSE_ERROR",
+      "visual_elements": [],
+      "technical_specifications": [],
+      "structural_elements": {
+        "main_heading": "",
+        "subheadings": [],
+        "sections": []
+      },
+      "additional_notes": [
+        "Failed to parse LLM response: Expecting value: line 1 column 1 (char 0)"
+      ],
+      "cross_references": []
+    },
+    "raw_response": "Here's the extracted information from the image, presented with absolute precision:\n\n**Porches & entry features**\nFacades with defined entryways make a streetscape pleasant and friendly as long as they are not out of scale or proportion.\nThe gross floor area regulations encourage appropriately sized porches and entryways.\n\n**Porch types**\nFor purposes of assessing gross floor area, porches, entryways, and balconies fall into one of these categories:\n\n1.  **Non-roofed porches, entryways, balconies etc.**\n    *   Non-roofed features generally do not count\n\n2.  **Roofed porches on the 1st floor** (Fig 4 A & D on p. 7, Fig 5 on p. 8)\n    *   Openness of the sides determines whether or not these count regardless of the height.\n    *   If they do count, they count only once.\n\n3.  **Roofed entry features on the 1st floor that are less than 12' high (from grade)** (Fig 4 B on p. 7)\n    *   These count once regardless of the design including openness.\n\n4.  **Roofed entry features on the 1st floor that are more than 12' high from grade\u2014\"vaulted entry feature\"** (Fig 4 C & D on p. 7, Fig 6, 7, & 8 on pp. 11-13)\n    *   These count twice regardless of the design including openness.\n\n5.  **Recessed porches on the 1st floor** (Fig 9 on p. 14)\n    *   Height, depth, & openness determine whether or not these count.\n    *   If they count and are less than 17' high, they count only once.\n    *   If they count and are more than 17' high, they count twice.\n\n6.  **Roofed balconies/outdoor areas on upper floors** (Fig 10 on p. 15)\n    *   These count once regardless of the design including openness\n\n**Difference between a porch & an an entry feature:**\nA feature is considered to be a porch rather than an entry feature if it can clearly accommodate more activities than entering and leaving the house.\n\n**Code sections**\n18.04.030(a)(65)\n18.04.030(a)(113.1)\n18.04.030(143.5)\n18.12.040(b)Table 3\n\nThe following pages address the details of assessing these features with regard to gross floor area."
+  },
+  "analysis_timestamp": "2025-09-16 12:25:52",
+  "model_used": "google/gemini-2.5-flash"
+}

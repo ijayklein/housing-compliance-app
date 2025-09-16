@@ -1,0 +1,303 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_47.png",
+  "image_name": "Page_47.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Other excavation considerations\n\nArchitectural compatibility & landscape screening\n\n\u2022 If a guard rail is required, it must be designed to be archi-\ntecturally compatible with the residence.\n\n\u2022 Additionally, landscape screening may be required by the\nPlanning Dept.\n\nTree protection\n\n\u2022 A tree's root system extends well beyond the drip line and the\nroots are likely to be within the first 18\" below grade.\n\n\u2022 It is important to plan excavation in a manner that does not\nharm tree roots.\n\n\u2022 Prior to issuance of building permit, owner to provide evidence\nthat encroaching features or portions of features will not harm\ntrees of any species on subject or abutting lots.\n\n\u2022 Consult the city's Tree Technical Manual for other aspects of\ntree protection during construction.\n\nFig 37 Excavation, landscape screening, and guard rails\n\nFig 38 Excavation and tree roots\n\nBasement\nExcav\nfeatur\n\nWhen planning a basement, consider the\nextent of excavation that will be required e.g.,\nsome excavation techniques require (for safety\nreasons) that the excavation to be at a 1:1\nslope which may impact tree roots severely.\n\n41",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Figure 37: A cross-sectional diagram illustrating a building with a basement and an adjacent excavated area. The building has siding and a window. The ground is shown with dashed lines indicating the original grade and a sloped excavated area. There are small hatched patterns representing earth. The text 'Basement' is vertically aligned on the building's foundation, and 'Excav featur' is vertically aligned next to the excavated area.",
+          "location": "Bottom left"
+        },
+        {
+          "type": "diagram",
+          "description": "Figure 38: A cross-sectional diagram showing a building with a basement and an adjacent tree. The building's foundation is labeled 'Basement'. The ground is shown with a tree, its root system, and a sloped excavated area. A dashed line indicates the original grade, and a solid line indicates the excavation slope. The text 'Excav featur' is vertically aligned next to the excavated area. An annotation below the diagram discusses basement planning and excavation slopes impacting tree roots.",
+          "location": "Bottom right"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Root depth",
+          "value_type": "Measurement",
+          "value": "18",
+          "unit": "inches below grade"
+        },
+        {
+          "parameter": "Excavation slope for safety",
+          "value_type": "Ratio",
+          "value": "1:1",
+          "unit": "None"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Other excavation considerations",
+        "subheadings": [
+          "Architectural compatibility & landscape screening",
+          "Tree protection"
+        ],
+        "sections": [
+          "Architectural compatibility & landscape screening",
+          "Tree protection"
+        ]
+      },
+      "additional_notes": [],
+      "cross_references": [
+        "city's Tree Technical Manual"
+      ],
+      "conditions_and_qualifiers": {
+        "qualifiers": [
+          {
+            "id": "q1",
+            "text": "If a guard rail is required",
+            "applies_to_conditions": [
+              "c1"
+            ],
+            "scope": "Local"
+          },
+          {
+            "id": "q2",
+            "text": "Prior to issuance of building permit",
+            "applies_to_conditions": [
+              "c4"
+            ],
+            "scope": "Local"
+          },
+          {
+            "id": "q3",
+            "text": "When planning a basement",
+            "applies_to_conditions": [
+              "c6"
+            ],
+            "scope": "Local"
+          },
+          {
+            "id": "q4",
+            "text": "some excavation techniques require (for safety reasons)",
+            "applies_to_conditions": [
+              "c7"
+            ],
+            "scope": "Local"
+          }
+        ],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "it must be designed to be architecturally compatible with the residence.",
+            "value_type": "Boolean",
+            "operator": "matches",
+            "threshold_value": "architecturally compatible with the residence",
+            "unit": "None"
+          },
+          {
+            "id": "c2",
+            "text": "landscape screening may be required by the Planning Dept.",
+            "value_type": "Boolean",
+            "operator": "is_required",
+            "threshold_value": "by the Planning Dept.",
+            "unit": "None"
+          },
+          {
+            "id": "c3",
+            "text": "A tree's root system extends well beyond the drip line and the roots are likely to be within the first 18\" below grade.",
+            "value_type": "Measurement",
+            "operator": "<=",
+            "threshold_value": "18",
+            "unit": "inches below grade"
+          },
+          {
+            "id": "c4",
+            "text": "owner to provide evidence that encroaching features or portions of features will not harm trees of any species on subject or abutting lots.",
+            "value_type": "Boolean",
+            "operator": "provides_evidence",
+            "threshold_value": "no harm to trees from encroaching features",
+            "unit": "None"
+          },
+          {
+            "id": "c5",
+            "text": "Consult the city's Tree Technical Manual for other aspects of tree protection during construction.",
+            "value_type": "Boolean",
+            "operator": "consult",
+            "threshold_value": "city's Tree Technical Manual",
+            "unit": "None"
+          },
+          {
+            "id": "c6",
+            "text": "consider the extent of excavation that will be required",
+            "value_type": "Text",
+            "operator": "consider",
+            "threshold_value": "extent of excavation",
+            "unit": "None"
+          },
+          {
+            "id": "c7",
+            "text": "the excavation to be at a 1:1 slope which may impact tree roots severely.",
+            "value_type": "Ratio",
+            "operator": "=",
+            "threshold_value": "1:1",
+            "unit": "slope"
+          }
+        ],
+        "logical_relationships": [
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c1"
+            ],
+            "expression": "IF (q1) THEN (c1)",
+            "evaluation_order": 1
+          },
+          {
+            "operation": "IMPLICIT",
+            "condition_ids": [
+              "c2"
+            ],
+            "expression": "Additionally, (c2)",
+            "evaluation_order": 2
+          },
+          {
+            "operation": "IMPLICIT",
+            "condition_ids": [
+              "c3"
+            ],
+            "expression": "(c3)",
+            "evaluation_order": 3
+          },
+          {
+            "operation": "IMPLICIT",
+            "condition_ids": [],
+            "expression": "It is important to plan excavation in a manner that does not harm tree roots.",
+            "evaluation_order": 4
+          },
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c4"
+            ],
+            "expression": "IF (q2) THEN (c4)",
+            "evaluation_order": 5
+          },
+          {
+            "operation": "IMPLICIT",
+            "condition_ids": [
+              "c5"
+            ],
+            "expression": "(c5)",
+            "evaluation_order": 6
+          },
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c6"
+            ],
+            "expression": "IF (q3) THEN (c6)",
+            "evaluation_order": 7
+          },
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c7"
+            ],
+            "expression": "IF (q4) THEN (c7)",
+            "evaluation_order": 8
+          }
+        ],
+        "execution_sequence": [
+          {
+            "step": 1,
+            "action": "Evaluate if a guard rail is required.",
+            "condition_ids": [],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 2,
+            "action": "If a guard rail is required, ensure it is designed to be architecturally compatible with the residence.",
+            "condition_ids": [
+              "c1"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": [
+              1
+            ]
+          },
+          {
+            "step": 3,
+            "action": "Note that landscape screening may be required by the Planning Dept.",
+            "condition_ids": [
+              "c2"
+            ],
+            "qualifier_ids": [],
+            "dependencies": []
+          },
+          {
+            "step": 4,
+            "action": "Consider that a tree's root system extends beyond the drip line and roots are likely within the first 18\" below grade.",
+            "condition_ids": [
+              "c3"
+            ],
+            "qualifier_ids": [],
+            "dependencies": []
+          },
+          {
+            "step": 5,
+            "action": "Plan excavation in a manner that does not harm tree roots.",
+            "condition_ids": [],
+            "qualifier_ids": [],
+            "dependencies": []
+          },
+          {
+            "step": 6,
+            "action": "Prior to building permit issuance, owner must provide evidence that encroaching features will not harm trees.",
+            "condition_ids": [
+              "c4"
+            ],
+            "qualifier_ids": [
+              "q2"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 7,
+            "action": "Consult the city's Tree Technical Manual for tree protection during construction.",
+            "condition_ids": [
+              "c5"
+            ],
+            "qualifier_ids": [],
+            "dependencies": []
+          },
+          {
+            "step": 8,
+            "action": "When planning a basement, consider the required excavation extent.",
+            "condition_ids": [
+              "c6"
+            ],
+            "qualifier_ids": [
+              "q3"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 9,
+            "action": "If excavation techniques require a 1:1 slope for safety, be aware of potential severe impact on tree roots.",
+            "condition_ids": [
+              "c7"
+            ],
+            "qualifier_ids": [
+              "q4"
+            ],
+            "dependencies": [
+              8
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:24:37",
+  "model_used": "google/gemini-2.5-flash"
+}

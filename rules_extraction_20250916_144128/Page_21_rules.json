@@ -1,0 +1,64 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_21.md",
+  "file_name": "Page_21.md",
+  "analysis": {
+    "extracted_rules": {
+      "rules": [
+        {
+          "title": "Balconies, decks, & outdoor areas on upper floors",
+          "qualifiers": {
+            "scope": "Outdoor areas on upper levels",
+            "applicability": "Roofed outdoor areas count toward gross floor area",
+            "exclusions": "None specified"
+          },
+          "variables": {
+            "dimensional": [
+              "Width of overhang over the balcony",
+              "Width of overhang around the rest of the house"
+            ],
+            "material": [],
+            "environmental": [],
+            "usage": []
+          },
+          "constants": {
+            "numerical_values": [],
+            "specs": [],
+            "standards": [],
+            "procedures": [
+              "An outdoor area is considered roofed if the eave over that area is deeper than the eave over the rest of the building."
+            ]
+          },
+          "conditions": {
+            "mandatory": [
+              "Roofed outdoor areas count toward gross floor area"
+            ],
+            "optional": [],
+            "conditional_logic": [
+              "Area counts if the overhang is greater than the overhang around the rest of the house."
+            ],
+            "dependencies": []
+          },
+          "exceptions": {
+            "explicit_deviations": [],
+            "alternatives": [],
+            "special_cases": [
+              "Pop-out balconies are subject to the same evaluation."
+            ]
+          },
+          "relationships": {
+            "hierarchical": [],
+            "cross_references": [
+              "Comparison of Roof Plans 1 & 2 in Figure 10"
+            ],
+            "logical_dependencies": []
+          }
+        }
+      ]
+    },
+    "parse_error": false,
+    "raw_response": "```json\n{\n  \"rules\": [\n    {\n      \"title\": \"Balconies, decks, & outdoor areas on upper floors\",\n      \"qualifiers\": {\n        \"scope\": \"Outdoor areas on upper levels\",\n        \"applicability\": \"Roofed outdoor areas count toward gross floor area\",\n        \"exclusions\": \"None specified\"\n      },\n      \"variables\": {\n        \"dimensional\": [\n          \"Width of overhang over the balcony\",\n          \"Width of overhang around the rest of the house\"\n        ],\n        \"material\": [],\n        \"environmental\": [],\n        \"usage\": []\n      },\n      \"constants\": {\n        \"numerical_values\": [],\n        \"specs\": [],\n        \"standards\": [],\n        \"procedures\": [\n          \"An outdoor area is considered roofed if the eave over that area is deeper than the eave over the rest of the building.\"\n        ]\n      },\n      \"conditions\": {\n        \"mandatory\": [\n          \"Roofed outdoor areas count toward gross floor area\"\n        ],\n        \"optional\": [],\n        \"conditional_logic\": [\n          \"Area counts if the overhang is greater than the overhang around the rest of the house.\"\n        ],\n        \"dependencies\": []\n      },\n      \"exceptions\": {\n        \"explicit_deviations\": [],\n        \"alternatives\": [],\n        \"special_cases\": [\n          \"Pop-out balconies are subject to the same evaluation.\"\n        ]\n      },\n      \"relationships\": {\n        \"hierarchical\": [],\n        \"cross_references\": [\n          \"Comparison of Roof Plans 1 & 2 in Figure 10\"\n        ],\n        \"logical_dependencies\": []\n      }\n    }\n  ]\n}\n```"
+  },
+  "timestamp": "2025-09-16 14:42:17",
+  "model": "openai/gpt-4o",
+  "success": true
+}

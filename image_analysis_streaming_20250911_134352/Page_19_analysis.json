@@ -1,0 +1,23 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_19.png",
+  "image_name": "Page_19.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "PARSE_ERROR",
+      "visual_elements": [],
+      "technical_specifications": [],
+      "structural_elements": {
+        "main_heading": "",
+        "subheadings": [],
+        "sections": []
+      },
+      "additional_notes": [
+        "Failed to parse LLM response: Expecting ',' delimiter: line 4 column 5 (char 879)"
+      ],
+      "cross_references": []
+    },
+    "raw_response": "```json\n{\n  \"page_analysis\": {\n    \"text_content\": \"Fig 8 Entry feature with 2nd floor above\\n\\nNote: The 2nd floor over a vaulted entry will count as usual. Therefore, the area will count three times toward gross floor area.\\n\\nIntersection of front facade and underside or bottom of 2nd floor\\n\\nTop of 2nd floor\\nBottom of 2nd floor\\n\\nHeight\\n\\nHeight\\n\\nGrade\\n\\nIsometric View                Side Elevation                Porch Floor Plan\\n\\nNote: If the entryway is considered to be a vaulted entryway the area will be counted as follows:\\n\u2022 In this example, a portion of the entryway is recessed beyond the house facade and roof. It is included in the area that counts.\\n\u2022 The area is measured to the outside material of the entryway feature.\\n\u2022 The area counts TWICE toward gross floor area.\\n\\nOutline of entryway floor area that counts TWICE if entryway is vaulted\\n\\n13\"\n    ],\n    \"visual_elements\": [\n      {\n        \"type\": \"diagram\",\n        \"description\": \"Three-part architectural diagram showing an entry feature with 2nd floor above. Left panel shows isometric view of a building corner with entry feature, windows, and second floor overhang. Center panel shows side elevation view with height measurements and floor level indicators. Right panel shows porch floor plan view with outlined area that counts twice if vaulted.\",\n        \"location\": \"Center of page\"\n      },\n      {\n        \"type\": \"figure\",\n        \"description\": \"Isometric view showing a 3D perspective of building entry with grade line, height measurements, intersection points of facade and second floor underside, windows, and entry door\",\n        \"location\": \"Left side of center diagram\"\n      },\n      {\n        \"type\": \"figure\", \n        \"description\": \"Side elevation view showing vertical cross-section with height measurements, top and bottom of 2nd floor marked, and dashed lines indicating measurement points\",\n        \"location\": \"Center of diagram\"\n      },\n      {\n        \"type\": \"figure\",\n        \"description\": \"Porch floor plan view showing overhead view of entry area with outlined floor area that counts twice if entryway is vaulted\",\n        \"location\": \"Right side of center diagram\"\n      }\n    ],\n    \"technical_specifications\": [\n      {\n        \"parameter\": \"Floor area counting multiplier for 2nd floor over vaulted entry\",\n        \"value\": \"3\",\n        \"unit\": \"times toward gross floor area\"\n      },\n      {\n        \"parameter\": \"Floor area counting multiplier for vaulted entryway\",\n        \"value\": \"2\", \n        \"unit\": \"times toward gross floor area\"\n      }\n    ],\n    \"structural_elements\": {\n      \"main_heading\": \"Fig 8 Entry feature with 2nd floor above\",\n      \"subheadings\": [\"Isometric View\", \"Side Elevation\", \"Porch Floor Plan\"],\n      \"sections\": [\"Fig 8\"]\n    },\n    \"additional_notes\": [\n      \"Page number 13 appears at bottom right\",\n      \"Two separate note boxes with different background shading - one gray box at top right, one white box at right side\",\n      \"Dashed lines used throughout diagrams to indicate measurement references and building elements\",\n      \"TWICE appears in bold/emphasized text in both note sections\"\n    ],\n    \"cross_references\": [\n      \"References to gross floor area calculation methodology\"\n    ]\n  }\n}\n```"
+  },
+  "analysis_timestamp": "2025-09-11 13:44:24",
+  "model_used": "anthropic/claude-sonnet-4"
+}

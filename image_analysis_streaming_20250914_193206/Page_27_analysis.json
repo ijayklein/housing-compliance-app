@@ -1,0 +1,94 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_27.png",
+  "image_name": "Page_27.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Contextual front setbacks\nContextual setbacks apply if, and only if, the average of the existing setbacks on the same side of the block\nis 30' or greater.\nHow to determine if a contextual setback applies using Fig 15 below, as an example.\nDoes block have\nmore than 3 lots?\n(incl project lot)\nNote: If block is more\nthan 600' long,\nconsider only lots within\n600' (max. 10 lots).\nYes Exclude the following types of lots:\n\u2022 Flag lot (C)\n\u2022 Multi-family use w/ 3+ units (G)\n\u2022 Corner lot facing cross street (H)\nIs the number of remaining lots more or less\nthan 5 or more?\nYes\nExclude the smallest and largest\nsetbacks:\n\u2022 Smallest (D)\n\u2022 Largest (E)\nFind the average of the remaining\nlots (incl. subject lot). If greater\nthan 30', it applies.\n30 (A)\n33 (B)\n+ 35 (F)\n98 \u00f7 3 = 32.7\nFig 15 Example of a block with a contextual setback of 32.7'\nA\nB\nC\nFlag lot\nSingle-\nFamily\nSingle-\nFamily\nSingle-\nFamily\nD\nSingle\nFamily\n30\u2032\n33\u2032\n20'\n37'\n35\u2032\nF\nG\nSingle-\nFamily\nMultiple-\nFamily\n(3 + units)\nH\nna\nna\nKey\nLot line\nSidewalk\nCurb\nRequired\nsetbacks\nBuildable\narea\nExisting\nhouse\nStreet sideyard\n21",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "A flowchart illustrating the process to determine if a contextual setback applies. It starts with a question 'Does block have more than 3 lots? (incl project lot)'. If 'Yes', it leads to 'Exclude the following types of lots: Flag lot (C), Multi-family use w/ 3+ units (G), Corner lot facing cross street (H)'. Then it asks 'Is the number of remaining lots more or less than 5 or more?'. If 'Yes', it leads to 'Exclude the smallest and largest setbacks: Smallest (D), Largest (E)'. Finally, it instructs to 'Find the average of the remaining lots (incl. subject lot). If greater than 30', it applies.' A calculation box shows '30 (A) + 33 (B) + 35 (F) = 98 \u00f7 3 = 32.7'. A 'Note' box is also present: 'If block is more than 600' long, consider only lots within 600' (max. 10 lots).'",
+          "location": "Top and middle sections of the page"
+        },
+        {
+          "type": "diagram",
+          "description": "A block plan showing eight distinct lots (A, B, C, D, E, F, G, H) with various building types and setbacks. Lots A, B, D, E, F are labeled 'Single-Family'. Lot C is labeled 'Flag lot'. Lot G is labeled 'Multiple-Family (3 + units)'. Lot H is labeled 'Lot fronts onto other street'. Setback measurements are indicated for lots A (30'), B (33'), D (20'), E (37'), F (35'). Lots C, G, H have diagonal lines crossing them, indicating exclusion. Lot H also has 'na' for setback and 'Street sideyard' indicated. A key is provided for 'Lot line', 'Sidewalk', 'Curb', 'Required setbacks', 'Buildable area', and 'Existing house'.",
+          "location": "Bottom section of the page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Minimum average existing setback for contextual setbacks to apply",
+          "value": "30",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Maximum block length for lot consideration",
+          "value": "600",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Maximum number of lots to consider within 600' block length",
+          "value": "10",
+          "unit": "lots"
+        },
+        {
+          "parameter": "Setback for Lot A",
+          "value": "30",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Setback for Lot B",
+          "value": "33",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Setback for Lot D",
+          "value": "20",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Setback for Lot E",
+          "value": "37",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Setback for Lot F",
+          "value": "35",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Calculated average setback",
+          "value": "32.7",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Sum of selected setbacks",
+          "value": "98",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Number of lots used for average calculation",
+          "value": "3",
+          "unit": "lots"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Contextual front setbacks",
+        "subheadings": [
+          "How to determine if a contextual setback applies using Fig 15 below, as an example."
+        ],
+        "sections": []
+      },
+      "additional_notes": [
+        "Page number '21' is present at the bottom right corner.",
+        "The text 'Contextual setbacks apply if, and only if, the average of the existing setbacks on the same side of the block is 30' or greater.' is highlighted with a grey background."
+      ],
+      "cross_references": [
+        "Fig 15"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-14 19:32:27",
+  "model_used": "google/gemini-2.5-flash"
+}

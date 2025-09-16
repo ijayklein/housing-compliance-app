@@ -1,0 +1,60 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_49.md",
+  "file_name": "Page_49.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "rule": "Below-grade patios standards & site planning",
+        "Qualifiers": {
+          "Scope": "Regulations for the design, placement, and dimensions of below-grade patios, including associated lightwells and stairwells, on a residential lot.",
+          "Applicability": "Applies to all excavated features such as below-grade patios. These features are explicitly prohibited on the side of a structure that faces the front yard.",
+          "Exclusions": "The area measurement for a single patio's 200 sf limit explicitly excludes any area devoted to required stairway egress."
+        },
+        "Variables": {
+          "combined_patio_area": "The sum of the areas of all below-grade patios on the lot. Measured by interior dimension.",
+          "lot_area": "The total area of the lot.",
+          "single_patio_area": "The area of an individual below-grade patio. Measured by interior dimension.",
+          "stairway_egress_area": "The area specifically designated for a required stairway egress.",
+          "separation_distance": "The distance separating one below-grade patio area from another.",
+          "side_yard_encroachment_distance": "The distance a feature extends into the required side yard setback.",
+          "rear_yard_encroachment_distance": "The distance a feature extends into the required rear yard setback.",
+          "combined_encroachment_length": "The sum of the lengths of all portions of excavated features that encroach into any required yards.",
+          "overhang_canopy_area": "The area of any overhangs or canopies installed to shelter a below-grade patio."
+        },
+        "Constants": {
+          "max_combined_area_percentage": "2%",
+          "max_area_floor": "200 sf",
+          "max_single_area": "200 sf",
+          "min_separation_distance": "10 ft",
+          "max_side_yard_encroachment": "2 ft",
+          "max_rear_yard_encroachment": "4 ft",
+          "max_combined_encroachment_length": "15 ft",
+          "measurement_procedure": "All area and length measurements are based on the interior dimension of the opening and exclude the enclosing structure.",
+          "screening_methods": "landscaping, fencing"
+        },
+        "Conditions": {
+          "Mandatory": "Location: Must not be located on the side of the structure that faces the front yard. Separation: Each below-grade area must be separated from another by at least 10 feet. Environmental: Excavated features must not be harmful to neighboring trees. (Flag: 'harmful' is ambiguous and requires definition). Drainage: A drainage system must be installed and approved. Architectural: Must be architecturally compatible with the main residence. (Flag: 'architecturally compatible' is ambiguous and requires definition). Screening: Must be screened from off-site views. Lot Coverage: Any sheltering overhangs or canopies must be included in lot coverage calculations.",
+          "Optional": "The method of screening can be landscaping, fencing, or a combination of both, subject to department approval.",
+          "Conditional Logic": "Combined Area Limit: The total combined area of all below-grade patios must not exceed the greater of (2% of the lot area) or (200 sf). Single Area Limit: The area of any single below-grade patio must not exceed 200 sf. Side Yard Encroachment: Allowable encroachment into a required side yard is a maximum of 2 feet. Rear Yard Encroachment: Allowable encroachment into a required rear yard is a maximum of 4 feet. Combined Encroachment Length: The combined length of all encroaching portions of features across all yards may not exceed 15 feet."
+        },
+        "Exceptions": {
+          "area_calculation_exclusion": "When calculating the area of a single patio against its 200 sf limit, the area devoted to required stairway egress shall not be included in the calculation."
+        },
+        "Relationships": {
+          "Hierarchical": "These standards govern 'below-grade patios', which encompass related features like 'lightwells & stairwells'.",
+          "Cross-references": "The area of 'overhangs or canopies' sheltering a patio is explicitly linked to and must be counted towards the separate 'lot coverage' regulation.",
+          "Dependencies": "Approval for the drainage system is required from the Public Works Department. The appropriateness of the screening method (landscaping and/or fencing) is determined by the Planning Department."
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n  {\n    \"rule\": \"Below-grade patios standards & site planning\",\n    \"Qualifiers\": {\n      \"Scope\": \"Regulations for the design, placement, and dimensions of below-grade patios, including associated lightwells and stairwells, on a residential lot.\",\n      \"Applicability\": \"Applies to all excavated features such as below-grade patios. These features are explicitly prohibited on the side of a structure that faces the front yard.\",\n      \"Exclusions\": \"The area measurement for a single patio's 200 sf limit explicitly excludes any area devoted to required stairway egress.\"\n    },\n    \"Variables\": {\n      \"combined_patio_area\": \"The sum of the areas of all below-grade patios on the lot. Measured by interior dimension.\",\n      \"lot_area\": \"The total area of the lot.\",\n      \"single_patio_area\": \"The area of an individual below-grade patio. Measured by interior dimension.\",\n      \"stairway_egress_area\": \"The area specifically designated for a required stairway egress.\",\n      \"separation_distance\": \"The distance separating one below-grade patio area from another.\",\n      \"side_yard_encroachment_distance\": \"The distance a feature extends into the required side yard setback.\",\n      \"rear_yard_encroachment_distance\": \"The distance a feature extends into the required rear yard setback.\",\n      \"combined_encroachment_length\": \"The sum of the lengths of all portions of excavated features that encroach into any required yards.\",\n      \"overhang_canopy_area\": \"The area of any overhangs or canopies installed to shelter a below-grade patio.\"\n    },\n    \"Constants\": {\n      \"max_combined_area_percentage\": \"2%\",\n      \"max_area_floor\": \"200 sf\",\n      \"max_single_area\": \"200 sf\",\n      \"min_separation_distance\": \"10 ft\",\n      \"max_side_yard_encroachment\": \"2 ft\",\n      \"max_rear_yard_encroachment\": \"4 ft\",\n      \"max_combined_encroachment_length\": \"15 ft\",\n      \"measurement_procedure\": \"All area and length measurements are based on the interior dimension of the opening and exclude the enclosing structure.\",\n      \"screening_methods\": \"landscaping, fencing\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"Location: Must not be located on the side of the structure that faces the front yard. Separation: Each below-grade area must be separated from another by at least 10 feet. Environmental: Excavated features must not be harmful to neighboring trees. (Flag: 'harmful' is ambiguous and requires definition). Drainage: A drainage system must be installed and approved. Architectural: Must be architecturally compatible with the main residence. (Flag: 'architecturally compatible' is ambiguous and requires definition). Screening: Must be screened from off-site views. Lot Coverage: Any sheltering overhangs or canopies must be included in lot coverage calculations.\",\n      \"Optional\": \"The method of screening can be landscaping, fencing, or a combination of both, subject to department approval.\",\n      \"Conditional Logic\": \"Combined Area Limit: The total combined area of all below-grade patios must not exceed the greater of (2% of the lot area) or (200 sf). Single Area Limit: The area of any single below-grade patio must not exceed 200 sf. Side Yard Encroachment: Allowable encroachment into a required side yard is a maximum of 2 feet. Rear Yard Encroachment: Allowable encroachment into a required rear yard is a maximum of 4 feet. Combined Encroachment Length: The combined length of all encroaching portions of features across all yards may not exceed 15 feet.\"\n    },\n    \"Exceptions\": {\n      \"area_calculation_exclusion\": \"When calculating the area of a single patio against its 200 sf limit, the area devoted to required stairway egress shall not be included in the calculation.\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"These standards govern 'below-grade patios', which encompass related features like 'lightwells & stairwells'.\",\n      \"Cross-references\": \"The area of 'overhangs or canopies' sheltering a patio is explicitly linked to and must be counted towards the separate 'lot coverage' regulation.\",\n      \"Dependencies\": \"Approval for the drainage system is required from the Public Works Department. The appropriateness of the screening method (landscaping and/or fencing) is determined by the Planning Department.\"\n    }\n  }\n]\n```",
+    "response_time": 40.09107708930969,
+    "input_tokens": 1050,
+    "output_tokens": 4309,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 16:14:45",
+  "model": "google/gemini-2.5-pro",
+  "success": true
+}

@@ -1,0 +1,69 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_24.png",
+  "image_name": "Page_24.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Projections\nArchitectural relief features such as bay windows are pleasant additions to a house design and are encouraged. If they meet certain design criteria they do not count toward gross floor area.\n\nCode sections\n18.04.030(a)(65)\n18.12.040(b)Table 3\n\nBay windows\nBay windows that meet the design criteria below are considered to be decorative architectural features and do NOT count toward gross floor area.\n\nDesign criteria for bay windows that do not count:\n\u2022 Bottom of feature must be at least 18\" above the floor joists\n\u2022 Exterior supports must be features like corbels and/or brackets rather than solid walls\n\u2022 At least 50% of the surface is glass\n\nFig 13 Bay windows\n\n2' max. from bay window surface to facade surface (Typical all)\n\n18\" min. from top of floor to bottom of bay window structure\n\nA\nDoes NOT count\n\nB\nCounts because floor joists continue into the bay window\n\nC & D\nCount because of exterior skirt wall (angled or straight)\n\nE\nCounts because the surface is not at least 50% glass\n\nNote: Bay windows that extend higher than the structure's roof are considered to be dormers and count toward gross floor area.",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Five side-view architectural diagrams labeled A, B, C & D, and E illustrating different bay window configurations. Diagram A shows a bay window with a bottom feature at least 18\" above floor joists and a maximum 2' projection from facade, which does NOT count toward gross floor area. Diagram B shows floor joists continuing into the bay window, so it counts. Diagrams C & D show bay windows with exterior skirt walls (angled or straight), which count. Diagram E shows a bay window with less than 50% glass surface, which counts. Measurements and notes are annotated on the diagrams.",
+          "location": "Middle to bottom of the page"
+        },
+        {
+          "type": "text box",
+          "description": "Gray shaded box with bold text stating: 'Bay windows that meet the design criteria below are considered to be decorative architectural features and do NOT count toward gross floor area.'",
+          "location": "Top right, below main heading"
+        },
+        {
+          "type": "note box",
+          "description": "Dark gray box with white text labeled 'Note:' explaining that bay windows extending higher than the structure's roof are considered dormers and count toward gross floor area.",
+          "location": "Middle right side of the page"
+        },
+        {
+          "type": "sidebar",
+          "description": "Vertical dark gray sidebar on left side with white text describing projections and architectural relief features, encouraging bay windows if they meet design criteria. Also includes code section references.",
+          "location": "Left side of the page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Minimum height of bay window bottom above floor joists",
+          "value": "18",
+          "unit": "inches"
+        },
+        {
+          "parameter": "Maximum projection from bay window surface to facade surface",
+          "value": "2",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum glass surface percentage for bay windows that do not count",
+          "value": "50",
+          "unit": "percent"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Bay windows",
+        "subheadings": [
+          "Design criteria for bay windows that do not count:"
+        ],
+        "sections": [
+          "Projections",
+          "Code sections"
+        ]
+      },
+      "additional_notes": [
+        "Page number 18 at bottom left corner.",
+        "No handwritten annotations or stamps visible.",
+        "Text and diagrams are clear and legible."
+      ],
+      "cross_references": [
+        "Code sections 18.04.030(a)(65)",
+        "Code section 18.12.040(b)Table 3"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-14 19:41:12",
+  "model_used": "openai/gpt-4.1-mini"
+}

@@ -1,0 +1,83 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_37.png",
+  "image_name": "Page_37.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Accessory structures site planning\n\nFig 24 Examples of site planning solutions for accessory structures\n\nA Combo garage / small pool cabana (side by side)\n\u2022 Structure is located in rear yard so it must:\n  a. be at least 75' from the front lot line\n  b. be no more than 12' high\n  c. comply with accessory-structure daylight plane. (Figs 25 & 26 on p. 32)\n\u2022 Structure is located right at the side lot line so that wall and the roof must be fire rated.\n\u2022 Structure has 2 plumbing fixtures.\n\nB Stand-alone pool cabana\n\u2022 Structure is located in rear yard so it must:\n  a. be at least 75' from the front lot line\n  b. be no more than 12' high\n  c. comply with accessory-structure daylight plane. (Figs 25 & 26 on p. 32)\n\u2022 Structure is located right at the rear lot line so that wall and the roof must be fire rated.\n\u2022 Structure has 3 plumbing fixtures \u2014 sink, toilet, and shower and is greater than 200 sf, so it requires a CUP.\n\nC Office above garage\n\u2022 Structure is located within the buildable area, so it doesn't have to comply with regulations for structures in the required yards and it may be two stories high.\n\u2022 Structure has 2 plumbing fixtures.\n\u2022 Structure is new 2nd floor addition and therefore subject to the Planning Department's Individual Review (IR).\n\nNote: Site planning for accessory buildings differs from that for parking structures in one way. A special allowance enables garages to be located in the rear/side yards even when the lot is not deep enough to maintain the 75' minimum distance from the front lot line. This does not apply to non-parking accessory structures.\n\nNote: Because this structure is 2 stories, it must be located within the buildable area regardless of the distances from the lot lines and is subject to Individual Review (IR)\n\nKey\n\u2014 Curb\n\u2014 Lot line\n\u2014 Sidewalk\n\u2014 Required setbacks\n\u2014 Buildable area\n\u2014 Dwelling/parking\n\u2014 Accessory structure",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Three site plan diagrams labeled A, B, and C illustrating examples of accessory structures site planning. Diagram A shows a combo garage/small pool cabana side by side in an interior lot example with a main dwelling, rear yard, front yard, and accessory structures marked. Diagram B shows a stand-alone pool cabana in an interior lot example with a larger pool cabana, main dwelling, 2-car attached garage, rear yard, and front yard. Diagram C shows an office above garage in a corner lot example with main dwelling, rear yard, front yard, and accessory structure labeled 'Office above garage'. Each diagram includes lot lines, required setbacks, buildable area, sidewalks, curbs, and accessory structures with a key explaining the symbols. Measurements such as 'Min. 75'' and '3' min.' are indicated for setbacks.",
+          "location": "Bottom half of the page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Minimum distance from front lot line",
+          "value": "75",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Maximum height of accessory structure (Combo garage / small pool cabana)",
+          "value": "12",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Maximum height of accessory structure (Stand-alone pool cabana)",
+          "value": "12",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Number of plumbing fixtures (Combo garage / small pool cabana)",
+          "value": "2",
+          "unit": "fixtures"
+        },
+        {
+          "parameter": "Number of plumbing fixtures (Stand-alone pool cabana)",
+          "value": "3",
+          "unit": "fixtures"
+        },
+        {
+          "parameter": "Minimum size requiring CUP (Stand-alone pool cabana)",
+          "value": "200",
+          "unit": "square feet"
+        },
+        {
+          "parameter": "Minimum setback from side lot line (Combo garage / small pool cabana)",
+          "value": "0",
+          "unit": "feet (structure located right at side lot line but must be fire rated)"
+        },
+        {
+          "parameter": "Minimum setback from rear lot line (Stand-alone pool cabana)",
+          "value": "0",
+          "unit": "feet (structure located right at rear lot line but must be fire rated)"
+        },
+        {
+          "parameter": "Minimum setback from side yard (Office above garage)",
+          "value": "3",
+          "unit": "feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Accessory structures site planning",
+        "subheadings": [
+          "A Combo garage / small pool cabana (side by side)",
+          "B Stand-alone pool cabana",
+          "C Office above garage"
+        ],
+        "sections": []
+      },
+      "additional_notes": [
+        "Text is clear and legible with no visible quality issues.",
+        "No handwritten annotations or stamps present.",
+        "Page number '31' located at bottom right corner."
+      ],
+      "cross_references": [
+        "Figs 25 & 26 on p. 32",
+        "Planning Department's Individual Review (IR)"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-14 19:41:25",
+  "model_used": "openai/gpt-4.1-mini"
+}

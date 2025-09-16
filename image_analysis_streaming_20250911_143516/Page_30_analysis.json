@@ -1,0 +1,23 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_30.png",
+  "image_name": "Page_30.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "PARSE_ERROR",
+      "visual_elements": [],
+      "technical_specifications": [],
+      "structural_elements": {
+        "main_heading": "",
+        "subheadings": [],
+        "sections": []
+      },
+      "additional_notes": [
+        "Failed to parse LLM response: Unterminated string starting at: line 3 column 21 (char 43)"
+      ],
+      "cross_references": []
+    },
+    "raw_response": "```json\n{\n  \"page_analysis\": {\n    \"text_content\": \"Allowable setback encroachments summary                                                              Allowable rear\\n                                                                                                       encroachment\\nFeature                                     Allowable encroachment                                Code Sec            Illustration\\nMain dwelling                                                                                                  Fig 18 Allowable encroachment: rear yard\\n\u2022 1st floor portion at rear of structure \u2264    to within 14' of rear lot line                      18.12.050 (a)(2)    Fig 18 on this\\n  half width of structure                                                                                             page          Rear yard encroachment\\n\u2022 1st floor extension of an existing front    to within 14' of front lot line                     18."
+  },
+  "analysis_timestamp": "2025-09-11 14:36:24",
+  "model_used": "google/gemini-2.5-pro"
+}

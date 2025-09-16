@@ -1,0 +1,19 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_10.png",
+  "image_name": "Page_10.png",
+  "analysis": {
+    "page_number": "unknown",
+    "main_heading": "PARSE_ERROR",
+    "text_content": "Failed to parse response: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)",
+    "tables": [],
+    "figures": [],
+    "zoning_rules": [],
+    "code_references": [],
+    "quality_notes": "JSON parsing failed: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)",
+    "raw_response": "```json\n{\n  \"page_number\": \"4\",\n  \"main_heading\": \"Lot coverage & floor area\",\n  \"text_content\": \"Lot coverage & floor area\\nThese terms are used to describe the amount of development on a lot.\\nLot coverage describes how much of the lot is covered by structures but doesn't evaluate the mass of those structures.\\nGross floor area describes the mass of the structures by reflecting the cumulative square footage of all visible levels.\\nLot coverage\\nMaximum allowable\\nAllowable lot coverage is expressed by a ratio\u201435% of the lot size.\\nExample calculation:\\nFor a 7,000 sf lot, the allowable lot coverage would be:\\n0.35 x 7,000 sf = 2,450 sf\\nLot coverage includes:\\n\u2022 footprints of all structures including main residence, covered parking, tool sheds, covered pool equipment units, etc.\\n\u2022 projecting elements such as balconies, stairways, porches, patio covers, etc.\\n\u2022 decking that exceeds 30\\\" above grade.\\n\u2022 for roof overhangs or eaves that exceed 4', the portion that is beyond 4'.\\n\u2022 swim",
+    "parse_error": true
+  },
+  "analysis_timestamp": "2025-09-16 12:33:18",
+  "model_used": "google/gemini-2.5-flash",
+  "success": false
+}

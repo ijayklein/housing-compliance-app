@@ -1,0 +1,255 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_19.png",
+  "image_name": "Page_19.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Fig 8 Entry feature with 2nd floor above\n\nNote: The 2nd floor over a vaulted entry\nwill count as usual. Therefore, the area will\ncount three times toward gross floor area.\n\nNote: If the entryway is considered to be a vaulted entryway\nthe area will be counted as follows:\n* In this example, a portion of the entryway is recessed\nbeyond the house facade and roof. It is included in the\narea that counts.\n* The area is measured to the outside material of the entry-\nway feature.\n* The area counts TWICE toward gross floor area.\n\nIntersection of front\nfacade and under-\nside or bottom of\n2nd floor\n\nTop of 2nd floor\nBottom of 2nd floor\n\nHeight\n\nHeight\nGrade\n\nIsometric View\n\nSide Elevation\n\nPorch Floor Plan\n\nOutline of entryway\nfloor area that counts\nTWICE if entryway is\nvaulted\n\n13",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "An isometric view of a building's entry feature with a second floor above. It shows a vaulted entry with columns and windows on the second floor. A dashed line indicates the 'Grade' level, and an arrow labeled 'Height' measures from the grade to the underside of the second floor. Another dashed line extends vertically from the front facade.",
+          "location": "Bottom left"
+        },
+        {
+          "type": "diagram",
+          "description": "A side elevation view of the same building entry feature. It shows the vertical extent of the entry and the second floor. Dashed lines indicate the 'Top of 2nd floor' and 'Bottom of 2nd floor'. An arrow labeled 'Height' measures from the ground level to the bottom of the second floor. A callout points to the 'Intersection of front facade and underside or bottom of 2nd floor'.",
+          "location": "Bottom middle"
+        },
+        {
+          "type": "diagram",
+          "description": "A porch floor plan view, showing the outline of the entryway. A thicker black line indicates the 'Outline of entryway floor area that counts TWICE if entryway is vaulted'. The plan shows the recessed nature of the entryway relative to the main building outline.",
+          "location": "Bottom right"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "2nd floor over vaulted entry area count",
+          "value_type": "Numerical",
+          "value": 3,
+          "unit": "times toward gross floor area"
+        },
+        {
+          "parameter": "Entryway area count (if vaulted)",
+          "value_type": "Numerical",
+          "value": 2,
+          "unit": "times toward gross floor area"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": null,
+        "subheadings": [
+          "Fig 8 Entry feature with 2nd floor above",
+          "Note: The 2nd floor over a vaulted entry will count as usual. Therefore, the area will count three times toward gross floor area.",
+          "Note: If the entryway is considered to be a vaulted entryway the area will be counted as follows:"
+        ],
+        "sections": [
+          "Isometric View",
+          "Side Elevation",
+          "Porch Floor Plan"
+        ]
+      },
+      "additional_notes": [
+        "Page number '13' is present at the bottom right corner."
+      ],
+      "cross_references": [],
+      "conditions_and_qualifiers": {
+        "qualifiers": [
+          {
+            "id": "q1",
+            "text": "The 2nd floor over a vaulted entry",
+            "applies_to_conditions": [
+              "c1"
+            ],
+            "scope": "Global"
+          },
+          {
+            "id": "q2",
+            "text": "If the entryway is considered to be a vaulted entryway",
+            "applies_to_conditions": [
+              "c2",
+              "c3",
+              "c4"
+            ],
+            "scope": "Global"
+          },
+          {
+            "id": "q3",
+            "text": "In this example, a portion of the entryway is recessed beyond the house facade and roof.",
+            "applies_to_conditions": [
+              "c2"
+            ],
+            "scope": "Local"
+          },
+          {
+            "id": "q4",
+            "text": "if entryway is vaulted",
+            "applies_to_conditions": [
+              "c4"
+            ],
+            "scope": "Local"
+          }
+        ],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "the area will count three times toward gross floor area.",
+            "value_type": "Numerical",
+            "operator": "=",
+            "threshold_value": 3,
+            "unit": "times toward gross floor area"
+          },
+          {
+            "id": "c2",
+            "text": "It is included in the area that counts.",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": true,
+            "unit": null
+          },
+          {
+            "id": "c3",
+            "text": "The area is measured to the outside material of the entry-way feature.",
+            "value_type": "Text",
+            "operator": "matches",
+            "threshold_value": "outside material",
+            "unit": null
+          },
+          {
+            "id": "c4",
+            "text": "The area counts TWICE toward gross floor area.",
+            "value_type": "Numerical",
+            "operator": "=",
+            "threshold_value": 2,
+            "unit": "times toward gross floor area"
+          }
+        ],
+        "logical_relationships": [
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "q1"
+            ],
+            "expression": "IF (The 2nd floor over a vaulted entry) THEN (the area will count three times toward gross floor area.)",
+            "evaluation_order": 1
+          },
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "q2"
+            ],
+            "expression": "IF (If the entryway is considered to be a vaulted entryway) THEN (the area will be counted as follows: [c2, c3, c4])",
+            "evaluation_order": 2
+          },
+          {
+            "operation": "AND",
+            "condition_ids": [
+              "q3",
+              "q2"
+            ],
+            "expression": "In this example, a portion of the entryway is recessed beyond the house facade and roof. It is included in the area that counts.",
+            "evaluation_order": 3
+          },
+          {
+            "operation": "AND",
+            "condition_ids": [
+              "q4",
+              "q2"
+            ],
+            "expression": "Outline of entryway floor area that counts TWICE if entryway is vaulted",
+            "evaluation_order": 4
+          }
+        ],
+        "execution_sequence": [
+          {
+            "step": 1,
+            "action": "Evaluate if there is a 2nd floor over a vaulted entry.",
+            "condition_ids": [],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 2,
+            "action": "If step 1 is true, apply the rule for 2nd floor area counting.",
+            "condition_ids": [
+              "c1"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": [
+              "1"
+            ]
+          },
+          {
+            "step": 3,
+            "action": "Evaluate if the entryway is considered a vaulted entryway.",
+            "condition_ids": [],
+            "qualifier_ids": [
+              "q2"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 4,
+            "action": "If step 3 is true, then apply the rules for entryway area counting.",
+            "condition_ids": [
+              "c2",
+              "c3",
+              "c4"
+            ],
+            "qualifier_ids": [
+              "q2"
+            ],
+            "dependencies": [
+              "3"
+            ]
+          },
+          {
+            "step": 5,
+            "action": "Specifically, if the entryway is recessed beyond the house facade and roof, include it in the area that counts.",
+            "condition_ids": [
+              "c2"
+            ],
+            "qualifier_ids": [
+              "q3"
+            ],
+            "dependencies": [
+              "3"
+            ]
+          },
+          {
+            "step": 6,
+            "action": "Measure the entryway area to the outside material of the feature.",
+            "condition_ids": [
+              "c3"
+            ],
+            "qualifier_ids": [
+              "q2"
+            ],
+            "dependencies": [
+              "3"
+            ]
+          },
+          {
+            "step": 7,
+            "action": "Count the entryway area TWICE toward gross floor area.",
+            "condition_ids": [
+              "c4"
+            ],
+            "qualifier_ids": [
+              "q2",
+              "q4"
+            ],
+            "dependencies": [
+              "3"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:24:15",
+  "model_used": "google/gemini-2.5-flash"
+}

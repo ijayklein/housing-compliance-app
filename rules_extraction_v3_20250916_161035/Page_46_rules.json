@@ -1,0 +1,125 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_46.md",
+  "file_name": "Page_46.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "rule": "Basement Floor Area Exemption from FAR",
+        "Qualifiers": {
+          "Scope": "Regulation of building mass and the appearance of the streetscape through floor area calculations.",
+          "Applicability": "Applies to basements, including habitable ones, when calculating total floor area (FAR).",
+          "Exclusions": "Basement area that is below grade and does not contribute to the 'apparent mass' of a building. (Note: 'apparent mass' is ambiguous language)."
+        },
+        "Variables": {
+          "Dimensional": "Height of the first floor above grade.",
+          "Material": "",
+          "Environmental": "",
+          "Usage": "Habitable status of the basement."
+        },
+        "Constants": {
+          "Numerical values": "3 feet (maximum height of first floor above grade for exemption to apply).",
+          "Specs": "",
+          "Standards": "",
+          "Procedures": ""
+        },
+        "Conditions": {
+          "Mandatory": "The basement must be below grade to be considered for exemption.",
+          "Optional": "",
+          "Conditional logic": "IF the first floor is no more than 3 feet above grade, THEN the basement area (even if habitable) is not included in the total floor area.",
+          "Dependencies": "The measurement of 'grade' is dependent on compliance with standards for excavated features."
+        },
+        "Exceptions": {
+          "Explicit deviations": "",
+          "Alternatives": "",
+          "Special cases": "The text implies that if the first floor is more than 3 feet above grade, the basement area will be included in the total floor area."
+        },
+        "Relationships": {
+          "Hierarchical": "This rule is dependent on the outcome of the 'Excavated Features and Grade Measurement' rule.",
+          "Cross-references": "Related to general floor area regulations.",
+          "Logical dependencies": "The exemption is contingent on the final calculated 'grade' level."
+        }
+      },
+      {
+        "rule": "General Basement Standards",
+        "Qualifiers": {
+          "Scope": "Defines mandatory locational and dimensional constraints for all basements.",
+          "Applicability": "All basements.",
+          "Exclusions": "None explicitly stated."
+        },
+        "Variables": {
+          "Dimensional": "Building footprint, Required yards, Rear yard.",
+          "Material": "",
+          "Environmental": "Special flood hazard areas.",
+          "Usage": ""
+        },
+        "Constants": {
+          "Numerical values": "",
+          "Specs": "Basement may not be located in special flood hazard areas. Basement may not extend beyond the building footprint. Basement may not encroach into required yards.",
+          "Standards": "",
+          "Procedures": ""
+        },
+        "Conditions": {
+          "Mandatory": "Basements must not be located in special flood hazard areas. Basements must not extend beyond the building footprint. Basements must not encroach into required yards.",
+          "Optional": "",
+          "Conditional logic": "",
+          "Dependencies": "The exception for yard encroachment depends on regulations governing main dwelling extensions."
+        },
+        "Exceptions": {
+          "Explicit deviations": "A basement may encroach into required yards where the main dwelling is permitted to extend into the rear yard.",
+          "Alternatives": "",
+          "Special cases": ""
+        },
+        "Relationships": {
+          "Hierarchical": "",
+          "Cross-references": "Code Section 18.12.090 (a, b, & c) on Page 40. Code Section 18.12.090 (c) on Page 41. Code Section 18.12.090 (c) (1) on Page 43. Code Section 18.12.090 (c) (2) on Page 44.",
+          "Logical dependencies": "Compliance with these standards is a prerequisite for a valid basement structure, independent of FAR calculations."
+        }
+      },
+      {
+        "rule": "Excavated Features and Grade Measurement for FAR",
+        "Qualifiers": {
+          "Scope": "Defines how excavated features affect the determination of 'grade' for the purpose of floor area (FAR) calculations.",
+          "Applicability": "Excavated features including light wells, stairwells, and below-grade patios.",
+          "Exclusions": "None stated."
+        },
+        "Variables": {
+          "Dimensional": "Size and dimensional limits of excavated features.",
+          "Material": "",
+          "Environmental": "",
+          "Usage": "Type of feature (light well, stairwell, below-grade patio)."
+        },
+        "Constants": {
+          "Numerical values": "",
+          "Specs": "",
+          "Standards": "Specific size and dimensional limits for excavated features are detailed in Figures 39-40 on pages 42-43.",
+          "Procedures": "Grade is measured from the bottom of the excavation if standards are exceeded; otherwise, it is measured from the surrounding ground level."
+        },
+        "Conditions": {
+          "Mandatory": "",
+          "Optional": "",
+          "Conditional logic": "IF excavated features meet the size/dimensional standards (per pp. 42-43), THEN the excavation does not affect the measurement of grade or floor area. IF excavated features exceed the standards, THEN 'grade' is measured from the bottom of the excavated feature.",
+          "Dependencies": ""
+        },
+        "Exceptions": {
+          "Explicit deviations": "",
+          "Alternatives": "",
+          "Special cases": ""
+        },
+        "Relationships": {
+          "Hierarchical": "This is a procedural rule that must be applied before the 'Basement Floor Area Exemption' rule can be evaluated.",
+          "Cross-references": "See Figures 39-40 on pages 42 and 43 for specific standards. See Figure 36 for a visual representation of the conditional grade measurement.",
+          "Logical dependencies": "This rule directly impacts the 'Basement Floor Area Exemption from FAR' rule by defining the reference 'grade' from which the 3-foot height is measured."
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n  {\n    \"rule\": \"Basement Floor Area Exemption from FAR\",\n    \"Qualifiers\": {\n      \"Scope\": \"Regulation of building mass and the appearance of the streetscape through floor area calculations.\",\n      \"Applicability\": \"Applies to basements, including habitable ones, when calculating total floor area (FAR).\",\n      \"Exclusions\": \"Basement area that is below grade and does not contribute to the 'apparent mass' of a building. (Note: 'apparent mass' is ambiguous language).\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"Height of the first floor above grade.\",\n      \"Material\": \"\",\n      \"Environmental\": \"\",\n      \"Usage\": \"Habitable status of the basement.\"\n    },\n    \"Constants\": {\n      \"Numerical values\": \"3 feet (maximum height of first floor above grade for exemption to apply).\",\n      \"Specs\": \"\",\n      \"Standards\": \"\",\n      \"Procedures\": \"\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"The basement must be below grade to be considered for exemption.\",\n      \"Optional\": \"\",\n      \"Conditional logic\": \"IF the first floor is no more than 3 feet above grade, THEN the basement area (even if habitable) is not included in the total floor area.\",\n      \"Dependencies\": \"The measurement of 'grade' is dependent on compliance with standards for excavated features.\"\n    },\n    \"Exceptions\": {\n      \"Explicit deviations\": \"\",\n      \"Alternatives\": \"\",\n      \"Special cases\": \"The text implies that if the first floor is more than 3 feet above grade, the basement area will be included in the total floor area.\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"This rule is dependent on the outcome of the 'Excavated Features and Grade Measurement' rule.\",\n      \"Cross-references\": \"Related to general floor area regulations.\",\n      \"Logical dependencies\": \"The exemption is contingent on the final calculated 'grade' level.\"\n    }\n  },\n  {\n    \"rule\": \"General Basement Standards\",\n    \"Qualifiers\": {\n      \"Scope\": \"Defines mandatory locational and dimensional constraints for all basements.\",\n      \"Applicability\": \"All basements.\",\n      \"Exclusions\": \"None explicitly stated.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"Building footprint, Required yards, Rear yard.\",\n      \"Material\": \"\",\n      \"Environmental\": \"Special flood hazard areas.\",\n      \"Usage\": \"\"\n    },\n    \"Constants\": {\n      \"Numerical values\": \"\",\n      \"Specs\": \"Basement may not be located in special flood hazard areas. Basement may not extend beyond the building footprint. Basement may not encroach into required yards.\",\n      \"Standards\": \"\",\n      \"Procedures\": \"\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"Basements must not be located in special flood hazard areas. Basements must not extend beyond the building footprint. Basements must not encroach into required yards.\",\n      \"Optional\": \"\",\n      \"Conditional logic\": \"\",\n      \"Dependencies\": \"The exception for yard encroachment depends on regulations governing main dwelling extensions.\"\n    },\n    \"Exceptions\": {\n      \"Explicit deviations\": \"A basement may encroach into required yards where the main dwelling is permitted to extend into the rear yard.\",\n      \"Alternatives\": \"\",\n      \"Special cases\": \"\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"\",\n      \"Cross-references\": \"Code Section 18.12.090 (a, b, & c) on Page 40. Code Section 18.12.090 (c) on Page 41. Code Section 18.12.090 (c) (1) on Page 43. Code Section 18.12.090 (c) (2) on Page 44.\",\n      \"Logical dependencies\": \"Compliance with these standards is a prerequisite for a valid basement structure, independent of FAR calculations.\"\n    }\n  },\n  {\n    \"rule\": \"Excavated Features and Grade Measurement for FAR\",\n    \"Qualifiers\": {\n      \"Scope\": \"Defines how excavated features affect the determination of 'grade' for the purpose of floor area (FAR) calculations.\",\n      \"Applicability\": \"Excavated features including light wells, stairwells, and below-grade patios.\",\n      \"Exclusions\": \"None stated.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"Size and dimensional limits of excavated features.\",\n      \"Material\": \"\",\n      \"Environmental\": \"\",\n      \"Usage\": \"Type of feature (light well, stairwell, below-grade patio).\"\n    },\n    \"Constants\": {\n      \"Numerical values\": \"\",\n      \"Specs\": \"\",\n      \"Standards\": \"Specific size and dimensional limits for excavated features are detailed in Figures 39-40 on pages 42-43.\",\n      \"Procedures\": \"Grade is measured from the bottom of the excavation if standards are exceeded; otherwise, it is measured from the surrounding ground level.\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"\",\n      \"Optional\": \"\",\n      \"Conditional logic\": \"IF excavated features meet the size/dimensional standards (per pp. 42-43), THEN the excavation does not affect the measurement of grade or floor area. IF excavated features exceed the standards, THEN 'grade' is measured from the bottom of the excavated feature.\",\n      \"Dependencies\": \"\"\n    },\n    \"Exceptions\": {\n      \"Explicit deviations\": \"\",\n      \"Alternatives\": \"\",\n      \"Special cases\": \"\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"This is a procedural rule that must be applied before the 'Basement Floor Area Exemption' rule can be evaluated.\",\n      \"Cross-references\": \"See Figures 39-40 on pages 42 and 43 for specific standards. See Figure 36 for a visual representation of the conditional grade measurement.\",\n      \"Logical dependencies\": \"This rule directly impacts the 'Basement Floor Area Exemption from FAR' rule by defining the reference 'grade' from which the 3-foot height is measured.\"\n    }\n  }\n]\n```",
+    "response_time": 40.326521158218384,
+    "input_tokens": 1038,
+    "output_tokens": 4537,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 16:14:22",
+  "model": "google/gemini-2.5-pro",
+  "success": true
+}

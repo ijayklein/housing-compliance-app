@@ -1,0 +1,152 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_44.png",
+  "image_name": "Page_44.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Attached garages/carports site planning\n\n\u2022 Attached garages must comply with same setbacks as main dwelling.\n\nNote: Uncovered spaces must be located beyond the required frontyard and beyond the first 10' of the street-side yard.\n\nFig 33 Examples of site planning solutions for attached garages/carports\n\nInterior lot example\nRear yard\nBuildable area\n1-car attached\nMain dwelling\nRequired setback\nFront yard\n\nInterior lot example\nRear yard\nBuildable area\nParking structure\nMain dwelling\n\nCorner lot example\nRear yard\nBuildable area\nMain dwelling\n2-car attached\nFront yard\n\n10'\n\nKey\n_____ Curb\n_____ Lot line\n\u2593\u2593\u2593\u2593 Sidewalk\n- - - Required setbacks\n\u250c\u2500 \u2500\u2510 Buildable area\n\u25a0 Dwelling\n\u25a0 Parking structure\n\u2593\u2593\u2593 No-parking area\n\u2593\u2593\u2593 Uncovered space\n\nA 1-car garage with 2nd space (uncovered) located in the sideyard\nB 1-car garage with 2nd space (uncovered) located in the driveway\nC 2-car garage with no uncovered spaces\n\n38",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Site planning diagram showing three examples of attached garage/carport configurations: Interior lot example A with 1-car garage and uncovered space in sideyard, Interior lot example B with 1-car garage and uncovered space in driveway, and Corner lot example C with 2-car garage. Each example shows buildable areas, setbacks, dwelling placement, and parking structures with detailed measurements and spatial relationships.",
+          "location": "center of page"
+        },
+        {
+          "type": "figure",
+          "description": "Key/legend showing different line types and symbols used in the diagrams including curb, lot line, sidewalk, required setbacks, buildable area, dwelling, parking structure, no-parking area, and uncovered space",
+          "location": "right side of diagram"
+        },
+        {
+          "type": "figure",
+          "description": "Gray box containing note about uncovered spaces location requirements",
+          "location": "upper right portion of page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Street-side yard setback for uncovered spaces",
+          "value_type": "Measurement",
+          "value": "10",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Page number",
+          "value_type": "Numerical",
+          "value": "38",
+          "unit": "None"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Attached garages/carports site planning",
+        "subheadings": [
+          "Fig 33 Examples of site planning solutions for attached garages/carports"
+        ],
+        "sections": [
+          "Note",
+          "Key"
+        ]
+      },
+      "additional_notes": [
+        "Page appears to be from a technical planning manual with clear diagrams and specifications",
+        "Image quality is good with all text clearly readable"
+      ],
+      "cross_references": [
+        "Fig 33 Examples of site planning solutions for attached garages/carports"
+      ],
+      "conditions_and_qualifiers": {
+        "qualifiers": [
+          {
+            "id": "q1",
+            "text": "Attached garages",
+            "applies_to_conditions": [
+              "c1"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q2",
+            "text": "Uncovered spaces",
+            "applies_to_conditions": [
+              "c2",
+              "c3"
+            ],
+            "scope": "Specific"
+          }
+        ],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "must comply with same setbacks as main dwelling",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "true",
+            "unit": "None"
+          },
+          {
+            "id": "c2",
+            "text": "must be located beyond the required frontyard",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "true",
+            "unit": "None"
+          },
+          {
+            "id": "c3",
+            "text": "must be located beyond the first 10' of the street-side yard",
+            "value_type": "Measurement",
+            "operator": ">",
+            "threshold_value": "10",
+            "unit": "feet"
+          }
+        ],
+        "logical_relationships": [
+          {
+            "operation": "AND",
+            "condition_ids": [
+              "c2",
+              "c3"
+            ],
+            "expression": "Uncovered spaces must be located beyond the required frontyard and beyond the first 10' of the street-side yard",
+            "evaluation_order": 1
+          }
+        ],
+        "execution_sequence": [
+          {
+            "step": 1,
+            "action": "Verify attached garage complies with same setbacks as main dwelling",
+            "condition_ids": [
+              "c1"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 2,
+            "action": "Verify uncovered spaces are located beyond required frontyard",
+            "condition_ids": [
+              "c2"
+            ],
+            "qualifier_ids": [
+              "q2"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 3,
+            "action": "Verify uncovered spaces are located beyond first 10 feet of street-side yard",
+            "condition_ids": [
+              "c3"
+            ],
+            "qualifier_ids": [
+              "q2"
+            ],
+            "dependencies": []
+          }
+        ]
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:32:37",
+  "model_used": "anthropic/claude-sonnet-4"
+}

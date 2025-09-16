@@ -1,0 +1,56 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_24.png",
+  "image_name": "Page_24.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Projections\n\nBay windows\n\nBay windows that meet the design criteria below are considered to be decorative architectural features and do NOT count toward gross floor area.\n\nArchitectural relief features such as bay windows are pleasant additions to a house design and are encouraged. If they meet certain design criteria they do not count toward gross floor area.\n\nDesign criteria for bay windows that do not count:\n\n\u2022 Bottom of feature must be at least 18\" above the floor joists\n\u2022 Exterior supports must be features like corbels and/or brackets rather than solid walls\n\u2022 At least 50% of the surface is glass\n\nFig 13 Bay windows\n\n2' max. from bay window surface to facade surface (Typical all)\n\n18\" min. from top of floor joists to bottom of bay window structure\n\nA\nDoes NOT count\n\nB\nCounts because floor joists continue into the bay window\n\nC & D\nCount because of exterior skirt wall (angled or straight)\n\nE\nCounts because the surface is not at least 50% glass\n\nNote: Bay windows that extend higher than the structure's roof are considered to be dormers and count toward gross floor area.\n\nCode sections\n18.04.030(a)(65)\n18.12.040(b)Table 3\n\n18",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Technical diagram labeled 'Fig 13 Bay windows' showing five different bay window configurations (A through E) in cross-section view. Each shows different structural details including floor joists, supports, and window configurations. Includes dimensional annotations showing 2' maximum projection and 18\" minimum clearance requirements.",
+          "location": "Center of page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Bottom clearance above floor joists",
+          "value": "18",
+          "unit": "inches minimum"
+        },
+        {
+          "parameter": "Glass surface requirement",
+          "value": "50",
+          "unit": "percent minimum"
+        },
+        {
+          "parameter": "Maximum projection from facade",
+          "value": "2",
+          "unit": "feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Bay windows",
+        "subheadings": [
+          "Design criteria for bay windows that do not count:",
+          "Code sections"
+        ],
+        "sections": [
+          "Projections"
+        ]
+      },
+      "additional_notes": [
+        "Page number 18 appears at bottom left",
+        "Gray sidebar on left contains explanatory text about architectural relief features",
+        "Gray note box on right side contains important clarification about dormers",
+        "Document appears to be a technical planning manual with clear formatting and professional layout"
+      ],
+      "cross_references": [
+        "18.04.030(a)(65)",
+        "18.12.040(b)Table 3",
+        "Fig 13 Bay windows"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-11 13:44:33",
+  "model_used": "anthropic/claude-sonnet-4"
+}

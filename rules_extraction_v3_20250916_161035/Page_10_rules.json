@@ -1,0 +1,97 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_10.md",
+  "file_name": "Page_10.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "rule": "Lot Coverage",
+        "Qualifiers": {
+          "Scope": "Describes how much of a lot is covered by structures, without evaluating the mass of those structures.",
+          "Applicability": "Applies to the calculation of the total footprint of all structures on a lot.",
+          "Exclusions": "Excludes roof overhangs up to 4 feet and uncovered structures less than 30 inches above grade."
+        },
+        "Variables": {
+          "lot_size": "The total area of the lot (e.g., in square feet).",
+          "deck_height_above_grade": "The height of a deck measured from grade.",
+          "pool_spa_height_above_grade": "The height of a swimming pool or spa measured from grade.",
+          "roof_overhang_projection": "The horizontal distance an eave or roof overhang projects from the structure."
+        },
+        "Constants": {
+          "max_allowable_ratio": "35% (0.35)",
+          "height_threshold_for_inclusion": "30 inches",
+          "roof_overhang_exclusion_limit": "4 feet",
+          "additional_coverage_allowance": "5%",
+          "note_on_porch_deck_qualification": "To qualify as a structure less than 30 inches above grade, a porch or deck may only have open railings above 30 inches\u2014no solid half walls."
+        },
+        "Conditions": {
+          "Mandatory": "The total lot coverage must not exceed the maximum allowable percentage of the lot size.",
+          "Optional": "",
+          "Conditional Logic": "Decking is included in lot coverage IF its height exceeds 30 inches above grade. Swimming pools and spas are included IF their height exceeds 30 inches above grade. For roof overhangs, the portion that exceeds 4 feet is included.",
+          "Dependencies": "The calculation of allowable lot coverage area is dependent on the 'lot_size' variable."
+        },
+        "Exceptions": {
+          "Explicit Deviations": "An additional 5% coverage is permitted specifically for covered patios, canopies, and roof overhangs that extend beyond 4 feet.",
+          "Alternatives": "",
+          "Special Cases": "The note on porches/decks with 'solid half walls' provides a special condition that disqualifies them from the 'less than 30 inches' exclusion, even if the main structure is below that height."
+        },
+        "Relationships": {
+          "Hierarchical": "This rule is a component of the 'Lot coverage & floor area' regulations.",
+          "Cross-references": "Code Sections: 18.12.040 (a) Table 2, 18.12.040 (b) Table 3, 18.04.030 (a) (86); Page 4\u20135.",
+          "Logical Dependencies": "Logically related to 'Gross Floor Area' as both regulate development intensity on a lot. The list of included items (e.g., 'tool sheds') is a dependency for accurate calculation."
+        },
+        "Ambiguous Language": [
+          "The term 'etc.' in the list of included projecting elements ('balconies, stairways, porches, patio covers, etc.') is not specific.",
+          "The distinction between 'open railings' and 'solid half walls' may require further definition."
+        ]
+      },
+      {
+        "rule": "Gross Floor Area (GFA)",
+        "Qualifiers": {
+          "Scope": "Describes the mass of structures by reflecting the cumulative square footage of all visible levels.",
+          "Applicability": "Applies to the calculation of the sum of all floor areas in structures on a lot, measured to the outside of exterior stud walls.",
+          "Exclusions": "Accessory buildings that are 120 square feet or less are implicitly excluded."
+        },
+        "Variables": {
+          "lot_area": "The total area of the lot (e.g., in square feet)."
+        },
+        "Constants": {
+          "tier_1_lot_area_threshold": "5,000 sf",
+          "tier_1_gfa_ratio": "45% (0.45)",
+          "tier_2_gfa_ratio": "30% (0.30)",
+          "accessory_building_inclusion_threshold": "120 square feet",
+          "enclosure_threshold_for_inclusion": "50% enclosed and covered",
+          "absolute_max_gfa_for_main_house": "6,000 sf"
+        },
+        "Conditions": {
+          "Mandatory": "The total gross floor area must not exceed the calculated allowable maximum. The main house GFA must not exceed 6,000 sf, regardless of lot size.",
+          "Optional": "",
+          "Conditional Logic": "Allowable GFA is calculated as 45% of the first 5,000 sf of lot area PLUS 30% of any portion of lot area in excess of 5,000 sf. Accessory buildings are included IF they are greater than 120 square feet. Areas are included IF they are greater than 50% enclosed and covered.",
+          "Dependencies": "The calculation of allowable GFA is dependent on the 'lot_area' variable and the tiered ratio system."
+        },
+        "Exceptions": {
+          "Explicit Deviations": "",
+          "Alternatives": "",
+          "Special Cases": "The main house may not exceed 6,000 sf, regardless of the size of the lot. This acts as an absolute cap that can override the standard calculation for very large lots."
+        },
+        "Relationships": {
+          "Hierarchical": "This rule is a component of the 'Lot coverage & floor area' regulations.",
+          "Cross-references": "Code Sections: 18.12.040 (a) Table 2, 18.12.040 (b) Table 3, 18.04.030 (a) (86); Page 4\u20135.",
+          "Logical Dependencies": "Logically related to 'Lot Coverage' as both regulate development intensity on a lot. The calculation is dependent on a tiered system based on lot area."
+        },
+        "Ambiguous Language": [
+          "The phrase 'spaces that meet the criteria for second and third floor equivalents' is ambiguous as the criteria are not defined in the text.",
+          "The definition of 'enclosed' and 'covered' for the 50% threshold may require further clarification."
+        ]
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n  {\n    \"rule\": \"Lot Coverage\",\n    \"Qualifiers\": {\n      \"Scope\": \"Describes how much of a lot is covered by structures, without evaluating the mass of those structures.\",\n      \"Applicability\": \"Applies to the calculation of the total footprint of all structures on a lot.\",\n      \"Exclusions\": \"Excludes roof overhangs up to 4 feet and uncovered structures less than 30 inches above grade.\"\n    },\n    \"Variables\": {\n      \"lot_size\": \"The total area of the lot (e.g., in square feet).\",\n      \"deck_height_above_grade\": \"The height of a deck measured from grade.\",\n      \"pool_spa_height_above_grade\": \"The height of a swimming pool or spa measured from grade.\",\n      \"roof_overhang_projection\": \"The horizontal distance an eave or roof overhang projects from the structure.\"\n    },\n    \"Constants\": {\n      \"max_allowable_ratio\": \"35% (0.35)\",\n      \"height_threshold_for_inclusion\": \"30 inches\",\n      \"roof_overhang_exclusion_limit\": \"4 feet\",\n      \"additional_coverage_allowance\": \"5%\",\n      \"note_on_porch_deck_qualification\": \"To qualify as a structure less than 30 inches above grade, a porch or deck may only have open railings above 30 inches\u2014no solid half walls.\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"The total lot coverage must not exceed the maximum allowable percentage of the lot size.\",\n      \"Optional\": \"\",\n      \"Conditional Logic\": \"Decking is included in lot coverage IF its height exceeds 30 inches above grade. Swimming pools and spas are included IF their height exceeds 30 inches above grade. For roof overhangs, the portion that exceeds 4 feet is included.\",\n      \"Dependencies\": \"The calculation of allowable lot coverage area is dependent on the 'lot_size' variable.\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"An additional 5% coverage is permitted specifically for covered patios, canopies, and roof overhangs that extend beyond 4 feet.\",\n      \"Alternatives\": \"\",\n      \"Special Cases\": \"The note on porches/decks with 'solid half walls' provides a special condition that disqualifies them from the 'less than 30 inches' exclusion, even if the main structure is below that height.\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"This rule is a component of the 'Lot coverage & floor area' regulations.\",\n      \"Cross-references\": \"Code Sections: 18.12.040 (a) Table 2, 18.12.040 (b) Table 3, 18.04.030 (a) (86); Page 4\u20135.\",\n      \"Logical Dependencies\": \"Logically related to 'Gross Floor Area' as both regulate development intensity on a lot. The list of included items (e.g., 'tool sheds') is a dependency for accurate calculation.\"\n    },\n    \"Ambiguous Language\": [\n      \"The term 'etc.' in the list of included projecting elements ('balconies, stairways, porches, patio covers, etc.') is not specific.\",\n      \"The distinction between 'open railings' and 'solid half walls' may require further definition.\"\n    ]\n  },\n  {\n    \"rule\": \"Gross Floor Area (GFA)\",\n    \"Qualifiers\": {\n      \"Scope\": \"Describes the mass of structures by reflecting the cumulative square footage of all visible levels.\",\n      \"Applicability\": \"Applies to the calculation of the sum of all floor areas in structures on a lot, measured to the outside of exterior stud walls.\",\n      \"Exclusions\": \"Accessory buildings that are 120 square feet or less are implicitly excluded.\"\n    },\n    \"Variables\": {\n      \"lot_area\": \"The total area of the lot (e.g., in square feet).\"\n    },\n    \"Constants\": {\n      \"tier_1_lot_area_threshold\": \"5,000 sf\",\n      \"tier_1_gfa_ratio\": \"45% (0.45)\",\n      \"tier_2_gfa_ratio\": \"30% (0.30)\",\n      \"accessory_building_inclusion_threshold\": \"120 square feet\",\n      \"enclosure_threshold_for_inclusion\": \"50% enclosed and covered\",\n      \"absolute_max_gfa_for_main_house\": \"6,000 sf\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"The total gross floor area must not exceed the calculated allowable maximum. The main house GFA must not exceed 6,000 sf, regardless of lot size.\",\n      \"Optional\": \"\",\n      \"Conditional Logic\": \"Allowable GFA is calculated as 45% of the first 5,000 sf of lot area PLUS 30% of any portion of lot area in excess of 5,000 sf. Accessory buildings are included IF they are greater than 120 square feet. Areas are included IF they are greater than 50% enclosed and covered.\",\n      \"Dependencies\": \"The calculation of allowable GFA is dependent on the 'lot_area' variable and the tiered ratio system.\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"\",\n      \"Alternatives\": \"\",\n      \"Special Cases\": \"The main house may not exceed 6,000 sf, regardless of the size of the lot. This acts as an absolute cap that can override the standard calculation for very large lots.\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"This rule is a component of the 'Lot coverage & floor area' regulations.\",\n      \"Cross-references\": \"Code Sections: 18.12.040 (a) Table 2, 18.12.040 (b) Table 3, 18.04.030 (a) (86); Page 4\u20135.\",\n      \"Logical Dependencies\": \"Logically related to 'Lot Coverage' as both regulate development intensity on a lot. The calculation is dependent on a tiered system based on lot area.\"\n    },\n    \"Ambiguous Language\": [\n      \"The phrase 'spaces that meet the criteria for second and third floor equivalents' is ambiguous as the criteria are not defined in the text.\",\n      \"The definition of 'enclosed' and 'covered' for the 50% threshold may require further clarification.\"\n    ]\n  }\n]\n```",
+    "response_time": 27.765509128570557,
+    "input_tokens": 1185,
+    "output_tokens": 3441,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 16:11:08",
+  "model": "google/gemini-2.5-pro",
+  "success": true
+}

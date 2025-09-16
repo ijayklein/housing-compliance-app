@@ -1,0 +1,84 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_21.png",
+  "image_name": "Page_21.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Balconies, decks, & outdoor areas on upper floors\n\nOutdoor areas on upper levels that are roofed DO count toward gross floor area regardless of the design (including whether or not the sides are open).\n\nAn outdoor area on an upper floor is considered to be roofed if the eave over that area is deeper than the eave over the rest of the building. This may be illustrated by comparing Roof Plans 1 & 2 of Fig 10.\n\nFig 10 Balconies\n\nNote: Pop-out balconies are subject to the same evaluation.\n\nRoof Plan 1  Area A: Counts because it is roofed\nArea B: Does not count because this arbor is substantially open\nArea C: Does not count because the overhang is the same size as the overhang around the rest of the house and is considered to be open\n\nRoof Plan 2  Area A: Counts because it is roofed\nArea B: Counts because the overhang here is greater than the overhang around the rest of the house, and considered to be roofed\nArea C: Does not count because it is open",
+      "visual_elements": [
+        {
+          "type": "figure",
+          "description": "3D isometric illustration of a building corner showing two roof plans. Roof plan 1 is indicated by a dashed line closer to the building edge, and Roof plan 2 is indicated by a dashed line further out, illustrating different eave depths over a balcony area.",
+          "location": "Bottom left"
+        },
+        {
+          "type": "diagram",
+          "description": "Roof Plan 1 schematic showing a balcony divided into three labeled areas: A (hatched, roofed), B (arbor, open), and C (open overhang). Dimensions indicate 'Width of overhang over the balcony' and 'Width of overhang around the rest of the house'. Area A counts as roofed, B and C do not count.",
+          "location": "Top right"
+        },
+        {
+          "type": "diagram",
+          "description": "Roof Plan 2 schematic showing a balcony divided into three labeled areas: A (hatched, roofed), B (hatched, roofed overhang), and C (open). Dimensions indicate 'Width of overhang over the balcony' and 'Width of overhang around the rest of the house'. Areas A and B count as roofed, C does not count.",
+          "location": "Bottom right"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Eave depth over balcony",
+          "value": "Deeper than eave over rest of building",
+          "unit": "N/A"
+        },
+        {
+          "parameter": "Roof Plan 1 Area A",
+          "value": "Counts",
+          "unit": "N/A"
+        },
+        {
+          "parameter": "Roof Plan 1 Area B",
+          "value": "Does not count",
+          "unit": "N/A"
+        },
+        {
+          "parameter": "Roof Plan 1 Area C",
+          "value": "Does not count",
+          "unit": "N/A"
+        },
+        {
+          "parameter": "Roof Plan 2 Area A",
+          "value": "Counts",
+          "unit": "N/A"
+        },
+        {
+          "parameter": "Roof Plan 2 Area B",
+          "value": "Counts",
+          "unit": "N/A"
+        },
+        {
+          "parameter": "Roof Plan 2 Area C",
+          "value": "Does not count",
+          "unit": "N/A"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Balconies, decks, & outdoor areas on upper floors",
+        "subheadings": [
+          "Outdoor areas on upper levels that are roofed DO count toward gross floor area regardless of the design (including whether or not the sides are open)."
+        ],
+        "sections": [
+          "Fig 10 Balconies",
+          "Roof Plan 1",
+          "Roof Plan 2"
+        ]
+      },
+      "additional_notes": [
+        "Note box at bottom left states: 'Pop-out balconies are subject to the same evaluation.'",
+        "No handwritten annotations or stamps detected.",
+        "Page number '15' located at bottom right corner."
+      ],
+      "cross_references": [
+        "Fig 10 referenced in text for illustration of roof plans 1 & 2"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-14 19:40:56",
+  "model_used": "openai/gpt-4.1-mini"
+}

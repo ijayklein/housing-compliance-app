@@ -1,0 +1,85 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_47.md",
+  "file_name": "Page_47.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "rule": "Architectural compatibility & landscape screening",
+        "Qualifiers": {
+          "Scope": "Guard rail design and landscape screening",
+          "Applicability": "When a guard rail is required",
+          "Exclusions": "None specified"
+        },
+        "Variables": {
+          "Dimensional": "None specified",
+          "Material": "Architecturally compatible materials",
+          "Environmental": "Landscape screening",
+          "Usage": "Guard rail design"
+        },
+        "Constants": {
+          "Numerical values": "None specified",
+          "Specs": "Architecturally compatible with the residence",
+          "Standards": "None specified",
+          "Procedures": "None specified"
+        },
+        "Conditions": {
+          "Mandatory": "Guard rail must be architecturally compatible",
+          "Optional": "Landscape screening may be required",
+          "Conditional logic": "Landscape screening depends on Planning Dept. requirement",
+          "Dependencies": "None specified"
+        },
+        "Exceptions": {
+          "Explicit deviations": "None specified",
+          "Alternatives": "None specified",
+          "Special cases": "None specified"
+        },
+        "Relationships": {
+          "Hierarchical": "Guard rail design is part of architectural compatibility",
+          "Cross-references": "None specified",
+          "Logical dependencies": "Landscape screening depends on Planning Dept."
+        }
+      },
+      {
+        "rule": "Tree protection",
+        "Qualifiers": {
+          "Scope": "Protection of tree roots during excavation",
+          "Applicability": "All excavation activities near trees",
+          "Exclusions": "None specified"
+        },
+        "Variables": {
+          "Dimensional": "Tree root system extends beyond drip line, within first 18\u201d below grade",
+          "Material": "None specified",
+          "Environmental": "Tree roots",
+          "Usage": "Excavation planning"
+        },
+        "Constants": {
+          "Numerical values": "18 inches below grade",
+          "Specs": "None specified",
+          "Standards": "Consult the city\u2019s Tree Technical Manual",
+          "Procedures": "Provide evidence of no harm to trees before building permit issuance"
+        },
+        "Conditions": {
+          "Mandatory": "Plan excavation to avoid harm to tree roots",
+          "Optional": "None specified",
+          "Conditional logic": "Evidence required prior to building permit issuance",
+          "Dependencies": "Consultation of Tree Technical Manual"
+        },
+        "Exceptions": {
+          "Explicit deviations": "None specified",
+          "Alternatives": "None specified",
+          "Special cases": "None specified"
+        },
+        "Relationships": {
+          "Hierarchical": "Tree protection is part of excavation planning",
+          "Cross-references": "City\u2019s Tree Technical Manual",
+          "Logical dependencies": "Evidence of no harm required for permit"
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n    {\n        \"rule\": \"Architectural compatibility & landscape screening\",\n        \"Qualifiers\": {\n            \"Scope\": \"Guard rail design and landscape screening\",\n            \"Applicability\": \"When a guard rail is required\",\n            \"Exclusions\": \"None specified\"\n        },\n        \"Variables\": {\n            \"Dimensional\": \"None specified\",\n            \"Material\": \"Architecturally compatible materials\",\n            \"Environmental\": \"Landscape screening\",\n            \"Usage\": \"Guard rail design\"\n        },\n        \"Constants\": {\n            \"Numerical values\": \"None specified\",\n            \"Specs\": \"Architecturally compatible with the residence\",\n            \"Standards\": \"None specified\",\n            \"Procedures\": \"None specified\"\n        },\n        \"Conditions\": {\n            \"Mandatory\": \"Guard rail must be architecturally compatible\",\n            \"Optional\": \"Landscape screening may be required\",\n            \"Conditional logic\": \"Landscape screening depends on Planning Dept. requirement\",\n            \"Dependencies\": \"None specified\"\n        },\n        \"Exceptions\": {\n            \"Explicit deviations\": \"None specified\",\n            \"Alternatives\": \"None specified\",\n            \"Special cases\": \"None specified\"\n        },\n        \"Relationships\": {\n            \"Hierarchical\": \"Guard rail design is part of architectural compatibility\",\n            \"Cross-references\": \"None specified\",\n            \"Logical dependencies\": \"Landscape screening depends on Planning Dept.\"\n        }\n    },\n    {\n        \"rule\": \"Tree protection\",\n        \"Qualifiers\": {\n            \"Scope\": \"Protection of tree roots during excavation\",\n            \"Applicability\": \"All excavation activities near trees\",\n            \"Exclusions\": \"None specified\"\n        },\n        \"Variables\": {\n            \"Dimensional\": \"Tree root system extends beyond drip line, within first 18\u201d below grade\",\n            \"Material\": \"None specified\",\n            \"Environmental\": \"Tree roots\",\n            \"Usage\": \"Excavation planning\"\n        },\n        \"Constants\": {\n            \"Numerical values\": \"18 inches below grade\",\n            \"Specs\": \"None specified\",\n            \"Standards\": \"Consult the city\u2019s Tree Technical Manual\",\n            \"Procedures\": \"Provide evidence of no harm to trees before building permit issuance\"\n        },\n        \"Conditions\": {\n            \"Mandatory\": \"Plan excavation to avoid harm to tree roots\",\n            \"Optional\": \"None specified\",\n            \"Conditional logic\": \"Evidence required prior to building permit issuance\",\n            \"Dependencies\": \"Consultation of Tree Technical Manual\"\n        },\n        \"Exceptions\": {\n            \"Explicit deviations\": \"None specified\",\n            \"Alternatives\": \"None specified\",\n            \"Special cases\": \"None specified\"\n        },\n        \"Relationships\": {\n            \"Hierarchical\": \"Tree protection is part of excavation planning\",\n            \"Cross-references\": \"City\u2019s Tree Technical Manual\",\n            \"Logical dependencies\": \"Evidence of no harm required for permit\"\n        }\n    }\n]\n```"
+  },
+  "timestamp": "2025-09-16 14:43:30",
+  "model": "openai/gpt-4o",
+  "success": true
+}

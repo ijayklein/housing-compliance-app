@@ -1,0 +1,53 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_43.md",
+  "file_name": "Page_43.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "rule": "Contextual garage placement",
+        "Qualifiers": {
+          "Scope": "This rule governs the placement of garages on a lot, specifically whether they should be in the front or rear half, based on the existing neighborhood pattern.",
+          "Applicability": "The rule applies if, and only if, a predominant neighborhood pattern exists. A pattern is 'predominant' when more than half of the contributing lots fall into a single category (either front-half or rear-half).",
+          "Exclusions": "For the purpose of determining the predominant pattern, the following lot types are excluded from the calculation: Flag lots, lots with multi-family use of 3 or more units, and corner lots."
+        },
+        "Variables": {
+          "Dimensional": "block_length, distance_from_subject_lot, lot_position (front-half vs rear-half)",
+          "Material": "",
+          "Environmental": "",
+          "Usage": "lot_type (flag, corner, interior), property_use (multi-family 3+ units), garage_presence (present or absent), garage_location (front-half or rear-half), subject_lot_type (corner or interior)"
+        },
+        "Constants": {
+          "Numerical": "Block length threshold: 600'; Lot count alternative for long blocks: 10 lots; Multi-family unit threshold: 3 units; Predominance threshold: > 50%",
+          "Specs": "Front-half pattern lot: A lot with a garage in the front half. Rear-half pattern lot: A lot with a garage in the rear half OR a lot with no garage.",
+          "Standards": "Reference to 'Fig. 32' as an illustrative example.",
+          "Procedures": "1. Exclude specified lot types (flag, multi-family 3+, corner) from the analysis pool. 2. Categorize all remaining lots (including the subject lot) as either 'front-half pattern' or 'rear-half pattern'. 3. Tally the lots in each category to determine if one is predominant (> 50%)."
+        },
+        "Conditions": {
+          "Mandatory": "If a predominant pattern is established, all new projects on that block must place the garage according to that pattern.",
+          "Optional": "Ambiguous Language: For blocks longer than 600', the analysis area is defined as 'lots within 600' OR the 10 lots closest'. The criteria for choosing between these two options are not specified.",
+          "Conditional Logic": "IF block_length > 600', THEN the scope of analysis is limited. IF subject_lot is a corner_lot, THEN the pattern is determined by the street the garage faces. IF one pattern_category > 50% of total_lots, THEN the contextual placement rule is applied.",
+          "Dependencies": "The final garage placement requirement is entirely dependent on the outcome of the predominant pattern determination process."
+        },
+        "Exceptions": {
+          "Explicit Deviations": "The standard analysis of the entire block is deviated from for blocks longer than 600 feet, where a smaller subset of lots is considered.",
+          "Alternatives": "For blocks > 600', an alternative method for defining the analysis area is provided: 'the 10 lots closest to the subject lot' instead of the 'lots within 600''.",
+          "Special Cases": "A lot with no garage is treated as a 'rear-pattern lot' for calculation purposes. Corner lots are excluded from the calculation pool for the main street, but the rule still applies to them based on the pattern of the street their garage faces."
+        },
+        "Relationships": {
+          "Hierarchical": "The top-level rule (mandating garage placement) is contingent on a subordinate procedure (determining if a predominant pattern exists).",
+          "Cross-references": "Text references 'Fig. 32' for visual explanation. Lot types in the example are referenced by letters (A, B, C, etc.). The document header states 'Page 43' while the footer metadata states 'Page number 37', indicating a potential inconsistency.",
+          "Logical Dependencies": "The enforcement of the placement mandate is logically dependent on the successful calculation of a 'predominant pattern'. The calculation itself is dependent on the correct application of exclusions and special case categorizations (e.g., 'no garage' counts as 'rear-pattern')."
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n  {\n    \"rule\": \"Contextual garage placement\",\n    \"Qualifiers\": {\n      \"Scope\": \"This rule governs the placement of garages on a lot, specifically whether they should be in the front or rear half, based on the existing neighborhood pattern.\",\n      \"Applicability\": \"The rule applies if, and only if, a predominant neighborhood pattern exists. A pattern is 'predominant' when more than half of the contributing lots fall into a single category (either front-half or rear-half).\",\n      \"Exclusions\": \"For the purpose of determining the predominant pattern, the following lot types are excluded from the calculation: Flag lots, lots with multi-family use of 3 or more units, and corner lots.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"block_length, distance_from_subject_lot, lot_position (front-half vs rear-half)\",\n      \"Material\": \"\",\n      \"Environmental\": \"\",\n      \"Usage\": \"lot_type (flag, corner, interior), property_use (multi-family 3+ units), garage_presence (present or absent), garage_location (front-half or rear-half), subject_lot_type (corner or interior)\"\n    },\n    \"Constants\": {\n      \"Numerical\": \"Block length threshold: 600'; Lot count alternative for long blocks: 10 lots; Multi-family unit threshold: 3 units; Predominance threshold: > 50%\",\n      \"Specs\": \"Front-half pattern lot: A lot with a garage in the front half. Rear-half pattern lot: A lot with a garage in the rear half OR a lot with no garage.\",\n      \"Standards\": \"Reference to 'Fig. 32' as an illustrative example.\",\n      \"Procedures\": \"1. Exclude specified lot types (flag, multi-family 3+, corner) from the analysis pool. 2. Categorize all remaining lots (including the subject lot) as either 'front-half pattern' or 'rear-half pattern'. 3. Tally the lots in each category to determine if one is predominant (> 50%).\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"If a predominant pattern is established, all new projects on that block must place the garage according to that pattern.\",\n      \"Optional\": \"Ambiguous Language: For blocks longer than 600', the analysis area is defined as 'lots within 600' OR the 10 lots closest'. The criteria for choosing between these two options are not specified.\",\n      \"Conditional Logic\": \"IF block_length > 600', THEN the scope of analysis is limited. IF subject_lot is a corner_lot, THEN the pattern is determined by the street the garage faces. IF one pattern_category > 50% of total_lots, THEN the contextual placement rule is applied.\",\n      \"Dependencies\": \"The final garage placement requirement is entirely dependent on the outcome of the predominant pattern determination process.\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"The standard analysis of the entire block is deviated from for blocks longer than 600 feet, where a smaller subset of lots is considered.\",\n      \"Alternatives\": \"For blocks > 600', an alternative method for defining the analysis area is provided: 'the 10 lots closest to the subject lot' instead of the 'lots within 600''.\",\n      \"Special Cases\": \"A lot with no garage is treated as a 'rear-pattern lot' for calculation purposes. Corner lots are excluded from the calculation pool for the main street, but the rule still applies to them based on the pattern of the street their garage faces.\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"The top-level rule (mandating garage placement) is contingent on a subordinate procedure (determining if a predominant pattern exists).\",\n      \"Cross-references\": \"Text references 'Fig. 32' for visual explanation. Lot types in the example are referenced by letters (A, B, C, etc.). The document header states 'Page 43' while the footer metadata states 'Page number 37', indicating a potential inconsistency.\",\n      \"Logical Dependencies\": \"The enforcement of the placement mandate is logically dependent on the successful calculation of a 'predominant pattern'. The calculation itself is dependent on the correct application of exclusions and special case categorizations (e.g., 'no garage' counts as 'rear-pattern').\"\n    }\n  }\n]\n```",
+    "response_time": 34.186240911483765,
+    "input_tokens": 848,
+    "output_tokens": 3810,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 16:14:06",
+  "model": "google/gemini-2.5-pro",
+  "success": true
+}

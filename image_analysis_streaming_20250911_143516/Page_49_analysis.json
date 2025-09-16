@@ -1,0 +1,87 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_49.png",
+  "image_name": "Page_49.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Below-grade patios standards\n& site planning\n\nFig 40 Examples of site plan w/below-grade patios\n\n\u2022 Such features may not be located on the side of the struc-\n  ture that faces the front yard.\n\n\u2022 Combined area of all such areas not to exceed 2% of\n  the area of the lot or 200 sf, whichever is greater and\n  no single area may exceed 200 sf. Note area devoted to\n  required stairway egress shall not be included in the 200\n  sf limitation.\n\n\u2022 Each such area is separated from another by at least 10'.\n\n\u2022 Allowable encroachment into required side yard is 2'\n  max.\n\n\u2022 Allowable encroachment into required rear yard is 4'.\n\n\u2022 The combined length of all the excavated features or por-\n  tions of features that encroach into the required yards, on\n  all sides of the structure, may not exceed 15'.\n\n\u2022 Excavated features shall not be harmful to neighboring\n  trees.\n\n\u2022 Public Works Department must approve drainage system.\n\n\u2022 Overhangs or canopies installed to shelter such area shall\n  count towards lot coverage.\n\n\u2022 Such areas to be architecturally compatible with resi-\n  dence.\n\n\u2022 Such areas to be screened to off site views by means of\n  landscaping and/or fencing as determined appropriate by\n  Planning Dept.\n\nKey\nCurb\nLot line\nSidewalk\nRequired\nsetbacks\nBuildable\narea\nDwelling\nLightwells\n& stairwells\nLightwells\n& stairwells\nthat encroach\ninto the required\nyards\nLandscaping\nscreening\n\nBelow-grade patios\n\n\u2022 a + b (encroaching features) may not exceed 15'\n\n\u2022 No single below-grade patio may not exceed 200 sf\n\n\u2022 Combined areas of all below-grade patio areas may not\n  exceed 2% of the lot area or 200 sf, which ever is greater\n\nNote: measurments are based on interior dimension of\n      opening and exclude encasing structure.\n\n43",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "A site plan diagram titled 'Fig 40 Examples of site plan w/below-grade patios'. It shows an 'Interior lot example' with a 'Main dwelling' and a '2nd dwelling'. The lot is divided into a 'Front yard', 'Rear yard', and two 'Interior-side yard' areas. Dashed lines indicate 'Required setbacks', defining a 'Buildable area'. Two below-grade patios are shown. One, labeled 'a', is on the side of the main dwelling, encroaching into the side yard with a '2' max. encroachment' and 'landscaping screening'. The other, labeled 'b', is at the rear of the 2nd dwelling, encroaching into the rear yard with a '4' max. encroachment'. A dimension line indicates a '10' min. separation' between the two patios. The patios are represented by different patterns, explained in the key. The length of encroachment for both 'a' and 'b' is indicated with dimension lines.",
+          "location": "Top-right to middle-right of the page"
+        },
+        {
+          "type": "table",
+          "description": "A 'Key' or legend that explains the symbols used in the site plan diagram. It includes symbols for: Curb (solid line), Lot line (long dashed line), Sidewalk (tiled pattern), Required setbacks (short dashed line), Buildable area (light gray shading), Dwelling (medium gray shading), Lightwells & stairwells (solid black), Lightwells & stairwells that encroach into the required yards (diagonal hatching), and Landscaping screening (cloud-like outline).",
+          "location": "Middle-left of the diagram, on the right side of the page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Combined area of below-grade patios",
+          "value": "2",
+          "unit": "% of lot area"
+        },
+        {
+          "parameter": "Combined area of below-grade patios (alternative max)",
+          "value": "200",
+          "unit": "sf"
+        },
+        {
+          "parameter": "Maximum single area of below-grade patio",
+          "value": "200",
+          "unit": "sf"
+        },
+        {
+          "parameter": "Minimum separation between below-grade areas",
+          "value": "10",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Maximum allowable encroachment into required side yard",
+          "value": "2",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Maximum allowable encroachment into required rear yard",
+          "value": "4",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Maximum combined length of encroachment features (all sides)",
+          "value": "15",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Combined length of encroaching features a + b",
+          "value": "15",
+          "unit": "feet (max)"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Below-grade patios standards & site planning",
+        "subheadings": [
+          "Fig 40 Examples of site plan w/below-grade patios",
+          "Key",
+          "Below-grade patios"
+        ],
+        "sections": [
+          "43"
+        ]
+      },
+      "additional_notes": [
+        "The page is numbered '43' in the bottom right corner.",
+        "The layout is two-column, with a list of regulations on the left and a large diagram with its own key and notes on the right.",
+        "The image quality is clear, appearing to be from a digital document or a high-quality scan.",
+        "No handwritten annotations, stamps, or markings are present."
+      ],
+      "cross_references": [
+        "Fig 40",
+        "Public Works Department",
+        "Planning Dept."
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-11 14:36:42",
+  "model_used": "google/gemini-2.5-pro"
+}

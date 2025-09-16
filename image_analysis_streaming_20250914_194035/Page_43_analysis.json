@@ -1,0 +1,50 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_43.png",
+  "image_name": "Page_43.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Contextual garage placement\n\nContextual garage placement applies if, and only if, there is a predominant neighborhood pattern.\n\nHow to determine if contextual garage placement applies (using Fig 32 below as an example)\n\nNote:\n\u2022 If block is more than 600' long, consider only lots within 600' or the 10 lots closest to the subject lot\n\u2022 If subject lot is a corner lot, consider the pattern on the street that the subject garage faces\n\nExclude the following types of lots:\n\u2022 Flag lot (C)\n\u2022 Multi-family use of 3+ units (G)\n\u2022 Corner lots (A & H)\n\nThe remaining lots including the subject lot, contribute to the determination.\n\nNote:\n\u2022 If block more than 600' long, consider only lots within 600' or 10 closest lots.\n\u2022 If subject lot is a corner lot, consider the pattern on the street that the garage faces\n\nDivide the remaining lots, including the subject lot, into two categories:\n\n1. Front-half pattern lots\n\u2022 lots with garage in front half of the lot (F)\n\n2. Rear-half pattern lots\n\u2022 lots with garage in the rear half of the lot (B & D) and\n\u2022 lots with no garage (E) (counts as a rear-pattern lot)\n\nDetermine which pattern category is predominant i.e., into which category more than half of the lots fall.\n\nFront half\n\nRear half\n\nThe contextual-garage-placement regulation DOES apply. Projects on this block must place the garage in the rear half of the lot.\n\nFig 32 Example of a block on which the contextual garage placement regulation applies",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Flowchart showing the process to determine if contextual garage placement applies. It starts with excluding certain lot types (Flag lot C, Multi-family use G, Corner lots A & H), then dividing remaining lots into Front-half pattern lots (lots with garage in front half of lot F) and Rear-half pattern lots (lots with garage in rear half B & D and lots with no garage E). The flowchart ends with a decision box stating that if the rear half pattern is predominant, the contextual garage placement regulation applies and garages must be placed in the rear half of the lot.",
+          "location": "Top-middle of the page"
+        },
+        {
+          "type": "figure",
+          "description": "Illustration of a block with labeled lots A through H showing houses and garages. Lots A and H are marked with large X's indicating exclusion. Lot C is also crossed out. Lots B and D have garages in the rear half, Lot E has no garage, Lot F has a garage in the front half, and Lot G is marked as multi-family with multiple garages. The subject house is on lot F with a garage in the front half. This figure exemplifies the block on which the contextual garage placement regulation applies.",
+          "location": "Bottom of the page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Block length consideration",
+          "value": "600",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Number of lots to consider if block is longer than 600 feet",
+          "value": "10",
+          "unit": "lots"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Contextual garage placement",
+        "subheadings": [
+          "How to determine if contextual garage placement applies",
+          "Note"
+        ],
+        "sections": []
+      },
+      "additional_notes": [
+        "The text is clear and legible with no visible handwritten annotations or stamps.",
+        "Page number 37 is located at the bottom right corner."
+      ],
+      "cross_references": [
+        "Fig 32 referenced in the text as an example"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-14 19:41:29",
+  "model_used": "openai/gpt-4.1-mini"
+}

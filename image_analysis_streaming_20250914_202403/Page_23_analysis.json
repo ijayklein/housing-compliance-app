@@ -1,0 +1,256 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_23.png",
+  "image_name": "Page_23.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "2nd & 3rd floor equivalency\nAreas higher than 17' and 26' above the first floor (that do not already count as floor area e.g., open atrium\nspaces and inaccessible attic spaces), count toward the gross floor area in the form of 2nd and 3rd floor equiva-\nlency regardless of the floor plan or usage of the space. Stairwells will be measured the same way that vaulted\nceiling spaces are measured.\nIn the examples of Fig 12 below the highlighted areas count as follows:\nArea A\n\u2022 once as 1st floor,\n\u2022 again as 2nd floor, and\n\u2022 a third time as 3rd-floor equivalency\nArea B\n\u2022 once as 1st floor,\n\u2022 again as 2nd-floor equivalency\nNote: 200 sf of 3rd floor equivalency may be\nexempted where roof pitch is 4:12 or steeper\n(see \"Height\" section).\nFig 12 2nd & 3rd floor equivalency\nWidth of area that\ncounts as 3rd-floor\nequivalency\nWidth of area\nthat counts as\n2nd-floor\nequivalency\nTop of roof\nmaterial\n(Typical)\n26'\nTop of roof\nmaterial\n(Typical)\n17'\nA\nB\nWidth of area that\ncounts as 3rd-floor\nequivalency\n\u2190\nInaccessible\nattic\nfor vaulted\nceiling)\nWidth of area\nthat counts as\n2nd-floor\nequivalency\n26'\n17'\nA\nB\nWidth of area that counts as 2nd floor\nTop of\nfinished floor\nWidth of area that counts as 2nd floor\n1st\n(Typical)\nflr\nVaulted\nceiling\nspace\n1st fl\n17",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "A cross-sectional diagram of a building showing two different attic/upper floor configurations (labeled A and B) and how different areas are measured for 2nd and 3rd floor equivalency. The diagram on the left shows a building with a 1st floor, a 2nd floor, and an attic space. The attic space is divided into two sections, 'A' and 'B'. Section 'A' is an 'Inaccessible attic (or vaulted ceiling)' area, and section 'B' is a 'Vaulted ceiling space' with a staircase leading up to it. The diagram indicates measurements for 'Width of area that counts as 3rd-floor equivalency' and 'Width of area that counts as 2nd-floor equivalency' within the attic/upper floor. It also shows height references: 'Top of roof material (Typical)' at 26' and 17' above the 'Top of finished floor (Typical)' which is labeled '1st flr'. The diagram on the right is similar but shows a slightly different roofline and internal structure, also indicating 'Inaccessible attic (or vaulted ceiling)' and 'Vaulted ceiling space' with corresponding width measurements for 2nd and 3rd floor equivalency, and height references at 26' and 17' above the '1st fl'. Both diagrams show hatched areas representing the counted floor equivalencies.",
+          "location": "Middle to bottom of page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Height threshold for 2nd floor equivalency",
+          "value_type": "Measurement",
+          "value": "17",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Height threshold for 3rd floor equivalency",
+          "value_type": "Measurement",
+          "value": "26",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Exemption for 3rd floor equivalency",
+          "value_type": "Measurement",
+          "value": "200",
+          "unit": "sf"
+        },
+        {
+          "parameter": "Minimum roof pitch for exemption",
+          "value_type": "Text",
+          "value": "4:12",
+          "unit": "None"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "2nd & 3rd floor equivalency",
+        "subheadings": [
+          "Area A",
+          "Area B"
+        ],
+        "sections": []
+      },
+      "additional_notes": [
+        "Page number '17' is present at the bottom right corner.",
+        "The text 'Fig 12 2nd & 3rd floor equivalency' serves as a caption for the diagram."
+      ],
+      "cross_references": [
+        "Fig 12",
+        "\"Height\" section"
+      ],
+      "conditions_and_qualifiers": {
+        "qualifiers": [
+          {
+            "id": "q1",
+            "text": "that do not already count as floor area e.g., open atrium spaces and inaccessible attic spaces",
+            "applies_to_conditions": [
+              "c1",
+              "c2"
+            ],
+            "scope": "Global"
+          },
+          {
+            "id": "q2",
+            "text": "regardless of the floor plan or usage of the space",
+            "applies_to_conditions": [
+              "c1",
+              "c2"
+            ],
+            "scope": "Global"
+          },
+          {
+            "id": "q3",
+            "text": "where roof pitch is 4:12 or steeper",
+            "applies_to_conditions": [
+              "c6"
+            ],
+            "scope": "Specific"
+          }
+        ],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "Areas higher than 17' ... count toward the gross floor area in the form of 2nd ... floor equivalency",
+            "value_type": "Measurement",
+            "operator": ">",
+            "threshold_value": "17",
+            "unit": "feet"
+          },
+          {
+            "id": "c2",
+            "text": "Areas higher than ... 26' above the first floor ... count toward the gross floor area in the form of ... 3rd floor equivalency",
+            "value_type": "Measurement",
+            "operator": ">",
+            "threshold_value": "26",
+            "unit": "feet"
+          },
+          {
+            "id": "c3",
+            "text": "Stairwells will be measured the same way that vaulted ceiling spaces are measured.",
+            "value_type": "Boolean",
+            "operator": "matches",
+            "threshold_value": "true",
+            "unit": "None"
+          },
+          {
+            "id": "c4",
+            "text": "Area A: once as 1st floor",
+            "value_type": "Text",
+            "operator": "contains",
+            "threshold_value": "1st floor",
+            "unit": "None"
+          },
+          {
+            "id": "c5",
+            "text": "Area A: again as 2nd floor",
+            "value_type": "Text",
+            "operator": "contains",
+            "threshold_value": "2nd floor",
+            "unit": "None"
+          },
+          {
+            "id": "c6",
+            "text": "Area A: a third time as 3rd-floor equivalency",
+            "value_type": "Text",
+            "operator": "contains",
+            "threshold_value": "3rd-floor equivalency",
+            "unit": "None"
+          },
+          {
+            "id": "c7",
+            "text": "Area B: once as 1st floor",
+            "value_type": "Text",
+            "operator": "contains",
+            "threshold_value": "1st floor",
+            "unit": "None"
+          },
+          {
+            "id": "c8",
+            "text": "Area B: again as 2nd-floor equivalency",
+            "value_type": "Text",
+            "operator": "contains",
+            "threshold_value": "2nd-floor equivalency",
+            "unit": "None"
+          },
+          {
+            "id": "c9",
+            "text": "200 sf of 3rd floor equivalency may be exempted",
+            "value_type": "Measurement",
+            "operator": "<=",
+            "threshold_value": "200",
+            "unit": "sf"
+          }
+        ],
+        "logical_relationships": [
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c1"
+            ],
+            "expression": "IF (Area is higher than 17' above 1st floor AND NOT (q1)) THEN (count as 2nd floor equivalency)",
+            "evaluation_order": 1
+          },
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c2"
+            ],
+            "expression": "IF (Area is higher than 26' above 1st floor AND NOT (q1)) THEN (count as 3rd floor equivalency)",
+            "evaluation_order": 2
+          },
+          {
+            "operation": "AND",
+            "condition_ids": [
+              "c9",
+              "q3"
+            ],
+            "expression": "200 sf of 3rd floor equivalency may be exempted AND (roof pitch is 4:12 or steeper)",
+            "evaluation_order": 3
+          }
+        ],
+        "execution_sequence": [
+          {
+            "step": 1,
+            "action": "Determine if an area is higher than 17' above the first floor, applying qualifier q1.",
+            "condition_ids": [
+              "c1"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 2,
+            "action": "Determine if an area is higher than 26' above the first floor, applying qualifier q1.",
+            "condition_ids": [
+              "c2"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 3,
+            "action": "Apply measurement rules for stairwells as per vaulted ceiling spaces.",
+            "condition_ids": [
+              "c3"
+            ],
+            "qualifier_ids": [],
+            "dependencies": []
+          },
+          {
+            "step": 4,
+            "action": "Calculate floor equivalency for Area A based on the provided counting rules.",
+            "condition_ids": [
+              "c4",
+              "c5",
+              "c6"
+            ],
+            "qualifier_ids": [],
+            "dependencies": []
+          },
+          {
+            "step": 5,
+            "action": "Calculate floor equivalency for Area B based on the provided counting rules.",
+            "condition_ids": [
+              "c7",
+              "c8"
+            ],
+            "qualifier_ids": [],
+            "dependencies": []
+          },
+          {
+            "step": 6,
+            "action": "Check for exemption of 3rd floor equivalency based on area and roof pitch.",
+            "condition_ids": [
+              "c9"
+            ],
+            "qualifier_ids": [
+              "q3"
+            ],
+            "dependencies": []
+          }
+        ]
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:24:19",
+  "model_used": "google/gemini-2.5-flash"
+}

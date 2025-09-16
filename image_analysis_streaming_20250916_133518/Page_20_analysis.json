@@ -1,0 +1,12 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_20.png",
+  "image_name": "Page_20.png",
+  "analysis": {
+    "raw_content": "# Recessed porches on the 1st floor\n\n## Regulations for Gross Floor Area Calculation\n\n**Recessed porches on the ground floor do NOT count toward gross floor area if ALL the following criteria apply:**\n\n\u2022 Depth of porch is less than 10' and,\n\u2022 Porch ceiling is below 2nd floor and,\n\u2022 Exterior side is substantially open.\n\n## Policy Note\n\n**Note:** It is the city's policy to consider one-story construction to be construction less than 17\" above finished floor. If the porch space is higher, the area will count again as 2nd story equivalency.\n\n## Figure 9 - Recessed porches on the 1st floor\n\nThe page contains two architectural diagrams labeled A and B showing isometric views of buildings with recessed porches.\n\n**Example A:**\n- This example complies with all three criteria and does NOT count toward gross floor area\n- Shows \"Porch ceiling below 2nd floor\" annotation\n- Shows \"Depth < 10'\" annotation\n\n**Example B:**\n- This example violates two of the three criteria:\n  \u2022 the porch depth is greater than 10' and\n  \u2022 the porch ceiling is above the 2nd floor\n- Therefore it DOES count toward gross floor area and if it is higher than 17\" it will count twice (see note).\n- Shows \"Height extends past 2nd floor line\" annotation\n- Shows \"Depth > 10'\" annotation\n\n**Page number:** 14",
+    "content_length": 1281,
+    "parse_error": false
+  },
+  "timestamp": "2025-09-16 13:36:15",
+  "model": "anthropic/claude-sonnet-4",
+  "success": true
+}

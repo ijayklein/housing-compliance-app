@@ -1,0 +1,76 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_12.md",
+  "file_name": "Page_12.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "rule": "Porches and Entry Features",
+        "qualifiers": {
+          "scope": "Porches, entryways, balconies",
+          "applicability": "Gross floor area assessment",
+          "exclusions": "None explicitly mentioned"
+        },
+        "variables": {
+          "dimensional": [
+            "height",
+            "depth",
+            "openness"
+          ],
+          "material": [],
+          "environmental": [],
+          "usage": []
+        },
+        "constants": {
+          "numerical_values": [
+            {
+              "value": 12,
+              "unit": "feet",
+              "context": "Height from grade for roofed entry features"
+            },
+            {
+              "value": 17,
+              "unit": "feet",
+              "context": "Height for recessed porches"
+            }
+          ],
+          "specs": [],
+          "standards": [],
+          "procedures": []
+        },
+        "conditions": {
+          "mandatory": [
+            "Roofed entry features on the 1st floor that are less than 12' high count once",
+            "Roofed entry features on the 1st floor that are more than 12' high count twice"
+          ],
+          "optional": [],
+          "conditional_logic": [
+            "Openness of the sides determines whether roofed porches on the 1st floor count",
+            "Height, depth, & openness determine whether recessed porches count"
+          ],
+          "dependencies": []
+        },
+        "exceptions": {
+          "explicit_deviations": [
+            "Non-roofed features generally do not count"
+          ],
+          "alternatives": [],
+          "special_cases": []
+        },
+        "relationships": {
+          "hierarchical": [
+            "Porches and entry features are part of gross floor area assessment"
+          ],
+          "cross_references": [
+            "Figures 4, 5, 6, 7, 8, 9, 10 on various pages"
+          ],
+          "logical_dependencies": []
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n    {\n        \"rule\": \"Porches and Entry Features\",\n        \"qualifiers\": {\n            \"scope\": \"Porches, entryways, balconies\",\n            \"applicability\": \"Gross floor area assessment\",\n            \"exclusions\": \"None explicitly mentioned\"\n        },\n        \"variables\": {\n            \"dimensional\": [\n                \"height\",\n                \"depth\",\n                \"openness\"\n            ],\n            \"material\": [],\n            \"environmental\": [],\n            \"usage\": []\n        },\n        \"constants\": {\n            \"numerical_values\": [\n                {\n                    \"value\": 12,\n                    \"unit\": \"feet\",\n                    \"context\": \"Height from grade for roofed entry features\"\n                },\n                {\n                    \"value\": 17,\n                    \"unit\": \"feet\",\n                    \"context\": \"Height for recessed porches\"\n                }\n            ],\n            \"specs\": [],\n            \"standards\": [],\n            \"procedures\": []\n        },\n        \"conditions\": {\n            \"mandatory\": [\n                \"Roofed entry features on the 1st floor that are less than 12' high count once\",\n                \"Roofed entry features on the 1st floor that are more than 12' high count twice\"\n            ],\n            \"optional\": [],\n            \"conditional_logic\": [\n                \"Openness of the sides determines whether roofed porches on the 1st floor count\",\n                \"Height, depth, & openness determine whether recessed porches count\"\n            ],\n            \"dependencies\": []\n        },\n        \"exceptions\": {\n            \"explicit_deviations\": [\n                \"Non-roofed features generally do not count\"\n            ],\n            \"alternatives\": [],\n            \"special_cases\": []\n        },\n        \"relationships\": {\n            \"hierarchical\": [\n                \"Porches and entry features are part of gross floor area assessment\"\n            ],\n            \"cross_references\": [\n                \"Figures 4, 5, 6, 7, 8, 9, 10 on various pages\"\n            ],\n            \"logical_dependencies\": []\n        }\n    }\n]\n```"
+  },
+  "timestamp": "2025-09-16 14:42:01",
+  "model": "openai/gpt-4o",
+  "success": true
+}

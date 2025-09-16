@@ -1,0 +1,19 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_20.png",
+  "image_name": "Page_20.png",
+  "analysis": {
+    "page_number": "unknown",
+    "main_heading": "PARSE_ERROR",
+    "text_content": "Failed to parse response: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)",
+    "tables": [],
+    "figures": [],
+    "zoning_rules": [],
+    "code_references": [],
+    "quality_notes": "JSON parsing failed: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)",
+    "raw_response": "```json\n{\n  \"page_number\": \"14\",\n  \"main_heading\": \"Recessed porches on the 1st floor\",\n  \"text_content\": \"Recessed porches on the ground floor do NOT count toward gross floor area if ALL the following criteria apply:\\n\u2022 Depth of porch is less than 10' and,\\n\u2022 Porch ceiling is below 2nd floor and,\\n\u2022 Exterior side is substantially open.\\nNote: It is the city's policy to consider one-story construction to be construction less than 17' above finished floor. If the porch space is higher, the area will count again as 2nd story equivalency.\\nA This example complies with all three critera and does NOT count toward gross floor area\\nB This example violates two of the three critera.\\n\u2022 the porch depth is greater than 10' and\\n\u2022 the porch ceiling is above the 2nd floor\\nTherefore it DOES count toward gross floos area and it it is higher than 17' it will count twice (see note).\",\n  \"tables\": [],\n  \"figures\": [\n    {\n      \"figure_number\": \"Fig 9\",\n      \"caption\": \"Recessed porches on the 1st fl",
+    "parse_error": true
+  },
+  "analysis_timestamp": "2025-09-16 12:33:24",
+  "model_used": "google/gemini-2.5-flash",
+  "success": false
+}

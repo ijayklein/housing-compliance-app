@@ -1,0 +1,163 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_19.md",
+  "file_name": "Page_19.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "rule_id": "REG-P19-R1",
+        "rule_name": "Vaulted Entry with 2nd Floor Area Calculation (3x Multiplier)",
+        "source_text": "Note: The 2nd floor over a vaulted entry will count as usual. Therefore, the area will count three times toward gross floor area.",
+        "analysis": {
+          "Qualifiers": {
+            "scope": "Calculation of gross floor area.",
+            "applicability": "Applies to vaulted entries that have a second floor located directly above them.",
+            "exclusions": "Not specified in the text."
+          },
+          "Variables": [
+            {
+              "name": "entry_area_footprint",
+              "type": "Dimensional",
+              "description": "The floor area footprint of the vaulted entry. The measurement method is not specified in this specific rule but is detailed in a related rule (REG-P19-R2)."
+            },
+            {
+              "name": "gross_floor_area",
+              "type": "Dimensional",
+              "description": "The total gross floor area of the building, to which the calculated area is added."
+            }
+          ],
+          "Constants": [
+            {
+              "name": "area_multiplier",
+              "value": 3,
+              "unit": "none",
+              "description": "The factor by which the entry area footprint is multiplied for gross floor area calculation. Stated as 'three times'."
+            },
+            {
+              "name": "second_floor_area_counting_method",
+              "value": "as usual",
+              "description": "The area of the 2nd floor itself is counted normally.",
+              "ambiguity_flag": "The term 'as usual' is imprecise. It is interpreted to mean the 2nd-floor area is counted once, and the vaulted space below is counted twice, for a total of three counts of the same footprint area. This interpretation requires confirmation."
+            }
+          ],
+          "Conditions": [
+            {
+              "type": "Mandatory",
+              "logic": "IF (entry_type == 'vaulted' AND has_feature == '2nd floor over') THEN (contribution_to_gfa = entry_area_footprint * 3)",
+              "dependencies": [
+                "The classification of an entry as 'vaulted'.",
+                "The presence of a second floor directly over the vaulted entry."
+              ],
+              "ambiguity_flag": "The criteria for classifying an entry as 'vaulted' are not defined in the provided text."
+            }
+          ],
+          "Exceptions": {
+            "description": "No exceptions are explicitly mentioned in the text for this rule."
+          },
+          "Relationships": {
+            "hierarchical": "This rule is a specific method for calculating a component of the total 'gross floor area'.",
+            "cross_references": [
+              {
+                "type": "Figure",
+                "reference": "Figure 8",
+                "description": "Illustrates an 'Entry feature with 2nd floor above'."
+              }
+            ],
+            "logical_dependencies": [
+              {
+                "dependency": "This rule is logically dependent on the definition of 'vaulted entry'.",
+                "ambiguity_flag": "Definition not provided."
+              },
+              {
+                "dependency": "This rule presents a direct conflict with REG-P19-R2, which specifies a 2x multiplier for vaulted entryways. The conditions under which one rule supersedes the other are not defined, creating significant ambiguity. This rule may be a special case (for entries with a 2nd floor), but this is not explicitly stated.",
+                "related_rule_id": "REG-P19-R2"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "rule_id": "REG-P19-R2",
+        "rule_name": "Vaulted Entryway Area Calculation (2x Multiplier)",
+        "source_text": "Note: If the entryway is considered to be a vaulted entryway the area will be counted as follows: ... The area is measured to the outside material of the entry-way feature. ... The area counts TWICE toward gross floor area.",
+        "analysis": {
+          "Qualifiers": {
+            "scope": "Calculation of gross floor area.",
+            "applicability": "Applies to any entryway classified as 'vaulted'.",
+            "exclusions": "Not specified in the text."
+          },
+          "Variables": [
+            {
+              "name": "vaulted_entryway_area",
+              "type": "Dimensional",
+              "description": "The floor area of the vaulted entryway, measured according to a specific procedure."
+            },
+            {
+              "name": "gross_floor_area",
+              "type": "Dimensional",
+              "description": "The total gross floor area of the building, to which the calculated area is added."
+            }
+          ],
+          "Constants": [
+            {
+              "name": "area_multiplier",
+              "value": 2,
+              "unit": "none",
+              "description": "The factor by which the entryway area is multiplied for gross floor area calculation. Stated as 'TWICE'."
+            },
+            {
+              "name": "area_measurement_procedure",
+              "type": "Procedure",
+              "steps": [
+                "Measure to the 'outside material of the entry-way feature'.",
+                "Include any portion of the entryway that is 'recessed beyond the house facade and roof'."
+              ],
+              "reference": "Described in 'Notes paragraph' and visually represented in the 'Porch Floor Plan' diagram."
+            }
+          ],
+          "Conditions": [
+            {
+              "type": "Mandatory",
+              "logic": "IF (entry_type == 'vaulted') THEN (contribution_to_gfa = vaulted_entryway_area * 2)",
+              "dependencies": [
+                "The classification of an entry as 'vaulted'."
+              ],
+              "ambiguity_flag": "The criteria for classifying an entry as 'vaulted' are not defined in the provided text."
+            }
+          ],
+          "Exceptions": {
+            "description": "No exceptions are explicitly mentioned in the text for this rule."
+          },
+          "Relationships": {
+            "hierarchical": "This rule is a method for calculating a component of the total 'gross floor area'.",
+            "cross_references": [
+              {
+                "type": "Diagram",
+                "reference": "Porch Floor Plan",
+                "description": "Shows the 'Outline of entryway floor area that counts TWICE if entryway is vaulted'."
+              }
+            ],
+            "logical_dependencies": [
+              {
+                "dependency": "This rule is logically dependent on the definition of 'vaulted entry'.",
+                "ambiguity_flag": "Definition not provided."
+              },
+              {
+                "dependency": "This rule presents a direct conflict with REG-P19-R1, which specifies a 3x multiplier for a specific type of vaulted entryway (with a 2nd floor over). The relationship between this general rule and the more specific rule is not defined.",
+                "related_rule_id": "REG-P19-R1"
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n  {\n    \"rule_id\": \"REG-P19-R1\",\n    \"rule_name\": \"Vaulted Entry with 2nd Floor Area Calculation (3x Multiplier)\",\n    \"source_text\": \"Note: The 2nd floor over a vaulted entry will count as usual. Therefore, the area will count three times toward gross floor area.\",\n    \"analysis\": {\n      \"Qualifiers\": {\n        \"scope\": \"Calculation of gross floor area.\",\n        \"applicability\": \"Applies to vaulted entries that have a second floor located directly above them.\",\n        \"exclusions\": \"Not specified in the text.\"\n      },\n      \"Variables\": [\n        {\n          \"name\": \"entry_area_footprint\",\n          \"type\": \"Dimensional\",\n          \"description\": \"The floor area footprint of the vaulted entry. The measurement method is not specified in this specific rule but is detailed in a related rule (REG-P19-R2).\"\n        },\n        {\n          \"name\": \"gross_floor_area\",\n          \"type\": \"Dimensional\",\n          \"description\": \"The total gross floor area of the building, to which the calculated area is added.\"\n        }\n      ],\n      \"Constants\": [\n        {\n          \"name\": \"area_multiplier\",\n          \"value\": 3,\n          \"unit\": \"none\",\n          \"description\": \"The factor by which the entry area footprint is multiplied for gross floor area calculation. Stated as 'three times'.\"\n        },\n        {\n          \"name\": \"second_floor_area_counting_method\",\n          \"value\": \"as usual\",\n          \"description\": \"The area of the 2nd floor itself is counted normally.\",\n          \"ambiguity_flag\": \"The term 'as usual' is imprecise. It is interpreted to mean the 2nd-floor area is counted once, and the vaulted space below is counted twice, for a total of three counts of the same footprint area. This interpretation requires confirmation.\"\n        }\n      ],\n      \"Conditions\": [\n        {\n          \"type\": \"Mandatory\",\n          \"logic\": \"IF (entry_type == 'vaulted' AND has_feature == '2nd floor over') THEN (contribution_to_gfa = entry_area_footprint * 3)\",\n          \"dependencies\": [\n            \"The classification of an entry as 'vaulted'.\",\n            \"The presence of a second floor directly over the vaulted entry.\"\n          ],\n          \"ambiguity_flag\": \"The criteria for classifying an entry as 'vaulted' are not defined in the provided text.\"\n        }\n      ],\n      \"Exceptions\": {\n        \"description\": \"No exceptions are explicitly mentioned in the text for this rule.\"\n      },\n      \"Relationships\": {\n        \"hierarchical\": \"This rule is a specific method for calculating a component of the total 'gross floor area'.\",\n        \"cross_references\": [\n          {\n            \"type\": \"Figure\",\n            \"reference\": \"Figure 8\",\n            \"description\": \"Illustrates an 'Entry feature with 2nd floor above'.\"\n          }\n        ],\n        \"logical_dependencies\": [\n          {\n            \"dependency\": \"This rule is logically dependent on the definition of 'vaulted entry'.\",\n            \"ambiguity_flag\": \"Definition not provided.\"\n          },\n          {\n            \"dependency\": \"This rule presents a direct conflict with REG-P19-R2, which specifies a 2x multiplier for vaulted entryways. The conditions under which one rule supersedes the other are not defined, creating significant ambiguity. This rule may be a special case (for entries with a 2nd floor), but this is not explicitly stated.\",\n            \"related_rule_id\": \"REG-P19-R2\"\n          }\n        ]\n      }\n    }\n  },\n  {\n    \"rule_id\": \"REG-P19-R2\",\n    \"rule_name\": \"Vaulted Entryway Area Calculation (2x Multiplier)\",\n    \"source_text\": \"Note: If the entryway is considered to be a vaulted entryway the area will be counted as follows: ... The area is measured to the outside material of the entry-way feature. ... The area counts TWICE toward gross floor area.\",\n    \"analysis\": {\n      \"Qualifiers\": {\n        \"scope\": \"Calculation of gross floor area.\",\n        \"applicability\": \"Applies to any entryway classified as 'vaulted'.\",\n        \"exclusions\": \"Not specified in the text.\"\n      },\n      \"Variables\": [\n        {\n          \"name\": \"vaulted_entryway_area\",\n          \"type\": \"Dimensional\",\n          \"description\": \"The floor area of the vaulted entryway, measured according to a specific procedure.\"\n        },\n        {\n          \"name\": \"gross_floor_area\",\n          \"type\": \"Dimensional\",\n          \"description\": \"The total gross floor area of the building, to which the calculated area is added.\"\n        }\n      ],\n      \"Constants\": [\n        {\n          \"name\": \"area_multiplier\",\n          \"value\": 2,\n          \"unit\": \"none\",\n          \"description\": \"The factor by which the entryway area is multiplied for gross floor area calculation. Stated as 'TWICE'.\"\n        },\n        {\n          \"name\": \"area_measurement_procedure\",\n          \"type\": \"Procedure\",\n          \"steps\": [\n            \"Measure to the 'outside material of the entry-way feature'.\",\n            \"Include any portion of the entryway that is 'recessed beyond the house facade and roof'.\"\n          ],\n          \"reference\": \"Described in 'Notes paragraph' and visually represented in the 'Porch Floor Plan' diagram.\"\n        }\n      ],\n      \"Conditions\": [\n        {\n          \"type\": \"Mandatory\",\n          \"logic\": \"IF (entry_type == 'vaulted') THEN (contribution_to_gfa = vaulted_entryway_area * 2)\",\n          \"dependencies\": [\n            \"The classification of an entry as 'vaulted'.\"\n          ],\n          \"ambiguity_flag\": \"The criteria for classifying an entry as 'vaulted' are not defined in the provided text.\"\n        }\n      ],\n      \"Exceptions\": {\n        \"description\": \"No exceptions are explicitly mentioned in the text for this rule.\"\n      },\n      \"Relationships\": {\n        \"hierarchical\": \"This rule is a method for calculating a component of the total 'gross floor area'.\",\n        \"cross_references\": [\n          {\n            \"type\": \"Diagram\",\n            \"reference\": \"Porch Floor Plan\",\n            \"description\": \"Shows the 'Outline of entryway floor area that counts TWICE if entryway is vaulted'.\"\n          }\n        ],\n        \"logical_dependencies\": [\n          {\n            \"dependency\": \"This rule is logically dependent on the definition of 'vaulted entry'.\",\n            \"ambiguity_flag\": \"Definition not provided.\"\n          },\n          {\n            \"dependency\": \"This rule presents a direct conflict with REG-P19-R1, which specifies a 3x multiplier for a specific type of vaulted entryway (with a 2nd floor over). The relationship between this general rule and the more specific rule is not defined.\",\n            \"related_rule_id\": \"REG-P19-R1\"\n          }\n        ]\n      }\n    }\n  }\n]\n```",
+    "response_time": 43.501994132995605,
+    "input_tokens": 614,
+    "output_tokens": 5238,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 16:01:05",
+  "model": "google/gemini-2.5-pro",
+  "success": true
+}

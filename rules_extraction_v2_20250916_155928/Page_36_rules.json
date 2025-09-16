@@ -1,0 +1,350 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_36.md",
+  "file_name": "Page_36.md",
+  "analysis": {
+    "extracted_rules": {
+      "source_document": {
+        "title": "City Planning Regulations (Extraction)",
+        "page": "36 (Footer shows 30)",
+        "topic": "Accessory structure standards (non-dwelling)"
+      },
+      "regulations": [
+        {
+          "rule_name": "General Rules for All Non-Dwelling Accessory Structures",
+          "qualifiers": {
+            "scope": "Applies to all accessory structures on a lot.",
+            "applicability": "Non-dwelling units.",
+            "exclusions": [
+              "2nd-dwelling units"
+            ],
+            "notes": "There are no minimum lot size requirements for non-dwelling accessory structures."
+          },
+          "variables": [
+            {
+              "name": "use",
+              "type": "usage",
+              "description": "The purpose of the structure, which must be incidental to the main dwelling.",
+              "ambiguous_language": "The term 'incidental' is not defined and is subject to interpretation."
+            },
+            {
+              "name": "total_lot_coverage",
+              "type": "dimensional",
+              "description": "The percentage of a lot that is covered by buildings."
+            },
+            {
+              "name": "total_gross_floor_area",
+              "type": "dimensional",
+              "description": "The total floor area of all buildings on a lot."
+            },
+            {
+              "name": "structure_area",
+              "type": "dimensional",
+              "unit": "square feet"
+            }
+          ],
+          "constants": [
+            {
+              "name": "minimum_separation_from_main_dwelling",
+              "value": 3,
+              "unit": "feet"
+            },
+            {
+              "name": "permit_and_gfa_threshold",
+              "value": 120,
+              "unit": "square feet"
+            }
+          ],
+          "conditions": {
+            "mandatory": [
+              {
+                "type": "usage_restriction",
+                "description": "Must have a use that is incidental to the main dwelling."
+              },
+              {
+                "type": "structural_requirement",
+                "description": "Must be detached from the main dwelling."
+              },
+              {
+                "type": "setback_from_structure",
+                "description": "Must be at least 3 feet from the main dwelling."
+              },
+              {
+                "type": "prohibition",
+                "description": "May NOT have a kitchen."
+              },
+              {
+                "type": "calculation_inclusion",
+                "description": "Counts toward the total lot coverage."
+              }
+            ],
+            "conditional_logic": [
+              {
+                "if": {
+                  "variable": "structure_area",
+                  "operator": ">",
+                  "value": 120,
+                  "unit": "sf"
+                },
+                "then": [
+                  {
+                    "type": "permit_requirement",
+                    "description": "Requires a building permit."
+                  },
+                  {
+                    "type": "calculation_inclusion",
+                    "description": "Counts towards total gross floor area."
+                  }
+                ]
+              }
+            ]
+          },
+          "exceptions": [
+            {
+              "description": "Structures less than 120 sf do not require a building permit.",
+              "reference": "See rule: 'Permit Exception for Small Accessory Structures'"
+            }
+          ],
+          "relationships": {
+            "hierarchical": "This is the base rule set for all other non-dwelling accessory structure rules on this page.",
+            "cross_references": [
+              {
+                "document": "Code Section",
+                "reference": "18.12.080",
+                "page": "30-31"
+              },
+              {
+                "document": "Code Section",
+                "reference": "18.12.080 (b) (4)",
+                "page": "32"
+              }
+            ]
+          }
+        },
+        {
+          "rule_name": "Accessory Structures in Buildable Area",
+          "qualifiers": {
+            "scope": "Applies only to accessory structures located in the 'buildable area' of a lot.",
+            "applicability": "Non-dwelling accessory structures.",
+            "ambiguous_terms": [
+              "buildable area (definition not provided on this page)"
+            ]
+          },
+          "variables": [
+            {
+              "name": "height",
+              "type": "dimensional",
+              "description": "The height of the accessory structure."
+            },
+            {
+              "name": "daylight_plane",
+              "type": "dimensional",
+              "description": "The daylight plane regulation applicable to the accessory structure."
+            }
+          ],
+          "constants": [],
+          "conditions": {
+            "mandatory": [
+              {
+                "type": "regulatory_equivalence",
+                "description": "Are subject to the same height and daylight plane regulations as the main dwelling."
+              }
+            ]
+          },
+          "exceptions": [],
+          "relationships": {
+            "hierarchical": "Sub-rule of 'General Rules for All Non-Dwelling Accessory Structures'. Inherits all conditions from the parent rule.",
+            "logical_dependencies": [
+              "The regulations for height and daylight plane are dependent on the regulations for the 'main dwelling', which are not specified on this page."
+            ]
+          }
+        },
+        {
+          "rule_name": "Accessory Structures in Required Setback",
+          "qualifiers": {
+            "scope": "Applies only to accessory structures located in the 'required setback' of a lot.",
+            "applicability": "Non-dwelling accessory structures.",
+            "ambiguous_terms": [
+              "required setback (definition not provided on this page)",
+              "through lot (definition not provided on this page)"
+            ]
+          },
+          "variables": [
+            {
+              "name": "location",
+              "type": "locational",
+              "values": [
+                "front yard",
+                "street-side yard",
+                "rear yard"
+              ]
+            },
+            {
+              "name": "rear_yard_coverage",
+              "type": "dimensional",
+              "unit": "percent"
+            },
+            {
+              "name": "usage",
+              "type": "usage",
+              "values": [
+                "sleeping",
+                "living"
+              ]
+            },
+            {
+              "name": "plumbing_fixtures_count",
+              "type": "count"
+            },
+            {
+              "name": "structure_area",
+              "type": "dimensional",
+              "unit": "square feet"
+            }
+          ],
+          "constants": [
+            {
+              "name": "max_rear_yard_coverage",
+              "value": 50,
+              "unit": "percent"
+            },
+            {
+              "name": "plumbing_fixture_threshold",
+              "value": 200,
+              "unit": "square feet"
+            },
+            {
+              "name": "max_plumbing_fixtures_above_threshold",
+              "value": 2
+            }
+          ],
+          "conditions": {
+            "mandatory": [
+              {
+                "type": "location_prohibition",
+                "description": "May not be located in the front yard."
+              },
+              {
+                "type": "location_prohibition",
+                "description": "May not be located in the street-side yard."
+              },
+              {
+                "type": "location_prohibition",
+                "description": "May not be located in the rear yard of a through lot."
+              },
+              {
+                "type": "coverage_limit",
+                "description": "May not cover more than 50% of the rear yard."
+              },
+              {
+                "type": "usage_prohibition",
+                "description": "May not be used for sleeping or living."
+              },
+              {
+                "type": "prohibition",
+                "description": "May NOT have a kitchen."
+              },
+              {
+                "type": "regulatory_compliance",
+                "description": "Are subject to the accessory-structure height and daylight plane regulations."
+              }
+            ],
+            "conditional_logic": [
+              {
+                "if": {
+                  "variable": "structure_area",
+                  "operator": ">",
+                  "value": 120,
+                  "unit": "sf"
+                },
+                "then": [
+                  {
+                    "type": "permit_requirement",
+                    "description": "Requires a building permit."
+                  },
+                  {
+                    "type": "calculation_inclusion",
+                    "description": "Counts towards total gross floor area."
+                  }
+                ]
+              },
+              {
+                "if": {
+                  "variable": "structure_area",
+                  "operator": ">",
+                  "value": 200,
+                  "unit": "sf"
+                },
+                "then": [
+                  {
+                    "type": "fixture_limit",
+                    "description": "May have no more than two plumbing fixtures."
+                  }
+                ]
+              }
+            ]
+          },
+          "exceptions": [],
+          "relationships": {
+            "hierarchical": "Sub-rule of 'General Rules for All Non-Dwelling Accessory Structures'. Inherits all conditions from the parent rule.",
+            "cross_references": [
+              {
+                "document": "This book",
+                "reference": "Figs 25-26",
+                "page": "32",
+                "topic": "accessory-structure height and daylight plane regulations"
+              }
+            ]
+          }
+        },
+        {
+          "rule_name": "Permit Exception for Small Accessory Structures",
+          "qualifiers": {
+            "scope": "Applies to accessory structures with an area less than the specified threshold.",
+            "applicability": "All non-dwelling accessory structures."
+          },
+          "variables": [
+            {
+              "name": "structure_area",
+              "type": "dimensional",
+              "unit": "square feet"
+            }
+          ],
+          "constants": [
+            {
+              "name": "permit_exception_threshold",
+              "value": 120,
+              "unit": "square feet"
+            }
+          ],
+          "conditions": {
+            "mandatory": [
+              {
+                "type": "regulatory_compliance",
+                "description": "Must still comply with all zoning regulations, even if a permit is not required."
+              }
+            ]
+          },
+          "exceptions": [
+            {
+              "description": "This rule defines an exception to the general building permit requirement based on structure size."
+            }
+          ],
+          "relationships": {
+            "logical_dependencies": [
+              "This rule modifies the 'building permit' condition found in 'General Rules for All Non-Dwelling Accessory Structures' and 'Accessory Structures in Required Setback'."
+            ]
+          }
+        }
+      ]
+    },
+    "parse_error": false,
+    "raw_response": "```json\n{\n  \"source_document\": {\n    \"title\": \"City Planning Regulations (Extraction)\",\n    \"page\": \"36 (Footer shows 30)\",\n    \"topic\": \"Accessory structure standards (non-dwelling)\"\n  },\n  \"regulations\": [\n    {\n      \"rule_name\": \"General Rules for All Non-Dwelling Accessory Structures\",\n      \"qualifiers\": {\n        \"scope\": \"Applies to all accessory structures on a lot.\",\n        \"applicability\": \"Non-dwelling units.\",\n        \"exclusions\": [\n          \"2nd-dwelling units\"\n        ],\n        \"notes\": \"There are no minimum lot size requirements for non-dwelling accessory structures.\"\n      },\n      \"variables\": [\n        {\n          \"name\": \"use\",\n          \"type\": \"usage\",\n          \"description\": \"The purpose of the structure, which must be incidental to the main dwelling.\",\n          \"ambiguous_language\": \"The term 'incidental' is not defined and is subject to interpretation.\"\n        },\n        {\n          \"name\": \"total_lot_coverage\",\n          \"type\": \"dimensional\",\n          \"description\": \"The percentage of a lot that is covered by buildings.\"\n        },\n        {\n          \"name\": \"total_gross_floor_area\",\n          \"type\": \"dimensional\",\n          \"description\": \"The total floor area of all buildings on a lot.\"\n        },\n        {\n          \"name\": \"structure_area\",\n          \"type\": \"dimensional\",\n          \"unit\": \"square feet\"\n        }\n      ],\n      \"constants\": [\n        {\n          \"name\": \"minimum_separation_from_main_dwelling\",\n          \"value\": 3,\n          \"unit\": \"feet\"\n        },\n        {\n          \"name\": \"permit_and_gfa_threshold\",\n          \"value\": 120,\n          \"unit\": \"square feet\"\n        }\n      ],\n      \"conditions\": {\n        \"mandatory\": [\n          {\n            \"type\": \"usage_restriction\",\n            \"description\": \"Must have a use that is incidental to the main dwelling.\"\n          },\n          {\n            \"type\": \"structural_requirement\",\n            \"description\": \"Must be detached from the main dwelling.\"\n          },\n          {\n            \"type\": \"setback_from_structure\",\n            \"description\": \"Must be at least 3 feet from the main dwelling.\"\n          },\n          {\n            \"type\": \"prohibition\",\n            \"description\": \"May NOT have a kitchen.\"\n          },\n          {\n            \"type\": \"calculation_inclusion\",\n            \"description\": \"Counts toward the total lot coverage.\"\n          }\n        ],\n        \"conditional_logic\": [\n          {\n            \"if\": {\n              \"variable\": \"structure_area\",\n              \"operator\": \">\",\n              \"value\": 120,\n              \"unit\": \"sf\"\n            },\n            \"then\": [\n              {\n                \"type\": \"permit_requirement\",\n                \"description\": \"Requires a building permit.\"\n              },\n              {\n                \"type\": \"calculation_inclusion\",\n                \"description\": \"Counts towards total gross floor area.\"\n              }\n            ]\n          }\n        ]\n      },\n      \"exceptions\": [\n        {\n          \"description\": \"Structures less than 120 sf do not require a building permit.\",\n          \"reference\": \"See rule: 'Permit Exception for Small Accessory Structures'\"\n        }\n      ],\n      \"relationships\": {\n        \"hierarchical\": \"This is the base rule set for all other non-dwelling accessory structure rules on this page.\",\n        \"cross_references\": [\n          {\n            \"document\": \"Code Section\",\n            \"reference\": \"18.12.080\",\n            \"page\": \"30-31\"\n          },\n          {\n            \"document\": \"Code Section\",\n            \"reference\": \"18.12.080 (b) (4)\",\n            \"page\": \"32\"\n          }\n        ]\n      }\n    },\n    {\n      \"rule_name\": \"Accessory Structures in Buildable Area\",\n      \"qualifiers\": {\n        \"scope\": \"Applies only to accessory structures located in the 'buildable area' of a lot.\",\n        \"applicability\": \"Non-dwelling accessory structures.\",\n        \"ambiguous_terms\": [\n          \"buildable area (definition not provided on this page)\"\n        ]\n      },\n      \"variables\": [\n        {\n          \"name\": \"height\",\n          \"type\": \"dimensional\",\n          \"description\": \"The height of the accessory structure.\"\n        },\n        {\n          \"name\": \"daylight_plane\",\n          \"type\": \"dimensional\",\n          \"description\": \"The daylight plane regulation applicable to the accessory structure.\"\n        }\n      ],\n      \"constants\": [],\n      \"conditions\": {\n        \"mandatory\": [\n          {\n            \"type\": \"regulatory_equivalence\",\n            \"description\": \"Are subject to the same height and daylight plane regulations as the main dwelling.\"\n          }\n        ]\n      },\n      \"exceptions\": [],\n      \"relationships\": {\n        \"hierarchical\": \"Sub-rule of 'General Rules for All Non-Dwelling Accessory Structures'. Inherits all conditions from the parent rule.\",\n        \"logical_dependencies\": [\n          \"The regulations for height and daylight plane are dependent on the regulations for the 'main dwelling', which are not specified on this page.\"\n        ]\n      }\n    },\n    {\n      \"rule_name\": \"Accessory Structures in Required Setback\",\n      \"qualifiers\": {\n        \"scope\": \"Applies only to accessory structures located in the 'required setback' of a lot.\",\n        \"applicability\": \"Non-dwelling accessory structures.\",\n        \"ambiguous_terms\": [\n          \"required setback (definition not provided on this page)\",\n          \"through lot (definition not provided on this page)\"\n        ]\n      },\n      \"variables\": [\n        {\n          \"name\": \"location\",\n          \"type\": \"locational\",\n          \"values\": [\n            \"front yard\",\n            \"street-side yard\",\n            \"rear yard\"\n          ]\n        },\n        {\n          \"name\": \"rear_yard_coverage\",\n          \"type\": \"dimensional\",\n          \"unit\": \"percent\"\n        },\n        {\n          \"name\": \"usage\",\n          \"type\": \"usage\",\n          \"values\": [\n            \"sleeping\",\n            \"living\"\n          ]\n        },\n        {\n          \"name\": \"plumbing_fixtures_count\",\n          \"type\": \"count\"\n        },\n        {\n          \"name\": \"structure_area\",\n          \"type\": \"dimensional\",\n          \"unit\": \"square feet\"\n        }\n      ],\n      \"constants\": [\n        {\n          \"name\": \"max_rear_yard_coverage\",\n          \"value\": 50,\n          \"unit\": \"percent\"\n        },\n        {\n          \"name\": \"plumbing_fixture_threshold\",\n          \"value\": 200,\n          \"unit\": \"square feet\"\n        },\n        {\n          \"name\": \"max_plumbing_fixtures_above_threshold\",\n          \"value\": 2\n        }\n      ],\n      \"conditions\": {\n        \"mandatory\": [\n          {\n            \"type\": \"location_prohibition\",\n            \"description\": \"May not be located in the front yard.\"\n          },\n          {\n            \"type\": \"location_prohibition\",\n            \"description\": \"May not be located in the street-side yard.\"\n          },\n          {\n            \"type\": \"location_prohibition\",\n            \"description\": \"May not be located in the rear yard of a through lot.\"\n          },\n          {\n            \"type\": \"coverage_limit\",\n            \"description\": \"May not cover more than 50% of the rear yard.\"\n          },\n          {\n            \"type\": \"usage_prohibition\",\n            \"description\": \"May not be used for sleeping or living.\"\n          },\n          {\n            \"type\": \"prohibition\",\n            \"description\": \"May NOT have a kitchen.\"\n          },\n          {\n            \"type\": \"regulatory_compliance\",\n            \"description\": \"Are subject to the accessory-structure height and daylight plane regulations.\"\n          }\n        ],\n        \"conditional_logic\": [\n          {\n            \"if\": {\n              \"variable\": \"structure_area\",\n              \"operator\": \">\",\n              \"value\": 120,\n              \"unit\": \"sf\"\n            },\n            \"then\": [\n              {\n                \"type\": \"permit_requirement\",\n                \"description\": \"Requires a building permit.\"\n              },\n              {\n                \"type\": \"calculation_inclusion\",\n                \"description\": \"Counts towards total gross floor area.\"\n              }\n            ]\n          },\n          {\n            \"if\": {\n              \"variable\": \"structure_area\",\n              \"operator\": \">\",\n              \"value\": 200,\n              \"unit\": \"sf\"\n            },\n            \"then\": [\n              {\n                \"type\": \"fixture_limit\",\n                \"description\": \"May have no more than two plumbing fixtures.\"\n              }\n            ]\n          }\n        ]\n      },\n      \"exceptions\": [],\n      \"relationships\": {\n        \"hierarchical\": \"Sub-rule of 'General Rules for All Non-Dwelling Accessory Structures'. Inherits all conditions from the parent rule.\",\n        \"cross_references\": [\n          {\n            \"document\": \"This book\",\n            \"reference\": \"Figs 25-26\",\n            \"page\": \"32\",\n            \"topic\": \"accessory-structure height and daylight plane regulations\"\n          }\n        ]\n      }\n    },\n    {\n      \"rule_name\": \"Permit Exception for Small Accessory Structures\",\n      \"qualifiers\": {\n        \"scope\": \"Applies to accessory structures with an area less than the specified threshold.\",\n        \"applicability\": \"All non-dwelling accessory structures.\"\n      },\n      \"variables\": [\n        {\n          \"name\": \"structure_area\",\n          \"type\": \"dimensional\",\n          \"unit\": \"square feet\"\n        }\n      ],\n      \"constants\": [\n        {\n          \"name\": \"permit_exception_threshold\",\n          \"value\": 120,\n          \"unit\": \"square feet\"\n        }\n      ],\n      \"conditions\": {\n        \"mandatory\": [\n          {\n            \"type\": \"regulatory_compliance\",\n            \"description\": \"Must still comply with all zoning regulations, even if a permit is not required.\"\n          }\n        ]\n      },\n      \"exceptions\": [\n        {\n          \"description\": \"This rule defines an exception to the general building permit requirement based on structure size.\"\n        }\n      ],\n      \"relationships\": {\n        \"logical_dependencies\": [\n          \"This rule modifies the 'building permit' condition found in 'General Rules for All Non-Dwelling Accessory Structures' and 'Accessory Structures in Required Setback'.\"\n        ]\n      }\n    }\n  ]\n}\n```",
+    "response_time": 54.065758228302,
+    "input_tokens": 832,
+    "output_tokens": 6988,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 16:02:50",
+  "model": "google/gemini-2.5-pro",
+  "success": true
+}

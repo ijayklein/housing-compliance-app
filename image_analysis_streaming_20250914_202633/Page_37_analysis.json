@@ -1,0 +1,272 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_37.png",
+  "image_name": "Page_37.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Accessory structures site planning\n\nFig 24 Examples of site planning solutions for accessory structures\n\nA Combo garage / small pool cabana (side by side)\n\u2022 Structure is located in rear yard so it must:\n  a. be at least 75' from the front lot line\n  b. be no more than 12' high\n  c. comply with accessory-structure daylight plane. (Figs 25 & 26 on p. 32)\n\u2022 Structure is located right at the side lot line so that wall and the roof must be fire rated.\n\u2022 Structure has 2 plumbing fixtures.\n\nB Stand-alone pool cabana\n\u2022 Structure is located in rear yard so it must:\n  a. be at least 75' from the front lot line\n  b. be no more than 12' high\n  c. comply with accessory-structure daylight plane. (Figs 25 & 26 on p. 32)\n\u2022 Structure is located right at the rear lot line so that wall and the roof must be fire rated.\n\u2022 Structure has 3 plumbing fixtures\u2014 sink, toilet, and shower and is greater than 200 sf, so it requires a CUP.\n\nC Office above garage\n\u2022 Structure is located within the buildable area, so it doesn't have to comply with regulations for structures in the required yards and it may be two stories high.\n\u2022 Structure has 2 plumbing fixtures.\n\u2022 Structure is new 2nd floor addition and therefore subject to the Planning Department's Individual Review (IR).\n\nNote: Site planning for accessory buildings differs from that for parking structures in one way. A special allowance enables garages to be located in the rear/side yards even when the lot is not deep enough to maintain the 75' minimum distance from the front lot line. This does not apply to non-parking accessory structures.\n\nNote: Because this structure is 2 stories, it must be located within the buildable area regardless of the distances from the lot lines and is subject to Individual Review (IR)\n\nInterior lot example\n\nRear yard\n\nCombo garage / small poo house\n\nMain dwelling\n\nMin. 75'\n\nInterior lot example\n\nRear yard\n\nLarger pool cabana\n\nMain dwelling\n\nMin. 75'\n\nCorner lot example\n\nRear yard\n\nOffice above garage\n\nMain dwelling\n\n3' min.\n\nKey\n\nCurb\nLot line\nSidewalk\nRequired setbacks\nBuildable area\nDwelling/parking\nAccessory structure",
+      "visual_elements": [
+        {
+          "type": "figure",
+          "description": "Figure 24 shows three schematic site planning examples for accessory structures: A) Combo garage/small pool cabana side by side, B) Stand-alone pool cabana, and C) Office above garage. Each example includes a site plan diagram illustrating the location of the accessory structure relative to the main dwelling, lot lines, yards (rear, front, interior/side, street side), and required setbacks. The diagrams highlight minimum distance requirements (e.g., 75' from front lot line), fire-rated walls at lot lines, and plumbing fixture counts. The diagrams use shading and labels to differentiate buildable areas, required setbacks, sidewalks, curbs, lot lines, dwellings/parking, and accessory structures. Notes clarify special conditions such as the allowance for garages in rear/side yards and requirements for two-story structures.",
+          "location": "Bottom half of the page, spanning full width"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Minimum distance from front lot line for accessory structures in rear yard",
+          "value_type": "Measurement",
+          "value": 75,
+          "unit": "feet"
+        },
+        {
+          "parameter": "Maximum height for accessory structures in rear yard",
+          "value_type": "Measurement",
+          "value": 12,
+          "unit": "feet"
+        },
+        {
+          "parameter": "Number of plumbing fixtures for combo garage/small pool cabana",
+          "value_type": "Numerical",
+          "value": 2,
+          "unit": "fixtures"
+        },
+        {
+          "parameter": "Number of plumbing fixtures for stand-alone pool cabana",
+          "value_type": "Numerical",
+          "value": 3,
+          "unit": "fixtures"
+        },
+        {
+          "parameter": "Minimum size of stand-alone pool cabana requiring CUP",
+          "value_type": "Measurement",
+          "value": 200,
+          "unit": "square feet"
+        },
+        {
+          "parameter": "Minimum distance from front lot line for stand-alone pool cabana",
+          "value_type": "Measurement",
+          "value": 75,
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum distance from front lot line for combo garage/small pool cabana",
+          "value_type": "Measurement",
+          "value": 75,
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum side yard setback for office above garage",
+          "value_type": "Measurement",
+          "value": 3,
+          "unit": "feet"
+        },
+        {
+          "parameter": "Number of plumbing fixtures for office above garage",
+          "value_type": "Numerical",
+          "value": 2,
+          "unit": "fixtures"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Accessory structures site planning",
+        "subheadings": [
+          "A Combo garage / small pool cabana (side by side)",
+          "B Stand-alone pool cabana",
+          "C Office above garage"
+        ],
+        "sections": []
+      },
+      "additional_notes": [
+        "Page number 31 at bottom right corner.",
+        "No handwritten annotations or stamps detected.",
+        "Text and diagrams are clear and legible.",
+        "Note on page clarifies that garages have a special allowance to be located in rear/side yards even if lot is not deep enough to maintain 75' minimum distance from front lot line; this allowance does not apply to non-parking accessory structures.",
+        "Note clarifies that two-story accessory structures must be located within the buildable area regardless of distances from lot lines and are subject to Individual Review (IR)."
+      ],
+      "cross_references": [
+        "Figs 25 & 26 on p. 32",
+        "Planning Department's Individual Review (IR)"
+      ],
+      "conditions_and_qualifiers": {
+        "qualifiers": [
+          {
+            "id": "q1",
+            "text": "Structure is located in rear yard so it must:",
+            "applies_to_conditions": [
+              "c1",
+              "c2",
+              "c3"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q2",
+            "text": "Structure is located right at the side lot line so that wall and the roof must be fire rated.",
+            "applies_to_conditions": [
+              "c4"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q3",
+            "text": "Structure is located right at the rear lot line so that wall and the roof must be fire rated.",
+            "applies_to_conditions": [
+              "c5"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q4",
+            "text": "Structure is located within the buildable area, so it doesn't have to comply with regulations for structures in the required yards and it may be two stories high.",
+            "applies_to_conditions": [
+              "c6"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q5",
+            "text": "Because this structure is 2 stories, it must be located within the buildable area regardless of the distances from the lot lines and is subject to Individual Review (IR).",
+            "applies_to_conditions": [
+              "c6"
+            ],
+            "scope": "Specific"
+          }
+        ],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "be at least 75' from the front lot line",
+            "value_type": "Measurement",
+            "operator": ">=",
+            "threshold_value": 75,
+            "unit": "feet"
+          },
+          {
+            "id": "c2",
+            "text": "be no more than 12' high",
+            "value_type": "Measurement",
+            "operator": "<=",
+            "threshold_value": 12,
+            "unit": "feet"
+          },
+          {
+            "id": "c3",
+            "text": "comply with accessory-structure daylight plane",
+            "value_type": "Text",
+            "operator": "contains",
+            "threshold_value": "accessory-structure daylight plane",
+            "unit": "None"
+          },
+          {
+            "id": "c4",
+            "text": "wall and the roof must be fire rated",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "true",
+            "unit": "None"
+          },
+          {
+            "id": "c5",
+            "text": "Structure has 3 plumbing fixtures\u2014 sink, toilet, and shower and is greater than 200 sf, so it requires a CUP.",
+            "value_type": "Range",
+            "operator": ">",
+            "threshold_value": 200,
+            "unit": "square feet"
+          },
+          {
+            "id": "c6",
+            "text": "Structure is new 2nd floor addition and therefore subject to the Planning Department's Individual Review (IR).",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "true",
+            "unit": "None"
+          }
+        ],
+        "logical_relationships": [
+          {
+            "operation": "AND",
+            "condition_ids": [
+              "c1",
+              "c2",
+              "c3"
+            ],
+            "expression": "Structure is located in rear yard so it must: a. be at least 75' from the front lot line AND b. be no more than 12' high AND c. comply with accessory-structure daylight plane",
+            "evaluation_order": 1
+          },
+          {
+            "operation": "AND",
+            "condition_ids": [
+              "c5"
+            ],
+            "expression": "Structure has 3 plumbing fixtures\u2014 sink, toilet, and shower AND is greater than 200 sf, so it requires a CUP.",
+            "evaluation_order": 2
+          },
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c6"
+            ],
+            "expression": "IF structure is new 2nd floor addition THEN subject to the Planning Department's Individual Review (IR).",
+            "evaluation_order": 3
+          }
+        ],
+        "execution_sequence": [
+          {
+            "step": 1,
+            "action": "Verify structure location in rear yard and check minimum distance, height, and daylight plane compliance",
+            "condition_ids": [
+              "c1",
+              "c2",
+              "c3"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 2,
+            "action": "Check fire rating requirements for walls and roofs at side or rear lot lines",
+            "condition_ids": [
+              "c4"
+            ],
+            "qualifier_ids": [
+              "q2",
+              "q3"
+            ],
+            "dependencies": [
+              1
+            ]
+          },
+          {
+            "step": 3,
+            "action": "Determine if structure with 3 plumbing fixtures and size > 200 sf requires a CUP",
+            "condition_ids": [
+              "c5"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": [
+              1
+            ]
+          },
+          {
+            "step": 4,
+            "action": "For two-story structures, confirm location within buildable area and subject to Individual Review (IR)",
+            "condition_ids": [
+              "c6"
+            ],
+            "qualifier_ids": [
+              "q4",
+              "q5"
+            ],
+            "dependencies": []
+          }
+        ]
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:27:46",
+  "model_used": "openai/gpt-4.1-mini"
+}

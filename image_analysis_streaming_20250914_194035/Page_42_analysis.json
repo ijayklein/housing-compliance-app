@@ -1,0 +1,58 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_42.png",
+  "image_name": "Page_42.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Driveway standards\n\n\u2022 Driveway surfaces may have either permeable or impermeable paving. Materials shall meet Public Works standards.\n\u2022 Driveway surface within 10' of the public right-of-way may not be of a loose material e.g., gravel.\n\u2022 2nd dwelling units must share common driveway with main dwelling.\n\n\u2022 Minimum driveway clearance: 10'\n\u2022 Minimum driveway surface: 8'\n\u2022 Minimum 20' between curb cuts.\n\u2022 No more than 40% of required front yard may be impermeable.\n\u2022 Street-work permit required for work done within the public right-of-way.\n\nFor safety reasons, the city also encourages that the following standard be met:\n\n\u2022 No more than one curb cut per single frontage.\n\n\u2022 Minimum of 50' between curb cut and intersection curb face.\n\nFig 31 Driveway standards",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Three vertical driveway surface illustrations side by side. Left: Pavers without mortar (grass between) labeled 'OK'. Middle: 'Hollywood strips' (grass between) labeled 'OK'. Right: Gravel surface with detailed annotations showing:\n- Turns enroute to required parking spaces must be deemed maneuverable by the Transportation Division.\n- 8' min. width for driveway surface (typ. all).\n- 10' min. width for driveway clearance (typ. all).\n- No gravel or similar loose materials within 10' of the public right-of-way (lot line).\n- Work done within the public ROW requires a street-work permit and must comply with city standards.",
+          "location": "Bottom half of the page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Minimum driveway clearance",
+          "value": "10",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum driveway surface",
+          "value": "8",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum distance between curb cuts",
+          "value": "20",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Maximum impermeable front yard coverage",
+          "value": "40",
+          "unit": "percent"
+        },
+        {
+          "parameter": "Minimum distance between curb cut and intersection curb face",
+          "value": "50",
+          "unit": "feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Driveway standards",
+        "subheadings": [],
+        "sections": []
+      },
+      "additional_notes": [
+        "Page number 36 at bottom left corner.",
+        "Italicized figure caption: 'Fig 31 Driveway standards' below the text and above the diagrams.",
+        "Text on right side in italics: 'For safety reasons, the city also encourages that the following standard be met:' followed by two bullet points.",
+        "No handwritten annotations or stamps visible.",
+        "Text and diagrams are clear and legible."
+      ],
+      "cross_references": []
+    }
+  },
+  "analysis_timestamp": "2025-09-14 19:41:24",
+  "model_used": "openai/gpt-4.1-mini"
+}

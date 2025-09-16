@@ -1,0 +1,84 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_42.png",
+  "image_name": "Page_42.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "36\n\nDriveway standards\n\n\u2022 Driveway surfaces may have either\n  permeable or impermeable paving.\n  Materials shall meet Public Works\n  standards.\n\n\u2022 Driveway surface within 10' of the\n  public right-of-way may not be of a\n  loose material e.g., gravel.\n\n\u2022 2nd dwelling units must share com-\n  mon driveway with main dwelling.\n\n\u2022 Minimum driveway clearance: 10'\n\n\u2022 Minimum driveway surface: 8'\n\n\u2022 Minimum 20' between curb cuts.\n\n\u2022 No more than 40% of required\n  front yard may be impermeable.\n\n\u2022 Street-work permit required for\n  work done within the public right-\n  of-way.\n\nFor safety reasons, the city also encourages\nthat the following standard be met:\n\n\u2022 No more than one curb cut per single\n  frontage.\n\n\u2022 Minimum of 50' between curb cut and\n  intersection curb face.\n\nFig 31 Driveway standards\n\nPavers without mortar\n(grass between) OK\n\n\"Hollywood strips\"\n(grass between) OK\n\nGravel OK\n\nTurns enroute to required\nparking spaces must be\ndeemed manueverable by\nthe Transportation Division.\n\n8' min. width for driveway\nsurface (typ. all)\n\n10' min. width for driveway\nclearance (typ. all)\n\n10'\nmin\n\nNo gravel or similar loose\nmaterials within 10' of the\npublic right-of-way (lot line)\n\nWork done within the public\nROW requires a street-work\npermit and must comply with\ncity standards.",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Figure 31, titled 'Driveway standards', illustrates three acceptable driveway surface types in a top-down view, showing their connection to a public sidewalk. \n1. 'Pavers without mortar (grass between) OK': Shows a driveway made of irregular stone pavers with grass growing in the gaps.\n2. '\"Hollywood strips\" (grass between) OK': Shows two parallel, paved tire tracks with a strip of grass in the middle.\n3. 'Gravel OK': Shows a gravel driveway with detailed annotations. A curved radius is shown where the driveway meets the property line. Callouts with leader lines point to various features: \n- A note about turns being maneuverable as deemed by the Transportation Division.\n- An '8' min. width for driveway surface (typ. all)' indicated with dimension lines.\n- A '10' min. width for driveway clearance (typ. all)' indicated with dimension lines.\n- A solid black section at the bottom of the gravel driveway, adjacent to the sidewalk, is marked with a '10' min' dimension and a note: 'No gravel or similar loose materials within 10' of the public right-of-way (lot line)'.\n- A note indicating that work in the public Right-Of-Way (ROW) requires a street-work permit.",
+          "location": "Bottom half of the page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Driveway surface restriction zone",
+          "value": "10",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum driveway clearance",
+          "value": "10",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum driveway surface width",
+          "value": "8",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum distance between curb cuts",
+          "value": "20",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Maximum impermeable area of required front yard",
+          "value": "40",
+          "unit": "percent"
+        },
+        {
+          "parameter": "Maximum number of curb cuts per single frontage",
+          "value": "one",
+          "unit": null
+        },
+        {
+          "parameter": "Minimum distance between curb cut and intersection curb face",
+          "value": "50",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Number of dwelling units to share common driveway",
+          "value": "2nd",
+          "unit": null
+        },
+        {
+          "parameter": "Diagram - Minimum non-loose material distance from public right-of-way",
+          "value": "10",
+          "unit": "feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Driveway standards",
+        "subheadings": [
+          "Fig 31 Driveway standards"
+        ],
+        "sections": [
+          "Page 36"
+        ]
+      },
+      "additional_notes": [
+        "Page number '36' is present in the bottom-left corner.",
+        "The overall layout is a main title, followed by three columns of bulleted lists, and a large annotated diagram occupying the bottom half of the page.",
+        "The text is organized into several sets of bullet points detailing regulations and recommendations."
+      ],
+      "cross_references": [
+        "Materials shall meet Public Works standards.",
+        "Turns enroute to required parking spaces must be deemed manueverable by the Transportation Division.",
+        "Work done within the public ROW requires a street-work permit and must comply with city standards."
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-11 14:36:40",
+  "model_used": "google/gemini-2.5-pro"
+}

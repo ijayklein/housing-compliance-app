@@ -1,0 +1,297 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_46.md",
+  "file_name": "Page_46.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "Qualifiers": {
+          "scope": "Floor Area Ratio (FAR) calculation as it pertains to basements.",
+          "applicability": [
+            "Basement areas that are below grade",
+            "Basements that are habitable or non-habitable",
+            "Buildings where the top of the first floor elevation relative to grade is used in FAR determinations"
+          ],
+          "exclusions": [
+            "Cases where the basement contributes to the apparent mass of the building (these are not eligible for exclusion from floor area under this rule)"
+          ],
+          "ambiguities": [
+            "\u201cApparent mass\u201d is not defined in this excerpt; criteria for determining whether a basement contributes to apparent mass are unclear.",
+            "\u201cGrade\u201d reference changes depending on excavated feature compliance (A vs. B), but detailed dimensional standards are not included on this page.",
+            "\u201cBelow grade\u201d is not explicitly defined (e.g., percent/plane of grade exposure) in this excerpt."
+          ]
+        },
+        "Variables": {
+          "first_floor_top_to_grade_distance": {
+            "description": "Vertical distance from the top of the first floor to the applicable grade reference.",
+            "unit": "ft",
+            "measurement_reference": "Use grade reference A if excavated features meet standards; use grade reference B if excavated features exceed standards (see Figs 39\u201340 on pp. 42\u201343)."
+          },
+          "basement_below_grade": {
+            "description": "Whether the basement is below grade.",
+            "type": "boolean"
+          },
+          "basement_habitable": {
+            "description": "Whether the basement is designed/used for habitation.",
+            "type": "boolean"
+          },
+          "basement_contributes_to_apparent_mass": {
+            "description": "Whether the basement contributes to the apparent mass of the building.",
+            "type": "boolean"
+          },
+          "excavated_features_compliant": {
+            "description": "Whether associated excavated features meet size/dimensional standards referenced in Figs 39\u201340 on pp. 42\u201343.",
+            "type": "boolean"
+          },
+          "grade_reference": {
+            "description": "Grade plane used for measuring first floor distance: 'A' if compliant; 'B' if non-compliant.",
+            "enum": [
+              "A",
+              "B"
+            ]
+          }
+        },
+        "Constants": {
+          "first_floor_max_distance_for_basement_exclusion": {
+            "value": 3,
+            "unit": "ft",
+            "source": "FAR note (basements): Basements (even habitable ones) do not count as floor area if first floor is no more than 3' above grade."
+          },
+          "figure_references": [
+            {
+              "figure": "35",
+              "title": "Basement & grade"
+            },
+            {
+              "figure": "36",
+              "title": "Excavated feature & grade"
+            },
+            {
+              "figures": "39\u201340",
+              "pages": "42\u201343",
+              "title": "Size/dimensional limits for excavated features"
+            }
+          ]
+        },
+        "Conditions": [
+          {
+            "if": [
+              "basement_below_grade == true",
+              "basement_contributes_to_apparent_mass == false",
+              "first_floor_top_to_grade_distance <= 3 ft (measured to grade_reference A if excavated_features_compliant == true; otherwise to grade_reference B)"
+            ],
+            "then": [
+              "Basement area is excluded from total floor area (FAR calculation), regardless of basement_habitable."
+            ],
+            "notes": [
+              "The FAR exclusion applies even if the basement is habitable."
+            ]
+          },
+          {
+            "if": [
+              "excavated_features_compliant == true"
+            ],
+            "then": [
+              "Use grade_reference = 'A' when measuring first_floor_top_to_grade_distance."
+            ],
+            "else": [
+              "Use grade_reference = 'B' when measuring first_floor_top_to_grade_distance."
+            ],
+            "notes": [
+              "Compliance is determined against size/dimensional limits in Figs 39\u201340 (pp. 42\u201343)."
+            ]
+          }
+        ],
+        "Exceptions": [],
+        "Relationships": {
+          "dependencies": [
+            "Grade measurement for the 3 ft threshold depends on excavated features compliance (see separate rule on excavated features)."
+          ],
+          "cross_references": [
+            "Code Section 18.12.090 (a, b, c) referenced on pages 40\u201344",
+            "Figures 35\u201336 on this page for conceptual measurement references",
+            "Figures 39\u201340 on pp. 42\u201343 for dimensional standards controlling grade reference A vs B"
+          ],
+          "logical": [
+            "If excavated features exceed limits (non-compliant), the grade reference changes to B, which may affect whether the 3 ft threshold is satisfied."
+          ]
+        }
+      },
+      {
+        "Qualifiers": {
+          "scope": "Basement siting and extent standards (location and encroachment rules).",
+          "applicability": [
+            "All basements associated with main dwellings"
+          ],
+          "exclusions": [],
+          "ambiguities": [
+            "\u201cSpecial flood hazard areas\u201d are referenced but not defined in this excerpt (mapping/criteria not provided).",
+            "\u201cBuilding footprint\u201d definition is not provided in this excerpt (e.g., whether eaves/overhangs count).",
+            "\u201cRequired yards\u201d and the specific conditions under which the main dwelling is permitted to extend into the rear yard are not detailed here."
+          ]
+        },
+        "Variables": {
+          "in_special_flood_hazard_area": {
+            "description": "Whether the proposed basement location is within a special flood hazard area.",
+            "type": "boolean"
+          },
+          "extends_beyond_building_footprint": {
+            "description": "Whether any part of the basement extends beyond the horizontal projection of the building footprint.",
+            "type": "boolean"
+          },
+          "encroaches_into_required_yards": {
+            "description": "Whether the basement encroaches into any required yards.",
+            "type": "boolean"
+          },
+          "yard_type": {
+            "description": "Type of yard into which encroachment is proposed, if any.",
+            "enum": [
+              "front",
+              "side",
+              "rear"
+            ]
+          },
+          "main_dwelling_rear_yard_extension_permitted": {
+            "description": "Whether the main dwelling is permitted by code to extend into the rear yard.",
+            "type": "boolean"
+          }
+        },
+        "Constants": {},
+        "Conditions": [
+          {
+            "if": [
+              "in_special_flood_hazard_area == true"
+            ],
+            "then": [
+              "Basement location is prohibited."
+            ]
+          },
+          {
+            "if": [
+              "extends_beyond_building_footprint == true"
+            ],
+            "then": [
+              "Basement configuration is prohibited."
+            ]
+          },
+          {
+            "if": [
+              "encroaches_into_required_yards == true",
+              "yard_type in ['front','side']"
+            ],
+            "then": [
+              "Basement encroachment is prohibited."
+            ]
+          },
+          {
+            "if": [
+              "encroaches_into_required_yards == true",
+              "yard_type == 'rear'"
+            ],
+            "then": [
+              "Basement encroachment into the rear yard is prohibited unless main_dwelling_rear_yard_extension_permitted == true."
+            ]
+          }
+        ],
+        "Exceptions": [
+          "Basements may encroach into the rear yard only where the main dwelling is permitted to extend into the rear yard."
+        ],
+        "Relationships": {
+          "cross_references": [
+            "Code Section 18.12.090 (a, b, c) referenced on pages 40\u201344 (specific subsections applicable to basements not fully provided in this excerpt)"
+          ],
+          "logical": [
+            "Rear yard encroachment permission for basements is contingent on the separate permission for the main dwelling."
+          ]
+        }
+      },
+      {
+        "Qualifiers": {
+          "scope": "Excavated features and their effect on grade determination and floor area measurement.",
+          "applicability": [
+            "Light wells",
+            "Stairwells",
+            "Below-grade patios"
+          ],
+          "exclusions": [],
+          "ambiguities": [
+            "The exact size/dimensional standards for excavated features are not provided on this page; they are referenced to Figs 39\u201340 on pp. 42\u201343."
+          ]
+        },
+        "Variables": {
+          "excavated_feature_type": {
+            "description": "Type of excavated feature.",
+            "enum": [
+              "light_well_or_stairwell",
+              "below_grade_patio"
+            ]
+          },
+          "excavated_feature_dimensions": {
+            "description": "Measured dimensions of the excavated feature (e.g., length, width, depth) used to assess compliance.",
+            "unit": "ft"
+          },
+          "excavated_features_compliant": {
+            "description": "Whether the excavated features meet the size/dimensional limits described in Figs 39\u201340 on pp. 42\u201343.",
+            "type": "boolean"
+          },
+          "grade_reference": {
+            "description": "Resulting grade reference for measuring first floor elevation and floor area purposes.",
+            "enum": [
+              "A",
+              "B"
+            ]
+          }
+        },
+        "Constants": {
+          "figure_references": [
+            {
+              "figures": "39\u201340",
+              "pages": "42\u201343",
+              "title": "Excavated feature size/dimensional limits controlling grade impact"
+            },
+            {
+              "figure": "36",
+              "title": "Excavated feature & grade (illustrates grade A vs. grade B outcomes)"
+            }
+          ]
+        },
+        "Conditions": [
+          {
+            "if": [
+              "excavated_features_compliant == true"
+            ],
+            "then": [
+              "Excavation will not affect grade or measurement of floor area.",
+              "Set grade_reference = 'A'."
+            ]
+          },
+          {
+            "if": [
+              "excavated_features_compliant == false"
+            ],
+            "then": [
+              "Excavation affects grade and may affect measurement of floor area.",
+              "Set grade_reference = 'B'."
+            ]
+          }
+        ],
+        "Exceptions": [],
+        "Relationships": {
+          "dependencies": [
+            "The grade_reference output of this rule is an input to the FAR basement exclusion rule (3 ft threshold measurement)."
+          ],
+          "cross_references": [
+            "Code Section 18.12.090 (c) and (c)(2) referenced on pages 41 and 44; exact standards for excavated features are on pp. 42\u201343, Figs 39\u201340."
+          ],
+          "logical": [
+            "Non-compliant excavated features can change the applicable grade reference from A to B, which can in turn change whether a basement qualifies for FAR exclusion under the 3 ft threshold."
+          ]
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "[\n  {\n    \"Qualifiers\": {\n      \"scope\": \"Floor Area Ratio (FAR) calculation as it pertains to basements.\",\n      \"applicability\": [\n        \"Basement areas that are below grade\",\n        \"Basements that are habitable or non-habitable\",\n        \"Buildings where the top of the first floor elevation relative to grade is used in FAR determinations\"\n      ],\n      \"exclusions\": [\n        \"Cases where the basement contributes to the apparent mass of the building (these are not eligible for exclusion from floor area under this rule)\"\n      ],\n      \"ambiguities\": [\n        \"\u201cApparent mass\u201d is not defined in this excerpt; criteria for determining whether a basement contributes to apparent mass are unclear.\",\n        \"\u201cGrade\u201d reference changes depending on excavated feature compliance (A vs. B), but detailed dimensional standards are not included on this page.\",\n        \"\u201cBelow grade\u201d is not explicitly defined (e.g., percent/plane of grade exposure) in this excerpt.\"\n      ]\n    },\n    \"Variables\": {\n      \"first_floor_top_to_grade_distance\": {\n        \"description\": \"Vertical distance from the top of the first floor to the applicable grade reference.\",\n        \"unit\": \"ft\",\n        \"measurement_reference\": \"Use grade reference A if excavated features meet standards; use grade reference B if excavated features exceed standards (see Figs 39\u201340 on pp. 42\u201343).\"\n      },\n      \"basement_below_grade\": {\n        \"description\": \"Whether the basement is below grade.\",\n        \"type\": \"boolean\"\n      },\n      \"basement_habitable\": {\n        \"description\": \"Whether the basement is designed/used for habitation.\",\n        \"type\": \"boolean\"\n      },\n      \"basement_contributes_to_apparent_mass\": {\n        \"description\": \"Whether the basement contributes to the apparent mass of the building.\",\n        \"type\": \"boolean\"\n      },\n      \"excavated_features_compliant\": {\n        \"description\": \"Whether associated excavated features meet size/dimensional standards referenced in Figs 39\u201340 on pp. 42\u201343.\",\n        \"type\": \"boolean\"\n      },\n      \"grade_reference\": {\n        \"description\": \"Grade plane used for measuring first floor distance: 'A' if compliant; 'B' if non-compliant.\",\n        \"enum\": [\n          \"A\",\n          \"B\"\n        ]\n      }\n    },\n    \"Constants\": {\n      \"first_floor_max_distance_for_basement_exclusion\": {\n        \"value\": 3,\n        \"unit\": \"ft\",\n        \"source\": \"FAR note (basements): Basements (even habitable ones) do not count as floor area if first floor is no more than 3' above grade.\"\n      },\n      \"figure_references\": [\n        {\n          \"figure\": \"35\",\n          \"title\": \"Basement & grade\"\n        },\n        {\n          \"figure\": \"36\",\n          \"title\": \"Excavated feature & grade\"\n        },\n        {\n          \"figures\": \"39\u201340\",\n          \"pages\": \"42\u201343\",\n          \"title\": \"Size/dimensional limits for excavated features\"\n        }\n      ]\n    },\n    \"Conditions\": [\n      {\n        \"if\": [\n          \"basement_below_grade == true\",\n          \"basement_contributes_to_apparent_mass == false\",\n          \"first_floor_top_to_grade_distance <= 3 ft (measured to grade_reference A if excavated_features_compliant == true; otherwise to grade_reference B)\"\n        ],\n        \"then\": [\n          \"Basement area is excluded from total floor area (FAR calculation), regardless of basement_habitable.\"\n        ],\n        \"notes\": [\n          \"The FAR exclusion applies even if the basement is habitable.\"\n        ]\n      },\n      {\n        \"if\": [\n          \"excavated_features_compliant == true\"\n        ],\n        \"then\": [\n          \"Use grade_reference = 'A' when measuring first_floor_top_to_grade_distance.\"\n        ],\n        \"else\": [\n          \"Use grade_reference = 'B' when measuring first_floor_top_to_grade_distance.\"\n        ],\n        \"notes\": [\n          \"Compliance is determined against size/dimensional limits in Figs 39\u201340 (pp. 42\u201343).\"\n        ]\n      }\n    ],\n    \"Exceptions\": [],\n    \"Relationships\": {\n      \"dependencies\": [\n        \"Grade measurement for the 3 ft threshold depends on excavated features compliance (see separate rule on excavated features).\"\n      ],\n      \"cross_references\": [\n        \"Code Section 18.12.090 (a, b, c) referenced on pages 40\u201344\",\n        \"Figures 35\u201336 on this page for conceptual measurement references\",\n        \"Figures 39\u201340 on pp. 42\u201343 for dimensional standards controlling grade reference A vs B\"\n      ],\n      \"logical\": [\n        \"If excavated features exceed limits (non-compliant), the grade reference changes to B, which may affect whether the 3 ft threshold is satisfied.\"\n      ]\n    }\n  },\n  {\n    \"Qualifiers\": {\n      \"scope\": \"Basement siting and extent standards (location and encroachment rules).\",\n      \"applicability\": [\n        \"All basements associated with main dwellings\"\n      ],\n      \"exclusions\": [],\n      \"ambiguities\": [\n        \"\u201cSpecial flood hazard areas\u201d are referenced but not defined in this excerpt (mapping/criteria not provided).\",\n        \"\u201cBuilding footprint\u201d definition is not provided in this excerpt (e.g., whether eaves/overhangs count).\",\n        \"\u201cRequired yards\u201d and the specific conditions under which the main dwelling is permitted to extend into the rear yard are not detailed here.\"\n      ]\n    },\n    \"Variables\": {\n      \"in_special_flood_hazard_area\": {\n        \"description\": \"Whether the proposed basement location is within a special flood hazard area.\",\n        \"type\": \"boolean\"\n      },\n      \"extends_beyond_building_footprint\": {\n        \"description\": \"Whether any part of the basement extends beyond the horizontal projection of the building footprint.\",\n        \"type\": \"boolean\"\n      },\n      \"encroaches_into_required_yards\": {\n        \"description\": \"Whether the basement encroaches into any required yards.\",\n        \"type\": \"boolean\"\n      },\n      \"yard_type\": {\n        \"description\": \"Type of yard into which encroachment is proposed, if any.\",\n        \"enum\": [\n          \"front\",\n          \"side\",\n          \"rear\"\n        ]\n      },\n      \"main_dwelling_rear_yard_extension_permitted\": {\n        \"description\": \"Whether the main dwelling is permitted by code to extend into the rear yard.\",\n        \"type\": \"boolean\"\n      }\n    },\n    \"Constants\": {},\n    \"Conditions\": [\n      {\n        \"if\": [\n          \"in_special_flood_hazard_area == true\"\n        ],\n        \"then\": [\n          \"Basement location is prohibited.\"\n        ]\n      },\n      {\n        \"if\": [\n          \"extends_beyond_building_footprint == true\"\n        ],\n        \"then\": [\n          \"Basement configuration is prohibited.\"\n        ]\n      },\n      {\n        \"if\": [\n          \"encroaches_into_required_yards == true\",\n          \"yard_type in ['front','side']\"\n        ],\n        \"then\": [\n          \"Basement encroachment is prohibited.\"\n        ]\n      },\n      {\n        \"if\": [\n          \"encroaches_into_required_yards == true\",\n          \"yard_type == 'rear'\"\n        ],\n        \"then\": [\n          \"Basement encroachment into the rear yard is prohibited unless main_dwelling_rear_yard_extension_permitted == true.\"\n        ]\n      }\n    ],\n    \"Exceptions\": [\n      \"Basements may encroach into the rear yard only where the main dwelling is permitted to extend into the rear yard.\"\n    ],\n    \"Relationships\": {\n      \"cross_references\": [\n        \"Code Section 18.12.090 (a, b, c) referenced on pages 40\u201344 (specific subsections applicable to basements not fully provided in this excerpt)\"\n      ],\n      \"logical\": [\n        \"Rear yard encroachment permission for basements is contingent on the separate permission for the main dwelling.\"\n      ]\n    }\n  },\n  {\n    \"Qualifiers\": {\n      \"scope\": \"Excavated features and their effect on grade determination and floor area measurement.\",\n      \"applicability\": [\n        \"Light wells\",\n        \"Stairwells\",\n        \"Below-grade patios\"\n      ],\n      \"exclusions\": [],\n      \"ambiguities\": [\n        \"The exact size/dimensional standards for excavated features are not provided on this page; they are referenced to Figs 39\u201340 on pp. 42\u201343.\"\n      ]\n    },\n    \"Variables\": {\n      \"excavated_feature_type\": {\n        \"description\": \"Type of excavated feature.\",\n        \"enum\": [\n          \"light_well_or_stairwell\",\n          \"below_grade_patio\"\n        ]\n      },\n      \"excavated_feature_dimensions\": {\n        \"description\": \"Measured dimensions of the excavated feature (e.g., length, width, depth) used to assess compliance.\",\n        \"unit\": \"ft\"\n      },\n      \"excavated_features_compliant\": {\n        \"description\": \"Whether the excavated features meet the size/dimensional limits described in Figs 39\u201340 on pp. 42\u201343.\",\n        \"type\": \"boolean\"\n      },\n      \"grade_reference\": {\n        \"description\": \"Resulting grade reference for measuring first floor elevation and floor area purposes.\",\n        \"enum\": [\n          \"A\",\n          \"B\"\n        ]\n      }\n    },\n    \"Constants\": {\n      \"figure_references\": [\n        {\n          \"figures\": \"39\u201340\",\n          \"pages\": \"42\u201343\",\n          \"title\": \"Excavated feature size/dimensional limits controlling grade impact\"\n        },\n        {\n          \"figure\": \"36\",\n          \"title\": \"Excavated feature & grade (illustrates grade A vs. grade B outcomes)\"\n        }\n      ]\n    },\n    \"Conditions\": [\n      {\n        \"if\": [\n          \"excavated_features_compliant == true\"\n        ],\n        \"then\": [\n          \"Excavation will not affect grade or measurement of floor area.\",\n          \"Set grade_reference = 'A'.\"\n        ]\n      },\n      {\n        \"if\": [\n          \"excavated_features_compliant == false\"\n        ],\n        \"then\": [\n          \"Excavation affects grade and may affect measurement of floor area.\",\n          \"Set grade_reference = 'B'.\"\n        ]\n      }\n    ],\n    \"Exceptions\": [],\n    \"Relationships\": {\n      \"dependencies\": [\n        \"The grade_reference output of this rule is an input to the FAR basement exclusion rule (3 ft threshold measurement).\"\n      ],\n      \"cross_references\": [\n        \"Code Section 18.12.090 (c) and (c)(2) referenced on pages 41 and 44; exact standards for excavated features are on pp. 42\u201343, Figs 39\u201340.\"\n      ],\n      \"logical\": [\n        \"Non-compliant excavated features can change the applicable grade reference from A to B, which can in turn change whether a basement qualifies for FAR exclusion under the 3 ft threshold.\"\n      ]\n    }\n  }\n]"
+  },
+  "timestamp": "2025-09-16 15:10:45",
+  "model": "openai/gpt-5",
+  "success": true
+}

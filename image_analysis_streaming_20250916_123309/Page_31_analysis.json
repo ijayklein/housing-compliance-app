@@ -1,0 +1,19 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_31.png",
+  "image_name": "Page_31.png",
+  "analysis": {
+    "page_number": "unknown",
+    "main_heading": "PARSE_ERROR",
+    "text_content": "Failed to parse response: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)",
+    "tables": [],
+    "figures": [],
+    "zoning_rules": [],
+    "code_references": [],
+    "quality_notes": "JSON parsing failed: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)",
+    "raw_response": "```json\n{\n  \"page_number\": \"25\",\n  \"main_heading\": \"Allowable extensions to existing encroachments\",\n  \"text_content\": \"Fig 19 Allowable extensions of existing walls that encroach into required yards (on ground floor only)\\nA Extension of existing side yard encroachment\\nAn existing wall that encroaches into the required interior side yard setback but is at least 5'-0\\\" from the property line, may be extended at the same setback, in one direction only, at the ground floor only, for a distance equal to the length of the existing wall or 20' whichever is less.\\nNote: In the example below, two existing walls are encroaching--only one of them may be extended.\\nB Extension of existing front yard encroachment\\nAn existing wall that encroaches into the required front yard setback but is at least 14'-0\\\" from the property line, may be extended at the same setback, in one direction only, at the ground floor only, with both of the following provisions:\\n1) the length of the extension is no great",
+    "parse_error": true
+  },
+  "analysis_timestamp": "2025-09-16 12:33:33",
+  "model_used": "google/gemini-2.5-flash",
+  "success": false
+}

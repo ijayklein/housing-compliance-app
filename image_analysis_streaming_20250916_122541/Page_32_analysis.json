@@ -1,0 +1,23 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_32.png",
+  "image_name": "Page_32.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "PARSE_ERROR",
+      "visual_elements": [],
+      "technical_specifications": [],
+      "structural_elements": {
+        "main_heading": "",
+        "subheadings": [],
+        "sections": []
+      },
+      "additional_notes": [
+        "Failed to parse LLM response: Expecting value: line 1 column 1 (char 0)"
+      ],
+      "cross_references": []
+    },
+    "raw_response": "Here's the extracted information from the image, maintaining absolute precision and avoiding any deductions:\n\n**Title:** Daylight plane\n\n**Section Title:** Primary daylight plane (sides)\n\n**Description of Daylight Plane:**\nThe daylight plane in conjunction with the setbacks & height limits, create an invisible tent intended to contain development on the lot in a way that preserves privacy and exposure to natural light.\n\n**Regulation Text:**\nThe primary daylight plane regulates structures located within the buildable area. Structures located in the rear and/or side yards are regulated by the accessory-structure daylight plan described on the next page.\n\n**Figure Caption:**\nFig 20 Front elevation showing side primary daylight plane\n\n**Code sections:**\n*   Page 26\n    *   18.12.040 (a) Table 2\n*   Page 27\n    *   18.04\n*   Page 28\n    *   18.12.040 (c) Table 2\n*   Page 29\n    *   18.12.050 (b) (2)\n    *   18.12.040 (j)\n\n**Page Number:** 26\n\n**Diagram Labels and Measurements:**\n*   **Angle:** 45\u00b0\n*   **Vertical Measurement from average grade:** 10\u2032 from average grade\n*   **Vertical Measurement for protrusions:** 24\u2032 max. for protrusions\n*   **Vertical Measurement:** Max. building height (indicated by an asterisk *)\n*   **Line Labels:**\n    *   Side lot line (appears twice)\n    *   Average grade\n    *   Max. allowed is Min. required by Building Code (pointing to a vertical measurement)\n\n**Diagram Notes:**\n*   Daylight plane is measured from average grade.\n*   Average grade is established using existing grade\u2014before any grading or fill (See Fig 44 p. 42)\n*   Side daylight plane is measured (up) at lot line.\n*   Rear daylight plane is measured (up) at rear setback.\n\n**Additional Labels on Diagram:**\n*   Grade at the nearest point on the adjacent lot\n*   Existing grade of the structure (at midpoint of wall)"
+  },
+  "analysis_timestamp": "2025-09-16 12:25:56",
+  "model_used": "google/gemini-2.5-flash"
+}

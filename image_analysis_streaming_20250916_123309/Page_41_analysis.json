@@ -1,0 +1,19 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_41.png",
+  "image_name": "Page_41.png",
+  "analysis": {
+    "page_number": "unknown",
+    "main_heading": "PARSE_ERROR",
+    "text_content": "Failed to parse response: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)",
+    "tables": [],
+    "figures": [],
+    "zoning_rules": [],
+    "code_references": [],
+    "quality_notes": "JSON parsing failed: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)",
+    "raw_response": "```json\n{\n  \"page_number\": \"35\",\n  \"main_heading\": \"Carport standards\",\n  \"text_content\": \"One of 2 corner columns\\nFig 29 Parking space dimensions for carport in plan view\\nopen\\n20' min. open\\nPlan View\\nDriveway/ parking surface\\nFig 30 Parking space dimensions for covered space in elevation\\nOne of 2 corner columns\\nBottom roof system\\n20' min. open\\n7' min. open\\nLeft Side Elevation\\nOne of 2 corner columns\\nBottom roof system\\n10' min open\\n7' min. open\\nFront Elevation\",\n  \"tables\": [],\n  \"figures\": [\n    {\n      \"figure_number\": \"Fig 29\",\n      \"caption\": \"Parking space dimensions for carport in plan view\",\n      \"description\": \"A plan view diagram of a carport showing a car parked. It indicates 'One of 2 corner columns', 'open' space, '20' min. open' length, and 'Driveway/ parking surface'.\"\n    },\n    {\n      \"figure_number\": \"Fig 30\",\n      \"caption\": \"Parking space dimensions for covered space in elevation\",\n      \"description\": \"Two elevation diagrams of a covered parking ",
+    "parse_error": true
+  },
+  "analysis_timestamp": "2025-09-16 12:33:37",
+  "model_used": "google/gemini-2.5-flash",
+  "success": false
+}

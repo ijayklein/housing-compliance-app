@@ -1,0 +1,75 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_41.md",
+  "file_name": "Page_41.md",
+  "analysis": {
+    "extracted_rules": {
+      "rules": [
+        {
+          "title": "Carport standards",
+          "qualifiers": {
+            "scope": "Carport design and construction",
+            "applicability": "Applicable to all carport structures",
+            "exclusions": "None specified"
+          },
+          "variables": {
+            "dimensional": {
+              "longitudinal_dimension": "20' min.",
+              "transverse_dimension": "open",
+              "horizontal_opening_width_left_side": "20' min.",
+              "vertical_clearance_left_side": "7' min.",
+              "horizontal_opening_width_front": "10' min.",
+              "vertical_clearance_front": "7' min."
+            },
+            "material": "Not specified",
+            "environmental": "Not specified",
+            "usage_parameters": "Parking space dimensions"
+          },
+          "constants": {
+            "numerical_values": {
+              "corner_columns": 2
+            },
+            "specs": "Not specified",
+            "standards": "Not specified",
+            "procedures": "Not specified"
+          },
+          "conditions": {
+            "mandatory": [
+              "Minimum longitudinal dimension of 20'",
+              "Minimum horizontal opening width of 20' on left side",
+              "Minimum vertical clearance of 7' on left side",
+              "Minimum horizontal opening width of 10' on front",
+              "Minimum vertical clearance of 7' on front"
+            ],
+            "optional": [],
+            "conditional_logic": [],
+            "dependencies": []
+          },
+          "exceptions": {
+            "explicit_deviations": [],
+            "alternatives": [],
+            "special_cases": []
+          },
+          "relationships": {
+            "hierarchical": [
+              "Plan View includes longitudinal and transverse dimensions",
+              "Elevations include horizontal opening width and vertical clearance"
+            ],
+            "cross_references": [
+              "Figure 29 relates to Plan View dimensions",
+              "Figure 30 relates to Elevation dimensions"
+            ],
+            "logical_dependencies": []
+          }
+        }
+      ],
+      "ambiguities": [
+        "Transverse dimension at the entrance is labeled as 'open' without a numeric value."
+      ]
+    },
+    "parse_error": false,
+    "raw_response": "```json\n{\n  \"rules\": [\n    {\n      \"title\": \"Carport standards\",\n      \"qualifiers\": {\n        \"scope\": \"Carport design and construction\",\n        \"applicability\": \"Applicable to all carport structures\",\n        \"exclusions\": \"None specified\"\n      },\n      \"variables\": {\n        \"dimensional\": {\n          \"longitudinal_dimension\": \"20' min.\",\n          \"transverse_dimension\": \"open\",\n          \"horizontal_opening_width_left_side\": \"20' min.\",\n          \"vertical_clearance_left_side\": \"7' min.\",\n          \"horizontal_opening_width_front\": \"10' min.\",\n          \"vertical_clearance_front\": \"7' min.\"\n        },\n        \"material\": \"Not specified\",\n        \"environmental\": \"Not specified\",\n        \"usage_parameters\": \"Parking space dimensions\"\n      },\n      \"constants\": {\n        \"numerical_values\": {\n          \"corner_columns\": 2\n        },\n        \"specs\": \"Not specified\",\n        \"standards\": \"Not specified\",\n        \"procedures\": \"Not specified\"\n      },\n      \"conditions\": {\n        \"mandatory\": [\n          \"Minimum longitudinal dimension of 20'\",\n          \"Minimum horizontal opening width of 20' on left side\",\n          \"Minimum vertical clearance of 7' on left side\",\n          \"Minimum horizontal opening width of 10' on front\",\n          \"Minimum vertical clearance of 7' on front\"\n        ],\n        \"optional\": [],\n        \"conditional_logic\": [],\n        \"dependencies\": []\n      },\n      \"exceptions\": {\n        \"explicit_deviations\": [],\n        \"alternatives\": [],\n        \"special_cases\": []\n      },\n      \"relationships\": {\n        \"hierarchical\": [\n          \"Plan View includes longitudinal and transverse dimensions\",\n          \"Elevations include horizontal opening width and vertical clearance\"\n        ],\n        \"cross_references\": [\n          \"Figure 29 relates to Plan View dimensions\",\n          \"Figure 30 relates to Elevation dimensions\"\n        ],\n        \"logical_dependencies\": []\n      }\n    }\n  ],\n  \"ambiguities\": [\n    \"Transverse dimension at the entrance is labeled as 'open' without a numeric value.\"\n  ]\n}\n```"
+  },
+  "timestamp": "2025-09-16 14:43:17",
+  "model": "openai/gpt-4o",
+  "success": true
+}

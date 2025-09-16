@@ -1,0 +1,244 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_12.png",
+  "image_name": "Page_12.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Porches\n&\nentry\nfeatures\n\nPorch types\n\nFor purposes of assessing gross floor area, porches, entryways, and balconies fall into one of these categories:\n\n1. Non-roofed porches, entryways, balconies etc.\n   \u2022 Non-roofed features generally do not count\n\n2. Roofed porches on the 1st floor (Fig 4 A & D on p. 7, Fig 5 on p. 8)\n   \u2022 Openess of the sides determines whether or not these count\n     regardless of the height.\n   \u2022 If they do count, they count only once.\n\n3. Roofed entry features on the 1st floor\n   that are less than 12' high (from grade) (Fig 4 B on p. 7)\n   \u2022 These count once regardless of the design including openess.\n\n4. Roofed entry features on the 1st floor that are more than 12'\n   high from grade\u2014\"vaulted entry feature\" (Fig 4 C & D on p. 7,\n   Fig 6, 7, & 8 on pp. 11-13)\n   \u2022 These count twice regardless of the design including openess.\n\n5. Recessed porches on the 1st floor (Fig 9 on p. 14)\n   \u2022 Height, depth, & openess determine whether or not these count.\n   \u2022 If they count and are less than 17' high, they count only once.\n   \u2022 If they count and are more than 17' high, they count twice.\n\n6. Roofed balconies/outdoor areas on upper floors (Fig 10 on p. 15 )\n   \u2022 These count once regardless of the design including openess\n\nFa\u00e7odes with defined\nentryways make a\nstreetscape pleasant\nand friendly as long as\nthey are not out of scale\nor proportion.\n\nThe gross floor area\nregulations encourage\nappropriately sized\nporches and entryways.\n\nDifference\nbetween a porch\n& an entry\nfeature:\n\nA feature is considered\nto be a porch rather than\nan entry feature if it can\nclearly accomodate more\nactivities than entering and\nleaving the house.\n\nCode sections\n18.04.030(a)(65)\n18.04.030(a)(113.1)\n18.04.030(143.5)\n18.12.040(b)Table 3\n\nThe following pages address the details of assessing these features with regard to gross floor area.\n\n6",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Gray sidebar on left side containing title 'Porches & entry features' and explanatory text about fa\u00e7ades and gross floor area regulations",
+          "location": "left side of page"
+        },
+        {
+          "type": "diagram",
+          "description": "Gray box on right side containing definition distinguishing between porches and entry features",
+          "location": "right side of page, middle"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Height threshold for entry features",
+          "value_type": "Measurement",
+          "value": "12",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Height threshold for recessed porches counting twice",
+          "value_type": "Measurement",
+          "value": "17",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Page number",
+          "value_type": "Numerical",
+          "value": "6",
+          "unit": "None"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Porches & entry features",
+        "subheadings": [
+          "Porch types",
+          "Difference between a porch & an entry feature"
+        ],
+        "sections": [
+          "Code sections"
+        ]
+      },
+      "additional_notes": [
+        "Page appears to be from a city planning manual with clear formatting and professional layout",
+        "Contains multiple figure references to other pages in the document"
+      ],
+      "cross_references": [
+        "Fig 4 A & D on p. 7",
+        "Fig 5 on p. 8",
+        "Fig 4 B on p. 7",
+        "Fig 4 C & D on p. 7",
+        "Fig 6, 7, & 8 on pp. 11-13",
+        "Fig 9 on p. 14",
+        "Fig 10 on p. 15",
+        "Code sections 18.04.030(a)(65), 18.04.030(a)(113.1), 18.04.030(143.5), 18.12.040(b)Table 3"
+      ],
+      "conditions_and_qualifiers": {
+        "qualifiers": [
+          {
+            "id": "q1",
+            "text": "For purposes of assessing gross floor area",
+            "applies_to_conditions": [
+              "c1",
+              "c2",
+              "c3",
+              "c4",
+              "c5",
+              "c6"
+            ],
+            "scope": "Global"
+          },
+          {
+            "id": "q2",
+            "text": "on the 1st floor",
+            "applies_to_conditions": [
+              "c2",
+              "c3",
+              "c4",
+              "c5"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q3",
+            "text": "from grade",
+            "applies_to_conditions": [
+              "c3",
+              "c4"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q4",
+            "text": "on upper floors",
+            "applies_to_conditions": [
+              "c6"
+            ],
+            "scope": "Specific"
+          }
+        ],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "Non-roofed features generally do not count",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "false",
+            "unit": "None"
+          },
+          {
+            "id": "c2",
+            "text": "Openess of the sides determines whether or not these count regardless of the height",
+            "value_type": "Text",
+            "operator": "contains",
+            "threshold_value": "openess determination",
+            "unit": "None"
+          },
+          {
+            "id": "c3",
+            "text": "that are less than 12' high",
+            "value_type": "Measurement",
+            "operator": "<",
+            "threshold_value": "12",
+            "unit": "feet"
+          },
+          {
+            "id": "c4",
+            "text": "that are more than 12' high from grade",
+            "value_type": "Measurement",
+            "operator": ">",
+            "threshold_value": "12",
+            "unit": "feet"
+          },
+          {
+            "id": "c5",
+            "text": "If they count and are less than 17' high, they count only once",
+            "value_type": "Measurement",
+            "operator": "<",
+            "threshold_value": "17",
+            "unit": "feet"
+          },
+          {
+            "id": "c6",
+            "text": "If they count and are more than 17' high, they count twice",
+            "value_type": "Measurement",
+            "operator": ">",
+            "threshold_value": "17",
+            "unit": "feet"
+          }
+        ],
+        "logical_relationships": [
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c2"
+            ],
+            "expression": "If they do count, they count only once",
+            "evaluation_order": 1
+          },
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c5"
+            ],
+            "expression": "If they count and are less than 17' high, they count only once",
+            "evaluation_order": 2
+          },
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c6"
+            ],
+            "expression": "If they count and are more than 17' high, they count twice",
+            "evaluation_order": 3
+          }
+        ],
+        "execution_sequence": [
+          {
+            "step": 1,
+            "action": "Determine if feature is roofed or non-roofed",
+            "condition_ids": [
+              "c1"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 2,
+            "action": "Assess floor location and height measurements",
+            "condition_ids": [
+              "c3",
+              "c4"
+            ],
+            "qualifier_ids": [
+              "q2",
+              "q3"
+            ],
+            "dependencies": [
+              1
+            ]
+          },
+          {
+            "step": 3,
+            "action": "Evaluate openess and design characteristics",
+            "condition_ids": [
+              "c2"
+            ],
+            "qualifier_ids": [
+              "q2"
+            ],
+            "dependencies": [
+              2
+            ]
+          },
+          {
+            "step": 4,
+            "action": "Apply counting rules based on height thresholds",
+            "condition_ids": [
+              "c5",
+              "c6"
+            ],
+            "qualifier_ids": [
+              "q2"
+            ],
+            "dependencies": [
+              2,
+              3
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:31:33",
+  "model_used": "anthropic/claude-sonnet-4"
+}

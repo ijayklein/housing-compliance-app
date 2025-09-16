@@ -1,0 +1,58 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_19.png",
+  "image_name": "Page_19.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Note: The 2nd floor over a vaulted entry\nwill count as usual. Therefore, the area will\ncount three times toward gross floor area.\n\nNote: If the entryway is considered to be a vaulted entryway\nthe area will be counted as follows:\n\n* In this example, a portion of the entryway is recessed\nbeyond the house facade and roof. It is included in the\narea that counts.\n\n* The area is measured to the outside material of the entry-\nway feature.\n\n* The area counts TWICE toward gross floor area.\n\nFig 8 Entry feature with 2nd floor above\n\nIntersection of front\nfacade and under-\nside or bottom of\n2nd floor\n\nTop of 2nd floor\nBottom of 2nd floor\n\nHeight\n\nHeight\nGrade\n\nOutline of entryway\nfloor area that counts\nTWICE if entryway is\nvaulted\n\nIsometric View\n\nSide Elevation\n\nPorch Floor Plan\n\n13",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "An isometric view of a building's entry feature, showing a recessed entryway with an arched opening and windows on the upper floor. A dashed line indicates the front facade, and an arrow labeled 'Height' points from the 'Grade' line up to the top of the entry feature.",
+          "location": "Middle left"
+        },
+        {
+          "type": "diagram",
+          "description": "A side elevation view of the same building's entry feature. It shows the vertical dimensions and the relationship between the 'Top of 2nd floor' and 'Bottom of 2nd floor' relative to the entry feature. A dashed line indicates the vertical extent of the feature, and an arrow labeled 'Height' points from the base to the top of the feature.",
+          "location": "Middle center"
+        },
+        {
+          "type": "diagram",
+          "description": "A porch floor plan view, showing the outline of the entryway. A bold black line indicates the 'Outline of entryway floor area that counts TWICE if entryway is vaulted'. An arrow points from this text to the outlined area.",
+          "location": "Middle right"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Gross floor area calculation for 2nd floor over vaulted entry",
+          "value": "3",
+          "unit": "times"
+        },
+        {
+          "parameter": "Gross floor area calculation for vaulted entryway",
+          "value": "2",
+          "unit": "times"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": null,
+        "subheadings": [
+          "Fig 8 Entry feature with 2nd floor above",
+          "Isometric View",
+          "Side Elevation",
+          "Porch Floor Plan"
+        ],
+        "sections": [
+          "Note: The 2nd floor over a vaulted entry will count as usual. Therefore, the area will count three times toward gross floor area.",
+          "Note: If the entryway is considered to be a vaulted entryway the area will be counted as follows:",
+          "* In this example, a portion of the entryway is recessed beyond the house facade and roof. It is included in the area that counts.",
+          "* The area is measured to the outside material of the entry-way feature.",
+          "* The area counts TWICE toward gross floor area."
+        ]
+      },
+      "additional_notes": [],
+      "cross_references": []
+    }
+  },
+  "analysis_timestamp": "2025-09-11 14:59:09",
+  "model_used": "google/gemini-2.5-flash"
+}

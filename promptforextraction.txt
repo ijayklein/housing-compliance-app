@@ -1,0 +1,39 @@
+## Task
+Analyze the text (textual extraction of a book page discussing city planning regulations) for the purpose of extracting structured and detailed validation data.
+
+### Analysis Categories
+For each file, extract the following using this schema:
+- **Qualifiers**: Scope, applicability, exclusions
+- **Variables**: Dimensional, material, environmental, usage parameters
+- **Constants**: Numerical values, specs, standards, procedures  
+- **Conditions**: Mandatory, optional, conditional logic, dependencies
+- **Exceptions**: Explicit deviations, alternatives, special cases
+- **Relationships**: Hierarchical, cross-references, logical dependencies
+
+### More than one rule/regulation per file
+In some cases, the text may contain more than one regulation. In this case, duplicate the process per rule.
+
+### Output Requirements
+- Follow the schema exactly
+- Preserve hierarchical structures
+- Extract precise values with units
+- Detect and map all inter-relationships (in case of more than one rule per file)
+- Keep in mind that your output will serve an automated validation process
+- Flag ambiguous language
+
+### Processing Steps
+1. Load and parse the text file
+2. Extract all validation components systematically
+3. Detect if more than one rule per file
+4. Structure outputs according to schema
+6. Validate completeness and consistency
+
+### Quality Criteria
+- **Completeness**: All rule elements identified
+- **Accuracy**: Correct values and units extracted
+- **Relationships**: Proper mapping of dependencies
+- **Hierarchy**: Original structure preserved
+- **Validation**: Output enables compliance checking
+
+
+Precision and completeness are critical.

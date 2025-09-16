@@ -1,0 +1,12 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_32.png",
+  "image_name": "Page_32.png",
+  "analysis": {
+    "raw_content": "Extracted content from the provided page image (verbatim where legible; unclear items marked [unclear]):\n\nLeft sidebar\n- Header: Daylight plane\n- Text: The daylight plane in conjunction with the setbacks & height limits, create an invisible tent intended to contain development on the lot in a way that preserves privacy and exposure to natural light.\n- Code sections\n  - Page 26\n    - 18.12.040 (a) Table 2\n  - Page 27\n    - 18.04\n  - Page 28\n    - 18.12.040 (a) Table 2\n  - Page 29\n    - 18.12.050 (b) (2)\n    - 18.12.040 (i)\n\nMain header\n- Primary daylight plane (sides)\n\nGray box statement\n- The primary daylight plane regulates structures located within the buildable area. Structures located in the rear and/or side yards are regulated by the accessory-structure daylight plan described on the next page.\n\nFigure caption\n- Fig 20 Front elevation showing side primary daylight plane\n\nDiagram labels and callouts\n- 45\u00b0\n- 10' from average grade\n- Side lot line (appears at both side boundaries)\n- Max. allowed is [regulated] by Building Code [word \u201cregulated\u201d inferred by visibility; the rest \u201cby Building Code\u201d legible; if \u201cregulated\u201d is not exact, this callout is [unclear]]\n- Average grade\n- Grade at the nearest point on the adjacent lot\n- Existing grade of the structure (at midpoint of wall)\n- 24' max. for portions [unclear remainder of this note]\n- Max. building height (with star symbol)\n\nNotes (bullet list beneath figure)\n- Daylight plane is measured from average grade.\n- Average grade is established using existing grade\u2014before any grading or fill (See Fig 44 p. 42)\n- Side daylight plane is measured (up) at lot line.\n- Rear daylight plane is measured (up) at rear setback.\n\nFooter\n- 26\n\nItems requiring a clearer image to confirm precisely\n- The complete text of the callout beginning \u201cMax. allowed is \u2026 by Building Code\u201d (the middle word(s) are fuzzy).\n- The complete text following \u201c24' max. for portions \u2026\u201d on the right side of the diagram.",
+    "content_length": 1961,
+    "parse_error": false
+  },
+  "timestamp": "2025-09-16 14:08:14",
+  "model": "openai/gpt-5",
+  "success": true
+}

@@ -1,0 +1,117 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_31.png",
+  "image_name": "Page_31.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Allowable extensions to existing encroachments\n\nFig 19 Allowable extensions of existing walls that encroach into required yards (on ground floor only)\n\nA Extension of existing side yard\nencroachment\nAn existing wall that encroaches into the\nrequired interior side yard setback but is at\nleast 5'-0\" from the property line, may be\nextended at the same setback, in one\ndirection only, at the ground floor only, for a\ndistance equal to the length of the existing\nwall or 20' whichever is less.\nNote: In the example below, two existing\nwalls are encroaching--only one of them\nmay be extended.\n\nB Extension of existing front yard\nencroachment\nAn existing wall that encroaches into the\nrequired front yard setback but is at least\n14'-0\" from the property line, may be\nextended at the same setback, in one\ndirection only, at the ground floor only, with\nboth of the following provisions:\n1) the length of the extension is no greater\nthan that of the existing encroaching wall,\n2) the combined length is no greater than\none-half the maximum width of the house.\n\nC Extension of existing street-side\nyard encroachment\nAn existing wall that encroaches into the\nrequired street side yard setback but is at\nleast 10'-0\" from the property line, may be\nextended at the same setback, in one\ndirection only, at the ground floor only, for a\ndistance equal to the length of the existing\nwall or 20' whichever is less.\n\nNote:\n\u2022 Encroaching walls that\ndon't meet the minimim\nsetback given for each\ncase i.e., 5', 14, and 10',\nmay not be extended nor\nmay they may not be\nstepped back and then\nextended.\n\u2022 Multiple protrusions are\nnot permitted; addition\nmust be contiguous with\nexisting protrusion.\n\u2022 Only for structures that\nwere legally constructed,\nwithout a variance or an\nhome-improvement\nexception (HIE).\n\u2022 Only once in the life of the\nstructure.\n\u2022 Requires retention of the\nnon- complying wall.\n\u2022 Exceptions apply to special\nsetbacks as well.\n\nKey\n\nLot line\nRequired setback:\nBuildable area\nSidewalk\nExisting house\nAddition\n\n25",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "A three-part diagram illustrating different types of allowable extensions to existing encroachments. Each part shows a top-down view of a property with a house, setbacks, and an addition. The diagrams are labeled A, B, and C, corresponding to the text sections.",
+          "location": "Middle to bottom of the page"
+        },
+        {
+          "type": "diagram",
+          "description": "Diagram A: Shows an 'Existing house' (dark grey) with an 'Addition' (black) extending into the 'Interior-side yard'. The 'Required setback' (dashed line) is indicated. Arrows point from 'Interior-side yard' to the encroaching wall. A note below the diagram states 'Only one of the two encroaching walls may be extended'. Dimensions '15' min.' are shown for the setback.",
+          "location": "Middle-left of the page"
+        },
+        {
+          "type": "diagram",
+          "description": "Diagram B: Shows an 'Existing house' (dark grey) with an 'Addition' (black) extending into the 'Front yard'. The 'Required setback' (dashed line) is indicated. Dimensions '14' min.' are shown for the setback. Text labels 'Length of existing encroaching wall max.' and 'Half the width of the building max.' are shown with corresponding arrows indicating the maximum allowable extension length.",
+          "location": "Middle-center of the page"
+        },
+        {
+          "type": "diagram",
+          "description": "Diagram C: Shows an 'Existing house' (dark grey) with an 'Addition' (black) extending into the 'Street-side yard'. The 'Required setback' (dashed line) is indicated. Dimensions '10' min.' are shown for the setback. The 'Street-side yard' is labeled along the side of the property.",
+          "location": "Middle-right of the page"
+        },
+        {
+          "type": "legend",
+          "description": "A key explaining the symbols used in the diagrams:\n- Solid line: Lot line\n- Dashed line: Required setback\n- Light grey shaded area with dashed border: Buildable area\n- Patterned area (horizontal lines): Sidewalk\n- Dark grey solid fill: Existing house\n- Black solid fill: Addition",
+          "location": "Bottom-right of the page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Minimum interior side yard setback for extension",
+          "value": "5",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Maximum extension length (side yard)",
+          "value": "20",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum front yard setback for extension",
+          "value": "14",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Maximum extension length (front yard) relative to existing wall",
+          "value": "no greater than that of the existing encroaching wall",
+          "unit": "N/A"
+        },
+        {
+          "parameter": "Maximum combined extension length (front yard) relative to house width",
+          "value": "one-half the maximum width of the house",
+          "unit": "N/A"
+        },
+        {
+          "parameter": "Minimum street-side yard setback for extension",
+          "value": "10",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Maximum extension length (street-side yard)",
+          "value": "20",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum setback for side yard (Note)",
+          "value": "5",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum setback for front yard (Note)",
+          "value": "14",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum setback for street-side yard (Note)",
+          "value": "10",
+          "unit": "feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Allowable extensions to existing encroachments",
+        "subheadings": [
+          "A Extension of existing side yard encroachment",
+          "B Extension of existing front yard encroachment",
+          "C Extension of existing street-side yard encroachment",
+          "Note:",
+          "Key"
+        ],
+        "sections": [
+          "Fig 19",
+          "A",
+          "B",
+          "C",
+          "Note",
+          "Key"
+        ]
+      },
+      "additional_notes": [
+        "The page number '25' is located at the bottom right corner.",
+        "The overall layout is clean and well-organized, with a main heading, a figure caption, three main sections (A, B, C) describing different types of extensions, a general 'Note' section, and a 'Key' for the diagrams.",
+        "The diagrams are clearly labeled and illustrate the concepts described in the text.",
+        "The text '15' min.' in diagram A appears to be a typo and should likely be '5' min.' based on the text description in section A."
+      ],
+      "cross_references": [
+        "Fig 19"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-11 14:59:19",
+  "model_used": "google/gemini-2.5-flash"
+}

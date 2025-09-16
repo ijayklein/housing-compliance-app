@@ -1,0 +1,372 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_39.md",
+  "file_name": "Page_39.md",
+  "analysis": {
+    "extracted_rules": {
+      "rules": [
+        {
+          "id": "R1",
+          "title": "Placement of noise-producing service equipment",
+          "qualifiers": {
+            "scope": "Siting/placement of noise-producing service equipment on a lot",
+            "applicability": [
+              "All service equipment classified as noise-producing",
+              "Explicit examples: pool equipment (P), air conditioning units (AC), generators (G)"
+            ],
+            "exclusions": [
+              "None stated beyond placement prohibitions captured in Conditions"
+            ],
+            "notes": "Figures A\u2013C in Figure 27 illustrate compliant placements but do not add additional permissions beyond those stated."
+          },
+          "variables": [
+            {
+              "name": "equipment_type",
+              "description": "Type of service equipment",
+              "datatype": "enum",
+              "allowed_values": [
+                "pool_equipment",
+                "air_conditioning_unit",
+                "generator",
+                "other_noise_producing_service_equipment"
+              ]
+            },
+            {
+              "name": "location_area",
+              "description": "Area of lot where equipment is sited",
+              "datatype": "enum",
+              "allowed_values": [
+                "buildable_area",
+                "front_yard",
+                "rear_yard",
+                "interior_side_yard",
+                "street_side_yard"
+              ]
+            },
+            {
+              "name": "street_side_yard_encroachment",
+              "description": "Distance equipment extends into street-side yard from the buildable area/setback line",
+              "datatype": "number",
+              "units": "ft"
+            }
+          ],
+          "constants": [
+            {
+              "name": "max_street_side_yard_encroachment",
+              "value": 6,
+              "units": "ft",
+              "source": "General rule and Figure 27C callout '6' max.'"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "mandatory",
+              "id": "R1-C1",
+              "description": "Equipment may not be located in front, rear, or interior-side yards.",
+              "logic": "location_area NOT IN {front_yard, rear_yard, interior_side_yard}"
+            },
+            {
+              "type": "conditional",
+              "id": "R1-C2",
+              "description": "Equipment may encroach into the street-side yard up to 6 ft.",
+              "logic": "IF location_area == street_side_yard THEN street_side_yard_encroachment <= max_street_side_yard_encroachment"
+            },
+            {
+              "type": "mandatory",
+              "id": "R1-C3",
+              "description": "If located in the street-side yard, equipment still may not encroach into the front or rear yards.",
+              "logic": "IF location_area == street_side_yard THEN location_area MUST NOT overlap front_yard OR rear_yard"
+            },
+            {
+              "type": "mandatory",
+              "id": "R1-C4",
+              "description": "Placement within the buildable area is permitted.",
+              "logic": "location_area == buildable_area ALLOWED"
+            }
+          ],
+          "exceptions": [],
+          "relationships": [
+            {
+              "type": "cross-reference",
+              "relatedRuleId": "R5",
+              "description": "Placement must maintain minimum driveway clearance where applicable (see R5)."
+            }
+          ]
+        },
+        {
+          "id": "R2",
+          "title": "Acoustic insulation and housing requirements; waiver process",
+          "qualifiers": {
+            "scope": "Noise attenuation features for noise-producing service equipment",
+            "applicability": [
+              "All noise-producing service equipment installations"
+            ],
+            "exclusions": [
+              "None"
+            ],
+            "authority": "Planning Department may grant waiver"
+          },
+          "variables": [
+            {
+              "name": "insulated",
+              "description": "Whether acoustic insulation is provided",
+              "datatype": "boolean"
+            },
+            {
+              "name": "housed",
+              "description": "Whether equipment is enclosed/housed",
+              "datatype": "boolean"
+            },
+            {
+              "name": "located_in_buildable_area",
+              "description": "Whether equipment is located within the buildable area",
+              "datatype": "boolean"
+            },
+            {
+              "name": "noise_specifications",
+              "description": "Manufacturer or measured equipment noise specifications used to demonstrate compliance",
+              "datatype": "string"
+            },
+            {
+              "name": "screening_or_buffering",
+              "description": "Physical screening/buffering measures used to reduce noise",
+              "datatype": "string"
+            },
+            {
+              "name": "assures_ordinance_compliance_at_nearest_lot_line",
+              "description": "Determination that combination of factors ensures compliance with City Noise Ordinance at the nearest lot line",
+              "datatype": "boolean"
+            }
+          ],
+          "constants": [],
+          "conditions": [
+            {
+              "type": "mandatory",
+              "id": "R2-C1",
+              "description": "Equipment must be insulated and housed unless waived by the Planning Department.",
+              "logic": "insulated == true AND housed == true UNLESS waiver_granted == true"
+            },
+            {
+              "type": "conditional",
+              "id": "R2-C2",
+              "description": "Planning Department waiver criteria for insulation/housing.",
+              "logic": "IF located_in_buildable_area == true AND assures_ordinance_compliance_at_nearest_lot_line == true THEN waiver_granted == true",
+              "inputs": [
+                "noise_specifications",
+                "equipment location",
+                "screening_or_buffering"
+              ],
+              "notes": "Compliance determination is against the City\u2019s Noise Ordinance at the nearest lot line."
+            }
+          ],
+          "exceptions": [
+            {
+              "id": "R2-E1",
+              "description": "If waiver granted per R2-C2, the insulation and housing requirement in R2-C1 is not required.",
+              "trigger": "waiver_granted == true"
+            }
+          ],
+          "relationships": [
+            {
+              "type": "cross-reference",
+              "relatedRuleId": "R3",
+              "description": "Waiver is contingent upon demonstrating compliance with the City\u2019s Noise Ordinance (Chapter 9.10) at the nearest lot line."
+            }
+          ]
+        },
+        {
+          "id": "R3",
+          "title": "Compliance with City Noise Ordinance",
+          "qualifiers": {
+            "scope": "Operational noise limits for service equipment",
+            "applicability": [
+              "All service equipment"
+            ],
+            "exclusions": [
+              "None"
+            ],
+            "references": [
+              "City Noise Ordinance, Municipal Code Chapter 9.10"
+            ]
+          },
+          "variables": [
+            {
+              "name": "equipment_noise_level",
+              "description": "Measured or specified noise level of equipment as required by Chapter 9.10",
+              "datatype": "number",
+              "units": "dBA",
+              "notes": "Exact limits and measurement protocols are defined in Chapter 9.10 and not provided in this text."
+            },
+            {
+              "name": "measurement_location",
+              "description": "Location at which compliance is evaluated",
+              "datatype": "enum",
+              "allowed_values": [
+                "nearest_lot_line"
+              ]
+            }
+          ],
+          "constants": [
+            {
+              "name": "noise_standard_reference",
+              "value": "Municipal Code Chapter 9.10",
+              "units": null,
+              "notes": "Numeric limits to be sourced from the referenced ordinance."
+            }
+          ],
+          "conditions": [
+            {
+              "type": "mandatory",
+              "id": "R3-C1",
+              "description": "All service equipment must meet the City\u2019s Noise Ordinance.",
+              "logic": "equipment_noise_level <= allowed_level_per_Chapter_9_10 AT measurement_location == nearest_lot_line"
+            }
+          ],
+          "exceptions": [],
+          "relationships": [
+            {
+              "type": "logical-dependency",
+              "relatedRuleId": "R2",
+              "description": "R2 waiver decisions rely on compliance with R3 at the nearest lot line."
+            }
+          ]
+        },
+        {
+          "id": "R4",
+          "title": "Replacement of equipment",
+          "qualifiers": {
+            "scope": "Replacement of existing noise-producing service equipment",
+            "applicability": [
+              "All service equipment replacements"
+            ],
+            "exclusions": [
+              "None"
+            ]
+          },
+          "variables": [
+            {
+              "name": "feasible_to_conform",
+              "description": "Feasibility of conforming to all requirements in this section",
+              "datatype": "boolean",
+              "notes": "Feasibility is not defined in the text and requires administrative determination."
+            }
+          ],
+          "constants": [],
+          "conditions": [
+            {
+              "type": "mandatory",
+              "id": "R4-C1",
+              "description": "Replacement of equipment shall conform to this section where feasible.",
+              "logic": "IF feasible_to_conform == true THEN replacement MUST comply with R1, R2, and R3"
+            }
+          ],
+          "exceptions": [
+            {
+              "id": "R4-E1",
+              "description": "If not feasible, replacement may deviate from full conformance.",
+              "trigger": "feasible_to_conform == false",
+              "notes": "Criteria for determining infeasibility are not specified."
+            }
+          ],
+          "relationships": [
+            {
+              "type": "hierarchical",
+              "relatedRuleId": "R1",
+              "description": "Replacement conformance includes placement requirements."
+            },
+            {
+              "type": "hierarchical",
+              "relatedRuleId": "R2",
+              "description": "Replacement conformance includes acoustic treatment requirements and waiver criteria."
+            },
+            {
+              "type": "hierarchical",
+              "relatedRuleId": "R3",
+              "description": "Replacement conformance includes compliance with Noise Ordinance."
+            }
+          ]
+        },
+        {
+          "id": "R5",
+          "title": "Driveway clearance constraint (related to equipment placement)",
+          "qualifiers": {
+            "scope": "Minimum clear width for driveway where equipment placement could affect clearance",
+            "applicability": [
+              "Any equipment placement adjacent to or affecting a driveway"
+            ],
+            "exclusions": [
+              "None"
+            ],
+            "notes": "Cited in Figure 27A as an existing 'required 10' min. clearance for the driveway'; treated as a related constraint impacting placement."
+          },
+          "variables": [
+            {
+              "name": "driveway_clear_width",
+              "description": "Clear width maintained for the driveway",
+              "datatype": "number",
+              "units": "ft"
+            }
+          ],
+          "constants": [
+            {
+              "name": "driveway_min_clear_width",
+              "value": 10,
+              "units": "ft",
+              "source": "Figure 27A label '10' min. clear' and accompanying note"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "mandatory",
+              "id": "R5-C1",
+              "description": "Maintain minimum driveway clearance.",
+              "logic": "driveway_clear_width >= driveway_min_clear_width"
+            }
+          ],
+          "exceptions": [],
+          "relationships": [
+            {
+              "type": "cross-reference",
+              "relatedRuleId": "R1",
+              "description": "Placement of equipment must not reduce driveway clearance below minimum."
+            }
+          ]
+        }
+      ],
+      "ambiguities": [
+        {
+          "ruleId": "R2",
+          "location": "Conditions R2-C1 and R2-C2",
+          "text": "\u201cMust be insulated and housed\u201d lacks specific performance criteria for insulation/housing.",
+          "impact": "Cannot validate specific materials or STC/Rw ratings without additional standards."
+        },
+        {
+          "ruleId": "R2",
+          "location": "Conditions R2-C2",
+          "text": "\u201cCombination of noise specifications, location, and/or other screening or buffering\u201d is open-ended.",
+          "impact": "Validator requires administrative determination of adequacy; not fully automatable."
+        },
+        {
+          "ruleId": "R4",
+          "location": "Conditions R4-C1 and Exceptions R4-E1",
+          "text": "\u201cWhere feasible\u201d is undefined.",
+          "impact": "Feasibility requires case-by-case determination; automated validation should flag for review."
+        },
+        {
+          "ruleId": "R5",
+          "location": "Qualifiers notes",
+          "text": "Driveway 10' minimum clearance is referenced via figure caption/label, not in the general rule text.",
+          "impact": "If the driveway clearance standard is codified elsewhere, reference should be verified; otherwise treat as advisory unless confirmed."
+        }
+      ]
+    },
+    "parse_error": false,
+    "raw_response": "{\n  \"rules\": [\n    {\n      \"id\": \"R1\",\n      \"title\": \"Placement of noise-producing service equipment\",\n      \"qualifiers\": {\n        \"scope\": \"Siting/placement of noise-producing service equipment on a lot\",\n        \"applicability\": [\n          \"All service equipment classified as noise-producing\",\n          \"Explicit examples: pool equipment (P), air conditioning units (AC), generators (G)\"\n        ],\n        \"exclusions\": [\n          \"None stated beyond placement prohibitions captured in Conditions\"\n        ],\n        \"notes\": \"Figures A\u2013C in Figure 27 illustrate compliant placements but do not add additional permissions beyond those stated.\"\n      },\n      \"variables\": [\n        {\n          \"name\": \"equipment_type\",\n          \"description\": \"Type of service equipment\",\n          \"datatype\": \"enum\",\n          \"allowed_values\": [\n            \"pool_equipment\",\n            \"air_conditioning_unit\",\n            \"generator\",\n            \"other_noise_producing_service_equipment\"\n          ]\n        },\n        {\n          \"name\": \"location_area\",\n          \"description\": \"Area of lot where equipment is sited\",\n          \"datatype\": \"enum\",\n          \"allowed_values\": [\n            \"buildable_area\",\n            \"front_yard\",\n            \"rear_yard\",\n            \"interior_side_yard\",\n            \"street_side_yard\"\n          ]\n        },\n        {\n          \"name\": \"street_side_yard_encroachment\",\n          \"description\": \"Distance equipment extends into street-side yard from the buildable area/setback line\",\n          \"datatype\": \"number\",\n          \"units\": \"ft\"\n        }\n      ],\n      \"constants\": [\n        {\n          \"name\": \"max_street_side_yard_encroachment\",\n          \"value\": 6,\n          \"units\": \"ft\",\n          \"source\": \"General rule and Figure 27C callout '6' max.'\"\n        }\n      ],\n      \"conditions\": [\n        {\n          \"type\": \"mandatory\",\n          \"id\": \"R1-C1\",\n          \"description\": \"Equipment may not be located in front, rear, or interior-side yards.\",\n          \"logic\": \"location_area NOT IN {front_yard, rear_yard, interior_side_yard}\"\n        },\n        {\n          \"type\": \"conditional\",\n          \"id\": \"R1-C2\",\n          \"description\": \"Equipment may encroach into the street-side yard up to 6 ft.\",\n          \"logic\": \"IF location_area == street_side_yard THEN street_side_yard_encroachment <= max_street_side_yard_encroachment\"\n        },\n        {\n          \"type\": \"mandatory\",\n          \"id\": \"R1-C3\",\n          \"description\": \"If located in the street-side yard, equipment still may not encroach into the front or rear yards.\",\n          \"logic\": \"IF location_area == street_side_yard THEN location_area MUST NOT overlap front_yard OR rear_yard\"\n        },\n        {\n          \"type\": \"mandatory\",\n          \"id\": \"R1-C4\",\n          \"description\": \"Placement within the buildable area is permitted.\",\n          \"logic\": \"location_area == buildable_area ALLOWED\"\n        }\n      ],\n      \"exceptions\": [],\n      \"relationships\": [\n        {\n          \"type\": \"cross-reference\",\n          \"relatedRuleId\": \"R5\",\n          \"description\": \"Placement must maintain minimum driveway clearance where applicable (see R5).\"\n        }\n      ]\n    },\n    {\n      \"id\": \"R2\",\n      \"title\": \"Acoustic insulation and housing requirements; waiver process\",\n      \"qualifiers\": {\n        \"scope\": \"Noise attenuation features for noise-producing service equipment\",\n        \"applicability\": [\n          \"All noise-producing service equipment installations\"\n        ],\n        \"exclusions\": [\n          \"None\"\n        ],\n        \"authority\": \"Planning Department may grant waiver\"\n      },\n      \"variables\": [\n        {\n          \"name\": \"insulated\",\n          \"description\": \"Whether acoustic insulation is provided\",\n          \"datatype\": \"boolean\"\n        },\n        {\n          \"name\": \"housed\",\n          \"description\": \"Whether equipment is enclosed/housed\",\n          \"datatype\": \"boolean\"\n        },\n        {\n          \"name\": \"located_in_buildable_area\",\n          \"description\": \"Whether equipment is located within the buildable area\",\n          \"datatype\": \"boolean\"\n        },\n        {\n          \"name\": \"noise_specifications\",\n          \"description\": \"Manufacturer or measured equipment noise specifications used to demonstrate compliance\",\n          \"datatype\": \"string\"\n        },\n        {\n          \"name\": \"screening_or_buffering\",\n          \"description\": \"Physical screening/buffering measures used to reduce noise\",\n          \"datatype\": \"string\"\n        },\n        {\n          \"name\": \"assures_ordinance_compliance_at_nearest_lot_line\",\n          \"description\": \"Determination that combination of factors ensures compliance with City Noise Ordinance at the nearest lot line\",\n          \"datatype\": \"boolean\"\n        }\n      ],\n      \"constants\": [],\n      \"conditions\": [\n        {\n          \"type\": \"mandatory\",\n          \"id\": \"R2-C1\",\n          \"description\": \"Equipment must be insulated and housed unless waived by the Planning Department.\",\n          \"logic\": \"insulated == true AND housed == true UNLESS waiver_granted == true\"\n        },\n        {\n          \"type\": \"conditional\",\n          \"id\": \"R2-C2\",\n          \"description\": \"Planning Department waiver criteria for insulation/housing.\",\n          \"logic\": \"IF located_in_buildable_area == true AND assures_ordinance_compliance_at_nearest_lot_line == true THEN waiver_granted == true\",\n          \"inputs\": [\n            \"noise_specifications\",\n            \"equipment location\",\n            \"screening_or_buffering\"\n          ],\n          \"notes\": \"Compliance determination is against the City\u2019s Noise Ordinance at the nearest lot line.\"\n        }\n      ],\n      \"exceptions\": [\n        {\n          \"id\": \"R2-E1\",\n          \"description\": \"If waiver granted per R2-C2, the insulation and housing requirement in R2-C1 is not required.\",\n          \"trigger\": \"waiver_granted == true\"\n        }\n      ],\n      \"relationships\": [\n        {\n          \"type\": \"cross-reference\",\n          \"relatedRuleId\": \"R3\",\n          \"description\": \"Waiver is contingent upon demonstrating compliance with the City\u2019s Noise Ordinance (Chapter 9.10) at the nearest lot line.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"R3\",\n      \"title\": \"Compliance with City Noise Ordinance\",\n      \"qualifiers\": {\n        \"scope\": \"Operational noise limits for service equipment\",\n        \"applicability\": [\n          \"All service equipment\"\n        ],\n        \"exclusions\": [\n          \"None\"\n        ],\n        \"references\": [\n          \"City Noise Ordinance, Municipal Code Chapter 9.10\"\n        ]\n      },\n      \"variables\": [\n        {\n          \"name\": \"equipment_noise_level\",\n          \"description\": \"Measured or specified noise level of equipment as required by Chapter 9.10\",\n          \"datatype\": \"number\",\n          \"units\": \"dBA\",\n          \"notes\": \"Exact limits and measurement protocols are defined in Chapter 9.10 and not provided in this text.\"\n        },\n        {\n          \"name\": \"measurement_location\",\n          \"description\": \"Location at which compliance is evaluated\",\n          \"datatype\": \"enum\",\n          \"allowed_values\": [\n            \"nearest_lot_line\"\n          ]\n        }\n      ],\n      \"constants\": [\n        {\n          \"name\": \"noise_standard_reference\",\n          \"value\": \"Municipal Code Chapter 9.10\",\n          \"units\": null,\n          \"notes\": \"Numeric limits to be sourced from the referenced ordinance.\"\n        }\n      ],\n      \"conditions\": [\n        {\n          \"type\": \"mandatory\",\n          \"id\": \"R3-C1\",\n          \"description\": \"All service equipment must meet the City\u2019s Noise Ordinance.\",\n          \"logic\": \"equipment_noise_level <= allowed_level_per_Chapter_9_10 AT measurement_location == nearest_lot_line\"\n        }\n      ],\n      \"exceptions\": [],\n      \"relationships\": [\n        {\n          \"type\": \"logical-dependency\",\n          \"relatedRuleId\": \"R2\",\n          \"description\": \"R2 waiver decisions rely on compliance with R3 at the nearest lot line.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"R4\",\n      \"title\": \"Replacement of equipment\",\n      \"qualifiers\": {\n        \"scope\": \"Replacement of existing noise-producing service equipment\",\n        \"applicability\": [\n          \"All service equipment replacements\"\n        ],\n        \"exclusions\": [\n          \"None\"\n        ]\n      },\n      \"variables\": [\n        {\n          \"name\": \"feasible_to_conform\",\n          \"description\": \"Feasibility of conforming to all requirements in this section\",\n          \"datatype\": \"boolean\",\n          \"notes\": \"Feasibility is not defined in the text and requires administrative determination.\"\n        }\n      ],\n      \"constants\": [],\n      \"conditions\": [\n        {\n          \"type\": \"mandatory\",\n          \"id\": \"R4-C1\",\n          \"description\": \"Replacement of equipment shall conform to this section where feasible.\",\n          \"logic\": \"IF feasible_to_conform == true THEN replacement MUST comply with R1, R2, and R3\"\n        }\n      ],\n      \"exceptions\": [\n        {\n          \"id\": \"R4-E1\",\n          \"description\": \"If not feasible, replacement may deviate from full conformance.\",\n          \"trigger\": \"feasible_to_conform == false\",\n          \"notes\": \"Criteria for determining infeasibility are not specified.\"\n        }\n      ],\n      \"relationships\": [\n        {\n          \"type\": \"hierarchical\",\n          \"relatedRuleId\": \"R1\",\n          \"description\": \"Replacement conformance includes placement requirements.\"\n        },\n        {\n          \"type\": \"hierarchical\",\n          \"relatedRuleId\": \"R2\",\n          \"description\": \"Replacement conformance includes acoustic treatment requirements and waiver criteria.\"\n        },\n        {\n          \"type\": \"hierarchical\",\n          \"relatedRuleId\": \"R3\",\n          \"description\": \"Replacement conformance includes compliance with Noise Ordinance.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"R5\",\n      \"title\": \"Driveway clearance constraint (related to equipment placement)\",\n      \"qualifiers\": {\n        \"scope\": \"Minimum clear width for driveway where equipment placement could affect clearance\",\n        \"applicability\": [\n          \"Any equipment placement adjacent to or affecting a driveway\"\n        ],\n        \"exclusions\": [\n          \"None\"\n        ],\n        \"notes\": \"Cited in Figure 27A as an existing 'required 10' min. clearance for the driveway'; treated as a related constraint impacting placement.\"\n      },\n      \"variables\": [\n        {\n          \"name\": \"driveway_clear_width\",\n          \"description\": \"Clear width maintained for the driveway\",\n          \"datatype\": \"number\",\n          \"units\": \"ft\"\n        }\n      ],\n      \"constants\": [\n        {\n          \"name\": \"driveway_min_clear_width\",\n          \"value\": 10,\n          \"units\": \"ft\",\n          \"source\": \"Figure 27A label '10' min. clear' and accompanying note\"\n        }\n      ],\n      \"conditions\": [\n        {\n          \"type\": \"mandatory\",\n          \"id\": \"R5-C1\",\n          \"description\": \"Maintain minimum driveway clearance.\",\n          \"logic\": \"driveway_clear_width >= driveway_min_clear_width\"\n        }\n      ],\n      \"exceptions\": [],\n      \"relationships\": [\n        {\n          \"type\": \"cross-reference\",\n          \"relatedRuleId\": \"R1\",\n          \"description\": \"Placement of equipment must not reduce driveway clearance below minimum.\"\n        }\n      ]\n    }\n  ],\n  \"ambiguities\": [\n    {\n      \"ruleId\": \"R2\",\n      \"location\": \"Conditions R2-C1 and R2-C2\",\n      \"text\": \"\u201cMust be insulated and housed\u201d lacks specific performance criteria for insulation/housing.\",\n      \"impact\": \"Cannot validate specific materials or STC/Rw ratings without additional standards.\"\n    },\n    {\n      \"ruleId\": \"R2\",\n      \"location\": \"Conditions R2-C2\",\n      \"text\": \"\u201cCombination of noise specifications, location, and/or other screening or buffering\u201d is open-ended.\",\n      \"impact\": \"Validator requires administrative determination of adequacy; not fully automatable.\"\n    },\n    {\n      \"ruleId\": \"R4\",\n      \"location\": \"Conditions R4-C1 and Exceptions R4-E1\",\n      \"text\": \"\u201cWhere feasible\u201d is undefined.\",\n      \"impact\": \"Feasibility requires case-by-case determination; automated validation should flag for review.\"\n    },\n    {\n      \"ruleId\": \"R5\",\n      \"location\": \"Qualifiers notes\",\n      \"text\": \"Driveway 10' minimum clearance is referenced via figure caption/label, not in the general rule text.\",\n      \"impact\": \"If the driveway clearance standard is codified elsewhere, reference should be verified; otherwise treat as advisory unless confirmed.\"\n    }\n  ]\n}",
+    "response_time": 83.7012152671814,
+    "input_tokens": 984,
+    "output_tokens": 6608,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 15:54:10",
+  "model": "openai/gpt-5",
+  "success": true
+}

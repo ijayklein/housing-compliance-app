@@ -1,0 +1,60 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_14.md",
+  "file_name": "Page_14.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "rule": "Determination of Porch Openness Percentage",
+        "Qualifiers": {
+          "Scope": "Procedure to determine if a roofed porch is considered 'open' based on the ratio of its open perimeter segments to its total perimeter.",
+          "Applicability": "Roofed porches on the 1st floor.",
+          "Exclusions": "Not specified."
+        },
+        "Variables": {
+          "dimensional_perimeter_total": "The total perimeter of the porch, calculated as the sum of all its segments (e.g., in linear feet).",
+          "dimensional_perimeter_open_segments_length": "The sum of the lengths of all perimeter segments classified as 'open'.",
+          "dimensional_perimeter_closed_segments_length": "The sum of the lengths of all perimeter segments classified as 'closed'.",
+          "dimensional_openness_percentage": "The calculated percentage of the perimeter that is open. Formula: (dimensional_perimeter_open_segments_length / dimensional_perimeter_total) * 100."
+        },
+        "Constants": {
+          "compliance_threshold_percentage": "50%",
+          "procedure_step_1": "Determine the perimeter of the porch and divide it into segments.",
+          "procedure_step_2": "Allow for a comparison of closed and open segments.",
+          "example_figure5_total_perimeter": "70 linear feet",
+          "example_figure5_segment_A": "2 feet",
+          "example_figure5_segment_B": "8 feet",
+          "example_figure5_segment_C": "10 feet",
+          "example_figure5_segment_D": "7 feet",
+          "example_figure5_segment_E": "14 feet",
+          "example_figure5_segment_F": "24 feet",
+          "example_figure5_segment_G": "2 feet"
+        },
+        "Conditions": {
+          "mandatory_compliance_threshold": "The porch must be at least 50% open to qualify.",
+          "conditional_logic": "IF (dimensional_openness_percentage >= 50) THEN the porch is considered 'open'.",
+          "dependencies": "The calculation requires a clear classification of each perimeter segment as either 'open' or 'closed'."
+        },
+        "Exceptions": {
+          "explicit_deviations": "None specified.",
+          "alternatives": "None specified.",
+          "special_cases": "The text provides an example based on Figure 5, but does not state which segments (A-G) are open or closed."
+        },
+        "Relationships": {
+          "hierarchical": "This rule is a specific procedure under the general topic of 'Roofed porches on the 1st floor'.",
+          "cross_references": "The procedure explicitly references 'Figure 5' as an example.",
+          "logical_dependencies": "The final determination of compliance is logically dependent on the initial classification of perimeter segments.",
+          "ambiguity_flag": "The text is ambiguous as it does not provide the criteria or definition for what constitutes an 'open' versus a 'closed' segment. This is critical for performing the calculation."
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n  {\n    \"rule\": \"Determination of Porch Openness Percentage\",\n    \"Qualifiers\": {\n      \"Scope\": \"Procedure to determine if a roofed porch is considered 'open' based on the ratio of its open perimeter segments to its total perimeter.\",\n      \"Applicability\": \"Roofed porches on the 1st floor.\",\n      \"Exclusions\": \"Not specified.\"\n    },\n    \"Variables\": {\n      \"dimensional_perimeter_total\": \"The total perimeter of the porch, calculated as the sum of all its segments (e.g., in linear feet).\",\n      \"dimensional_perimeter_open_segments_length\": \"The sum of the lengths of all perimeter segments classified as 'open'.\",\n      \"dimensional_perimeter_closed_segments_length\": \"The sum of the lengths of all perimeter segments classified as 'closed'.\",\n      \"dimensional_openness_percentage\": \"The calculated percentage of the perimeter that is open. Formula: (dimensional_perimeter_open_segments_length / dimensional_perimeter_total) * 100.\"\n    },\n    \"Constants\": {\n      \"compliance_threshold_percentage\": \"50%\",\n      \"procedure_step_1\": \"Determine the perimeter of the porch and divide it into segments.\",\n      \"procedure_step_2\": \"Allow for a comparison of closed and open segments.\",\n      \"example_figure5_total_perimeter\": \"70 linear feet\",\n      \"example_figure5_segment_A\": \"2 feet\",\n      \"example_figure5_segment_B\": \"8 feet\",\n      \"example_figure5_segment_C\": \"10 feet\",\n      \"example_figure5_segment_D\": \"7 feet\",\n      \"example_figure5_segment_E\": \"14 feet\",\n      \"example_figure5_segment_F\": \"24 feet\",\n      \"example_figure5_segment_G\": \"2 feet\"\n    },\n    \"Conditions\": {\n      \"mandatory_compliance_threshold\": \"The porch must be at least 50% open to qualify.\",\n      \"conditional_logic\": \"IF (dimensional_openness_percentage >= 50) THEN the porch is considered 'open'.\",\n      \"dependencies\": \"The calculation requires a clear classification of each perimeter segment as either 'open' or 'closed'.\"\n    },\n    \"Exceptions\": {\n      \"explicit_deviations\": \"None specified.\",\n      \"alternatives\": \"None specified.\",\n      \"special_cases\": \"The text provides an example based on Figure 5, but does not state which segments (A-G) are open or closed.\"\n    },\n    \"Relationships\": {\n      \"hierarchical\": \"This rule is a specific procedure under the general topic of 'Roofed porches on the 1st floor'.\",\n      \"cross_references\": \"The procedure explicitly references 'Figure 5' as an example.\",\n      \"logical_dependencies\": \"The final determination of compliance is logically dependent on the initial classification of perimeter segments.\",\n      \"ambiguity_flag\": \"The text is ambiguous as it does not provide the criteria or definition for what constitutes an 'open' versus a 'closed' segment. This is critical for performing the calculation.\"\n    }\n  }\n]\n```",
+    "response_time": 23.688158988952637,
+    "input_tokens": 712,
+    "output_tokens": 2689,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 16:11:04",
+  "model": "google/gemini-2.5-pro",
+  "success": true
+}

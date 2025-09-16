@@ -1,0 +1,12 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_26.png",
+  "image_name": "Page_26.png",
+  "analysis": {
+    "raw_content": "Extracted content (verbatim, with line breaks preserved where helpful)\n\nTitle: Setbacks\n\nIntro text:\nSetbacks apportion a lot into two parts:\n- buildable area (in the middle)\n- required yards (surrounding the building area).\nThese required yards, meant to be maintained as open space areas, are important as landscaping opportunities to keep our neighborhoods attractive as well as for the preservation of privacy.\n\nCode sections\nPage 20\n18.12.040 (a) Table 2\n18.12.040 (a,c,e,& i)\nPage 21\n18.04.040 (a)\nPage 22\u201323\n18.040.030 (84, 87, 91, 128, & 146)\nPage 24\u201325\nas shown in table\n\nSection heading: Standard setbacks\nSubheading: Standard setbacks apply in most cases.\nSubheading: Standard setbacks by zone\n\nColumns referenced: Front [asterisk][cross], Rear, Interior Side, Street Side [cross]\n\n- R-1\n  Front: Contextual or 20\n  Rear: 20\n  Interior Side: 6\n  Street Side: 16\n\n- R-1(7000)\n  Front: Contextual or 20\n  Rear: 20\n  Interior Side: 8\n  Street Side: 16\n\n- R-1(8000)\n  Front: Contextual or 20\n  Rear: 20'\n  Interior Side: 8\n  Street Side: 16\n\n- R-1(10000)\n  Front: Contextual or 20\n  Rear: 20\n  Interior Side: 8\n  Street Side: 16\n\n- R-1(20000)\n  Front: Contextual or 20\n  Rear: 20\n  Interior Side: 8\n  Street Side: 16\n\n- Flag lot\n  Front: 10\n  Rear: 20\n  Interior Side: see zone\n  Street Side: na\n\n- Substandard lot\n  Front: Contextual or 20\n  Rear: 20\n  Interior Side: see zone\n  Street Side: 16\n\n- Substandard corner lot < 50' wide\n  Front: Contextual or 20\n  Rear: 20\n  Interior Side: see zone\n  Street Side: 10\n\nNotes under the table:\n[asterisk] For front setback, if contextual setback is greater than 30' then it applies\u2014otherwise, the 20' setback applies.\n[cross] For front & street side setbacks a special setback may apply. If both a contextual and special setback apply, the greater of the two setbacks is required.\n\nSection heading: Special setbacks\nSubheading: Special setbacks override standard setbacks unless a larger contextual setback applies.\n\nStreets w/ special setbacks\n- Alma St\n- Arastradero Rd\n- Ash St\n- California Ave",
+    "content_length": 2048,
+    "parse_error": false
+  },
+  "timestamp": "2025-09-16 14:08:38",
+  "model": "openai/gpt-5",
+  "success": true
+}

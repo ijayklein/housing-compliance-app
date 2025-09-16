@@ -1,0 +1,19 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_33.png",
+  "image_name": "Page_33.png",
+  "analysis": {
+    "page_number": "unknown",
+    "main_heading": "PARSE_ERROR",
+    "text_content": "Failed to parse response: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)",
+    "tables": [],
+    "figures": [],
+    "zoning_rules": [],
+    "code_references": [],
+    "quality_notes": "JSON parsing failed: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)",
+    "raw_response": "```json\n{\n  \"page_number\": \"27\",\n  \"main_heading\": null,\n  \"text_content\": \"Fig 21 Plan view showing how to determine average grade\\nWhen measuring daylight plane, height is measured from the average of the grade at the midpoint of the building and the grade of the closest point on the abutting site.\\nFor this side of this structure, the average grade is the average of the grades at these two points\\nRear yard\\nInterior-side yard\\nInterior-side yard\\nRear yard\\nBuildable area\\nSubject House\\nInterior-side yard\\nInterior-side yard\\nFor this side of this structure, the average grade is the average of the grades at these two points\\nNeighbor\\nFront yard\\nFront yard\\nFront yard\\nKey\\nLot line\\nRequired setbacks\\nSidewalk\\nBuildable area\\nExisting house\\nRear yard\\nBuildable area\\nFig 22 Detail showing allowable eave protrusion\\nwall plane\\n2' max\\nThe daylight plane must clear the point where the wall plane intersects the top of the roof material\\nCertification of daylight plane compliance",
+    "parse_error": true
+  },
+  "analysis_timestamp": "2025-09-16 12:33:33",
+  "model_used": "google/gemini-2.5-flash",
+  "success": false
+}

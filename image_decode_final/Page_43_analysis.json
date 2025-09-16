@@ -1,0 +1,61 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_43.png",
+  "image_name": "Page_43.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Contextual garage placement\nContextual garage placement applies if, and only if, there is a predominant neighborhood pattern.\n\nHow to determine if contextual garage placement applies (using Fig 32 below as an example)\n\nNote:\n\u2022 If block is more than 600' long, consider only lots with in 600' or the 10 lots closest to the subject lot\n\u2022 If subject lot is a corner lot, consider the pattern on the street that the subject garage faces\n\nExclude the following types of lots:\n\u2022 Flag lot (C)\n\u2022 Multi-family use of 3+ units (G)\n\u2022 Corner lots (A & H)\nThe remaining lots including the subject lot, contribute to the determination.\n\nNote:\n\u2022 If block more than 600' long,\nconsider only lots within 600' or\n10 closest lots.\n\u2022 If subject lot is a corner lot, con-\nsider the pattern on the street that\nthe garage faces\n\nDivide the remaining lots, including\nthe subject lot, into two categories:\n1. Front-half pattern lots\n\u2022 lots with garage in front half of\nthe lot (F)\n2. Rear-half pattern lots\n\u2022 lots with garage in the rear half\nof the lot (B & D) and\n\u2022 lots with no garage (E) (counts\nas a rear-pattern lot)\nDetermine which pattern category is\npredominant i.e., into which catego-\nry more than half of the lots fall.\n\nFront half\n\nRear half\n\nThe contextual-garage-\nplacement regulation DOES\napply. Projects on this block\nmust place the garage in the\nrear half of the lot.\n\nFig 32 Example of a block on which the contextual garage placement regulation applies\n\nGarage\nGar\nage\nC\nGarage\nHouse\nHouse\nage\nGar\nMultiple garages\nD\nHouse\nSubject\nHouse\nGarage\nGarage\nHouse\nHouse\n\u2610\nH.\n37",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "A flowchart illustrating the process to determine if contextual garage placement applies. It starts with excluding certain lot types, then divides remaining lots into 'Front-half pattern lots' and 'Rear-half pattern lots' based on garage placement. It then determines the predominant pattern. If the contextual garage placement regulation applies, it states that projects on the block must place the garage in the rear half of the lot. Arrows connect the steps.",
+          "location": "Middle of the page"
+        },
+        {
+          "type": "figure",
+          "description": "Figure 32: An example block layout showing various lots (A, B, C, D, E, F, G, H) with houses and garages. Some lots are marked with an 'X' indicating exclusion (A, C, H). Lot G is labeled 'Multiple garages'. Lot F is labeled 'Subject House' with a 'Garage' in the front half. Lots B and D have garages in the rear half. Lot E has no garage. The figure illustrates the different types of lots mentioned in the text.",
+          "location": "Bottom of the page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Block length for consideration",
+          "value": "600",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Number of closest lots for consideration",
+          "value": "10",
+          "unit": "lots"
+        },
+        {
+          "parameter": "Multi-family units threshold",
+          "value": "3",
+          "unit": "units"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Contextual garage placement",
+        "subheadings": [
+          "Contextual garage placement applies if, and only if, there is a predominant neighborhood pattern.",
+          "How to determine if contextual garage placement applies (using Fig 32 below as an example)"
+        ],
+        "sections": [
+          "Note:",
+          "Exclude the following types of lots:",
+          "1. Front-half pattern lots",
+          "2. Rear-half pattern lots",
+          "Fig 32 Example of a block on which the contextual garage placement regulation applies"
+        ]
+      },
+      "additional_notes": [
+        "Page number '37' is present at the bottom right corner.",
+        "The text 'H.' appears to be a label for a lot in the figure, but the '\u2610' next to it is unclear, possibly a partial box or artifact."
+      ],
+      "cross_references": [
+        "Fig 32"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-11 14:59:23",
+  "model_used": "google/gemini-2.5-flash"
+}

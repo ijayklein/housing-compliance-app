@@ -1,0 +1,184 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_41.png",
+  "image_name": "Page_41.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Carport standards\n\nFig 29 Parking space dimensions for carport in plan view\n\nOne of\n2 corner\ncolumns\n\nopen\n\n20' min. open\n\nDriveway/\nparking\nsurface\n\nPlan View\n\nFig 30 Parking space dimensions for covered space in elevation\n\nOne of 2 corner\ncolumns\n\nBottom roof\nsystem\n\n20' min. open\n\n7' min.\nopen\n\nLeft Side Elevation\n\nOne of 2 corner\ncolumns\n\nBottom roof\nsystem\n\n10' min.\nopen\n\n7' min.\nopen\n\nFront Elevation\n\n35",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Plan view diagram showing carport dimensions with a car positioned between two corner columns, indicating open space and driveway/parking surface",
+          "location": "Left side of page, middle section"
+        },
+        {
+          "type": "diagram",
+          "description": "Left side elevation view showing covered parking space with car, indicating minimum open dimensions and roof system with corner columns",
+          "location": "Right side of page, upper middle section"
+        },
+        {
+          "type": "diagram",
+          "description": "Front elevation view showing covered parking space with car, indicating minimum open dimensions and roof system with corner columns",
+          "location": "Right side of page, lower middle section"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Minimum open space (plan view)",
+          "value_type": "Measurement",
+          "value": "20",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum open space (side elevation)",
+          "value_type": "Measurement",
+          "value": "20",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum vertical clearance",
+          "value_type": "Measurement",
+          "value": "7",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum open space (front elevation)",
+          "value_type": "Measurement",
+          "value": "10",
+          "unit": "feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Carport standards",
+        "subheadings": [],
+        "sections": [
+          "Fig 29",
+          "Fig 30"
+        ]
+      },
+      "additional_notes": [
+        "Page number 35 appears at bottom right",
+        "Images show technical architectural drawings with cars positioned to demonstrate clearance requirements",
+        "Gray shaded header bar appears below main heading"
+      ],
+      "cross_references": [
+        "Fig 29 Parking space dimensions for carport in plan view",
+        "Fig 30 Parking space dimensions for covered space in elevation"
+      ],
+      "conditions_and_qualifiers": {
+        "qualifiers": [
+          {
+            "id": "q1",
+            "text": "for carport in plan view",
+            "applies_to_conditions": [
+              "c1"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q2",
+            "text": "for covered space in elevation",
+            "applies_to_conditions": [
+              "c2",
+              "c3",
+              "c4"
+            ],
+            "scope": "Specific"
+          }
+        ],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "20' min. open",
+            "value_type": "Measurement",
+            "operator": ">=",
+            "threshold_value": "20",
+            "unit": "feet"
+          },
+          {
+            "id": "c2",
+            "text": "20' min. open",
+            "value_type": "Measurement",
+            "operator": ">=",
+            "threshold_value": "20",
+            "unit": "feet"
+          },
+          {
+            "id": "c3",
+            "text": "7' min. open",
+            "value_type": "Measurement",
+            "operator": ">=",
+            "threshold_value": "7",
+            "unit": "feet"
+          },
+          {
+            "id": "c4",
+            "text": "10' min. open",
+            "value_type": "Measurement",
+            "operator": ">=",
+            "threshold_value": "10",
+            "unit": "feet"
+          }
+        ],
+        "logical_relationships": [
+          {
+            "operation": "AND",
+            "condition_ids": [
+              "c2",
+              "c3"
+            ],
+            "expression": "Left side elevation requires both horizontal and vertical clearances",
+            "evaluation_order": 1
+          },
+          {
+            "operation": "AND",
+            "condition_ids": [
+              "c3",
+              "c4"
+            ],
+            "expression": "Front elevation requires both vertical and horizontal clearances",
+            "evaluation_order": 2
+          }
+        ],
+        "execution_sequence": [
+          {
+            "step": 1,
+            "action": "Verify minimum open space in plan view",
+            "condition_ids": [
+              "c1"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 2,
+            "action": "Verify minimum clearances in side elevation",
+            "condition_ids": [
+              "c2",
+              "c3"
+            ],
+            "qualifier_ids": [
+              "q2"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 3,
+            "action": "Verify minimum clearances in front elevation",
+            "condition_ids": [
+              "c3",
+              "c4"
+            ],
+            "qualifier_ids": [
+              "q2"
+            ],
+            "dependencies": []
+          }
+        ]
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:32:17",
+  "model_used": "anthropic/claude-sonnet-4"
+}

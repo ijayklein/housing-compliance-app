@@ -1,0 +1,21 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_53.png",
+  "image_name": "Page_53.png",
+  "analysis": {
+    "page": "47",
+    "heading": "Grade",
+    "content": "When measuring height of structures on slopes greater than 10%, different grade measurements are used: 1) Existing Grade - measured from lowest point of adjacent ground elevation prior to grading or fill 2) Grade - measured from adjacent ground elevation of finished or existing grade, whichever is lower at any point of the structure 3) Average grade - average of grade at midpoint of building and grade at closest point on abutting site",
+    "figures": [
+      "Fig 44: Existing vs. Finished grade - Shows side view of house with grade measurements",
+      "Fig 45: Height limits for structures on slopes greater than 10% - Shows 30' height limits above existing and finished grades",
+      "Fig 46: Comparison of different grades - Shows diagram comparing slope percentages"
+    ],
+    "tables": [
+      "Grade measurement table with columns: When measuring, Use, Which is defined as, Illus."
+    ],
+    "codes": []
+  },
+  "timestamp": "2025-09-16 12:47:47",
+  "model": "anthropic/claude-3.5-sonnet",
+  "success": true
+}

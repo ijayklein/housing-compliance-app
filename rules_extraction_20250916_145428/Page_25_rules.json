@@ -1,0 +1,357 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_25.md",
+  "file_name": "Page_25.md",
+  "analysis": {
+    "extracted_rules": {
+      "rules": [
+        {
+          "RuleID": "R1",
+          "Title": "Fireplaces included in gross floor area (GFA)",
+          "Qualifiers": {
+            "Scope": "Counting of fireplaces toward gross floor area (GFA).",
+            "Applicability": "All fireplaces associated with a building, regardless of configuration or design.",
+            "Exclusions": "Fireplaces not connected to the house are treated as accessory structures per R4."
+          },
+          "Variables": {
+            "fireplace_is_connected_to_house": {
+              "type": "boolean",
+              "description": "Whether the fireplace is physically connected to the main building."
+            },
+            "fireplace_configuration_or_design": {
+              "type": "string",
+              "description": "Configuration/design attributes (do not affect counting)."
+            }
+          },
+          "Constants": {
+            "counting_method": {
+              "value": "count once",
+              "unit": "n/a",
+              "description": "Each qualifying fireplace is included one time toward GFA."
+            }
+          },
+          "Conditions": [
+            {
+              "type": "mandatory",
+              "logic": "IF fireplace_is_connected_to_house == true THEN include fireplace area in GFA (count once)."
+            }
+          ],
+          "Exceptions": [
+            {
+              "type": "classification",
+              "text": "IF fireplace_is_connected_to_house == false THEN treat as accessory structure (see R4).",
+              "effect": "Use FAR/lot coverage rules in R4; GFA treatment not stated here."
+            }
+          ],
+          "Relationships": {
+            "relies_on": [],
+            "overlaps_with": [],
+            "cross_references": [
+              "R3 (chimney counting differs)",
+              "R4 (detached fireplace treatment)"
+            ],
+            "notes": "General statement is complemented by specifics for chimneys (R3) and detached fireplaces (R4)."
+          },
+          "Ambiguities": [
+            "\u201cCounted one time\u201d is not defined: whether per fireplace element, per floor, or per building is unclear.",
+            "GFA treatment for detached fireplaces is implied to be excluded but not explicitly stated."
+          ]
+        },
+        {
+          "RuleID": "R2",
+          "Title": "Sheds, planters, and other projections over 5 feet count toward GFA",
+          "Qualifiers": {
+            "Scope": "Counting of exterior projections/structures toward gross floor area (GFA).",
+            "Applicability": "Sheds, planters, and other projections; includes miscellaneous appendages such as tool sheds, equipment enclosures, play houses, etc.",
+            "Exclusions": "Items 5 feet or less in height do not count toward GFA under this rule."
+          },
+          "Variables": {
+            "element_type": {
+              "type": "enum",
+              "allowed_values": [
+                "shed",
+                "planter",
+                "projection",
+                "tool_shed",
+                "equipment_enclosure",
+                "play_house",
+                "other_appendage"
+              ],
+              "description": "Type of exterior element."
+            },
+            "element_height": {
+              "type": "number",
+              "unit": "ft",
+              "description": "Height of the element measured vertically."
+            }
+          },
+          "Constants": {
+            "height_threshold": {
+              "value": 5,
+              "unit": "ft",
+              "description": "Minimum height above which the element counts toward GFA."
+            }
+          },
+          "Conditions": [
+            {
+              "type": "mandatory",
+              "logic": "IF element_height > 5 ft THEN include element in GFA."
+            },
+            {
+              "type": "invariance",
+              "logic": "Counting is independent of configuration or design."
+            }
+          ],
+          "Exceptions": [],
+          "Relationships": {
+            "relies_on": [],
+            "overlaps_with": [
+              "R5 (location restrictions for appendages/noise equipment; separate from GFA counting)"
+            ],
+            "cross_references": []
+          },
+          "Ambiguities": [
+            "\u201cOther projections\u201d and \u201cmiscellaneous appendages\u201d are broad and not exhaustively defined."
+          ]
+        },
+        {
+          "RuleID": "R3",
+          "Title": "Chimney counting toward GFA with upper-floor exemption; buttresses count once",
+          "Qualifiers": {
+            "Scope": "Counting of chimneys and buttresses toward gross floor area (GFA).",
+            "Applicability": "All configurations of fireplaces, chimneys, and buttresses.",
+            "Exclusions": "Chimneys located on upper floors are excluded from GFA counting."
+          },
+          "Variables": {
+            "feature_type": {
+              "type": "enum",
+              "allowed_values": [
+                "fireplace",
+                "chimney",
+                "buttress"
+              ],
+              "description": "Type of architectural feature."
+            },
+            "floor_level": {
+              "type": "string",
+              "description": "Building floor on which the chimney is located (e.g., ground/first floor, upper floors)."
+            }
+          },
+          "Constants": {
+            "counting_method": {
+              "value": "count once",
+              "unit": "n/a",
+              "description": "For qualifying features (except upper-floor chimneys), include once toward GFA."
+            }
+          },
+          "Conditions": [
+            {
+              "type": "conditional",
+              "logic": "IF feature_type == 'chimney' AND floor_level is in upper floors THEN EXCLUDE from GFA."
+            },
+            {
+              "type": "mandatory",
+              "logic": "IF feature_type in ['fireplace','chimney','buttress'] AND NOT (feature_type == 'chimney' AND floor_level is in upper floors) THEN include in GFA (count once)."
+            }
+          ],
+          "Exceptions": [],
+          "Relationships": {
+            "relies_on": [],
+            "overlaps_with": [
+              "R1 (fireplaces count generally)",
+              "R2 (other projections; different category)"
+            ],
+            "conflicts": [],
+            "notes": "Diagram text introduces a specific exemption for upper-floor chimneys that narrows the general counting rule."
+          },
+          "Ambiguities": [
+            "\u201cUpper floors\u201d is not precisely defined; interpret as any story above the first/ground floor.",
+            "\u201cCount once\u201d meaning is not operationally defined (e.g., per feature vs per building)."
+          ]
+        },
+        {
+          "RuleID": "R4",
+          "Title": "Detached fireplaces treated as accessory structures; FAR and lot coverage counting",
+          "Qualifiers": {
+            "Scope": "Classification and area counting of fireplaces not connected to the house.",
+            "Applicability": "Fireplaces not connected to the principal building.",
+            "Exclusions": "Attached fireplaces are covered by R1/R3."
+          },
+          "Variables": {
+            "fireplace_is_connected_to_house": {
+              "type": "boolean",
+              "description": "Determines whether to apply accessory structure rules."
+            },
+            "structure_area": {
+              "type": "number",
+              "unit": "sq ft",
+              "description": "Plan area of the detached fireplace/accessory structure."
+            }
+          },
+          "Constants": {
+            "FAR_area_threshold": {
+              "value": 120,
+              "unit": "sq ft",
+              "description": "Detached fireplace counts toward FAR only if its area exceeds this threshold."
+            },
+            "lot_coverage_rule": {
+              "value": "always counts",
+              "unit": "n/a",
+              "description": "Detached fireplaces count toward lot coverage regardless of size."
+            }
+          },
+          "Conditions": [
+            {
+              "type": "classification",
+              "logic": "IF fireplace_is_connected_to_house == false THEN classify as accessory structure."
+            },
+            {
+              "type": "conditional",
+              "logic": "IF fireplace_is_connected_to_house == false AND structure_area > 120 sq ft THEN include in FAR."
+            },
+            {
+              "type": "mandatory",
+              "logic": "IF fireplace_is_connected_to_house == false THEN include in lot coverage (regardless of structure_area)."
+            }
+          ],
+          "Exceptions": [],
+          "Relationships": {
+            "relies_on": [],
+            "overlaps_with": [],
+            "cross_references": [
+              "R1 (attached fireplace GFA counting)",
+              "R5 (location restrictions may apply to accessory structures where defined as appendages)"
+            ]
+          },
+          "Ambiguities": [
+            "GFA applicability for detached fireplaces is not explicitly stated; implied exclusion.",
+            "Measurement method for structure_area (e.g., footprint vs total enclosed area) is not specified."
+          ]
+        },
+        {
+          "RuleID": "R5",
+          "Title": "Location restriction: appendages and noise-producing equipment not allowed in required yards",
+          "Qualifiers": {
+            "Scope": "Location of certain exterior elements relative to required yards.",
+            "Applicability": "Miscellaneous appendages (e.g., tool sheds, equipment enclosures, play houses, similar items) and noise-producing equipment.",
+            "Exclusions": "Not specified; any exceptions to yard restrictions are not provided in the text."
+          },
+          "Variables": {
+            "element_type": {
+              "type": "enum",
+              "allowed_values": [
+                "tool_shed",
+                "equipment_enclosure",
+                "play_house",
+                "other_appendage",
+                "noise_producing_equipment"
+              ],
+              "description": "Type of item subject to yard location restriction."
+            },
+            "location_in_required_yard": {
+              "type": "boolean",
+              "description": "Whether the item is located within any required yard."
+            }
+          },
+          "Constants": {
+            "prohibited_zone": {
+              "value": "required yards",
+              "unit": "n/a",
+              "description": "Zone where these items may not be located."
+            }
+          },
+          "Conditions": [
+            {
+              "type": "mandatory",
+              "logic": "IF location_in_required_yard == true AND element_type in ['tool_shed','equipment_enclosure','play_house','other_appendage','noise_producing_equipment'] THEN NOT PERMITTED."
+            }
+          ],
+          "Exceptions": [],
+          "Relationships": {
+            "relies_on": [],
+            "overlaps_with": [
+              "R2 (GFA counting of appendages > 5 ft is separate from location prohibition)"
+            ],
+            "cross_references": []
+          },
+          "Ambiguities": [
+            "\u201cRequired yards\u201d is not defined here; must reference zoning definitions.",
+            "\u201cNoise-producing equipment\u201d is not defined; may require separate standards to classify."
+          ]
+        },
+        {
+          "RuleID": "R6",
+          "Title": "Prohibition on new wood-burning fireplaces (City of Palo Alto)",
+          "Qualifiers": {
+            "Scope": "Construction of new wood-burning fireplaces within the City of Palo Alto.",
+            "Applicability": "New wood-burning fireplaces after the effective ordinance date.",
+            "Exclusions": "Possible exceptions per Chapter 9.06.030 (details not provided in the excerpt)."
+          },
+          "Variables": {
+            "jurisdiction": {
+              "type": "string",
+              "description": "City where the project is located; must be Palo Alto for this rule to apply."
+            },
+            "fireplace_type": {
+              "type": "enum",
+              "allowed_values": [
+                "wood-burning",
+                "gas",
+                "electric",
+                "other"
+              ],
+              "description": "Type of fireplace proposed."
+            },
+            "is_new_construction": {
+              "type": "boolean",
+              "description": "Whether the fireplace is newly constructed (as opposed to existing)."
+            },
+            "ordinance_effective_year": {
+              "type": "number",
+              "unit": "year",
+              "description": "Year the ordinance was passed; exact effective date not specified.",
+              "example_value": 2000
+            }
+          },
+          "Constants": {
+            "code_reference": {
+              "value": "Chapter 9.06.030",
+              "unit": "Municipal Code",
+              "description": "Chapter containing details and possible exceptions."
+            }
+          },
+          "Conditions": [
+            {
+              "type": "mandatory",
+              "logic": "IF jurisdiction == 'Palo Alto' AND fireplace_type == 'wood-burning' AND is_new_construction == true THEN PROHIBITED."
+            }
+          ],
+          "Exceptions": [
+            {
+              "type": "cross-referenced",
+              "text": "Possible exceptions exist; see Chapter 9.06.030.",
+              "effect": "Project may be permitted under specified exceptions; details not provided here."
+            }
+          ],
+          "Relationships": {
+            "relies_on": [
+              "External legal text: Palo Alto Municipal Code Chapter 9.06.030"
+            ],
+            "overlaps_with": [
+              "R1 (fireplace counting) in the sense that prohibited items would not be counted if not permitted."
+            ],
+            "notes": "This is a separate prohibition ordinance; counting rules only apply where installation is otherwise permitted."
+          },
+          "Ambiguities": [
+            "Exact effective date in 2000 and retroactivity to permits filed before enactment are not specified.",
+            "Scope by occupancy type (residential vs commercial) is not stated."
+          ]
+        }
+      ]
+    },
+    "parse_error": false,
+    "raw_response": "{\n  \"rules\": [\n    {\n      \"RuleID\": \"R1\",\n      \"Title\": \"Fireplaces included in gross floor area (GFA)\",\n      \"Qualifiers\": {\n        \"Scope\": \"Counting of fireplaces toward gross floor area (GFA).\",\n        \"Applicability\": \"All fireplaces associated with a building, regardless of configuration or design.\",\n        \"Exclusions\": \"Fireplaces not connected to the house are treated as accessory structures per R4.\"\n      },\n      \"Variables\": {\n        \"fireplace_is_connected_to_house\": {\n          \"type\": \"boolean\",\n          \"description\": \"Whether the fireplace is physically connected to the main building.\"\n        },\n        \"fireplace_configuration_or_design\": {\n          \"type\": \"string\",\n          \"description\": \"Configuration/design attributes (do not affect counting).\"\n        }\n      },\n      \"Constants\": {\n        \"counting_method\": {\n          \"value\": \"count once\",\n          \"unit\": \"n/a\",\n          \"description\": \"Each qualifying fireplace is included one time toward GFA.\"\n        }\n      },\n      \"Conditions\": [\n        {\n          \"type\": \"mandatory\",\n          \"logic\": \"IF fireplace_is_connected_to_house == true THEN include fireplace area in GFA (count once).\"\n        }\n      ],\n      \"Exceptions\": [\n        {\n          \"type\": \"classification\",\n          \"text\": \"IF fireplace_is_connected_to_house == false THEN treat as accessory structure (see R4).\",\n          \"effect\": \"Use FAR/lot coverage rules in R4; GFA treatment not stated here.\"\n        }\n      ],\n      \"Relationships\": {\n        \"relies_on\": [],\n        \"overlaps_with\": [],\n        \"cross_references\": [\n          \"R3 (chimney counting differs)\",\n          \"R4 (detached fireplace treatment)\"\n        ],\n        \"notes\": \"General statement is complemented by specifics for chimneys (R3) and detached fireplaces (R4).\"\n      },\n      \"Ambiguities\": [\n        \"\u201cCounted one time\u201d is not defined: whether per fireplace element, per floor, or per building is unclear.\",\n        \"GFA treatment for detached fireplaces is implied to be excluded but not explicitly stated.\"\n      ]\n    },\n    {\n      \"RuleID\": \"R2\",\n      \"Title\": \"Sheds, planters, and other projections over 5 feet count toward GFA\",\n      \"Qualifiers\": {\n        \"Scope\": \"Counting of exterior projections/structures toward gross floor area (GFA).\",\n        \"Applicability\": \"Sheds, planters, and other projections; includes miscellaneous appendages such as tool sheds, equipment enclosures, play houses, etc.\",\n        \"Exclusions\": \"Items 5 feet or less in height do not count toward GFA under this rule.\"\n      },\n      \"Variables\": {\n        \"element_type\": {\n          \"type\": \"enum\",\n          \"allowed_values\": [\n            \"shed\",\n            \"planter\",\n            \"projection\",\n            \"tool_shed\",\n            \"equipment_enclosure\",\n            \"play_house\",\n            \"other_appendage\"\n          ],\n          \"description\": \"Type of exterior element.\"\n        },\n        \"element_height\": {\n          \"type\": \"number\",\n          \"unit\": \"ft\",\n          \"description\": \"Height of the element measured vertically.\"\n        }\n      },\n      \"Constants\": {\n        \"height_threshold\": {\n          \"value\": 5,\n          \"unit\": \"ft\",\n          \"description\": \"Minimum height above which the element counts toward GFA.\"\n        }\n      },\n      \"Conditions\": [\n        {\n          \"type\": \"mandatory\",\n          \"logic\": \"IF element_height > 5 ft THEN include element in GFA.\"\n        },\n        {\n          \"type\": \"invariance\",\n          \"logic\": \"Counting is independent of configuration or design.\"\n        }\n      ],\n      \"Exceptions\": [],\n      \"Relationships\": {\n        \"relies_on\": [],\n        \"overlaps_with\": [\n          \"R5 (location restrictions for appendages/noise equipment; separate from GFA counting)\"\n        ],\n        \"cross_references\": []\n      },\n      \"Ambiguities\": [\n        \"\u201cOther projections\u201d and \u201cmiscellaneous appendages\u201d are broad and not exhaustively defined.\"\n      ]\n    },\n    {\n      \"RuleID\": \"R3\",\n      \"Title\": \"Chimney counting toward GFA with upper-floor exemption; buttresses count once\",\n      \"Qualifiers\": {\n        \"Scope\": \"Counting of chimneys and buttresses toward gross floor area (GFA).\",\n        \"Applicability\": \"All configurations of fireplaces, chimneys, and buttresses.\",\n        \"Exclusions\": \"Chimneys located on upper floors are excluded from GFA counting.\"\n      },\n      \"Variables\": {\n        \"feature_type\": {\n          \"type\": \"enum\",\n          \"allowed_values\": [\n            \"fireplace\",\n            \"chimney\",\n            \"buttress\"\n          ],\n          \"description\": \"Type of architectural feature.\"\n        },\n        \"floor_level\": {\n          \"type\": \"string\",\n          \"description\": \"Building floor on which the chimney is located (e.g., ground/first floor, upper floors).\"\n        }\n      },\n      \"Constants\": {\n        \"counting_method\": {\n          \"value\": \"count once\",\n          \"unit\": \"n/a\",\n          \"description\": \"For qualifying features (except upper-floor chimneys), include once toward GFA.\"\n        }\n      },\n      \"Conditions\": [\n        {\n          \"type\": \"conditional\",\n          \"logic\": \"IF feature_type == 'chimney' AND floor_level is in upper floors THEN EXCLUDE from GFA.\"\n        },\n        {\n          \"type\": \"mandatory\",\n          \"logic\": \"IF feature_type in ['fireplace','chimney','buttress'] AND NOT (feature_type == 'chimney' AND floor_level is in upper floors) THEN include in GFA (count once).\"\n        }\n      ],\n      \"Exceptions\": [],\n      \"Relationships\": {\n        \"relies_on\": [],\n        \"overlaps_with\": [\n          \"R1 (fireplaces count generally)\",\n          \"R2 (other projections; different category)\"\n        ],\n        \"conflicts\": [],\n        \"notes\": \"Diagram text introduces a specific exemption for upper-floor chimneys that narrows the general counting rule.\"\n      },\n      \"Ambiguities\": [\n        \"\u201cUpper floors\u201d is not precisely defined; interpret as any story above the first/ground floor.\",\n        \"\u201cCount once\u201d meaning is not operationally defined (e.g., per feature vs per building).\"\n      ]\n    },\n    {\n      \"RuleID\": \"R4\",\n      \"Title\": \"Detached fireplaces treated as accessory structures; FAR and lot coverage counting\",\n      \"Qualifiers\": {\n        \"Scope\": \"Classification and area counting of fireplaces not connected to the house.\",\n        \"Applicability\": \"Fireplaces not connected to the principal building.\",\n        \"Exclusions\": \"Attached fireplaces are covered by R1/R3.\"\n      },\n      \"Variables\": {\n        \"fireplace_is_connected_to_house\": {\n          \"type\": \"boolean\",\n          \"description\": \"Determines whether to apply accessory structure rules.\"\n        },\n        \"structure_area\": {\n          \"type\": \"number\",\n          \"unit\": \"sq ft\",\n          \"description\": \"Plan area of the detached fireplace/accessory structure.\"\n        }\n      },\n      \"Constants\": {\n        \"FAR_area_threshold\": {\n          \"value\": 120,\n          \"unit\": \"sq ft\",\n          \"description\": \"Detached fireplace counts toward FAR only if its area exceeds this threshold.\"\n        },\n        \"lot_coverage_rule\": {\n          \"value\": \"always counts\",\n          \"unit\": \"n/a\",\n          \"description\": \"Detached fireplaces count toward lot coverage regardless of size.\"\n        }\n      },\n      \"Conditions\": [\n        {\n          \"type\": \"classification\",\n          \"logic\": \"IF fireplace_is_connected_to_house == false THEN classify as accessory structure.\"\n        },\n        {\n          \"type\": \"conditional\",\n          \"logic\": \"IF fireplace_is_connected_to_house == false AND structure_area > 120 sq ft THEN include in FAR.\"\n        },\n        {\n          \"type\": \"mandatory\",\n          \"logic\": \"IF fireplace_is_connected_to_house == false THEN include in lot coverage (regardless of structure_area).\"\n        }\n      ],\n      \"Exceptions\": [],\n      \"Relationships\": {\n        \"relies_on\": [],\n        \"overlaps_with\": [],\n        \"cross_references\": [\n          \"R1 (attached fireplace GFA counting)\",\n          \"R5 (location restrictions may apply to accessory structures where defined as appendages)\"\n        ]\n      },\n      \"Ambiguities\": [\n        \"GFA applicability for detached fireplaces is not explicitly stated; implied exclusion.\",\n        \"Measurement method for structure_area (e.g., footprint vs total enclosed area) is not specified.\"\n      ]\n    },\n    {\n      \"RuleID\": \"R5\",\n      \"Title\": \"Location restriction: appendages and noise-producing equipment not allowed in required yards\",\n      \"Qualifiers\": {\n        \"Scope\": \"Location of certain exterior elements relative to required yards.\",\n        \"Applicability\": \"Miscellaneous appendages (e.g., tool sheds, equipment enclosures, play houses, similar items) and noise-producing equipment.\",\n        \"Exclusions\": \"Not specified; any exceptions to yard restrictions are not provided in the text.\"\n      },\n      \"Variables\": {\n        \"element_type\": {\n          \"type\": \"enum\",\n          \"allowed_values\": [\n            \"tool_shed\",\n            \"equipment_enclosure\",\n            \"play_house\",\n            \"other_appendage\",\n            \"noise_producing_equipment\"\n          ],\n          \"description\": \"Type of item subject to yard location restriction.\"\n        },\n        \"location_in_required_yard\": {\n          \"type\": \"boolean\",\n          \"description\": \"Whether the item is located within any required yard.\"\n        }\n      },\n      \"Constants\": {\n        \"prohibited_zone\": {\n          \"value\": \"required yards\",\n          \"unit\": \"n/a\",\n          \"description\": \"Zone where these items may not be located.\"\n        }\n      },\n      \"Conditions\": [\n        {\n          \"type\": \"mandatory\",\n          \"logic\": \"IF location_in_required_yard == true AND element_type in ['tool_shed','equipment_enclosure','play_house','other_appendage','noise_producing_equipment'] THEN NOT PERMITTED.\"\n        }\n      ],\n      \"Exceptions\": [],\n      \"Relationships\": {\n        \"relies_on\": [],\n        \"overlaps_with\": [\n          \"R2 (GFA counting of appendages > 5 ft is separate from location prohibition)\"\n        ],\n        \"cross_references\": []\n      },\n      \"Ambiguities\": [\n        \"\u201cRequired yards\u201d is not defined here; must reference zoning definitions.\",\n        \"\u201cNoise-producing equipment\u201d is not defined; may require separate standards to classify.\"\n      ]\n    },\n    {\n      \"RuleID\": \"R6\",\n      \"Title\": \"Prohibition on new wood-burning fireplaces (City of Palo Alto)\",\n      \"Qualifiers\": {\n        \"Scope\": \"Construction of new wood-burning fireplaces within the City of Palo Alto.\",\n        \"Applicability\": \"New wood-burning fireplaces after the effective ordinance date.\",\n        \"Exclusions\": \"Possible exceptions per Chapter 9.06.030 (details not provided in the excerpt).\"\n      },\n      \"Variables\": {\n        \"jurisdiction\": {\n          \"type\": \"string\",\n          \"description\": \"City where the project is located; must be Palo Alto for this rule to apply.\"\n        },\n        \"fireplace_type\": {\n          \"type\": \"enum\",\n          \"allowed_values\": [\n            \"wood-burning\",\n            \"gas\",\n            \"electric\",\n            \"other\"\n          ],\n          \"description\": \"Type of fireplace proposed.\"\n        },\n        \"is_new_construction\": {\n          \"type\": \"boolean\",\n          \"description\": \"Whether the fireplace is newly constructed (as opposed to existing).\"\n        },\n        \"ordinance_effective_year\": {\n          \"type\": \"number\",\n          \"unit\": \"year\",\n          \"description\": \"Year the ordinance was passed; exact effective date not specified.\",\n          \"example_value\": 2000\n        }\n      },\n      \"Constants\": {\n        \"code_reference\": {\n          \"value\": \"Chapter 9.06.030\",\n          \"unit\": \"Municipal Code\",\n          \"description\": \"Chapter containing details and possible exceptions.\"\n        }\n      },\n      \"Conditions\": [\n        {\n          \"type\": \"mandatory\",\n          \"logic\": \"IF jurisdiction == 'Palo Alto' AND fireplace_type == 'wood-burning' AND is_new_construction == true THEN PROHIBITED.\"\n        }\n      ],\n      \"Exceptions\": [\n        {\n          \"type\": \"cross-referenced\",\n          \"text\": \"Possible exceptions exist; see Chapter 9.06.030.\",\n          \"effect\": \"Project may be permitted under specified exceptions; details not provided here.\"\n        }\n      ],\n      \"Relationships\": {\n        \"relies_on\": [\n          \"External legal text: Palo Alto Municipal Code Chapter 9.06.030\"\n        ],\n        \"overlaps_with\": [\n          \"R1 (fireplace counting) in the sense that prohibited items would not be counted if not permitted.\"\n        ],\n        \"notes\": \"This is a separate prohibition ordinance; counting rules only apply where installation is otherwise permitted.\"\n      },\n      \"Ambiguities\": [\n        \"Exact effective date in 2000 and retroactivity to permits filed before enactment are not specified.\",\n        \"Scope by occupancy type (residential vs commercial) is not stated.\"\n      ]\n    }\n  ]\n}"
+  },
+  "timestamp": "2025-09-16 15:00:40",
+  "model": "openai/gpt-5",
+  "success": true
+}

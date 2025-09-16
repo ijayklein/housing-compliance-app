@@ -1,0 +1,117 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_52.md",
+  "file_name": "Page_52.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "Rule": "Height & Grade Regulations",
+        "Qualifiers": {
+          "Scope": "Height allowances for architectural styles",
+          "Applicability": "Residential neighborhoods",
+          "Exclusions": "None specified"
+        },
+        "Variables": {
+          "Dimensional": [
+            {
+              "Name": "Max. height to roof peak",
+              "Units": "feet",
+              "Values": [
+                {
+                  "Structure": "Main dwelling on a standard lot with a roof slope <12:12",
+                  "Value": 30
+                },
+                {
+                  "Structure": "Main dwelling on a standard lot with a roof slope \u226512:12",
+                  "Value": 33
+                },
+                {
+                  "Structure": "Main dwelling on a substandard or flag lot",
+                  "Value": 17
+                },
+                {
+                  "Structure": "Accessory structure in rear or side yard",
+                  "Value": 12
+                },
+                {
+                  "Structure": "2nd-dwelling units",
+                  "Value": 17
+                }
+              ]
+            }
+          ],
+          "Material": [],
+          "Environmental": [],
+          "Usage": []
+        },
+        "Constants": {
+          "Numerical values": [
+            {
+              "Name": "Roof slope example",
+              "Value": "6:12",
+              "Description": "Vertical rise in inches for every horizontal distance of twelve inches"
+            }
+          ],
+          "Specs": [],
+          "Standards": [],
+          "Procedures": []
+        },
+        "Conditions": {
+          "Mandatory": [
+            "Height measured to top of roof material"
+          ],
+          "Optional": [],
+          "Conditional logic": [
+            {
+              "Condition": "Roof slope \u226512:12",
+              "Outcome": "Height limit = 33'"
+            },
+            {
+              "Condition": "Roof slope <12:12",
+              "Outcome": "Height limit = 30'"
+            }
+          ],
+          "Dependencies": []
+        },
+        "Exceptions": {
+          "Explicit deviations": [],
+          "Alternatives": [],
+          "Special cases": []
+        },
+        "Relationships": {
+          "Hierarchical": [
+            {
+              "Parent": "Height & Grade Regulations",
+              "Children": [
+                "Main dwelling on a standard lot",
+                "Main dwelling on a substandard or flag lot",
+                "Accessory structure",
+                "2nd-dwelling units"
+              ]
+            }
+          ],
+          "Cross-references": [
+            {
+              "Reference": "Code Sections",
+              "Pages": [
+                {
+                  "Page": 46,
+                  "Section": "18.12.040 (a) Table 2"
+                },
+                {
+                  "Page": 47,
+                  "Section": "18.04.030 (64) (b)"
+                }
+              ]
+            }
+          ],
+          "Logical dependencies": []
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n  {\n    \"Rule\": \"Height & Grade Regulations\",\n    \"Qualifiers\": {\n      \"Scope\": \"Height allowances for architectural styles\",\n      \"Applicability\": \"Residential neighborhoods\",\n      \"Exclusions\": \"None specified\"\n    },\n    \"Variables\": {\n      \"Dimensional\": [\n        {\n          \"Name\": \"Max. height to roof peak\",\n          \"Units\": \"feet\",\n          \"Values\": [\n            {\n              \"Structure\": \"Main dwelling on a standard lot with a roof slope <12:12\",\n              \"Value\": 30\n            },\n            {\n              \"Structure\": \"Main dwelling on a standard lot with a roof slope \u226512:12\",\n              \"Value\": 33\n            },\n            {\n              \"Structure\": \"Main dwelling on a substandard or flag lot\",\n              \"Value\": 17\n            },\n            {\n              \"Structure\": \"Accessory structure in rear or side yard\",\n              \"Value\": 12\n            },\n            {\n              \"Structure\": \"2nd-dwelling units\",\n              \"Value\": 17\n            }\n          ]\n        }\n      ],\n      \"Material\": [],\n      \"Environmental\": [],\n      \"Usage\": []\n    },\n    \"Constants\": {\n      \"Numerical values\": [\n        {\n          \"Name\": \"Roof slope example\",\n          \"Value\": \"6:12\",\n          \"Description\": \"Vertical rise in inches for every horizontal distance of twelve inches\"\n        }\n      ],\n      \"Specs\": [],\n      \"Standards\": [],\n      \"Procedures\": []\n    },\n    \"Conditions\": {\n      \"Mandatory\": [\n        \"Height measured to top of roof material\"\n      ],\n      \"Optional\": [],\n      \"Conditional logic\": [\n        {\n          \"Condition\": \"Roof slope \u226512:12\",\n          \"Outcome\": \"Height limit = 33'\"\n        },\n        {\n          \"Condition\": \"Roof slope <12:12\",\n          \"Outcome\": \"Height limit = 30'\"\n        }\n      ],\n      \"Dependencies\": []\n    },\n    \"Exceptions\": {\n      \"Explicit deviations\": [],\n      \"Alternatives\": [],\n      \"Special cases\": []\n    },\n    \"Relationships\": {\n      \"Hierarchical\": [\n        {\n          \"Parent\": \"Height & Grade Regulations\",\n          \"Children\": [\n            \"Main dwelling on a standard lot\",\n            \"Main dwelling on a substandard or flag lot\",\n            \"Accessory structure\",\n            \"2nd-dwelling units\"\n          ]\n        }\n      ],\n      \"Cross-references\": [\n        {\n          \"Reference\": \"Code Sections\",\n          \"Pages\": [\n            {\n              \"Page\": 46,\n              \"Section\": \"18.12.040 (a) Table 2\"\n            },\n            {\n              \"Page\": 47,\n              \"Section\": \"18.04.030 (64) (b)\"\n            }\n          ]\n        }\n      ],\n      \"Logical dependencies\": []\n    }\n  }\n]\n```"
+  },
+  "timestamp": "2025-09-16 14:43:39",
+  "model": "openai/gpt-4o",
+  "success": true
+}

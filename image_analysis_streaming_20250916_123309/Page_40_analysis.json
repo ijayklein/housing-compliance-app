@@ -1,0 +1,19 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_40.png",
+  "image_name": "Page_40.png",
+  "analysis": {
+    "page_number": "unknown",
+    "main_heading": "PARSE_ERROR",
+    "text_content": "Failed to parse response: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)",
+    "tables": [],
+    "figures": [],
+    "zoning_rules": [],
+    "code_references": [],
+    "quality_notes": "JSON parsing failed: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)",
+    "raw_response": "```json\n{\n  \"page_number\": \"34\",\n  \"main_heading\": \"Parking space standards\",\n  \"text_content\": \"Parking\\nParking regulations af- fect the appearance of the streetscapes in our residential neighbor- hoods by minimizing the number of cars parked on the street and in the front yards by requiring that there are parking spaces available deeper into the lot.\\n\u2022 Two spaces are required on the lot (per dwelling).\\n\u2022 They may NOT be located in the required front yard or, first 10 ft of, required street side yard.\\n\u2022 2nd dwelling units have same require- ments.\\n\u2022 No underground parking garages except by variance.\\n\u2022 One of the two spaces must be covered.\\n\u2022 To be considered detached, a covered- parking structure must be a minimum of 3' from the main dwelling.\\n\u2022 Minimim size for an uncovered space is 8.5' x 18'.\\n\u2022 Minimum clearance inside a covered parking structure to be 10' x 20' for each space. Therefore, a two-car garage or carport to be 20' x 20' clear inside.\\n\u2022 Minimum vertical clearan",
+    "parse_error": true
+  },
+  "analysis_timestamp": "2025-09-16 12:33:39",
+  "model_used": "google/gemini-2.5-flash",
+  "success": false
+}

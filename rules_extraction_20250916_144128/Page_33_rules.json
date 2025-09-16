@@ -1,0 +1,87 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_33.md",
+  "file_name": "Page_33.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "rule": "Daylight Plane Measurement",
+        "Qualifiers": {
+          "Scope": "Measurement of daylight plane height",
+          "Applicability": "Applicable to structures where daylight plane measurement is required",
+          "Exclusions": "None specified"
+        },
+        "Variables": {
+          "Dimensional": {
+            "Height": "Measured from the average of the grade at the midpoint of the building and the grade of the closest point on the abutting site"
+          },
+          "Material": "Not specified",
+          "Environmental": "Not specified",
+          "Usage": "Not specified"
+        },
+        "Constants": {
+          "Numerical values": "None specified",
+          "Specs": "None specified",
+          "Standards": "Code Section 18.12.040(a)"
+        },
+        "Conditions": {
+          "Mandatory": "Certification of compliance with daylight plane provisions",
+          "Optional": "None specified",
+          "Conditional logic": "None specified",
+          "Dependencies": "Certification must be provided prior to frame inspection"
+        },
+        "Exceptions": {
+          "Explicit deviations": "None specified",
+          "Alternatives": "None specified",
+          "Special cases": "None specified"
+        },
+        "Relationships": {
+          "Hierarchical": "Certification must be prepared by a licensed engineer, architect, or surveyor",
+          "Cross-references": "Code Section 18.12.040(a) and 18.12.040(j)",
+          "Logical dependencies": "Certification is dependent on the structure being built or improved"
+        }
+      },
+      {
+        "rule": "Allowable Eave Protrusion",
+        "Qualifiers": {
+          "Scope": "Protrusion of eaves beyond the wall plane",
+          "Applicability": "Applicable to structures with eaves",
+          "Exclusions": "None specified"
+        },
+        "Variables": {
+          "Dimensional": {
+            "Protrusion": "2' max"
+          },
+          "Material": "Roof material",
+          "Environmental": "Not specified",
+          "Usage": "Not specified"
+        },
+        "Constants": {
+          "Numerical values": "2' max",
+          "Specs": "None specified",
+          "Standards": "None specified"
+        },
+        "Conditions": {
+          "Mandatory": "Daylight plane must clear the point where the wall plane intersects the top of the roof material",
+          "Optional": "None specified",
+          "Conditional logic": "None specified",
+          "Dependencies": "None specified"
+        },
+        "Exceptions": {
+          "Explicit deviations": "None specified",
+          "Alternatives": "None specified",
+          "Special cases": "None specified"
+        },
+        "Relationships": {
+          "Hierarchical": "None specified",
+          "Cross-references": "None specified",
+          "Logical dependencies": "None specified"
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n    {\n        \"rule\": \"Daylight Plane Measurement\",\n        \"Qualifiers\": {\n            \"Scope\": \"Measurement of daylight plane height\",\n            \"Applicability\": \"Applicable to structures where daylight plane measurement is required\",\n            \"Exclusions\": \"None specified\"\n        },\n        \"Variables\": {\n            \"Dimensional\": {\n                \"Height\": \"Measured from the average of the grade at the midpoint of the building and the grade of the closest point on the abutting site\"\n            },\n            \"Material\": \"Not specified\",\n            \"Environmental\": \"Not specified\",\n            \"Usage\": \"Not specified\"\n        },\n        \"Constants\": {\n            \"Numerical values\": \"None specified\",\n            \"Specs\": \"None specified\",\n            \"Standards\": \"Code Section 18.12.040(a)\"\n        },\n        \"Conditions\": {\n            \"Mandatory\": \"Certification of compliance with daylight plane provisions\",\n            \"Optional\": \"None specified\",\n            \"Conditional logic\": \"None specified\",\n            \"Dependencies\": \"Certification must be provided prior to frame inspection\"\n        },\n        \"Exceptions\": {\n            \"Explicit deviations\": \"None specified\",\n            \"Alternatives\": \"None specified\",\n            \"Special cases\": \"None specified\"\n        },\n        \"Relationships\": {\n            \"Hierarchical\": \"Certification must be prepared by a licensed engineer, architect, or surveyor\",\n            \"Cross-references\": \"Code Section 18.12.040(a) and 18.12.040(j)\",\n            \"Logical dependencies\": \"Certification is dependent on the structure being built or improved\"\n        }\n    },\n    {\n        \"rule\": \"Allowable Eave Protrusion\",\n        \"Qualifiers\": {\n            \"Scope\": \"Protrusion of eaves beyond the wall plane\",\n            \"Applicability\": \"Applicable to structures with eaves\",\n            \"Exclusions\": \"None specified\"\n        },\n        \"Variables\": {\n            \"Dimensional\": {\n                \"Protrusion\": \"2' max\"\n            },\n            \"Material\": \"Roof material\",\n            \"Environmental\": \"Not specified\",\n            \"Usage\": \"Not specified\"\n        },\n        \"Constants\": {\n            \"Numerical values\": \"2' max\",\n            \"Specs\": \"None specified\",\n            \"Standards\": \"None specified\"\n        },\n        \"Conditions\": {\n            \"Mandatory\": \"Daylight plane must clear the point where the wall plane intersects the top of the roof material\",\n            \"Optional\": \"None specified\",\n            \"Conditional logic\": \"None specified\",\n            \"Dependencies\": \"None specified\"\n        },\n        \"Exceptions\": {\n            \"Explicit deviations\": \"None specified\",\n            \"Alternatives\": \"None specified\",\n            \"Special cases\": \"None specified\"\n        },\n        \"Relationships\": {\n            \"Hierarchical\": \"None specified\",\n            \"Cross-references\": \"None specified\",\n            \"Logical dependencies\": \"None specified\"\n        }\n    }\n]\n```"
+  },
+  "timestamp": "2025-09-16 14:43:06",
+  "model": "openai/gpt-4o",
+  "success": true
+}

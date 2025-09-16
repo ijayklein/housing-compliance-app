@@ -1,0 +1,12 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_29.png",
+  "image_name": "Page_29.png",
+  "analysis": {
+    "raw_content": "The document is titled \"Determining setbacks on oddly shaped lots considerations\" and includes \"Fig 17 Setbacks for oddly shaped lots\".\n\n**Key:**\n*   **Curb:** Solid thick line\n*   **Lot line:** Dashed line\n*   **Sidewalk:** Patterned rectangle\n*   **Required setbacks:** Thin solid line\n*   **Buildable area:** Light gray shaded area\n\n**Lot Type A: Flag lot**\n*   **Front lot line:** Is closest and most parallel to street.\n*   **Front setback:** Is 10' instead of 20'.\n*   Includes \"Rear yard\", \"Front yard\", and \"Interior-side yard\".\n\n**Lot Type B: Corner lot**\n*   Includes \"Rear yard\", \"Front yard\", \"Interior-side yard\", and \"Street-side yard\".\n*   A setback of 16' is indicated on the street side.\n\n**Lot Type C: Substandard Corner lot w/frontage < 50'**\n*   **Street side setback:** Is 10' instead of 16'.\n*   **Front lot line:** Is shortest of the two frontages.\n*   Includes \"Rear yard\", \"Front yard\", \"Interior-side yard\", and \"Street-side yard\".\n*   A setback of 10' is indicated on the street side.\n\n**Lot Type D: Through lot**\n*   Includes \"Rear yard\", \"Front yard\", and \"Interior-side yard\".\n\n**Lot Type E: Wedge shaped lot**\n*   **Wedge shaped lots:** Don't have rear lot lines.\n*   **The rear yard:** Is determined by a 20' radius from intersection of side lot lines.\n*   Includes \"Front yard\" and \"Interior-side yard\".\n\n**Lot Type F: Lot with more than 4 sides**\n*   Includes \"Rear yard\", \"Front yard\", and \"Interior-side yard\".\n\n**Lot Type G: Lot with more than 4 sides**\n*   **Rear lot line:** Is farthest and most parallel to street.\n*   Includes \"Rear yard\", \"Front yard\", and \"Interior-side yard\".\n\nAll lot types are shown adjacent to a \"Street\" and \"Sidewalk\".",
+    "content_length": 1684,
+    "parse_error": false
+  },
+  "timestamp": "2025-09-16 12:52:47",
+  "model": "google/gemini-2.5-flash",
+  "success": true
+}

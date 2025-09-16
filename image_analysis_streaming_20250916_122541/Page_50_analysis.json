@@ -1,0 +1,23 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_50.png",
+  "image_name": "Page_50.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "PARSE_ERROR",
+      "visual_elements": [],
+      "technical_specifications": [],
+      "structural_elements": {
+        "main_heading": "",
+        "subheadings": [],
+        "sections": []
+      },
+      "additional_notes": [
+        "Failed to parse LLM response: Extra data: line 1 column 2 (char 1)"
+      ],
+      "cross_references": []
+    },
+    "raw_response": "2nd-dwelling units standards & site planning\n\nLots that meet the minimum size may have an attached or detached 2nd-dwelling unit that is a separate unit and is subordinate to the main dwelling. 2nd dwelling units must comply with all regulations applying to the main dwelling except as follows:\n\n**Attached units**\n* Lot size must meet minimum for zone. (see table)\n* Maximum size is 450 sf (basement area counts towards the size of the 2nd-dwelling unit even if it does not count toward total gross floor area.)\n* Maximum height is 17'.\n* Must have two parking spaces (one to be covered).\n* Maximum size for covered parking is 200 sf. (This is in addition to the 450 sf allowed for the 2nd-dwelling unit.)\n* Except on corner lots, entrance way shall not face same lot line as entrance to main dwelling.\n* Exterior staircases to 2nd floor units shall be located toward interior side or rear yard.\n* Must be located within the setbacks just like the main dwelling. (Fig 41 on p. 45)\n* Counts towards total FAR for the lot\n\n**Detached units** (Fig 41 A-D on p. 45)\n* Lot size must meet minimum for zone (see table)\n* Maximum size is 900 sf (basement area counts towards the size of the 2nd-dwelling unit even if it does not count toward total gross floor area.)\n* Maximum height is one story and 17'\n* Must share driveway with main dwelling\n* Must have two parking spaces (one to be covered)\n* Maximum size for covered parking is 200 sf. (This is in addition to the 900 sf allowed for the 2nd-dwelling unit.)\n* Must be architecturally compatible with main dwelling.\n* Must be located 12' from the main dwelling.\n* Must be located within the setbacks just like the main dwelling. (Fig 41 on p. 45)\n* Counts towards total FAR for the lot\n\n**Min. lot size for 2nd dwelling unit by zone**\n\n| Zone District | Typical lot | Flag lot |\n|---------------|-------------|----------|\n| R-1           | 8,100 sf    | 9,720 sf |\n| R-1(7000)     | 9,450 sf    | 11,340 sf|\n| R-1(8000)     | 10,800 sf   | 12,960 sf|\n| R-1(10000)    | 13,500 sf   | 16,200 sf|\n| R-1(20000)    | 27,000 sf   | 32,400 sf|\n\n**Parking for 2nd dwelling units** is treated the same as parking for the main residence. See \"Site planning for attached garages/carports\" and \"Site planning for detached garages/carports\" in the \"Parking\" section of this manual. Note that parking for the 2nd dwelling unit may be combined with parking for the main residence e.g., a two-car garage as shown in Fig 23 C & D.\n\n**Code sections**\nPage 44\n18.12.070 (b) (1 & 2)\nTable 5\n18.12.070 (c, d, e, & f)\nPage 45\n18.12.080 (d, e, & f)"
+  },
+  "analysis_timestamp": "2025-09-16 12:26:02",
+  "model_used": "google/gemini-2.5-flash"
+}

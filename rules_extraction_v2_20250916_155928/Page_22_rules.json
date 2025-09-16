@@ -1,0 +1,173 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_22.md",
+  "file_name": "Page_22.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "rule_id": "GFA_CALC_ATTIC_CLOSET_PERIMETER",
+        "rule_name": "Gross Floor Area Calculation for Attic, Closet, & Perimeter Spaces",
+        "source_page": 22,
+        "Qualifiers": {
+          "scope": "Calculation of gross floor area, specifically how voluminous, attic, closet, and perimeter spaces are counted.",
+          "applicability": "Applies to all accessible floors within a structure.",
+          "exclusions": []
+        },
+        "Variables": [
+          {
+            "name": "head_clearance",
+            "type": "Dimensional",
+            "description": "Vertical distance from the top of the floor to the underside of the rafter."
+          },
+          {
+            "name": "floor_area",
+            "type": "Dimensional",
+            "description": "The area of a space being measured for inclusion in the gross floor area."
+          },
+          {
+            "name": "accessibility",
+            "type": "Usage",
+            "description": "Defines if a space is accessible, for example, via stairs.",
+            "values": [
+              "accessible",
+              "inaccessible"
+            ]
+          },
+          {
+            "name": "floor_plan_description",
+            "type": "Usage",
+            "description": "How the space is described in the floor plan (noted as irrelevant for this calculation)."
+          },
+          {
+            "name": "actual_usage",
+            "type": "Usage",
+            "description": "The actual use of the space (noted as irrelevant for this calculation)."
+          }
+        ],
+        "Constants": [
+          {
+            "name": "minimum_head_clearance_threshold",
+            "type": "Dimensional",
+            "value": 5,
+            "unit": "feet"
+          },
+          {
+            "name": "head_clearance_measurement_procedure",
+            "type": "Procedure",
+            "description": "Measure from the top of the floor to the underside of the rafter."
+          }
+        ],
+        "Conditions": {
+          "type": "Mandatory",
+          "logic": "IF (accessibility == 'accessible' AND head_clearance >= 5 feet) THEN the floor_area of that space MUST be counted toward the gross floor area.",
+          "dependencies": [
+            "This calculation is performed regardless of the 'floor_plan_description' or 'actual_usage' of the space."
+          ]
+        },
+        "Exceptions": [
+          {
+            "exception_id": "EXEMPTION_HISTORIC_ATTIC",
+            "description": "Exemption for a portion of unusable attic space in designated historic homes.",
+            "Qualifiers": {
+              "scope": "Exemption from gross floor area calculation.",
+              "applicability": "Applies only to Category 1 and Category 2 historic homes.",
+              "exclusions": []
+            },
+            "Variables": [
+              {
+                "name": "exempted_area",
+                "type": "Dimensional",
+                "description": "The amount of attic area to be exempted from the gross floor area calculation."
+              },
+              {
+                "name": "historic_home_category",
+                "type": "Usage",
+                "description": "The designated category of the historic home.",
+                "values": [
+                  "Category 1",
+                  "Category 2"
+                ]
+              },
+              {
+                "name": "attic_space_usability",
+                "type": "Usage",
+                "description": "The usability of the attic space.",
+                "values": [
+                  "unusable"
+                ]
+              }
+            ],
+            "Constants": [
+              {
+                "name": "max_exempted_area",
+                "type": "Dimensional",
+                "value": 500,
+                "unit": "sf"
+              }
+            ],
+            "Conditions": {
+              "type": "Optional",
+              "logic": "IF (historic_home_category IN ['Category 1', 'Category 2'] AND attic_space_usability == 'unusable') THEN up to 500 sf of that attic space MAY be exempted from the gross floor area calculation.",
+              "dependencies": []
+            },
+            "ambiguous_language": [
+              {
+                "term": "unusable attic space",
+                "reason": "The criteria for what constitutes 'unusable' is not defined in the provided text."
+              },
+              {
+                "term": "may be exempted",
+                "reason": "It is unclear if this exemption is automatic upon meeting criteria, optional for the applicant to claim, or subject to discretionary approval by an authority."
+              }
+            ]
+          }
+        ],
+        "Relationships": {
+          "hierarchical": [
+            {
+              "parent": "GFA_CALC_ATTIC_CLOSET_PERIMETER",
+              "child": "EXEMPTION_HISTORIC_ATTIC",
+              "type": "Is modified by"
+            }
+          ],
+          "cross_references": [
+            {
+              "type": "Code Section",
+              "identifier": "18.04.030(a)(65)"
+            },
+            {
+              "type": "Code Section",
+              "identifier": "18.12.040(b)Table 3"
+            },
+            {
+              "type": "Figure",
+              "identifier": "Figure 11",
+              "title": "Attic, closet, & perimeter spaces"
+            },
+            {
+              "type": "Page",
+              "identifier": "16"
+            }
+          ],
+          "logical_dependencies": [
+            "The main rule is illustrated by examples for 'Area A' (3rd floor) and 'Area B' (2nd floor) in Figure 11, both of which are counted as gross floor area because they are accessible and have at least 5 feet of head clearance."
+          ]
+        },
+        "ambiguous_language": [
+          {
+            "term": "Figure 11 callouts",
+            "reason": "Text states 'Additional small callouts on the right side of the figure are present but not legible in the image provided', indicating incomplete information from the source figure which may contain additional rules or details."
+          }
+        ]
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n  {\n    \"rule_id\": \"GFA_CALC_ATTIC_CLOSET_PERIMETER\",\n    \"rule_name\": \"Gross Floor Area Calculation for Attic, Closet, & Perimeter Spaces\",\n    \"source_page\": 22,\n    \"Qualifiers\": {\n      \"scope\": \"Calculation of gross floor area, specifically how voluminous, attic, closet, and perimeter spaces are counted.\",\n      \"applicability\": \"Applies to all accessible floors within a structure.\",\n      \"exclusions\": []\n    },\n    \"Variables\": [\n      {\n        \"name\": \"head_clearance\",\n        \"type\": \"Dimensional\",\n        \"description\": \"Vertical distance from the top of the floor to the underside of the rafter.\"\n      },\n      {\n        \"name\": \"floor_area\",\n        \"type\": \"Dimensional\",\n        \"description\": \"The area of a space being measured for inclusion in the gross floor area.\"\n      },\n      {\n        \"name\": \"accessibility\",\n        \"type\": \"Usage\",\n        \"description\": \"Defines if a space is accessible, for example, via stairs.\",\n        \"values\": [\n          \"accessible\",\n          \"inaccessible\"\n        ]\n      },\n      {\n        \"name\": \"floor_plan_description\",\n        \"type\": \"Usage\",\n        \"description\": \"How the space is described in the floor plan (noted as irrelevant for this calculation).\"\n      },\n      {\n        \"name\": \"actual_usage\",\n        \"type\": \"Usage\",\n        \"description\": \"The actual use of the space (noted as irrelevant for this calculation).\"\n      }\n    ],\n    \"Constants\": [\n      {\n        \"name\": \"minimum_head_clearance_threshold\",\n        \"type\": \"Dimensional\",\n        \"value\": 5,\n        \"unit\": \"feet\"\n      },\n      {\n        \"name\": \"head_clearance_measurement_procedure\",\n        \"type\": \"Procedure\",\n        \"description\": \"Measure from the top of the floor to the underside of the rafter.\"\n      }\n    ],\n    \"Conditions\": {\n      \"type\": \"Mandatory\",\n      \"logic\": \"IF (accessibility == 'accessible' AND head_clearance >= 5 feet) THEN the floor_area of that space MUST be counted toward the gross floor area.\",\n      \"dependencies\": [\n        \"This calculation is performed regardless of the 'floor_plan_description' or 'actual_usage' of the space.\"\n      ]\n    },\n    \"Exceptions\": [\n      {\n        \"exception_id\": \"EXEMPTION_HISTORIC_ATTIC\",\n        \"description\": \"Exemption for a portion of unusable attic space in designated historic homes.\",\n        \"Qualifiers\": {\n          \"scope\": \"Exemption from gross floor area calculation.\",\n          \"applicability\": \"Applies only to Category 1 and Category 2 historic homes.\",\n          \"exclusions\": []\n        },\n        \"Variables\": [\n          {\n            \"name\": \"exempted_area\",\n            \"type\": \"Dimensional\",\n            \"description\": \"The amount of attic area to be exempted from the gross floor area calculation.\"\n          },\n          {\n            \"name\": \"historic_home_category\",\n            \"type\": \"Usage\",\n            \"description\": \"The designated category of the historic home.\",\n            \"values\": [\n              \"Category 1\",\n              \"Category 2\"\n            ]\n          },\n          {\n            \"name\": \"attic_space_usability\",\n            \"type\": \"Usage\",\n            \"description\": \"The usability of the attic space.\",\n            \"values\": [\n              \"unusable\"\n            ]\n          }\n        ],\n        \"Constants\": [\n          {\n            \"name\": \"max_exempted_area\",\n            \"type\": \"Dimensional\",\n            \"value\": 500,\n            \"unit\": \"sf\"\n          }\n        ],\n        \"Conditions\": {\n          \"type\": \"Optional\",\n          \"logic\": \"IF (historic_home_category IN ['Category 1', 'Category 2'] AND attic_space_usability == 'unusable') THEN up to 500 sf of that attic space MAY be exempted from the gross floor area calculation.\",\n          \"dependencies\": []\n        },\n        \"ambiguous_language\": [\n          {\n            \"term\": \"unusable attic space\",\n            \"reason\": \"The criteria for what constitutes 'unusable' is not defined in the provided text.\"\n          },\n          {\n            \"term\": \"may be exempted\",\n            \"reason\": \"It is unclear if this exemption is automatic upon meeting criteria, optional for the applicant to claim, or subject to discretionary approval by an authority.\"\n          }\n        ]\n      }\n    ],\n    \"Relationships\": {\n      \"hierarchical\": [\n        {\n          \"parent\": \"GFA_CALC_ATTIC_CLOSET_PERIMETER\",\n          \"child\": \"EXEMPTION_HISTORIC_ATTIC\",\n          \"type\": \"Is modified by\"\n        }\n      ],\n      \"cross_references\": [\n        {\n          \"type\": \"Code Section\",\n          \"identifier\": \"18.04.030(a)(65)\"\n        },\n        {\n          \"type\": \"Code Section\",\n          \"identifier\": \"18.12.040(b)Table 3\"\n        },\n        {\n          \"type\": \"Figure\",\n          \"identifier\": \"Figure 11\",\n          \"title\": \"Attic, closet, & perimeter spaces\"\n        },\n        {\n          \"type\": \"Page\",\n          \"identifier\": \"16\"\n        }\n      ],\n      \"logical_dependencies\": [\n        \"The main rule is illustrated by examples for 'Area A' (3rd floor) and 'Area B' (2nd floor) in Figure 11, both of which are counted as gross floor area because they are accessible and have at least 5 feet of head clearance.\"\n      ]\n    },\n    \"ambiguous_language\": [\n      {\n        \"term\": \"Figure 11 callouts\",\n        \"reason\": \"Text states 'Additional small callouts on the right side of the figure are present but not legible in the image provided', indicating incomplete information from the source figure which may contain additional rules or details.\"\n      }\n    ]\n  }\n]\n```",
+    "response_time": 40.32909297943115,
+    "input_tokens": 748,
+    "output_tokens": 4845,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 16:01:11",
+  "model": "google/gemini-2.5-pro",
+  "success": true
+}

@@ -1,0 +1,236 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_24.md",
+  "file_name": "Page_24.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "Qualifiers": {
+          "scope": "Gross floor area (GFA) calculations for architectural bay windows on building facades.",
+          "applicability": "Bay windows treated as decorative architectural features when design criteria are met.",
+          "exclusions": "If the bay window fails any design criterion or is otherwise reclassified (e.g., dormer), it is not exempt from GFA.",
+          "source_context": "Main heading and gray banner stating bay windows that meet the design criteria below are decorative architectural features and do NOT count toward gross floor area.",
+          "code_sections_cited": [
+            "18.04.030(a)(65)",
+            "18.12.040(b) Table 3"
+          ]
+        },
+        "Variables": [
+          {
+            "name": "bottom_of_feature_height_above_floor_joists",
+            "type": "dimensional",
+            "unit": "in",
+            "description": "Vertical distance from the lowest point of the bay window feature to the plane of the floor joists.",
+            "notes": "Design criterion states: Bottom of feature must be at least 18 inches above the floor joists.",
+            "ambiguity_flag": true,
+            "ambiguity_description": "Reference datum is specified as 'floor joists' rather than a finished floor elevation; confirm the intended datum and measurement method."
+          },
+          {
+            "name": "exterior_support_type",
+            "type": "categorical",
+            "allowed_values": [
+              "corbels",
+              "brackets",
+              "corbels_and_brackets"
+            ],
+            "disallowed_values": [
+              "solid_wall",
+              "skirt_wall_angled",
+              "skirt_wall_straight"
+            ],
+            "description": "Type of exterior support under the bay window."
+          },
+          {
+            "name": "glass_surface_ratio",
+            "type": "percentage",
+            "unit": "%",
+            "description": "Percentage of the bay window surface that is glass.",
+            "ambiguity_flag": true,
+            "ambiguity_description": "The term 'surface' is not defined (e.g., vertical visible surface area vs. total envelope surface); clarify measurement scope."
+          },
+          {
+            "name": "floor_joists_continue_into_bay",
+            "type": "boolean",
+            "description": "Whether the building\u2019s floor joists extend into the bay window volume.",
+            "source": "Figure label B indicates counting occurs if joists continue into the bay."
+          }
+        ],
+        "Constants": [
+          {
+            "name": "min_bottom_height_above_floor_joists",
+            "value": 18,
+            "unit": "in",
+            "description": "Minimum required vertical clearance from floor joists to the bottom of the bay window feature for GFA exemption."
+          },
+          {
+            "name": "min_glass_surface_ratio",
+            "value": 50,
+            "unit": "%",
+            "description": "Minimum percentage of bay window surface that must be glass for GFA exemption."
+          }
+        ],
+        "Conditions": [
+          {
+            "type": "mandatory_for_exemption",
+            "logic": "IF bottom_of_feature_height_above_floor_joists >= 18 in AND exterior_support_type IN {corbels, brackets, corbels_and_brackets} AND glass_surface_ratio >= 50% AND floor_joists_continue_into_bay = false THEN gfa_counts = false ELSE gfa_counts = true",
+            "notes": "All design criteria must be satisfied to avoid counting toward GFA. The floor joist criterion is inferred from Figure B and flagged as potentially additional to the listed bullets.",
+            "ambiguity_flag": true,
+            "ambiguity_description": "The listed design criteria do not explicitly include the floor joist condition; however, Figure B shows it as a reason to count. Confirm whether this is an additional mandatory criterion for exemption."
+          },
+          {
+            "type": "counts_if",
+            "logic": "IF floor_joists_continue_into_bay = true THEN gfa_counts = true",
+            "source": "Figure label: 'B Counts because floor joists continue into the bay window.'"
+          },
+          {
+            "type": "counts_if",
+            "logic": "IF exterior_support_type IN {solid_wall, skirt_wall_angled, skirt_wall_straight} THEN gfa_counts = true",
+            "source": "Figure labels: 'C & D Count because of exterior skirt wall (angled or straight)'."
+          },
+          {
+            "type": "counts_if",
+            "logic": "IF glass_surface_ratio < 50% THEN gfa_counts = true",
+            "source": "Figure label: 'E Counts because the surface is not at least 50% glass.'"
+          }
+        ],
+        "Exceptions": [
+          {
+            "description": "Bay windows that extend higher than the structure\u2019s roof are considered dormers and count toward GFA regardless of other criteria.",
+            "override_effect": "Force gfa_counts = true",
+            "cross_reference_rule": "Dormer classification and GFA counting",
+            "source": "Note box on the page."
+          }
+        ],
+        "Relationships": [
+          {
+            "type": "cross_reference",
+            "target": "Municipal code definitions and dimensional standards",
+            "references": [
+              "18.04.030(a)(65)",
+              "18.12.040(b) Table 3"
+            ],
+            "description": "These sections are cited in the page\u2019s sidebar as relevant code sections."
+          },
+          {
+            "type": "logical_dependency",
+            "target": "Dormer classification rule",
+            "description": "This rule\u2019s GFA exemption is overridden if the feature is reclassified as a dormer (extends above roof)."
+          },
+          {
+            "type": "diagram_support",
+            "target": "Figure 13 Bay windows",
+            "description": "Illustrative cases A\u2013E clarify conditions that result in counting or not counting toward GFA."
+          }
+        ]
+      },
+      {
+        "Qualifiers": {
+          "scope": "Projection limits for bay windows relative to the building facade.",
+          "applicability": "All bay window configurations shown/typical.",
+          "exclusions": "Not stated; assume applies to bay window projections unless superseded by other code sections.",
+          "source_context": "Figure 13 annotation: '2' max. from bay window surface to facade surface (Typical all)'.",
+          "code_sections_cited": [
+            "18.12.040(b) Table 3"
+          ]
+        },
+        "Variables": [
+          {
+            "name": "projection_depth",
+            "type": "dimensional",
+            "unit": "in",
+            "description": "Perpendicular distance from the outermost surface of the bay window to the plane of the adjacent building facade.",
+            "ambiguity_flag": true,
+            "ambiguity_description": "The exact measurement points ('bay window surface' and 'facade surface') should be defined (e.g., furthest projecting element, excluding trim)."
+          }
+        ],
+        "Constants": [
+          {
+            "name": "max_projection_depth_ft",
+            "value": 2,
+            "unit": "ft",
+            "equivalent": {
+              "value": 24,
+              "unit": "in"
+            },
+            "description": "Maximum allowed projection of a bay window from facade."
+          }
+        ],
+        "Conditions": [
+          {
+            "type": "mandatory_limit",
+            "logic": "projection_depth <= 24 in",
+            "description": "Bay window projection must not exceed 2 feet from facade."
+          }
+        ],
+        "Exceptions": [],
+        "Relationships": [
+          {
+            "type": "diagram_source",
+            "target": "Figure 13 Bay windows",
+            "description": "Projection limit annotated as 'Typical all' for the figure\u2019s configurations."
+          },
+          {
+            "type": "cross_reference",
+            "target": "Projections standards table",
+            "references": [
+              "18.12.040(b) Table 3"
+            ],
+            "description": "Projection limits may be enumerated in the cited table."
+          }
+        ]
+      },
+      {
+        "Qualifiers": {
+          "scope": "Classification of bay-window-like features that extend above the roof and their treatment in GFA.",
+          "applicability": "Bay-window projections that pierce or extend above the main roof plane.",
+          "exclusions": "Does not apply to bay windows that remain below the roof and meet exemption criteria.",
+          "source_context": "Note box: 'Bay windows that extend higher than the structure\u2019s roof are considered to be dormers and count toward gross floor area.'",
+          "code_sections_cited": [
+            "18.04.030(a)(65)"
+          ]
+        },
+        "Variables": [
+          {
+            "name": "extends_above_roof",
+            "type": "boolean",
+            "description": "Whether the feature extends higher than the structure\u2019s roof plane."
+          },
+          {
+            "name": "feature_classification",
+            "type": "categorical",
+            "allowed_values": [
+              "bay_window",
+              "dormer"
+            ],
+            "description": "Resulting classification of the feature for GFA purposes."
+          }
+        ],
+        "Constants": [],
+        "Conditions": [
+          {
+            "type": "classification",
+            "logic": "IF extends_above_roof = true THEN feature_classification = 'dormer' ELSE feature_classification = 'bay_window'",
+            "description": "Vertical extent relative to roof determines classification."
+          },
+          {
+            "type": "counts_if",
+            "logic": "IF feature_classification = 'dormer' THEN gfa_counts = true",
+            "description": "Dormers always count toward GFA per note."
+          }
+        ],
+        "Exceptions": [],
+        "Relationships": [
+          {
+            "type": "override_dependency",
+            "target": "Bay window GFA exemption rule",
+            "description": "Dormer classification overrides bay-window exemption; if a bay-window-like feature extends above the roof, it counts toward GFA regardless of other criteria."
+          }
+        ]
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "[\n  {\n    \"Qualifiers\": {\n      \"scope\": \"Gross floor area (GFA) calculations for architectural bay windows on building facades.\",\n      \"applicability\": \"Bay windows treated as decorative architectural features when design criteria are met.\",\n      \"exclusions\": \"If the bay window fails any design criterion or is otherwise reclassified (e.g., dormer), it is not exempt from GFA.\",\n      \"source_context\": \"Main heading and gray banner stating bay windows that meet the design criteria below are decorative architectural features and do NOT count toward gross floor area.\",\n      \"code_sections_cited\": [\n        \"18.04.030(a)(65)\",\n        \"18.12.040(b) Table 3\"\n      ]\n    },\n    \"Variables\": [\n      {\n        \"name\": \"bottom_of_feature_height_above_floor_joists\",\n        \"type\": \"dimensional\",\n        \"unit\": \"in\",\n        \"description\": \"Vertical distance from the lowest point of the bay window feature to the plane of the floor joists.\",\n        \"notes\": \"Design criterion states: Bottom of feature must be at least 18 inches above the floor joists.\",\n        \"ambiguity_flag\": true,\n        \"ambiguity_description\": \"Reference datum is specified as 'floor joists' rather than a finished floor elevation; confirm the intended datum and measurement method.\"\n      },\n      {\n        \"name\": \"exterior_support_type\",\n        \"type\": \"categorical\",\n        \"allowed_values\": [\n          \"corbels\",\n          \"brackets\",\n          \"corbels_and_brackets\"\n        ],\n        \"disallowed_values\": [\n          \"solid_wall\",\n          \"skirt_wall_angled\",\n          \"skirt_wall_straight\"\n        ],\n        \"description\": \"Type of exterior support under the bay window.\"\n      },\n      {\n        \"name\": \"glass_surface_ratio\",\n        \"type\": \"percentage\",\n        \"unit\": \"%\",\n        \"description\": \"Percentage of the bay window surface that is glass.\",\n        \"ambiguity_flag\": true,\n        \"ambiguity_description\": \"The term 'surface' is not defined (e.g., vertical visible surface area vs. total envelope surface); clarify measurement scope.\"\n      },\n      {\n        \"name\": \"floor_joists_continue_into_bay\",\n        \"type\": \"boolean\",\n        \"description\": \"Whether the building\u2019s floor joists extend into the bay window volume.\",\n        \"source\": \"Figure label B indicates counting occurs if joists continue into the bay.\"\n      }\n    ],\n    \"Constants\": [\n      {\n        \"name\": \"min_bottom_height_above_floor_joists\",\n        \"value\": 18,\n        \"unit\": \"in\",\n        \"description\": \"Minimum required vertical clearance from floor joists to the bottom of the bay window feature for GFA exemption.\"\n      },\n      {\n        \"name\": \"min_glass_surface_ratio\",\n        \"value\": 50,\n        \"unit\": \"%\",\n        \"description\": \"Minimum percentage of bay window surface that must be glass for GFA exemption.\"\n      }\n    ],\n    \"Conditions\": [\n      {\n        \"type\": \"mandatory_for_exemption\",\n        \"logic\": \"IF bottom_of_feature_height_above_floor_joists >= 18 in AND exterior_support_type IN {corbels, brackets, corbels_and_brackets} AND glass_surface_ratio >= 50% AND floor_joists_continue_into_bay = false THEN gfa_counts = false ELSE gfa_counts = true\",\n        \"notes\": \"All design criteria must be satisfied to avoid counting toward GFA. The floor joist criterion is inferred from Figure B and flagged as potentially additional to the listed bullets.\",\n        \"ambiguity_flag\": true,\n        \"ambiguity_description\": \"The listed design criteria do not explicitly include the floor joist condition; however, Figure B shows it as a reason to count. Confirm whether this is an additional mandatory criterion for exemption.\"\n      },\n      {\n        \"type\": \"counts_if\",\n        \"logic\": \"IF floor_joists_continue_into_bay = true THEN gfa_counts = true\",\n        \"source\": \"Figure label: 'B Counts because floor joists continue into the bay window.'\"\n      },\n      {\n        \"type\": \"counts_if\",\n        \"logic\": \"IF exterior_support_type IN {solid_wall, skirt_wall_angled, skirt_wall_straight} THEN gfa_counts = true\",\n        \"source\": \"Figure labels: 'C & D Count because of exterior skirt wall (angled or straight)'.\"\n      },\n      {\n        \"type\": \"counts_if\",\n        \"logic\": \"IF glass_surface_ratio < 50% THEN gfa_counts = true\",\n        \"source\": \"Figure label: 'E Counts because the surface is not at least 50% glass.'\"\n      }\n    ],\n    \"Exceptions\": [\n      {\n        \"description\": \"Bay windows that extend higher than the structure\u2019s roof are considered dormers and count toward GFA regardless of other criteria.\",\n        \"override_effect\": \"Force gfa_counts = true\",\n        \"cross_reference_rule\": \"Dormer classification and GFA counting\",\n        \"source\": \"Note box on the page.\"\n      }\n    ],\n    \"Relationships\": [\n      {\n        \"type\": \"cross_reference\",\n        \"target\": \"Municipal code definitions and dimensional standards\",\n        \"references\": [\n          \"18.04.030(a)(65)\",\n          \"18.12.040(b) Table 3\"\n        ],\n        \"description\": \"These sections are cited in the page\u2019s sidebar as relevant code sections.\"\n      },\n      {\n        \"type\": \"logical_dependency\",\n        \"target\": \"Dormer classification rule\",\n        \"description\": \"This rule\u2019s GFA exemption is overridden if the feature is reclassified as a dormer (extends above roof).\"\n      },\n      {\n        \"type\": \"diagram_support\",\n        \"target\": \"Figure 13 Bay windows\",\n        \"description\": \"Illustrative cases A\u2013E clarify conditions that result in counting or not counting toward GFA.\"\n      }\n    ]\n  },\n  {\n    \"Qualifiers\": {\n      \"scope\": \"Projection limits for bay windows relative to the building facade.\",\n      \"applicability\": \"All bay window configurations shown/typical.\",\n      \"exclusions\": \"Not stated; assume applies to bay window projections unless superseded by other code sections.\",\n      \"source_context\": \"Figure 13 annotation: '2' max. from bay window surface to facade surface (Typical all)'.\",\n      \"code_sections_cited\": [\n        \"18.12.040(b) Table 3\"\n      ]\n    },\n    \"Variables\": [\n      {\n        \"name\": \"projection_depth\",\n        \"type\": \"dimensional\",\n        \"unit\": \"in\",\n        \"description\": \"Perpendicular distance from the outermost surface of the bay window to the plane of the adjacent building facade.\",\n        \"ambiguity_flag\": true,\n        \"ambiguity_description\": \"The exact measurement points ('bay window surface' and 'facade surface') should be defined (e.g., furthest projecting element, excluding trim).\"\n      }\n    ],\n    \"Constants\": [\n      {\n        \"name\": \"max_projection_depth_ft\",\n        \"value\": 2,\n        \"unit\": \"ft\",\n        \"equivalent\": {\n          \"value\": 24,\n          \"unit\": \"in\"\n        },\n        \"description\": \"Maximum allowed projection of a bay window from facade.\"\n      }\n    ],\n    \"Conditions\": [\n      {\n        \"type\": \"mandatory_limit\",\n        \"logic\": \"projection_depth <= 24 in\",\n        \"description\": \"Bay window projection must not exceed 2 feet from facade.\"\n      }\n    ],\n    \"Exceptions\": [],\n    \"Relationships\": [\n      {\n        \"type\": \"diagram_source\",\n        \"target\": \"Figure 13 Bay windows\",\n        \"description\": \"Projection limit annotated as 'Typical all' for the figure\u2019s configurations.\"\n      },\n      {\n        \"type\": \"cross_reference\",\n        \"target\": \"Projections standards table\",\n        \"references\": [\n          \"18.12.040(b) Table 3\"\n        ],\n        \"description\": \"Projection limits may be enumerated in the cited table.\"\n      }\n    ]\n  },\n  {\n    \"Qualifiers\": {\n      \"scope\": \"Classification of bay-window-like features that extend above the roof and their treatment in GFA.\",\n      \"applicability\": \"Bay-window projections that pierce or extend above the main roof plane.\",\n      \"exclusions\": \"Does not apply to bay windows that remain below the roof and meet exemption criteria.\",\n      \"source_context\": \"Note box: 'Bay windows that extend higher than the structure\u2019s roof are considered to be dormers and count toward gross floor area.'\",\n      \"code_sections_cited\": [\n        \"18.04.030(a)(65)\"\n      ]\n    },\n    \"Variables\": [\n      {\n        \"name\": \"extends_above_roof\",\n        \"type\": \"boolean\",\n        \"description\": \"Whether the feature extends higher than the structure\u2019s roof plane.\"\n      },\n      {\n        \"name\": \"feature_classification\",\n        \"type\": \"categorical\",\n        \"allowed_values\": [\n          \"bay_window\",\n          \"dormer\"\n        ],\n        \"description\": \"Resulting classification of the feature for GFA purposes.\"\n      }\n    ],\n    \"Constants\": [],\n    \"Conditions\": [\n      {\n        \"type\": \"classification\",\n        \"logic\": \"IF extends_above_roof = true THEN feature_classification = 'dormer' ELSE feature_classification = 'bay_window'\",\n        \"description\": \"Vertical extent relative to roof determines classification.\"\n      },\n      {\n        \"type\": \"counts_if\",\n        \"logic\": \"IF feature_classification = 'dormer' THEN gfa_counts = true\",\n        \"description\": \"Dormers always count toward GFA per note.\"\n      }\n    ],\n    \"Exceptions\": [],\n    \"Relationships\": [\n      {\n        \"type\": \"override_dependency\",\n        \"target\": \"Bay window GFA exemption rule\",\n        \"description\": \"Dormer classification overrides bay-window exemption; if a bay-window-like feature extends above the roof, it counts toward GFA regardless of other criteria.\"\n      }\n    ]\n  }\n]"
+  },
+  "timestamp": "2025-09-16 15:00:23",
+  "model": "openai/gpt-5",
+  "success": true
+}

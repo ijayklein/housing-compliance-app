@@ -1,0 +1,198 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_46.png",
+  "image_name": "Page_46.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Basements & Excavated features\n\nFloor area regulations are intended to address the building mass and the appearance of the streetscape. Therefore, if basement area is below grade and does not contribute to the apparent mass of a building, that area, even if it is habitable, need not be included in the total floor area.\n\nCode sections\nPage 40\n18.12.090 (a, b, & c)\nPage 41\n18.12.090 (c)\nPage 43\n18.12.090 (c) (1)\nPage 44\n18.12.090 (c) (2)\n\nBasement standards\n\n\u2022 May not be located in special flood hazard areas.\n\u2022 May not extend beyond building footprint.\n\u2022 May not encroach into required yards, except where main dwelling is permitted to extend into rear yard.\n\nFAR\nBasements (even habitable ones) do not count as floor area if first floor is no more than 3' above grade.\n\nFig 35 Basement & grade\n\nExcavated features\n\nThere are two types of excavated features:\n\u2022 Light wells and stairwells\n\u2022 Below-grade patios\n\nFAR\nExcavation will not affect grade or measurement of floor area if standards are met (see pages 42 and 43).\n\nFig 36 Excavated feature & grade\n\nA: distance between top of first floor and grade if excavation meets the size/dimensional limits described in Figs 39-40 on pp. 42-43.\n\nB: distance between top of first floor and grade if excavated features exceed the size/dimensional limits described in Figs 39-40 on pp. 42-43.\n\nTop of first floor\n\nGrade if excavated features meet standards described in Figs 39-40 on pp. 42-43.\n\nGrade if excavated features exceed standards described in Figs 39-40 on pp. 42-43.",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "A cross-sectional diagram showing a building with basement and excavated feature areas. The diagram labels 'Basement' and 'Excavated feature' areas below the 'Top of first floor'. Two vertical measurements labeled 'A' and 'B' indicate distances between the top of the first floor and grade under different conditions. 'A' corresponds to excavation meeting size/dimensional limits, 'B' corresponds to excavation exceeding those limits. The diagram also shows two different 'Grade' lines depending on whether excavated features meet or exceed standards described in Figs 39-40 on pages 42-43.",
+          "location": "Bottom right of the page"
+        },
+        {
+          "type": "patterned graphic",
+          "description": "A patterned graphic representing basement and grade area, consisting of a hatched pattern forming a stepped shape.",
+          "location": "Bottom center-left of the page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "First floor height above grade for basement floor area exclusion",
+          "value_type": "Measurement",
+          "value": "3",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Code sections referenced",
+          "value_type": "List",
+          "value": [
+            "18.12.090 (a, b, & c)",
+            "18.12.090 (c)",
+            "18.12.090 (c) (1)",
+            "18.12.090 (c) (2)"
+          ],
+          "unit": "None"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Basements & Excavated features",
+        "subheadings": [
+          "Basement standards",
+          "Excavated features"
+        ],
+        "sections": [
+          "Code sections"
+        ]
+      },
+      "additional_notes": [
+        "Page number 40 is printed at bottom left corner.",
+        "The FAR (Floor Area Ratio) notes are highlighted in grey boxes.",
+        "References to figures 35 and 36 are italicized below respective diagrams.",
+        "References to pages 42 and 43 are made multiple times for detailed standards.",
+        "No handwritten annotations or stamps detected."
+      ],
+      "cross_references": [
+        "see pages 42 and 43",
+        "Figs 39-40 on pp. 42-43"
+      ],
+      "conditions_and_qualifiers": {
+        "qualifiers": [
+          {
+            "id": "q1",
+            "text": "May not be located in special flood hazard areas.",
+            "applies_to_conditions": [
+              "c1",
+              "c2",
+              "c3"
+            ],
+            "scope": "Local"
+          },
+          {
+            "id": "q2",
+            "text": "May not extend beyond building footprint.",
+            "applies_to_conditions": [
+              "c1",
+              "c2",
+              "c3"
+            ],
+            "scope": "Local"
+          },
+          {
+            "id": "q3",
+            "text": "May not encroach into required yards, except where main dwelling is permitted to extend into rear yard.",
+            "applies_to_conditions": [
+              "c1",
+              "c2",
+              "c3"
+            ],
+            "scope": "Local"
+          }
+        ],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "Basements (even habitable ones) do not count as floor area if first floor is no more than 3' above grade.",
+            "value_type": "Measurement",
+            "operator": "<=",
+            "threshold_value": "3",
+            "unit": "feet"
+          },
+          {
+            "id": "c2",
+            "text": "Excavation will not affect grade or measurement of floor area if standards are met.",
+            "value_type": "Boolean",
+            "operator": "contains",
+            "threshold_value": "standards met",
+            "unit": "None"
+          },
+          {
+            "id": "c3",
+            "text": "Excavated features meet size/dimensional limits described in Figs 39-40 on pp. 42-43.",
+            "value_type": "Text",
+            "operator": "matches",
+            "threshold_value": "size/dimensional limits",
+            "unit": "None"
+          },
+          {
+            "id": "c4",
+            "text": "Excavated features exceed size/dimensional limits described in Figs 39-40 on pp. 42-43.",
+            "value_type": "Text",
+            "operator": "matches",
+            "threshold_value": "exceed size/dimensional limits",
+            "unit": "None"
+          }
+        ],
+        "logical_relationships": [
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c3"
+            ],
+            "expression": "If excavated features meet size/dimensional limits described in Figs 39-40 on pp. 42-43, then grade is measured as shown by 'A' in Fig 36.",
+            "evaluation_order": 1
+          },
+          {
+            "operation": "IF-THEN",
+            "condition_ids": [
+              "c4"
+            ],
+            "expression": "If excavated features exceed size/dimensional limits described in Figs 39-40 on pp. 42-43, then grade is measured as shown by 'B' in Fig 36.",
+            "evaluation_order": 2
+          }
+        ],
+        "execution_sequence": [
+          {
+            "step": 1,
+            "action": "Verify basement location and encroachment conditions (q1, q2, q3).",
+            "condition_ids": [
+              "c1"
+            ],
+            "qualifier_ids": [
+              "q1",
+              "q2",
+              "q3"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 2,
+            "action": "Determine if basement floor area counts based on first floor height above grade.",
+            "condition_ids": [
+              "c1"
+            ],
+            "qualifier_ids": [],
+            "dependencies": [
+              1
+            ]
+          },
+          {
+            "step": 3,
+            "action": "Evaluate excavated features against size/dimensional limits to determine applicable grade measurement.",
+            "condition_ids": [
+              "c3",
+              "c4"
+            ],
+            "qualifier_ids": [],
+            "dependencies": [
+              2
+            ]
+          },
+          {
+            "step": 4,
+            "action": "Apply FAR rules for excavation if standards are met.",
+            "condition_ids": [
+              "c2"
+            ],
+            "qualifier_ids": [],
+            "dependencies": [
+              3
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:27:53",
+  "model_used": "openai/gpt-4.1-mini"
+}

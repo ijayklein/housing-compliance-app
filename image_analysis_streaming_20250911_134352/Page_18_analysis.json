@@ -1,0 +1,38 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_18.png",
+  "image_name": "Page_18.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Fig 7 Entry feature with gabled roof\n\nIntersection of front\nfacade and top of\nroof material\nat ridge\n\nHeight\n\nGrade\n\nHeight\n\nGrade\n\nIsometric View                Side Elevation                Porch Floor Plan\n\nNote: If the entryway is considered to be a vaulted entryway\nthe area will be counted as follows:\n\u2022 In this example, a portion of the entryway is recessed\n  beyond the house facade and roof. It is included in the\n  area that counts.\n\u2022 The area is measured to the outside material of the entry-\n  way feature.\n\u2022 The area counts TWICE toward gross floor area.\n\nOutline of entry-\nway roof\n\nOutline of entryway\nfloor area that counts\nTWICE if entryway is\nvaulted\n\n12",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Three architectural drawings showing an entry feature with gabled roof: 1) Isometric view showing a 3D perspective of a house entrance with gabled roof, windows, and dimensional arrows indicating height and grade measurements, 2) Side elevation view showing the profile of the entry feature with height and grade measurements marked, 3) Porch floor plan view showing the outline of the entryway roof and floor area from above",
+          "location": "Center of page, arranged horizontally"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Entryway area counting multiplier",
+          "value": "TWICE",
+          "unit": "toward gross floor area"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Fig 7 Entry feature with gabled roof",
+        "subheadings": [],
+        "sections": [
+          "Note section with bullet points"
+        ]
+      },
+      "additional_notes": [
+        "Page number 12 appears at bottom left",
+        "Diagram includes measurement arrows and dimensional indicators",
+        "Text 'TWICE' appears in bold/emphasized formatting in multiple locations"
+      ],
+      "cross_references": []
+    }
+  },
+  "analysis_timestamp": "2025-09-11 13:44:18",
+  "model_used": "anthropic/claude-sonnet-4"
+}

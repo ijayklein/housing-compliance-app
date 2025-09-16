@@ -1,0 +1,19 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_26.png",
+  "image_name": "Page_26.png",
+  "analysis": {
+    "page_number": "unknown",
+    "main_heading": "PARSE_ERROR",
+    "text_content": "Failed to parse response: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)",
+    "tables": [],
+    "figures": [],
+    "zoning_rules": [],
+    "code_references": [],
+    "quality_notes": "JSON parsing failed: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)",
+    "raw_response": "```json\n{\n  \"page_number\": \"20\",\n  \"main_heading\": \"Setbacks\",\n  \"text_content\": \"Setbacks apportion a lot into two parts:\\n\u2022 buildable area (in the middle)\\n\u2022 required yards (surrounding the building area).\\nThese required yards, meant to be maintained as open space areas, are important as landscaping opportunities to keep our neighborhoods attractive as well as for the preservation of privacy.\\nStandard setbacks\\nStandard setbacks apply in most cases.\\nSpecial setbacks\\nSpecial setbacks override standard setbacks unless a larger contextual setback applies.\\nSpecial setback distances can be found on:\\n\u2022 pages of the city's zone-map booklet (available both online and in hardback at the Development Center)\\n\u2022 parcel reports from the city's GIS (available at the Development Center)\\n* For front setback, if contextual setback is greater than 30' then it applies \u2013 otherwise, the 20' setback applies.\\n* For front & street side setbacks a special setback may apply. If both a contextual and s",
+    "parse_error": true
+  },
+  "analysis_timestamp": "2025-09-16 12:33:28",
+  "model_used": "google/gemini-2.5-flash",
+  "success": false
+}

@@ -1,0 +1,23 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_13.png",
+  "image_name": "Page_13.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "PARSE_ERROR",
+      "visual_elements": [],
+      "technical_specifications": [],
+      "structural_elements": {
+        "main_heading": "",
+        "subheadings": [],
+        "sections": []
+      },
+      "additional_notes": [
+        "Failed to parse LLM response: Expecting value: line 1 column 1 (char 0)"
+      ],
+      "cross_references": []
+    },
+    "raw_response": "Based on the photocopied page from the city planning technical manual, I can extract the following information:\n\n**Figure Title:** Fig 4 Types of porches and entry ways\n\n**Four Types of Porches/Entry Ways Illustrated:**\n\n**A. Roofed porch**\n- Shows a single-story structure with columns supporting a roof\n- Features a front door and windows\n\n**B. Roofed entry way (not vaulted)**\n- Shows a two-story structure with a smaller roofed entrance projection\n- Includes notation for \"Height less than 12' above grade\"\n\n**C. Vaulted entry way**\n- Shows a two-story structure with dormer windows\n- Includes notation for \"Height greater than 12' above grade\"\n\n**D. Combination porch & vaulted entry way**\n- Shows a structure combining both porch and entry way elements\n- Includes notation for \"Height greater than 12' above grade\"\n\n**Reference Note:**\n\"See how to measure height of porches & entry features in Figs 6-8 on pp. 11-13\"\n\n**Height Specifications Noted:**\n- For roofed entry way (not vaulted): \"Height less than 12' above grade\"\n- For vaulted entry way: \"Height greater than 12' above grade\"\n- For combination porch & vaulted entry way: \"Height greater than 12' above grade\""
+  },
+  "analysis_timestamp": "2025-09-16 12:29:32",
+  "model_used": "anthropic/claude-sonnet-4"
+}

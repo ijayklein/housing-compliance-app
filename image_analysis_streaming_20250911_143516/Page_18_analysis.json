@@ -1,0 +1,65 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_18.png",
+  "image_name": "Page_18.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Fig 7 Entry feature with gabled roof\n\n\n\nNote: If the entryway is considered to be a vaulted entryway\nthe area will be counted as follows:\n\n* In this example, a portion of the entryway is recessed\n  beyond the house facade and roof. It is included in the\n  area that counts.\n\n* The area is measured to the outside material of the entry-\n  way feature.\n\n* The area counts TWICE toward gross floor area.\n\n\n\nHeight\n\nGrade\n\nIntersection of front\nfacade and top of\nroof material\nat ridge\n\nHeight\n\nGrade\n\nOutline of entry-\nway roof\n\nOutline of entryway\nfloor area that counts\nTWICE if entryway is\nvaulted\n\n\n\nIsometric View\n\nSide Elevation\n\nPorch Floor Plan\n\n\n\n12",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "An isometric (3D) view of a house entrance with a gabled roof over a porch. It is labeled 'Isometric View'. The diagram includes annotations for 'Height' (measured from 'Grade' to the 'Intersection of front facade and top of roof material at ridge') and 'Grade'. A dashed line indicates the vertical height measurement.",
+          "location": "middle-left"
+        },
+        {
+          "type": "diagram",
+          "description": "A 2D side elevation view of the gabled entry feature, labeled 'Side Elevation'. This diagram also shows the 'Height' measurement from 'Grade' to the ridge line, consistent with the isometric view. A dashed line indicates the vertical height measurement.",
+          "location": "middle-center"
+        },
+        {
+          "type": "diagram",
+          "description": "A 2D floor plan of the porch, labeled 'Porch Floor Plan'. It shows the main house wall as a thick solid line. It has two key annotations: 'Outline of entryway roof' pointing to a thin solid line representing the roof overhang, and 'Outline of entryway floor area that counts TWICE if entryway is vaulted' pointing to a thick dashed line representing the floor area. A curved line indicates a door swing.",
+          "location": "middle-right"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Vaulted entryway area calculation",
+          "value": "counts TWICE toward gross floor area",
+          "unit": null
+        },
+        {
+          "parameter": "Area measurement basis",
+          "value": "measured to the outside material of the entryway feature",
+          "unit": null
+        },
+        {
+          "parameter": "Height measurement reference",
+          "value": "From Grade to the intersection of front facade and top of roof material at ridge",
+          "unit": null
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Fig 7 Entry feature with gabled roof",
+        "subheadings": [
+          "Note:",
+          "Isometric View",
+          "Side Elevation",
+          "Porch Floor Plan"
+        ],
+        "sections": [
+          "12"
+        ]
+      },
+      "additional_notes": [
+        "The page number '12' is located at the bottom left corner.",
+        "The word 'TWICE' is capitalized for emphasis in the main note and in the annotation on the 'Porch Floor Plan' diagram.",
+        "The page appears to be a clean digital copy or high-quality photocopy with no handwritten marks or stamps."
+      ],
+      "cross_references": [
+        "The text refers to 'gross floor area', which is a technical term likely defined elsewhere in the document."
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-11 14:35:39",
+  "model_used": "google/gemini-2.5-pro"
+}

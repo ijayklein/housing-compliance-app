@@ -1,0 +1,85 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_20.md",
+  "file_name": "Page_20.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "rule": "Recessed Porch Gross Floor Area Exclusion",
+        "Qualifiers": {
+          "Scope": "Calculation of Gross Floor Area (GFA).",
+          "Applicability": "Applies to recessed porches located on the ground floor (1st floor).",
+          "Exclusions": "Porches that do not meet all specified criteria. Porches not on the ground floor. Porches with ceilings at or above the 2nd floor."
+        },
+        "Variables": {
+          "porch_depth": "Dimensional. The depth of the recessed porch.",
+          "porch_ceiling_location": "Dimensional. The vertical position of the porch ceiling relative to the 2nd floor.",
+          "porch_openness": "Material/Usage. The state of the exterior side of the porch."
+        },
+        "Constants": {
+          "max_depth": "10 feet",
+          "max_ceiling_level": "Below 2nd floor"
+        },
+        "Conditions": {
+          "Mandatory": "To be excluded from GFA, a logical AND of three conditions must be met.",
+          "Conditional Logic": "IF (Depth of porch < 10') AND (Porch ceiling is below 2nd floor) AND (Exterior side is substantially open) THEN the porch area does NOT count toward gross floor area. ELSE, it DOES count.",
+          "Dependencies": "The outcome (exclusion from GFA) is dependent on satisfying all three criteria simultaneously."
+        },
+        "Exceptions": {
+          "Explicit Deviations": "None. The rule is conditional, not exception-based.",
+          "Alternatives": "None specified.",
+          "Special Cases": "If the porch area does count toward GFA, it may be subject to an additional penalty if its height exceeds 17 feet (see 'One-Story Construction Height' rule)."
+        },
+        "Relationships": {
+          "Hierarchical": "This rule is a specific criterion within the broader regulations for calculating Gross Floor Area.",
+          "Cross-references": "Refers to the city policy on one-story construction height (Note on Page 20) for calculating GFA for non-compliant, tall porches.",
+          "Logical Dependencies": "The GFA exclusion is logically dependent on the AND combination of the depth, ceiling height, and openness conditions."
+        },
+        "Flags": {
+          "Ambiguous Language": "The term 'substantially open' is not quantitatively defined and is subject to interpretation."
+        }
+      },
+      {
+        "rule": "One-Story Construction Height and 2nd Story Equivalency",
+        "Qualifiers": {
+          "Scope": "Defines the height limit for one-story construction for the purpose of GFA calculation.",
+          "Applicability": "City-wide policy applied to spaces like porches when their area is included in GFA calculations.",
+          "Exclusions": "Construction that is less than 17 feet above finished floor."
+        },
+        "Variables": {
+          "space_height": "Dimensional. The height of a construction space, measured from the finished floor."
+        },
+        "Constants": {
+          "one_story_height_limit": "17 feet",
+          "gfa_multiplier": "2 (counts twice)"
+        },
+        "Conditions": {
+          "Mandatory": "This is a mandatory city policy for GFA calculation.",
+          "Conditional Logic": "IF a space's area counts toward GFA AND its height is greater than 17 feet above finished floor, THEN its area is counted a second time ('counts twice') in the GFA calculation.",
+          "Dependencies": "The application of the GFA multiplier is dependent on the space first being included in the GFA calculation and then exceeding the height threshold."
+        },
+        "Exceptions": {
+          "Explicit Deviations": "None specified.",
+          "Alternatives": "None specified.",
+          "Special Cases": "This rule itself is a special case or penalty applied to tall spaces."
+        },
+        "Relationships": {
+          "Hierarchical": "This is a supplementary city policy that modifies the GFA calculation under specific height conditions.",
+          "Cross-references": "This rule is explicitly linked to the 'Recessed Porch GFA Exclusion' rule as a consequence for non-compliance combined with excessive height.",
+          "Logical Dependencies": "Logically dependent on a space's area being counted towards GFA in the first place."
+        },
+        "Flags": {
+          "Ambiguous Language": "The reference point for 'finished floor' is not specified (e.g., the finished floor of the ground story, or the floor of the space in question)."
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n  {\n    \"rule\": \"Recessed Porch Gross Floor Area Exclusion\",\n    \"Qualifiers\": {\n      \"Scope\": \"Calculation of Gross Floor Area (GFA).\",\n      \"Applicability\": \"Applies to recessed porches located on the ground floor (1st floor).\",\n      \"Exclusions\": \"Porches that do not meet all specified criteria. Porches not on the ground floor. Porches with ceilings at or above the 2nd floor.\"\n    },\n    \"Variables\": {\n      \"porch_depth\": \"Dimensional. The depth of the recessed porch.\",\n      \"porch_ceiling_location\": \"Dimensional. The vertical position of the porch ceiling relative to the 2nd floor.\",\n      \"porch_openness\": \"Material/Usage. The state of the exterior side of the porch.\"\n    },\n    \"Constants\": {\n      \"max_depth\": \"10 feet\",\n      \"max_ceiling_level\": \"Below 2nd floor\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"To be excluded from GFA, a logical AND of three conditions must be met.\",\n      \"Conditional Logic\": \"IF (Depth of porch < 10') AND (Porch ceiling is below 2nd floor) AND (Exterior side is substantially open) THEN the porch area does NOT count toward gross floor area. ELSE, it DOES count.\",\n      \"Dependencies\": \"The outcome (exclusion from GFA) is dependent on satisfying all three criteria simultaneously.\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"None. The rule is conditional, not exception-based.\",\n      \"Alternatives\": \"None specified.\",\n      \"Special Cases\": \"If the porch area does count toward GFA, it may be subject to an additional penalty if its height exceeds 17 feet (see 'One-Story Construction Height' rule).\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"This rule is a specific criterion within the broader regulations for calculating Gross Floor Area.\",\n      \"Cross-references\": \"Refers to the city policy on one-story construction height (Note on Page 20) for calculating GFA for non-compliant, tall porches.\",\n      \"Logical Dependencies\": \"The GFA exclusion is logically dependent on the AND combination of the depth, ceiling height, and openness conditions.\"\n    },\n    \"Flags\": {\n      \"Ambiguous Language\": \"The term 'substantially open' is not quantitatively defined and is subject to interpretation.\"\n    }\n  },\n  {\n    \"rule\": \"One-Story Construction Height and 2nd Story Equivalency\",\n    \"Qualifiers\": {\n      \"Scope\": \"Defines the height limit for one-story construction for the purpose of GFA calculation.\",\n      \"Applicability\": \"City-wide policy applied to spaces like porches when their area is included in GFA calculations.\",\n      \"Exclusions\": \"Construction that is less than 17 feet above finished floor.\"\n    },\n    \"Variables\": {\n      \"space_height\": \"Dimensional. The height of a construction space, measured from the finished floor.\"\n    },\n    \"Constants\": {\n      \"one_story_height_limit\": \"17 feet\",\n      \"gfa_multiplier\": \"2 (counts twice)\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"This is a mandatory city policy for GFA calculation.\",\n      \"Conditional Logic\": \"IF a space's area counts toward GFA AND its height is greater than 17 feet above finished floor, THEN its area is counted a second time ('counts twice') in the GFA calculation.\",\n      \"Dependencies\": \"The application of the GFA multiplier is dependent on the space first being included in the GFA calculation and then exceeding the height threshold.\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"None specified.\",\n      \"Alternatives\": \"None specified.\",\n      \"Special Cases\": \"This rule itself is a special case or penalty applied to tall spaces.\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"This is a supplementary city policy that modifies the GFA calculation under specific height conditions.\",\n      \"Cross-references\": \"This rule is explicitly linked to the 'Recessed Porch GFA Exclusion' rule as a consequence for non-compliance combined with excessive height.\",\n      \"Logical Dependencies\": \"Logically dependent on a space's area being counted towards GFA in the first place.\"\n    },\n    \"Flags\": {\n      \"Ambiguous Language\": \"The reference point for 'finished floor' is not specified (e.g., the finished floor of the ground story, or the floor of the space in question).\"\n    }\n  }\n]\n```",
+    "response_time": 22.305912017822266,
+    "input_tokens": 844,
+    "output_tokens": 2594,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 16:11:46",
+  "model": "google/gemini-2.5-pro",
+  "success": true
+}

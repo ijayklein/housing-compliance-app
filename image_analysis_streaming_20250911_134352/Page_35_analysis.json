@@ -1,0 +1,70 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_35.png",
+  "image_name": "Page_35.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Allowable daylight plane protrusions summary\n\nFeature                                    Allowable protrusion                           Illustration\n\nTelevision and radio antennas              up to 15' above maximum building\n                                          height\n\nChimneys and flues < 5' wide              may extend beyond the daylight plane to         Fig 20 on p. 26\n                                          meet minimum required clearance of\n                                          Building Code (Chapter 16.04)\n\nDormers, roof decks, gabels, or similar    each feature \u2264 7.5' long and cumulative        Fig 20 on p. 26 &\narchitectural features                     length of all features \u2264 15' with min 5'       Fig 23 on p. 28\n                                          separation between features (on each\n                                          side); height \u2264 24';\n\nCornices, eaves, and similar architectural max 2'                                          Fig 22 on p. 27\nfeatures (excluding flat or continuous walls\nor enclosures usable for interior space)\n\n29",
+      "visual_elements": [
+        {
+          "type": "table",
+          "description": "A three-column table showing Feature, Allowable protrusion, and Illustration columns. The table contains regulations for various building features and their permitted protrusions beyond daylight planes.",
+          "location": "center of page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Television and radio antennas height allowance",
+          "value": "15",
+          "unit": "feet above maximum building height"
+        },
+        {
+          "parameter": "Chimneys and flues width threshold",
+          "value": "5",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Dormers maximum individual feature length",
+          "value": "7.5",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Dormers cumulative length limit",
+          "value": "15",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Dormers minimum separation",
+          "value": "5",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Dormers maximum height",
+          "value": "24",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Cornices and eaves maximum protrusion",
+          "value": "2",
+          "unit": "feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Allowable daylight plane protrusions summary",
+        "subheadings": [],
+        "sections": []
+      },
+      "additional_notes": [
+        "Page number 29 appears at bottom right",
+        "Document appears to be a photocopied page with clear text quality"
+      ],
+      "cross_references": [
+        "Building Code (Chapter 16.04)",
+        "Fig 20 on p. 26",
+        "Fig 20 on p. 26 & Fig 23 on p. 28",
+        "Fig 22 on p. 27"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-11 13:44:52",
+  "model_used": "anthropic/claude-sonnet-4"
+}

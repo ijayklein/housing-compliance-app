@@ -1,0 +1,247 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_25.png",
+  "image_name": "Page_25.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Fireplaces, chimneys, sheds, planters, and other projections\n\n\u2022 Fireplaces shall be included in the gross floor area (counted one time) regardless of configuration or design.\n\n\u2022 Sheds, planters, and other projections that are higher than 5' count toward gross floor area regardless of configuration or design.\n\nFig 14 Fireplaces, chimneys, sheds, etc.\n\nChimneys on the upper floors DO NOT COUNT\n\nAll configurations of fireplaces, chimneys, and buttresses COUNT ONCE towards the gross floor area.\n\nNote: Fireplaces not connected to the house are treated like accessory structures; they and count towards FAR if they are greater than 120 sf. They count towards lot coverage always, regardless of size.\n\nMiscellaneous appendages e.g., tool sheds, equipment enclosures, play houses, etc., that are greater than 5' in height, DO COUNT toward gross floor area. (Note: Neither appendages like this nor noise-producing equipment may be located in the required yards)\n\nNote: In 2000, the city of Palo Alto passed an ordinance prohibiting the construction of new wood-burning fireplaces. For details about and possible prohibition, see the Chapter 9.06.030\n\n19",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Isometric architectural drawing showing a house with various projections including chimneys, fireplaces, and miscellaneous appendages. The diagram illustrates which elements count toward gross floor area calculations. Shows chimneys on upper floors (labeled as DO NOT COUNT), fireplaces and buttresses at ground level (labeled as COUNT ONCE), and a separate small structure with height indicator showing miscellaneous appendages greater than 5' in height.",
+          "location": "center of page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Height threshold for sheds, planters, and projections",
+          "value_type": "Measurement",
+          "value": "5",
+          "unit": "feet"
+        },
+        {
+          "parameter": "FAR threshold for detached fireplaces",
+          "value_type": "Measurement",
+          "value": "120",
+          "unit": "square feet"
+        },
+        {
+          "parameter": "Height threshold for miscellaneous appendages",
+          "value_type": "Measurement",
+          "value": "5",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Fireplace counting frequency",
+          "value_type": "Text",
+          "value": "one time",
+          "unit": "None"
+        },
+        {
+          "parameter": "Page number",
+          "value_type": "Numerical",
+          "value": "19",
+          "unit": "None"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Fireplaces, chimneys, sheds, planters, and other projections",
+        "subheadings": [],
+        "sections": [
+          "Fig 14"
+        ]
+      },
+      "additional_notes": [
+        "Gray shaded box contains the main bullet point rules",
+        "Multiple notes and annotations within the diagram",
+        "Reference to city ordinance from 2000",
+        "Page appears to be from a technical planning manual"
+      ],
+      "cross_references": [
+        "Chapter 9.06.030"
+      ],
+      "conditions_and_qualifiers": {
+        "qualifiers": [
+          {
+            "id": "q1",
+            "text": "regardless of configuration or design",
+            "applies_to_conditions": [
+              "c1",
+              "c2"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q2",
+            "text": "not connected to the house",
+            "applies_to_conditions": [
+              "c3"
+            ],
+            "scope": "Specific"
+          },
+          {
+            "id": "q3",
+            "text": "always, regardless of size",
+            "applies_to_conditions": [
+              "c4"
+            ],
+            "scope": "Specific"
+          }
+        ],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "Fireplaces shall be included in the gross floor area (counted one time)",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "true",
+            "unit": "None"
+          },
+          {
+            "id": "c2",
+            "text": "Sheds, planters, and other projections that are higher than 5' count toward gross floor area",
+            "value_type": "Measurement",
+            "operator": ">",
+            "threshold_value": "5",
+            "unit": "feet"
+          },
+          {
+            "id": "c3",
+            "text": "Fireplaces not connected to the house are treated like accessory structures; they and count towards FAR if they are greater than 120 sf",
+            "value_type": "Measurement",
+            "operator": ">",
+            "threshold_value": "120",
+            "unit": "square feet"
+          },
+          {
+            "id": "c4",
+            "text": "They count towards lot coverage",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "true",
+            "unit": "None"
+          },
+          {
+            "id": "c5",
+            "text": "Miscellaneous appendages e.g., tool sheds, equipment enclosures, play houses, etc., that are greater than 5' in height, DO COUNT toward gross floor area",
+            "value_type": "Measurement",
+            "operator": ">",
+            "threshold_value": "5",
+            "unit": "feet"
+          },
+          {
+            "id": "c6",
+            "text": "Neither appendages like this nor noise-producing equipment may be located in the required yards",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "false",
+            "unit": "None"
+          },
+          {
+            "id": "c7",
+            "text": "Chimneys on the upper floors DO NOT COUNT",
+            "value_type": "Boolean",
+            "operator": "=",
+            "threshold_value": "false",
+            "unit": "None"
+          },
+          {
+            "id": "c8",
+            "text": "All configurations of fireplaces, chimneys, and buttresses COUNT ONCE towards the gross floor area",
+            "value_type": "Text",
+            "operator": "=",
+            "threshold_value": "once",
+            "unit": "None"
+          }
+        ],
+        "logical_relationships": [
+          {
+            "operation": "AND",
+            "condition_ids": [
+              "c2"
+            ],
+            "expression": "Sheds, planters, and other projections that are higher than 5' count toward gross floor area regardless of configuration or design",
+            "evaluation_order": 1
+          },
+          {
+            "operation": "AND",
+            "condition_ids": [
+              "c3",
+              "c4"
+            ],
+            "expression": "Fireplaces not connected to the house count towards FAR if greater than 120 sf AND count towards lot coverage always",
+            "evaluation_order": 2
+          },
+          {
+            "operation": "AND",
+            "condition_ids": [
+              "c5",
+              "c6"
+            ],
+            "expression": "Miscellaneous appendages greater than 5' count toward gross floor area AND may not be located in required yards",
+            "evaluation_order": 3
+          }
+        ],
+        "execution_sequence": [
+          {
+            "step": 1,
+            "action": "Include all fireplaces in gross floor area calculation",
+            "condition_ids": [
+              "c1"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 2,
+            "action": "Evaluate height of sheds, planters, and projections",
+            "condition_ids": [
+              "c2"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 3,
+            "action": "Determine if fireplaces are connected to house",
+            "condition_ids": [
+              "c3"
+            ],
+            "qualifier_ids": [
+              "q2"
+            ],
+            "dependencies": []
+          },
+          {
+            "step": 4,
+            "action": "Apply lot coverage rules for detached fireplaces",
+            "condition_ids": [
+              "c4"
+            ],
+            "qualifier_ids": [
+              "q3"
+            ],
+            "dependencies": [
+              3
+            ]
+          },
+          {
+            "step": 5,
+            "action": "Evaluate miscellaneous appendages for height and location restrictions",
+            "condition_ids": [
+              "c5",
+              "c6"
+            ],
+            "qualifier_ids": [],
+            "dependencies": []
+          }
+        ]
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:31:53",
+  "model_used": "anthropic/claude-sonnet-4"
+}

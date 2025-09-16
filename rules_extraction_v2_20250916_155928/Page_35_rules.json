@@ -1,0 +1,301 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_35.md",
+  "file_name": "Page_35.md",
+  "analysis": {
+    "extracted_rules": {
+      "analysis_metadata": {
+        "source_page_header": 35,
+        "source_page_footer": 29,
+        "topic": "Allowable daylight plane protrusions summary"
+      },
+      "rules": [
+        {
+          "rule_id": "daylight_plane_protrusion_antennas",
+          "rule_name": "Allowable protrusion for Television and radio antennas",
+          "source_text": "Feature: Television and radio antennas | Allowable protrusion: up to 15' above maximum building height",
+          "qualifiers": {
+            "scope": "Protrusions from the daylight plane.",
+            "applicability": "Applies to Television and radio antennas.",
+            "exclusions": []
+          },
+          "variables": [
+            {
+              "name": "protrusion_height_above_building_height",
+              "description": "The height the antenna extends above the maximum building height limit.",
+              "type": "dimensional"
+            }
+          ],
+          "constants": [
+            {
+              "name": "max_protrusion_height_above_building_height",
+              "value": 15,
+              "unit": "feet",
+              "description": "Maximum allowable protrusion height above the building height limit."
+            }
+          ],
+          "conditions": {
+            "mandatory": [
+              "protrusion_height_above_building_height <= 15 feet"
+            ],
+            "optional": [],
+            "conditional_logic": [],
+            "dependencies": [
+              "Depends on the 'maximum building height' regulation for the specific building."
+            ]
+          },
+          "exceptions": [],
+          "relationships": {
+            "hierarchical": "This rule is a sub-part of the 'Allowable daylight plane protrusions' regulation.",
+            "cross_references": [],
+            "logical_dependencies": [
+              "The calculation requires the value of 'maximum building height' from another regulation."
+            ]
+          },
+          "ambiguous_language": []
+        },
+        {
+          "rule_id": "daylight_plane_protrusion_chimneys_flues",
+          "rule_name": "Allowable protrusion for Chimneys and flues",
+          "source_text": "Feature: Chimneys and flues < 5' wide | Allowable protrusion: may extend beyond the daylight plane to meet minimum required clearance of Building Code (Chapter 16.04)",
+          "qualifiers": {
+            "scope": "Protrusions from the daylight plane.",
+            "applicability": "Applies to Chimneys and flues with a width less than 5 feet.",
+            "exclusions": [
+              "Chimneys and flues >= 5 feet wide."
+            ]
+          },
+          "variables": [
+            {
+              "name": "feature_width",
+              "description": "The width of the chimney or flue.",
+              "type": "dimensional"
+            },
+            {
+              "name": "protrusion_extent",
+              "description": "The extent to which the feature protrudes beyond the daylight plane.",
+              "type": "dimensional"
+            }
+          ],
+          "constants": [
+            {
+              "name": "max_width_for_applicability",
+              "value": 5,
+              "unit": "feet",
+              "description": "The maximum width for a chimney or flue to qualify for this protrusion rule."
+            },
+            {
+              "name": "referenced_code",
+              "value": "Building Code (Chapter 16.04)",
+              "type": "standard",
+              "description": "External code defining minimum required clearance."
+            }
+          ],
+          "conditions": {
+            "mandatory": [],
+            "optional": [
+              "If feature_width < 5 feet, the feature 'may extend' beyond the daylight plane to meet code requirements."
+            ],
+            "conditional_logic": [
+              {
+                "if": "feature_width < 5 feet",
+                "then": "protrusion_extent is allowed up to the 'minimum required clearance' specified in Building Code (Chapter 16.04)."
+              }
+            ],
+            "dependencies": [
+              "The maximum allowable protrusion depends on the 'minimum required clearance' defined in Building Code (Chapter 16.04)."
+            ]
+          },
+          "exceptions": [
+            {
+              "case": "Chimneys and flues < 5' wide.",
+              "deviation": "May extend beyond the daylight plane, unlike other features, but only to meet a specific external code requirement."
+            }
+          ],
+          "relationships": {
+            "hierarchical": "This rule is a sub-part of the 'Allowable daylight plane protrusions' regulation.",
+            "cross_references": [
+              {
+                "document": "Building Code",
+                "section": "Chapter 16.04",
+                "description": "Provides the 'minimum required clearance' value."
+              },
+              {
+                "document": "This document",
+                "section": "Figure 20, p. 26",
+                "description": "Provides an illustration."
+              }
+            ],
+            "logical_dependencies": []
+          },
+          "ambiguous_language": []
+        },
+        {
+          "rule_id": "daylight_plane_protrusion_architectural_features",
+          "rule_name": "Allowable protrusion for Dormers, roof decks, gables, or similar architectural features",
+          "source_text": "Feature: Dormers, roof decks, gables, or similar architectural features | Allowable protrusion: each feature \u2264 7.5' long and cumulative length of all features \u2264 15' with min 5' separation between features (on each side); height \u2264 24';",
+          "qualifiers": {
+            "scope": "Protrusions from the daylight plane.",
+            "applicability": "Applies to Dormers, roof decks, gables, or similar architectural features.",
+            "exclusions": []
+          },
+          "variables": [
+            {
+              "name": "individual_feature_length",
+              "description": "The length of a single dormer, roof deck, or gable.",
+              "type": "dimensional"
+            },
+            {
+              "name": "cumulative_feature_length_per_side",
+              "description": "The sum of lengths of all such features on one side of the building.",
+              "type": "dimensional"
+            },
+            {
+              "name": "separation_between_features",
+              "description": "The minimum distance between adjacent features on the same side.",
+              "type": "dimensional"
+            },
+            {
+              "name": "feature_height",
+              "description": "The height of the feature.",
+              "type": "dimensional"
+            }
+          ],
+          "constants": [
+            {
+              "name": "max_individual_length",
+              "value": 7.5,
+              "unit": "feet"
+            },
+            {
+              "name": "max_cumulative_length",
+              "value": 15,
+              "unit": "feet"
+            },
+            {
+              "name": "min_separation",
+              "value": 5,
+              "unit": "feet"
+            },
+            {
+              "name": "max_height",
+              "value": 24,
+              "unit": "feet"
+            }
+          ],
+          "conditions": {
+            "mandatory": [
+              "individual_feature_length <= 7.5 feet",
+              "cumulative_feature_length_per_side <= 15 feet",
+              "separation_between_features >= 5 feet",
+              "feature_height <= 24 feet"
+            ],
+            "optional": [],
+            "conditional_logic": [],
+            "dependencies": [
+              "The 'cumulative_feature_length_per_side' is dependent on the number and length of all individual features of this type on a given side.",
+              "The 'separation_between_features' rule is dependent on the presence of more than one feature on a given side."
+            ]
+          },
+          "exceptions": [],
+          "relationships": {
+            "hierarchical": "This rule is a sub-part of the 'Allowable daylight plane protrusions' regulation.",
+            "cross_references": [
+              {
+                "document": "This document",
+                "section": "Figure 20, p. 26",
+                "description": "Provides an illustration."
+              },
+              {
+                "document": "This document",
+                "section": "Figure 23, p. 28",
+                "description": "Provides an illustration."
+              }
+            ],
+            "logical_dependencies": [
+              "All four dimensional constraints (individual length, cumulative length, separation, height) must be met simultaneously for the protrusion to be compliant."
+            ]
+          },
+          "ambiguous_language": [
+            {
+              "term": "height \u2264 24'",
+              "reason": "The text explicitly notes this is unclear. It is not specified what 'height' refers to (e.g., height above roof line, total height of the feature, height of the protrusion into the plane)."
+            }
+          ]
+        },
+        {
+          "rule_id": "daylight_plane_protrusion_cornices_eaves",
+          "rule_name": "Allowable protrusion for Cornices, eaves, and similar architectural features",
+          "source_text": "Feature: Cornices, eaves, and similar architectural features (excluding flat or continuous walls or enclosures usable for interior space) | Allowable protrusion: max 2'",
+          "qualifiers": {
+            "scope": "Protrusions from the daylight plane.",
+            "applicability": "Applies to Cornices, eaves, and similar architectural features.",
+            "exclusions": [
+              "flat or continuous walls",
+              "enclosures usable for interior space"
+            ]
+          },
+          "variables": [
+            {
+              "name": "protrusion_depth",
+              "description": "The depth of the protrusion from the building face into the daylight plane.",
+              "type": "dimensional"
+            },
+            {
+              "name": "is_usable_interior_space",
+              "description": "A boolean indicating if the feature encloses space that can be used as interior living/working area.",
+              "type": "usage"
+            },
+            {
+              "name": "is_flat_continuous_wall",
+              "description": "A boolean indicating if the feature is a flat or continuous wall.",
+              "type": "material"
+            }
+          ],
+          "constants": [
+            {
+              "name": "max_protrusion_depth",
+              "value": 2,
+              "unit": "feet",
+              "description": "Maximum allowable protrusion depth."
+            }
+          ],
+          "conditions": {
+            "mandatory": [
+              "protrusion_depth <= 2 feet"
+            ],
+            "optional": [],
+            "conditional_logic": [
+              {
+                "if": "is_usable_interior_space == true OR is_flat_continuous_wall == true",
+                "then": "This rule does not apply; the feature is not a valid protrusion under this rule."
+              }
+            ],
+            "dependencies": []
+          },
+          "exceptions": [],
+          "relationships": {
+            "hierarchical": "This rule is a sub-part of the 'Allowable daylight plane protrusions' regulation.",
+            "cross_references": [
+              {
+                "document": "This document",
+                "section": "Figure 22, p. 27",
+                "description": "Provides an illustration."
+              }
+            ],
+            "logical_dependencies": []
+          },
+          "ambiguous_language": []
+        }
+      ]
+    },
+    "parse_error": false,
+    "raw_response": "```json\n{\n  \"analysis_metadata\": {\n    \"source_page_header\": 35,\n    \"source_page_footer\": 29,\n    \"topic\": \"Allowable daylight plane protrusions summary\"\n  },\n  \"rules\": [\n    {\n      \"rule_id\": \"daylight_plane_protrusion_antennas\",\n      \"rule_name\": \"Allowable protrusion for Television and radio antennas\",\n      \"source_text\": \"Feature: Television and radio antennas | Allowable protrusion: up to 15' above maximum building height\",\n      \"qualifiers\": {\n        \"scope\": \"Protrusions from the daylight plane.\",\n        \"applicability\": \"Applies to Television and radio antennas.\",\n        \"exclusions\": []\n      },\n      \"variables\": [\n        {\n          \"name\": \"protrusion_height_above_building_height\",\n          \"description\": \"The height the antenna extends above the maximum building height limit.\",\n          \"type\": \"dimensional\"\n        }\n      ],\n      \"constants\": [\n        {\n          \"name\": \"max_protrusion_height_above_building_height\",\n          \"value\": 15,\n          \"unit\": \"feet\",\n          \"description\": \"Maximum allowable protrusion height above the building height limit.\"\n        }\n      ],\n      \"conditions\": {\n        \"mandatory\": [\n          \"protrusion_height_above_building_height <= 15 feet\"\n        ],\n        \"optional\": [],\n        \"conditional_logic\": [],\n        \"dependencies\": [\n          \"Depends on the 'maximum building height' regulation for the specific building.\"\n        ]\n      },\n      \"exceptions\": [],\n      \"relationships\": {\n        \"hierarchical\": \"This rule is a sub-part of the 'Allowable daylight plane protrusions' regulation.\",\n        \"cross_references\": [],\n        \"logical_dependencies\": [\n          \"The calculation requires the value of 'maximum building height' from another regulation.\"\n        ]\n      },\n      \"ambiguous_language\": []\n    },\n    {\n      \"rule_id\": \"daylight_plane_protrusion_chimneys_flues\",\n      \"rule_name\": \"Allowable protrusion for Chimneys and flues\",\n      \"source_text\": \"Feature: Chimneys and flues < 5' wide | Allowable protrusion: may extend beyond the daylight plane to meet minimum required clearance of Building Code (Chapter 16.04)\",\n      \"qualifiers\": {\n        \"scope\": \"Protrusions from the daylight plane.\",\n        \"applicability\": \"Applies to Chimneys and flues with a width less than 5 feet.\",\n        \"exclusions\": [\n          \"Chimneys and flues >= 5 feet wide.\"\n        ]\n      },\n      \"variables\": [\n        {\n          \"name\": \"feature_width\",\n          \"description\": \"The width of the chimney or flue.\",\n          \"type\": \"dimensional\"\n        },\n        {\n          \"name\": \"protrusion_extent\",\n          \"description\": \"The extent to which the feature protrudes beyond the daylight plane.\",\n          \"type\": \"dimensional\"\n        }\n      ],\n      \"constants\": [\n        {\n          \"name\": \"max_width_for_applicability\",\n          \"value\": 5,\n          \"unit\": \"feet\",\n          \"description\": \"The maximum width for a chimney or flue to qualify for this protrusion rule.\"\n        },\n        {\n          \"name\": \"referenced_code\",\n          \"value\": \"Building Code (Chapter 16.04)\",\n          \"type\": \"standard\",\n          \"description\": \"External code defining minimum required clearance.\"\n        }\n      ],\n      \"conditions\": {\n        \"mandatory\": [],\n        \"optional\": [\n          \"If feature_width < 5 feet, the feature 'may extend' beyond the daylight plane to meet code requirements.\"\n        ],\n        \"conditional_logic\": [\n          {\n            \"if\": \"feature_width < 5 feet\",\n            \"then\": \"protrusion_extent is allowed up to the 'minimum required clearance' specified in Building Code (Chapter 16.04).\"\n          }\n        ],\n        \"dependencies\": [\n          \"The maximum allowable protrusion depends on the 'minimum required clearance' defined in Building Code (Chapter 16.04).\"\n        ]\n      },\n      \"exceptions\": [\n        {\n          \"case\": \"Chimneys and flues < 5' wide.\",\n          \"deviation\": \"May extend beyond the daylight plane, unlike other features, but only to meet a specific external code requirement.\"\n        }\n      ],\n      \"relationships\": {\n        \"hierarchical\": \"This rule is a sub-part of the 'Allowable daylight plane protrusions' regulation.\",\n        \"cross_references\": [\n          {\n            \"document\": \"Building Code\",\n            \"section\": \"Chapter 16.04\",\n            \"description\": \"Provides the 'minimum required clearance' value.\"\n          },\n          {\n            \"document\": \"This document\",\n            \"section\": \"Figure 20, p. 26\",\n            \"description\": \"Provides an illustration.\"\n          }\n        ],\n        \"logical_dependencies\": []\n      },\n      \"ambiguous_language\": []\n    },\n    {\n      \"rule_id\": \"daylight_plane_protrusion_architectural_features\",\n      \"rule_name\": \"Allowable protrusion for Dormers, roof decks, gables, or similar architectural features\",\n      \"source_text\": \"Feature: Dormers, roof decks, gables, or similar architectural features | Allowable protrusion: each feature \u2264 7.5' long and cumulative length of all features \u2264 15' with min 5' separation between features (on each side); height \u2264 24';\",\n      \"qualifiers\": {\n        \"scope\": \"Protrusions from the daylight plane.\",\n        \"applicability\": \"Applies to Dormers, roof decks, gables, or similar architectural features.\",\n        \"exclusions\": []\n      },\n      \"variables\": [\n        {\n          \"name\": \"individual_feature_length\",\n          \"description\": \"The length of a single dormer, roof deck, or gable.\",\n          \"type\": \"dimensional\"\n        },\n        {\n          \"name\": \"cumulative_feature_length_per_side\",\n          \"description\": \"The sum of lengths of all such features on one side of the building.\",\n          \"type\": \"dimensional\"\n        },\n        {\n          \"name\": \"separation_between_features\",\n          \"description\": \"The minimum distance between adjacent features on the same side.\",\n          \"type\": \"dimensional\"\n        },\n        {\n          \"name\": \"feature_height\",\n          \"description\": \"The height of the feature.\",\n          \"type\": \"dimensional\"\n        }\n      ],\n      \"constants\": [\n        {\n          \"name\": \"max_individual_length\",\n          \"value\": 7.5,\n          \"unit\": \"feet\"\n        },\n        {\n          \"name\": \"max_cumulative_length\",\n          \"value\": 15,\n          \"unit\": \"feet\"\n        },\n        {\n          \"name\": \"min_separation\",\n          \"value\": 5,\n          \"unit\": \"feet\"\n        },\n        {\n          \"name\": \"max_height\",\n          \"value\": 24,\n          \"unit\": \"feet\"\n        }\n      ],\n      \"conditions\": {\n        \"mandatory\": [\n          \"individual_feature_length <= 7.5 feet\",\n          \"cumulative_feature_length_per_side <= 15 feet\",\n          \"separation_between_features >= 5 feet\",\n          \"feature_height <= 24 feet\"\n        ],\n        \"optional\": [],\n        \"conditional_logic\": [],\n        \"dependencies\": [\n          \"The 'cumulative_feature_length_per_side' is dependent on the number and length of all individual features of this type on a given side.\",\n          \"The 'separation_between_features' rule is dependent on the presence of more than one feature on a given side.\"\n        ]\n      },\n      \"exceptions\": [],\n      \"relationships\": {\n        \"hierarchical\": \"This rule is a sub-part of the 'Allowable daylight plane protrusions' regulation.\",\n        \"cross_references\": [\n          {\n            \"document\": \"This document\",\n            \"section\": \"Figure 20, p. 26\",\n            \"description\": \"Provides an illustration.\"\n          },\n          {\n            \"document\": \"This document\",\n            \"section\": \"Figure 23, p. 28\",\n            \"description\": \"Provides an illustration.\"\n          }\n        ],\n        \"logical_dependencies\": [\n          \"All four dimensional constraints (individual length, cumulative length, separation, height) must be met simultaneously for the protrusion to be compliant.\"\n        ]\n      },\n      \"ambiguous_language\": [\n        {\n          \"term\": \"height \u2264 24'\",\n          \"reason\": \"The text explicitly notes this is unclear. It is not specified what 'height' refers to (e.g., height above roof line, total height of the feature, height of the protrusion into the plane).\"\n        }\n      ]\n    },\n    {\n      \"rule_id\": \"daylight_plane_protrusion_cornices_eaves\",\n      \"rule_name\": \"Allowable protrusion for Cornices, eaves, and similar architectural features\",\n      \"source_text\": \"Feature: Cornices, eaves, and similar architectural features (excluding flat or continuous walls or enclosures usable for interior space) | Allowable protrusion: max 2'\",\n      \"qualifiers\": {\n        \"scope\": \"Protrusions from the daylight plane.\",\n        \"applicability\": \"Applies to Cornices, eaves, and similar architectural features.\",\n        \"exclusions\": [\n          \"flat or continuous walls\",\n          \"enclosures usable for interior space\"\n        ]\n      },\n      \"variables\": [\n        {\n          \"name\": \"protrusion_depth\",\n          \"description\": \"The depth of the protrusion from the building face into the daylight plane.\",\n          \"type\": \"dimensional\"\n        },\n        {\n          \"name\": \"is_usable_interior_space\",\n          \"description\": \"A boolean indicating if the feature encloses space that can be used as interior living/working area.\",\n          \"type\": \"usage\"\n        },\n        {\n          \"name\": \"is_flat_continuous_wall\",\n          \"description\": \"A boolean indicating if the feature is a flat or continuous wall.\",\n          \"type\": \"material\"\n        }\n      ],\n      \"constants\": [\n        {\n          \"name\": \"max_protrusion_depth\",\n          \"value\": 2,\n          \"unit\": \"feet\",\n          \"description\": \"Maximum allowable protrusion depth.\"\n        }\n      ],\n      \"conditions\": {\n        \"mandatory\": [\n          \"protrusion_depth <= 2 feet\"\n        ],\n        \"optional\": [],\n        \"conditional_logic\": [\n          {\n            \"if\": \"is_usable_interior_space == true OR is_flat_continuous_wall == true\",\n            \"then\": \"This rule does not apply; the feature is not a valid protrusion under this rule.\"\n          }\n        ],\n        \"dependencies\": []\n      },\n      \"exceptions\": [],\n      \"relationships\": {\n        \"hierarchical\": \"This rule is a sub-part of the 'Allowable daylight plane protrusions' regulation.\",\n        \"cross_references\": [\n          {\n            \"document\": \"This document\",\n            \"section\": \"Figure 22, p. 27\",\n            \"description\": \"Provides an illustration.\"\n          }\n        ],\n        \"logical_dependencies\": []\n      },\n      \"ambiguous_language\": []\n    }\n  ]\n}\n```",
+    "response_time": 60.258320808410645,
+    "input_tokens": 692,
+    "output_tokens": 7860,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 16:02:55",
+  "model": "google/gemini-2.5-pro",
+  "success": true
+}

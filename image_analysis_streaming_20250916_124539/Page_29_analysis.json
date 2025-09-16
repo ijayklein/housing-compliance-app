@@ -1,0 +1,29 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_29.png",
+  "image_name": "Page_29.png",
+  "analysis": {
+    "page": "23",
+    "heading": "Determining setbacks on oddly shaped lots considerations",
+    "content": "Fig 17. Setbacks for oddly shaped lots",
+    "figures": [
+      "Diagram showing 7 different lot types (A-G):",
+      "A: Flag lot with front lot line closest and parallel to street",
+      "B: Corner lot with 16' setback",
+      "C: Substandard corner lot with frontage < 50'",
+      "D: Through lot",
+      "E: Wedge shaped lot without rear lot lines",
+      "F: Lot with more than 4 sides",
+      "G: Lot with more than 4 sides and interior side yard"
+    ],
+    "tables": [],
+    "codes": [
+      "Street side setback is 10' instead of 16'",
+      "Front setback is 10' instead of 20'",
+      "Wedge shaped lots rear yard determined by a 20' radius from intersection of side lot lines",
+      "Rear lot line is farthest and most parallel to street"
+    ]
+  },
+  "timestamp": "2025-09-16 12:46:36",
+  "model": "anthropic/claude-3.5-sonnet",
+  "success": true
+}

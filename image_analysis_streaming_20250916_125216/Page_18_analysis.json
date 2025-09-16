@@ -1,0 +1,12 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_18.png",
+  "image_name": "Page_18.png",
+  "analysis": {
+    "raw_content": "Here's the extracted information from the image, focusing on crucial zoning rules, regulations, and technical specifications, with absolute precision:\n\n**Title:**\nFig 7 Entry feature with gabled roof\n\n**Diagram Labels:**\n*   **Isometric View:**\n    *   Height\n    *   Grade\n*   **Side Elevation:**\n    *   Intersection of front facade and top of roof material at ridge\n    *   Height\n    *   Grade\n*   **Porch Floor Plan:**\n    *   Outline of entryway roof\n    *   Outline of entryway floor area that counts TWICE if entryway is vaulted\n\n**Note (Regulations/Rules):**\nIf the entryway is considered to be a vaulted entryway the area will be counted as follows:\n*   In this example, a portion of the entryway is recessed beyond the house facade and roof. It is included in the area that counts.\n*   The area is measured to the outside material of the entryway feature.\n*   The area counts TWICE toward gross floor area.\n\n**Page Number:**\n12",
+    "content_length": 938,
+    "parse_error": false
+  },
+  "timestamp": "2025-09-16 12:52:35",
+  "model": "google/gemini-2.5-flash",
+  "success": true
+}

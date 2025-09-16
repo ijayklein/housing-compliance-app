@@ -1,0 +1,91 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_15.png",
+  "image_name": "Page_15.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Step 2: Determine which perimeter segments abut the house walls. These are closed segments, or sides.\n\n\nIn Fig 5 sides A, B, & C abut the house walls.\nThese are considered to be closed segments.\n\n\nStep 3: Determine the status (open/closed) of the remaining segments based on the design. If at least 50% of the facade area is\nopen, then the segment or side is considered open.\n\nFor purposes of assessing the openess of the facade:\n\n\u2022 The height of the segment facades is measured from the top of the porch floor to the the point where the\n  segment facade intersects with the top of the roof material.\n\n\u2022 The widths of the segment facades are measured from the same plane. Allowances may be made for\n  structural supports that are not excessive.\n\n\nIntersection\nfacade & top\nof roof material\n\nHeight = 8'\n\nPorch flr\n\nD\n7'\nOpen\n\nE\n14'\nClosed\n(because of decorative glass wall)\n\nF\n24'\nOpen\n\nG\n4'\nOpen\n\n9",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "A top-down plan view of a building's corner with an attached porch. The house walls are shaded gray. Three segments of the porch perimeter that abut the house walls are labeled A, B, and C. Segment A has a length of 3'. Segment B has a length of 8'. Segment C, which includes a swinging door, has a length of 10'. These are identified as 'closed segments'.",
+          "location": "Top right of the page, next to the text for Step 2."
+        },
+        {
+          "type": "diagram",
+          "description": "A series of four elevation diagrams (D, E, F, G) illustrating different types of porch facade segments. Diagram E includes annotations showing how height is measured. 'Height = 8'' is measured from the 'Porch flr' to the 'Intersection facade & top of roof material'.\n- Diagram D: An open segment with two supports, labeled 'D', width '7'', and status 'Open'.\n- Diagram E: A closed segment filled with a decorative glass wall, labeled 'E', width '14'', and status 'Closed (because of decorative glass wall)'.\n- Diagram F: A wide open segment with three supports, labeled 'F', width '24'', and status 'Open'.\n- Diagram G: A narrow open segment with two supports, labeled 'G', width '4'', and status 'Open'.",
+          "location": "Bottom of the page, below the text for Step 3."
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Facade openness threshold",
+          "value": "50",
+          "unit": "%"
+        },
+        {
+          "parameter": "Segment A width",
+          "value": "3",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Segment B width",
+          "value": "8",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Segment C width",
+          "value": "10",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Segment D width",
+          "value": "7",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Segment E width",
+          "value": "14",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Segment F width",
+          "value": "24",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Segment G width",
+          "value": "4",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Facade height example",
+          "value": "8",
+          "unit": "feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": null,
+        "subheadings": [
+          "Step 2:",
+          "Step 3:",
+          "For purposes of assessing the openess of the facade:"
+        ],
+        "sections": [
+          "9"
+        ]
+      },
+      "additional_notes": [
+        "The page number '9' is located in the bottom right corner.",
+        "In the reference 'Fig 5', the number '5' is enclosed in a box.",
+        "There is a potential typo in the subheading 'For purposes of assessing the openess of the facade:'. 'openess' is likely meant to be 'openness'.",
+        "There is a duplicated word in the first bullet point: '...to the the point where...'.",
+        "The page layout consists of two main steps (Step 2 and Step 3), each with explanatory text and an accompanying diagram. Step 3 also includes a bulleted list of rules."
+      ],
+      "cross_references": [
+        "In Fig 5 sides A, B, & C abut the house walls."
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-11 14:35:41",
+  "model_used": "google/gemini-2.5-pro"
+}

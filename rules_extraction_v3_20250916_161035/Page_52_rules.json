@@ -1,0 +1,197 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_52.md",
+  "file_name": "Page_52.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "rule": "Max Height for Main Dwelling on Standard Lot with Low Roof Slope",
+        "source_page": "52",
+        "source_table": "Height",
+        "ambiguities": "The definition of a 'standard lot' is not provided on this page. The base elevation from which height is measured (e.g., 'average grade') is not explicitly defined, though implied by the 'Height & grade' heading.",
+        "Qualifiers": {
+          "Scope": "Regulation of maximum building height measured to the roof peak.",
+          "Applicability": "Applies to a 'Main dwelling' on a 'standard lot' where the roof slope is less than 12:12.",
+          "Exclusions": ""
+        },
+        "Variables": {
+          "structure_type": "Main dwelling",
+          "lot_type": "standard lot",
+          "roof_slope": "The vertical rise in inches for every 12 inches of horizontal run. For this rule, the value must be less than 12:12."
+        },
+        "Constants": {
+          "max_height": "30 feet",
+          "roof_slope_threshold": "12:12",
+          "height_measurement_point": "Measured to top of roof material (as per Figure 42 caption).",
+          "roof_slope_definition": "Vertical rise in inches for every horizontal distance of twelve inches (run), expressed as rise:run (as per Figure 43)."
+        },
+        "Conditions": {
+          "Mandatory": "The structure's height to the roof peak must not exceed the specified maximum height.",
+          "Optional": "",
+          "Conditional Logic": "IF (structure_type == 'Main dwelling' AND lot_type == 'standard lot' AND roof_slope < 12:12) THEN max_height = 30'.",
+          "Dependencies": "Maximum height is dependent on structure_type, lot_type, and roof_slope."
+        },
+        "Exceptions": {
+          "Explicit Deviations": "",
+          "Alternatives": "",
+          "Special Cases": ""
+        },
+        "Relationships": {
+          "Hierarchical": "This rule is one of several height regulations under the 'Height' category.",
+          "Cross-references": "Code Section 18.12.040 (a) Table 2; Code Section 18.04.030 (64) (b); Figure 42; Figure 43.",
+          "Logical Dependencies": "This rule is mutually exclusive with the rule for main dwellings on standard lots with roof slopes \u2265 12:12."
+        }
+      },
+      {
+        "rule": "Max Height for Main Dwelling on Standard Lot with High Roof Slope",
+        "source_page": "52",
+        "source_table": "Height",
+        "ambiguities": "The definition of a 'standard lot' is not provided on this page. The base elevation from which height is measured (e.g., 'average grade') is not explicitly defined, though implied by the 'Height & grade' heading.",
+        "Qualifiers": {
+          "Scope": "Regulation of maximum building height measured to the roof peak.",
+          "Applicability": "Applies to a 'Main dwelling' on a 'standard lot' where the roof slope is greater than or equal to 12:12.",
+          "Exclusions": ""
+        },
+        "Variables": {
+          "structure_type": "Main dwelling",
+          "lot_type": "standard lot",
+          "roof_slope": "The vertical rise in inches for every 12 inches of horizontal run. For this rule, the value must be greater than or equal to 12:12."
+        },
+        "Constants": {
+          "max_height": "33 feet",
+          "roof_slope_threshold": "12:12",
+          "height_measurement_point": "Measured to top of roof material (as per Figure 42 caption).",
+          "roof_slope_definition": "Vertical rise in inches for every horizontal distance of twelve inches (run), expressed as rise:run (as per Figure 43)."
+        },
+        "Conditions": {
+          "Mandatory": "The structure's height to the roof peak must not exceed the specified maximum height.",
+          "Optional": "",
+          "Conditional Logic": "IF (structure_type == 'Main dwelling' AND lot_type == 'standard lot' AND roof_slope >= 12:12) THEN max_height = 33'.",
+          "Dependencies": "Maximum height is dependent on structure_type, lot_type, and roof_slope."
+        },
+        "Exceptions": {
+          "Explicit Deviations": "",
+          "Alternatives": "",
+          "Special Cases": ""
+        },
+        "Relationships": {
+          "Hierarchical": "This rule is one of several height regulations under the 'Height' category.",
+          "Cross-references": "Code Section 18.12.040 (a) Table 2; Code Section 18.04.030 (64) (b); Figure 42; Figure 43.",
+          "Logical Dependencies": "This rule is mutually exclusive with the rule for main dwellings on standard lots with roof slopes < 12:12."
+        }
+      },
+      {
+        "rule": "Max Height for Main Dwelling on Substandard or Flag Lot",
+        "source_page": "52",
+        "source_table": "Height",
+        "ambiguities": "The definitions of 'substandard lot' and 'flag lot' are not provided on this page. The base elevation from which height is measured is not explicitly defined.",
+        "Qualifiers": {
+          "Scope": "Regulation of maximum building height measured to the roof peak.",
+          "Applicability": "Applies to a 'Main dwelling' on a 'substandard' or 'flag' lot.",
+          "Exclusions": ""
+        },
+        "Variables": {
+          "structure_type": "Main dwelling",
+          "lot_type": "substandard or flag lot"
+        },
+        "Constants": {
+          "max_height": "17 feet",
+          "height_measurement_point": "Measured to top of roof material (inferred from other rules and Figure 42)."
+        },
+        "Conditions": {
+          "Mandatory": "The structure's height to the roof peak must not exceed the specified maximum height.",
+          "Optional": "",
+          "Conditional Logic": "IF (structure_type == 'Main dwelling' AND (lot_type == 'substandard lot' OR lot_type == 'flag lot')) THEN max_height = 17'.",
+          "Dependencies": "Maximum height is dependent on structure_type and lot_type. It is not dependent on roof slope."
+        },
+        "Exceptions": {
+          "Explicit Deviations": "",
+          "Alternatives": "",
+          "Special Cases": ""
+        },
+        "Relationships": {
+          "Hierarchical": "This rule is one of several height regulations under the 'Height' category.",
+          "Cross-references": "Code Section 18.12.040 (a) Table 2; Code Section 18.04.030 (64) (b).",
+          "Logical Dependencies": "Shares the same height limit as '2nd-dwelling units'."
+        }
+      },
+      {
+        "rule": "Max Height for Accessory Structure in Yard",
+        "source_page": "52",
+        "source_table": "Height",
+        "ambiguities": "The definitions of 'rear yard' and 'side yard' are not provided on this page. The base elevation from which height is measured is not explicitly defined.",
+        "Qualifiers": {
+          "Scope": "Regulation of maximum building height measured to the roof peak.",
+          "Applicability": "Applies to an 'Accessory structure' located in a 'rear' or 'side' yard.",
+          "Exclusions": ""
+        },
+        "Variables": {
+          "structure_type": "Accessory structure",
+          "structure_location": "rear or side yard"
+        },
+        "Constants": {
+          "max_height": "12 feet",
+          "height_measurement_point": "Measured to top of roof material (inferred from other rules and Figure 42)."
+        },
+        "Conditions": {
+          "Mandatory": "The structure's height to the roof peak must not exceed the specified maximum height.",
+          "Optional": "",
+          "Conditional Logic": "IF (structure_type == 'Accessory structure' AND (structure_location == 'rear yard' OR structure_location == 'side yard')) THEN max_height = 12'.",
+          "Dependencies": "Maximum height is dependent on structure_type and structure_location."
+        },
+        "Exceptions": {
+          "Explicit Deviations": "",
+          "Alternatives": "",
+          "Special Cases": ""
+        },
+        "Relationships": {
+          "Hierarchical": "This rule is one of several height regulations under the 'Height' category.",
+          "Cross-references": "Code Section 18.12.040 (a) Table 2; Code Section 18.04.030 (64) (b).",
+          "Logical Dependencies": ""
+        }
+      },
+      {
+        "rule": "Max Height for 2nd-Dwelling Units",
+        "source_page": "52",
+        "source_table": "Height",
+        "ambiguities": "The specific definition of a '2nd-dwelling unit' is not provided on this page. The base elevation from which height is measured is not explicitly defined.",
+        "Qualifiers": {
+          "Scope": "Regulation of maximum building height measured to the roof peak.",
+          "Applicability": "Applies to '2nd-dwelling units'.",
+          "Exclusions": ""
+        },
+        "Variables": {
+          "structure_type": "2nd-dwelling unit"
+        },
+        "Constants": {
+          "max_height": "17 feet",
+          "height_measurement_point": "Measured to top of roof material (inferred from other rules and Figure 42)."
+        },
+        "Conditions": {
+          "Mandatory": "The structure's height to the roof peak must not exceed the specified maximum height.",
+          "Optional": "",
+          "Conditional Logic": "IF (structure_type == '2nd-dwelling unit') THEN max_height = 17'.",
+          "Dependencies": "Maximum height is dependent on structure_type."
+        },
+        "Exceptions": {
+          "Explicit Deviations": "",
+          "Alternatives": "",
+          "Special Cases": ""
+        },
+        "Relationships": {
+          "Hierarchical": "This rule is one of several height regulations under the 'Height' category.",
+          "Cross-references": "Code Section 18.12.040 (a) Table 2; Code Section 18.04.030 (64) (b).",
+          "Logical Dependencies": "Shares the same height limit as a 'Main dwelling on a substandard or flag lot'."
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n  {\n    \"rule\": \"Max Height for Main Dwelling on Standard Lot with Low Roof Slope\",\n    \"source_page\": \"52\",\n    \"source_table\": \"Height\",\n    \"ambiguities\": \"The definition of a 'standard lot' is not provided on this page. The base elevation from which height is measured (e.g., 'average grade') is not explicitly defined, though implied by the 'Height & grade' heading.\",\n    \"Qualifiers\": {\n      \"Scope\": \"Regulation of maximum building height measured to the roof peak.\",\n      \"Applicability\": \"Applies to a 'Main dwelling' on a 'standard lot' where the roof slope is less than 12:12.\",\n      \"Exclusions\": \"\"\n    },\n    \"Variables\": {\n      \"structure_type\": \"Main dwelling\",\n      \"lot_type\": \"standard lot\",\n      \"roof_slope\": \"The vertical rise in inches for every 12 inches of horizontal run. For this rule, the value must be less than 12:12.\"\n    },\n    \"Constants\": {\n      \"max_height\": \"30 feet\",\n      \"roof_slope_threshold\": \"12:12\",\n      \"height_measurement_point\": \"Measured to top of roof material (as per Figure 42 caption).\",\n      \"roof_slope_definition\": \"Vertical rise in inches for every horizontal distance of twelve inches (run), expressed as rise:run (as per Figure 43).\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"The structure's height to the roof peak must not exceed the specified maximum height.\",\n      \"Optional\": \"\",\n      \"Conditional Logic\": \"IF (structure_type == 'Main dwelling' AND lot_type == 'standard lot' AND roof_slope < 12:12) THEN max_height = 30'.\",\n      \"Dependencies\": \"Maximum height is dependent on structure_type, lot_type, and roof_slope.\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"\",\n      \"Alternatives\": \"\",\n      \"Special Cases\": \"\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"This rule is one of several height regulations under the 'Height' category.\",\n      \"Cross-references\": \"Code Section 18.12.040 (a) Table 2; Code Section 18.04.030 (64) (b); Figure 42; Figure 43.\",\n      \"Logical Dependencies\": \"This rule is mutually exclusive with the rule for main dwellings on standard lots with roof slopes \u2265 12:12.\"\n    }\n  },\n  {\n    \"rule\": \"Max Height for Main Dwelling on Standard Lot with High Roof Slope\",\n    \"source_page\": \"52\",\n    \"source_table\": \"Height\",\n    \"ambiguities\": \"The definition of a 'standard lot' is not provided on this page. The base elevation from which height is measured (e.g., 'average grade') is not explicitly defined, though implied by the 'Height & grade' heading.\",\n    \"Qualifiers\": {\n      \"Scope\": \"Regulation of maximum building height measured to the roof peak.\",\n      \"Applicability\": \"Applies to a 'Main dwelling' on a 'standard lot' where the roof slope is greater than or equal to 12:12.\",\n      \"Exclusions\": \"\"\n    },\n    \"Variables\": {\n      \"structure_type\": \"Main dwelling\",\n      \"lot_type\": \"standard lot\",\n      \"roof_slope\": \"The vertical rise in inches for every 12 inches of horizontal run. For this rule, the value must be greater than or equal to 12:12.\"\n    },\n    \"Constants\": {\n      \"max_height\": \"33 feet\",\n      \"roof_slope_threshold\": \"12:12\",\n      \"height_measurement_point\": \"Measured to top of roof material (as per Figure 42 caption).\",\n      \"roof_slope_definition\": \"Vertical rise in inches for every horizontal distance of twelve inches (run), expressed as rise:run (as per Figure 43).\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"The structure's height to the roof peak must not exceed the specified maximum height.\",\n      \"Optional\": \"\",\n      \"Conditional Logic\": \"IF (structure_type == 'Main dwelling' AND lot_type == 'standard lot' AND roof_slope >= 12:12) THEN max_height = 33'.\",\n      \"Dependencies\": \"Maximum height is dependent on structure_type, lot_type, and roof_slope.\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"\",\n      \"Alternatives\": \"\",\n      \"Special Cases\": \"\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"This rule is one of several height regulations under the 'Height' category.\",\n      \"Cross-references\": \"Code Section 18.12.040 (a) Table 2; Code Section 18.04.030 (64) (b); Figure 42; Figure 43.\",\n      \"Logical Dependencies\": \"This rule is mutually exclusive with the rule for main dwellings on standard lots with roof slopes < 12:12.\"\n    }\n  },\n  {\n    \"rule\": \"Max Height for Main Dwelling on Substandard or Flag Lot\",\n    \"source_page\": \"52\",\n    \"source_table\": \"Height\",\n    \"ambiguities\": \"The definitions of 'substandard lot' and 'flag lot' are not provided on this page. The base elevation from which height is measured is not explicitly defined.\",\n    \"Qualifiers\": {\n      \"Scope\": \"Regulation of maximum building height measured to the roof peak.\",\n      \"Applicability\": \"Applies to a 'Main dwelling' on a 'substandard' or 'flag' lot.\",\n      \"Exclusions\": \"\"\n    },\n    \"Variables\": {\n      \"structure_type\": \"Main dwelling\",\n      \"lot_type\": \"substandard or flag lot\"\n    },\n    \"Constants\": {\n      \"max_height\": \"17 feet\",\n      \"height_measurement_point\": \"Measured to top of roof material (inferred from other rules and Figure 42).\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"The structure's height to the roof peak must not exceed the specified maximum height.\",\n      \"Optional\": \"\",\n      \"Conditional Logic\": \"IF (structure_type == 'Main dwelling' AND (lot_type == 'substandard lot' OR lot_type == 'flag lot')) THEN max_height = 17'.\",\n      \"Dependencies\": \"Maximum height is dependent on structure_type and lot_type. It is not dependent on roof slope.\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"\",\n      \"Alternatives\": \"\",\n      \"Special Cases\": \"\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"This rule is one of several height regulations under the 'Height' category.\",\n      \"Cross-references\": \"Code Section 18.12.040 (a) Table 2; Code Section 18.04.030 (64) (b).\",\n      \"Logical Dependencies\": \"Shares the same height limit as '2nd-dwelling units'.\"\n    }\n  },\n  {\n    \"rule\": \"Max Height for Accessory Structure in Yard\",\n    \"source_page\": \"52\",\n    \"source_table\": \"Height\",\n    \"ambiguities\": \"The definitions of 'rear yard' and 'side yard' are not provided on this page. The base elevation from which height is measured is not explicitly defined.\",\n    \"Qualifiers\": {\n      \"Scope\": \"Regulation of maximum building height measured to the roof peak.\",\n      \"Applicability\": \"Applies to an 'Accessory structure' located in a 'rear' or 'side' yard.\",\n      \"Exclusions\": \"\"\n    },\n    \"Variables\": {\n      \"structure_type\": \"Accessory structure\",\n      \"structure_location\": \"rear or side yard\"\n    },\n    \"Constants\": {\n      \"max_height\": \"12 feet\",\n      \"height_measurement_point\": \"Measured to top of roof material (inferred from other rules and Figure 42).\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"The structure's height to the roof peak must not exceed the specified maximum height.\",\n      \"Optional\": \"\",\n      \"Conditional Logic\": \"IF (structure_type == 'Accessory structure' AND (structure_location == 'rear yard' OR structure_location == 'side yard')) THEN max_height = 12'.\",\n      \"Dependencies\": \"Maximum height is dependent on structure_type and structure_location.\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"\",\n      \"Alternatives\": \"\",\n      \"Special Cases\": \"\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"This rule is one of several height regulations under the 'Height' category.\",\n      \"Cross-references\": \"Code Section 18.12.040 (a) Table 2; Code Section 18.04.030 (64) (b).\",\n      \"Logical Dependencies\": \"\"\n    }\n  },\n  {\n    \"rule\": \"Max Height for 2nd-Dwelling Units\",\n    \"source_page\": \"52\",\n    \"source_table\": \"Height\",\n    \"ambiguities\": \"The specific definition of a '2nd-dwelling unit' is not provided on this page. The base elevation from which height is measured is not explicitly defined.\",\n    \"Qualifiers\": {\n      \"Scope\": \"Regulation of maximum building height measured to the roof peak.\",\n      \"Applicability\": \"Applies to '2nd-dwelling units'.\",\n      \"Exclusions\": \"\"\n    },\n    \"Variables\": {\n      \"structure_type\": \"2nd-dwelling unit\"\n    },\n    \"Constants\": {\n      \"max_height\": \"17 feet\",\n      \"height_measurement_point\": \"Measured to top of roof material (inferred from other rules and Figure 42).\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"The structure's height to the roof peak must not exceed the specified maximum height.\",\n      \"Optional\": \"\",\n      \"Conditional Logic\": \"IF (structure_type == '2nd-dwelling unit') THEN max_height = 17'.\",\n      \"Dependencies\": \"Maximum height is dependent on structure_type.\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"\",\n      \"Alternatives\": \"\",\n      \"Special Cases\": \"\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"This rule is one of several height regulations under the 'Height' category.\",\n      \"Cross-references\": \"Code Section 18.12.040 (a) Table 2; Code Section 18.04.030 (64) (b).\",\n      \"Logical Dependencies\": \"Shares the same height limit as a 'Main dwelling on a substandard or flag lot'.\"\n    }\n  }\n]\n```",
+    "response_time": 56.01644587516785,
+    "input_tokens": 1039,
+    "output_tokens": 6442,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 16:15:18",
+  "model": "google/gemini-2.5-pro",
+  "success": true
+}

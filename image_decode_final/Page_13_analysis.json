@@ -1,0 +1,67 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_13.png",
+  "image_name": "Page_13.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Fig 4 Types of porches and entry ways\n\nA Roofed porch\n\nC Vaulted entry way\n\nSee how to measure height of porches &\nentry features in Figs 6-8 on pp. 11-13\n\nB Roofed entry way\n(not vaulted)\n\nD Combination porch & vaulted entry way",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Diagram A: An illustration of a 'Roofed porch' with a gabled roof, supported by four columns, and a front door. There are benches on either side of the door.",
+          "location": "Top-left"
+        },
+        {
+          "type": "diagram",
+          "description": "Diagram C: An illustration of a 'Vaulted entry way' for a multi-story building. It features a central arched entry with double doors, flanked by windows with shutters. The roof has dormer windows. A vertical dimension line indicates 'Height greater than 12' above grade'.",
+          "location": "Top-right"
+        },
+        {
+          "type": "diagram",
+          "description": "Diagram B: An illustration of a 'Roofed entry way (not vaulted)' for a single-story house. It shows a small, gabled entry porch with a single door. A vertical dimension line indicates 'Height less than 12' above grade'.",
+          "location": "Bottom-left"
+        },
+        {
+          "type": "diagram",
+          "description": "Diagram D: An illustration of a 'Combination porch & vaulted entry way'. It depicts a structure with multiple arched openings, columns, and a central vaulted entry with a door. A vertical dimension line indicates 'Height greater than 12' above grade'.",
+          "location": "Bottom-right"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Height for Vaulted entry way (C)",
+          "value": "12",
+          "unit": "feet above grade"
+        },
+        {
+          "parameter": "Height for Roofed entry way (B)",
+          "value": "12",
+          "unit": "feet above grade"
+        },
+        {
+          "parameter": "Height for Combination porch & vaulted entry way (D)",
+          "value": "12",
+          "unit": "feet above grade"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Fig 4 Types of porches and entry ways",
+        "subheadings": [],
+        "sections": [
+          "A Roofed porch",
+          "C Vaulted entry way",
+          "B Roofed entry way (not vaulted)",
+          "D Combination porch & vaulted entry way"
+        ]
+      },
+      "additional_notes": [
+        "The text 'Height greater than 12' above grade' appears three times, once for diagram C and once for diagram D, and once for diagram B, but for diagram B it says 'less than 12' above grade'.",
+        "A grey rectangular box in the middle of the page contains instructional text."
+      ],
+      "cross_references": [
+        "Figs 6-8 on pp. 11-13 (for measuring height of porches & entry features)"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-11 14:59:09",
+  "model_used": "google/gemini-2.5-flash"
+}

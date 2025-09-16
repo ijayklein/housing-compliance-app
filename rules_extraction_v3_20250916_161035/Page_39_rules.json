@@ -1,0 +1,154 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_39.md",
+  "file_name": "Page_39.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "rule": "Noise-producing equipment site planning",
+        "Qualifiers": {
+          "Scope": "Regulations governing the physical location (siting) of noise-producing equipment on a property.",
+          "Applicability": "Applies to all service equipment, including but not limited to pool equipment, air conditioning units, and generators. Also applies to the replacement of existing equipment.",
+          "Exclusions": "No explicit exclusions of equipment types are mentioned. However, a waiver process exists for the housing/insulation requirement."
+        },
+        "Variables": {
+          "Dimensional": [
+            {
+              "name": "equipment_location",
+              "description": "The designated yard or area where the equipment is placed.",
+              "values": [
+                "front yard",
+                "rear yard",
+                "interior-side yard",
+                "street-side yard",
+                "buildable area"
+              ]
+            },
+            {
+              "name": "street_side_yard_encroachment",
+              "description": "The distance equipment may encroach into a street-side yard.",
+              "unit": "feet"
+            },
+            {
+              "name": "driveway_clearance",
+              "description": "Minimum clear distance required for a driveway, as shown in an example.",
+              "unit": "feet"
+            }
+          ],
+          "Material": [
+            {
+              "name": "equipment_enclosure",
+              "description": "Requirement for equipment to be housed and insulated.",
+              "values": [
+                "housed",
+                "insulated",
+                "not required (if waiver is granted)"
+              ]
+            }
+          ],
+          "Environmental": [
+            {
+              "name": "noise_compliance_method",
+              "description": "Method used to ensure compliance with the City's Noise Ordinance when a waiver for housing is sought.",
+              "values": [
+                "noise specifications",
+                "location",
+                "screening",
+                "buffering"
+              ]
+            }
+          ],
+          "Usage": [
+            {
+              "name": "equipment_type",
+              "description": "The type of noise-producing equipment.",
+              "values": [
+                "Pool equipment",
+                "Air conditioning equipment",
+                "Generator",
+                "General service equipment"
+              ]
+            },
+            {
+              "name": "installation_type",
+              "description": "Whether the installation is new or a replacement.",
+              "values": [
+                "new",
+                "replacement"
+              ]
+            }
+          ]
+        },
+        "Constants": {
+          "Numerical": [
+            {
+              "name": "max_street_side_yard_encroachment",
+              "value": "6",
+              "unit": "feet"
+            },
+            {
+              "name": "min_driveway_clearance",
+              "value": "10",
+              "unit": "feet"
+            }
+          ],
+          "Standards": [
+            {
+              "name": "noise_ordinance",
+              "value": "City\u2019s Noise Ordinance in Chapter 9.10 of the Municipal Code"
+            }
+          ],
+          "Procedures": [
+            {
+              "name": "waiver_for_housing_insulation",
+              "value": "The Planning Department can waive the housing/insulation requirement if specific conditions are met."
+            }
+          ]
+        },
+        "Conditions": {
+          "Mandatory": [
+            "All service equipment must meet the City\u2019s Noise Ordinance (Chapter 9.10 of the Municipal Code).",
+            "Equipment may not be located in front, rear, or interior-side yards.",
+            "Equipment must be insulated and housed (subject to waiver exception)."
+          ],
+          "Optional": [
+            "Equipment may encroach into a street-side yard."
+          ],
+          "Conditional": [
+            "IF equipment is a replacement, THEN it shall conform to this section IF it is feasible. (Ambiguous Language: 'where feasible' is subjective and not defined).",
+            "IF the housing/insulation requirement is to be waived, THEN the equipment must be located in the buildable area AND a combination of noise specifications, location, and/or other screening/buffering must assure compliance with the Noise Ordinance at the nearest lot line.",
+            "IF equipment encroaches into the street-side yard, THEN the encroachment must be a maximum of 6 feet."
+          ]
+        },
+        "Exceptions": {
+          "Placement": "While equipment is generally prohibited from yards, it may be located in a street-side yard, encroaching up to 6 feet.",
+          "Enclosure": "The requirement for equipment to be insulated and housed can be waived by the Planning Department under specific conditions related to location and alternative noise mitigation."
+        },
+        "Relationships": {
+          "Hierarchical": "The 'General rules' are the primary regulations that apply to all specific equipment types (Pool, AC, Generator) shown in the examples (Figures A, B, C).",
+          "Cross-references": [
+            {
+              "source": "Street-side yard encroachment rule",
+              "target": "Figure 27 C",
+              "type": "Illustrative Example"
+            },
+            {
+              "source": "General noise compliance rule",
+              "target": "Chapter 9.10 of the Municipal Code",
+              "type": "Normative Reference"
+            }
+          ],
+          "Logical Dependencies": "Compliance with the siting rules (e.g., waiver for housing) is dependent on demonstrating compliance with the separate City's Noise Ordinance."
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n  {\n    \"rule\": \"Noise-producing equipment site planning\",\n    \"Qualifiers\": {\n      \"Scope\": \"Regulations governing the physical location (siting) of noise-producing equipment on a property.\",\n      \"Applicability\": \"Applies to all service equipment, including but not limited to pool equipment, air conditioning units, and generators. Also applies to the replacement of existing equipment.\",\n      \"Exclusions\": \"No explicit exclusions of equipment types are mentioned. However, a waiver process exists for the housing/insulation requirement.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": [\n        {\n          \"name\": \"equipment_location\",\n          \"description\": \"The designated yard or area where the equipment is placed.\",\n          \"values\": [\"front yard\", \"rear yard\", \"interior-side yard\", \"street-side yard\", \"buildable area\"]\n        },\n        {\n          \"name\": \"street_side_yard_encroachment\",\n          \"description\": \"The distance equipment may encroach into a street-side yard.\",\n          \"unit\": \"feet\"\n        },\n        {\n          \"name\": \"driveway_clearance\",\n          \"description\": \"Minimum clear distance required for a driveway, as shown in an example.\",\n          \"unit\": \"feet\"\n        }\n      ],\n      \"Material\": [\n        {\n          \"name\": \"equipment_enclosure\",\n          \"description\": \"Requirement for equipment to be housed and insulated.\",\n          \"values\": [\"housed\", \"insulated\", \"not required (if waiver is granted)\"]\n        }\n      ],\n      \"Environmental\": [\n        {\n          \"name\": \"noise_compliance_method\",\n          \"description\": \"Method used to ensure compliance with the City's Noise Ordinance when a waiver for housing is sought.\",\n          \"values\": [\"noise specifications\", \"location\", \"screening\", \"buffering\"]\n        }\n      ],\n      \"Usage\": [\n        {\n          \"name\": \"equipment_type\",\n          \"description\": \"The type of noise-producing equipment.\",\n          \"values\": [\"Pool equipment\", \"Air conditioning equipment\", \"Generator\", \"General service equipment\"]\n        },\n        {\n          \"name\": \"installation_type\",\n          \"description\": \"Whether the installation is new or a replacement.\",\n          \"values\": [\"new\", \"replacement\"]\n        }\n      ]\n    },\n    \"Constants\": {\n      \"Numerical\": [\n        {\n          \"name\": \"max_street_side_yard_encroachment\",\n          \"value\": \"6\",\n          \"unit\": \"feet\"\n        },\n        {\n          \"name\": \"min_driveway_clearance\",\n          \"value\": \"10\",\n          \"unit\": \"feet\"\n        }\n      ],\n      \"Standards\": [\n        {\n          \"name\": \"noise_ordinance\",\n          \"value\": \"City\u2019s Noise Ordinance in Chapter 9.10 of the Municipal Code\"\n        }\n      ],\n      \"Procedures\": [\n        {\n          \"name\": \"waiver_for_housing_insulation\",\n          \"value\": \"The Planning Department can waive the housing/insulation requirement if specific conditions are met.\"\n        }\n      ]\n    },\n    \"Conditions\": {\n      \"Mandatory\": [\n        \"All service equipment must meet the City\u2019s Noise Ordinance (Chapter 9.10 of the Municipal Code).\",\n        \"Equipment may not be located in front, rear, or interior-side yards.\",\n        \"Equipment must be insulated and housed (subject to waiver exception).\"\n      ],\n      \"Optional\": [\n        \"Equipment may encroach into a street-side yard.\"\n      ],\n      \"Conditional\": [\n        \"IF equipment is a replacement, THEN it shall conform to this section IF it is feasible. (Ambiguous Language: 'where feasible' is subjective and not defined).\",\n        \"IF the housing/insulation requirement is to be waived, THEN the equipment must be located in the buildable area AND a combination of noise specifications, location, and/or other screening/buffering must assure compliance with the Noise Ordinance at the nearest lot line.\",\n        \"IF equipment encroaches into the street-side yard, THEN the encroachment must be a maximum of 6 feet.\"\n      ]\n    },\n    \"Exceptions\": {\n      \"Placement\": \"While equipment is generally prohibited from yards, it may be located in a street-side yard, encroaching up to 6 feet.\",\n      \"Enclosure\": \"The requirement for equipment to be insulated and housed can be waived by the Planning Department under specific conditions related to location and alternative noise mitigation.\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"The 'General rules' are the primary regulations that apply to all specific equipment types (Pool, AC, Generator) shown in the examples (Figures A, B, C).\",\n      \"Cross-references\": [\n        {\n          \"source\": \"Street-side yard encroachment rule\",\n          \"target\": \"Figure 27 C\",\n          \"type\": \"Illustrative Example\"\n        },\n        {\n          \"source\": \"General noise compliance rule\",\n          \"target\": \"Chapter 9.10 of the Municipal Code\",\n          \"type\": \"Normative Reference\"\n        }\n      ],\n      \"Logical Dependencies\": \"Compliance with the siting rules (e.g., waiver for housing) is dependent on demonstrating compliance with the separate City's Noise Ordinance.\"\n    }\n  }\n]\n```",
+    "response_time": 28.52678084373474,
+    "input_tokens": 1132,
+    "output_tokens": 2950,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 16:13:32",
+  "model": "google/gemini-2.5-pro",
+  "success": true
+}

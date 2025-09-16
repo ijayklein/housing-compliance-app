@@ -1,0 +1,58 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_19.png",
+  "image_name": "Page_19.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Fig 8 Entry feature with 2nd floor above\n\nNote: The 2nd floor over a vaulted entry will count as usual. Therefore, the area will count three times toward gross floor area.\n\nIntersection of front facade and underside or bottom of 2nd floor\n\nTop of 2nd floor\nBottom of 2nd floor\n\nHeight\n\nHeight\n\nGrade\n\nIsometric View                Side Elevation                Porch Floor Plan\n\nNote: If the entryway is considered to be a vaulted entryway the area will be counted as follows:\n\u2022 In this example, a portion of the entryway is recessed beyond the house facade and roof. It is included in the area that counts.\n\u2022 The area is measured to the outside material of the entryway feature.\n\u2022 The area counts TWICE toward gross floor area.\n\nOutline of entryway floor area that counts TWICE if entryway is vaulted\n\n13",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Isometric view showing a 3D perspective of a building entry feature with a second floor above. Shows intersection of front facade with underside of 2nd floor, height measurements, and grade level. Includes dashed lines indicating measurement points.",
+          "location": "Left side of page"
+        },
+        {
+          "type": "diagram",
+          "description": "Side elevation view showing the vertical profile of the entry feature with height measurements from grade to top and bottom of 2nd floor. Shows the building profile with entry recess.",
+          "location": "Center of page"
+        },
+        {
+          "type": "diagram",
+          "description": "Porch floor plan view showing the outline of entryway floor area from above, with notation indicating the area that counts twice if entryway is vaulted.",
+          "location": "Right side of page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Floor area counting multiplier for 2nd floor over vaulted entry",
+          "value": "3",
+          "unit": "times"
+        },
+        {
+          "parameter": "Floor area counting multiplier for vaulted entryway",
+          "value": "2",
+          "unit": "times"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Fig 8 Entry feature with 2nd floor above",
+        "subheadings": [
+          "Isometric View",
+          "Side Elevation",
+          "Porch Floor Plan"
+        ],
+        "sections": []
+      },
+      "additional_notes": [
+        "Page number 13 appears at bottom right",
+        "Two separate note boxes with different background shading provide important calculation rules",
+        "Diagrams include dimensional arrows and measurement indicators",
+        "Text 'TWICE' appears in bold/emphasized formatting in both note sections"
+      ],
+      "cross_references": [
+        "References Fig 8 as part of a larger document series"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-11 13:52:12",
+  "model_used": "anthropic/claude-sonnet-4"
+}

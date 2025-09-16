@@ -1,0 +1,222 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_51.md",
+  "file_name": "Page_51.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "Rule": "Detached 2nd-dwelling units & associated parking site planning",
+        "Qualifiers": {
+          "Scope": "Site planning for detached 2nd dwelling units and associated parking",
+          "Applicability": "Interior lot examples",
+          "Exclusions": "None specified"
+        },
+        "Variables": {
+          "Dimensional": {
+            "2nd dwelling unit size": "900 sf max",
+            "1-car garage size": "200 sf max (faint, not confirmed)",
+            "Vertical dimension in rear yard": "\u2014' min (not legible)"
+          },
+          "Material": "Not specified",
+          "Environmental": "Not specified",
+          "Usage parameters": "Driveway use for uncovered spaces beyond front setback"
+        },
+        "Constants": {
+          "Numerical values": {
+            "Distance from front lot line for detached garages": "75'"
+          },
+          "Specs": "None specified",
+          "Standards": "None specified",
+          "Procedures": "None specified"
+        },
+        "Conditions": {
+          "Mandatory": [
+            "Detached garages must be at least 75' from the front lot line to be located in rear and side yards",
+            "Attached garages must be located within the building area"
+          ],
+          "Optional": "None specified",
+          "Conditional logic": "None specified",
+          "Dependencies": "None specified"
+        },
+        "Exceptions": {
+          "Explicit deviations": "None specified",
+          "Alternatives": "None specified",
+          "Special cases": "None specified"
+        },
+        "Relationships": {
+          "Hierarchical": "None specified",
+          "Cross-references": "None specified",
+          "Logical dependencies": "None specified"
+        }
+      },
+      {
+        "Rule": "Scenario A - Detached & separate from main-dwelling parking",
+        "Qualifiers": {
+          "Scope": "Parking arrangement for detached 2nd dwelling unit",
+          "Applicability": "Interior lot example",
+          "Exclusions": "None specified"
+        },
+        "Variables": {
+          "Dimensional": {
+            "Main dwelling garage": "1-car attached",
+            "2nd dwelling garage": "1-car detached, 200 sf max (faint, not confirmed)"
+          },
+          "Material": "Not specified",
+          "Environmental": "Not specified",
+          "Usage parameters": "Driveway use for uncovered spaces beyond front setback"
+        },
+        "Constants": {
+          "Numerical values": {
+            "Distance from front lot line for detached garages": "75'"
+          },
+          "Specs": "None specified",
+          "Standards": "None specified",
+          "Procedures": "None specified"
+        },
+        "Conditions": {
+          "Mandatory": [
+            "Detached garages must be at least 75' from the front lot line to be located in rear and side yards"
+          ],
+          "Optional": "None specified",
+          "Conditional logic": "None specified",
+          "Dependencies": "None specified"
+        },
+        "Exceptions": {
+          "Explicit deviations": "None specified",
+          "Alternatives": "None specified",
+          "Special cases": "None specified"
+        },
+        "Relationships": {
+          "Hierarchical": "None specified",
+          "Cross-references": "None specified",
+          "Logical dependencies": "None specified"
+        }
+      },
+      {
+        "Rule": "Scenario B - Attached & separate from main-dwelling parking",
+        "Qualifiers": {
+          "Scope": "Parking arrangement for attached 2nd dwelling unit",
+          "Applicability": "Interior lot example",
+          "Exclusions": "None specified"
+        },
+        "Variables": {
+          "Dimensional": {
+            "Main dwelling garage": "1-car attached",
+            "2nd dwelling garage": "1-car attached, 200 sf max (faint, not confirmed)"
+          },
+          "Material": "Not specified",
+          "Environmental": "Not specified",
+          "Usage parameters": "Driveway use for uncovered spaces beyond front setback"
+        },
+        "Constants": {
+          "Numerical values": "None specified",
+          "Specs": "None specified",
+          "Standards": "None specified",
+          "Procedures": "None specified"
+        },
+        "Conditions": {
+          "Mandatory": [
+            "Attached garages must be located within the building area"
+          ],
+          "Optional": "None specified",
+          "Conditional logic": "None specified",
+          "Dependencies": "None specified"
+        },
+        "Exceptions": {
+          "Explicit deviations": "None specified",
+          "Alternatives": "None specified",
+          "Special cases": "None specified"
+        },
+        "Relationships": {
+          "Hierarchical": "None specified",
+          "Cross-references": "None specified",
+          "Logical dependencies": "None specified"
+        }
+      },
+      {
+        "Rule": "Scenario C - Detached & combined with main-dwelling parking",
+        "Qualifiers": {
+          "Scope": "Shared parking arrangement for detached 2nd dwelling unit",
+          "Applicability": "Interior lot example",
+          "Exclusions": "None specified"
+        },
+        "Variables": {
+          "Dimensional": {
+            "Shared garage": "2-car detached"
+          },
+          "Material": "Not specified",
+          "Environmental": "Not specified",
+          "Usage parameters": "Driveway use for uncovered spaces beyond front setback"
+        },
+        "Constants": {
+          "Numerical values": {
+            "Distance from front lot line for detached garages": "75'"
+          },
+          "Specs": "None specified",
+          "Standards": "None specified",
+          "Procedures": "None specified"
+        },
+        "Conditions": {
+          "Mandatory": [
+            "Detached garages must be at least 75' from the front lot line to be located in rear and side yards"
+          ],
+          "Optional": "None specified",
+          "Conditional logic": "None specified",
+          "Dependencies": "None specified"
+        },
+        "Exceptions": {
+          "Explicit deviations": "None specified",
+          "Alternatives": "None specified",
+          "Special cases": "None specified"
+        },
+        "Relationships": {
+          "Hierarchical": "None specified",
+          "Cross-references": "None specified",
+          "Logical dependencies": "None specified"
+        }
+      },
+      {
+        "Rule": "Scenario D - Combined w/ main-dwelling parking that is attached to main dwelling",
+        "Qualifiers": {
+          "Scope": "Shared parking arrangement for attached 2nd dwelling unit",
+          "Applicability": "Interior lot example",
+          "Exclusions": "None specified"
+        },
+        "Variables": {
+          "Dimensional": {
+            "Shared garage": "2-car attached"
+          },
+          "Material": "Not specified",
+          "Environmental": "Not specified",
+          "Usage parameters": "Driveway use for uncovered spaces beyond front setback"
+        },
+        "Constants": {
+          "Numerical values": "None specified",
+          "Specs": "None specified",
+          "Standards": "None specified",
+          "Procedures": "None specified"
+        },
+        "Conditions": {
+          "Mandatory": "None specified",
+          "Optional": "None specified",
+          "Conditional logic": "None specified",
+          "Dependencies": "None specified"
+        },
+        "Exceptions": {
+          "Explicit deviations": "None specified",
+          "Alternatives": "None specified",
+          "Special cases": "None specified"
+        },
+        "Relationships": {
+          "Hierarchical": "None specified",
+          "Cross-references": "None specified",
+          "Logical dependencies": "None specified"
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n    {\n        \"Rule\": \"Detached 2nd-dwelling units & associated parking site planning\",\n        \"Qualifiers\": {\n            \"Scope\": \"Site planning for detached 2nd dwelling units and associated parking\",\n            \"Applicability\": \"Interior lot examples\",\n            \"Exclusions\": \"None specified\"\n        },\n        \"Variables\": {\n            \"Dimensional\": {\n                \"2nd dwelling unit size\": \"900 sf max\",\n                \"1-car garage size\": \"200 sf max (faint, not confirmed)\",\n                \"Vertical dimension in rear yard\": \"\u2014' min (not legible)\"\n            },\n            \"Material\": \"Not specified\",\n            \"Environmental\": \"Not specified\",\n            \"Usage parameters\": \"Driveway use for uncovered spaces beyond front setback\"\n        },\n        \"Constants\": {\n            \"Numerical values\": {\n                \"Distance from front lot line for detached garages\": \"75'\"\n            },\n            \"Specs\": \"None specified\",\n            \"Standards\": \"None specified\",\n            \"Procedures\": \"None specified\"\n        },\n        \"Conditions\": {\n            \"Mandatory\": [\n                \"Detached garages must be at least 75' from the front lot line to be located in rear and side yards\",\n                \"Attached garages must be located within the building area\"\n            ],\n            \"Optional\": \"None specified\",\n            \"Conditional logic\": \"None specified\",\n            \"Dependencies\": \"None specified\"\n        },\n        \"Exceptions\": {\n            \"Explicit deviations\": \"None specified\",\n            \"Alternatives\": \"None specified\",\n            \"Special cases\": \"None specified\"\n        },\n        \"Relationships\": {\n            \"Hierarchical\": \"None specified\",\n            \"Cross-references\": \"None specified\",\n            \"Logical dependencies\": \"None specified\"\n        }\n    },\n    {\n        \"Rule\": \"Scenario A - Detached & separate from main-dwelling parking\",\n        \"Qualifiers\": {\n            \"Scope\": \"Parking arrangement for detached 2nd dwelling unit\",\n            \"Applicability\": \"Interior lot example\",\n            \"Exclusions\": \"None specified\"\n        },\n        \"Variables\": {\n            \"Dimensional\": {\n                \"Main dwelling garage\": \"1-car attached\",\n                \"2nd dwelling garage\": \"1-car detached, 200 sf max (faint, not confirmed)\"\n            },\n            \"Material\": \"Not specified\",\n            \"Environmental\": \"Not specified\",\n            \"Usage parameters\": \"Driveway use for uncovered spaces beyond front setback\"\n        },\n        \"Constants\": {\n            \"Numerical values\": {\n                \"Distance from front lot line for detached garages\": \"75'\"\n            },\n            \"Specs\": \"None specified\",\n            \"Standards\": \"None specified\",\n            \"Procedures\": \"None specified\"\n        },\n        \"Conditions\": {\n            \"Mandatory\": [\n                \"Detached garages must be at least 75' from the front lot line to be located in rear and side yards\"\n            ],\n            \"Optional\": \"None specified\",\n            \"Conditional logic\": \"None specified\",\n            \"Dependencies\": \"None specified\"\n        },\n        \"Exceptions\": {\n            \"Explicit deviations\": \"None specified\",\n            \"Alternatives\": \"None specified\",\n            \"Special cases\": \"None specified\"\n        },\n        \"Relationships\": {\n            \"Hierarchical\": \"None specified\",\n            \"Cross-references\": \"None specified\",\n            \"Logical dependencies\": \"None specified\"\n        }\n    },\n    {\n        \"Rule\": \"Scenario B - Attached & separate from main-dwelling parking\",\n        \"Qualifiers\": {\n            \"Scope\": \"Parking arrangement for attached 2nd dwelling unit\",\n            \"Applicability\": \"Interior lot example\",\n            \"Exclusions\": \"None specified\"\n        },\n        \"Variables\": {\n            \"Dimensional\": {\n                \"Main dwelling garage\": \"1-car attached\",\n                \"2nd dwelling garage\": \"1-car attached, 200 sf max (faint, not confirmed)\"\n            },\n            \"Material\": \"Not specified\",\n            \"Environmental\": \"Not specified\",\n            \"Usage parameters\": \"Driveway use for uncovered spaces beyond front setback\"\n        },\n        \"Constants\": {\n            \"Numerical values\": \"None specified\",\n            \"Specs\": \"None specified\",\n            \"Standards\": \"None specified\",\n            \"Procedures\": \"None specified\"\n        },\n        \"Conditions\": {\n            \"Mandatory\": [\n                \"Attached garages must be located within the building area\"\n            ],\n            \"Optional\": \"None specified\",\n            \"Conditional logic\": \"None specified\",\n            \"Dependencies\": \"None specified\"\n        },\n        \"Exceptions\": {\n            \"Explicit deviations\": \"None specified\",\n            \"Alternatives\": \"None specified\",\n            \"Special cases\": \"None specified\"\n        },\n        \"Relationships\": {\n            \"Hierarchical\": \"None specified\",\n            \"Cross-references\": \"None specified\",\n            \"Logical dependencies\": \"None specified\"\n        }\n    },\n    {\n        \"Rule\": \"Scenario C - Detached & combined with main-dwelling parking\",\n        \"Qualifiers\": {\n            \"Scope\": \"Shared parking arrangement for detached 2nd dwelling unit\",\n            \"Applicability\": \"Interior lot example\",\n            \"Exclusions\": \"None specified\"\n        },\n        \"Variables\": {\n            \"Dimensional\": {\n                \"Shared garage\": \"2-car detached\"\n            },\n            \"Material\": \"Not specified\",\n            \"Environmental\": \"Not specified\",\n            \"Usage parameters\": \"Driveway use for uncovered spaces beyond front setback\"\n        },\n        \"Constants\": {\n            \"Numerical values\": {\n                \"Distance from front lot line for detached garages\": \"75'\"\n            },\n            \"Specs\": \"None specified\",\n            \"Standards\": \"None specified\",\n            \"Procedures\": \"None specified\"\n        },\n        \"Conditions\": {\n            \"Mandatory\": [\n                \"Detached garages must be at least 75' from the front lot line to be located in rear and side yards\"\n            ],\n            \"Optional\": \"None specified\",\n            \"Conditional logic\": \"None specified\",\n            \"Dependencies\": \"None specified\"\n        },\n        \"Exceptions\": {\n            \"Explicit deviations\": \"None specified\",\n            \"Alternatives\": \"None specified\",\n            \"Special cases\": \"None specified\"\n        },\n        \"Relationships\": {\n            \"Hierarchical\": \"None specified\",\n            \"Cross-references\": \"None specified\",\n            \"Logical dependencies\": \"None specified\"\n        }\n    },\n    {\n        \"Rule\": \"Scenario D - Combined w/ main-dwelling parking that is attached to main dwelling\",\n        \"Qualifiers\": {\n            \"Scope\": \"Shared parking arrangement for attached 2nd dwelling unit\",\n            \"Applicability\": \"Interior lot example\",\n            \"Exclusions\": \"None specified\"\n        },\n        \"Variables\": {\n            \"Dimensional\": {\n                \"Shared garage\": \"2-car attached\"\n            },\n            \"Material\": \"Not specified\",\n            \"Environmental\": \"Not specified\",\n            \"Usage parameters\": \"Driveway use for uncovered spaces beyond front setback\"\n        },\n        \"Constants\": {\n            \"Numerical values\": \"None specified\",\n            \"Specs\": \"None specified\",\n            \"Standards\": \"None specified\",\n            \"Procedures\": \"None specified\"\n        },\n        \"Conditions\": {\n            \"Mandatory\": \"None specified\",\n            \"Optional\": \"None specified\",\n            \"Conditional logic\": \"None specified\",\n            \"Dependencies\": \"None specified\"\n        },\n        \"Exceptions\": {\n            \"Explicit deviations\": \"None specified\",\n            \"Alternatives\": \"None specified\",\n            \"Special cases\": \"None specified\"\n        },\n        \"Relationships\": {\n            \"Hierarchical\": \"None specified\",\n            \"Cross-references\": \"None specified\",\n            \"Logical dependencies\": \"None specified\"\n        }\n    }\n]\n```"
+  },
+  "timestamp": "2025-09-16 14:43:49",
+  "model": "openai/gpt-4o",
+  "success": true
+}

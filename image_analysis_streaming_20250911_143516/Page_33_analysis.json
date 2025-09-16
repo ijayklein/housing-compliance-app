@@ -1,0 +1,78 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_33.png",
+  "image_name": "Page_33.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Fig 21 Plan view showing how to determine average grade\n\nWhen measuring daylight plane, height is measured from the average of the grade at the\nmidpoint of the building and the grade of the closest point on the abutting site.\n\nFor this side of this structure, the\naverage grade is the average\nof the grades at these two\npoints\n\nFor this side of this structure, the\naverage grade is the average of\nthe grades at these two points\n\nRear yard\n\nRear yard\n\nRear yard\n\nBuildable area\n\nBuildable area\n\nNeighbor\n\nSubject\nHouse\n\nNeighbor\n\nInterior-side yard\n\nInterior-side yard\n\nInterior-side yard\n\nInterior-side yard\n\nFront yard\n\nFront yard\n\nFront yard\n\nKey\n\nLot line\nRequired setbacks\n\nSidewalk\nBuildable area\nExisting house\n\nFig 22 Detail showing allowable eave protrusion\n\nwall plane\n\n2'\nmax\n\nThe daylight plane must\nclear the point where\nthe wall plane intersects\nthe top of the roof\nmaterial\n\nCertification of daylight plane compliance:\n\nUpon request by the building official any person\nbuilding or making improvements to a structure shall\nprovide a certification that the structure, as built, com-\nplies with the daylight plane provisions in Code Section\n18.12.040(a). Such certification shall be prepared\nby a licensed engineer, architect, or surveyor, and\nshall be provided prior to frame inspection. (Sections\n18.12.040(j)).\n\n27",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Figure 21 is a plan view diagram showing three adjacent lots to illustrate how to determine average grade. A central 'Subject House' lot is flanked by two 'Neighbor' lots. The diagram shows that for each side of the subject structure, the average grade is calculated from two points: one at the midpoint of the subject building's side wall and the other at the closest point on the abutting neighbor's site. These points are indicated by black dots, and lines connect them to callout boxes. The diagram labels 'Front yard', 'Rear yard', 'Interior-side yard', 'Buildable area', and shows a sidewalk and street running along the bottom edge.",
+          "location": "Left side of the page"
+        },
+        {
+          "type": "key",
+          "description": "A key or legend for Figure 21, located at the bottom left. It defines five symbols: a solid line for 'Lot line', a dashed line for 'Required setbacks', a grid of small squares for 'Sidewalk', a light grey shaded area for 'Buildable area', and a dark grey shaded area for 'Existing house'.",
+          "location": "Bottom left of the page"
+        },
+        {
+          "type": "diagram",
+          "description": "Figure 22 is a detailed cross-section diagram illustrating the rule for allowable eave protrusion. It shows a roof eave extending from a vertical 'wall plane'. A thick dashed diagonal line represents the 'daylight plane'. The diagram indicates that the eave can protrude a maximum of 2 feet from the wall plane. An annotation points out that 'The daylight plane must clear the point where the wall plane intersects the top of the roof material'.",
+          "location": "Top right of the page"
+        },
+        {
+          "type": "text_box",
+          "description": "A rectangular box with a light grey background containing regulatory text under the heading 'Certification of daylight plane compliance:'.",
+          "location": "Bottom right of the page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Maximum allowable eave protrusion",
+          "value": "2",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Code Section Reference",
+          "value": "18.12.040(a)",
+          "unit": null
+        },
+        {
+          "parameter": "Code Section Reference",
+          "value": "18.12.040(j)",
+          "unit": null
+        },
+        {
+          "parameter": "Page Number",
+          "value": "27",
+          "unit": null
+        }
+      ],
+      "structural_elements": {
+        "main_heading": null,
+        "subheadings": [
+          "Fig 21 Plan view showing how to determine average grade",
+          "Key",
+          "Fig 22 Detail showing allowable eave protrusion",
+          "Certification of daylight plane compliance:"
+        ],
+        "sections": [
+          "Figure 21 and Key",
+          "Figure 22 and Certification Text"
+        ]
+      },
+      "additional_notes": [
+        "The page has a two-column layout. The left column contains Figure 21 and its key. The right column contains Figure 22 and a text box on compliance certification.",
+        "The page number '27' is located in the bottom right corner.",
+        "The document appears to be a clean scan or digital copy of a technical manual.",
+        "There are no handwritten annotations, stamps, or other markings on the page."
+      ],
+      "cross_references": [
+        "Code Section 18.12.040(a)",
+        "Sections 18.12.040(j)"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-11 14:36:15",
+  "model_used": "google/gemini-2.5-pro"
+}

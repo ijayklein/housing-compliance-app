@@ -1,0 +1,313 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_49.png",
+  "image_name": "Page_49.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Below-grade patios standards & site planning\n\n\u2022 Such features may not be located on the side of the structure that faces the front yard.\n\n\u2022 Combined area of all such areas not to exceed 2% of the area of the lot or 200 sf, whichever is greater and no single area may exceed 200 sf. Note area devoted to required stairway egress shall not be included in the 200 sf limitation.\n\n\u2022 Each such area is separated from another by at least 10'.\n\n\u2022 Allowable encroachment into required side yard is 2' max.\n\n\u2022 Allowable encroachment into required rear yard is 4'.\n\n\u2022 The combined length of all the excavated features or portions of features that encroach into the required yards, on all sides of the structure, may not exceed 15'.\n\n\u2022 Excavated features shall not be harmful to neighboring trees.\n\n\u2022 Public Works Department must approve drainage system.\n\n\u2022 Overhangs or canopies installed to shelter such area shall count towards lot coverage.\n\n\u2022 Such areas to be architecturally compatible with residence.\n\n\u2022 Such areas to be screened to off site views by means of landscaping and/or fencing as determined appropriate by Planning Dept.\n\nFig 40 Examples of site plan w/below-grade patios\n\nBelow-grade patios\n\u2022 a + b (encroaching features) may not exceed 15'\n\u2022 No single below-grade patio may not exceed 200 sf\n\u2022 Combined areas of all below-grade patio areas may not exceed 2% of the lot area or 200 sf, which ever is greater\n\nNote: measurements are based on interior dimension of opening and exclude encasing structure.",
+      "visual_elements": [
+        {
+          "type": "figure",
+          "description": "Site plan diagram illustrating below-grade patios with labeled encroachments and yard areas. The diagram shows a lot with a 'Main dwelling' and a '2nd dwelling'. It includes labeled dimensions such as '2' max. encroachment', '10' min. separation', and '< 4' max. encroachment'. The diagram also shows 'Interior lot example', 'Rear yard', 'Front yard', 'Interior side yard', and landscaping screening. A key explains symbols for curb, lot line, sidewalk, required setbacks, buildable area, dwelling, lightwells & stairwells, lightwells & stairwells that encroach into the required yards, and landscaping screening.",
+          "location": "Right side, occupying upper two-thirds of the page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Combined area of all below-grade patio areas",
+          "value_type": "Percentage|Numerical",
+          "value": "2% of the lot area or 200 sf, whichever is greater",
+          "unit": "square feet (sf) and percentage (%)"
+        },
+        {
+          "parameter": "Maximum single below-grade patio area",
+          "value_type": "Numerical",
+          "value": "200",
+          "unit": "square feet (sf)"
+        },
+        {
+          "parameter": "Minimum separation between such areas",
+          "value_type": "Measurement",
+          "value": "10",
+          "unit": "feet (')"
+        },
+        {
+          "parameter": "Allowable encroachment into required side yard",
+          "value_type": "Measurement",
+          "value": "2",
+          "unit": "feet (')"
+        },
+        {
+          "parameter": "Allowable encroachment into required rear yard",
+          "value_type": "Measurement",
+          "value": "4",
+          "unit": "feet (')"
+        },
+        {
+          "parameter": "Combined length of all excavated features encroaching into required yards",
+          "value_type": "Measurement",
+          "value": "15",
+          "unit": "feet (')"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Below-grade patios standards & site planning",
+        "subheadings": [],
+        "sections": []
+      },
+      "additional_notes": [
+        "Page number 43 at bottom right corner.",
+        "No handwritten annotations or stamps detected.",
+        "Text and diagram are clear and legible.",
+        "Note at bottom clarifies measurements are based on interior dimension of opening and exclude encasing structure."
+      ],
+      "cross_references": [],
+      "conditions_and_qualifiers": {
+        "qualifiers": [
+          {
+            "id": "q1",
+            "text": "Note area devoted to required stairway egress shall not be included in the 200 sf limitation.",
+            "applies_to_conditions": [
+              "c2"
+            ],
+            "scope": "Specific"
+          }
+        ],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "Such features may not be located on the side of the structure that faces the front yard.",
+            "value_type": "Boolean",
+            "operator": "matches",
+            "threshold_value": "true",
+            "unit": "None"
+          },
+          {
+            "id": "c2",
+            "text": "Combined area of all such areas not to exceed 2% of the area of the lot or 200 sf, whichever is greater and no single area may exceed 200 sf.",
+            "value_type": "Range",
+            "operator": "<=",
+            "threshold_value": "2% of lot area or 200 sf (whichever is greater)",
+            "unit": "square feet (sf) and percentage (%)"
+          },
+          {
+            "id": "c3",
+            "text": "Each such area is separated from another by at least 10'.",
+            "value_type": "Measurement",
+            "operator": ">=",
+            "threshold_value": "10",
+            "unit": "feet (')"
+          },
+          {
+            "id": "c4",
+            "text": "Allowable encroachment into required side yard is 2' max.",
+            "value_type": "Measurement",
+            "operator": "<=",
+            "threshold_value": "2",
+            "unit": "feet (')"
+          },
+          {
+            "id": "c5",
+            "text": "Allowable encroachment into required rear yard is 4'.",
+            "value_type": "Measurement",
+            "operator": "<=",
+            "threshold_value": "4",
+            "unit": "feet (')"
+          },
+          {
+            "id": "c6",
+            "text": "The combined length of all the excavated features or portions of features that encroach into the required yards, on all sides of the structure, may not exceed 15'.",
+            "value_type": "Measurement",
+            "operator": "<=",
+            "threshold_value": "15",
+            "unit": "feet (')"
+          },
+          {
+            "id": "c7",
+            "text": "Excavated features shall not be harmful to neighboring trees.",
+            "value_type": "Boolean",
+            "operator": "matches",
+            "threshold_value": "true",
+            "unit": "None"
+          },
+          {
+            "id": "c8",
+            "text": "Public Works Department must approve drainage system.",
+            "value_type": "Boolean",
+            "operator": "matches",
+            "threshold_value": "true",
+            "unit": "None"
+          },
+          {
+            "id": "c9",
+            "text": "Overhangs or canopies installed to shelter such area shall count towards lot coverage.",
+            "value_type": "Boolean",
+            "operator": "matches",
+            "threshold_value": "true",
+            "unit": "None"
+          },
+          {
+            "id": "c10",
+            "text": "Such areas to be architecturally compatible with residence.",
+            "value_type": "Boolean",
+            "operator": "matches",
+            "threshold_value": "true",
+            "unit": "None"
+          },
+          {
+            "id": "c11",
+            "text": "Such areas to be screened to off site views by means of landscaping and/or fencing as determined appropriate by Planning Dept.",
+            "value_type": "Boolean",
+            "operator": "matches",
+            "threshold_value": "true",
+            "unit": "None"
+          }
+        ],
+        "logical_relationships": [
+          {
+            "operation": "AND",
+            "condition_ids": [
+              "c1",
+              "c2",
+              "c3",
+              "c4",
+              "c5",
+              "c6",
+              "c7",
+              "c8",
+              "c9",
+              "c10",
+              "c11"
+            ],
+            "expression": "All listed conditions must be met for compliance with below-grade patios standards.",
+            "evaluation_order": 1
+          }
+        ],
+        "execution_sequence": [
+          {
+            "step": 1,
+            "action": "Verify location of below-grade patios is not on the side facing the front yard.",
+            "condition_ids": [
+              "c1"
+            ],
+            "qualifier_ids": [],
+            "dependencies": []
+          },
+          {
+            "step": 2,
+            "action": "Check combined area of all below-grade patios does not exceed 2% of lot area or 200 sf, whichever is greater, and no single area exceeds 200 sf, excluding stairway egress area.",
+            "condition_ids": [
+              "c2"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": [
+              1
+            ]
+          },
+          {
+            "step": 3,
+            "action": "Ensure each below-grade patio area is separated from another by at least 10 feet.",
+            "condition_ids": [
+              "c3"
+            ],
+            "qualifier_ids": [],
+            "dependencies": [
+              2
+            ]
+          },
+          {
+            "step": 4,
+            "action": "Confirm allowable encroachment into required side yard does not exceed 2 feet.",
+            "condition_ids": [
+              "c4"
+            ],
+            "qualifier_ids": [],
+            "dependencies": [
+              3
+            ]
+          },
+          {
+            "step": 5,
+            "action": "Confirm allowable encroachment into required rear yard does not exceed 4 feet.",
+            "condition_ids": [
+              "c5"
+            ],
+            "qualifier_ids": [],
+            "dependencies": [
+              4
+            ]
+          },
+          {
+            "step": 6,
+            "action": "Verify combined length of all excavated features encroaching into required yards does not exceed 15 feet.",
+            "condition_ids": [
+              "c6"
+            ],
+            "qualifier_ids": [],
+            "dependencies": [
+              5
+            ]
+          },
+          {
+            "step": 7,
+            "action": "Ensure excavated features are not harmful to neighboring trees.",
+            "condition_ids": [
+              "c7"
+            ],
+            "qualifier_ids": [],
+            "dependencies": [
+              6
+            ]
+          },
+          {
+            "step": 8,
+            "action": "Obtain Public Works Department approval for drainage system.",
+            "condition_ids": [
+              "c8"
+            ],
+            "qualifier_ids": [],
+            "dependencies": [
+              7
+            ]
+          },
+          {
+            "step": 9,
+            "action": "Include overhangs or canopies installed to shelter such area in lot coverage calculations.",
+            "condition_ids": [
+              "c9"
+            ],
+            "qualifier_ids": [],
+            "dependencies": [
+              8
+            ]
+          },
+          {
+            "step": 10,
+            "action": "Ensure architectural compatibility of such areas with residence.",
+            "condition_ids": [
+              "c10"
+            ],
+            "qualifier_ids": [],
+            "dependencies": [
+              9
+            ]
+          },
+          {
+            "step": 11,
+            "action": "Screen such areas to off site views by means of landscaping and/or fencing as determined appropriate by Planning Dept.",
+            "condition_ids": [
+              "c11"
+            ],
+            "qualifier_ids": [],
+            "dependencies": [
+              10
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:14:27",
+  "model_used": "openai/gpt-4.1-mini"
+}

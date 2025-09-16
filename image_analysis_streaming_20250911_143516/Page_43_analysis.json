@@ -1,0 +1,84 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_43.png",
+  "image_name": "Page_43.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Contextual garage placement\n\nContextual garage placement applies if, and only if, there is a predominant neighborhood pattern.\n\nHow to determine if contextual garage placement applies (using Fig 32 below as an example)\nNote:\n\u2022 If block is more than 600' long, consider only lots with in 600' or the 10 lots closest to the subject lot\n\u2022 If subject lot is a corner lot, consider the pattern on the street that the subject garage faces\n\n[Start of flowchart text]\n\n[Box 1]\nExclude the following types of lots:\n\u2022 Flag lot (C)\n\u2022 Multi-family use of 3+ units (G)\n\u2022 Corner lots (A & H)\n\nThe remaining lots including the subject lot, contribute to the determination.\n\nNote:\n\u2022 If block more than 600' long, consider only lots within 600' or 10 closest lots.\n\u2022 If subject lot is a corner lot, consider the pattern on the street that the garage faces\n\n[Box 2]\nDivide the remaining lots, including the subject lot, into two categories:\n\n1. Front-half pattern lots\n  \u2022 lots with garage in front half of the lot (F)\n\n2. Rear-half pattern lots\n  \u2022 lots with garage in the rear half of the lot (B & D) and\n  \u2022 lots with no garage (E) (counts as a rear-pattern lot)\n\nDetermine which pattern category is predominant i.e., into which category more than half of the lots fall.\n\n[Box 3]\nFront half\n\n[Box 4]\nRear half\n\n[Box 5]\nThe contextual-garage placement regulation DOES apply. Projects on this block must place the garage in the rear half of the lot.\n\n[End of flowchart text]\n\nFig 32 Example of a block on which the contextual garage placement regulation applies\n\n[Text within Figure 32]\nGarage\nHouse\nGarage\nHouse\nGarage\nHouse\nGarage\nHouse\nHouse\nSubject House\nGarage\nMultiple garages\nGarage\nHouse\n\n37",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "A flowchart explaining the decision-making process for contextual garage placement. It starts with a box titled 'Exclude the following types of lots', which points to a second box titled 'Divide the remaining lots, including the subject lot, into two categories'. This second box has two outputs: '1. Front-half pattern lots' and '2. Rear-half pattern lots'. These outputs are visually represented by arrows pointing to boxes labeled 'Front half' and 'Rear half' respectively. An arrow from the 'Rear half' box points to a final conclusion box stating that the regulation applies and the garage must be placed in the rear half of the lot.",
+          "location": "Middle of the page"
+        },
+        {
+          "type": "figure",
+          "description": "Figure 32 is a top-down plan view of a residential block with eight lots, labeled A through H. It illustrates the rules described in the text. Lots A, C, and H are shown crossed out with a large 'X', indicating they are excluded from the determination. Lot A and H are corner lots. Lot C is a flag lot. Lot G is shown with 'Multiple garages'. Lot F is identified as the 'Subject House' and has a garage in the front half. Lots B and D have garages in the rear half. Lot E has a house but no garage. The lots are arranged along a street or alleyway depicted at the very bottom of the figure.",
+          "location": "Bottom of the page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Block length threshold",
+          "value": "600",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Lot count for consideration",
+          "value": "10",
+          "unit": "lots"
+        },
+        {
+          "parameter": "Multi-family unit threshold",
+          "value": "3+",
+          "unit": "units"
+        },
+        {
+          "parameter": "Figure number",
+          "value": "32",
+          "unit": null
+        },
+        {
+          "parameter": "Page number",
+          "value": "37",
+          "unit": null
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Contextual garage placement",
+        "subheadings": [
+          "Contextual garage placement applies if, and only if, there is a predominant neighborhood pattern.",
+          "How to determine if contextual garage placement applies (using Fig 32 below as an example)",
+          "Note:",
+          "Fig 32 Example of a block on which the contextual garage placement regulation applies"
+        ],
+        "sections": [
+          "Note (Top)",
+          "Exclude the following types of lots",
+          "Note (Middle)",
+          "Divide the remaining lots...",
+          "1. Front-half pattern lots",
+          "2. Rear-half pattern lots",
+          "Lot A",
+          "Lot B",
+          "Lot C",
+          "Lot D",
+          "Lot E",
+          "Lot F",
+          "Lot G",
+          "Lot H"
+        ]
+      },
+      "additional_notes": [
+        "The page is clean and appears to be a digital document or a high-quality photocopy.",
+        "There are two 'Note:' sections with slightly different wording. The first one, at the top of the page, contains 'with in'. The second one, within the flowchart, contains 'within'.",
+        "The page number '37' is located at the bottom right corner."
+      ],
+      "cross_references": [
+        "'(using Fig 32 below as an example)' - Refers to the figure on the same page.",
+        "References to lots (A, B, C, D, E, F, G, H) in the text correspond to the labels in Figure 32."
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-11 14:36:42",
+  "model_used": "google/gemini-2.5-pro"
+}

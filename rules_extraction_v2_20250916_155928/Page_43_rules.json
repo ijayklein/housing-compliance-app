@@ -1,0 +1,238 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_43.md",
+  "file_name": "Page_43.md",
+  "analysis": {
+    "extracted_rules": {
+      "regulations": [
+        {
+          "rule_name": "Contextual Garage Placement",
+          "Qualifiers": {
+            "Applicability": [
+              {
+                "description": "The entire regulation applies if, and only if, a predominant neighborhood pattern exists.",
+                "condition": "exists(predominant_pattern)"
+              }
+            ],
+            "Scope": [
+              {
+                "description": "For blocks longer than 600', the analysis is limited to lots within 600' of the subject lot or the 10 closest lots.",
+                "condition": "block_length > 600 ft",
+                "scope_definition": "analysis_set = lots_within(600 ft) OR 10_closest_lots",
+                "ambiguity_flag": "The text says 'or', which could imply a choice. It also doesn't specify how '10 closest lots' is determined (e.g., 5 on each side, absolute proximity)."
+              },
+              {
+                "description": "For a subject lot that is a corner lot, the analysis pattern is considered only on the street that the subject garage faces.",
+                "condition": "subject_lot.type == 'corner'",
+                "scope_definition": "analysis_street = subject_garage.facing_street",
+                "ambiguity_flag": "For new construction on a corner lot, the garage's facing street might not be predetermined, creating a potential dependency loop."
+              }
+            ],
+            "Exclusions": {
+              "description": "Specific lot types are excluded from the set of lots used to determine the predominant pattern. The subject lot is not excluded if it falls into one of these categories.",
+              "excluded_lot_types": [
+                "Flag lot",
+                "Lot with multi-family use of 3 or more units",
+                "Corner lots"
+              ]
+            }
+          },
+          "Variables": [
+            {
+              "name": "predominant_neighborhood_pattern",
+              "type": "Categorical",
+              "values": [
+                "front_half",
+                "rear_half",
+                "none"
+              ],
+              "determination_logic": "The pattern category ('front_half' or 'rear_half') that contains more than 50% of the analyzed lots. If neither category exceeds 50%, no predominant pattern exists."
+            },
+            {
+              "name": "block_length",
+              "type": "Dimensional",
+              "unit": "feet"
+            },
+            {
+              "name": "subject_lot_type",
+              "type": "Categorical",
+              "values": [
+                "corner",
+                "interior",
+                "flag"
+              ]
+            },
+            {
+              "name": "lot_garage_location",
+              "type": "Categorical",
+              "values": [
+                "front_half",
+                "rear_half",
+                "none"
+              ]
+            },
+            {
+              "name": "lot_use",
+              "type": "Categorical",
+              "values": [
+                "single_family",
+                "multi_family"
+              ]
+            },
+            {
+              "name": "multi_family_unit_count",
+              "type": "Numerical"
+            }
+          ],
+          "Constants": [
+            {
+              "name": "Block Length Threshold for Scope Change",
+              "value": 600,
+              "unit": "feet"
+            },
+            {
+              "name": "Closest Lots Count for Scope Change",
+              "value": 10,
+              "unit": "lots"
+            },
+            {
+              "name": "Multi-family Exclusion Threshold",
+              "value": 3,
+              "unit": "units",
+              "condition": ">= 3"
+            },
+            {
+              "name": "Predominance Threshold",
+              "value": 0.5,
+              "unit": "proportion",
+              "condition": "> 0.5",
+              "description": "More than half of the lots must fall into one category."
+            },
+            {
+              "name": "No Garage Classification",
+              "value": "rear_half_pattern_lot",
+              "description": "A lot with no garage is counted as a rear-half pattern lot for the purpose of determining predominance."
+            }
+          ],
+          "Conditions": {
+            "description": "A multi-step procedure to determine if the regulation applies and what the resulting garage placement requirement is.",
+            "procedure": [
+              {
+                "step": 1,
+                "name": "Define Analysis Set",
+                "description": "Identify all lots on the block (or within the defined scope) and exclude specific types (Flag lots, Multi-family >= 3 units, Corner lots). The subject lot is always included in the set.",
+                "logic": "analysis_set = (all_lots_in_scope - excluded_lots) + subject_lot"
+              },
+              {
+                "step": 2,
+                "name": "Categorize Lots",
+                "description": "Divide the lots in the analysis_set into two categories based on garage location.",
+                "logic": [
+                  {
+                    "category": "front_half_pattern_lots",
+                    "criteria": "lot.garage_location == 'front_half'"
+                  },
+                  {
+                    "category": "rear_half_pattern_lots",
+                    "criteria": "lot.garage_location == 'rear_half' OR lot.garage_exists == false"
+                  }
+                ]
+              },
+              {
+                "step": 3,
+                "name": "Determine Predominant Pattern",
+                "description": "Calculate if one category represents more than 50% of the total lots in the analysis_set.",
+                "logic": [
+                  {
+                    "condition": "count(front_half_pattern_lots) / count(analysis_set) > 0.5",
+                    "result": "predominant_pattern = 'front_half'"
+                  },
+                  {
+                    "condition": "count(rear_half_pattern_lots) / count(analysis_set) > 0.5",
+                    "result": "predominant_pattern = 'rear_half'"
+                  },
+                  {
+                    "condition": "ELSE",
+                    "result": "predominant_pattern = 'none'"
+                  }
+                ]
+              },
+              {
+                "step": 4,
+                "name": "Apply Placement Rule",
+                "description": "If a predominant pattern exists, enforce the corresponding garage placement.",
+                "logic": [
+                  {
+                    "type": "Mandatory",
+                    "condition": "predominant_pattern == 'rear_half'",
+                    "requirement": "subject_lot.garage_placement MUST BE 'rear_half_of_lot'"
+                  },
+                  {
+                    "type": "Mandatory",
+                    "condition": "predominant_pattern == 'front_half'",
+                    "requirement": "subject_lot.garage_placement MUST BE 'front_half_of_lot'",
+                    "ambiguity_flag": "This rule is inferred from the regulation's name and logic, as the text only provides an explicit outcome for the 'rear_half' pattern."
+                  },
+                  {
+                    "type": "Optional",
+                    "condition": "predominant_pattern == 'none'",
+                    "requirement": "Contextual garage placement regulation does not apply."
+                  }
+                ]
+              }
+            ]
+          },
+          "Exceptions": {
+            "description": "No explicit exceptions to the final placement mandate (once a predominant pattern is established) are mentioned in the provided text. The 'Exclusions' are part of the applicability determination process, not exceptions to the final rule."
+          },
+          "Relationships": {
+            "Hierarchical": [
+              {
+                "parent": "Contextual Garage Placement Rule",
+                "child": "Applicability Determination Procedure",
+                "description": "The application of the placement rule is entirely dependent on the outcome of the multi-step determination procedure."
+              }
+            ],
+            "Cross-References": [
+              {
+                "type": "Figure",
+                "identifier": "Fig. 32",
+                "description": "Cited as an example of a block where the regulation applies and is used to illustrate the determination method."
+              },
+              {
+                "type": "Page Number",
+                "identifier": "37",
+                "description": "The page number provided in the source text, likely referencing the location of Figure 32 or related content."
+              }
+            ],
+            "Logical-Dependencies": [
+              {
+                "dependent": "Garage Placement Requirement (Step 4)",
+                "on": "Predominant Neighborhood Pattern (Step 3)",
+                "description": "The mandatory location for a new garage is directly determined by which pattern, if any, is found to be predominant."
+              },
+              {
+                "dependent": "Predominant Neighborhood Pattern (Step 3)",
+                "on": "Lot Categorization (Step 2)",
+                "description": "The determination of predominance depends on the counts of lots in each category."
+              },
+              {
+                "dependent": "Lot Categorization (Step 2)",
+                "on": "Analysis Set (Step 1)",
+                "description": "The categorization process is applied to the final set of lots determined in the first step."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "parse_error": false,
+    "raw_response": "```json\n{\n  \"regulations\": [\n    {\n      \"rule_name\": \"Contextual Garage Placement\",\n      \"Qualifiers\": {\n        \"Applicability\": [\n          {\n            \"description\": \"The entire regulation applies if, and only if, a predominant neighborhood pattern exists.\",\n            \"condition\": \"exists(predominant_pattern)\"\n          }\n        ],\n        \"Scope\": [\n          {\n            \"description\": \"For blocks longer than 600', the analysis is limited to lots within 600' of the subject lot or the 10 closest lots.\",\n            \"condition\": \"block_length > 600 ft\",\n            \"scope_definition\": \"analysis_set = lots_within(600 ft) OR 10_closest_lots\",\n            \"ambiguity_flag\": \"The text says 'or', which could imply a choice. It also doesn't specify how '10 closest lots' is determined (e.g., 5 on each side, absolute proximity).\"\n          },\n          {\n            \"description\": \"For a subject lot that is a corner lot, the analysis pattern is considered only on the street that the subject garage faces.\",\n            \"condition\": \"subject_lot.type == 'corner'\",\n            \"scope_definition\": \"analysis_street = subject_garage.facing_street\",\n            \"ambiguity_flag\": \"For new construction on a corner lot, the garage's facing street might not be predetermined, creating a potential dependency loop.\"\n          }\n        ],\n        \"Exclusions\": {\n          \"description\": \"Specific lot types are excluded from the set of lots used to determine the predominant pattern. The subject lot is not excluded if it falls into one of these categories.\",\n          \"excluded_lot_types\": [\n            \"Flag lot\",\n            \"Lot with multi-family use of 3 or more units\",\n            \"Corner lots\"\n          ]\n        }\n      },\n      \"Variables\": [\n        {\n          \"name\": \"predominant_neighborhood_pattern\",\n          \"type\": \"Categorical\",\n          \"values\": [\n            \"front_half\",\n            \"rear_half\",\n            \"none\"\n          ],\n          \"determination_logic\": \"The pattern category ('front_half' or 'rear_half') that contains more than 50% of the analyzed lots. If neither category exceeds 50%, no predominant pattern exists.\"\n        },\n        {\n          \"name\": \"block_length\",\n          \"type\": \"Dimensional\",\n          \"unit\": \"feet\"\n        },\n        {\n          \"name\": \"subject_lot_type\",\n          \"type\": \"Categorical\",\n          \"values\": [\n            \"corner\",\n            \"interior\",\n            \"flag\"\n          ]\n        },\n        {\n          \"name\": \"lot_garage_location\",\n          \"type\": \"Categorical\",\n          \"values\": [\n            \"front_half\",\n            \"rear_half\",\n            \"none\"\n          ]\n        },\n        {\n          \"name\": \"lot_use\",\n          \"type\": \"Categorical\",\n          \"values\": [\n            \"single_family\",\n            \"multi_family\"\n          ]\n        },\n        {\n          \"name\": \"multi_family_unit_count\",\n          \"type\": \"Numerical\"\n        }\n      ],\n      \"Constants\": [\n        {\n          \"name\": \"Block Length Threshold for Scope Change\",\n          \"value\": 600,\n          \"unit\": \"feet\"\n        },\n        {\n          \"name\": \"Closest Lots Count for Scope Change\",\n          \"value\": 10,\n          \"unit\": \"lots\"\n        },\n        {\n          \"name\": \"Multi-family Exclusion Threshold\",\n          \"value\": 3,\n          \"unit\": \"units\",\n          \"condition\": \">= 3\"\n        },\n        {\n          \"name\": \"Predominance Threshold\",\n          \"value\": 0.5,\n          \"unit\": \"proportion\",\n          \"condition\": \"> 0.5\",\n          \"description\": \"More than half of the lots must fall into one category.\"\n        },\n        {\n          \"name\": \"No Garage Classification\",\n          \"value\": \"rear_half_pattern_lot\",\n          \"description\": \"A lot with no garage is counted as a rear-half pattern lot for the purpose of determining predominance.\"\n        }\n      ],\n      \"Conditions\": {\n        \"description\": \"A multi-step procedure to determine if the regulation applies and what the resulting garage placement requirement is.\",\n        \"procedure\": [\n          {\n            \"step\": 1,\n            \"name\": \"Define Analysis Set\",\n            \"description\": \"Identify all lots on the block (or within the defined scope) and exclude specific types (Flag lots, Multi-family >= 3 units, Corner lots). The subject lot is always included in the set.\",\n            \"logic\": \"analysis_set = (all_lots_in_scope - excluded_lots) + subject_lot\"\n          },\n          {\n            \"step\": 2,\n            \"name\": \"Categorize Lots\",\n            \"description\": \"Divide the lots in the analysis_set into two categories based on garage location.\",\n            \"logic\": [\n              {\n                \"category\": \"front_half_pattern_lots\",\n                \"criteria\": \"lot.garage_location == 'front_half'\"\n              },\n              {\n                \"category\": \"rear_half_pattern_lots\",\n                \"criteria\": \"lot.garage_location == 'rear_half' OR lot.garage_exists == false\"\n              }\n            ]\n          },\n          {\n            \"step\": 3,\n            \"name\": \"Determine Predominant Pattern\",\n            \"description\": \"Calculate if one category represents more than 50% of the total lots in the analysis_set.\",\n            \"logic\": [\n              {\n                \"condition\": \"count(front_half_pattern_lots) / count(analysis_set) > 0.5\",\n                \"result\": \"predominant_pattern = 'front_half'\"\n              },\n              {\n                \"condition\": \"count(rear_half_pattern_lots) / count(analysis_set) > 0.5\",\n                \"result\": \"predominant_pattern = 'rear_half'\"\n              },\n              {\n                \"condition\": \"ELSE\",\n                \"result\": \"predominant_pattern = 'none'\"\n              }\n            ]\n          },\n          {\n            \"step\": 4,\n            \"name\": \"Apply Placement Rule\",\n            \"description\": \"If a predominant pattern exists, enforce the corresponding garage placement.\",\n            \"logic\": [\n              {\n                \"type\": \"Mandatory\",\n                \"condition\": \"predominant_pattern == 'rear_half'\",\n                \"requirement\": \"subject_lot.garage_placement MUST BE 'rear_half_of_lot'\"\n              },\n              {\n                \"type\": \"Mandatory\",\n                \"condition\": \"predominant_pattern == 'front_half'\",\n                \"requirement\": \"subject_lot.garage_placement MUST BE 'front_half_of_lot'\",\n                \"ambiguity_flag\": \"This rule is inferred from the regulation's name and logic, as the text only provides an explicit outcome for the 'rear_half' pattern.\"\n              },\n              {\n                \"type\": \"Optional\",\n                \"condition\": \"predominant_pattern == 'none'\",\n                \"requirement\": \"Contextual garage placement regulation does not apply.\"\n              }\n            ]\n          }\n        ]\n      },\n      \"Exceptions\": {\n        \"description\": \"No explicit exceptions to the final placement mandate (once a predominant pattern is established) are mentioned in the provided text. The 'Exclusions' are part of the applicability determination process, not exceptions to the final rule.\"\n      },\n      \"Relationships\": {\n        \"Hierarchical\": [\n          {\n            \"parent\": \"Contextual Garage Placement Rule\",\n            \"child\": \"Applicability Determination Procedure\",\n            \"description\": \"The application of the placement rule is entirely dependent on the outcome of the multi-step determination procedure.\"\n          }\n        ],\n        \"Cross-References\": [\n          {\n            \"type\": \"Figure\",\n            \"identifier\": \"Fig. 32\",\n            \"description\": \"Cited as an example of a block where the regulation applies and is used to illustrate the determination method.\"\n          },\n          {\n            \"type\": \"Page Number\",\n            \"identifier\": \"37\",\n            \"description\": \"The page number provided in the source text, likely referencing the location of Figure 32 or related content.\"\n          }\n        ],\n        \"Logical-Dependencies\": [\n          {\n            \"dependent\": \"Garage Placement Requirement (Step 4)\",\n            \"on\": \"Predominant Neighborhood Pattern (Step 3)\",\n            \"description\": \"The mandatory location for a new garage is directly determined by which pattern, if any, is found to be predominant.\"\n          },\n          {\n            \"dependent\": \"Predominant Neighborhood Pattern (Step 3)\",\n            \"on\": \"Lot Categorization (Step 2)\",\n            \"description\": \"The determination of predominance depends on the counts of lots in each category.\"\n          },\n          {\n            \"dependent\": \"Lot Categorization (Step 2)\",\n            \"on\": \"Analysis Set (Step 1)\",\n            \"description\": \"The categorization process is applied to the final set of lots determined in the first step.\"\n          }\n        ]\n      }\n    }\n  ]\n}\n```",
+    "response_time": 55.45733880996704,
+    "input_tokens": 722,
+    "output_tokens": 6347,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 16:03:50",
+  "model": "google/gemini-2.5-pro",
+  "success": true
+}

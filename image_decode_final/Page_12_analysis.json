@@ -1,0 +1,71 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_12.png",
+  "image_name": "Page_12.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Porches\n&\nentry\nfeatures\n\nFacades with defined\nentryways make a\nstreetscape pleasant\nand friendly as long as\nthey are not out of scale\nor proportion.\n\nThe gross floor area\nregulations encourage\nappropriately sized\nporches and entryways.\n\nPorch types\n\nFor purposes of assessing gross floor area, porches, entryways, and balconies fall into one of these categories:\n\n1. Non-roofed porches, entryways, balconies etc.\n   \u2022 Non-roofed features generally do not count\n\n2. Roofed porches on the 1st floor (Fig 4 A & D on p. 7, Fig 5 on p. 8)\n   \u2022 Openess of the sides determines whether or not these count\n     regardless of the height.\n   \u2022 If they do count, they count only once.\n\n3. Roofed entry features on the 1st floor\n   that are less than 12' high (from grade) (Fig 4 B on p. 7)\n   \u2022 These count once regardless of the design including openess.\n\n4. Roofed entry features on the 1st floor that are more than 12'\n   high from grade\u2013\u201cvaulted entry feature\u201d (Fig 4 C & D on p. 7,\n   Fig 6, 7, & 8 on pp. 11-13)\n   \u2022 These count twice regardless of the design including openess.\n\n5. Recessed porches on the 1st floor (Fig 9 on p. 14)\n   \u2022 Height, depth, & openess determine whether or not these count.\n   \u2022 If they count and are less than 17' high, they count only once.\n   \u2022 If they count and are more than 17' high, they count twice.\n\n6. Roofed balconies/outdoor areas on upper floors (Fig 10 on p. 15)\n   \u2022 These count once regardless of the design including openess\n\nDifference\nbetween a porch\n& an entry\nfeature:\n\nA feature is considered\nto be a porch rather than\nan entry feature if it can\nclearly accomodate more\nactivities than entering and\nleaving the house.\n\n6\n\nCode sections\n18.04.030(a)(65)\n18.04.030(a)(113.1)\n18.04.030(143.5)\n18.12.040(b)Table 3\n\nThe following pages address the details of assessing these features with regard to gross floor area.",
+      "visual_elements": [
+        {
+          "type": "text_box",
+          "description": "A dark grey rectangular box on the left side of the page containing the main title 'Porches & entry features' and descriptive text about facades, entryways, and gross floor area regulations, followed by 'Code sections'.",
+          "location": "Left side, spanning top to bottom"
+        },
+        {
+          "type": "text_box",
+          "description": "A dark grey rectangular box on the right side of the page containing the heading 'Difference between a porch & an entry feature:' and a definition of a porch versus an entry feature.",
+          "location": "Middle right, spanning from top to middle"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Entry feature height (less than)",
+          "value": "12",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Entry feature height (more than)",
+          "value": "12",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Recessed porch height (less than)",
+          "value": "17",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Recessed porch height (more than)",
+          "value": "17",
+          "unit": "feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Porch types",
+        "subheadings": [],
+        "sections": [
+          "Porches & entry features",
+          "Porch types",
+          "Difference between a porch & an entry feature:",
+          "Code sections"
+        ]
+      },
+      "additional_notes": [
+        "Page number '6' is present at the bottom left."
+      ],
+      "cross_references": [
+        "Fig 4 A & D on p. 7",
+        "Fig 5 on p. 8",
+        "Fig 4 B on p. 7",
+        "Fig 4 C & D on p. 7",
+        "Fig 6, 7, & 8 on pp. 11-13",
+        "Fig 9 on p. 14",
+        "Fig 10 on p. 15",
+        "18.04.030(a)(65)",
+        "18.04.030(a)(113.1)",
+        "18.04.030(143.5)",
+        "18.12.040(b)Table 3"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-11 14:59:09",
+  "model_used": "google/gemini-2.5-flash"
+}

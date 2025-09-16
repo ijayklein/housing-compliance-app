@@ -1,0 +1,222 @@
+{% extends "base.html" %}
+
+{% block title %}Housing Compliance System - Home{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <div class="hero-section text-center py-5 mb-5">
+            <h1 class="display-4 mb-4">
+                <i class="fas fa-building me-3 text-primary"></i>
+                Housing Compliance System
+            </h1>
+            <p class="lead mb-4">
+                Streamlined compliance checking for Palo Alto single-family housing projects
+            </p>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="stats-row d-flex justify-content-around bg-light rounded p-3">
+                        <div class="stat-item text-center">
+                            <div class="stat-number text-primary fw-bold fs-3">160</div>
+                            <div class="stat-label text-muted small">Rules Analyzed</div>
+                        </div>
+                        <div class="stat-item text-center">
+                            <div class="stat-number text-success fw-bold fs-3">5</div>
+                            <div class="stat-label text-muted small">Zone Districts</div>
+                        </div>
+                        <div class="stat-item text-center">
+                            <div class="stat-number text-info fw-bold fs-3">2</div>
+                            <div class="stat-label text-muted small">Operation Modes</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row g-4">
+    <!-- Planning Mode Card -->
+    <div class="col-md-6">
+        <div class="card h-100 shadow-sm mode-card planning-card">
+            <div class="card-header bg-gradient-primary text-white">
+                <h4 class="card-title mb-0">
+                    <i class="fas fa-drafting-compass me-2"></i>
+                    Planning Mode
+                </h4>
+            </div>
+            <div class="card-body d-flex flex-column">
+                <div class="mode-icon text-center mb-3">
+                    <i class="fas fa-route fa-4x text-primary"></i>
+                </div>
+                <h5 class="card-subtitle mb-3 text-primary">Proactive Design Guidance</h5>
+                <p class="card-text flex-grow-1">
+                    Get step-by-step guidance for new housing projects. The planning mode helps you 
+                    design compliant projects from the start, preventing costly revisions later.
+                </p>
+                
+                <div class="features-list mb-4">
+                    <h6 class="fw-bold mb-2">Features:</h6>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-check text-success me-2"></i>Site qualification assessment</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Building envelope guidance</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Design constraint calculation</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Phase-by-phase workflow</li>
+                    </ul>
+                </div>
+                
+                <div class="use-cases mb-4">
+                    <h6 class="fw-bold mb-2">Best For:</h6>
+                    <span class="badge bg-light text-dark me-2">New Projects</span>
+                    <span class="badge bg-light text-dark me-2">Initial Design</span>
+                    <span class="badge bg-light text-dark me-2">Feasibility Study</span>
+                </div>
+                
+                <a href="{{ url_for('planning_mode') }}" class="btn btn-primary btn-lg mt-auto">
+                    <i class="fas fa-play me-2"></i>Start Planning
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Validation Mode Card -->
+    <div class="col-md-6">
+        <div class="card h-100 shadow-sm mode-card validation-card">
+            <div class="card-header bg-gradient-success text-white">
+                <h4 class="card-title mb-0">
+                    <i class="fas fa-check-circle me-2"></i>
+                    Validation Mode
+                </h4>
+            </div>
+            <div class="card-body d-flex flex-column">
+                <div class="mode-icon text-center mb-3">
+                    <i class="fas fa-clipboard-check fa-4x text-success"></i>
+                </div>
+                <h5 class="card-subtitle mb-3 text-success">Comprehensive Compliance Check</h5>
+                <p class="card-text flex-grow-1">
+                    Validate existing project designs against all zoning requirements. Get detailed 
+                    compliance reports with specific violations and remediation recommendations.
+                </p>
+                
+                <div class="features-list mb-4">
+                    <h6 class="fw-bold mb-2">Features:</h6>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-check text-success me-2"></i>Rule-by-rule compliance checking</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Detailed violation reports</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Remediation recommendations</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Compliance percentage scoring</li>
+                    </ul>
+                </div>
+                
+                <div class="use-cases mb-4">
+                    <h6 class="fw-bold mb-2">Best For:</h6>
+                    <span class="badge bg-light text-dark me-2">Existing Designs</span>
+                    <span class="badge bg-light text-dark me-2">Permit Review</span>
+                    <span class="badge bg-light text-dark me-2">Final Check</span>
+                </div>
+                
+                <a href="{{ url_for('validation_mode') }}" class="btn btn-success btn-lg mt-auto">
+                    <i class="fas fa-search me-2"></i>Start Validation
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Workflow Integration Section -->
+<div class="row mt-5">
+    <div class="col-12">
+        <div class="card bg-light">
+            <div class="card-body">
+                <h3 class="card-title text-center mb-4">
+                    <i class="fas fa-sync-alt me-2 text-info"></i>
+                    Integrated Workflow
+                </h3>
+                <p class="text-center mb-4">
+                    Use both modes together for complete project lifecycle management
+                </p>
+                
+                <div class="workflow-steps">
+                    <div class="row text-center">
+                        <div class="col-md-2">
+                            <div class="workflow-step">
+                                <div class="step-icon bg-primary text-white rounded-circle mx-auto mb-2">1</div>
+                                <h6>Initial Planning</h6>
+                                <p class="small text-muted">Use Planning Mode for design guidance</p>
+                            </div>
+                        </div>
+                        <div class="col-md-1 d-flex align-items-center justify-content-center">
+                            <i class="fas fa-arrow-right text-muted"></i>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="workflow-step">
+                                <div class="step-icon bg-info text-white rounded-circle mx-auto mb-2">2</div>
+                                <h6>Design Development</h6>
+                                <p class="small text-muted">Develop design based on guidance</p>
+                            </div>
+                        </div>
+                        <div class="col-md-1 d-flex align-items-center justify-content-center">
+                            <i class="fas fa-arrow-right text-muted"></i>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="workflow-step">
+                                <div class="step-icon bg-success text-white rounded-circle mx-auto mb-2">3</div>
+                                <h6>Validation Check</h6>
+                                <p class="small text-muted">Use Validation Mode to verify compliance</p>
+                            </div>
+                        </div>
+                        <div class="col-md-1 d-flex align-items-center justify-content-center">
+                            <i class="fas fa-arrow-right text-muted"></i>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="workflow-step">
+                                <div class="step-icon bg-warning text-white rounded-circle mx-auto mb-2">4</div>
+                                <h6>Refinement</h6>
+                                <p class="small text-muted">Fix violations using Planning Mode</p>
+                            </div>
+                        </div>
+                        <div class="col-md-1 d-flex align-items-center justify-content-center">
+                            <i class="fas fa-arrow-right text-muted"></i>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="workflow-step">
+                                <div class="step-icon bg-dark text-white rounded-circle mx-auto mb-2">5</div>
+                                <h6>Submission</h6>
+                                <p class="small text-muted">Submit compliant design</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- System Information -->
+<div class="row mt-4">
+    <div class="col-12">
+        <div class="card border-0">
+            <div class="card-body text-center">
+                <h5 class="card-title">System Information</h5>
+                <div class="row">
+                    <div class="col-md-4">
+                        <i class="fas fa-book text-primary fa-2x mb-2"></i>
+                        <h6>Source</h6>
+                        <p class="small text-muted">Palo Alto Single-Family Zoning Technical Manual</p>
+                    </div>
+                    <div class="col-md-4">
+                        <i class="fas fa-cogs text-info fa-2x mb-2"></i>
+                        <h6>Processing</h6>
+                        <p class="small text-muted">AI-powered rule extraction and analysis</p>
+                    </div>
+                    <div class="col-md-4">
+                        <i class="fas fa-shield-alt text-success fa-2x mb-2"></i>
+                        <h6>Accuracy</h6>
+                        <p class="small text-muted">Based on official municipal code requirements</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

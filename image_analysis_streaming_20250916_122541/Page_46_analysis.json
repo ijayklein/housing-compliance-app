@@ -1,0 +1,23 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_46.png",
+  "image_name": "Page_46.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "PARSE_ERROR",
+      "visual_elements": [],
+      "technical_specifications": [],
+      "structural_elements": {
+        "main_heading": "",
+        "subheadings": [],
+        "sections": []
+      },
+      "additional_notes": [
+        "Failed to parse LLM response: Expecting value: line 1 column 1 (char 0)"
+      ],
+      "cross_references": []
+    },
+    "raw_response": "Here's the extracted information from the provided images, maintaining absolute precision and without making any deductions:\n\n**Basements & Excavated features**\n\nFloor area regulations are intended to address the building mass and the appearance of the streetscape. Therefore, if basement area is below grade and does not contribute to the apparent mass of a building, that area, even if it is habitable, need not be included in the total floor area.\n\n**Basement standards**\n*   May not be located in special flood hazard areas.\n*   May not extend beyond building footprint.\n*   May not encroach into required yards, except where main dwelling is permitted to extend into rear yard.\n\n**FAR**\nBasements (even habitable ones) do not count as floor area if first floor is no more than 3' above grade.\n\n**Fig 35 Basement & grade**\n\n**Excavated features**\nThere are two types of excavated features:\n*   Light wells and stairwells\n*   Below-grade patios\n\n**FAR**\nExcavation will not affect grade or measurement of floor area if standards are met (see pages 42 and 43).\n\n**Fig 36 Excavated feature & grade**\n\n**A:** distance between top of first floor and grade if excavation meets the size/dimensional limits described in Figs 39-40 on pp. 42-43.\n\n**B:** distance between top of first floor and grade if excavated features exceed the size/dimensional limits described in Figs 39-40 on pp. 42-43.\n\n**Code sections**\nPage 40\n18.12.090 (a, b, & c)\nPage 41\n18.12.090 (c)\nPage 43\n18.12.090 (c) (1)\nPage 44\n18.12.090 (c) (2)\n\n**Diagram Labels:**\n*   Top of first floor\n*   Basement\n*   Excavated feature\n*   Grade if excavated features meet standards described in Figs 39-40 on pp. 42-43.\n*   Grade if excavated features exceed standards described in Figs 39-40 on pp. 42-43.\n\n**Page Number:** 40"
+  },
+  "analysis_timestamp": "2025-09-16 12:26:00",
+  "model_used": "google/gemini-2.5-flash"
+}

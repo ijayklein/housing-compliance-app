@@ -1,0 +1,19 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_15.png",
+  "image_name": "Page_15.png",
+  "analysis": {
+    "page_number": "unknown",
+    "main_heading": "PARSE_ERROR",
+    "text_content": "Failed to parse response: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)",
+    "tables": [],
+    "figures": [],
+    "zoning_rules": [],
+    "code_references": [],
+    "quality_notes": "JSON parsing failed: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)",
+    "raw_response": "```json\n{\n  \"page_number\": \"9\",\n  \"main_heading\": \"\",\n  \"text_content\": \"Step 2: Determine which perimeter segments abut the house walls. These are closed segments, or sides.\\n\\nIn Fig 5 sides A, B, & C abut the house walls. These are considered to be closed segments.\\n\\nStep 3: Determine the status (open/closed) of the remaining segments based on the design. If at least 50% of the facade area is open, then the segment or side is considered open.\\n\\nFor purposes of assessing the openess of the facade:\\n\\n\u2022 The height of the segment facades is measured from the top of the porch floor to the the point where the segment facade intersects with the top of the roof material.\\n\\n\u2022 The widths of the segment facades are measured from the same plane. Allowances may be made for structural supports that are not excessive.\\n\\nOpen\\nClosed\\n(because of decorative glass wall)\\nOpen\\nOpen\",\n  \"tables\": [],\n  \"figures\": [\n    {\n      \"figure_number\": \"Fig 5\",\n      \"caption\": \"\",\n      \"description\": \"",
+    "parse_error": true
+  },
+  "analysis_timestamp": "2025-09-16 12:34:15",
+  "model_used": "anthropic/claude-sonnet-4",
+  "success": false
+}

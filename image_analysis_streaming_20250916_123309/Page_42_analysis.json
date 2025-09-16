@@ -1,0 +1,19 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_42.png",
+  "image_name": "Page_42.png",
+  "analysis": {
+    "page_number": "unknown",
+    "main_heading": "PARSE_ERROR",
+    "text_content": "Failed to parse response: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)",
+    "tables": [],
+    "figures": [],
+    "zoning_rules": [],
+    "code_references": [],
+    "quality_notes": "JSON parsing failed: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)",
+    "raw_response": "```json\n{\n  \"page_number\": \"36\",\n  \"main_heading\": \"Driveway standards\",\n  \"text_content\": \"Driveway standards\\n\u2022 Driveway surfaces may have either permeable or impermeable paving. Materials shall meet Public Works standards.\\n\u2022 Driveway surface within 10' of the public right-of-way may not be of a loose material e.g., gravel.\\n\u2022 2nd dwelling units must share common driveway with main dwelling.\\n\u2022 Minimum driveway clearance: 10'\\n\u2022 Minimum driveway surface: 8'\\n\u2022 Minimum 20' between curb cuts.\\n\u2022 No more than 40% of required front yard may be impermeable.\\n\u2022 Street-work permit required for work done within the public right-of-way.\\nFor safety reasons, the city also encourages that the following standard be met:\\n\u2022 No more than one curb cut per single frontage.\\n\u2022 Minimum of 50' between curb cut and intersection curb face.\\nFig 31 Driveway standards\\nPavers without mortar (grass between) OK\\n\\\"Hollywood strips\\\" (grass between) OK\\nGravel OK\\nTurns enroute to required parking spaces mus",
+    "parse_error": true
+  },
+  "analysis_timestamp": "2025-09-16 12:33:40",
+  "model_used": "google/gemini-2.5-flash",
+  "success": false
+}

@@ -1,0 +1,125 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_08.md",
+  "file_name": "Page_08.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "rule": "Minimum & Maximum Lot Sizes for New Lots",
+        "Qualifiers": {
+          "Scope": "Defines the dimensional requirements (width, depth, area) for the creation of new lots via subdivision.",
+          "Applicability": "Applies to new lots created under the subdivision ordinance in the following zones: R-1, R-1(7000), R-1(8000), R-1(10000), R-1(20000).",
+          "Exclusions": "Does not apply to existing lots unless they are being re-subdivided. Maximum lot size rules have specific exceptions."
+        },
+        "Variables": {
+          "Dimensional": "lot_width (ft), lot_depth (ft), lot_area (sf)",
+          "Material": "",
+          "Environmental": "",
+          "Usage": "zone_district (R-1, R-1(7000), R-1(8000), R-1(10000), R-1(20000))"
+        },
+        "Constants": {
+          "Numerical Values": "Minimum width: 60 ft\nMinimum depth: 100 ft\nLot Area Ranges (sf):\n- R-1: Min 6,000; Max 9,999\n- R-1(7000): Min 7,000; Max 13,999\n- R-1(8000): Min 8,000; Max 15,999\n- R-1(10000): Min 10,000; Max 19,999\n- R-1(20000): Min 20,000; Max 39,999",
+          "Specs": "",
+          "Standards": "Subdivision Ordinance",
+          "Procedures": ""
+        },
+        "Conditions": {
+          "Mandatory": "A new lot must satisfy all of the following: (width >= 60 ft) AND (depth >= 100 ft) AND (lot_area is within the min/max range for its specific zone district).",
+          "Optional": "",
+          "Conditional Logic": "",
+          "Dependencies": "The applicable lot area range is dependent on the lot's Zone District."
+        },
+        "Exceptions": {
+          "Explicit Deviations": "The maximum lot size requirement can be waived if one of the following conditions is met:\n1. Removal of underlying lot lines to eliminate non-conformities, with no net loss of housing.\n2. Combination of an adjacent substandard lot (< 25 ft width) with another lot, with no net loss of housing.\n3. The resultant number of lots increases or stays the same, with no net loss of housing.",
+          "Alternatives": "",
+          "Special Cases": "The condition 'no net loss of housing' is a key requirement for all exceptions but is not defined in the text (ambiguous)."
+        },
+        "Relationships": {
+          "Hierarchical": "This rule is part of the 'subdivision ordinance' for the city of Palo Alto.",
+          "Cross-references": "Code Sections: 18.12.040 (a) Table 2, 18.12.040 (d), 18.12.040 (c), 18.04.030 (a) (85). Also references Page 2 and Page 3 of the manual.",
+          "Logical Dependencies": "This rule is foundational for determining development potential, as 'allowable building size is based on a percentage of the lot area'. The exceptions are dependent on the definitions of 'non-conformities', 'substandard lot', and 'net loss of housing'."
+        }
+      },
+      {
+        "rule": "Definition of a Substandard Lot",
+        "Qualifiers": {
+          "Scope": "Defines the dimensional criteria used to classify an existing lot as 'substandard'.",
+          "Applicability": "Applies to lots within all R-1 zones: R-1, R-1(7000), R-1(8000), R-1(10000), R-1(20000).",
+          "Exclusions": "Lots that do not meet these specific dimensional criteria are not considered substandard."
+        },
+        "Variables": {
+          "Dimensional": "lot_width (ft), lot_depth (ft), lot_area (sf)",
+          "Material": "",
+          "Environmental": "",
+          "Usage": "zone_district, lot_type ('Typical lot', 'Flag lot' - Ambiguous: definitions not provided)"
+        },
+        "Constants": {
+          "Numerical Values": "Substandard width threshold: < 50 ft\nSubstandard depth threshold: < 83 ft\nArea Thresholds (sf) - A lot is substandard if its area is less than or equal to these values:\n- R-1: Typical 4,980; Flag 5,976\n- R-1(7000): Typical 5,810; Flag 6,972\n- R-1(8000): Typical 6,640; Flag 7,968\n- R-1(10000): Typical 8,300; Flag 9,960\n- R-1(20000): Typical 16,600; Flag 19,920",
+          "Specs": "The area threshold is calculated as 83% of the minimum lot size for the respective zone.",
+          "Standards": "",
+          "Procedures": ""
+        },
+        "Conditions": {
+          "Mandatory": "",
+          "Optional": "",
+          "Conditional Logic": "A lot is defined as substandard if the following logical condition is met: (lot_width < 50 ft OR lot_depth < 83 ft) AND (lot_area <= area_threshold_for_zone_and_type).",
+          "Dependencies": "The area threshold is dependent on the lot's Zone District and its type (Typical or Flag)."
+        },
+        "Exceptions": {
+          "Explicit Deviations": "",
+          "Alternatives": "",
+          "Special Cases": ""
+        },
+        "Relationships": {
+          "Hierarchical": "This definition serves as a condition for applying the 'Special regulations for substandard lots'.",
+          "Cross-references": "",
+          "Logical Dependencies": "This rule is logically dependent on the 'Minimum & Maximum Lot Sizes' rule, as its area thresholds are derived from the minimum lot sizes defined there. It is a prerequisite for the 'Special Regulations for Substandard Lots' rule."
+        }
+      },
+      {
+        "rule": "Special Regulations for Substandard Lots",
+        "Qualifiers": {
+          "Scope": "Specifies alternative development regulations for building height, setbacks, and garage placement on substandard lots.",
+          "Applicability": "Applies only to lots that have been classified as 'substandard' based on the official definition.",
+          "Exclusions": "These regulations do not apply to lots that are not substandard. Standard regulations apply in those cases."
+        },
+        "Variables": {
+          "Dimensional": "building_height (ft), street_side_yard (ft), lot_width (ft), lot_depth (ft), garage_location",
+          "Material": "",
+          "Environmental": "",
+          "Usage": ""
+        },
+        "Constants": {
+          "Numerical Values": "Max building height: 17 ft (single-story)\nRequired street-side yard: 10 ft\nStandard building height (for comparison): 30 ft\nStandard street-side yard (for comparison): 16 ft\nStandard garage location (for comparison): 75 ft back from front lot line",
+          "Specs": "Garage location requirement: 'in the rear half of the lot' (Ambiguous: could mean rear 50% of depth or area).",
+          "Standards": "",
+          "Procedures": ""
+        },
+        "Conditions": {
+          "Mandatory": "",
+          "Optional": "",
+          "Conditional Logic": "IF lot is substandard, THEN max building height is 17 ft and single-story.\nIF lot is substandard AND lot_width < 50 ft, THEN required street-side yard is 10 ft.\nIF lot is substandard AND lot_depth < 95 ft, THEN garage must be located in the rear half of the lot.",
+          "Dependencies": "All conditions are dependent on the lot first being classified as 'substandard'."
+        },
+        "Exceptions": {
+          "Explicit Deviations": "",
+          "Alternatives": "",
+          "Special Cases": ""
+        },
+        "Relationships": {
+          "Hierarchical": "This rule modifies the general building regulations for the special case of substandard lots.",
+          "Cross-references": "Figure 15 C on p. 23 (related to the 10' street-side yard requirement).",
+          "Logical Dependencies": "This entire rule is dependent on the 'Definition of a Substandard Lot' rule. It provides specific overrides to standard, unstated regulations (e.g., standard 30' height, 16' yard)."
+        }
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n  {\n    \"rule\": \"Minimum & Maximum Lot Sizes for New Lots\",\n    \"Qualifiers\": {\n      \"Scope\": \"Defines the dimensional requirements (width, depth, area) for the creation of new lots via subdivision.\",\n      \"Applicability\": \"Applies to new lots created under the subdivision ordinance in the following zones: R-1, R-1(7000), R-1(8000), R-1(10000), R-1(20000).\",\n      \"Exclusions\": \"Does not apply to existing lots unless they are being re-subdivided. Maximum lot size rules have specific exceptions.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"lot_width (ft), lot_depth (ft), lot_area (sf)\",\n      \"Material\": \"\",\n      \"Environmental\": \"\",\n      \"Usage\": \"zone_district (R-1, R-1(7000), R-1(8000), R-1(10000), R-1(20000))\"\n    },\n    \"Constants\": {\n      \"Numerical Values\": \"Minimum width: 60 ft\\nMinimum depth: 100 ft\\nLot Area Ranges (sf):\\n- R-1: Min 6,000; Max 9,999\\n- R-1(7000): Min 7,000; Max 13,999\\n- R-1(8000): Min 8,000; Max 15,999\\n- R-1(10000): Min 10,000; Max 19,999\\n- R-1(20000): Min 20,000; Max 39,999\",\n      \"Specs\": \"\",\n      \"Standards\": \"Subdivision Ordinance\",\n      \"Procedures\": \"\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"A new lot must satisfy all of the following: (width >= 60 ft) AND (depth >= 100 ft) AND (lot_area is within the min/max range for its specific zone district).\",\n      \"Optional\": \"\",\n      \"Conditional Logic\": \"\",\n      \"Dependencies\": \"The applicable lot area range is dependent on the lot's Zone District.\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"The maximum lot size requirement can be waived if one of the following conditions is met:\\n1. Removal of underlying lot lines to eliminate non-conformities, with no net loss of housing.\\n2. Combination of an adjacent substandard lot (< 25 ft width) with another lot, with no net loss of housing.\\n3. The resultant number of lots increases or stays the same, with no net loss of housing.\",\n      \"Alternatives\": \"\",\n      \"Special Cases\": \"The condition 'no net loss of housing' is a key requirement for all exceptions but is not defined in the text (ambiguous).\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"This rule is part of the 'subdivision ordinance' for the city of Palo Alto.\",\n      \"Cross-references\": \"Code Sections: 18.12.040 (a) Table 2, 18.12.040 (d), 18.12.040 (c), 18.04.030 (a) (85). Also references Page 2 and Page 3 of the manual.\",\n      \"Logical Dependencies\": \"This rule is foundational for determining development potential, as 'allowable building size is based on a percentage of the lot area'. The exceptions are dependent on the definitions of 'non-conformities', 'substandard lot', and 'net loss of housing'.\"\n    }\n  },\n  {\n    \"rule\": \"Definition of a Substandard Lot\",\n    \"Qualifiers\": {\n      \"Scope\": \"Defines the dimensional criteria used to classify an existing lot as 'substandard'.\",\n      \"Applicability\": \"Applies to lots within all R-1 zones: R-1, R-1(7000), R-1(8000), R-1(10000), R-1(20000).\",\n      \"Exclusions\": \"Lots that do not meet these specific dimensional criteria are not considered substandard.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"lot_width (ft), lot_depth (ft), lot_area (sf)\",\n      \"Material\": \"\",\n      \"Environmental\": \"\",\n      \"Usage\": \"zone_district, lot_type ('Typical lot', 'Flag lot' - Ambiguous: definitions not provided)\"\n    },\n    \"Constants\": {\n      \"Numerical Values\": \"Substandard width threshold: < 50 ft\\nSubstandard depth threshold: < 83 ft\\nArea Thresholds (sf) - A lot is substandard if its area is less than or equal to these values:\\n- R-1: Typical 4,980; Flag 5,976\\n- R-1(7000): Typical 5,810; Flag 6,972\\n- R-1(8000): Typical 6,640; Flag 7,968\\n- R-1(10000): Typical 8,300; Flag 9,960\\n- R-1(20000): Typical 16,600; Flag 19,920\",\n      \"Specs\": \"The area threshold is calculated as 83% of the minimum lot size for the respective zone.\",\n      \"Standards\": \"\",\n      \"Procedures\": \"\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"\",\n      \"Optional\": \"\",\n      \"Conditional Logic\": \"A lot is defined as substandard if the following logical condition is met: (lot_width < 50 ft OR lot_depth < 83 ft) AND (lot_area <= area_threshold_for_zone_and_type).\",\n      \"Dependencies\": \"The area threshold is dependent on the lot's Zone District and its type (Typical or Flag).\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"\",\n      \"Alternatives\": \"\",\n      \"Special Cases\": \"\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"This definition serves as a condition for applying the 'Special regulations for substandard lots'.\",\n      \"Cross-references\": \"\",\n      \"Logical Dependencies\": \"This rule is logically dependent on the 'Minimum & Maximum Lot Sizes' rule, as its area thresholds are derived from the minimum lot sizes defined there. It is a prerequisite for the 'Special Regulations for Substandard Lots' rule.\"\n    }\n  },\n  {\n    \"rule\": \"Special Regulations for Substandard Lots\",\n    \"Qualifiers\": {\n      \"Scope\": \"Specifies alternative development regulations for building height, setbacks, and garage placement on substandard lots.\",\n      \"Applicability\": \"Applies only to lots that have been classified as 'substandard' based on the official definition.\",\n      \"Exclusions\": \"These regulations do not apply to lots that are not substandard. Standard regulations apply in those cases.\"\n    },\n    \"Variables\": {\n      \"Dimensional\": \"building_height (ft), street_side_yard (ft), lot_width (ft), lot_depth (ft), garage_location\",\n      \"Material\": \"\",\n      \"Environmental\": \"\",\n      \"Usage\": \"\"\n    },\n    \"Constants\": {\n      \"Numerical Values\": \"Max building height: 17 ft (single-story)\\nRequired street-side yard: 10 ft\\nStandard building height (for comparison): 30 ft\\nStandard street-side yard (for comparison): 16 ft\\nStandard garage location (for comparison): 75 ft back from front lot line\",\n      \"Specs\": \"Garage location requirement: 'in the rear half of the lot' (Ambiguous: could mean rear 50% of depth or area).\",\n      \"Standards\": \"\",\n      \"Procedures\": \"\"\n    },\n    \"Conditions\": {\n      \"Mandatory\": \"\",\n      \"Optional\": \"\",\n      \"Conditional Logic\": \"IF lot is substandard, THEN max building height is 17 ft and single-story.\\nIF lot is substandard AND lot_width < 50 ft, THEN required street-side yard is 10 ft.\\nIF lot is substandard AND lot_depth < 95 ft, THEN garage must be located in the rear half of the lot.\",\n      \"Dependencies\": \"All conditions are dependent on the lot first being classified as 'substandard'.\"\n    },\n    \"Exceptions\": {\n      \"Explicit Deviations\": \"\",\n      \"Alternatives\": \"\",\n      \"Special Cases\": \"\"\n    },\n    \"Relationships\": {\n      \"Hierarchical\": \"This rule modifies the general building regulations for the special case of substandard lots.\",\n      \"Cross-references\": \"Figure 15 C on p. 23 (related to the 10' street-side yard requirement).\",\n      \"Logical Dependencies\": \"This entire rule is dependent on the 'Definition of a Substandard Lot' rule. It provides specific overrides to standard, unstated regulations (e.g., standard 30' height, 16' yard).\"\n    }\n  }\n]\n```",
+    "response_time": 53.802350997924805,
+    "input_tokens": 1374,
+    "output_tokens": 6881,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 16:11:34",
+  "model": "google/gemini-2.5-pro",
+  "success": true
+}

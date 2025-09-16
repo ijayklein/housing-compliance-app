@@ -1,0 +1,19 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_30.png",
+  "image_name": "Page_30.png",
+  "analysis": {
+    "page_number": "unknown",
+    "main_heading": "PARSE_ERROR",
+    "text_content": "Failed to parse response: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)",
+    "tables": [],
+    "figures": [],
+    "zoning_rules": [],
+    "code_references": [],
+    "quality_notes": "JSON parsing failed: Expecting property name enclosed in double quotes: line 2 column 3 (char 4)",
+    "raw_response": "```json\n{\n  \"page_number\": \"24\",\n  \"main_heading\": \"Allowable setback encroachments summary\",\n  \"text_content\": \"Allowable setback encroachments summary\\nFeature\\nAllowable encroachment\\nCode Sec\\nIllustration\\nMain dwelling\\n\u2022 1st floor portion at rear of structure \u2264 half width of structure\\nto within 14' of rear lot line\\n18.12.050 (a)(2)\\nFig 18 on this page\\n\u2022 1st floor extension of an existing front setback encroachment\\nto within 14' of front lot line\\n18.12.050 (a)(1)(A)\\nFig 19 p. 25\\n\u2022 1st floor extension of an existing interior-side setback encroachment\\nto within 5' of interior-side lot line\\n18.12.050 (a)(1)(B)\\nFig 19 p. 25\\n\u2022 1st floor extension of an existing street-side setback encroachment\\nto within 10' of street-side lot line\\n18.12.050 (a)(1)(C)\\nFig 19 p. 25\\n\u2022 Attached storage closets \u2264 6' in height & \u2264 25 sf\\n4' into front & rear yards & 2' into side yards\\nDetached accessory structures\\n\u2022 that are 75' from front lot line and 20' from street-side lot line\\nin rea",
+    "parse_error": true
+  },
+  "analysis_timestamp": "2025-09-16 12:33:39",
+  "model_used": "google/gemini-2.5-flash",
+  "success": false
+}

@@ -1,0 +1,27 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_11.png",
+  "image_name": "Page_11.png",
+  "analysis": {
+    "page": "5",
+    "heading": "What counts as floor area summary",
+    "content": "Architectural feature, Counts?, Illustration\n\nPorches & entry features:\nUnenclosed porches - No\nEnclosed porches - Once\nEntry feature \u2264 12' in height - No\nEntry feature > 12' in height - Twice (footprint)\n1st floor recessed porches < 10' in depth and open on exterior side - No\n2nd floor roofed or enclosed porches, arcades, balconies, porticos, breezeways - Once\n\nAttics & equivalencies:\nAttic space where floor to under side of roof rafter distance is < 5' - No\nAll 2nd floor space (including attics) where head height or distance from top of floor to bottom of rafter is \u2265 5' - Once\n2nd floor equivalent: areas where height from top of first floor to top of roof material is > 17' - Twice\n3rd floor equivalent: areas where height from top of first floor to top of roof material is > 26' - Three times\nExemption: 3rd floor equivalent, where roof pitch is \u2265 4:12 - 200 sf exempt\nExemption: Unusable attic space for Category 1 & 2 historic homes - 500 sf exempt\n\nBasements:\nBasements that comply with patio & lightwell requirements of 18.12.070 - No\nBasements of Category 1 & 2 historic homes or contributing structures in a historic district (even if > 3') - No\n\nOther:\nBay windows (if \u2265 18\" above interior flr, does not project > 2', and > 50% windows) - No\nArchitectural appendages like fireplace or buttress footprint - Once\n\nAccessory structures:\nAccessory structures >120 sf - Once\nGarages and carports - Once\nPorte cocheres - No",
+    "figures": [
+      "Fig 5 on pp. 5-10",
+      "Fig 6-8 on pp. 11-13",
+      "Fig 9 on p. 14",
+      "Fig 10 on p. 15",
+      "Fig 11 on p. 16",
+      "Fig 12 on p. 17",
+      "Figs 35, 36, 39, 40 on pp. 39-43",
+      "Fig 13 on p. 18",
+      "Fig 14 on p. 19"
+    ],
+    "tables": [],
+    "codes": [
+      "18.12.070"
+    ]
+  },
+  "timestamp": "2025-09-16 12:46:04",
+  "model": "anthropic/claude-3.5-sonnet",
+  "success": true
+}

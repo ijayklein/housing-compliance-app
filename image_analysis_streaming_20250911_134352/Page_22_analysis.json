@@ -1,0 +1,50 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_22.png",
+  "image_name": "Page_22.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Attic space & equivalencies\n\nAttic, closet, & perimeter spaces\n\nOn all accessible floors, areas with at least 5' of head clearance count toward the gross floor area regardless of the floor plan or actual usage of the space.\n\nVoluminous spaces in a structure contribute to the mass even if these areas are not used or described in the floor plan. The 2nd & 3rd floor equivalency addresses how these areas count toward the gross floor area.\n\nIn Fig 11 below, the highlighted areas count as follows:\n\n\u2022 Area A of this 3rd floor (accessible via stairs), has 5' of head clearance and counts as 3rd floor area.\n\n\u2022 Area B of this 2nd floor (accessible via stairs), has 5' of head clearance and is included in the count of the, more obvious, 2nd floor area.\n\nFig 11 Attic, closet, & perimeter spaces\n\nNote: 500 sf of unusable attic space may be exempted for Category 1 & 2 historic homes.\n\nNote: Measurements are from top of floor to underside of the rafter\n\n(Underside of plcol)\n\noor\n\n1st floor\n\nCode sections\n18.04.030(a)(65)\n18.12.040(b)Table 3\n\n16",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Cross-sectional architectural diagram of a multi-story house showing attic and floor spaces. The diagram shows a house with basement, 1st floor, 2nd floor, and attic areas. Areas A and B are highlighted with diagonal hatching to indicate spaces with 5' head clearance. The diagram includes measurement indicators and labels for different floor levels.",
+          "location": "Center of page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Head clearance minimum",
+          "value": "5",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Unusable attic space exemption",
+          "value": "500",
+          "unit": "square feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Attic space & equivalencies",
+        "subheadings": [
+          "Attic, closet, & perimeter spaces"
+        ],
+        "sections": [
+          "Code sections"
+        ]
+      },
+      "additional_notes": [
+        "Page number 16 appears at bottom left",
+        "Two gray note boxes appear on the right side of the page",
+        "Some text appears partially cut off or unclear, particularly 'plcol' which may be 'plate' or similar architectural term"
+      ],
+      "cross_references": [
+        "Fig 11 below",
+        "18.04.030(a)(65)",
+        "18.12.040(b)Table 3",
+        "Category 1 & 2 historic homes"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-11 13:44:22",
+  "model_used": "anthropic/claude-sonnet-4"
+}

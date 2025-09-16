@@ -1,0 +1,217 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_39.md",
+  "file_name": "Page_39.md",
+  "analysis": {
+    "extracted_rules": {
+      "rules": [
+        {
+          "rule_id": "NP-SP-01",
+          "rule_name": "Noise-producing equipment site planning",
+          "source_page": 39,
+          "analysis": {
+            "Qualifiers": {
+              "scope": "Regulations governing the site planning and location of noise-producing equipment on a residential lot.",
+              "applicability": [
+                "Applies to new installations of service equipment.",
+                "Applies to replacement of existing equipment 'where feasible'."
+              ],
+              "exclusions": [
+                "General prohibition of equipment in front yards.",
+                "General prohibition of equipment in rear yards.",
+                "General prohibition of equipment in interior-side yards."
+              ],
+              "equipment_types_mentioned": [
+                "Pool equipment",
+                "Air conditioning equipment",
+                "Generator",
+                "General service equipment"
+              ]
+            },
+            "Variables": {
+              "dimensional_parameters": [
+                {
+                  "parameter": "Encroachment into street-side yard",
+                  "value": "up to 6 feet",
+                  "constraint": "maximum"
+                },
+                {
+                  "parameter": "Driveway clearance",
+                  "value": "10 feet",
+                  "constraint": "minimum",
+                  "source": "Figure A example"
+                }
+              ],
+              "material_parameters": [
+                {
+                  "parameter": "Equipment protection",
+                  "value": "Insulated and housed",
+                  "notes": "This requirement can be waived under specific conditions."
+                }
+              ],
+              "environmental_parameters": [
+                {
+                  "parameter": "Noise level",
+                  "value": "Must comply with City's Noise Ordinance",
+                  "constraint": "mandatory"
+                }
+              ],
+              "usage_parameters": [
+                {
+                  "parameter": "Equipment location",
+                  "allowed": [
+                    "Buildable area",
+                    "Street-side yard (with encroachment limits)"
+                  ],
+                  "disallowed": [
+                    "Front yard",
+                    "Rear yard",
+                    "Interior-side yard"
+                  ]
+                }
+              ]
+            },
+            "Constants": {
+              "numerical_values": [
+                {
+                  "value": 6,
+                  "unit": "feet",
+                  "description": "Maximum encroachment into a street-side yard."
+                },
+                {
+                  "value": 10,
+                  "unit": "feet",
+                  "description": "Minimum clear distance for a driveway (from Figure A example)."
+                }
+              ],
+              "specs_and_standards": [
+                {
+                  "name": "City's Noise Ordinance",
+                  "reference": "Chapter 9.10 of the Municipal Code"
+                }
+              ],
+              "procedures": [
+                {
+                  "name": "Waiver for insulation/housing requirement",
+                  "authority": "Planning Dept.",
+                  "description": "The Planning Department can waive the requirement to insulate and house equipment."
+                }
+              ]
+            },
+            "Conditions": {
+              "mandatory": [
+                "All service equipment must meet the City\u2019s Noise Ordinance (Chapter 9.10 of the Municipal Code).",
+                "Equipment must be insulated and housed, unless a waiver is granted by the Planning Dept."
+              ],
+              "optional": [],
+              "conditional_logic": [
+                {
+                  "if": [
+                    "Equipment is located in the buildable area",
+                    "A combination of noise specifications, location, and/or other screening or buffering will assure compliance with the City\u2019s Noise Ordinance at the nearest lot line"
+                  ],
+                  "then": "The Planning Dept. can waive the requirement for equipment to be insulated and housed.",
+                  "logic": "AND/OR"
+                },
+                {
+                  "if": "Equipment is being replaced",
+                  "then": "It shall conform to this section.",
+                  "condition": "where feasible",
+                  "ambiguity_flag": "The term 'where feasible' is subjective and not explicitly defined, requiring interpretation."
+                }
+              ]
+            },
+            "Exceptions": {
+              "explicit_deviations": [
+                {
+                  "rule": "Equipment may not be located in yards.",
+                  "exception": "Equipment may encroach into a street-side yard up to 6 feet.",
+                  "notes": "This exception does not apply to front, rear, or interior-side yards."
+                }
+              ],
+              "alternatives": [
+                {
+                  "requirement": "Equipment must be insulated and housed.",
+                  "alternative": "Achieve compliance with the Noise Ordinance through a combination of noise specifications, location, and/or other screening or buffering, subject to Planning Dept. waiver.",
+                  "condition": "Equipment must be located in the buildable area."
+                }
+              ],
+              "special_cases": [
+                {
+                  "case": "Replacement of equipment",
+                  "rule": "Must conform to the section's regulations.",
+                  "condition": "where feasible"
+                }
+              ]
+            },
+            "Relationships": {
+              "hierarchical": {
+                "parent_rule": "Site planning for noise-producing equipment",
+                "sub_rules": [
+                  "Location restrictions (yards vs. buildable area)",
+                  "Encroachment allowances (street-side yard)",
+                  "Acoustic compliance (Noise Ordinance)",
+                  "Physical protection (insulation/housing)"
+                ]
+              },
+              "cross_references": [
+                {
+                  "from": "Street-side yard encroachment rule",
+                  "to": "Figure 27 C",
+                  "type": "Illustrative Example"
+                },
+                {
+                  "from": "Noise compliance requirement",
+                  "to": "Chapter 9.10 of the Municipal Code",
+                  "type": "Normative Reference"
+                }
+              ],
+              "logical_dependencies": [
+                {
+                  "dependent": "Waiver of insulation/housing requirement",
+                  "on": [
+                    "Equipment location (must be in buildable area)",
+                    "Demonstrated compliance with Noise Ordinance via alternative means",
+                    "Approval from Planning Dept."
+                  ]
+                },
+                {
+                  "dependent": "Permission to place equipment in a yard",
+                  "on": [
+                    "Yard type (must be 'street-side yard')",
+                    "Encroachment distance (must be <= 6 feet)"
+                  ]
+                }
+              ]
+            },
+            "ambiguous_language": [
+              {
+                "term": "where feasible",
+                "context": "Replacement of equipment shall conform to this section where feasible.",
+                "reason": "Lacks objective criteria for determining feasibility, making it subject to interpretation."
+              },
+              {
+                "term": "out-of-the-way niche",
+                "context": "Air conditioning equip. is located in an out-of-the-way niche...",
+                "reason": "Descriptive but not a regulatory term with a precise definition."
+              },
+              {
+                "term": "enough room",
+                "context": "...There is not enough room along the interior side of the house.",
+                "reason": "Subjective and lacks specific dimensional requirements."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "parse_error": false,
+    "raw_response": "```json\n{\n  \"rules\": [\n    {\n      \"rule_id\": \"NP-SP-01\",\n      \"rule_name\": \"Noise-producing equipment site planning\",\n      \"source_page\": 39,\n      \"analysis\": {\n        \"Qualifiers\": {\n          \"scope\": \"Regulations governing the site planning and location of noise-producing equipment on a residential lot.\",\n          \"applicability\": [\n            \"Applies to new installations of service equipment.\",\n            \"Applies to replacement of existing equipment 'where feasible'.\"\n          ],\n          \"exclusions\": [\n            \"General prohibition of equipment in front yards.\",\n            \"General prohibition of equipment in rear yards.\",\n            \"General prohibition of equipment in interior-side yards.\"\n          ],\n          \"equipment_types_mentioned\": [\n            \"Pool equipment\",\n            \"Air conditioning equipment\",\n            \"Generator\",\n            \"General service equipment\"\n          ]\n        },\n        \"Variables\": {\n          \"dimensional_parameters\": [\n            {\n              \"parameter\": \"Encroachment into street-side yard\",\n              \"value\": \"up to 6 feet\",\n              \"constraint\": \"maximum\"\n            },\n            {\n              \"parameter\": \"Driveway clearance\",\n              \"value\": \"10 feet\",\n              \"constraint\": \"minimum\",\n              \"source\": \"Figure A example\"\n            }\n          ],\n          \"material_parameters\": [\n            {\n              \"parameter\": \"Equipment protection\",\n              \"value\": \"Insulated and housed\",\n              \"notes\": \"This requirement can be waived under specific conditions.\"\n            }\n          ],\n          \"environmental_parameters\": [\n            {\n              \"parameter\": \"Noise level\",\n              \"value\": \"Must comply with City's Noise Ordinance\",\n              \"constraint\": \"mandatory\"\n            }\n          ],\n          \"usage_parameters\": [\n            {\n              \"parameter\": \"Equipment location\",\n              \"allowed\": [\n                \"Buildable area\",\n                \"Street-side yard (with encroachment limits)\"\n              ],\n              \"disallowed\": [\n                \"Front yard\",\n                \"Rear yard\",\n                \"Interior-side yard\"\n              ]\n            }\n          ]\n        },\n        \"Constants\": {\n          \"numerical_values\": [\n            {\n              \"value\": 6,\n              \"unit\": \"feet\",\n              \"description\": \"Maximum encroachment into a street-side yard.\"\n            },\n            {\n              \"value\": 10,\n              \"unit\": \"feet\",\n              \"description\": \"Minimum clear distance for a driveway (from Figure A example).\"\n            }\n          ],\n          \"specs_and_standards\": [\n            {\n              \"name\": \"City's Noise Ordinance\",\n              \"reference\": \"Chapter 9.10 of the Municipal Code\"\n            }\n          ],\n          \"procedures\": [\n            {\n              \"name\": \"Waiver for insulation/housing requirement\",\n              \"authority\": \"Planning Dept.\",\n              \"description\": \"The Planning Department can waive the requirement to insulate and house equipment.\"\n            }\n          ]\n        },\n        \"Conditions\": {\n          \"mandatory\": [\n            \"All service equipment must meet the City\u2019s Noise Ordinance (Chapter 9.10 of the Municipal Code).\",\n            \"Equipment must be insulated and housed, unless a waiver is granted by the Planning Dept.\"\n          ],\n          \"optional\": [],\n          \"conditional_logic\": [\n            {\n              \"if\": [\n                \"Equipment is located in the buildable area\",\n                \"A combination of noise specifications, location, and/or other screening or buffering will assure compliance with the City\u2019s Noise Ordinance at the nearest lot line\"\n              ],\n              \"then\": \"The Planning Dept. can waive the requirement for equipment to be insulated and housed.\",\n              \"logic\": \"AND/OR\"\n            },\n            {\n              \"if\": \"Equipment is being replaced\",\n              \"then\": \"It shall conform to this section.\",\n              \"condition\": \"where feasible\",\n              \"ambiguity_flag\": \"The term 'where feasible' is subjective and not explicitly defined, requiring interpretation.\"\n            }\n          ]\n        },\n        \"Exceptions\": {\n          \"explicit_deviations\": [\n            {\n              \"rule\": \"Equipment may not be located in yards.\",\n              \"exception\": \"Equipment may encroach into a street-side yard up to 6 feet.\",\n              \"notes\": \"This exception does not apply to front, rear, or interior-side yards.\"\n            }\n          ],\n          \"alternatives\": [\n            {\n              \"requirement\": \"Equipment must be insulated and housed.\",\n              \"alternative\": \"Achieve compliance with the Noise Ordinance through a combination of noise specifications, location, and/or other screening or buffering, subject to Planning Dept. waiver.\",\n              \"condition\": \"Equipment must be located in the buildable area.\"\n            }\n          ],\n          \"special_cases\": [\n            {\n              \"case\": \"Replacement of equipment\",\n              \"rule\": \"Must conform to the section's regulations.\",\n              \"condition\": \"where feasible\"\n            }\n          ]\n        },\n        \"Relationships\": {\n          \"hierarchical\": {\n            \"parent_rule\": \"Site planning for noise-producing equipment\",\n            \"sub_rules\": [\n              \"Location restrictions (yards vs. buildable area)\",\n              \"Encroachment allowances (street-side yard)\",\n              \"Acoustic compliance (Noise Ordinance)\",\n              \"Physical protection (insulation/housing)\"\n            ]\n          },\n          \"cross_references\": [\n            {\n              \"from\": \"Street-side yard encroachment rule\",\n              \"to\": \"Figure 27 C\",\n              \"type\": \"Illustrative Example\"\n            },\n            {\n              \"from\": \"Noise compliance requirement\",\n              \"to\": \"Chapter 9.10 of the Municipal Code\",\n              \"type\": \"Normative Reference\"\n            }\n          ],\n          \"logical_dependencies\": [\n            {\n              \"dependent\": \"Waiver of insulation/housing requirement\",\n              \"on\": [\n                \"Equipment location (must be in buildable area)\",\n                \"Demonstrated compliance with Noise Ordinance via alternative means\",\n                \"Approval from Planning Dept.\"\n              ]\n            },\n            {\n              \"dependent\": \"Permission to place equipment in a yard\",\n              \"on\": [\n                \"Yard type (must be 'street-side yard')\",\n                \"Encroachment distance (must be <= 6 feet)\"\n              ]\n            }\n          ]\n        },\n        \"ambiguous_language\": [\n          {\n            \"term\": \"where feasible\",\n            \"context\": \"Replacement of equipment shall conform to this section where feasible.\",\n            \"reason\": \"Lacks objective criteria for determining feasibility, making it subject to interpretation.\"\n          },\n          {\n            \"term\": \"out-of-the-way niche\",\n            \"context\": \"Air conditioning equip. is located in an out-of-the-way niche...\",\n            \"reason\": \"Descriptive but not a regulatory term with a precise definition.\"\n          },\n          {\n            \"term\": \"enough room\",\n            \"context\": \"...There is not enough room along the interior side of the house.\",\n            \"reason\": \"Subjective and lacks specific dimensional requirements.\"\n          }\n        ]\n      }\n    }\n  ]\n}\n```",
+    "response_time": 42.81234097480774,
+    "input_tokens": 1006,
+    "output_tokens": 5012,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 16:03:14",
+  "model": "google/gemini-2.5-pro",
+  "success": true
+}

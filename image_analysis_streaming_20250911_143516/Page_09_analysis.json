@@ -1,0 +1,77 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_09.png",
+  "image_name": "Page_09.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Gross vs. net lot area\n\nGross lot area is the size of the lot\u2014from lot line to lot line.\nDevelopment potential is based on the net lot area and\nwhile gross and net lot area are the same for most lots in\nPalo Alto, there are some lots for which portions must be\nexcluded from the gross lot area to establish the net lot area.\n\n\nAreas excluded from the gross lot size are:\n\n\u2022 Street right-of-way (Area A of Fig 1 on this page)\n\n\u2022 \u201cPole\u201d portion of a flag lot (Area B of Fig 2 on this page)\n\n\u2022 Creek channel (Area C of Fig 3 on this page)\n\n\nFig 1 Gross lot area exclusions: street easements\n\nFig 2 Gross lot area exclusions: flag-lot \u201cpoles\u201d\n\nFig 3 Gross lot area exclusions : creek easements\n\n\n[Text associated with Fig 1]\nLot with\nboundaries\nthat extend\ninto the\npublic ROW\n\nThe portion of the lot within the\npublic ROW must be subtracted\nfrom the gross lot area.\n\nNote: In some areas of Palo Alto, like\nBarron Park, it is not unusual for the\nlot to extend to the middle of the\nstreet. However\npurposes, the lot is defined by the\nedge of the public street easement or\npublic right-of-way (ROW).\nDimensions for the public ROW are\navailable at the Development Center\n\nPublic ROW\n\nA\n\n[Text associated with Fig 2]\nFlag lot\naccessed via\nprivate\neasement\n\nFlag lot with\n\u201cpole\u201d\n\nB\n\nStreet\n\n\u2018pole\u201d portion of a\nlot must be subtracted\nthe gross lot size\n\nPrivate access easements\nthat provide access to\nlots are NOT subtracted\nthe lot on which they occur.\n\n[Text associated with Fig 3]\nTop of\nbank\n\nLot with creek\nand/or creek\neasement\n\nC\n\nCreek\neasement\n\nThe portion of the lot within a\ncreek channel must be subtracted\nfrom gross lot size.\n\nNote: The channel or area to be\nsubtracted is defined by Santa Clara\nValley Water District\u2019s easement or, if\nthere is no easement, the top-of-bank.\nDetermining the top-of-bank may\nrequire a surveyor.\n\nStreet\n\nKey\n\nCurb\n\nSidewalk\n\nLot lines\n\nCreek\n\nArea that must\nbe subtracted\nfrom gross lot\narea\n\n3",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Figure 1 illustrates a 'street easement' exclusion. It shows a top-down view of a two-lane street with two cars. A lot's boundaries are shown extending into the street area, which is labeled 'Public ROW' (Right-of-Way). The portion of the lot within the street is shaded and labeled 'A', indicating it must be subtracted from the gross lot area. Explanatory text with arrows points to the relevant parts of the diagram.",
+          "location": "Middle-left of the page"
+        },
+        {
+          "type": "diagram",
+          "description": "Figure 2 illustrates 'flag-lot \u201cpoles\u201d' exclusions. It shows two adjacent lots fronting a street. The left lot is a standard flag lot accessed via a private easement, which is noted as NOT being subtracted. The right lot is a 'flag lot with \u201cpole\u201d', where the 'pole' (a narrow strip of land providing access) is an integral part of the lot. This pole is shaded, labeled 'B', and identified as the portion that must be subtracted from the gross lot size.",
+          "location": "Top-right of the page"
+        },
+        {
+          "type": "diagram",
+          "description": "Figure 3 illustrates 'creek easements' exclusions. It shows a lot adjacent to a creek. The portion of the lot that contains the creek channel is shaded and labeled 'C', indicating it must be subtracted from the gross lot size. The diagram labels the 'Top of bank' and indicates the width of the 'Creek easement'. A note explains that the area to be subtracted is defined by the water district's easement or the top-of-bank.",
+          "location": "Middle-right of the page"
+        },
+        {
+          "type": "key",
+          "description": "A legend or 'Key' located at the bottom-right of the page defines five visual symbols used in the diagrams: a solid line for 'Curb', a hatched line for 'Sidewalk', a dashed line for 'Lot lines', a wavy pattern for 'Creek', and a shaded box for 'Area that must be subtracted from gross lot area'.",
+          "location": "Bottom-right of the page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Area to be excluded for street right-of-way",
+          "value": "Area A",
+          "unit": "N/A"
+        },
+        {
+          "parameter": "Area to be excluded for flag lot 'pole'",
+          "value": "Area B",
+          "unit": "N/A"
+        },
+        {
+          "parameter": "Area to be excluded for creek channel",
+          "value": "Area C",
+          "unit": "N/A"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Gross vs. net lot area",
+        "subheadings": [
+          "Areas excluded from the gross lot size are:",
+          "Key"
+        ],
+        "sections": [
+          "Fig 1 Gross lot area exclusions: street easements",
+          "Fig 2 Gross lot area exclusions: flag-lot \u201cpoles\u201d",
+          "Fig 3 Gross lot area exclusions : creek easements"
+        ]
+      },
+      "additional_notes": [
+        "The document is a clean, high-quality copy.",
+        "The page is numbered '3' in the bottom-right corner.",
+        "The overall layout consists of a main heading and introductory text, followed by a bulleted list that refers to three diagrams. The diagrams are arranged on the page with associated explanatory text and notes.",
+        "The note for Fig 2 has unusual line breaks and alignment: 'Private access easements / that provide access to / lots are NOT subtracted / the lot on which they occur.' This formatting is preserved in the transcription."
+      ],
+      "cross_references": [
+        "Area A of Fig 1 on this page",
+        "Area B of Fig 2 on this page",
+        "Area C of Fig 3 on this page",
+        "Palo Alto",
+        "Barron Park",
+        "Development Center",
+        "Santa Clara Valley Water District"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-11 14:35:51",
+  "model_used": "google/gemini-2.5-pro"
+}

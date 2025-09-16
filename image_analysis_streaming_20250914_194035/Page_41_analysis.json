@@ -1,0 +1,69 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_41.png",
+  "image_name": "Page_41.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Carport standards\n\nFig 29 Parking space dimensions for carport in plan view\n\nOne of 2 corner columns\n\n20' min. open\n\nopen\n\nDriveway/parking surface\n\nPlan View\n\nFig 30 Parking space dimensions for covered space in elevation\n\nOne of 2 corner columns\n\nBottom roof system\n\n7' min. open\n\n20' min. open\n\nLeft Side Elevation\n\nOne of 2 corner columns\n\nBottom roof system\n\n7' min. open\n\n10' min open\n\nFront Elevation\n\n35",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Plan view diagram of a carport parking space showing a top-down view of a car parked between two corner columns. Dimensions indicate a minimum 20 feet open space lengthwise and an open width dimension. The driveway/parking surface is labeled adjacent to the parking space.",
+          "location": "left side of the page"
+        },
+        {
+          "type": "diagram",
+          "description": "Left side elevation view of a covered parking space showing a car under a roof supported by two corner columns. The bottom roof system is labeled with a minimum clearance of 7 feet open height and a minimum 20 feet open width.",
+          "location": "top right side of the page"
+        },
+        {
+          "type": "diagram",
+          "description": "Front elevation view of a covered parking space showing a car under a sloped roof supported by two corner columns. The bottom roof system is labeled with a minimum clearance of 7 feet open height and a minimum 10 feet open width.",
+          "location": "bottom right side of the page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Minimum open length (plan view)",
+          "value": "20",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum open width (left side elevation)",
+          "value": "20",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum open height (left side elevation)",
+          "value": "7",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum open width (front elevation)",
+          "value": "10",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Minimum open height (front elevation)",
+          "value": "7",
+          "unit": "feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Carport standards",
+        "subheadings": [
+          "Fig 29 Parking space dimensions for carport in plan view",
+          "Fig 30 Parking space dimensions for covered space in elevation"
+        ],
+        "sections": []
+      },
+      "additional_notes": [
+        "Page number 35 located at bottom right corner",
+        "No handwritten annotations, stamps, or markings detected",
+        "Text and diagrams are clear and legible"
+      ],
+      "cross_references": []
+    }
+  },
+  "analysis_timestamp": "2025-09-14 19:41:25",
+  "model_used": "openai/gpt-4.1-mini"
+}

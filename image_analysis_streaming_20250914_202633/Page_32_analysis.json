@@ -1,0 +1,182 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_32.png",
+  "image_name": "Page_32.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Daylight plane\n\nThe daylight plane in conjunction with the setbacks & height limits, create an invisible tent\n\nintended to contain development on the lot in a way that preserves privacy and exposure to natural light.\n\nCode sections\nPage 26\n18.12.040 (a) Table 2\nPage 27\n18.04\nPage 28\n18.12.040 (c) Table 2\nPage 29\n18.12.050 (b) (2)\n18.12.040 (i)\n\nPrimary daylight plane (sides)\n\nThe primary daylight plane regulates structures located within the buildable area. Structures located in the rear and/or side yards are regulated by the accessory-structure daylight plan described on the next page.\n\nFig 20 Front elevation showing side primary daylight plane\n\nMax. allowed is Min. required by Building Code\n\n45\u00b0\n\n10' from average grade\n\nAverage grade\n\nGrade at the nearest point on the adjacent lot\n\nExisting grade of the structure (at midpoint of wall)\n\nSide lot line\n\n24' max. for protrusions\n\nMax. building height\n\nSide lot line\n\nNotes:\n\n\u2022 Daylight plane is measured from average grade.\n\n\u2022 Average grade is established using existing grade\u2014before any grading or fill (See Fig 44 p. 42)\n\n\u2022 Side daylight plane is measured (up) at lot line.\n\n\u2022 Rear daylight plane is measured (up) at rear setback.",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "Front elevation showing side primary daylight plane with a house illustration. The diagram includes a dashed line representing the daylight plane at a 45\u00b0 angle starting 10 feet above average grade. Vertical measurements indicate a maximum of 24 feet for protrusions and a maximum building height. Labels show average grade, grade at the nearest point on the adjacent lot, existing grade of the structure at midpoint of wall, and side lot lines on both sides of the house.",
+          "location": "Middle to right side of the page"
+        },
+        {
+          "type": "figure",
+          "description": "Small 3D wireframe illustration of an invisible tent shape representing the daylight plane concept.",
+          "location": "Left sidebar, below the text 'The daylight plane in conjunction with the setbacks & height limits, create an invisible tent'"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Daylight plane angle",
+          "value_type": "Numerical",
+          "value": "45",
+          "unit": "degrees"
+        },
+        {
+          "parameter": "Height from average grade to start of daylight plane",
+          "value_type": "Measurement",
+          "value": "10",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Maximum height for protrusions",
+          "value_type": "Measurement",
+          "value": "24",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Maximum building height",
+          "value_type": "Measurement",
+          "value": "Not explicitly stated numerically in this image",
+          "unit": "feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Primary daylight plane (sides)",
+        "subheadings": [],
+        "sections": []
+      },
+      "additional_notes": [
+        "Page number 26 at bottom left corner.",
+        "Left sidebar with grey background contains explanatory text and code section references.",
+        "No handwritten annotations or stamps visible.",
+        "Text and diagram are clear and legible."
+      ],
+      "cross_references": [
+        "Code sections referenced: 18.12.040 (a) Table 2 (Page 26), 18.04 (Page 27), 18.12.040 (c) Table 2 (Page 28), 18.12.050 (b) (2) and 18.12.040 (i) (Page 29).",
+        "Reference to 'See Fig 44 p. 42' for average grade establishment."
+      ],
+      "conditions_and_qualifiers": {
+        "qualifiers": [
+          {
+            "id": "q1",
+            "text": "The primary daylight plane regulates structures located within the buildable area.",
+            "applies_to_conditions": [
+              "c1",
+              "c2",
+              "c3",
+              "c4"
+            ],
+            "scope": "Local"
+          },
+          {
+            "id": "q2",
+            "text": "Structures located in the rear and/or side yards are regulated by the accessory-structure daylight plan described on the next page.",
+            "applies_to_conditions": [],
+            "scope": "Local"
+          }
+        ],
+        "conditions": [
+          {
+            "id": "c1",
+            "text": "Daylight plane is measured from average grade.",
+            "value_type": "Text",
+            "operator": "contains",
+            "threshold_value": "average grade",
+            "unit": null
+          },
+          {
+            "id": "c2",
+            "text": "Average grade is established using existing grade\u2014before any grading or fill (See Fig 44 p. 42)",
+            "value_type": "Text",
+            "operator": "contains",
+            "threshold_value": "existing grade before grading or fill",
+            "unit": null
+          },
+          {
+            "id": "c3",
+            "text": "Side daylight plane is measured (up) at lot line.",
+            "value_type": "Text",
+            "operator": "contains",
+            "threshold_value": "measured up at lot line",
+            "unit": null
+          },
+          {
+            "id": "c4",
+            "text": "Rear daylight plane is measured (up) at rear setback.",
+            "value_type": "Text",
+            "operator": "contains",
+            "threshold_value": "measured up at rear setback",
+            "unit": null
+          }
+        ],
+        "logical_relationships": [
+          {
+            "operation": "AND",
+            "condition_ids": [
+              "c1",
+              "c2",
+              "c3",
+              "c4"
+            ],
+            "expression": "Daylight plane measurement requires average grade measurement AND average grade established using existing grade AND side daylight plane measured at lot line AND rear daylight plane measured at rear setback.",
+            "evaluation_order": 1
+          }
+        ],
+        "execution_sequence": [
+          {
+            "step": 1,
+            "action": "Establish average grade using existing grade before any grading or fill.",
+            "condition_ids": [
+              "c2"
+            ],
+            "qualifier_ids": [],
+            "dependencies": []
+          },
+          {
+            "step": 2,
+            "action": "Measure daylight plane from average grade.",
+            "condition_ids": [
+              "c1"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": [
+              1
+            ]
+          },
+          {
+            "step": 3,
+            "action": "Measure side daylight plane upwards at lot line.",
+            "condition_ids": [
+              "c3"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": [
+              2
+            ]
+          },
+          {
+            "step": 4,
+            "action": "Measure rear daylight plane upwards at rear setback.",
+            "condition_ids": [
+              "c4"
+            ],
+            "qualifier_ids": [
+              "q1"
+            ],
+            "dependencies": [
+              2
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "analysis_timestamp": "2025-09-14 20:27:22",
+  "model_used": "openai/gpt-4.1-mini"
+}

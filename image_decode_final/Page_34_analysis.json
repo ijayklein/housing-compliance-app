@@ -1,0 +1,91 @@
+{
+  "image_path": "/Users/jayklein/Documents/rulestracking/cityrules/pngs/Page_34.png",
+  "image_name": "Page_34.png",
+  "analysis": {
+    "page_analysis": {
+      "text_content": "Primary daylight plane (rear)\n\nFig 23 Side elevation showing Rear primary daylight plane\n\n7.5\u2032 max.\neach\nprotrusion\n\n5\u2032 min.\nseparation\n\n7.5\u2032 max.\neach\nprotrusion\n\nNote: There is no\nfront daylight plane.\n\n24\u2032 max. for protrusions\n\n\u2605 Max building. height is:\n\u2022 30\u2032 for structures w/roof slope < 12:12\n\u2022 33\u2032 for structures w/roof slope > 12:12\n\u2022 17\u2032 for structures on substandard or flag lots\nregardless of flood plane\n\u2022 variable for structures located in flood zones\nexcept on substandard and flag lots - up to 33\u2032\n\n\u2605 Cumulative length of protrusions must\nnot exceed 15\u2032 on any one side.\nRear protrusions subject to same rules\nas side protrusions\n\nSetback line\n\n60\u00b0\n\n16\u2032\n\n24\u2032 max. for protrusions\n\nMax. bldg. height\n\nRear yard\n\nRear lot line\n\nNotes:\n\u2022 Side daylight plane is\nmeasured (up) at lot line.\n\u2022 Rear daylight plane is\nmeasured (up) at rear\nsetback.\n\n28",
+      "visual_elements": [
+        {
+          "type": "diagram",
+          "description": "A side elevation diagram of a residential building illustrating the primary daylight plane from the rear. It shows the building's height, roofline, and dormers. Various dimensions and setback lines are indicated with arrows and labels. The diagram includes a ground line with hatching, a 'Rear yard' area, a 'Setback line', and a 'Rear lot line'. A dashed line representing the daylight plane extends from the setback line at a 60-degree angle upwards and over the building. Protrusion limits are shown above the building.",
+          "location": "Middle of the page"
+        }
+      ],
+      "technical_specifications": [
+        {
+          "parameter": "Max protrusion length (each)",
+          "value": "7.5",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Min separation between protrusions",
+          "value": "5",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Max height for protrusions",
+          "value": "24",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Daylight plane angle",
+          "value": "60",
+          "unit": "degrees"
+        },
+        {
+          "parameter": "Building height from ground to roofline (approximate, indicated by 16' dimension)",
+          "value": "16",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Max building height for structures with roof slope < 12:12",
+          "value": "30",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Max building height for structures with roof slope > 12:12",
+          "value": "33",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Max building height for structures on substandard or flag lots (regardless of flood plane)",
+          "value": "17",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Max building height for structures in flood zones (except substandard and flag lots)",
+          "value": "33",
+          "unit": "feet"
+        },
+        {
+          "parameter": "Cumulative length of protrusions (max) on any one side",
+          "value": "15",
+          "unit": "feet"
+        }
+      ],
+      "structural_elements": {
+        "main_heading": "Primary daylight plane (rear)",
+        "subheadings": [],
+        "sections": [
+          "Fig 23 Side elevation showing Rear primary daylight plane",
+          "Note: There is no front daylight plane.",
+          "Max building. height is:",
+          "Cumulative length of protrusions must not exceed 15\u2032 on any one side.",
+          "Rear protrusions subject to same rules as side protrusions",
+          "Notes:"
+        ]
+      },
+      "additional_notes": [
+        "The page number '28' is located at the bottom left corner.",
+        "The diagram includes asterisks (*) next to 'Max building. height is:' and 'Cumulative length of protrusions must not exceed 15\u2032 on any one side.' which likely refer to specific regulations or definitions elsewhere in the manual, though no direct legend is provided on this page.",
+        "The text '24' max. for protrusions' appears twice, once as a label on the left side of the diagram and once as a label on the right side, indicating the same measurement."
+      ],
+      "cross_references": [
+        "Fig 23 (referencing the figure itself)",
+        "Rules for side protrusions (implied by 'Rear protrusions subject to same rules as side protrusions')"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-09-11 14:59:17",
+  "model_used": "google/gemini-2.5-flash"
+}

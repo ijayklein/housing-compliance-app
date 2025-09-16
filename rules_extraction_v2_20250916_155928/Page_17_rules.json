@@ -1,0 +1,156 @@
+{
+  "file_path": "/Users/jayklein/Documents/rulestracking/cityrules/markdown_pages/Page_17.md",
+  "file_name": "Page_17.md",
+  "analysis": {
+    "extracted_rules": [
+      {
+        "rule_id": "REG-P17-VAULTED-ENTRY",
+        "rule_name": "Vaulted Entry Feature GFA Calculation",
+        "source_page": 17,
+        "qualifiers": {
+          "scope": "Applies to the definition and Gross Floor Area (GFA) calculation of building entry features.",
+          "applicability": "The GFA calculation multiplier applies to all entry features classified as 'vaulted', regardless of their specific design, including whether they are open or enclosed.",
+          "exclusions": [
+            "No exclusions are mentioned in the text."
+          ]
+        },
+        "variables": [
+          {
+            "name": "entry_feature_height",
+            "type": "dimensional",
+            "description": "The vertical height of an entry feature, used to determine if it is 'vaulted'.",
+            "measurement_procedure": "Measured from 'Grade' to the 'Intersection of front facade and top of roof material'. See Figure 6 (Side Elevation) for a visual guide."
+          },
+          {
+            "name": "entry_feature_footprint_area",
+            "type": "dimensional",
+            "description": "The floor area of the entry feature, which is subject to a GFA multiplier if the feature is vaulted.",
+            "measurement_procedure": "The area is measured to the outside material of the entryway feature. It includes any portion of the entryway that is recessed beyond the main house facade and roof. See Figure 6 (Porch Floor Plan) for a visual guide."
+          },
+          {
+            "name": "gross_floor_area_contribution",
+            "type": "dimensional",
+            "description": "The calculated area that the entry feature contributes to the building's total Gross Floor Area."
+          }
+        ],
+        "constants": [
+          {
+            "name": "vaulted_entry_height_threshold",
+            "type": "dimensional_threshold",
+            "value": 12,
+            "unit": "feet",
+            "description": "The height above which an entry feature is classified as a 'vaulted entry feature'."
+          },
+          {
+            "name": "gfa_multiplier",
+            "type": "numerical_factor",
+            "value": 2,
+            "unit": "none",
+            "description": "The multiplier applied to the footprint area of a vaulted entry feature for GFA calculation."
+          },
+          {
+            "name": "definition_term",
+            "type": "standard_term",
+            "value": "vaulted entry features",
+            "description": "The official term for entry features that are greater than 12 feet high."
+          }
+        ],
+        "conditions": [
+          {
+            "type": "conditional_logic",
+            "description": "Determines the classification of an entry feature and the corresponding GFA calculation.",
+            "logic": {
+              "if": {
+                "condition": "entry_feature_height > 12 feet",
+                "operands": [
+                  {
+                    "type": "variable",
+                    "name": "entry_feature_height"
+                  },
+                  {
+                    "type": "operator",
+                    "value": ">"
+                  },
+                  {
+                    "type": "constant",
+                    "name": "vaulted_entry_height_threshold"
+                  }
+                ]
+              },
+              "then": {
+                "actions": [
+                  "The entry feature is classified as a 'vaulted entry feature'.",
+                  "The footprint area of the feature is multiplied by 2 for the GFA calculation."
+                ],
+                "calculation": "gross_floor_area_contribution = entry_feature_footprint_area * 2"
+              },
+              "else": {
+                "actions": [
+                  "The entry feature is not classified as a 'vaulted entry feature'."
+                ],
+                "calculation": "gross_floor_area_contribution = entry_feature_footprint_area * 1 (implied, see ambiguous_language section)"
+              }
+            }
+          }
+        ],
+        "exceptions": [
+          {
+            "description": "No exceptions are listed. The rule explicitly states it applies 'regardless of the design (including whether or not they are open)'."
+          }
+        ],
+        "relationships": {
+          "hierarchical": [
+            {
+              "parent": "Gross Floor Area (GFA) Regulations",
+              "child": "Vaulted Entry Feature GFA Calculation",
+              "type": "Implied"
+            }
+          ],
+          "cross_references": [
+            {
+              "reference_id": "Figure 6",
+              "description": "Provides a visual example of an 'Entry feature with shed roof' to illustrate the measurement procedures for height and footprint area.",
+              "components": [
+                "Isometric View",
+                "Side Elevation",
+                "Porch Floor Plan"
+              ]
+            },
+            {
+              "reference_id": "Figure 7",
+              "description": "Cited as part of a range of examples ('Figure 6 - 8') for measuring height. Details not provided in the text.",
+              "status": "Referenced, not detailed"
+            },
+            {
+              "reference_id": "Figure 8",
+              "description": "Cited as part of a range of examples ('Figure 6 - 8') for measuring height. Details not provided in the text.",
+              "status": "Referenced, not detailed"
+            }
+          ],
+          "logical_dependencies": [
+            {
+              "dependency": "The application of the GFA multiplier is dependent on the result of the height check.",
+              "from": "gfa_multiplier",
+              "to": "vaulted_entry_height_threshold"
+            }
+          ]
+        },
+        "ambiguous_language": [
+          {
+            "text_snippet": "...count twice toward gross floor area...",
+            "ambiguity": "The text does not explicitly state the GFA calculation for entry features that are not vaulted (i.e., height <= 12 feet). It is implied that the area would count once, but this is an assumption and not explicitly written in the provided rule."
+          }
+        ]
+      }
+    ],
+    "parse_error": false,
+    "raw_response": "```json\n[\n  {\n    \"rule_id\": \"REG-P17-VAULTED-ENTRY\",\n    \"rule_name\": \"Vaulted Entry Feature GFA Calculation\",\n    \"source_page\": 17,\n    \"qualifiers\": {\n      \"scope\": \"Applies to the definition and Gross Floor Area (GFA) calculation of building entry features.\",\n      \"applicability\": \"The GFA calculation multiplier applies to all entry features classified as 'vaulted', regardless of their specific design, including whether they are open or enclosed.\",\n      \"exclusions\": [\n        \"No exclusions are mentioned in the text.\"\n      ]\n    },\n    \"variables\": [\n      {\n        \"name\": \"entry_feature_height\",\n        \"type\": \"dimensional\",\n        \"description\": \"The vertical height of an entry feature, used to determine if it is 'vaulted'.\",\n        \"measurement_procedure\": \"Measured from 'Grade' to the 'Intersection of front facade and top of roof material'. See Figure 6 (Side Elevation) for a visual guide.\"\n      },\n      {\n        \"name\": \"entry_feature_footprint_area\",\n        \"type\": \"dimensional\",\n        \"description\": \"The floor area of the entry feature, which is subject to a GFA multiplier if the feature is vaulted.\",\n        \"measurement_procedure\": \"The area is measured to the outside material of the entryway feature. It includes any portion of the entryway that is recessed beyond the main house facade and roof. See Figure 6 (Porch Floor Plan) for a visual guide.\"\n      },\n      {\n        \"name\": \"gross_floor_area_contribution\",\n        \"type\": \"dimensional\",\n        \"description\": \"The calculated area that the entry feature contributes to the building's total Gross Floor Area.\"\n      }\n    ],\n    \"constants\": [\n      {\n        \"name\": \"vaulted_entry_height_threshold\",\n        \"type\": \"dimensional_threshold\",\n        \"value\": 12,\n        \"unit\": \"feet\",\n        \"description\": \"The height above which an entry feature is classified as a 'vaulted entry feature'.\"\n      },\n      {\n        \"name\": \"gfa_multiplier\",\n        \"type\": \"numerical_factor\",\n        \"value\": 2,\n        \"unit\": \"none\",\n        \"description\": \"The multiplier applied to the footprint area of a vaulted entry feature for GFA calculation.\"\n      },\n      {\n        \"name\": \"definition_term\",\n        \"type\": \"standard_term\",\n        \"value\": \"vaulted entry features\",\n        \"description\": \"The official term for entry features that are greater than 12 feet high.\"\n      }\n    ],\n    \"conditions\": [\n      {\n        \"type\": \"conditional_logic\",\n        \"description\": \"Determines the classification of an entry feature and the corresponding GFA calculation.\",\n        \"logic\": {\n          \"if\": {\n            \"condition\": \"entry_feature_height > 12 feet\",\n            \"operands\": [\n              {\n                \"type\": \"variable\",\n                \"name\": \"entry_feature_height\"\n              },\n              {\n                \"type\": \"operator\",\n                \"value\": \">\"\n              },\n              {\n                \"type\": \"constant\",\n                \"name\": \"vaulted_entry_height_threshold\"\n              }\n            ]\n          },\n          \"then\": {\n            \"actions\": [\n              \"The entry feature is classified as a 'vaulted entry feature'.\",\n              \"The footprint area of the feature is multiplied by 2 for the GFA calculation.\"\n            ],\n            \"calculation\": \"gross_floor_area_contribution = entry_feature_footprint_area * 2\"\n          },\n          \"else\": {\n            \"actions\": [\n              \"The entry feature is not classified as a 'vaulted entry feature'.\"\n            ],\n            \"calculation\": \"gross_floor_area_contribution = entry_feature_footprint_area * 1 (implied, see ambiguous_language section)\"\n          }\n        }\n      }\n    ],\n    \"exceptions\": [\n      {\n        \"description\": \"No exceptions are listed. The rule explicitly states it applies 'regardless of the design (including whether or not they are open)'.\"\n      }\n    ],\n    \"relationships\": {\n      \"hierarchical\": [\n        {\n          \"parent\": \"Gross Floor Area (GFA) Regulations\",\n          \"child\": \"Vaulted Entry Feature GFA Calculation\",\n          \"type\": \"Implied\"\n        }\n      ],\n      \"cross_references\": [\n        {\n          \"reference_id\": \"Figure 6\",\n          \"description\": \"Provides a visual example of an 'Entry feature with shed roof' to illustrate the measurement procedures for height and footprint area.\",\n          \"components\": [\"Isometric View\", \"Side Elevation\", \"Porch Floor Plan\"]\n        },\n        {\n          \"reference_id\": \"Figure 7\",\n          \"description\": \"Cited as part of a range of examples ('Figure 6 - 8') for measuring height. Details not provided in the text.\",\n          \"status\": \"Referenced, not detailed\"\n        },\n        {\n          \"reference_id\": \"Figure 8\",\n          \"description\": \"Cited as part of a range of examples ('Figure 6 - 8') for measuring height. Details not provided in the text.\",\n          \"status\": \"Referenced, not detailed\"\n        }\n      ],\n      \"logical_dependencies\": [\n        {\n          \"dependency\": \"The application of the GFA multiplier is dependent on the result of the height check.\",\n          \"from\": \"gfa_multiplier\",\n          \"to\": \"vaulted_entry_height_threshold\"\n        }\n      ]\n    },\n    \"ambiguous_language\": [\n      {\n        \"text_snippet\": \"...count twice toward gross floor area...\",\n        \"ambiguity\": \"The text does not explicitly state the GFA calculation for entry features that are not vaulted (i.e., height <= 12 feet). It is implied that the area would count once, but this is an assumption and not explicitly written in the provided rule.\"\n      }\n    ]\n  }\n]\n```",
+    "response_time": 42.177826166152954,
+    "input_tokens": 730,
+    "output_tokens": 5223,
+    "attempt": 1
+  },
+  "timestamp": "2025-09-16 16:00:50",
+  "model": "google/gemini-2.5-pro",
+  "success": true
+}
