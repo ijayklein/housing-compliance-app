@@ -105,6 +105,7 @@
                 </h5>
             </div>
             <div class="card-body">
+                {% include 'field-states-legend.html' %}
                 <form id="validationForm">
                     <!-- Project Information -->
                     <div class="form-section">
@@ -428,6 +429,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
                 
                 showSuccess('Template loaded successfully! Values are filled and ready for validation. You can modify any values as needed.');
+                
+                // Show field states legend to explain color coding
+                showFieldStatesLegend();
             })
             .catch(error => {
                 console.error('Error loading template:', error);
@@ -473,6 +477,19 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             this.classList.remove('template-filled');
         }, { once: false });
+    }
+    
+    function showFieldStatesLegend() {
+        const legend = document.getElementById('fieldStatesLegend');
+        if (legend) {
+            legend.style.display = 'block';
+            // Auto-hide after 10 seconds
+            setTimeout(() => {
+                if (legend.style.display === 'block') {
+                    legend.style.display = 'none';
+                }
+            }, 10000);
+        }
     }
 
     function validateProject() {

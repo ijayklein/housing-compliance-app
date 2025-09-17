@@ -1,0 +1,26 @@
+<!-- Field States Legend - Accessible color explanation -->
+<div class="card border-0 bg-light mb-3" id="fieldStatesLegend" style="display: none;">
+    <div class="card-body py-2">
+        <div class="d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center">
+                <i class="fas fa-info-circle text-muted me-2"></i>
+                <small class="fw-bold text-muted">Field States:</small>
+            </div>
+            <div class="d-flex gap-3 flex-wrap">
+                <div class="d-flex align-items-center">
+                    <div class="legend-color bg-warning me-1" style="width: 12px; height: 12px; border-radius: 2px; border: 1px solid #ffc107;"></div>
+                    <small class="text-muted">Empty (needs input)</small>
+                </div>
+                <div class="d-flex align-items-center">
+                    <div class="legend-color me-1" style="width: 12px; height: 12px; border-radius: 2px; background-color: rgba(13, 202, 240, 0.2); border: 1px solid #0dcaf0;"></div>
+                    <small class="text-muted">Template data</small>
+                </div>
+                <div class="d-flex align-items-center">
+                    <div class="legend-color bg-success me-1" style="width: 12px; height: 12px; border-radius: 2px; border: 1px solid #198754;"></div>
+                    <small class="text-muted">User input</small>
+                </div>
+            </div>
+            <button type="button" class="btn-close btn-sm" onclick="document.getElementById('fieldStatesLegend').style.display='none'" aria-label="Close legend"></button>
+        </div>
+    </div>
+</div>
