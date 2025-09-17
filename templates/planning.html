@@ -170,77 +170,43 @@
                         </div>
                     </div>
 
-                    <!-- Building Data -->
+                    <!-- Project Goals (Optional) -->
                     <div class="form-section">
-                        <h5><i class="fas fa-building me-2"></i>Building Information</h5>
+                        <h5><i class="fas fa-target me-2"></i>Project Goals (Optional)</h5>
                         <div class="row">
                             <div class="col-md-6 mb-3">
-                                <label for="buildingHeight" class="form-label">Building Height (ft) 
+                                <label for="desiredFloorArea" class="form-label">Desired Floor Area (sf) 
                                     <i class="fas fa-info-circle text-muted ms-1" 
                                        data-bs-toggle="tooltip" 
                                        data-bs-placement="top" 
-                                       title="Maximum height from ground level to highest point of roof structure."></i>
+                                       title="How much floor area would you like? We'll check if it's allowed and recommend the maximum possible."></i>
                                 </label>
-                                <input type="number" class="form-control" id="buildingHeight" placeholder="28" min="8" max="50">
+                                <input type="number" class="form-control" id="desiredFloorArea" placeholder="e.g., 3500" min="500">
                             </div>
                             <div class="col-md-6 mb-3">
-                                <label for="grossFloorArea" class="form-label">Gross Floor Area (sf) 
+                                <label for="desiredHeight" class="form-label">Desired Height (ft) 
                                     <i class="fas fa-info-circle text-muted ms-1" 
                                        data-bs-toggle="tooltip" 
                                        data-bs-placement="top" 
-                                       title="Total floor area of all levels, measured from exterior walls."></i>
+                                       title="How tall would you like the building? We'll check if it's allowed and recommend the maximum."></i>
                                 </label>
-                                <input type="number" class="form-control" id="grossFloorArea" placeholder="3200" min="500">
+                                <input type="number" class="form-control" id="desiredHeight" placeholder="e.g., 30" min="8" max="50">
                             </div>
                         </div>
-                        
-                        <h6 class="mt-3 mb-2">Setbacks (ft) 
-                            <i class="fas fa-info-circle text-muted ms-1" 
-                               data-bs-toggle="tooltip" 
-                               data-bs-placement="top" 
-                               title="Minimum required distances from property lines to building walls."></i>
-                        </h6>
-                        <div class="row">
-                            <div class="col-md-3 mb-3">
-                                <label for="frontSetback" class="form-label">Front</label>
-                                <input type="number" class="form-control" id="frontSetback" placeholder="25" min="0">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label for="rearSetback" class="form-label">Rear</label>
-                                <input type="number" class="form-control" id="rearSetback" placeholder="30" min="0">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label for="sideSetbackLeft" class="form-label">Side Left</label>
-                                <input type="number" class="form-control" id="sideSetbackLeft" placeholder="8" min="0">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label for="sideSetbackRight" class="form-label">Side Right</label>
-                                <input type="number" class="form-control" id="sideSetbackRight" placeholder="10" min="0">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Parking Data -->
-                    <div class="form-section">
-                        <h5><i class="fas fa-car me-2"></i>Parking Information</h5>
                         <div class="row">
                             <div class="col-md-6 mb-3">
-                                <label for="parkingSpaces" class="form-label">Parking Spaces 
-                                    <i class="fas fa-info-circle text-muted ms-1" 
-                                       data-bs-toggle="tooltip" 
-                                       data-bs-placement="top" 
-                                       title="Total number of parking spaces required for the project."></i>
-                                </label>
-                                <input type="number" class="form-control" id="parkingSpaces" placeholder="2" min="0">
+                                <label for="priorityFeatures" class="form-label">Priority Features</label>
+                                <select class="form-select" id="priorityFeatures">
+                                    <option value="">Select priority</option>
+                                    <option value="maximize_space">Maximize living space</option>
+                                    <option value="maximize_outdoor">Maximize outdoor space</option>
+                                    <option value="minimize_cost">Minimize construction cost</option>
+                                    <option value="privacy">Maximize privacy</option>
+                                </select>
                             </div>
                             <div class="col-md-6 mb-3">
-                                <label for="coveredSpaces" class="form-label">Covered Spaces 
-                                    <i class="fas fa-info-circle text-muted ms-1" 
-                                       data-bs-toggle="tooltip" 
-                                       data-bs-placement="top" 
-                                       title="Number of parking spaces that are covered or enclosed."></i>
-                                </label>
-                                <input type="number" class="form-control" id="coveredSpaces" placeholder="2" min="0">
+                                <label for="specialRequirements" class="form-label">Special Requirements</label>
+                                <input type="text" class="form-control" id="specialRequirements" placeholder="e.g., home office, ADU, pool">
                             </div>
                         </div>
                     </div>
@@ -352,9 +318,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Add input validation and formatting for all numeric inputs
-    const numericInputs = ['lotArea', 'lotWidth', 'lotDepth', 'buildingHeight', 'grossFloorArea', 
-                          'frontSetback', 'rearSetback', 'sideSetbackLeft', 'sideSetbackRight', 
-                          'parkingSpaces', 'coveredSpaces'];
+    const numericInputs = ['lotArea', 'lotWidth', 'lotDepth', 'desiredFloorArea', 'desiredHeight'];
     numericInputs.forEach(inputId => {
         const input = document.getElementById(inputId);
         if (input) {
@@ -451,15 +415,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     { id: 'projectId', value: `PR-${new Date().getFullYear()}-${String(Math.floor(Math.random() * 1000)).padStart(3, '0')}` },
                     { id: 'lotArea', value: data.site_data.lot_area },
                     { id: 'lotWidth', value: data.site_data.lot_width },
-                    { id: 'lotDepth', value: data.site_data.lot_depth },
-                    { id: 'buildingHeight', value: data.building_data.building_height },
-                    { id: 'grossFloorArea', value: data.building_data.gross_floor_area },
-                    { id: 'frontSetback', value: data.building_data.setbacks.front_setback },
-                    { id: 'rearSetback', value: data.building_data.setbacks.rear_setback },
-                    { id: 'sideSetbackLeft', value: data.building_data.setbacks.side_setback_left },
-                    { id: 'sideSetbackRight', value: data.building_data.setbacks.side_setback_right },
-                    { id: 'parkingSpaces', value: data.parking_data.parking_spaces },
-                    { id: 'coveredSpaces', value: data.parking_data.covered_spaces }
+                    { id: 'lotDepth', value: data.site_data.lot_depth }
+                    // Note: desiredFloorArea, desiredHeight, priorityFeatures, specialRequirements are user preferences, not template data
                 ];
                 
                 fields.forEach(field => {
@@ -554,18 +511,12 @@ document.addEventListener('DOMContentLoaded', function() {
         // Get zone requirements for fallback values
         const zone = document.getElementById('zoneDistrict').value;
         
-        // Collect form data with better fallback handling
+        // Collect form data - only inputs, not calculated values
         const lotAreaValue = document.getElementById('lotArea').value.trim();
         const lotWidthValue = document.getElementById('lotWidth').value.trim();
         const lotDepthValue = document.getElementById('lotDepth').value.trim();
-        const buildingHeightValue = document.getElementById('buildingHeight').value.trim();
-        const grossFloorAreaValue = document.getElementById('grossFloorArea').value.trim();
-        const frontSetbackValue = document.getElementById('frontSetback').value.trim();
-        const rearSetbackValue = document.getElementById('rearSetback').value.trim();
-        const sideSetbackLeftValue = document.getElementById('sideSetbackLeft').value.trim();
-        const sideSetbackRightValue = document.getElementById('sideSetbackRight').value.trim();
-        const parkingSpacesValue = document.getElementById('parkingSpaces').value.trim();
-        const coveredSpacesValue = document.getElementById('coveredSpaces').value.trim();
+        const desiredFloorAreaValue = document.getElementById('desiredFloorArea').value.trim();
+        const desiredHeightValue = document.getElementById('desiredHeight').value.trim();
         
         const projectData = {
             project_info: {
@@ -584,19 +535,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 corner_lot: document.getElementById('lotShape').value === 'corner',
                 flag_lot: document.getElementById('lotShape').value === 'flag'
             },
-            building_data: {
-                building_height: buildingHeightValue ? parseFloat(buildingHeightValue) : 0,
-                gross_floor_area: grossFloorAreaValue ? parseFloat(grossFloorAreaValue) : 0,
-                setbacks: {
-                    front_setback: frontSetbackValue ? parseFloat(frontSetbackValue) : 0,
-                    rear_setback: rearSetbackValue ? parseFloat(rearSetbackValue) : 0,
-                    side_setback_left: sideSetbackLeftValue ? parseFloat(sideSetbackLeftValue) : 0,
-                    side_setback_right: sideSetbackRightValue ? parseFloat(sideSetbackRightValue) : 0
-                }
-            },
-            parking_data: {
-                parking_spaces: parkingSpacesValue ? parseFloat(parkingSpacesValue) : 0,
-                covered_spaces: coveredSpacesValue ? parseFloat(coveredSpacesValue) : 0
+            project_goals: {
+                desired_floor_area: desiredFloorAreaValue ? parseFloat(desiredFloorAreaValue) : null,
+                desired_height: desiredHeightValue ? parseFloat(desiredHeightValue) : null,
+                priority_features: document.getElementById('priorityFeatures').value || null,
+                special_requirements: document.getElementById('specialRequirements').value || null
             }
         };
 
