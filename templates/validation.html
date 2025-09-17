@@ -51,6 +51,29 @@
     height: 100%;
     transition: width 0.3s ease;
 }
+
+/* Template-filled field styling */
+.template-filled {
+    background-color: rgba(13, 202, 240, 0.05) !important;
+    border-color: #0dcaf0 !important;
+}
+
+.template-badge {
+    pointer-events: none;
+    user-select: none;
+}
+
+/* Empty field warning */
+.form-control:placeholder-shown:not(.template-filled):not(:focus) {
+    border-color: #ffc107;
+    background-color: rgba(255, 193, 7, 0.05);
+}
+
+/* Better visual distinction */
+.form-control:not(:placeholder-shown) {
+    background-color: rgba(25, 135, 84, 0.05);
+    border-color: #198754;
+}
 </style>
 {% endblock %}
 
@@ -207,16 +230,25 @@
                     </div>
 
                     <!-- Action Buttons -->
-                    <div class="d-flex gap-2">
-                        <button type="button" class="btn btn-outline-info" id="loadTemplateBtn">
-                            <i class="fas fa-download me-2"></i>Load Template
-                        </button>
-                        <button type="submit" class="btn btn-success flex-fill"
-                                data-bs-toggle="tooltip" 
-                                data-bs-placement="top" 
-                                title="Run comprehensive compliance check against all applicable zoning rules">
-                            <i class="fas fa-search me-2"></i>Validate Project
-                        </button>
+                    <div class="d-flex gap-2 flex-column">
+                        <div class="alert alert-warning py-2 mb-2" id="templateAlert">
+                            <i class="fas fa-exclamation-triangle me-2"></i>
+                            <small><strong>Tip:</strong> Click "Load Template" to fill form with default values, or enter your own project data manually.</small>
+                        </div>
+                        <div class="d-flex gap-2">
+                            <button type="button" class="btn btn-info" id="loadTemplateBtn"
+                                    data-bs-toggle="tooltip" 
+                                    data-bs-placement="top" 
+                                    title="Load default project values based on selected zone district">
+                                <i class="fas fa-magic me-2"></i>Load Template Values
+                            </button>
+                            <button type="submit" class="btn btn-success flex-fill"
+                                    data-bs-toggle="tooltip" 
+                                    data-bs-placement="top" 
+                                    title="Run comprehensive compliance check against all applicable zoning rules">
+                                <i class="fas fa-search me-2"></i>Validate Project
+                            </button>
+                        </div>
                     </div>
                 </form>
             </div>
@@ -257,6 +289,16 @@ document.addEventListener('DOMContentLoaded', function() {
     zoneSelect.addEventListener('change', function() {
         if (this.value) {
             loadZoneRequirements(this.value);
+            // Auto-load template after zone selection with user confirmation
+            setTimeout(() => {
+                if (confirm('Would you like to load default template values for this zone? This will fill in typical project values that you can then modify.')) {
+                    loadProjectTemplate(this.value);
+                } else {
+                    // Clear placeholders to avoid confusion
+                    clearPlaceholders();
+                    showInfo('Please fill in all project values manually, or click "Load Template" to use default values.');
+                }
+            }, 500);
         }
     });
 
@@ -337,30 +379,100 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function loadProjectTemplate(zone) {
+        // Show loading state
+        loadTemplateBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Loading...';
+        loadTemplateBtn.disabled = true;
+        
         fetch(`/api/project-template/${zone}`)
             .then(response => response.json())
             .then(data => {
-                // Populate form with template data
-                document.getElementById('projectName').value = `${zone} Validation Project`;
-                document.getElementById('projectId').value = `VAL-${new Date().getFullYear()}-${String(Math.floor(Math.random() * 1000)).padStart(3, '0')}`;
-                document.getElementById('lotArea').value = data.site_data.lot_area;
-                document.getElementById('lotWidth').value = data.site_data.lot_width;
-                document.getElementById('lotDepth').value = data.site_data.lot_depth;
-                document.getElementById('buildingHeight').value = data.building_data.building_height;
-                document.getElementById('grossFloorArea').value = data.building_data.gross_floor_area;
-                document.getElementById('frontSetback').value = data.building_data.setbacks.front_setback;
-                document.getElementById('rearSetback').value = data.building_data.setbacks.rear_setback;
-                document.getElementById('sideSetbackLeft').value = data.building_data.setbacks.side_setback_left;
-                document.getElementById('sideSetbackRight').value = data.building_data.setbacks.side_setback_right;
-                document.getElementById('parkingSpaces').value = data.parking_data.parking_spaces;
-                document.getElementById('coveredSpaces').value = data.parking_data.covered_spaces;
+                // Populate form with template data and add visual indicators
+                const fields = [
+                    { id: 'projectName', value: `${zone} Validation Project` },
+                    { id: 'projectId', value: `VAL-${new Date().getFullYear()}-${String(Math.floor(Math.random() * 1000)).padStart(3, '0')}` },
+                    { id: 'lotArea', value: data.site_data.lot_area },
+                    { id: 'lotWidth', value: data.site_data.lot_width },
+                    { id: 'lotDepth', value: data.site_data.lot_depth },
+                    { id: 'buildingHeight', value: data.building_data.building_height },
+                    { id: 'grossFloorArea', value: data.building_data.gross_floor_area },
+                    { id: 'frontSetback', value: data.building_data.setbacks.front_setback },
+                    { id: 'rearSetback', value: data.building_data.setbacks.rear_setback },
+                    { id: 'sideSetbackLeft', value: data.building_data.setbacks.side_setback_left },
+                    { id: 'sideSetbackRight', value: data.building_data.setbacks.side_setback_right },
+                    { id: 'parkingSpaces', value: data.parking_data.parking_spaces },
+                    { id: 'coveredSpaces', value: data.parking_data.covered_spaces }
+                ];
                 
-                showSuccess('Template loaded successfully!');
+                fields.forEach(field => {
+                    const input = document.getElementById(field.id);
+                    if (input) {
+                        input.value = field.value;
+                        // Add visual indicator that this field has template data
+                        input.classList.add('template-filled');
+                        input.classList.remove('is-invalid');
+                        input.classList.add('is-valid');
+                        
+                        // Add a small badge to show it's template data
+                        addTemplateBadge(input);
+                    }
+                });
+                
+                // Reset button state
+                loadTemplateBtn.innerHTML = '<i class="fas fa-magic me-2"></i>Load Template Values';
+                loadTemplateBtn.disabled = false;
+                
+                // Hide the template alert since template is now loaded
+                const templateAlert = document.getElementById('templateAlert');
+                if (templateAlert) {
+                    templateAlert.style.display = 'none';
+                }
+                
+                showSuccess('Template loaded successfully! Values are filled and ready for validation. You can modify any values as needed.');
             })
             .catch(error => {
                 console.error('Error loading template:', error);
                 showError('Failed to load template');
+                // Reset button state
+                loadTemplateBtn.innerHTML = '<i class="fas fa-magic me-2"></i>Load Template Values';
+                loadTemplateBtn.disabled = false;
             });
+    }
+    
+    function clearPlaceholders() {
+        // Clear all placeholder text to avoid confusion
+        const inputs = document.querySelectorAll('input[placeholder]');
+        inputs.forEach(input => {
+            input.placeholder = '';
+            input.classList.remove('template-filled', 'is-valid');
+        });
+    }
+    
+    function addTemplateBadge(input) {
+        // Remove existing badge if any
+        const existingBadge = input.parentElement.querySelector('.template-badge');
+        if (existingBadge) {
+            existingBadge.remove();
+        }
+        
+        // Add badge to show this is template data
+        const badge = document.createElement('span');
+        badge.className = 'template-badge badge bg-info position-absolute';
+        badge.style.cssText = 'top: 5px; right: 10px; font-size: 0.7rem; z-index: 10;';
+        badge.innerHTML = '<i class="fas fa-magic me-1"></i>Template';
+        badge.title = 'This field was filled with template data';
+        
+        // Make parent relative for positioning
+        input.parentElement.style.position = 'relative';
+        input.parentElement.appendChild(badge);
+        
+        // Remove badge when user starts typing
+        input.addEventListener('input', function() {
+            const badge = this.parentElement.querySelector('.template-badge');
+            if (badge) {
+                badge.remove();
+            }
+            this.classList.remove('template-filled');
+        }, { once: false });
     }
 
     function validateProject() {
