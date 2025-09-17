@@ -207,6 +207,21 @@ def generate_planning_guidance(project_data):
                     ],
                     'buildable_area': calculate_buildable_area(site_data),
                     'max_floor_area': int(site_data.get('lot_area', 0) * zone_req['max_far'])
+                },
+                {
+                    'category': 'Parking Requirements',
+                    'requirements': [
+                        "Minimum parking spaces: 2 spaces per dwelling unit",
+                        "At least 1 covered space required",
+                        "Parking spaces: 9' × 18' minimum each",
+                        "Driveway width: 12' minimum for single car, 20' for double"
+                    ],
+                    'recommendations': {
+                        'total_spaces': 2,
+                        'covered_spaces': 1,
+                        'garage_recommended': True,
+                        'driveway_width': 12
+                    }
                 }
             ],
             'next_steps': generate_next_steps(site_data, zone_req),

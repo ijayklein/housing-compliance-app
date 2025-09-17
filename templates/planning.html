@@ -679,6 +679,32 @@ document.addEventListener('DOMContentLoaded', function() {
                 `;
                 html += '</div></div>';
             }
+            
+            // Display parking recommendations if available
+            if (req.recommendations) {
+                html += '<div class="alert alert-success mt-3">';
+                html += '<h6><i class="fas fa-car me-2"></i>Parking Recommendations</h6>';
+                html += '<div class="row text-center">';
+                html += `
+                    <div class="col-md-3">
+                        <strong>${req.recommendations.total_spaces}</strong><br>
+                        <small class="text-muted">Total Spaces</small>
+                    </div>
+                    <div class="col-md-3">
+                        <strong>${req.recommendations.covered_spaces}</strong><br>
+                        <small class="text-muted">Covered</small>
+                    </div>
+                    <div class="col-md-3">
+                        <strong>${req.recommendations.garage_recommended ? 'Yes' : 'No'}</strong><br>
+                        <small class="text-muted">Garage Recommended</small>
+                    </div>
+                    <div class="col-md-3">
+                        <strong>${req.recommendations.driveway_width}</strong> ft<br>
+                        <small class="text-muted">Driveway Width</small>
+                    </div>
+                `;
+                html += '</div></div>';
+            }
 
             if (!status.compliant && status.issues.length > 0) {
                 html += '<div class="alert alert-warning mt-2 mb-0">';
